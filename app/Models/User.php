@@ -18,16 +18,21 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     static $rules = [
-		'name' => 'required',
-		'username' => 'required|unique:users',
+		'fullname' => 'required',
 		'email' => 'required|email|unique:users',
+		'password' => 'required|min:8',
+		'user_category_id' => 'required',
     ];
     
     protected $fillable = [
-        'name',
+        'fullname',
         'email',
-        'username',
         'password',
+        'user_category_id',
+    ];
+
+    protected $guarded = [
+        "id"
     ];
 
     /**
@@ -47,5 +52,6 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'expired_at' => 'date',
     ];
 }
