@@ -25,8 +25,10 @@ use Illuminate\Support\Facades\Route;
 
 // login
 Route::get('/', 'LoginController@index')->name('login');
+Route::get('/admin_panel', 'LoginController@loginAdmin')->name('loginAdmin');
 Route::post('/login', 'LoginController@login')->name('login.post');
 Route::get('/logout', 'LoginController@logout')->name('logout');
+Route::post('/register', 'LoginController@register')->name('register');
 
 Route::post('/forgetPassword', 'LoginController@forgetPassword')->name('login.forgetPassword');
 Route::get('/auth-forgot-password', 'LoginController@viewForgetPassword');
