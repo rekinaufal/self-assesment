@@ -41,11 +41,18 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('roles', 'RoleController');
     //user
     Route::resource('users', 'UserController');
+    Route::resource('permenperincategory', 'PermenperinCategoryController');
     Route::get('/profile', 'UserController@profile')->name('profile');
     Route::get('/exportExcelUsers', 'UserController@exportExcel')->name('exportExcelUsers');
     Route::get('/exportPdfUsers', 'UserController@exportPdf')->name('exportPdfUsers');
-
 });
+
+// Route::controller(PermenperinCategoryController::class)->group(function () {
+//     Route::get('/permenperin', 'index')->name('permenperin_page');
+//     Route::post('/permenperin/editPermenperin', 'editPermenperin')->name('editPermenperin');
+//     Route::post('/permenperin/addPermenperin', 'addPermenperin')->name('addPermenperin');
+//     Route::post('/permenperin/deletePermenperin', 'deletePermenperin')->name('deletePermenperin');
+// });
 // ------------------------------------------BACKEND----------------------------------------------------
 
 
