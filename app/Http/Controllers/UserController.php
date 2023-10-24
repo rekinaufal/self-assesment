@@ -93,17 +93,16 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::find($id);
-        // $roles = Role::pluck('name', 'name')->all();
+        if (!$user) {
+            return redirect()->route('users.index')
+            ->with('success', 'Users Id'. $id . 'Not Found');
+        }
         $userRole = $user->roles->pluck('name')->first();
-        $missingDataRoleUserForOption = Role::whereNotExists(function ($query) {
-            $query->select('id')
-                  ->from('model_has_roles')
-                  ->whereColumn('roles.id', 'model_has_roles.role_id');
-        })
-        ->get();
-        // dd($missingDataRoleUserForOption[0]->name);
+        // dd($userRole);
+        $roles = Role::pluck('name', 'name')->all();
+        // $userRole = $user->roles->pluck('name', 'name')->all();
         $pageTitle = self::$pageTitle;
-        return view('user.edit', compact('user', 'userRole', 'missingDataRoleUserForOption', 'pageTitle'));
+        return view('user.edit', compact('user', 'roles', 'userRole', 'pageTitle'));
     }
 
     public function update(Request $req, User $user)

@@ -35,6 +35,6 @@
    
     <p>Best regards,</p>
     <br>
-    <p>Screening Indonesia</p>
+    <p>e-learning</p>
 </body>
 </html>

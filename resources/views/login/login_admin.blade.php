@@ -178,11 +178,10 @@
         <div class="auth-wrapper d-flex no-block justify-content-center align-items-center position-relative"
             style="background:url({{ asset('assets/images/big/auth-bg.jpg') }}) no-repeat center center;">
             <div class="auth-box row">
-                <div class="col-lg-6 col-md-5 modal-bg-img" style="background-image: url(assets/images/big/3.jpg);">
+                <div class="col-lg-7 col-md-5 modal-bg-img" style="background-image: url(assets/images/big/3.jpg);">
                 </div>
-                <div class="col-lg-6 col-md-7 bg-white">
-                    {{-- ========login============ --}}
-                    <div class="p-3" id="login">
+                <div class="col-lg-5 col-md-7 bg-white">
+                    <div class="p-3">
                         {{-- <div class="text-center">
                             <img src="{{ asset('assets/images/big/icon.png') }}" alt="wrapkit">
                         </div>
@@ -200,33 +199,11 @@
                                     </div>
                                 </div>
                             @endif
-                            @if(session()->has('success'))
-                                <div class="alert alert-success alert-dismissible show fade">
-                                    <div class="alert-body">
-                                        <button class="close"
-                                            data-dismiss="alert">
-                                            <span>&times;</span>
-                                        </button>
-                                        <strong>{{ session('success') }}</strong>
-                                    </div>
-                                </div>
-                            @endif
-                            @if(session()->has('failed'))
-                                <div class="alert alert-danger alert-dismissible show fade">
-                                    <div class="alert-body">
-                                        <button class="close"
-                                            data-dismiss="alert">
-                                            <span>&times;</span>
-                                        </button>
-                                        <strong>{{ session('failed') }}</strong>
-                                    </div>
-                                </div>
-                            @endif
-                            <div class="row" style="margin-top:20%; margin-bottom:20%">
+                            <div class="row" style="margin-top:50%; margin-bottom:50%">
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <label class="text-dark" for="email">Email</label>
-                                        <input class="form-control" id="email" name="email" type="text"
+                                        <label class="text-dark" for="username">Email</label>
+                                        <input class="form-control" id="username" name="email" type="text"
                                             placeholder="Email Adrress">
                                     </div>
                                 </div>
@@ -255,7 +232,7 @@
                                             please fill in your password
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input text-secondary" type="checkbox" value="1" name="remember" style="transform: scale(1.5);">
+                                            <input class="form-check-input text-secondary" type="checkbox" value="" id="defaultCheck1" style="transform: scale(1.5);">
                                             <label class="form-check-label" for="defaultCheck1">
                                               Remember Me
                                             </label>
@@ -263,103 +240,12 @@
                                     </div>
                                 </div>
                                 {{-- for type login (admin or no) --}}
-                                <input type="hidden" name="type" value="reguler" >
-                                <div class="mt-3" style="width: 50%; margin: 0 auto;">
+                                <input type="hidden" name="type" value="admin" >
+                                <div  class="mt-3" style="width: 50%; margin: 0 auto;">
                                     <button type="submit" class="btn btn-block text-white" style="background-color: rgba(207, 31, 31, 0.827); border-radius:30px">LOGIN</button>
                                 </div>
                                 <div class="col-lg-12 text-center mt-5">
-                                    Don't have an account ? <a href="#" class="text-primary" onclick="signIn()">Sign Up</a>
-                                </div>
-                                <div class="col-lg-12 text-center">
                                     <a href="/auth-forgot-password" class="text-primary">Forget Your Password?</a>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-
-                    {{-- ========register============ --}}
-                    <div class="p-3" id="register">
-                        <form method="POST" action="{{ route('register') }}" class="needs-validation" novalidate="">
-                            @csrf
-                            @if($errors->any())
-                                <div class="alert alert-danger alert-dismissible show fade">
-                                    <div class="alert-body">
-                                        <button class="close" data-dismiss="alert">
-                                            <span>&times;</span>
-                                        </button>
-                                        <strong>Error!</strong> {{ $errors->first() }}
-                                    </div>
-                                </div>
-                            @endif
-                            <div class="row" style="margin-top:20%; margin-bottom:20%;">
-                                <div class="col-lg-12">
-                                    <div class="form-group">
-                                        <input class="form-control" id="name" name="name" type="text"
-                                            placeholder="Full Name">
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="form-group">
-                                        <input class="form-control" id="username" name="email" type="text"
-                                            placeholder="Email Adrress">
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="form-group">
-                                        <div class="input-group mb-2">
-                                            <input type="password" class="form-control form-password-regist1" name="password" id="passwordCompany" value="{{ old('password') }}" tabindex="2" placeholder="Password">
-                                                <div class="input-group-prepend" style="cursor: pointer;">
-                                                    <div class="input-group-text icon-eyes-regist1">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye PassIconRegist1" viewBox="0 0 16 16">
-                                                            <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
-                                                            <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
-                                                        </svg>
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-slash hiddenPassIconRegist1" viewBox="0 0 16 16">
-                                                            <path d="M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7.028 7.028 0 0 0-2.79.588l.77.771A5.944 5.944 0 0 1 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.134 13.134 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755-.165.165-.337.328-.517.486l.708.709z"/>
-                                                            <path d="M11.297 9.176a3.5 3.5 0 0 0-4.474-4.474l.823.823a2.5 2.5 0 0 1 2.829 2.829l.822.822zm-2.943 1.299.822.822a3.5 3.5 0 0 1-4.474-4.474l.823.823a2.5 2.5 0 0 0 2.829 2.829z"/>
-                                                            <path d="M3.35 5.47c-.18.16-.353.322-.518.487A13.134 13.134 0 0 0 1.172 8l.195.288c.335.48.83 1.12 1.465 1.755C4.121 11.332 5.881 12.5 8 12.5c.716 0 1.39-.133 2.02-.36l.77.772A7.029 7.029 0 0 1 8 13.5C3 13.5 0 8 0 8s.939-1.721 2.641-3.238l.708.709zm10.296 8.884-12-12 .708-.708 12 12-.708.708z"/>
-                                                        </svg>
-                                                    </div>
-                                                </div>
-                                        </div>
-                                        <div class="invalid-feedback">
-                                            please fill in your password
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="form-group">
-                                        <div class="input-group mb-2">
-                                            <input type="password" class="form-control form-password-regist2" id="confirm_passwordCompany" tabindex="2" placeholder="Confirm Password">
-                                            <div class="input-group-prepend" style="cursor: pointer;">
-                                                <div class="input-group-text icon-eyes-regist2">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye PassIconRegist2" viewBox="0 0 16 16">
-                                                        <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
-                                                        <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
-                                                    </svg>
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-slash hiddenPassIconRegist2" viewBox="0 0 16 16">
-                                                        <path d="M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7.028 7.028 0 0 0-2.79.588l.77.771A5.944 5.944 0 0 1 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.134 13.134 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755-.165.165-.337.328-.517.486l.708.709z"/>
-                                                        <path d="M11.297 9.176a3.5 3.5 0 0 0-4.474-4.474l.823.823a2.5 2.5 0 0 1 2.829 2.829l.822.822zm-2.943 1.299.822.822a3.5 3.5 0 0 1-4.474-4.474l.823.823a2.5 2.5 0 0 0 2.829 2.829z"/>
-                                                        <path d="M3.35 5.47c-.18.16-.353.322-.518.487A13.134 13.134 0 0 0 1.172 8l.195.288c.335.48.83 1.12 1.465 1.755C4.121 11.332 5.881 12.5 8 12.5c.716 0 1.39-.133 2.02-.36l.77.772A7.029 7.029 0 0 1 8 13.5C3 13.5 0 8 0 8s.939-1.721 2.641-3.238l.708.709zm10.296 8.884-12-12 .708-.708 12 12-.708.708z"/>
-                                                    </svg>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="invalid-feedback">
-                                            please fill in your password
-                                        </div>
-                                    </div>
-                                    <small><div id="showErrorPasswordCompany"></div></small>
-                                </div>
-                                <div class="col-lg-12 mt-3">
-                                    <div class="row">
-                                        <div class="col-6" style="width: 50%; margin: 0 auto;">
-                                            <button type="submit" class="btn btn-block text-white" style="background-color: rgba(207, 31, 31, 0.827); border-radius:30px">SIGNUP NOW</button>
-                                        </div>
-                                        <div class="col-6 d-flex flex-column align-items-center justify-content-center">
-                                            <a href="#" class="text-primary" href="#" onclick="haveAccount()">I have an account</a>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </form>
@@ -379,6 +265,7 @@
             $(".PassIcon").css("display", "none");
             
             $('.icon-eyes').click(function(){
+                console.log(showPass);
                 if(showPass == false){
                     showPass = true;
                     $('.form-password').attr('type','text');
@@ -391,74 +278,6 @@
                     $(".PassIcon").css("display", "none");
                 }
             });
-
-            // regist pass1
-            var showPassRegist1 = false;	
-            $(".hiddenPassIconRegist1").css("display", "block");
-            $(".PassIconRegist1").css("display", "none");
-            
-            $('.icon-eyes-regist1').click(function(){
-                if(showPassRegist1 == false){
-                    showPassRegist1 = true;
-                    $('.form-password-regist1').attr('type','text');
-                    $(".hiddenPassIconRegist1").css("display", "none");
-                    $(".PassIconRegist1").css("display", "block");
-                }else{
-                    showPassRegist1 = false;
-                    $('.form-password-regist1').attr('type','password');
-                    $(".hiddenPassIconRegist1").css("display", "block");
-                    $(".PassIconRegist1").css("display", "none");
-                }
-            });
-
-            // regist pass2
-            var showPassRegist2 = false;	
-            $(".hiddenPassIconRegist2").css("display", "block");
-            $(".PassIconRegist2").css("display", "none");
-            
-            $('.icon-eyes-regist2').click(function(){
-                if(showPassRegist2 == false){
-                    showPassRegist2 = true;
-                    $('.form-password-regist2').attr('type','text');
-                    $(".hiddenPassIconRegist2").css("display", "none");
-                    $(".PassIconRegist2").css("display", "block");
-                }else{
-                    showPassRegist2 = false;
-                    $('.form-password-regist2').attr('type','password');
-                    $(".hiddenPassIconRegist2").css("display", "block");
-                    $(".PassIconRegist2").css("display", "none");
-                }
-            });
-
-
-            document.getElementById('login').style.display = 'block';
-            document.getElementById('register').style.display = 'none';
-        });
-
-        // register
-        function signIn() {
-            document.getElementById('register').style.display = 'block';
-            document.getElementById('login').style.display = 'none';
-        }
-        // have account
-        function haveAccount() {
-            document.getElementById('login').style.display = 'block';
-            document.getElementById('register').style.display = 'none';
-        }
-
-        // match password
-        $('#confirm_passwordCompany').blur(function(){
-            var passwordCompany = $("#passwordCompany").val();
-            var confirm_passwordCompany = $("#confirm_passwordCompany").val();
-            
-            if(passwordCompany != confirm_passwordCompany) {
-                $("#showErrorPasswordCompany").html('**Password are not matching');
-                $("#showErrorPasswordCompany").css('color', 'red');
-                return false;
-            } else {
-                $("#showErrorPasswordCompany").html('');
-                return true;
-            }
         });
     </script>
     <!-- All Required js -->

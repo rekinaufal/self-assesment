@@ -22,14 +22,41 @@ class LoginController extends Controller
         return view('login.login', compact('pageTitle', 'pageDescription'));
     }
 
+    public function loginAdmin()
+    {
+        if (auth()->user()) {
+            return redirect()->route('dashboard');
+        }
+        
+        $pageTitle = 'Login Admin';
+        $pageDescription = 'Some description for the page';
+
+        return view('login.login_admin', compact('pageTitle', 'pageDescription'));
+    }
+
     public function login(Request $request)
     {
-        if (Auth::attempt($request->only('username', 'password'))) {
+        $user = User::where('email', $request->email)->first();
+        $userRole = $user->roles->pluck('name')->first();
+        $remember = request('remember');
+        // Validate login on the admin page and use a non-admin account.
+        if ($request->type == 'admin' && $userRole != 'Administrator') {
+            return back()->withErrors([
+                'email' => 'You are not an admin, please login with an admin account.',
+            ]);
+        }
+        if ($request->type == 'reguler' && $userRole == 'Administrator') {
+            return back()->withErrors([
+                'email' => 'You are not an reguler, please login with an reguler account.',
+            ]);
+        }
+
+        if (Auth::attempt($request->only('email', 'password'), $remember)) {
             $request->session()->regenerate();
             return redirect()->route('dashboard');
         } else {
             return back()->withErrors([
-                'username' => 'The provided credentials do not match our records.',
+                'email' => 'The provided credentials do not match our records.',
             ]);
         }
     }
@@ -69,18 +96,33 @@ class LoginController extends Controller
             ];
             $update = DB::table('users')->where('id', $getUser->id)->update($fieldUpdate);
             // send email 
-            $subject = "Forget Password Rapp";
+            $subject = "Forget Password E-learning";
             $details = [
                 'title' => 'Forget Password',
                 'body1' => 'Hai '.$getUser->name.', You have requested a password reset. ',
-                'body2' => 'Your password will be changed to Rapp@'.$getUser->username,
+                'body2' => 'Your password will be changed to learning@'.$getUser->username,
                 'body3' => 'Please log in and change your password in the profile form.',
             ];
                 
             \Mail::to($getUser->email)->send(new \App\Mail\Email($details, $subject));
-            return back()->with('success', 'Password reset successful, please check your email');
+            // return back()->with('success', 'Password reset successful, please check your email');
+            return redirect()->route('login')
+            ->with('success', 'Password reset successful, please check your email');
         } else {
             return back()->with('failed', 'Invalid Email');
         }
+    }
+
+    public function register(Request $req)
+    {
+        request()->validate(User::$rules);
+
+        $req = $req->all();
+        $req['password'] = Hash::make($req['password']);
+        $user = User::create($req);
+        $user->assignRole($req['roles']);
+
+        return redirect()->route('users.index')
+            ->with('success', 'User created successfully.');
     }
 }

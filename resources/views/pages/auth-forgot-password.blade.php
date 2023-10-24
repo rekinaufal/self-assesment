@@ -29,12 +29,12 @@
             </div>
         </div>
     @endif
-    <div class="card card-primary">
+    {{-- <div class="card card-primary">
         <div class="card-header">
             <h4>{{ $pageTitle }}</h4>
-        </div>
-
-        <div class="card-body">
+        </div> --}}
+    <div class="row" style="margin-top:50%; margin-bottom:50%"> 
+        <div class="col-lg-12">
             <p class="text-muted">We will send a link to reset your password</p>
             <form method="POST" action="/forgetPassword">
                 @csrf
