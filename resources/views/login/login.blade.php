@@ -255,7 +255,7 @@
                                             please fill in your password
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input text-secondary" type="checkbox" value="" id="defaultCheck1" style="transform: scale(1.5);">
+                                            <input class="form-check-input text-secondary" type="checkbox" value="1" name="remember" style="transform: scale(1.5);">
                                             <label class="form-check-label" for="defaultCheck1">
                                               Remember Me
                                             </label>

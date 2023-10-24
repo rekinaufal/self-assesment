@@ -38,7 +38,7 @@ class LoginController extends Controller
     {
         $user = User::where('email', $request->email)->first();
         $userRole = $user->roles->pluck('name')->first();
-// dd($request->type);
+        $remember = request('remember');
         // Validate login on the admin page and use a non-admin account.
         if ($request->type == 'admin' && $userRole != 'Administrator') {
             return back()->withErrors([
@@ -51,7 +51,7 @@ class LoginController extends Controller
             ]);
         }
 
-        if (Auth::attempt($request->only('email', 'password'))) {
+        if (Auth::attempt($request->only('email', 'password'), $remember)) {
             $request->session()->regenerate();
             return redirect()->route('dashboard');
         } else {
