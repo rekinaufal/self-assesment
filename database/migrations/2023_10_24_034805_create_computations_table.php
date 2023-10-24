@@ -20,9 +20,11 @@ return new class extends Migration
             $table->string("product_type");
             $table->string("specification");
             $table->string("brand");
+            $table->unsignedBigInteger("user_id")->nullable();
             $table->timestamps();
 
             $table->foreign("category_permenkerin_id")->references("id")->on("category_permenperins")->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreign("user_id")->references("id")->on("users")->nullOnDelete()->cascadeOnUpdate();
         });
     }
 

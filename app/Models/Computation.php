@@ -44,6 +44,16 @@ class Computation extends Model
     }
 
     /**
+     * Get the user that owns the Computation
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'user_id', 'id');
+    }
+
+    /**
      * Get all of the calculation_results for the Computation
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany

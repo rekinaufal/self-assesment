@@ -24,7 +24,8 @@ class ComputationSeeder extends Seeder
                 'specification' => 'Rasa Original',
                 'brand' => 'Brand A',
                 'created_at' => date("Y-m-d H:i:s"),
-                'updated_at' => NULL
+                'updated_at' => NULL,
+                'user_id' => NULL
             ],
             [
                 'id' => 2,
@@ -34,7 +35,8 @@ class ComputationSeeder extends Seeder
                 'specification' => 'Daging Ayam',
                 'brand' => 'Brand B',
                 'created_at' => date("Y-m-d H:i:s"),
-                'updated_at' => NULL
+                'updated_at' => NULL,
+                'user_id' => NULL
             ],
             [
                 'id' => 3,
@@ -44,7 +46,8 @@ class ComputationSeeder extends Seeder
                 'specification' => 'Ukuran Sedang',
                 'brand' => 'Brand C',
                 'created_at' => date("Y-m-d H:i:s"),
-                'updated_at' => NULL
+                'updated_at' => NULL,
+                'user_id' => NULL
             ],
             [
                 'id' => 4,
@@ -54,7 +57,8 @@ class ComputationSeeder extends Seeder
                 'specification' => 'Botol 500ml',
                 'brand' => 'Brand D',
                 'created_at' => date("Y-m-d H:i:s"),
-                'updated_at' => NULL
+                'updated_at' => NULL,
+                'user_id' => NULL
             ],
             [
                 'id' => 5,
@@ -64,7 +68,8 @@ class ComputationSeeder extends Seeder
                 'specification' => 'Motif Bunga',
                 'brand' => 'Brand X',
                 'created_at' => date("Y-m-d H:i:s"),
-                'updated_at' => NULL
+                'updated_at' => NULL,
+                'user_id' => NULL
             ],
             [
                 'id' => 6,
@@ -74,7 +79,8 @@ class ComputationSeeder extends Seeder
                 'specification' => 'Warna Merah',
                 'brand' => 'Brand Y',
                 'created_at' => date("Y-m-d H:i:s"),
-                'updated_at' => NULL
+                'updated_at' => NULL,
+                'user_id' => NULL
             ],
             [
                 'id' => 7,
@@ -84,7 +90,8 @@ class ComputationSeeder extends Seeder
                 'specification' => 'Model Formal',
                 'brand' => 'Brand Z',
                 'created_at' => date("Y-m-d H:i:s"),
-                'updated_at' => NULL
+                'updated_at' => NULL,
+                'user_id' => NULL
             ],
             [
                 'id' => 8,
@@ -94,7 +101,8 @@ class ComputationSeeder extends Seeder
                 'specification' => 'Warna Hitam',
                 'brand' => 'Brand W',
                 'created_at' => date("Y-m-d H:i:s"),
-                'updated_at' => NULL
+                'updated_at' => NULL,
+                'user_id' => NULL
             ],
             [
                 'id' => 9,
@@ -104,7 +112,8 @@ class ComputationSeeder extends Seeder
                 'specification' => 'Pupuk Organik',
                 'brand' => 'Brand P',
                 'created_at' => date("Y-m-d H:i:s"),
-                'updated_at' => NULL
+                'updated_at' => NULL,
+                'user_id' => NULL
             ],
             [
                 'id' => 10,
@@ -114,7 +123,8 @@ class ComputationSeeder extends Seeder
                 'specification' => 'Tablet',
                 'brand' => 'Brand Q',
                 'created_at' => date("Y-m-d H:i:s"),
-                'updated_at' => NULL
+                'updated_at' => NULL,
+                'user_id' => NULL
             ],
             [
                 'id' => 11,
@@ -124,7 +134,8 @@ class ComputationSeeder extends Seeder
                 'specification' => 'Bubuk',
                 'brand' => 'Brand R',
                 'created_at' => date("Y-m-d H:i:s"),
-                'updated_at' => NULL
+                'updated_at' => NULL,
+                'user_id' => NULL
             ],
             [
                 'id' => 12,
@@ -134,7 +145,8 @@ class ComputationSeeder extends Seeder
                 'specification' => 'Cairan',
                 'brand' => 'Brand S',
                 'created_at' => date("Y-m-d H:i:s"),
-                'updated_at' => NULL
+                'updated_at' => NULL,
+                'user_id' => NULL
             ],
             [
                 'id' => 13,
@@ -144,7 +156,8 @@ class ComputationSeeder extends Seeder
                 'specification' => 'Model A',
                 'brand' => 'Brand M',
                 'created_at' => date("Y-m-d H:i:s"),
-                'updated_at' => NULL
+                'updated_at' => NULL,
+                'user_id' => NULL
             ],
             [
                 'id' => 14,
@@ -154,7 +167,8 @@ class ComputationSeeder extends Seeder
                 'specification' => 'Truk Berat',
                 'brand' => 'Brand N',
                 'created_at' => date("Y-m-d H:i:s"),
-                'updated_at' => NULL
+                'updated_at' => NULL,
+                'user_id' => NULL
             ],
             [
                 'id' => 15,
@@ -164,7 +178,8 @@ class ComputationSeeder extends Seeder
                 'specification' => 'Hibrida',
                 'brand' => 'Brand O',
                 'created_at' => date("Y-m-d H:i:s"),
-                'updated_at' => NULL
+                'updated_at' => NULL,
+                'user_id' => NULL
             ],
             [
                 'id' => 16,
@@ -174,7 +189,8 @@ class ComputationSeeder extends Seeder
                 'specification' => 'Model Offroad',
                 'brand' => 'Brand P',
                 'created_at' => date("Y-m-d H:i:s"),
-                'updated_at' => NULL
+                'updated_at' => NULL,
+                'user_id' => NULL
             ],
         ];
 

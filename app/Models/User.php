@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -23,7 +24,7 @@ class User extends Authenticatable
 		'password' => 'required|min:8',
 		'user_category_id' => 'required',
     ];
-    
+
     protected $fillable = [
         'fullname',
         'email',
@@ -54,4 +55,14 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'expired_at' => 'date',
     ];
+
+    /**
+     * Get all of the computations for the User
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function computations(): HasMany
+    {
+        return $this->hasMany(Computation::class, 'user_id', 'id');
+    }
 }
