@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\CategoryPermenperin;
+use App\Models\UserProfile;
 use Illuminate\Http\Request;
 
-class CategoryPermenperinController extends Controller
+class UserProfileController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class CategoryPermenperinController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\CategoryPermenperin  $categoryPermenperin
+     * @param  \App\Models\UserProfile  $userProfile
      * @return \Illuminate\Http\Response
      */
-    public function show(CategoryPermenperin $categoryPermenperin)
+    public function show(UserProfile $userProfile)
     {
         //
     }
@@ -52,10 +52,10 @@ class CategoryPermenperinController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\CategoryPermenperin  $categoryPermenperin
+     * @param  \App\Models\UserProfile  $userProfile
      * @return \Illuminate\Http\Response
      */
-    public function edit(CategoryPermenperin $categoryPermenperin)
+    public function edit(UserProfile $userProfile)
     {
         //
     }
@@ -64,10 +64,10 @@ class CategoryPermenperinController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\CategoryPermenperin  $categoryPermenperin
+     * @param  \App\Models\UserProfile  $userProfile
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, CategoryPermenperin $categoryPermenperin)
+    public function update(Request $request, UserProfile $userProfile)
     {
         //
     }
@@ -75,10 +75,10 @@ class CategoryPermenperinController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\CategoryPermenperin  $categoryPermenperin
+     * @param  \App\Models\UserProfile  $userProfile
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CategoryPermenperin $categoryPermenperin)
+    public function destroy(UserProfile $userProfile)
     {
         //
     }

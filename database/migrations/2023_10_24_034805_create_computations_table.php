@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('computations', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger("category_permenkerin_id");
+            $table->unsignedBigInteger("permenperin_category_id");
             $table->string("production_result");
             $table->string("product_type");
             $table->string("specification");
@@ -23,7 +23,7 @@ return new class extends Migration
             $table->unsignedBigInteger("user_id")->nullable();
             $table->timestamps();
 
-            $table->foreign("category_permenkerin_id")->references("id")->on("category_permenperins")->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreign("permenperin_category_id")->references("id")->on("permenperin_categories")->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreign("user_id")->references("id")->on("users")->nullOnDelete()->cascadeOnUpdate();
         });
     }

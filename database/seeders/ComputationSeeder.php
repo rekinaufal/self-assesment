@@ -18,7 +18,7 @@ class ComputationSeeder extends Seeder
         $data = [
             [
                 'id' => 1,
-                'category_permenkerin_id' => 1,
+                'permenperin_category_id' => 1,
                 'production_result' => 'Makanan Ringan',
                 'product_type' => 'Keripik Kentang',
                 'specification' => 'Rasa Original',
@@ -29,7 +29,7 @@ class ComputationSeeder extends Seeder
             ],
             [
                 'id' => 2,
-                'category_permenkerin_id' => 1,
+                'permenperin_category_id' => 1,
                 'production_result' => 'Produk Olahan Daging',
                 'product_type' => 'Sosis',
                 'specification' => 'Daging Ayam',
@@ -40,7 +40,7 @@ class ComputationSeeder extends Seeder
             ],
             [
                 'id' => 3,
-                'category_permenkerin_id' => 1,
+                'permenperin_category_id' => 1,
                 'production_result' => 'Produk Roti',
                 'product_type' => 'Roti Tawar',
                 'specification' => 'Ukuran Sedang',
@@ -51,7 +51,7 @@ class ComputationSeeder extends Seeder
             ],
             [
                 'id' => 4,
-                'category_permenkerin_id' => 1,
+                'permenperin_category_id' => 1,
                 'production_result' => 'Minuman Kemasan',
                 'product_type' => 'Air Mineral',
                 'specification' => 'Botol 500ml',
@@ -62,7 +62,7 @@ class ComputationSeeder extends Seeder
             ],
             [
                 'id' => 5,
-                'category_permenkerin_id' => 2,
+                'permenperin_category_id' => 2,
                 'production_result' => 'Kain Katun',
                 'product_type' => 'Kain Tenun',
                 'specification' => 'Motif Bunga',
@@ -73,7 +73,7 @@ class ComputationSeeder extends Seeder
             ],
             [
                 'id' => 6,
-                'category_permenkerin_id' => 2,
+                'permenperin_category_id' => 2,
                 'production_result' => 'Pakaian Wanita',
                 'product_type' => 'Dress',
                 'specification' => 'Warna Merah',
@@ -84,7 +84,7 @@ class ComputationSeeder extends Seeder
             ],
             [
                 'id' => 7,
-                'category_permenkerin_id' => 2,
+                'permenperin_category_id' => 2,
                 'production_result' => 'Pakaian Pria',
                 'product_type' => 'Kemeja',
                 'specification' => 'Model Formal',
@@ -95,7 +95,7 @@ class ComputationSeeder extends Seeder
             ],
             [
                 'id' => 8,
-                'category_permenkerin_id' => 2,
+                'permenperin_category_id' => 2,
                 'production_result' => 'Kain Wol',
                 'product_type' => 'Kain Wol Gabardine',
                 'specification' => 'Warna Hitam',
@@ -106,7 +106,7 @@ class ComputationSeeder extends Seeder
             ],
             [
                 'id' => 9,
-                'category_permenkerin_id' => 3,
+                'permenperin_category_id' => 3,
                 'production_result' => 'Bahan Kimia',
                 'product_type' => 'Pupuk',
                 'specification' => 'Pupuk Organik',
@@ -117,7 +117,7 @@ class ComputationSeeder extends Seeder
             ],
             [
                 'id' => 10,
-                'category_permenkerin_id' => 3,
+                'permenperin_category_id' => 3,
                 'production_result' => 'Obat-Obatan',
                 'product_type' => 'Antibiotik',
                 'specification' => 'Tablet',
@@ -128,7 +128,7 @@ class ComputationSeeder extends Seeder
             ],
             [
                 'id' => 11,
-                'category_permenkerin_id' => 3,
+                'permenperin_category_id' => 3,
                 'production_result' => 'Produk Petrokimia',
                 'product_type' => 'Petrokimia A',
                 'specification' => 'Bubuk',
@@ -139,7 +139,7 @@ class ComputationSeeder extends Seeder
             ],
             [
                 'id' => 12,
-                'category_permenkerin_id' => 3,
+                'permenperin_category_id' => 3,
                 'production_result' => 'Produk Kimia Industri',
                 'product_type' => 'Zat Kimia X',
                 'specification' => 'Cairan',
@@ -150,7 +150,7 @@ class ComputationSeeder extends Seeder
             ],
             [
                 'id' => 13,
-                'category_permenkerin_id' => 4,
+                'permenperin_category_id' => 4,
                 'production_result' => 'Mobil Penumpang',
                 'product_type' => 'Sedan',
                 'specification' => 'Model A',
@@ -161,7 +161,7 @@ class ComputationSeeder extends Seeder
             ],
             [
                 'id' => 14,
-                'category_permenkerin_id' => 4,
+                'permenperin_category_id' => 4,
                 'production_result' => 'Kendaraan Komersial',
                 'product_type' => 'Truk',
                 'specification' => 'Truk Berat',
@@ -172,7 +172,7 @@ class ComputationSeeder extends Seeder
             ],
             [
                 'id' => 15,
-                'category_permenkerin_id' => 4,
+                'permenperin_category_id' => 4,
                 'production_result' => 'Kendaraan Listrik',
                 'product_type' => 'Mobil Listrik',
                 'specification' => 'Hibrida',
@@ -183,7 +183,7 @@ class ComputationSeeder extends Seeder
             ],
             [
                 'id' => 16,
-                'category_permenkerin_id' => 4,
+                'permenperin_category_id' => 4,
                 'production_result' => 'Kendaraan Offroad',
                 'product_type' => 'Jeep',
                 'specification' => 'Model Offroad',
