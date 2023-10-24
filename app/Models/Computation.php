@@ -12,7 +12,7 @@ class Computation extends Model
     use HasFactory;
 
     static $rules = [
-		"category_permenkerin_id" => "required",
+		"permenperin_category_id" => "required",
         "production_result" => "required",
         "product_type" => "required",
         "specification" => "required",
@@ -22,7 +22,7 @@ class Computation extends Model
     protected $table = "computations";
 
     protected $fillable = [
-        "category_permenkerin_id",
+        "permenperin_category_id",
         "production_result",
         "product_type",
         "specification",
@@ -38,9 +38,9 @@ class Computation extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function category_permenperin(): BelongsTo
+    public function permenperin_category(): BelongsTo
     {
-        return $this->belongsTo(CategoryPermenperin::class, 'category_permenperin_id', 'id');
+        return $this->belongsTo(PermenperinCategory::class, 'permenperin_category_id', 'id');
     }
 
     /**

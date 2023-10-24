@@ -6,7 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class CategoryPermenperinSeeder extends Seeder
+class PermenperinCategorySeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -42,6 +42,6 @@ class CategoryPermenperinSeeder extends Seeder
             ],
         ];
 
-        DB::table("category_permenperins")->insert($data);
+        DB::table("permenperin_categories")->insert($data);
     }
 }
