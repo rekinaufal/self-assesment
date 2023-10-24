@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserCategoryController;
 use Illuminate\Support\Facades\Route;
 
 // Route::redirect('/', '/dashboard-general-dashboard');
@@ -46,3 +47,6 @@ Route::group(['middleware' => ['auth']], function () {
 
 });
 // ------------------------------------------BACKEND----------------------------------------------------
+
+
+Route::get("test", [UserCategoryController::class, "index"]);
