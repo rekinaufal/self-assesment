@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -19,10 +20,10 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     static $rules = [
-		'fullname' => 'required',
-		'email' => 'required|email|unique:users',
-		'password' => 'required|min:8',
-		'user_category_id' => 'required',
+        'fullname' => 'required',
+        'email' => 'required|email|unique:users',
+        'password' => 'required|min:8',
+        'user_category_id' => 'required',
     ];
 
     protected $fillable = [
@@ -64,5 +65,10 @@ class User extends Authenticatable
     public function computations(): HasMany
     {
         return $this->hasMany(Computation::class, 'user_id', 'id');
+    }
+
+    public function user_category(): BelongsTo
+    {
+        return $this->belongsTo(UserCategory::class, "user_category_id", "id");
     }
 }
