@@ -37,18 +37,20 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         $user = User::where('email', $request->email)->first();
-        $userRole = $user->roles->pluck('name')->first();
         $remember = request('remember');
-        // Validate login on the admin page and use a non-admin account.
-        if ($request->type == 'admin' && $userRole != 'Administrator') {
-            return back()->withErrors([
-                'email' => 'You are not an admin, please login with an admin account.',
-            ]);
-        }
-        if ($request->type == 'reguler' && $userRole == 'Administrator') {
-            return back()->withErrors([
-                'email' => 'You are not an reguler, please login with an reguler account.',
-            ]);
+        if (!empty($user)) {
+            $userRole = $user->roles->pluck('name')->first();
+            // Validate login on the admin page and use a non-admin account.
+            if ($request->type == 'admin' && $userRole != 'Administrator') {
+                return back()->withErrors([
+                    'email' => 'You are not an admin, please login with an admin account.',
+                ]);
+            }
+            if ($request->type == 'reguler' && $userRole == 'Administrator') {
+                return back()->withErrors([
+                    'email' => 'You are not an reguler, please login with an reguler account.',
+                ]);
+            }
         }
 
         if (Auth::attempt($request->only('email', 'password'), $remember)) {

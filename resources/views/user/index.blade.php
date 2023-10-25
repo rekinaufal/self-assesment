@@ -4,7 +4,7 @@
 
 @push('style')
     <link href="{{ asset('assets/extra-libs/datatables.net-bs4/css/dataTables.bootstrap4.css') }}" rel="stylesheet">
-    <link href="{{ asset('dist/css/style.min.css') }}" rel="stylesheet">
+    {{-- <link href="{{ asset('dist/css/style.min.css') }}" rel="stylesheet"> --}}
 @endpush
 
 @section('main')
@@ -175,7 +175,7 @@
         </section>
     </div> --}}
     {{-- ========================== --}}
-    <div class="container-fluid">
+    {{-- <div class="container-fluid">
         <div class="row">
             <div class="col-12">
                 <div class="card">
@@ -233,7 +233,6 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Name</th>
-                                        <th>Username</th>
                                         <th>Email</th>
                                         <th>Created At</th>
                                         <th class="text-center" width="1%">#</th>
@@ -246,10 +245,7 @@
                                                 {{ $loop->iteration }}.
                                             </td>
                                             <td>
-                                                {{ $item->name }}
-                                            </td>
-                                            <td>
-                                                {{ $item->username }}
+                                                {{ $item->fullname }}
                                             </td>
                                             <td>
                                                 {{ $item->email }}
@@ -287,18 +283,178 @@
                 </div>
             </div>
         </div>
+    </div> --}}
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="float-left">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Cari pengguna" aria-label="Search" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <div class="float-right">
+                    <button class="btn btn-primary"><i class="fas fa-plus"></i></button>
+                </div>
+                <div class="float-right pr-3">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Aksi&nbsp;&nbsp;&nbsp;<i class="fas fa-angle-down"></i>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item"><i class="fas fa-download"></i>&nbsp;&nbsp;&nbsp;Download</a>
+                            <form method="POST" action="/destroyByCheckbox">
+                                @csrf
+                                <input type="hidden" name="idsDownload" id="idDownload">
+                                <button type="submit" class="dropdown-item" id="destroyByCheckbox"><i class="fas fa-trash-alt"></i>&nbsp;&nbsp;&nbsp;Hapus Data</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            @foreach ($users as $item)
+                <div class="col-12 col-md-4 col-lg-4">
+                    <div class="card">
+                        <div class="card-header bg-transparent">
+                            <div class="float-left">
+
+                                <input class="text-secondary mt-3 mb-3 selectedUser" type="checkbox" name="ceklis" data-id={{ $item->id }} name="ceklis[]" style="transform: scale(1.5);">
+                            </div>
+                            <div class="float-right">
+                                <div class="dropdown">
+                                    <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                                            <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                                        </svg>
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" >
+                                            <i class="fas fa-download"></i>&nbsp;&nbsp;&nbsp;Download
+                                        </a>
+                                        <form id="myForm-{{ $item->id }}" action="{{ route('users.destroy',$item->id) }}" method="POST" class="d-flex">
+                                            @csrf
+                                            @method('DELETE')
+                                            @can('user-delete')
+                                                <button type="submit" class="dropdown-item" onclick="return confirm('Are you sure?')"  data-confirm-yes="confirmDelete({{ $item->id }})">
+                                                    <i class="fas fa-trash-alt"></i>&nbsp;&nbsp;&nbsp;Hapus Data
+                                                </button>
+                                            @endcan
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-6 col-md-7">
+                                    <h5 class="text-center font-weight-bold">PT. Jason sanginga</h5>
+                                    <table>
+                                        <tr>
+                                            <td>@</td>
+                                            <td style="width: 10%" class="text-center">:</td>
+                                            <td>name</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class=" fas fa-hospital"></i></td>
+                                            <td style="width: 10%" class="text-center">:</td>
+                                            <td>Jl, Presisi No.86 Lt.24</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="fas fa-phone"></i></td>
+                                            <td style="width: 10%" class="text-center">:</td>
+                                            <td>+62 123 421</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="col-sm-6 col-md-5">
+                                    <div class="item">
+                                        <div class="item__photo d-flex justify-content-center align-items-center">
+                                            <img src="http://127.0.0.1:8000/assets/images/users/profile-pic.jpg" alt="user" class="rounded-circle" width="100">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="float-left">
+                                <img src="{{ asset('assets/images/users/crown.png') }}" alt="premium" width="20" style="vertical-align: top;">
+                                <img src="{{ asset('assets/images/users/quality.png') }}" alt="reguler" width="20" style="vertical-align: top;">
+                                Premium
+                            </div>
+                            <div class="float-right">
+                                @can('user-show')
+                                    <a class="btn btn-sm btn-primary mr-1" href="{{ route('users.show',$item->id) }}" title="Show">
+                                        Lihat Profil
+                                    </a>
+                                @endcan
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+        <div class="float-left">
+            <input class="text-secondary mt-3 mb-3" type="checkbox" id="selectAllCheckbox" style="transform: scale(1.5);">&nbsp;&nbsp;&nbsp;Jumlah : {{ $users->count() }} dari {{ $users->total() }} Pengguna
+        </div>
+        <div class="float-right">
+            {{ $users->links() }}
+        </div>
     </div>
 @endsection
 @push('scripts')
-    <script src="{{ asset('assets/libs/jquery/dist/jquery.min.js') }}"></script>
+    <script>
+        $("#destroyByCheckbox").click(function(){
+            var checked = [];
+            $('.selectedUser:checkbox:checked').each(function () {
+                checked.push($(this).data("id"));
+            });
+            if (checked.length > 0) {
+                $("#idDownload").val(checked);
+            } else {
+                alert('No users selected!');
+            }
+            console.log(checked);
+        });
+    </script>
+
+    <script>
+        var selectAllCheckbox = document.getElementById('selectAllCheckbox');
+        var ceklisCheckboxes = document.querySelectorAll('input[name="ceklis"]');
+
+        selectAllCheckbox.addEventListener('change', function() {
+            if (selectAllCheckbox.checked) {
+                ceklisCheckboxes.forEach(function(checkbox) {
+                    checkbox.checked = true;
+                });
+            } else {
+                ceklisCheckboxes.forEach(function(checkbox) {
+                    checkbox.checked = false;
+                });
+            }
+        });
+
+        ceklisCheckboxes.forEach(function(checkbox) {
+            checkbox.addEventListener('change', function() {
+                if (!this.checked) {
+                    selectAllCheckbox.checked = false;
+                }
+            });
+        });
+    </script>
+    {{-- <script src="{{ asset('assets/libs/jquery/dist/jquery.min.js') }}"></script>
     <script src="{{ asset('assets/libs/popper.js/dist/umd/popper.min.js') }}"></script>
     <script src="{{ asset('assets/libs/bootstrap/dist/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('dist/js/app-style-switcher.js') }}"></script>
     <script src="{{ asset('dist/js/feather.min.js') }}"></script>
-    <script src="{{ asset('assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js') }}"></script> --}}
     <script src="{{ asset('assets/extra-libs/sparkline/sparkline.js') }}"></script>
-    <script src="{{ asset('dist/js/sidebarmenu.js') }}"></script>
-    <script src="{{ asset('dist/js/custom.min.js') }}"></script>
+    {{-- <script src="{{ asset('dist/js/sidebarmenu.js') }}"></script>
+    <script src="{{ asset('dist/js/custom.min.js') }}"></script> --}}
     <script src="{{ asset('assets/extra-libs/datatables.net/js/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('dist/js/pages/datatable/datatable-basic.init.js') }}"></script>
 @endpush

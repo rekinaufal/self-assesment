@@ -35,7 +35,7 @@ class UserController extends Controller
      */
     public function index(Request $req)
     {
-        $users = User::all();
+        $users = User::paginate(3);
 
         $pageTitle = self::$pageTitle;
 
@@ -129,6 +129,21 @@ class UserController extends Controller
     {
         if ($id) {
             User::find($id)->delete();
+            return redirect()->route('users.index')
+                ->with('success', 'User deleted successfully');
+        } else {
+            return redirect()->route('users.index')
+                ->with('failed', 'User deleted failed because id is empty or null');
+        }
+    }
+
+    public function destroyByCheckbox(Request $request) 
+    {
+        $dataArray = explode(",", $request->idsDownload);
+        if ($dataArray) {
+            foreach ($dataArray as $value) {
+                User::find($value)->delete();
+            }
             return redirect()->route('users.index')
                 ->with('success', 'User deleted successfully');
         } else {

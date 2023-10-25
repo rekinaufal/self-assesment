@@ -44,10 +44,13 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('roles', 'RoleController');
     //user
     Route::resource('users', 'UserController');
-    Route::resource('permenperincategory', 'PermenperinCategoryController');
     Route::get('/profile', 'UserController@profile')->name('profile');
     Route::get('/exportExcelUsers', 'UserController@exportExcel')->name('exportExcelUsers');
     Route::get('/exportPdfUsers', 'UserController@exportPdf')->name('exportPdfUsers');
+    Route::post('/destroyByCheckbox', 'UserController@destroyByCheckbox')->name('destroyByCheckbox');
+
+    // kategori permenperin
+    Route::resource('permenperincategory', 'PermenperinCategoryController');
 });
 
 // Route::controller(PermenperinCategoryController::class)->group(function () {
