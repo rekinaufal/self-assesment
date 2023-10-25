@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\UserCategoryController;
+use App\Models\Computation;
+use App\Models\PermenperinCategory;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 // Route::redirect('/', '/dashboard-general-dashboard');
@@ -56,4 +59,8 @@ Route::group(['middleware' => ['auth']], function () {
 // ------------------------------------------BACKEND----------------------------------------------------
 
 
-Route::get("test", [UserCategoryController::class, "index"]);
+// Route::get("testing", function() {
+//     $computation = Computation::all();
+
+//     dd($computation[0]->permenperin_category);
+// });
