@@ -10,7 +10,7 @@ class UserCategory extends Model
     use HasFactory;
 
     static $rules = [
-		"name" => "required|unique:user_categories, name",
+        "name" => "required|unique:user_categories, name",
         "benefits" => "required",
         "price" => "required|numeric"
     ];

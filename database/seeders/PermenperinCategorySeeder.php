@@ -18,25 +18,25 @@ class PermenperinCategorySeeder extends Seeder
         $data = [
             [
                 "id" => 1,
-                "name" => "Permenperin 1: Industri Makanan dan Minuman",
+                "name" => "Permenperin 16 Tahun 2011 - Barang",
                 "created_at" => date("Y-m-d H:i:s"),
                 "updated_at" => NULL,
             ],
             [
                 "id" => 2,
-                "name" => "Permenperin 2: Industri Tekstil dan Pakaian",
+                "name" => "Permenperin 16 Tahun 2011 - Barang & Jasa",
                 "created_at" => date("Y-m-d H:i:s"),
                 "updated_at" => NULL,
             ],
             [
                 "id" => 3,
-                "name" => "Permenperin 3: Industri Kimia dan Farmasi",
+                "name" => "Permenperin 22 Tahun 2020 - Elektronik & Telematika",
                 "created_at" => date("Y-m-d H:i:s"),
                 "updated_at" => NULL,
             ],
             [
                 "id" => 4,
-                "name" => "Permenperin 4: Industri Otomotif",
+                "name" => "Permenperin 24 Tahun 2017 - Telepon seluler , Komputer Genggam & Komputer Tablet",
                 "created_at" => date("Y-m-d H:i:s"),
                 "updated_at" => NULL,
             ],

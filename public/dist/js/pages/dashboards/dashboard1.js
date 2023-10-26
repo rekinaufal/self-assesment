@@ -80,6 +80,7 @@ $(function () {
         }]
     ];
     new Chartist.Bar('.net-income', data, options, responsiveOptions);
+    new Chartist.Bar('.net-income2', data, options, responsiveOptions);
 
     // ============================================================== 
     // Visit By Location

@@ -21,10 +21,10 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     static $rules = [
-		'fullname' => 'required',
-		'email' => 'required|email|unique:users',
-		'password' => 'required|min:8',
-		'user_category_id' => 'required',
+        'fullname' => 'required',
+        'email' => 'required|email|unique:users',
+        'password' => 'required|min:8',
+        'user_category_id' => 'required',
     ];
 
     protected $fillable = [
@@ -76,5 +76,10 @@ class User extends Authenticatable
     public function user_profile(): HasOne
     {
         return $this->hasOne(UserProfile::class, 'user_id', 'id');
+    }
+
+    public function user_category(): BelongsTo
+    {
+        return $this->belongsTo(UserCategory::class, "user_category_id", "id");
     }
 }

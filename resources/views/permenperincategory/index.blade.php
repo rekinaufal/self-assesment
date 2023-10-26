@@ -88,7 +88,6 @@
             </div>
         </div>
     </div>
-    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#info-header-modal">Info Header</button>
     <div id="info-header-modal" class="modal fade show" tabindex="-1" role="dialog"
         aria-labelledby="info-header-modalLabel" style="display: none; padding-right: 17px;" aria-modal="true">
         <div class="modal-dialog">

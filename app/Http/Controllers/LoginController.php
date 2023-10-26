@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\PermenperinCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use Spatie\Permission\Models\Role;
 use DB;
+
 class LoginController extends Controller
 {
     public function index()
@@ -15,7 +17,7 @@ class LoginController extends Controller
         if (auth()->user()) {
             return redirect()->route('dashboard');
         }
-        
+
         $pageTitle = 'Login';
         $pageDescription = 'Some description for the page';
 
@@ -27,7 +29,7 @@ class LoginController extends Controller
         if (auth()->user()) {
             return redirect()->route('dashboard');
         }
-        
+
         $pageTitle = 'Login Admin';
         $pageDescription = 'Some description for the page';
 
@@ -78,38 +80,46 @@ class LoginController extends Controller
     {
         $userCount = User::count();
         $roleCount = Role::count();
-
+        $allUserPremiumCount = User::with('user_category')->where("user_category_id", "1")->count();
+        $user = auth()->user();
+        $userRole = $user->roles->pluck('name')->first();
         $pageTitle = 'Dashboard';
         $type_menu = 'dashboard';
-        return view('pages.dashboard', compact('userCount', 'roleCount', 'pageTitle', 'type_menu'));
+        $permenperinCount = PermenperinCategory::all()->count();
+        if ($userRole == "Administrator") {
+            return view('pages.dashboard_admin', compact('permenperinCount', 'allUserPremiumCount', 'user', 'userRole', 'userCount', 'roleCount', 'pageTitle', 'type_menu'));
+        }
+        return view('pages.dashboard', compact('permenperinCount', 'allUserPremiumCount', 'user', 'userRole', 'userCount', 'roleCount', 'pageTitle', 'type_menu'));
     }
-    public function viewForgetPassword(){
+    public function viewForgetPassword()
+    {
         $pageTitle = 'Forget Password';
         return view('pages.auth-forgot-password', compact('pageTitle'));
     }
 
-    public function forgetPassword(Request $request){
+    public function forgetPassword(Request $request)
+    {
         $getUser = DB::table('users')->where('email', $request->email)->first();
         // dd($getUser);
         if (!empty($getUser)) {
             $fieldUpdate = [
-                'password'      => Hash::make('Rapp@'.$getUser->username),
-                'updated_by'=> $getUser->id,
+                'password'      => Hash::make('Rapp@' . $getUser->username),
+                'updated_by' => $getUser->id,
             ];
             $update = DB::table('users')->where('id', $getUser->id)->update($fieldUpdate);
             // send email 
             $subject = "Forget Password E-learning";
             $details = [
                 'title' => 'Forget Password',
-                'body1' => 'Hai '.$getUser->name.', You have requested a password reset. ',
-                'body2' => 'Your password will be changed to learning@'.$getUser->username,
+                'body1' => 'Hai ' . $getUser->name . ', You have requested a password reset. ',
+                'body2' => 'Your password will be changed to learning@' . $getUser->username,
                 'body3' => 'Please log in and change your password in the profile form.',
             ];
-                
+
             \Mail::to($getUser->email)->send(new \App\Mail\Email($details, $subject));
             // return back()->with('success', 'Password reset successful, please check your email');
             return redirect()->route('login')
-            ->with('success', 'Password reset successful, please check your email');
+                ->with('success', 'Password reset successful, please check your email');
         } else {
             return back()->with('failed', 'Invalid Email');
         }

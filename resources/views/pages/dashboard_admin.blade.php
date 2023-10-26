@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'General Dashboard')
+@section('title', 'Admin Dashboard')
 
 @push('style')
     <link href="{{ asset('assets/libs/chartist/dist/chartist.min.css') }}" rel="stylesheet">
@@ -13,7 +13,7 @@
                 {{-- <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">Good Morning Jason!</h3> --}}
                 <div class="align-items-center">
                     <h4>Selamat Datang {{ $user->fullname }}</h4>
-                    <p>Beranda</p>
+                    <p>Dashboard admin</p>
                 </div>
             </div>
             <div class="col-5 align-self-center">
@@ -32,47 +32,132 @@
         <!-- *************************************************************** -->
         <!-- Start First Cards -->
         <!-- *************************************************************** -->
-        <div class="news-content">
-            {{-- <div class="card border-right" style="margin-right: 20px">
-                <div class="card-body content">
-                    <p>Judul Berita</p>
-                    <img class="card-img-top" height="150" width="100" src="{{ asset('assets/images/img1.jpg') }}"
-                        alt="Card image cap">
-                    <p class="card-text">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, quas.
-                    </p>
-                    <a class="button-goto w-100 d-flex justify-content-end"href="#">Link</a>
+        <div class="card-group">
+            <div class="card border-right">
+                <div class="card-body">
+                    <div class="d-flex d-lg-flex d-md-block align-items-center">
+                        <div>
+                            <div class="d-inline-flex align-items-center">
+                                <h2 class="text-dark mb-1 font-weight-medium">{{ $userCount }}</h2>
+                                {{-- <span
+                                    class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none">+18.33%</span> --}}
+                            </div>
+                            <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Data Pengguna</h6>
+                        </div>
+                        <div class="ml-auto mt-md-3 mt-lg-0">
+                            <span class="opacity-7 text-muted"><i data-feather="users"></i></span>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="card border-right" style="margin-right: 20px">
-                <div class="card-body content">
-                    <p>Judul Berita</p>
-                    <img class="card-img-top" height="150" width="100" src="{{ asset('assets/images/img2.jpg') }}"
-                        alt="Card image cap">
-                    <p class="card-text">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, quas.
-                    </p>
-                    <a class="button-goto w-100 d-flex justify-content-end"href="#">Link</a>
+            <div class="card border-right">
+                <div class="card-body">
+                    <div class="d-flex d-lg-flex d-md-block align-items-center">
+                        <div>
+                            <h2 class="text-dark mb-1 w-100 text-truncate font-weight-medium">{{ $allUserPremiumCount }}
+                            </h2>
+                            <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Pengguna Premium
+                            </h6>
+                        </div>
+                        <div class="ml-auto mt-md-3 mt-lg-0">
+                            <span class="opacity-7 text-muted"><i data-feather="users"></i></span>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="card border-right" style="margin-right: 20px">
-                <div class="card-body content">
-                    <p>Judul Berita</p>
-                    <img class="card-img-top" height="150" width="100" src="{{ asset('assets/images/img3.jpg') }}"
-                        alt="Card image cap">
-                    <p class="card-text">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, quas.
-                    </p>
-                    <a class="button-goto w-100 d-flex justify-content-end"href="#">Link</a>
+            <div class="card border-right">
+                <div class="card-body">
+                    <div class="d-flex d-lg-flex d-md-block align-items-center">
+                        <div>
+                            <div class="d-inline-flex align-items-center">
+                                <h2 class="text-dark mb-1 font-weight-medium">{{ $permenperinCount }}</h2>
+                                {{-- <span
+                                    class="badge bg-danger font-12 text-white font-weight-medium badge-pill ml-2 d-md-none d-lg-block">-18.33%</span> --}}
+                            </div>
+                            <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Kategori Regulasi</h6>
+                        </div>
+                        <div class="ml-auto mt-md-3 mt-lg-0">
+                            <span class="opacity-7 text-muted"><i data-feather="file-plus"></i></span>
+                        </div>
+                    </div>
                 </div>
-            </div> --}}
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex d-lg-flex d-md-block align-items-center">
+                        <div>
+                            <h2 class="text-dark mb-1 font-weight-medium">124</h2>
+                            <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">File Perhitungan</h6>
+                        </div>
+                        <div class="ml-auto mt-md-3 mt-lg-0">
+                            <span class="opacity-7 text-muted"><i data-feather="trello"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="text-center">
-            <button id="loadMore">Load More</button>
-        </div>
-        <hr>
+        <!-- *************************************************************** -->
+        <!-- End First Cards -->
+        <!-- *************************************************************** -->
+        <!-- *************************************************************** -->
+        <!-- Start Sales Charts Section -->
+        <!-- *************************************************************** -->
+        <div class="row">
+            <div class="col-lg-4 col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Pemilihan Permenperin</h4>
+                        <div id="campaign-v2" class="mt-2" style="height:283px; width:100%;"></div>
+                        <ul class="list-style-none mb-0">
+                            <li>
+                                <i class="fas fa-circle text-primary font-10 mr-2"></i>
+                                <span class="text-muted">Permenperin 1</span>
+                                <span class="text-dark float-right font-weight-medium">$2346</span>
+                            </li>
+                            <li class="mt-3">
+                                <i class="fas fa-circle text-danger font-10 mr-2"></i>
+                                <span class="text-muted">Permenperin 2</span>
+                                <span class="text-dark float-right font-weight-medium">$2108</span>
+                            </li>
+                            <li class="mt-3">
+                                <i class="fas fa-circle text-cyan font-10 mr-2"></i>
+                                <span class="text-muted">Permenperin 3</span>
+                                <span class="text-dark float-right font-weight-medium">$1204</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Grafik Pengguna</h4>
+                        <div class="net-income mt-4 position-relative" style="height:294px;"></div>
+                        <ul class="list-inline text-center mt-5 mb-2">
+                            <li class="list-inline-item text-muted font-italic">Sales for this month</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Pengguna Aktif</h4>
+                        <div class="net-income2 mt-4 position-relative" style="height:294px;"></div>
+                        <ul class="list-inline text-center mt-5 mb-2">
+                            <li class="list-inline-item text-muted font-italic">Sales for this month</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
-        {{-- File perhitungan pengguna --}}
+        </div>
+        <!-- *************************************************************** -->
+        <!-- End Sales Charts Section -->
+        <!-- *************************************************************** -->
+        <!-- *************************************************************** -->
+        <!-- Start Location and Earnings Charts Section -->
+        <!-- *************************************************************** -->
         <div class="row">
             <div class="col-md-12 col-lg-12">
                 <div class="card">
@@ -80,6 +165,17 @@
                         <div class="d-flex align-items-start">
                             <h4 class="card-title mb-0">File perhitungan pengguna</h4>
                             <div class="ml-auto">
+                                {{-- <div class="dropdown sub-dropdown">
+                                    <button class="btn btn-link text-muted dropdown-toggle" type="button" id="dd1"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i data-feather="more-vertical"></i>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dd1">
+                                        <a class="dropdown-item" href="#">Insert</a>
+                                        <a class="dropdown-item" href="#">Update</a>
+                                        <a class="dropdown-item" href="#">Delete</a>
+                                    </div>
+                                </div> --}}
                             </div>
                         </div>
                         <div class="pl-4 mb-5">
@@ -123,7 +219,8 @@
                                                                                 <i data-feather="file"></i>&nbsp;&nbsp;
                                                                                 Pdf</a>
                                                                             <a class="dropdown-item" href="#">
-                                                                                <i data-feather="file-text"></i>&nbsp;&nbsp;
+                                                                                <i
+                                                                                    data-feather="file-text"></i>&nbsp;&nbsp;
                                                                                 Xlsx</a>
                                                                         </div>
                                                                     </div>
@@ -217,117 +314,10 @@
                 </div>
             </div>
         </div>
+    @endsection
 
-    </div>
-
-@endsection
-
-@push('scripts')
-    <script src="{{ asset('assets/libs/chartist/dist/chartist.min.js') }}"></script>
-    <script src="{{ asset('assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js') }}"></script>
-    <script src="{{ asset('dist/js/pages/dashboards/dashboard1.min.js') }}"></script>
-    <script type="text/javascript">
-        var news_data = [{
-                "id": 1,
-                "url-image": "{{ asset('assets/images/big/1.jpg') }}",
-                "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sodales non magna lobortis vestibulum. Mauris nec ante vel sapien porttitor viverra. Fusce sit amet ullamcorper mi, a luctus tortor. Cras.",
-                "link-detail": "news/id/detail"
-            }, {
-                "id": 2,
-                "url-image": "{{ asset('assets/images/big/3.jpg') }}",
-                "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed bibendum faucibus justo vitae imperdiet. Vestibulum condimentum et orci at aliquet. Etiam quis varius magna, ac volutpat purus. Vivamus non metus commodo, tempus libero ac, ultrices lectus. Proin gravida, lacus id dictum mollis, lorem elit fermentum ante, vitae imperdiet risus nulla.",
-                "link-detail": "news/id/detail"
-            }, {
-                "id": 3,
-                "url-image": "{{ asset('assets/images/big/5.jpg') }}",
-                "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, quas.",
-                "link-detail": "news/id/detail"
-            },
-            {
-                "id": 4,
-                "url-image": "{{ asset('assets/images/big/auth-bg.jpg') }}",
-                "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, quas.",
-                "link-detail": "news/id/detail"
-            },
-            {
-                "id": 5,
-                "url-image": "{{ asset('assets/images/big/auth-bg2.jpg') }}",
-                "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, quas.",
-                "link-detail": "news/id/detail"
-            },
-            {
-                "id": 6,
-                "url-image": "{{ asset('assets/images/big/d2.jpg') }}",
-                "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, quas.",
-                "link-detail": "news/id/detail"
-            },
-            {
-                "id": 7,
-                "url-image": "{{ asset('assets/images/big/img3.jpg') }}",
-                "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, quas.",
-                "link-detail": "news/id/detail"
-            },
-            {
-                "id": 8,
-                "url-image": "{{ asset('assets/images/big/img1.jpg') }}",
-                "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, quas.",
-                "link-detail": "news/id/detail"
-            },
-        ];
-        var loadedData = [];
-        var itemsPerPage = 6;
-
-        document.addEventListener('DOMContentLoaded', function() {
-            loadData(news_data);
-            var buttonLoad = document.getElementById('loadMore');
-            buttonLoad.addEventListener('click', function() {
-                loadData(news_data);
-            });
-
-
-            function loadData(arrData) {
-                var parentNewsEls = document.getElementsByClassName('news-content');
-                var newsItems = arrData.slice(loadedData.length, loadedData.length + itemsPerPage);
-                for (var i = 0; i < parentNewsEls.length; i++) {
-                    var parentNewsEl = parentNewsEls[i];
-
-                    if (newsItems.length === 0) {
-                        buttonLoad.style.display = 'none';
-                        return;
-                    }
-                    var parentCardGroup = document.createElement('div');
-                    parentCardGroup.className = 'card-group ';
-                    parentNewsEl.appendChild(parentCardGroup);
-
-                    for (var j = 0; j < newsItems.length; j++) {
-                        if (j % 3 === 0) {
-                            var parentCardGroup = document.createElement('div');
-                            parentCardGroup.className = 'card-group ';
-                            parentNewsEl.appendChild(parentCardGroup);
-                        }
-                        var newsItem = newsItems[j];
-
-                        var card = document.createElement('div');
-                        card.className = 'card border-right';
-                        card.style.marginRight = '20px';
-                        card.style.minWidth = '300px';
-                        card.style.maxWidth = '350px';
-
-                        card.innerHTML = `
-                            <div class="card-body content">
-                                <p>Judul Berita</p>
-                                <img class="card-img-top" style="border-radius:8px; object-fit: cover;" height="150" width="100" src="${newsItem['url-image']}" alt="Card image cap">
-                                <p class="card-text" style="word-wrap:break-all;">
-                                ${newsItem.desc}
-                                </p>
-                                <a class="button-goto w-100 d-flex justify-content-end" href="${newsItem['link-detail']}">Link</a>
-                            </div>`;
-
-                        parentCardGroup.appendChild(card)
-                    }
-                }
-                loadedData = loadedData.concat(newsItems);
-            }
-        });
-    </script>
-@endpush
+    @push('scripts')
+        <script src="{{ asset('assets/libs/chartist/dist/chartist.min.js') }}"></script>
+        <script src="{{ asset('assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js') }}"></script>
+        <script src="{{ asset('dist/js/pages/dashboards/dashboard1.min.js') }}"></script>
+    @endpush
