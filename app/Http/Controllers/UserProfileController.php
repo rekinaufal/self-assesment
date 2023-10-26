@@ -4,14 +4,28 @@ namespace App\Http\Controllers;
 
 use App\Models\UserProfile;
 use Illuminate\Http\Request;
-
+use App\Models\User;
+use DB;
 class UserProfileController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function profile($id){
+        $pageTitle = 'Profile';
+        $user = User::find($id);
+        if (!$user) {
+            return redirect()->route('dashboard')
+            ->with('failed', 'Users Id '. $id . ' Not Found');
+        }
+        $userRole = $user->roles->pluck('name')->first();
+        $profile = DB::table('users')
+            ->leftJoin('user_profiles', 'users.id', '=', 'user_profiles.user_id')
+            ->where('user_profiles.user_id', '=', $id) 
+            ->select('users.*', 'user_profiles.*') 
+            ->first();
+        // dd($profile);
+        return view('user.profile', compact('pageTitle', 'profile', 'userRole'));
+
+    }
+
     public function index()
     {
         //

@@ -95,7 +95,7 @@ class UserController extends Controller
         $user = User::find($id);
         if (!$user) {
             return redirect()->route('users.index')
-            ->with('success', 'Users Id'. $id . 'Not Found');
+            ->with('failed', 'Users Id '. $id . ' Not Found');
         }
         $userRole = $user->roles->pluck('name')->first();
         // dd($userRole);
@@ -174,12 +174,5 @@ class UserController extends Controller
         $dompdf->setPaper('A4', 'potrait');
         $dompdf->render();
         $dompdf->stream('users.pdf');
-    }
-
-    public function profile(){
-        $pageTitle = 'Profile';
-
-        return view('user.profile', compact('pageTitle'));
-
     }
 }
