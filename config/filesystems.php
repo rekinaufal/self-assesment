@@ -56,6 +56,10 @@ return [
             'throw' => false,
         ],
 
+        'modules' => [
+            'driver' => 'local',
+            'root' => public_path('uploads'),
+        ],
     ],
 
     /*
