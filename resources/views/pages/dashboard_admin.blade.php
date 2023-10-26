@@ -12,7 +12,7 @@
             <div class="col-7 align-self-center">
                 {{-- <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">Good Morning Jason!</h3> --}}
                 <div class="align-items-center">
-                    <h3>Selamat Datang {{ $user->fullname }}</h3>
+                    <h4>Selamat Datang {{ $user->fullname }}</h4>
                     <p>Dashboard admin</p>
                 </div>
             </div>

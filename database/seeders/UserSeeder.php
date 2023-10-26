@@ -33,7 +33,7 @@ class UserSeeder extends Seeder
             [
                 "id" => 2,
                 "fullname" => "Brata Blessza",
-                "email" => "bratablezza@gmail.com",
+                "email" => "bratablessza@gmail.com",
                 "email_verified_at" => date("Y-m-d H:i:s"),
                 "password" => Hash::make("admin"),
                 "user_category_id" => 1,
