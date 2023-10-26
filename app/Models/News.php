@@ -9,13 +9,6 @@ class News extends Model
 {
     use HasFactory;
 
-    static $rules = [
-        "title" => "required",
-        "description" => "required",
-        "link" => "required|url:http,https",
-        "thumbnail" => "required|image"
-    ];
-
     protected $table = "news";
 
     protected $fillable = [
@@ -28,4 +21,10 @@ class News extends Model
     protected $guarded = [
         "id"
     ];
+
+    public function getThumbnailPath()
+    {
+        $thumbnailName = $this->thumbnail;
+        return  'uploads/' . $thumbnailName;
+    }
 }

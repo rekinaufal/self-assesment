@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
             ModelHasRoleSeeder::class,
             PermenperinCategorySeeder::class,
             ComputationSeeder::class,
+            NewsSeeder::class
         ]);
     }
 }
