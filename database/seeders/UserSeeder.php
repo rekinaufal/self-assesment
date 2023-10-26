@@ -32,10 +32,10 @@ class UserSeeder extends Seeder
             ],
             [
                 "id" => 2,
-                "fullname" => "Brata Blezza",
-                "email" => "bratablezza@gmail.com",
+                "fullname" => "Brata Blessza",
+                "email" => "bratablessza@gmail.com",
                 "email_verified_at" => date("Y-m-d H:i:s"),
-                "password" => Hash::make("1234"),
+                "password" => Hash::make("admin"),
                 "user_category_id" => 1,
                 "is_active" => true,
                 "expired_at" => NULL,
