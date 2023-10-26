@@ -35,7 +35,7 @@ class UserController extends Controller
      */
     public function index(Request $req)
     {
-        $users = User::all();
+        $users = User::paginate(3);
 
         $pageTitle = self::$pageTitle;
 
@@ -95,7 +95,7 @@ class UserController extends Controller
         $user = User::find($id);
         if (!$user) {
             return redirect()->route('users.index')
-            ->with('success', 'Users Id'. $id . 'Not Found');
+            ->with('failed', 'Users Id '. $id . ' Not Found');
         }
         $userRole = $user->roles->pluck('name')->first();
         // dd($userRole);
@@ -137,6 +137,21 @@ class UserController extends Controller
         }
     }
 
+    public function destroyByCheckbox(Request $request) 
+    {
+        $dataArray = explode(",", $request->idsDownload);
+        if ($dataArray) {
+            foreach ($dataArray as $value) {
+                User::find($value)->delete();
+            }
+            return redirect()->route('users.index')
+                ->with('success', 'User deleted successfully');
+        } else {
+            return redirect()->route('users.index')
+                ->with('failed', 'User deleted failed because id is empty or null');
+        }
+    }
+
     public function exportExcel()
     {
         return Excel::download(new UserExport, 'user.xlsx');
@@ -159,12 +174,5 @@ class UserController extends Controller
         $dompdf->setPaper('A4', 'potrait');
         $dompdf->render();
         $dompdf->stream('users.pdf');
-    }
-
-    public function profile(){
-        $pageTitle = 'Profile';
-
-        return view('user.profile', compact('pageTitle'));
-
     }
 }

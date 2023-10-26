@@ -66,6 +66,18 @@
                         <span class="hide-menu">Users</span>
                     </a>
                 </li>
+
+                <li class="list-divider"></li>
+                <li class="nav-small-cap">
+                    <span class="hide-menu">Data Pengguna</span>
+                </li>
+
+                <li class="sidebar-item {{ Request::is('roles') ? 'active' : '' }}">
+                    <a class="sidebar-link" href="{{ url('roles') }}" aria-expanded="false">
+                        <i  class="fas fa-user"></i>
+                        <span class="hide-menu">Profil Pengguna</span>
+                    </a>
+                </li>
                 {{-- ================================================================================================== --}}
                 {{-- <li class="list-divider"></li>
                 <li class="nav-small-cap">

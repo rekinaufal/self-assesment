@@ -68,6 +68,7 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/images/favicon.png') }}">
@@ -112,6 +113,29 @@
 
         <div class="page-wrapper">
             <!-- Content -->
+            @if(session()->has('success'))
+                <div class="alert alert-success alert-dismissible show fade">
+                    <div class="alert-body">
+                        <button class="close"
+                            data-dismiss="alert">
+                            <span>&times;</span>
+                        </button>
+                        <strong>{{ session('success') }}</strong>
+                    </div>
+                </div>
+            @endif
+            @if(session()->has('failed'))
+                <div class="alert alert-danger alert-dismissible show fade">
+                    <div class="alert-body">
+                        <button class="close"
+                            data-dismiss="alert">
+                            <span>&times;</span>
+                        </button>
+                        <strong>{{ session('failed') }}</strong>
+                    </div>
+                </div>
+            @endif
+            
             @yield('main')
 
             <!-- Footer -->
