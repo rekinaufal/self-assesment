@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\News;
 use App\Models\PermenperinCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -85,11 +86,12 @@ class LoginController extends Controller
         $userRole = $user->roles->pluck('name')->first();
         $pageTitle = 'Dashboard';
         $type_menu = 'dashboard';
+        $newsData = News::all();
         $permenperinCount = PermenperinCategory::all()->count();
         if ($userRole == "Administrator") {
             return view('pages.dashboard_admin', compact('permenperinCount', 'allUserPremiumCount', 'user', 'userRole', 'userCount', 'roleCount', 'pageTitle', 'type_menu'));
         }
-        return view('pages.dashboard', compact('permenperinCount', 'allUserPremiumCount', 'user', 'userRole', 'userCount', 'roleCount', 'pageTitle', 'type_menu'));
+        return view('pages.dashboard', compact('newsData', 'permenperinCount', 'allUserPremiumCount', 'user', 'userRole', 'userCount', 'roleCount', 'pageTitle', 'type_menu'));
     }
     public function viewForgetPassword()
     {

@@ -4,6 +4,45 @@
 
 @push('style')
     <link href="{{ asset('assets/libs/chartist/dist/chartist.min.css') }}" rel="stylesheet">
+    <style>
+        /* Button style */
+        #loadMore {
+            background-color: #007bff;
+            /* Background color */
+            color: #fff;
+            /* Text color */
+            border: none;
+            /* Remove border */
+            padding: 10px 20px;
+            /* Padding for the button */
+            cursor: pointer;
+            /* Change cursor to pointer on hover */
+        }
+
+        /* Hover effect */
+        #loadMore:hover {
+            background-color: #0056b3;
+            /* Change background color on hover */
+        }
+
+        /* Add a box shadow on hover (optional) */
+        #loadMore:hover {
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Rounded corners (optional) */
+        #loadMore {
+            border-radius: 5px;
+        }
+
+        /* Disable button style */
+        #loadMore:disabled {
+            background-color: #ccc;
+            /* Change color when disabled */
+            cursor: not-allowed;
+            /* Change cursor to not-allowed when disabled */
+        }
+    </style>
 @endpush
 
 @section('main')
@@ -33,39 +72,6 @@
         <!-- Start First Cards -->
         <!-- *************************************************************** -->
         <div class="news-content">
-            {{-- <div class="card border-right" style="margin-right: 20px">
-                <div class="card-body content">
-                    <p>Judul Berita</p>
-                    <img class="card-img-top" height="150" width="100" src="{{ asset('assets/images/img1.jpg') }}"
-                        alt="Card image cap">
-                    <p class="card-text">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, quas.
-                    </p>
-                    <a class="button-goto w-100 d-flex justify-content-end"href="#">Link</a>
-                </div>
-            </div>
-            <div class="card border-right" style="margin-right: 20px">
-                <div class="card-body content">
-                    <p>Judul Berita</p>
-                    <img class="card-img-top" height="150" width="100" src="{{ asset('assets/images/img2.jpg') }}"
-                        alt="Card image cap">
-                    <p class="card-text">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, quas.
-                    </p>
-                    <a class="button-goto w-100 d-flex justify-content-end"href="#">Link</a>
-                </div>
-            </div>
-            <div class="card border-right" style="margin-right: 20px">
-                <div class="card-body content">
-                    <p>Judul Berita</p>
-                    <img class="card-img-top" height="150" width="100" src="{{ asset('assets/images/img3.jpg') }}"
-                        alt="Card image cap">
-                    <p class="card-text">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, quas.
-                    </p>
-                    <a class="button-goto w-100 d-flex justify-content-end"href="#">Link</a>
-                </div>
-            </div> --}}
         </div>
         <div class="text-center">
             <button id="loadMore">Load More</button>
@@ -228,56 +234,30 @@
     <script src="{{ asset('dist/js/pages/dashboards/dashboard1.min.js') }}"></script>
     <script type="text/javascript">
         var news_data = [{
-                "id": 1,
-                "url-image": "{{ asset('assets/images/big/1.jpg') }}",
-                "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sodales non magna lobortis vestibulum. Mauris nec ante vel sapien porttitor viverra. Fusce sit amet ullamcorper mi, a luctus tortor. Cras.",
-                "link-detail": "news/id/detail"
-            }, {
-                "id": 2,
-                "url-image": "{{ asset('assets/images/big/3.jpg') }}",
-                "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed bibendum faucibus justo vitae imperdiet. Vestibulum condimentum et orci at aliquet. Etiam quis varius magna, ac volutpat purus. Vivamus non metus commodo, tempus libero ac, ultrices lectus. Proin gravida, lacus id dictum mollis, lorem elit fermentum ante, vitae imperdiet risus nulla.",
-                "link-detail": "news/id/detail"
-            }, {
-                "id": 3,
-                "url-image": "{{ asset('assets/images/big/5.jpg') }}",
-                "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, quas.",
-                "link-detail": "news/id/detail"
-            },
-            {
-                "id": 4,
-                "url-image": "{{ asset('assets/images/big/auth-bg.jpg') }}",
-                "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, quas.",
-                "link-detail": "news/id/detail"
-            },
-            {
-                "id": 5,
-                "url-image": "{{ asset('assets/images/big/auth-bg2.jpg') }}",
-                "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, quas.",
-                "link-detail": "news/id/detail"
-            },
-            {
-                "id": 6,
-                "url-image": "{{ asset('assets/images/big/d2.jpg') }}",
-                "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, quas.",
-                "link-detail": "news/id/detail"
-            },
-            {
-                "id": 7,
-                "url-image": "{{ asset('assets/images/big/img3.jpg') }}",
-                "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, quas.",
-                "link-detail": "news/id/detail"
-            },
-            {
-                "id": 8,
-                "url-image": "{{ asset('assets/images/big/img1.jpg') }}",
-                "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, quas.",
-                "link-detail": "news/id/detail"
-            },
-        ];
+            "id": 1,
+            "title": "Judul Berita",
+            "url-image": "{{ asset('assets/images/big/1.jpg') }}",
+            "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sodales non magna lobortis vestibulum. Mauris nec ante vel sapien porttitor viverra. Fusce sit amet ullamcorper mi, a luctus tortor. Cras.",
+            "link-detail": "news/id/detail"
+        }, ];
         var loadedData = [];
         var itemsPerPage = 6;
-
+        var data = JSON.parse(`{!! $newsData !!}`);
+        var dataImage = JSON.parse(`{!! $newsData !!}`);
         document.addEventListener('DOMContentLoaded', function() {
+            console.log("data", data)
+            for (var i = 0; i < data.length; i++) {
+                var imageUrl = '{{ $newsData[0]->getThumbnailPath() }}'.replace('[0]', `[${i}]`);
+                var items = {
+                    "id": data[i].id,
+                    "title": data[i].title,
+                    "url-image": imageUrl,
+                    "desc": data[i].description,
+                    "link-detail": data[i].link
+                };
+                news_data.push(items);
+            }
+            console.log("news", news_data)
             loadData(news_data);
             var buttonLoad = document.getElementById('loadMore');
             buttonLoad.addEventListener('click', function() {
@@ -315,18 +295,22 @@
 
                         card.innerHTML = `
                             <div class="card-body content">
-                                <p>Judul Berita</p>
+                                <div style="min-height : 50px;">
+                                    <p>${newsItem.title}</p>
+                                </div>
                                 <img class="card-img-top" style="border-radius:8px; object-fit: cover;" height="150" width="100" src="${newsItem['url-image']}" alt="Card image cap">
+                                <br/><br/>
                                 <p class="card-text" style="word-wrap:break-all;">
                                 ${newsItem.desc}
                                 </p>
                                 <a class="button-goto w-100 d-flex justify-content-end" href="${newsItem['link-detail']}">Link</a>
                             </div>`;
 
-                        parentCardGroup.appendChild(card)
+                        parentCardGroup.appendChild(card);
                     }
                 }
                 loadedData = loadedData.concat(newsItems);
+                $('#loadMore').click();
             }
         });
     </script>
