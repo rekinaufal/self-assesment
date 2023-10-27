@@ -11,7 +11,7 @@
     <link rel="stylesheet"
         href="{{ asset('library/bootstrap/dist/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        
+
     @stack('style')
 
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
@@ -74,13 +74,13 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/images/favicon.png') }}">
     <title>@yield('title') || E-learning</title>
 
-    
+
     <!-- Custom CSS -->
     <link href="{{ asset('assets/extra-libs/c3/c3.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css') }}" rel="stylesheet" />
     <!-- Custom CSS -->
     <link href="{{ asset('dist/css/style.min.css') }}" rel="stylesheet">
-    
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     @stack('style')
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -107,7 +107,7 @@
     <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full" data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
         <!-- Navbar -->
         @include('components.header')
-        
+
         <!-- Aside -->
         @include('components.sidebar')
 
@@ -135,7 +135,7 @@
                     </div>
                 </div>
             @endif
-            
+
             @yield('main')
 
             <!-- Footer -->
@@ -158,7 +158,9 @@
     <script src="{{ asset('assets/extra-libs/c3/c3.min.js') }}"></script>
     <script src="{{ asset('assets/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js') }}"></script>
     <script src="{{ asset('assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js') }}"></script>
-    
+    {{-- Session Storage Config --}}
+    <script src="{{ asset("dist/js/session-storage-config.js") }}"></script>
+
     @stack('scripts')
 
 </body>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\UserCategoryController;
 use App\Models\Computation;
 use App\Models\PermenperinCategory;
@@ -51,6 +52,11 @@ Route::group(['middleware' => ['auth']], function () {
 
     // kategori permenperin
     Route::resource('permenperincategory', 'PermenperinCategoryController');
+
+    // news
+    Route::get("json/news", [NewsController::class, "getNewsJson"]);
+    Route::post('delete-batch/news', [NewsController::class, "deletedBatch"])->name("news.deletedBatch");
+    Route::resource("news", NewsController::class);
 });
 
 // Route::controller(PermenperinCategoryController::class)->group(function () {

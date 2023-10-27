@@ -24,3 +24,8 @@ Homestead.json
 
 public/library/*
 public/library/**/*
+
+public/uploads/**/*
+public/uploads/**/**/*
+
+package-lock.json

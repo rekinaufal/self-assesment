@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 
 class NewsController extends Controller
 {
+    private static $pageTitle = "News";
+    private static $uploadsFolder = "news";
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +16,13 @@ class NewsController extends Controller
      */
     public function index()
     {
-        //
+        $data = [
+            "pageTitle" => self::$pageTitle,
+            "news" => News::latest()->paginate(6),
+        ];
+
+
+        return view("news.index", $data);
     }
 
     /**
@@ -35,7 +43,36 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $credentials = $request->validate([
+            "title" => "required",
+            "description" => "required|max:255",
+            "link" => "required|url:http,https",
+            "thumbnail" => $request->id == null ? "required|image" : "image"
+        ]);
+
+        unset($credentials["thumbnail"]);
+
+        if ($request->thumbnail != null) {
+            // save image
+            $filename = 'news-thumbnail-' . date("YmdHis") . '.' . $request->thumbnail->extension();
+            $thumbnailPath = $request->thumbnail->storeAs(self::$uploadsFolder, $filename, 'modules');
+
+            $credentials["thumbnail"] = $thumbnailPath;
+        }
+
+        if ($request->id == null) {
+            $createdNews = News::create($credentials);
+        } else {
+            $news = News::find($request->id);
+            if (!$news) return redirect()->route("news.index")->with("failed", "User with id = " . $request->id . "not found");
+
+            $updatedNews = $news->update($credentials);
+        }
+
+
+        if ((isset($createdNews) && !$createdNews) || (isset($updatedNews) && !$updatedNews)) return redirect()->route("news.index")->with("failed", "Failed saved news data.");
+
+        return redirect()->route("news.index")->with("success", "Successfully saved news data.");
     }
 
     /**
@@ -80,6 +117,32 @@ class NewsController extends Controller
      */
     public function destroy(News $news)
     {
-        //
+        $deletedNews = $news->delete();
+
+        if (!$deletedNews) abort(500, "Internal Server Error");
+
+        return redirect()->route("news.index")->with("success", "Successfully deleted news data");
+    }
+
+    public function getNewsJson()
+    {
+        $news = News::all();
+
+        if (!$news) abort(404, "Not found news");
+
+        return response()->json($news);
+    }
+
+    public function deletedBatch(Request $request)
+    {
+        $deleteIds = json_decode($request->delete_ids);
+
+        $deletedNews = News::whereIn('id', $deleteIds)->delete();
+        // dd($deleteIds);
+        if (!$deletedNews) {
+            return redirect()->route("news.index")->with("failed", "Failed to delete batch!");
+        }
+
+        return redirect()->route("news.index")->with("success", "Successfully to delete the selected news!");
     }
 }

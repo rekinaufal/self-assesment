@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string("company_address")->nullable();
             $table->string("phone_number")->nullable()->unique();
             $table->string("job_title")->nullable();
+            $table->string("avatar")->nullable();
             $table->timestamps();
 
             $table->foreign("user_id")->references("id")->on("users")->cascadeOnDelete()->cascadeOnUpdate();

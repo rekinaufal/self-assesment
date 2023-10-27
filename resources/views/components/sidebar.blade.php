@@ -42,13 +42,13 @@
         <!-- Sidebar navigation-->
         <nav class="sidebar-nav">
             <ul id="sidebarnav">
-                <li class="sidebar-item"> 
+                <li class="sidebar-item">
                     <a class="sidebar-link sidebar-link" href="{{ url('/') }}" aria-expanded="false">
                         <i data-feather="home" class="feather-icon"></i>
                         <span class="hide-menu">Dashboard</span>
                     </a>
                 </li>
-                
+
                 <li class="list-divider"></li>
                 <li class="nav-small-cap">
                     <span class="hide-menu">Admin</span>
@@ -64,6 +64,12 @@
                     <a class="sidebar-link sidebar-link" href="{{ url('users') }}" aria-expanded="false">
                         <i data-feather="message-square" class="feather-icon"></i>
                         <span class="hide-menu">Users</span>
+                    </a>
+                </li>
+                <li class="sidebar-item {{ Request::is('news') ? 'active' : '' }}">
+                    <a class="sidebar-link sidebar-link" href="{{ url('news') }}" aria-expanded="false">
+                        <i data-feather="file-text" class="feather-icon"></i>
+                        <span class="hide-menu">News</span>
                     </a>
                 </li>
 
@@ -290,13 +296,13 @@
                 <li class="nav-small-cap">
                     <span class="hide-menu">Extra</span>
                 </li>
-                {{-- <li class="sidebar-item"> 
+                {{-- <li class="sidebar-item">
                     <a class="sidebar-link sidebar-link" href="docs/docs.html" aria-expanded="false">
                         <i data-feather="edit-3" class="feather-icon"></i>
                         <span class="hide-menu">Documentation</span>
                     </a>
                 </li> --}}
-                <li class="sidebar-item"> 
+                <li class="sidebar-item">
                     <a class="sidebar-link sidebar-link" href="{{ route('logout') }}" aria-expanded="false"><i data-feather="log-out" class="feather-icon"></i>
                         <span class="hide-menu">Logout</span>
                     </a>

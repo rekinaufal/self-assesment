@@ -16,7 +16,8 @@ class UserProfile extends Model
         "company_name" => "required",
         "company_address" => "required",
         "phone_number" => "required|numeric",
-        "job_title" => "required"
+        "job_title" => "required",
+        "avatar" => "required"
     ];
 
     protected $table = "user_profiles";
@@ -27,7 +28,8 @@ class UserProfile extends Model
         "company_name",
         "company_address",
         "phone_number",
-        "job_title"
+        "job_title",
+        "avatar"
     ];
 
     protected $guarded = [
@@ -42,5 +44,10 @@ class UserProfile extends Model
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class, 'user_id', 'id');
+    }
+
+    public function getAvatarPath() {
+        $avatarPath = $this->avatar;
+        return "uploads/" . $avatarPath;
     }
 }
