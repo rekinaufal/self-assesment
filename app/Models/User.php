@@ -32,6 +32,8 @@ class User extends Authenticatable
         'email',
         'password',
         'user_category_id',
+        'is_active',
+        'limit_file',
     ];
 
     protected $guarded = [
@@ -81,5 +83,15 @@ class User extends Authenticatable
     public function user_category(): BelongsTo
     {
         return $this->belongsTo(UserCategory::class, "user_category_id", "id");
+    }
+
+    /**
+     * Get all of the payments for the User
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function payments(): HasMany
+    {
+        return $this->hasMany(Payment::class, 'user_id', 'id');
     }
 }

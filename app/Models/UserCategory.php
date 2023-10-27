@@ -12,7 +12,7 @@ class UserCategory extends Model
     static $rules = [
         "name" => "required|unique:user_categories, name",
         "benefits" => "required",
-        "price" => "required|numeric"
+        "color" => "required"
     ];
 
     protected $table = "user_categories";
@@ -20,7 +20,7 @@ class UserCategory extends Model
     protected $fillable = [
         "name",
         "benefits",
-        "price"
+        "color"
     ];
 
     protected $guarded = [
@@ -30,4 +30,20 @@ class UserCategory extends Model
     protected $casts = [
         'benefits' => 'array',
     ];
+
+    public static function getOptions() {
+        $options = [
+            "colors" => [
+                "primary",
+                "secondary",
+                "warning",
+                "danger",
+                "info",
+                "light",
+                "dark"
+            ],
+        ];
+
+        return $options;
+    }
 }

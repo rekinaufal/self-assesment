@@ -8,7 +8,8 @@ use App\Models\User;
 use DB;
 class UserProfileController extends Controller
 {
-    public function profile($id){
+    public function profile(){
+        $id = auth()->user()->id;
         $pageTitle = 'Profile';
         $user = User::find($id);
         if (!$user) {
@@ -16,13 +17,14 @@ class UserProfileController extends Controller
             ->with('failed', 'Users Id '. $id . ' Not Found');
         }
         $userRole = $user->roles->pluck('name')->first();
-        $profile = DB::table('users')
-            ->leftJoin('user_profiles', 'users.id', '=', 'user_profiles.user_id')
-            ->where('user_profiles.user_id', '=', $id) 
-            ->select('users.*', 'user_profiles.*') 
-            ->first();
+        // $profile = DB::table('users')
+        //     ->leftJoin('user_profiles', 'users.id', '=', 'user_profiles.user_id')
+        //     ->where('user_profiles.user_id', '=', $id) 
+        //     ->select('users.*', 'user_profiles.*') 
+        //     ->first();
+        $profile = UserProfile::where('user_id', $id)->first();
         // dd($profile);
-        return view('user.profile', compact('pageTitle', 'profile', 'userRole'));
+        return view('user.profile', compact('pageTitle', 'profile', 'userRole', 'user'));
 
     }
 
@@ -81,9 +83,24 @@ class UserProfileController extends Controller
      * @param  \App\Models\UserProfile  $userProfile
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, UserProfile $userProfile)
+    public function update(Request $req)
     {
-        //
+        // request()->validate(UserProfile::$rules);
+        $id = auth()->user()->id;
+        //  dd($id);
+        $isEdited = UserProfile::where('user_id', $id)->update([
+            'user_id' => $id,
+            'fullname' => $req->fullname,
+            'company_name' => $req->company_name,
+            'company_address' => $req->company_address,
+            'phone_number' => $req->phone_number,
+            'job_title' => $req->job_title
+        ]);
+        if ($isEdited) {
+            return redirect()->back()
+                ->with('success', 'Data updated successfully');
+        }
+        return redirect()->back()->with('failed', 'Profile gagal diedit');
     }
 
     /**

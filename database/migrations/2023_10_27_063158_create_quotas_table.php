@@ -13,11 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('user_categories', function (Blueprint $table) {
+        Schema::create('quotas', function (Blueprint $table) {
             $table->id();
-            $table->string("name");
-            $table->json("benefits");
-            $table->enum("color", ["primary", "secondary", "warning", "danger", "info", "light", "dark"])->default("dark");
+            $table->integer("limit_file");
+            $table->integer("price");
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_categories');
+        Schema::dropIfExists('quotas');
     }
 };

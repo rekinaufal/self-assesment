@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\News;
 use App\Models\PermenperinCategory;
+use App\Models\UserProfile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -134,9 +135,16 @@ class LoginController extends Controller
         $req = $req->all();
         $req['password'] = Hash::make($req['password']);
         $user = User::create($req);
-        $user->assignRole($req['roles']);
+        // $user->assignRole($req['roles']);
 
-        return redirect()->route('users.index')
-            ->with('success', 'User created successfully.');
+        $user_profile = UserProfile::create([
+            "user_id" => $user->id
+        ]);
+
+        if ($user_profile) {
+            return redirect()->route('login')->with('success', 'Registrasi Berhasil');
+        } else {
+            return redirect()->back()->with('failed', 'Registrasi gagal');
+        }
     }
 }

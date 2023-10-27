@@ -25,11 +25,7 @@
                                 <table class="table table-hover w-100">
                                     <tr>
                                         <td width="20%">Name</td>
-                                        <td>{{ $user->name }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td width="20%">Username</td>
-                                        <td>{{ $user->username }}</td>
+                                        <td>{{ $user->fullname }}</td>
                                     </tr>
                                     <tr>
                                         <td width="20%">Email</td>
@@ -37,7 +33,7 @@
                                     </tr>
                                     <tr>
                                         <td width="20%">Role</td>
-                                        <td>{{ $user->roles[0]->name }}</td>
+                                        <td>{{ $userRole }}</td>
                                     </tr>
                                 </table>
                             </div>
