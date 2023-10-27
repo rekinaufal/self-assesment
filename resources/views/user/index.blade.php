@@ -175,7 +175,7 @@
         </section>
     </div> --}}
     {{-- ========================== --}}
-    {{-- <div class="container-fluid">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-12">
                 <div class="card">
@@ -283,7 +283,7 @@
                 </div>
             </div>
         </div>
-    </div> --}}
+    </div>
 
     <div class="container-fluid">
         <div class="row">
@@ -334,18 +334,25 @@
                                         </svg>
                                     </button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        @can('user-edit')
+                                            <a class="dropdown-item" href="{{ route('users.edit',$item->id) }}">
+                                                <i class="fa fa-pencil-alt p-0"></i>&nbsp;&nbsp;&nbsp;Edit
+                                            </a>
+                                        @endcan
                                         <a class="dropdown-item" >
                                             <i class="fas fa-download"></i>&nbsp;&nbsp;&nbsp;Download
                                         </a>
-                                        <form id="myForm-{{ $item->id }}" action="{{ route('users.destroy',$item->id) }}" method="POST" class="d-flex">
-                                            @csrf
-                                            @method('DELETE')
-                                            @can('user-delete')
-                                                <button type="submit" class="dropdown-item" onclick="return confirm('Are you sure?')"  data-confirm-yes="confirmDelete({{ $item->id }})">
-                                                    <i class="fas fa-trash-alt"></i>&nbsp;&nbsp;&nbsp;Hapus Data
-                                                </button>
-                                            @endcan
-                                        </form>
+                                        @can('user-delete')
+                                            <form id="myForm-{{ $item->id }}" action="{{ route('users.destroy',$item->id) }}" method="POST" class="d-flex">
+                                                @csrf
+                                                @method('DELETE')
+                                                @can('user-delete')
+                                                    <button type="submit" class="dropdown-item" onclick="return confirm('Are you sure?')"  data-confirm-yes="confirmDelete({{ $item->id }})">
+                                                        <i class="fas fa-trash-alt"></i>&nbsp;&nbsp;&nbsp;Hapus Data
+                                                    </button>
+                                                @endcan
+                                            </form>
+                                        @endcan
                                     </div>
                                 </div>
                             </div>

@@ -205,34 +205,34 @@
                         </span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
-                        <a class="dropdown-item" href="/profile/{{ Auth::user()->id }}">
+                        <a class="dropdown-item" href="/profile-pengguna">
                             <i data-feather="user" class="svg-icon mr-2 ml-1"></i> 
                             My Profile
                         </a>
-                        <a class="dropdown-item" href="javascript:void(0)">
+                        {{-- <a class="dropdown-item" href="javascript:void(0)">
                             <i data-feather="credit-card" class="svg-icon mr-2 ml-1"></i>
                             My Balance
-                        </a>
+                        </a> --}}
                         <a class="dropdown-item" href="javascript:void(0)">
                             <i data-feather="mail" class="svg-icon mr-2 ml-1"></i>
                             Inbox
                         </a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="javascript:void(0)">
+                        {{-- <a class="dropdown-item" href="javascript:void(0)">
                             <i data-feather="settings" class="svg-icon mr-2 ml-1"></i>
                             Account Setting
-                        </a>
+                        </a> --}}
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="{{ route('logout') }}">
                             <i data-feather="power" class="svg-icon mr-2 ml-1"></i>
                             Logout
                         </a>
-                        <div class="dropdown-divider"></div>
+                        {{-- <div class="dropdown-divider"></div>
                         <div class="pl-4 p-3">
                             <a href="javascript:void(0)" class="btn btn-sm btn-info">View
                                 Profile
                             </a>
-                        </div>
+                        </div> --}}
                     </div>
                 </li>
                 <!-- ============================================================== -->

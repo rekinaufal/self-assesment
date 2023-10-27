@@ -53,19 +53,22 @@
                 <li class="nav-small-cap">
                     <span class="hide-menu">Admin</span>
                 </li>
-
-                <li class="sidebar-item {{ Request::is('roles') ? 'active' : '' }}">
-                    <a class="sidebar-link" href="{{ url('roles') }}" aria-expanded="false">
-                        <i data-feather="tag" class="feather-icon"></i>
-                        <span class="hide-menu">Roles</span>
-                    </a>
-                </li>
-                <li class="sidebar-item {{ Request::is('users') ? 'active' : '' }}">
-                    <a class="sidebar-link sidebar-link" href="{{ url('users') }}" aria-expanded="false">
-                        <i data-feather="message-square" class="feather-icon"></i>
-                        <span class="hide-menu">Users</span>
-                    </a>
-                </li>
+                @can('role-list')
+                    <li class="sidebar-item {{ Request::is('roles') ? 'active' : '' }}">
+                        <a class="sidebar-link" href="{{ url('roles') }}" aria-expanded="false">
+                            <i data-feather="tag" class="feather-icon"></i>
+                            <span class="hide-menu">Roles</span>
+                        </a>
+                    </li>
+                @endcan
+                @can('user-list')
+                    <li class="sidebar-item {{ Request::is('users') ? 'active' : '' }}">
+                        <a class="sidebar-link sidebar-link" href="{{ url('users') }}" aria-expanded="false">
+                            <i data-feather="message-square" class="feather-icon"></i>
+                            <span class="hide-menu">Users</span>
+                        </a>
+                    </li>
+                @endcan
 
                 <li class="list-divider"></li>
                 <li class="nav-small-cap">
