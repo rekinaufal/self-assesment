@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('password');
             $table->unsignedBigInteger('user_category_id')->nullable();
             $table->boolean("is_active")->default(false);
-            $table->date("expired_at")->nullable();
+            $table->integer("limit_file")->default(1);
             $table->rememberToken();
             $table->timestamps();
 

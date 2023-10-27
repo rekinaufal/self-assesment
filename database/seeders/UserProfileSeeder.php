@@ -24,6 +24,7 @@ class UserProfileSeeder extends Seeder
                 "company_address" => "Bogor Kota",
                 "phone_number" => "08123321123",
                 "job_title" => "Programmer",
+                "avatar" => "users/avatar/avatar_fullname_202310271359.jpg",
                 "created_at" => date("Y-m-d H:i:s"),
             ],
             [
@@ -34,6 +35,7 @@ class UserProfileSeeder extends Seeder
                 "company_address" => "Bogor Kota",
                 "phone_number" => "08321123321",
                 "job_title" => "Programmer",
+                "avatar" => "users/avatar/avatar_fullname_202310271359.jpg",
                 "created_at" => date("Y-m-d H:i:s"),
             ],
             [
@@ -44,6 +46,7 @@ class UserProfileSeeder extends Seeder
                 "company_address" => "Bogor Kota",
                 "phone_number" => "08111233333",
                 "job_title" => "Programmer",
+                "avatar" => "users/avatar/avatar_fullname_202310271359.jpg",
                 "created_at" => date("Y-m-d H:i:s"),
             ],
         ];
