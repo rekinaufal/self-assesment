@@ -45,11 +45,13 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('roles', 'RoleController');
     //user
     Route::resource('users', 'UserController');
-    Route::get('/profile/{id}', 'UserProfileController@profile')->name('profile');
     Route::get('/exportExcelUsers', 'UserController@exportExcel')->name('exportExcelUsers');
     Route::get('/exportPdfUsers', 'UserController@exportPdf')->name('exportPdfUsers');
     Route::post('/destroyByCheckbox', 'UserController@destroyByCheckbox')->name('destroyByCheckbox');
-
+    Route::post('/changePassword', 'UserController@changePassword')->name('changePassword');
+    //profile
+    Route::resource('profile', 'UserProfileController');
+    Route::get('/profile-pengguna', 'UserProfileController@profile')->name('profile');
     // kategori permenperin
     Route::resource('permenperincategory', 'PermenperinCategoryController');
 
@@ -57,6 +59,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get("json/news", [NewsController::class, "getNewsJson"]);
     Route::post('delete-batch/news', [NewsController::class, "deletedBatch"])->name("news.deletedBatch");
     Route::resource("news", NewsController::class);
+
+    // payment
+    Route::get('/payment', 'PaymentController@payment')->name('payment');
+    Route::post('/uploadPayment', 'PaymentController@uploadPayment')->name('uploadPayment');
 });
 
 // Route::controller(PermenperinCategoryController::class)->group(function () {

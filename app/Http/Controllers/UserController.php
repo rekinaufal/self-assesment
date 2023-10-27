@@ -79,9 +79,15 @@ class UserController extends Controller
     public function show($id)
     {
         $user = User::find($id);
+        $userRole = "";
+        if (!$user->roles->isEmpty()) {
+            $userRole = $user->roles[0]->name;
+        } else {
+            
+        }
         $pageTitle = self::$pageTitle;
 
-        return view('user.show', compact('user', 'pageTitle'));
+        return view('user.show', compact('user', 'pageTitle', 'userRole'));
     }
 
     /**
@@ -161,8 +167,7 @@ class UserController extends Controller
     public function exportPdf()
     {
         $th = [
-            'name', 
-            'username',
+            'fullname', 
             'email',
             'created at'
         ];
@@ -174,5 +179,28 @@ class UserController extends Controller
         $dompdf->setPaper('A4', 'potrait');
         $dompdf->render();
         $dompdf->stream('users.pdf');
+    }
+
+    public function changePassword(Request $req, User $user)
+    {
+        request()->validate(User::$rules);
+        $id = auth()->user()->id;
+        $user = User::find($id);
+
+        if (Hash::check($req->current_password, $user->password)) {
+            if (!empty($req->new_password)) {
+                $isEdited = User::where('id', $id)->update([
+                    'password' => Hash::make($req->new_password)
+                ]);
+                if ($isEdited) {
+                    return redirect()->back()
+                        ->with('success', 'Data berhasil diupdate');
+                }
+            }
+            
+        } else {
+            return redirect()->back()->with('failed', 'Current password is wrong !');
+        }
+        return redirect()->back()->with('failed', 'Password gagal diedit');
     }
 }

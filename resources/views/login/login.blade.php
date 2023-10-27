@@ -294,14 +294,12 @@
                             <div class="row" style="margin-top:20%; margin-bottom:20%;">
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <input class="form-control" id="name" name="name" type="text"
-                                            placeholder="Full Name">
+                                        <input class="form-control"  name="fullname" type="text" placeholder="Full Name">
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <input class="form-control" id="username" name="email" type="text"
-                                            placeholder="Email Adrress">
+                                        <input class="form-control" name="email" type="text" placeholder="Email Adrress">
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
@@ -351,6 +349,8 @@
                                     </div>
                                     <small><div id="showErrorPasswordCompany"></div></small>
                                 </div>
+                                {{-- user category, default value 1 = reguler --}}
+                                <input type="hidden" name="user_category_id" value="1">
                                 <div class="col-lg-12 mt-3">
                                     <div class="row">
                                         <div class="col-6" style="width: 50%; margin: 0 auto;">
