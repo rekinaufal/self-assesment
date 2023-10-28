@@ -197,16 +197,16 @@
                 <!-- ============================================================== -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img src="{{ asset(auth()->user()->user_profile->getAvatarPath()) }}" alt="user" class="rounded-circle" width="40">
+                        <img src="{{ auth()->user()->user_profile != null ?? asset(auth()->user()->user_profile->getAvatarPath()) }}" alt="user" class="rounded-circle" width="40">
                         <span class="ml-2 d-none d-lg-inline-block">
-                            <span>Hello,</span> 
-                            <span class="text-dark">{{ auth()->user()->user_profile->fullname }}</span> 
+                            <span>Hello,</span>
+                            <span class="text-dark">{{ auth()->user()->user_profile != null ?? auth()->user()->user_profile->fullname }}</span>
                             <i data-feather="chevron-down" class="svg-icon"></i>
                         </span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
                         <a class="dropdown-item" href="/profile-pengguna">
-                            <i data-feather="user" class="svg-icon mr-2 ml-1"></i> 
+                            <i data-feather="user" class="svg-icon mr-2 ml-1"></i>
                             My Profile
                         </a>
                         {{-- <a class="dropdown-item" href="javascript:void(0)">
