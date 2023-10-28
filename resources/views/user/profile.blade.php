@@ -128,7 +128,7 @@
                             <div class="d-flex flex-column justify-content-center align-items-center mb-4">
                                 {{-- image --}}
                                 <button class="image-profil btn-secondary"> 
-                                    <img src="{{ asset('assets/images/users/d3.jpg') }}" class="rounded-circle" height="100" width="100" />
+                                    <img src="{{ asset($profile->getAvatarPath()) }}" class="rounded-circle" height="100" width="100" />
                                 </button> 
                                 {{-- name --}}
                                 <span class="name mt-3">Eleanor Pena</span> 
@@ -381,6 +381,21 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="form-group dropzoneArea" style="height: max-content">
+                                                    <label for="Avatar">Avatar</label>
+                                                    <x-input.dropzone name="avatar" id="input-thumbnail" customDropzoneId="custom-dropzone"
+                                                        dropzonePreviewId="dropzone-preview" namePreviewId="name-preview"
+                                                        sizePreviewId="size-preview" filePreviewId="file-preview"
+                                                        defaultImage="assets/images/news/illustration1.jpg" defaultName="lorem ipsum"
+                                                        defaultSize="0 Mb" />
+                                                    @error('title')
+                                                        <small class="text-danger">{{ $message }}</small>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                        </div>
                                         {{-- <div class="form-group"> 
                                             <label for="cardNumber">
                                                 <h6>Card number</h6>
@@ -484,6 +499,7 @@
                                 </div>
                                 {{-- payment --}}
                                 <div id="payment" class="tab-pane fade pt-3">
+                                    Transfer ke bank tersebut dan upload bukti pembayarannya.
                                     <div class="rounded-2 p-3 mb-3" style="background-color: rgba(67,89,113,.05) !important">
                                         <div class="d-flex justify-content-between flex-sm-row flex-column">
                                             <div class="card-information me-2">
@@ -503,10 +519,10 @@
                                             </div>
                                         </div>
                                     </div>
-                                    Transfer ke bank tersebut dan upload bukti pembayarannya
-                                    <form method="POSt" action="" role="form" enctype="multipart/form-data">
+                                    1 x 24 jam admin akan memproses dan mengirim anda notif.
+                                    <form method="POST" action="" role="form" enctype="multipart/form-data">
                                         <div class="form-group"> 
-                                            <input type="file" name="image" class="form-control">
+                                            <input type="file" name="image" class="">
                                         </div>
                                         <button type="submit" class="btn btn-primary">Upload</button>
                                     </form>

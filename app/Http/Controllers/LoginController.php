@@ -41,6 +41,7 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         $user = User::where('email', $request->email)->first();
+        // $profile = UserProfile::where('user_id', $user->id)->first();
         $remember = request('remember');
         if (!empty($user)) {
             $userRole = $user->roles->pluck('name')->first();
@@ -59,6 +60,13 @@ class LoginController extends Controller
 
         if (Auth::attempt($request->only('email', 'password'), $remember)) {
             $request->session()->regenerate();
+            // Menyimpan avatar ke session
+            // if ($profile) {
+            //     $avatar = url('uploads/'.$profile->avatar);
+            //     $fullname = $profile->fullname;
+            //     session(['avatar' => $avatar]);
+            //     session(['fullname' => $fullname]);
+            // }
             return redirect()->route('dashboard');
         } else {
             return back()->withErrors([

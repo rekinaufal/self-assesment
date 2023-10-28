@@ -360,7 +360,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-sm-6 col-md-7">
-                                    <h5 class="text-center font-weight-bold">PT. Jason sanginga</h5>
+                                    <h5 class="text-center font-weight-bold">{{ $item->user_profile->company_name }}</h5>
                                     <table>
                                         <tr>
                                             <td>@</td>
@@ -370,28 +370,31 @@
                                         <tr>
                                             <td><i class=" fas fa-hospital"></i></td>
                                             <td style="width: 10%" class="text-center">:</td>
-                                            <td>Jl, Presisi No.86 Lt.24</td>
+                                            <td>{{ $item->user_profile->company_address }}</td>
                                         </tr>
                                         <tr>
                                             <td><i class="fas fa-phone"></i></td>
                                             <td style="width: 10%" class="text-center">:</td>
-                                            <td>+62 123 421</td>
+                                            <td>{{ $item->user_profile->phone_number }}</td>
                                         </tr>
                                     </table>
                                 </div>
                                 <div class="col-sm-6 col-md-5">
                                     <div class="item">
                                         <div class="item__photo d-flex justify-content-center align-items-center">
-                                            <img src="http://127.0.0.1:8000/assets/images/users/profile-pic.jpg" alt="user" class="rounded-circle" width="100">
+                                            <img src="{{ asset($item->user_profile->avatar) }}" alt="user" class="rounded-circle" width="100">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <hr>
                             <div class="float-left">
-                                <img src="{{ asset('assets/images/users/crown.png') }}" alt="premium" width="20" style="vertical-align: top;">
-                                <img src="{{ asset('assets/images/users/quality.png') }}" alt="reguler" width="20" style="vertical-align: top;">
-                                Premium
+                                @if ($item->user_category->name == 'Regular')
+                                    <img src="{{ asset('assets/images/users/quality.png') }}" alt="reguler" width="20" style="vertical-align: top;">
+                                @else    
+                                    <img src="{{ asset('assets/images/users/crown.png') }}" alt="premium" width="20" style="vertical-align: top;">
+                                @endif
+                                {{ $item->user_category->name }}
                             </div>
                             <div class="float-right">
                                 @can('user-show')

@@ -8,6 +8,8 @@ use App\Models\User;
 use DB;
 class UserProfileController extends Controller
 {
+    private static $uploadsFolder = "profile";
+
     public function profile(){
         $id = auth()->user()->id;
         $pageTitle = 'Profile';
@@ -87,14 +89,20 @@ class UserProfileController extends Controller
     {
         // request()->validate(UserProfile::$rules);
         $id = auth()->user()->id;
-        //  dd($id);
+        if ($req->avatar != null) {
+            // save image
+            $filename = 'profile-avatar-' . date("YmdHis") . '.' . $req->avatar->extension();
+            $avatarPath = $req->avatar->storeAs(self::$uploadsFolder, $filename, 'modules');
+        }
+
         $isEdited = UserProfile::where('user_id', $id)->update([
             'user_id' => $id,
             'fullname' => $req->fullname,
             'company_name' => $req->company_name,
             'company_address' => $req->company_address,
             'phone_number' => $req->phone_number,
-            'job_title' => $req->job_title
+            'job_title' => $req->job_title,
+            'avatar' => $avatarPath
         ]);
         if ($isEdited) {
             return redirect()->back()

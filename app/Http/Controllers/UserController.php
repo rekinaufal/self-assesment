@@ -35,7 +35,7 @@ class UserController extends Controller
      */
     public function index(Request $req)
     {
-        $users = User::paginate(3);
+        $users = User::paginate(6);
 
         $pageTitle = self::$pageTitle;
 

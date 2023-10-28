@@ -72,8 +72,14 @@
                         <span class="hide-menu">News</span>
                     </a>
                 </li>
+                <li class="sidebar-item {{ Request::is('permenperincategory') ? 'active' : '' }}">
+                    <a class="sidebar-link sidebar-link" href="{{ url('permenperincategory') }}" aria-expanded="false">
+                        <i data-feather="file-text" class="feather-icon"></i>
+                        <span class="hide-menu">Permen Category</span>
+                    </a>
+                </li>
 
-                <li class="list-divider"></li>
+                {{-- <li class="list-divider"></li>
                 <li class="nav-small-cap">
                     <span class="hide-menu">Data Pengguna</span>
                 </li>
@@ -83,7 +89,7 @@
                         <i  class="fas fa-user"></i>
                         <span class="hide-menu">Profil Pengguna</span>
                     </a>
-                </li>
+                </li> --}}
                 {{-- ================================================================================================== --}}
                 {{-- <li class="list-divider"></li>
                 <li class="nav-small-cap">

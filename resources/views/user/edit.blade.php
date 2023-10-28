@@ -44,16 +44,6 @@
                                     <input type="text" name="password" placeholder="Password" class="form-control" required>
                                 </div>
                             </div>
-                            {{-- <div class="form-group row mb-4">
-                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Roles</label>
-                                <div class="col-sm-12 col-md-7">
-                                    <select class="form-control select2">
-                                        @foreach($missingDataRoleUserForOption as $item)
-                                            <option value="{{ $item->name }}" {{ $item == $userRole ? 'selected' : '' }}>{{ $item->name }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                            </div> --}}
                             <div class="form-group row mb-4">
                                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Roles</label>
                                 <div class="col-sm-12 col-md-7">
