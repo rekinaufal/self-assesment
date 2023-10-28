@@ -33,7 +33,7 @@
         <!-- Start First Cards -->
         <!-- *************************************************************** -->
         <div class="card-group">
-            <div class="card border-right">
+            <div class="card border-right mr-3">
                 <div class="card-body">
                     <div class="d-flex d-lg-flex d-md-block align-items-center">
                         <div>
@@ -50,7 +50,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card border-right">
+            <div class="card border-right mr-3">
                 <div class="card-body">
                     <div class="d-flex d-lg-flex d-md-block align-items-center">
                         <div>
@@ -65,7 +65,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card border-right">
+            <div class="card border-right mr-3">
                 <div class="card-body">
                     <div class="d-flex d-lg-flex d-md-block align-items-center">
                         <div>
@@ -82,7 +82,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card">
+            <div class="card border-right">
                 <div class="card-body">
                     <div class="d-flex d-lg-flex d-md-block align-items-center">
                         <div>
@@ -112,17 +112,17 @@
                             <li>
                                 <i class="fas fa-circle text-primary font-10 mr-2"></i>
                                 <span class="text-muted">Permenperin 1</span>
-                                <span class="text-dark float-right font-weight-medium">$2346</span>
+                                <span class="text-dark float-right font-weight-medium">36.4 %</span>
                             </li>
                             <li class="mt-3">
                                 <i class="fas fa-circle text-danger font-10 mr-2"></i>
                                 <span class="text-muted">Permenperin 2</span>
-                                <span class="text-dark float-right font-weight-medium">$2108</span>
+                                <span class="text-dark float-right font-weight-medium">32.7 %</span>
                             </li>
                             <li class="mt-3">
                                 <i class="fas fa-circle text-cyan font-10 mr-2"></i>
                                 <span class="text-muted">Permenperin 3</span>
-                                <span class="text-dark float-right font-weight-medium">$1204</span>
+                                <span class="text-dark float-right font-weight-medium">21.8 %</span>
                             </li>
                         </ul>
                     </div>
@@ -134,7 +134,7 @@
                         <h4 class="card-title">Grafik Pengguna</h4>
                         <div class="net-income mt-4 position-relative" style="height:294px;"></div>
                         <ul class="list-inline text-center mt-5 mb-2">
-                            <li class="list-inline-item text-muted font-italic">Sales for this month</li>
+                            <li class="list-inline-item text-muted font-italic"></li>
                         </ul>
                     </div>
                 </div>
@@ -145,7 +145,7 @@
                         <h4 class="card-title">Pengguna Aktif</h4>
                         <div class="net-income2 mt-4 position-relative" style="height:294px;"></div>
                         <ul class="list-inline text-center mt-5 mb-2">
-                            <li class="list-inline-item text-muted font-italic">Sales for this month</li>
+                            <li class="list-inline-item text-muted font-italic"></li>
                         </ul>
                     </div>
                 </div>
@@ -179,17 +179,21 @@
                             </div>
                         </div>
                         <div class="pl-4 mb-5">
-                            <div class="position-relative" style="height: 315px;">
+                            <div class="position-relative">
                                 <!-- basic table -->
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="card">
                                             <div class="card-body">
-                                                <div class="table-responsive">
+                                                <div
+                                                    class="table-responsive"style="overflow-y:scroll;
+                                                                                                                                            height:400px;">
                                                     <table id="zero_config"
                                                         class="table table-striped table-bordered no-wrap">
                                                         <thead>
-                                                            <tr align="center">
+                                                            <tr align="center"
+                                                                style=" position:sticky;
+                                                            top: 0 ;">
                                                                 <th>No</th>
                                                                 <th>Pengguna</th>
                                                                 <th>File</th>
@@ -289,6 +293,66 @@
                                                                         class="btn btn-sm btn-warning">Tinjau</button>
                                                                 </td>
                                                             </tr>
+                                                            <tr>
+                                                                <td align="center">4</td>
+                                                                <td>Effendi</td>
+                                                                <td align="center"> <i data-feather="file"></i> <i
+                                                                        data-feather="file-text"></i></td>
+                                                                <td>
+                                                                    <div class="dropdown sub-dropdown">
+                                                                        <button
+                                                                            class="d-flex btn btn-link text-muted dropdown-toggle"
+                                                                            type="button" id="dd1"
+                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                            aria-expanded="true">
+                                                                            <i data-feather="download"></i>
+                                                                            <p>&nbsp;&nbsp;&nbsp;Unduh</p>
+                                                                        </button>
+                                                                        <div class="dropdown-menu dropdown-menu-right"
+                                                                            aria-labelledby="dd1">
+                                                                            <a class="dropdown-item" href="#">
+                                                                                <i
+                                                                                    data-feather="file"></i>&nbsp;&nbsp;Pdf</a>
+                                                                            <a class="dropdown-item" href="#">
+                                                                                <i
+                                                                                    data-feather="file-text"></i>&nbsp;&nbsp;Xlsx</a>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center"><button
+                                                                        class="btn btn-sm btn-warning">Tinjau</button>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td align="center">5</td>
+                                                                <td>Gunawan</td>
+                                                                <td align="center"> <i data-feather="file"></i> <i
+                                                                        data-feather="file-text"></i></td>
+                                                                <td>
+                                                                    <div class="dropdown sub-dropdown">
+                                                                        <button
+                                                                            class="d-flex btn btn-link text-muted dropdown-toggle"
+                                                                            type="button" id="dd1"
+                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                            aria-expanded="true">
+                                                                            <i data-feather="download"></i>
+                                                                            <p>&nbsp;&nbsp;&nbsp;Unduh</p>
+                                                                        </button>
+                                                                        <div class="dropdown-menu dropdown-menu-right"
+                                                                            aria-labelledby="dd1">
+                                                                            <a class="dropdown-item" href="#">
+                                                                                <i
+                                                                                    data-feather="file"></i>&nbsp;&nbsp;Pdf</a>
+                                                                            <a class="dropdown-item" href="#">
+                                                                                <i
+                                                                                    data-feather="file-text"></i>&nbsp;&nbsp;Xlsx</a>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center"><button
+                                                                        class="btn btn-sm btn-warning">Tinjau</button>
+                                                                </td>
+                                                            </tr>
                                                         </tbody>
                                                         <tfoot>
                                                             {{-- <tr>
@@ -306,9 +370,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <ul class="list-inline text-center mt-4 mb-0">
-                                <li class="list-inline-item text-muted font-italic">Earnings for this month</li>
-                            </ul>
                         </div>
                     </div>
                 </div>
