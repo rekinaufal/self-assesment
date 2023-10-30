@@ -33,7 +33,6 @@ class User extends Authenticatable
         'password',
         'user_category_id',
         'is_active',
-        'limit_file',
     ];
 
     protected $guarded = [

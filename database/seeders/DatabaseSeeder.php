@@ -25,7 +25,6 @@ class DatabaseSeeder extends Seeder
             PermenperinCategorySeeder::class,
             ComputationSeeder::class,
             NewsSeeder::class,
-            QuotaSeeder::class,
             PaymentSeeder::class
         ]);
     }

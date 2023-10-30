@@ -19,7 +19,7 @@ class PaymentSeeder extends Seeder
             [
                 "id" => 1,
                 "user_id" => 2,
-                "quota_id" => 3,
+                "upgraded_category" => 2,
                 "method" => "cash",
                 "bank_name" => "BCA",
                 "bank_account_number" => "1231231231",
@@ -32,7 +32,7 @@ class PaymentSeeder extends Seeder
             [
                 "id" => 2,
                 "user_id" => 1,
-                "quota_id" => 4,
+                "upgraded_category" => 2,
                 "method" => "cash",
                 "bank_name" => "BCA",
                 "bank_account_number" => "1231231232",
@@ -45,7 +45,7 @@ class PaymentSeeder extends Seeder
             [
                 "id" => 3,
                 "user_id" => 3,
-                "quota_id" => 2,
+                "upgraded_category" => 2,
                 "method" => "cash",
                 "bank_name" => "BCA",
                 "bank_account_number" => "1231231233",
@@ -58,7 +58,7 @@ class PaymentSeeder extends Seeder
             [
                 "id" => 4,
                 "user_id" => 4,
-                "quota_id" => 2,
+                "upgraded_category" => 2,
                 "method" => "cash",
                 "bank_name" => "BCA",
                 "bank_account_number" => "1231231234",
@@ -71,7 +71,7 @@ class PaymentSeeder extends Seeder
             [
                 "id" => 5,
                 "user_id" => 5,
-                "quota_id" => 2,
+                "upgraded_category" => 2,
                 "method" => "cash",
                 "bank_name" => "BCA",
                 "bank_account_number" => "1231231235",

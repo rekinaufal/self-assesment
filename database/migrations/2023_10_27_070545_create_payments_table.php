@@ -16,19 +16,19 @@ return new class extends Migration
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger("user_id");
-            $table->unsignedBigInteger("quota_id")->nullable();
-            $table->string("method");
+            $table->unsignedBigInteger("upgraded_category");
+            $table->string("payment_method");
             $table->string("bank_name");
             $table->string("bank_account_number");
             $table->string("bank_account_name");
             $table->string("transaction_receipt");
-            $table->enum("status", ["pending", "approved", "rejected"]);
+            $table->enum("status", ["pending", "approved", "rejected"])->default("pending");
             // $table->unsignedBigInteger("approved_by")->nullable();
             $table->string("approved_by")->nullable();
             $table->timestamps();
 
             $table->foreign("user_id")->references("id")->on("users")->cascadeOnDelete()->cascadeOnUpdate();
-            $table->foreign("quota_id")->references("id")->on("quotas")->nullOnDelete()->cascadeOnUpdate();
+            $table->foreign("upgraded_category")->references("id")->on("user_categories")->cascadeOnDelete()->cascadeOnUpdate();
             // $table->foreign("approved_by")->references("id")->on("users")->nullOnDelete()->cascadeOnUpdate();
         });
     }

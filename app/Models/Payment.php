@@ -14,8 +14,8 @@ class Payment extends Model
 
     protected $fillable = [
         "user_id",
-        "quota_id",
-        "method",
+        "upgraded_category",
+        "payment_method",
         "bank_name",
         "bank_account_number",
         "bank_account_name",
@@ -39,13 +39,13 @@ class Payment extends Model
     }
 
     /**
-     * Get the quota that owns the Payment
+     * Get the upgraded_category that owns the Payment
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function quota(): BelongsTo
+    public function upgraded_category(): BelongsTo
     {
-        return $this->belongsTo(Quota::class, 'quota_id', 'id');
+        return $this->belongsTo(UserCategory::class, 'upgraded_category', 'id');
     }
 
     public static function getOptions() {

@@ -12,6 +12,8 @@ class UserCategory extends Model
     static $rules = [
         "name" => "required|unique:user_categories, name",
         "benefits" => "required",
+        "limit_file" => "required|numeric",
+        "price" => "required|numeric",
         "color" => "required"
     ];
 
@@ -20,6 +22,8 @@ class UserCategory extends Model
     protected $fillable = [
         "name",
         "benefits",
+        "limit_file",
+        "price",
         "color"
     ];
 
