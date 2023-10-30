@@ -32,12 +32,16 @@ class UserCategorySeeder extends Seeder
                 "id" => 1,
                 "name" => "Regular",
                 "benefits" => $regularBenefits,
+                "limit_file" => 1,
+                "price" => 0,
                 "created_at" => date("Y-m-d H:i:s")
             ],
             [
                 "id" => 2,
                 "name" => "Premium",
                 "benefits" => $premiumBenefits,
+                "limit_file" => 50,
+                "price" => 50000,
                 "created_at" => date("Y-m-d H:i:s")
             ]
         ];

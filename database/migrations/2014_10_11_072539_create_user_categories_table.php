@@ -17,6 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string("name");
             $table->json("benefits");
+            $table->integer("limit_file");
+            $table->integer("price");
             $table->enum("color", ["primary", "secondary", "warning", "danger", "info", "light", "dark"])->default("dark");
             $table->timestamps();
         });
