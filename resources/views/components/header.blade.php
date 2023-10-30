@@ -217,8 +217,8 @@
                             <i data-feather="mail" class="svg-icon mr-2 ml-1"></i>
                             Inbox
                         </a>
-                        <div class="dropdown-divider"></div>
-                        {{-- <a class="dropdown-item" href="javascript:void(0)">
+                        {{-- <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="javascript:void(0)">
                             <i data-feather="settings" class="svg-icon mr-2 ml-1"></i>
                             Account Setting
                         </a> --}}

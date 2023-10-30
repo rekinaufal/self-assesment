@@ -184,8 +184,119 @@
                             </table>
                             <div class="row">
                                 <div class="col-sm-12 text-center">
-                                    <button class="btn btn-primary btn-md center-block" Style="width: 100px;">Edit</button>
+                                    <button class="btn btn-primary btn-md center-block" Style="width: 100px;" data-toggle="modal" data-target="#edit-profile">Edit</button>
+                                    
                                     <button class="btn btn-danger btn-md center-block" Style="width: 100px;">Blokir</button>
+                                </div>
+                            </div>
+                            <!--  Modal content for the above example -->
+                            <div class="modal fade" id="edit-profile" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title" id="myLargeModalLabel">Edit profile</h4>
+                                            <button type="button" class="close" data-dismiss="modal"aria-hidden="true">×</button>
+                                        </div>
+                                        <div class="modal-body">
+                                            {{-- <h2 class="text-center mb-4 mt-0 mt-md-4 px-2">Upgrade akun anda dan dapatkan kelebihannya</h2> --}}
+                                            <form method="POST" action="{{ route('profile.update', $profile->id) }}" role="form" enctype="multipart/form-data">
+                                                @method('PUT') 
+                                                @csrf
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <div class="form-group"> 
+                                                            <label for="fullname">
+                                                                <h6>Fullname</h6>
+                                                            </label> 
+                                                            <input type="text" name="fullname" value="{{ $profile->fullname ?? '' }}" placeholder="Fullname" required class="form-control "> 
+                                                        </div>
+                                                        <div class="form-group"> 
+                                                            <label for="fullname">
+                                                                <h6>Company Name</h6>
+                                                            </label> 
+                                                            <input type="text" name="company_name" value="{{ $profile->company_name ?? '' }}" placeholder="Company Name" required class="form-control "> 
+                                                        </div>
+                                                        <div class="form-group"> 
+                                                            <label for="fullname">
+                                                                <h6>Company Address</h6>
+                                                            </label> 
+                                                            <input type="text" name="company_address" value="{{ $profile->company_address ?? '' }}" placeholder="Company Address" required class="form-control "> 
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="form-group"> 
+                                                            <label for="fullname">
+                                                                <h6>Phone Number</h6>
+                                                            </label> 
+                                                            <input type="text" name="phone_number" value="{{ $profile->phone_number ?? '' }}" placeholder="Phone Number" required class="form-control "> 
+                                                        </div>
+                                                        <div class="form-group"> 
+                                                            <label for="fullname">
+                                                                <h6>Job Title</h6>
+                                                            </label> 
+                                                            <input type="text" name="job_title"value="{{ $profile->job_title ?? '' }}" placeholder="Job Title" required class="form-control "> 
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="form-group dropzoneArea" style="height: max-content">
+                                                            <label for="Avatar">Avatar</label>
+                                                            <x-input.dropzone name="avatar" id="input-thumbnail" customDropzoneId="custom-dropzone"
+                                                                dropzonePreviewId="dropzone-preview" namePreviewId="name-preview"
+                                                                sizePreviewId="size-preview" filePreviewId="file-preview"
+                                                                defaultImage="assets/images/news/illustration1.jpg" defaultName="lorem ipsum"
+                                                                defaultSize="0 Mb" />
+                                                            @error('title')
+                                                                <small class="text-danger">{{ $message }}</small>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {{-- <div class="form-group"> 
+                                                    <label for="cardNumber">
+                                                        <h6>Card number</h6>
+                                                    </label>
+                                                    <div class="input-group"> 
+                                                        <input type="text" name="cardNumber" placeholder="Valid card number" class="form-control " required="">
+                                                        <div class="input-group-append"> 
+                                                            <span class="input-group-text text-muted"> 
+                                                                <i class="fab fa-cc-visa mx-1"></i>
+                                                                <i class="fab fa-cc-mastercard mx-1"></i> 
+                                                                <i class="fab fa-cc-amex mx-1"></i> 
+                                                            </span> 
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-8">
+                                                        <div class="form-group"> 
+                                                            <label>
+                                                                <span class="hidden-xs">
+                                                                    <h6>Expiration Date</h6>
+                                                                </span>
+                                                            </label>
+                                                            <div class="input-group"> 
+                                                                <input type="number" placeholder="MM" name="" class="form-control" required=""> 
+                                                                <input type="number" placeholder="YY" name="" class="form-control" required=""> 
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group mb-4"> 
+                                                            <label data-toggle="tooltip" title="" data-original-title="Three digit CV code on the back of your card">
+                                                                <h6>CVV <i class="fa fa-question-circle d-inline"></i></h6>
+                                                            </label> 
+                                                            <input type="text" required="" class="form-control"> 
+                                                        </div>
+                                                    </div>
+                                                </div> --}}
+                                                <div class="card-footer bg-transparent"> 
+                                                    <button type="submit" class="subscribe btn btn-primary btn-block shadow-sm">Save changes</button>
+                                                 </div>
+                                            </form>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -231,9 +342,9 @@
                             </p>
                         </div>
                         <div class="card-footer bg-transparent">
-                            <a class="btn btn-block btn-primary" href="/payment" data-toggle="modal" data-target="#bs-example-modal-lg">UPGRADE PLAN</a>
-                            <!--  Modal content for the above example -->
-                            <div class="modal fade" id="bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                            <a class="btn btn-block btn-primary" href="#" data-toggle="modal" data-target="#upgrade-plan">UPGRADE PLAN</a>
+                            <!--  Modal content for upgrade plan -->
+                            <div class="modal fade" id="upgrade-plan" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                 <div class="modal-dialog modal-xl">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -342,102 +453,7 @@
                             <div class="tab-content">
                                 <!-- overview -->
                                 <div id="overview" class="tab-pane fade show active pt-3">
-                                    <form method="POST" action="{{ route('profile.update', $profile->id) }}" role="form" enctype="multipart/form-data">
-                                        @method('PUT') 
-                                        @csrf
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="form-group"> 
-                                                    <label for="fullname">
-                                                        <h6>Fullname</h6>
-                                                    </label> 
-                                                    <input type="text" name="fullname" value="{{ $profile->fullname ?? '' }}" placeholder="Fullname" required class="form-control "> 
-                                                </div>
-                                                <div class="form-group"> 
-                                                    <label for="fullname">
-                                                        <h6>Company Name</h6>
-                                                    </label> 
-                                                    <input type="text" name="company_name" value="{{ $profile->company_name ?? '' }}" placeholder="Company Name" required class="form-control "> 
-                                                </div>
-                                                <div class="form-group"> 
-                                                    <label for="fullname">
-                                                        <h6>Company Address</h6>
-                                                    </label> 
-                                                    <input type="text" name="company_address" value="{{ $profile->company_address ?? '' }}" placeholder="Company Address" required class="form-control "> 
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <div class="form-group"> 
-                                                    <label for="fullname">
-                                                        <h6>Phone Number</h6>
-                                                    </label> 
-                                                    <input type="text" name="phone_number" value="{{ $profile->phone_number ?? '' }}" placeholder="Phone Number" required class="form-control "> 
-                                                </div>
-                                                <div class="form-group"> 
-                                                    <label for="fullname">
-                                                        <h6>Job Title</h6>
-                                                    </label> 
-                                                    <input type="text" name="job_title"value="{{ $profile->job_title ?? '' }}" placeholder="Job Title" required class="form-control "> 
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div class="form-group dropzoneArea" style="height: max-content">
-                                                    <label for="Avatar">Avatar</label>
-                                                    <x-input.dropzone name="avatar" id="input-thumbnail" customDropzoneId="custom-dropzone"
-                                                        dropzonePreviewId="dropzone-preview" namePreviewId="name-preview"
-                                                        sizePreviewId="size-preview" filePreviewId="file-preview"
-                                                        defaultImage="assets/images/news/illustration1.jpg" defaultName="lorem ipsum"
-                                                        defaultSize="0 Mb" />
-                                                    @error('title')
-                                                        <small class="text-danger">{{ $message }}</small>
-                                                    @enderror
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {{-- <div class="form-group"> 
-                                            <label for="cardNumber">
-                                                <h6>Card number</h6>
-                                            </label>
-                                            <div class="input-group"> 
-                                                <input type="text" name="cardNumber" placeholder="Valid card number" class="form-control " required="">
-                                                <div class="input-group-append"> 
-                                                    <span class="input-group-text text-muted"> 
-                                                        <i class="fab fa-cc-visa mx-1"></i>
-                                                        <i class="fab fa-cc-mastercard mx-1"></i> 
-                                                        <i class="fab fa-cc-amex mx-1"></i> 
-                                                    </span> 
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm-8">
-                                                <div class="form-group"> 
-                                                    <label>
-                                                        <span class="hidden-xs">
-                                                            <h6>Expiration Date</h6>
-                                                        </span>
-                                                    </label>
-                                                    <div class="input-group"> 
-                                                        <input type="number" placeholder="MM" name="" class="form-control" required=""> 
-                                                        <input type="number" placeholder="YY" name="" class="form-control" required=""> 
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-4">
-                                                <div class="form-group mb-4"> 
-                                                    <label data-toggle="tooltip" title="" data-original-title="Three digit CV code on the back of your card">
-                                                        <h6>CVV <i class="fa fa-question-circle d-inline"></i></h6>
-                                                    </label> 
-                                                    <input type="text" required="" class="form-control"> 
-                                                </div>
-                                            </div>
-                                        </div> --}}
-                                        <div class="card-footer bg-transparent"> 
-                                            <button type="submit" class="subscribe btn btn-primary btn-block shadow-sm">Save changes</button>
-                                         </div>
-                                    </form>
+
                                 </div> 
                                 <!-- security -->
                                 <div id="security" class="tab-pane fade pt-3">
