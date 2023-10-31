@@ -61,7 +61,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource("news", NewsController::class);
 
     // payment
-    Route::get('/payment', 'PaymentController@payment')->name('payment');
+    Route::get('/payment/{id}', 'PaymentController@payment')->name('payment');
     Route::post('/uploadPayment', 'PaymentController@uploadPayment')->name('uploadPayment');
 });
 

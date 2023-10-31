@@ -308,11 +308,11 @@
                         <span class="hide-menu">Documentation</span>
                     </a>
                 </li> --}}
-                <li class="sidebar-item">
+                {{-- <li class="sidebar-item">
                     <a class="sidebar-link sidebar-link" href="{{ route('logout') }}" aria-expanded="false"><i data-feather="log-out" class="feather-icon"></i>
                         <span class="hide-menu">Logout</span>
                     </a>
-                </li>
+                </li> --}}
             </ul>
         </nav>
         <!-- End Sidebar navigation -->
