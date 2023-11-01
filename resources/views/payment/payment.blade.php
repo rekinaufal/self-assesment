@@ -196,7 +196,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card">
+                {{-- <div class="card">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-12" style="padding: 20px !important">
@@ -243,7 +243,6 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="form-group mt-3">
-                            {{-- <h4><b>SCREEN MY CANDIDATE</b></h4> --}}
                             <div class="row">
                                 <div class="col-12" style="padding:30px">
                                     <div class="row">
@@ -291,14 +290,6 @@
                                         <div class="col-6">
                                             Selected Service Component:
                                             <table width="100%">
-                                                {{-- @foreach($ComponentServiceForSummary as $item)
-                                                <tr>
-                                                    <td>{{ $item->name_component }}</td>
-                                                    <td>
-                                                        <div>{{ rupiah($item->price) }}</div>
-                                                    </td>
-                                                </tr>
-                                                @endforeach --}}
                                                 <tr>
                                                     <td colspan="2">
                                                         <hr>
@@ -314,7 +305,7 @@
                                         </div>
                                         <div class="col-6">
                                             Documents:
-                                            {{-- <table width="100%">
+                                            <table width="100%">
                                                 @foreach($ComponentServiceForSummary as $it)
                                                     <tr>
                                                         <td width="10%">
@@ -323,30 +314,29 @@
                                                         <td>{{ $it->name_component }}</td>
                                                     </tr>
                                                 @endforeach
-                                            </table> --}}
+                                            </table>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-4 offset-8">
-                                            {{-- @if ($EBC->status == 0)
+                                            @if ($EBC->status == 0)
                                                 <a href="{{ route('ebc.edit', $EBC->id) }}?type=payment" class="btn btn-block bg-blue text-white">Continue Payment Process</a>
-                                            @endif --}}
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
 @endsection
 @push('scripts')
-<script>
-    $(function () {
-        $('[data-toggle="tooltip"]').tooltip()
-    })
-
-</script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
 @endpush

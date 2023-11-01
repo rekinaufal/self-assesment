@@ -356,7 +356,7 @@
                                             <div class="row">
                                                 @foreach ($userCategory as $item)
                                                     <div class="col-4 mt-4">
-                                                        <div class="card border-{{ $item->color }} border shadow-none">
+                                                        <div class="card border-{{ $item->color ?? '' }} border shadow-none">
                                                             <div class="card-body position-relative">
                                                                 {{-- <div class="position-absolute end-0 me-4 top-0 mt-4">
                                                                     <span class="badge bg-label-primary">Popular</span>
@@ -364,14 +364,14 @@
                                                                 <div class="my-3 pt-2 text-center">
                                                                     <img src="{{ asset('assets/images/users/crown.png') }}" alt="Pro Image" height="80">
                                                                 </div>
-                                                                <h3 class="card-title text-center text-capitalize mb-1">{{ $item->name }}</h3>
+                                                                <h3 class="card-title text-center text-capitalize mb-1">{{ $item->name ?? '' }}</h3>
                                                                 <p class="text-center">For small to medium businesses</p>
                                                                 <div class="text-center">
                                                                     <div class="d-flex justify-content-center">
                                                                         <sup class="h6 pricing-currency mt-3 mb-0 me-1 text-primary">Rp.</sup>
                                                                         <h1 class="price-toggle price-yearly display-6 text-primary mb-0">{{ 'Rp. ' . number_format($item->price, 0, ',', '.') }}</h1>
                                                                         <h1 class="price-toggle price-monthly display-4 text-primary mb-0 d-none">1</h1>
-                                                                        <sub class="h6 text-muted pricing-duration mt-auto mb-2 fw-normal">/{{ $item->limit_file }} files</sub>
+                                                                        <sub class="h6 text-muted pricing-duration mt-auto mb-2 fw-normal">/{{ $item->limit_file ?? '' }} files</sub>
                                                                     </div>
                                                                     {{-- <small class="position-absolute start-0 end-0 m-auto price-yearly price-yearly-toggle text-muted">$ 499 / year</small> --}}
                                                                 </div>
@@ -381,19 +381,20 @@
                                                                         <span class="badge badge-center w-px-20 h-px-20 rounded-pill bg-label-primary me-2">
                                                                             <i class="fas fa-check"></i>
                                                                         </span>
-                                                                        <span>Up to {{ $item->limit_file }} files</span>
+                                                                        <span>Up to {{ $item->limit_file ?? '' }} files</span>
                                                                     </li>
                                                                     @foreach ($item->benefits as $b)
                                                                         <li class="mb-2 d-flex align-items-center">
                                                                             <span class="badge badge-center w-px-20 h-px-20 rounded-pill bg-label-primary me-2">
                                                                                 <i class="fas fa-check"></i>
                                                                             </span>
-                                                                            <span>{{ $b }}</span>
+                                                                            <span>{{ $b ?? '' }}</span>
                                                                         </li>
                                                                     @endforeach
                                                                 </ul>
-                                            
-                                                            <a href="/payment/{{ $item->id ?? '' }}" class="btn btn-primary d-grid w-100" data-bs-dismiss="modal">Upgrade</a>
+                                                                @if ($user->user_category_id != $item->id)
+                                                                        <a href="/payment-display/{{ $item->id ?? '' }}" class="btn btn-primary d-grid w-100" data-bs-dismiss="modal">Upgrade</a>
+                                                                @endif
                                                             </div>
                                                         </div>
                                                     </div>

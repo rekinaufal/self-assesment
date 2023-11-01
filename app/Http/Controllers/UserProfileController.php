@@ -21,7 +21,8 @@ class UserProfileController extends Controller
         }
         $userRole = $user->roles->pluck('name')->first();
         $profile = UserProfile::where('user_id', $id)->first();
-        $userCategory = UserCategory::limit(2)->get();
+        // $userCategory = UserCategory::limit(2)->get();
+        $userCategory = UserCategory::where('id', '>=', $user->user_category_id)->limit(2)->get();
         // $profile = DB::table('users')
         //     ->leftJoin('user_profiles', 'users.id', '=', 'user_profiles.user_id')
         //     ->where('user_profiles.user_id', '=', $id) 

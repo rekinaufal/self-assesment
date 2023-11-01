@@ -10,10 +10,18 @@ use Illuminate\Http\Request;
 class PaymentController extends Controller
 {
     private static $uploadsFolder = "payment";
+    public static $pageTitle = 'Payment';
 
     public function index()
     {
-        //
+        $pageTitle = self::$pageTitle;
+
+        $payment = Payment::where('status', 'pending')->get();
+        if (!$payment) {
+            return redirect()->route('dashboard')
+            ->with('failed', 'Payment Data Is Empty');
+        }
+        return view('payment.index', compact('pageTitle', 'payment'));
     }
 
     /**
@@ -82,8 +90,6 @@ class PaymentController extends Controller
         //
     }
 
-    public static $pageTitle = 'Payment';
-
     public function payment($upgrade_id)
     {
         $selectUpgradeCategori = UserCategory::find($upgrade_id);
@@ -121,6 +127,45 @@ class PaymentController extends Controller
         } else {
             return redirect()->back()->with('failed', 'Pembayaran gagal dibuat');
         }
-        dd($req);
+    }
+
+    public function approvePayment($id) 
+    {
+        if ($id == null) {
+            return redirect()->back()
+                ->with('failed', 'Approve Payment successfully');
+        }
+
+        $payment = Payment::find($id);
+        if (!$payment) {
+            return redirect()->route('dashboard')
+            ->with('failed', 'Payment Data Is Empty');
+        }
+
+        $user = User::find($payment->user_id);
+        if ($user->user_category_id == $payment->upgraded_category) {
+            return redirect()->back()->with('failed', 'Tidak bisa di upgrade, karena user yang dituju sudah sesuai');
+        }
+
+        $isEditedPayment = Payment::where('id', $id)->update([
+            'status' => 'approved'
+        ]);
+        dd($isEditedPayment);
+
+        if ($isEditedPayment) {
+            return redirect()->back()->with('success', 'Approve Payment successfully');
+        } else {
+            return redirect()->back()->with('failed', 'Approve Payment Failed');
+        }
+
+        $isEditedUserCategory = User::where('id', $user->id)->update([
+            'user_category_id' => $payment->upgraded_category
+        ]);
+
+        if ($isEditedUserCategory) {
+            return redirect()->back()->with('success', 'Update User Category successfully');
+        } else {
+            return redirect()->back()->with('failed', 'Update User Category Failed');
+        }
     }
 }
