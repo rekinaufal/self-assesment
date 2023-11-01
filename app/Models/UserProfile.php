@@ -48,6 +48,10 @@ class UserProfile extends Model
 
     public function getAvatarPath() {
         $avatarPath = $this->avatar;
-        return "uploads/" . $avatarPath;
+        if($avatarPath != null) {
+            return "uploads/" . $avatarPath;
+        }
+
+        return null;
     }
 }

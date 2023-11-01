@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use Faker\Factory;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -51,6 +52,22 @@ class UserProfileSeeder extends Seeder
             ],
         ];
 
+        $faker = Factory::create();
+
         DB::table("user_profiles")->insert($data);
+
+        for ($i = 4; $i <= 30; $i++) {
+            DB::table('user_profiles')->insert([
+                "id" => $i,
+                "user_id" => $i,
+                "fullname" => $faker->name,
+                "company_name" => $faker->company,
+                "company_address" => $faker->city,
+                "phone_number" => $faker->phoneNumber,
+                "job_title" => $faker->jobTitle,
+                "avatar" => "users/avatar/avatar_fullname_202310271359.jpg",
+                "created_at" => date("Y-m-d H:i:s"),
+            ]);
+        }
     }
 }

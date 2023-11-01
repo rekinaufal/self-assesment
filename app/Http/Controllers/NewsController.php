@@ -14,13 +14,14 @@ class NewsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $perpage = $request->input('perpage', 6);
         $data = [
             "pageTitle" => self::$pageTitle,
-            "news" => News::latest()->paginate(6),
+            "news" => News::latest()->paginate($perpage)->appends(["perpage" => $perpage]),
+            "perpage" => $perpage
         ];
-
 
         return view("news.index", $data);
     }
@@ -135,6 +136,7 @@ class NewsController extends Controller
 
     public function deletedBatch(Request $request)
     {
+        dd($request->delete_ids);
         $deleteIds = json_decode($request->delete_ids);
 
         $deletedNews = News::whereIn('id', $deleteIds)->delete();

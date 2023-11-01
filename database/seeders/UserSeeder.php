@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use Carbon\Carbon;
+use Faker\Factory;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -80,5 +82,21 @@ class UserSeeder extends Seeder
         ];
 
         DB::table('users')->insert($data);
+
+        $faker = Factory::create();
+
+        for ($i = 6; $i <= 30; $i++) {
+            DB::table('users')->insert([
+                "id" => $i,
+                "fullname" => $faker->name, // Ini akan mengisi dengan nama acak
+                "email" => $faker->email,
+                "email_verified_at" => Carbon::now(),
+                "password" => Hash::make("password"),
+                "user_category_id" => 1,
+                "is_active" => true,
+                "created_at" => Carbon::now(),
+                "updated_at" => Carbon::now(),
+            ]);
+        }
     }
 }
