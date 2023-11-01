@@ -208,7 +208,7 @@ class UserController extends Controller
         return redirect()->back()->with('failed', 'Password gagal diedit');
     }
 
-    public function getNewsJson()
+    public function getUsersJson()
     {
         $users = User::all();
 
