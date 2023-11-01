@@ -71,7 +71,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/images/favicon.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/images/icon-elearning.png') }}">
     <title>@yield('title') || E-learning</title>
 
 

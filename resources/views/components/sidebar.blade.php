@@ -78,6 +78,18 @@
                         <span class="hide-menu">Permen Category</span>
                     </a>
                 </li>
+                <li class="sidebar-item {{ Request::is('needs') ? 'active' : '' }}">
+                    <a class="sidebar-link sidebar-link" href="{{ url('needs') }}" aria-expanded="false">
+                        <i data-feather="file-text" class="feather-icon"></i>
+                        <span class="hide-menu">List Kebutuhan</span>
+                    </a>
+                </li>
+                <li class="sidebar-item {{ Request::is('payment') ? 'active' : '' }}">
+                    <a class="sidebar-link sidebar-link" href="{{ url('payment') }}" aria-expanded="false">
+                        <i data-feather="file-text" class="feather-icon"></i>
+                        <span class="hide-menu">Payment Approval</span>
+                    </a>
+                </li>
 
                 {{-- <li class="list-divider"></li>
                 <li class="nav-small-cap">
@@ -298,21 +310,21 @@
                                     1.4</span></a></li>
                     </ul>
                 </li> --}}
-                <li class="list-divider"></li>
+                {{-- <li class="list-divider"></li>
                 <li class="nav-small-cap">
                     <span class="hide-menu">Extra</span>
-                </li>
+                </li> --}}
                 {{-- <li class="sidebar-item">
                     <a class="sidebar-link sidebar-link" href="docs/docs.html" aria-expanded="false">
                         <i data-feather="edit-3" class="feather-icon"></i>
                         <span class="hide-menu">Documentation</span>
                     </a>
                 </li> --}}
-                <li class="sidebar-item">
+                {{-- <li class="sidebar-item">
                     <a class="sidebar-link sidebar-link" href="{{ route('logout') }}" aria-expanded="false"><i data-feather="log-out" class="feather-icon"></i>
                         <span class="hide-menu">Logout</span>
                     </a>
-                </li>
+                </li> --}}
             </ul>
         </nav>
         <!-- End Sidebar navigation -->

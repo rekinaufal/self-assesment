@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\UserCategory;
 use App\Models\UserProfile;
 use Illuminate\Http\Request;
 use App\Models\User;
@@ -19,14 +20,16 @@ class UserProfileController extends Controller
             ->with('failed', 'Users Id '. $id . ' Not Found');
         }
         $userRole = $user->roles->pluck('name')->first();
+        $profile = UserProfile::where('user_id', $id)->first();
+        // $userCategory = UserCategory::limit(2)->get();
+        $userCategory = UserCategory::where('id', '>=', $user->user_category_id)->limit(2)->get();
         // $profile = DB::table('users')
         //     ->leftJoin('user_profiles', 'users.id', '=', 'user_profiles.user_id')
         //     ->where('user_profiles.user_id', '=', $id) 
         //     ->select('users.*', 'user_profiles.*') 
         //     ->first();
-        $profile = UserProfile::where('user_id', $id)->first();
         // dd($profile);
-        return view('user.profile', compact('pageTitle', 'profile', 'userRole', 'user'));
+        return view('user.profile', compact('pageTitle', 'profile', 'userRole', 'user', 'userCategory'));
 
     }
 

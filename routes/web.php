@@ -59,10 +59,15 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get("json/news", [NewsController::class, "getNewsJson"]);
     Route::post('delete-batch/news', [NewsController::class, "deletedBatch"])->name("news.deletedBatch");
     Route::resource("news", NewsController::class);
-
+    
     // payment
-    Route::get('/payment', 'PaymentController@payment')->name('payment');
+    Route::resource("payment", PaymentController::class);
+    Route::get('/payment-display/{id}', 'PaymentController@payment')->name('payment');
+    Route::get('/approvePayment/{id}', 'PaymentController@approvePayment')->name('approvePayment');
     Route::post('/uploadPayment', 'PaymentController@uploadPayment')->name('uploadPayment');
+
+    // list kebutuhan
+    Route::resource("needs", NeedsController::class);
 });
 
 // Route::controller(PermenperinCategoryController::class)->group(function () {
