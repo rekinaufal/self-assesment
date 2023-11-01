@@ -18,14 +18,13 @@ class UserExport implements FromQuery, WithHeadings, ShouldAutoSize, WithEvents
     public function query()
     {
         return User::query()
-                    ->select('name', 'username', 'email', 'created_at');
+                    ->select('fullname', 'email', 'created_at');
     }
 
-    public function headings(): array 
+    public function headings(): array
     {
         return [
-            'name',
-            'username',
+            'fullname',
             'email',
             'created at',
         ];
@@ -35,7 +34,7 @@ class UserExport implements FromQuery, WithHeadings, ShouldAutoSize, WithEvents
     {
         return [
             AfterSheet::class    => function(AfterSheet $event) {
-                $cellRange = 'A1:D1'; // All headers
+                $cellRange = 'A1:C1'; // All headers
                 $event->sheet->getDelegate()->getStyle($cellRange)->getFont()->setSize(14);
             },
         ];

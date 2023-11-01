@@ -27,20 +27,24 @@ class UserController extends Controller
         $this->middleware('permission:user-delete', ['only' => ['destroy']]);
         $this->middleware('permission:user-show', ['only' => ['show']]);
     }
-    
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $users = User::paginate(6);
+        $perpage = $request->input("perpage", 6);
+
+        $users = User::paginate($perpage);
+
+        $users->appends(["perpage" => $perpage]);
 
         $pageTitle = self::$pageTitle;
 
         // return view('user.index', compact('users', 'pageTitle'));
-        return view('user.index', compact('pageTitle', 'users'));
+        return view('user.index', compact('pageTitle', 'users', 'perpage'));
     }
 
     /**
@@ -53,7 +57,7 @@ class UserController extends Controller
         $user = new User();
         // $roles = Role::pluck('name', 'name')->all();
         $pageTitle = self::$pageTitle;
-        
+
         $missingDataRoleUserForOption = Role::whereNotExists(function ($query) {
             $query->select('id')
                   ->from('model_has_roles')
@@ -62,7 +66,7 @@ class UserController extends Controller
         ->get();
         return view('user.create', compact('user', 'pageTitle', 'missingDataRoleUserForOption'));
     }
-    
+
     public function store(Request $req)
     {
         request()->validate(User::$rules);
@@ -75,7 +79,7 @@ class UserController extends Controller
         return redirect()->route('users.index')
             ->with('success', 'User created successfully.');
     }
-    
+
     public function show($id)
     {
         $user = User::find($id);
@@ -83,7 +87,7 @@ class UserController extends Controller
         if (!$user->roles->isEmpty()) {
             $userRole = $user->roles[0]->name;
         } else {
-            
+
         }
         $pageTitle = self::$pageTitle;
 
@@ -143,7 +147,7 @@ class UserController extends Controller
         }
     }
 
-    public function destroyByCheckbox(Request $request) 
+    public function destroyByCheckbox(Request $request)
     {
         $dataArray = explode(",", $request->idsDownload);
         if ($dataArray) {
@@ -167,7 +171,7 @@ class UserController extends Controller
     public function exportPdf()
     {
         $th = [
-            'fullname', 
+            'fullname',
             'email',
             'created at'
         ];
@@ -197,10 +201,33 @@ class UserController extends Controller
                         ->with('success', 'Data berhasil diupdate');
                 }
             }
-            
+
         } else {
             return redirect()->back()->with('failed', 'Current password is wrong !');
         }
         return redirect()->back()->with('failed', 'Password gagal diedit');
+    }
+
+    public function getNewsJson()
+    {
+        $users = User::all();
+
+        if (!$users) abort(404, "Not found users");
+
+        return response()->json($users);
+    }
+
+    public function deletedBatch(Request $request)
+    {
+        dd($request->delete_ids);
+        $deleteIds = json_decode($request->delete_ids);
+
+        $deletedNews = User::whereIn('id', $deleteIds)->delete();
+        // dd($deleteIds);
+        if (!$deletedNews) {
+            return redirect()->route("users.index")->with("failed", "Failed to delete batch!");
+        }
+
+        return redirect()->route("users.index")->with("success", "Successfully to delete the selected users!");
     }
 }
