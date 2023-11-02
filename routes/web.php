@@ -47,8 +47,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('users', 'UserController');
     Route::get('/exportExcelUsers', 'UserController@exportExcel')->name('exportExcelUsers');
     Route::get('/exportPdfUsers', 'UserController@exportPdf')->name('exportPdfUsers');
-    Route::post('/destroyByCheckbox', 'UserController@destroyByCheckbox')->name('destroyByCheckbox');
+    Route::post('delete-batch/users', 'UserController@deletedBatch')->name('users.deletedBatch');
     Route::post('/changePassword', 'UserController@changePassword')->name('changePassword');
+    Route::get('/json/users', 'UserController@getUsersJson');
     //profile
     Route::resource('profile', 'UserProfileController');
     Route::get('/profile-pengguna', 'UserProfileController@profile')->name('profile');
@@ -59,7 +60,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get("json/news", [NewsController::class, "getNewsJson"]);
     Route::post('delete-batch/news', [NewsController::class, "deletedBatch"])->name("news.deletedBatch");
     Route::resource("news", NewsController::class);
-    
+
     // payment
     Route::resource("payment", PaymentController::class);
     Route::get('/payment-display/{id}', 'PaymentController@payment')->name('payment');

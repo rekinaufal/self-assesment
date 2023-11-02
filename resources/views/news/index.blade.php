@@ -138,10 +138,10 @@
                             <div class="form-group d-flex align-items-center">
                                 <select name="perpage" id="perpage" class="form-control" style="width: 7rem">
                                     <option value="9" {{ $perpage == 9 ? 'selected' : '' }}>Default</option>
+                                    <option value="15" {{ $perpage == 15 ? 'selected' : '' }}>15</option>
                                     <option value="30" {{ $perpage == 30 ? 'selected' : '' }}>30</option>
+                                    <option value="45" {{ $perpage == 45 ? 'selected' : '' }}>45</option>
                                     <option value="60" {{ $perpage == 60 ? 'selected' : '' }}>60</option>
-                                    <option value="90" {{ $perpage == 90 ? 'selected' : '' }}>90</option>
-                                    <option value="120" {{ $perpage == 120 ? 'selected' : '' }}>120</option>
                                 </select>
                                 <label for="perpage" class="pt-2 pl-2">News per page</label>
                             </div>
