@@ -116,6 +116,7 @@
                                         <input type="file" name="transaction_receipt">
                                     </div>
                                     <input type="hidden" name="upgraded_category" value="{{ $selectUpgradeCategori->id }}">
+                                    <input type="hidden" name="total" value="{{ $selectUpgradeCategori->price }}">
                                     <button type="submit" class="btn btn-primary">Upload</button>
                                 </form>
                             </div>

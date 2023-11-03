@@ -180,7 +180,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        @if (session()->has('success'))
+                        {{-- @if (session()->has('success'))
                             <div class="alert alert-success alert-dismissible show fade">
                                 <div class="alert-body">
                                     <button class="close" data-dismiss="alert">
@@ -199,7 +199,7 @@
                                     <strong>{{ session('failed') }}</strong>
                                 </div>
                             </div>
-                        @endif
+                        @endif --}}
                         {{-- <div class="float-left">
                             <h4 class="card-title">{{ $pageTitle }} Data</h4>
                             @can('user-pdf')
@@ -456,7 +456,8 @@
                 </div>
             </div>
         </div>
-    @endsection
+    </div>
+@endsection
     @push('scripts')
         <script>
             $("#destroyByCheckbox").click(function() {

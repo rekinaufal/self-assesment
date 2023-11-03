@@ -90,6 +90,12 @@
                         <span class="hide-menu">Payment Approval</span>
                     </a>
                 </li>
+                <li class="sidebar-item {{ Request::is('computation') ? 'active' : '' }}">
+                    <a class="sidebar-link sidebar-link" href="{{ url('computation') }}" aria-expanded="false">
+                        <i data-feather="file-text" class="feather-icon"></i>
+                        <span class="hide-menu">Computation</span>
+                    </a>
+                </li>
 
                 {{-- <li class="list-divider"></li>
                 <li class="nav-small-cap">

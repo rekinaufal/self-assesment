@@ -6,6 +6,8 @@ use App\Models\Payment;
 use App\Models\UserCategory;
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Notifications\PaymentNotifications;
+use Illuminate\Support\Facades\Auth;
 
 class PaymentController extends Controller
 {
@@ -123,6 +125,28 @@ class PaymentController extends Controller
             "transaction_receipt" => $transactionReceipt,
         ]);
         if ($created) {
+            // send notif user
+            User::find(Auth::user()->id)->notify(new PaymentNotifications($req));
+            // send notif admin
+
+            
+            // send email
+            $subject = "Payment E-learning";
+            $details = [
+                'title'         => 'Payment E-learning',
+                'opener'        => 'Halo Admin',
+                'opener_desc'   => 'Terdapat pengajuan pembayaran baru yang harus dicheck. Rincian pengajuan pembayaran adalah sebagai berikut:',
+                'personal_data' =>  'Nomor Rekening Pengirim    : '.$req->bank_account_number.'<br/>'.
+                                    'Nama Bank Pengirim         : '.$req->bank_name.'<br/>'.
+                                    'Nama Pengirim              : '.$req->bank_account_name.'<br/>'.
+                                    'Jumlah Pembayaran          : '.$req->total.'<br/>'.
+                                    'Metode Pembayaran          : '.$req->payment_method,
+                'closing'       => 'Segera check pembayaran tersebut.',
+            ];
+            // send email admin 
+            \Mail::to('rekinaufal@gmail.com')->send(new \App\Mail\NotifPayment($details, $subject));
+            // \Mail::to('artexsinergi@smtp14.mailtarget.co')->send(new \App\Mail\NotifPayment($details, $subject));
+
             return redirect()->back()->with('success', 'Pembayaran berhasil dibuat');
         } else {
             return redirect()->back()->with('failed', 'Pembayaran gagal dibuat');
@@ -146,26 +170,24 @@ class PaymentController extends Controller
         if ($user->user_category_id == $payment->upgraded_category) {
             return redirect()->back()->with('failed', 'Tidak bisa di upgrade, karena user yang dituju sudah sesuai');
         }
+        
+        $isEditedUserCategory = User::where('id', $user->id)->update([
+            'user_category_id' => $payment->upgraded_category
+        ]);
+        if (!$isEditedUserCategory) {
+            return redirect()->back()->with('failed', 'Update User Category Failed');
+        } 
 
         $isEditedPayment = Payment::where('id', $id)->update([
             'status' => 'approved'
         ]);
-        dd($isEditedPayment);
-
+        
         if ($isEditedPayment) {
             return redirect()->back()->with('success', 'Approve Payment successfully');
         } else {
             return redirect()->back()->with('failed', 'Approve Payment Failed');
         }
+        
 
-        $isEditedUserCategory = User::where('id', $user->id)->update([
-            'user_category_id' => $payment->upgraded_category
-        ]);
-
-        if ($isEditedUserCategory) {
-            return redirect()->back()->with('success', 'Update User Category successfully');
-        } else {
-            return redirect()->back()->with('failed', 'Update User Category Failed');
-        }
     }
 }

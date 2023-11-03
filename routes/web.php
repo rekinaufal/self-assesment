@@ -69,6 +69,12 @@ Route::group(['middleware' => ['auth']], function () {
 
     // list kebutuhan
     Route::resource("needs", NeedsController::class);
+    
+    //computation
+    Route::resource("computation", ComputationController::class);
+    
+    // notification
+    Route::get('/mark-as-read', 'NotificationController@markAsRead')->name('mark-as-read');
 });
 
 // Route::controller(PermenperinCategoryController::class)->group(function () {

@@ -108,10 +108,7 @@
         $(document).ready(function() {
             $('.approve-payment').on('click', function(e) {
                 e.preventDefault();
-
                 var approveUrl = $(this).attr('href');
-
-                // Display a confirmation dialog using SweetAlert
                 swal({
                     title: 'Are you sure?',
                     text: 'You are about to approve this payment.',
@@ -122,16 +119,16 @@
                     ],
                 }).then(function(isConfirm) {
                     if (isConfirm) {
-                        swal({
-                        title: 'Shortlisted!',
-                        text: 'Candidates are successfully shortlisted!',
-                        icon: 'success'
-                        }).then(function() {
-                            // form.submit(); // <--- submit form programmatically
-                            window.location.href = approveUrl;
-                        });
+                        window.location.href = approveUrl;
+                        // swal({
+                        //     title: 'Shortlisted!',
+                        //     text: 'Candidates are successfully shortlisted!',
+                        //     icon: 'success'
+                        // }).then(function() {
+                        //     form.submit(); // <--- submit form programmatically
+                        // });
                     } else {
-                        swal("Cancelled", "Your imaginary file is safe :)", "error");
+                        // swal("Cancelled", "Your imaginary file is safe :)", "error");
                     }
                 });
             });

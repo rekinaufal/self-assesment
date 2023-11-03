@@ -7,14 +7,14 @@ use Illuminate\Http\Request;
 
 class ComputationController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public static $pageTitle = 'Perhitungan';
+
     public function index()
     {
-        //
+        $pageTitle = self::$pageTitle;
+
+        return view('computation.index', compact('pageTitle'));
+        
     }
 
     /**
@@ -24,7 +24,9 @@ class ComputationController extends Controller
      */
     public function create()
     {
-        //
+        $pageTitle = self::$pageTitle;
+
+        return view('computation.computation', compact('pageTitle'));
     }
 
     /**
