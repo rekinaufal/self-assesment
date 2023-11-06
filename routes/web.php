@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\UserCategoryController;
 use App\Models\Computation;
@@ -35,6 +36,9 @@ Route::post('/login', 'LoginController@login')->name('login.post');
 Route::get('/logout', 'LoginController@logout')->name('logout');
 Route::post('/register', 'LoginController@register')->name('register');
 
+// Route::get("testing-login-one", [LoginController::class, "loginOne"]);
+// Route::get("testing-login-two", [LoginController::class, "loginTwo"]);
+
 Route::post('/forgetPassword', 'LoginController@forgetPassword')->name('login.forgetPassword');
 Route::get('/auth-forgot-password', 'LoginController@viewForgetPassword');
 
@@ -69,10 +73,10 @@ Route::group(['middleware' => ['auth']], function () {
 
     // list kebutuhan
     Route::resource("needs", NeedsController::class);
-    
+
     //computation
     Route::resource("computation", ComputationController::class);
-    
+
     // notification
     Route::get('/mark-as-read', 'NotificationController@markAsRead')->name('mark-as-read');
 });
