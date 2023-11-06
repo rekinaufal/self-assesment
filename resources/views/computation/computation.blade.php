@@ -49,10 +49,737 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="tab-content" id="v-pills-tabContent">
-                            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">.1..</div>
-                            <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">.2..</div>
-                            <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">.3..</div>
-                            <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">.4..</div>
+                            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                                aria-labelledby="v-pills-home-tab">
+                                <div class="row">
+                                    <div class="col">
+                                        <h5>Form 1.1 : Tingkat Komponen Dalam Negeri Bahan Baku</h5>
+                                        <p style="font-size: 13px; opacity: 60%;">List data bahan baku langsung / tidak
+                                            langsung</p>
+                                    </div>
+                                </div>
+                                <div class="row card">
+                                    <div class="col ">
+                                        <form class="d-flex flex-wrap" style="width: 100%">
+                                            <div class="form-group-sm mx-2 mt-2" style="font-size: 10pt; width : 13rem">
+                                                <label for="">Nama Bahan Baku <i data-toggle="tooltip" data-placement="top" title="Nama bahan baku adalah nama yang ditunjukkan pada nama material bahan baku dalam pembuatan produk. Contoh : Biji besi, Bracket dll" class="fas fa-info-circle">
+                                                    </i></label>
+                                                <input type="text" class="form-control form-control-sm " id=""
+                                                    placeholder="">
+                                            </div>
+
+                                            <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
+                                                <label for="">Spesifikasi <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                    </i></label>
+                                                <input type="text" class="form-control form-control-sm" id=""
+                                                    placeholder="">
+                                            </div>
+
+                                            <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
+                                                <label for="">Satuan bahan baku <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                    </i></label>
+                                                <select class="form-control form-control-sm" id="">
+                                                    <option></option>
+                                                    <option>Pcs</option>
+                                                    <option>Pack</option>
+                                                    <option>Kg</option>
+                                                    <option>Wakwau</option>
+                                                    <option>Cukrukuk</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
+                                                <label for="">Negara asal <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                    </i></label>
+                                                <select class="form-control form-control-sm" id="">
+                                                    <option></option>
+                                                    <option>Indonesia</option>
+                                                    <option>Zimbabwe</option>
+                                                    <option>Asoy</option>
+                                                    <option>Geboy</option>
+                                                    <option>Tabrak tabrak masuk</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
+                                                <label for="">Pemasok / Produsen Tingkat 2 <i
+                                                        class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                    </i></label>
+                                                <input type="text" class="form-control form-control-sm" id=""
+                                                    placeholder="">
+                                            </div>
+
+                                            <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
+                                                <label for="">TKDN % <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                    </i></label>
+                                                <input type="text" class="form-control form-control-sm" id=""
+                                                    placeholder="">
+                                            </div>
+
+                                            <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
+                                                <label for="">Jumlah / Satuan Bahan Baku <i
+                                                        class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                    </i></label>
+                                                <input type="text" class="form-control form-control-sm" id=""
+                                                    placeholder="">
+                                            </div>
+
+                                            <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
+                                                <label for="">Harga Satuan Material <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                    </i></label>
+                                                <input type="text" class="form-control form-control-sm" id=""
+                                                    placeholder="">
+                                            </div>
+
+                                            <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt;">
+                                                <div class="card p-2" ">
+                                                        <div class="col">
+                                                            <div class="row">
+                                                                <label for="" class="mx-auto">Lokal <i
+                                                                        class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                                    </i></label>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="form-group-sm" style="font-size: 7pt;">
+                                                                    <label for="">PPN %</label>
+                                                                    <input type="text" style=" width : 15rem" class="form-control form-control-sm"
+                                                                        id="" placeholder="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt;">
+                                                <div class="card p-2" ">
+                                                        <div class="col">
+                                                            <div class="row">
+                                                                <label for="" class="mx-auto">PDRI <i
+                                                                        class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                                    </i></label>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="form-group-sm ml-2" style="font-size: 7pt;">
+                                                                    <label for="">BM %</label>
+                                                                    <input type="text" style="width: 5rem" class="form-control form-control-sm"
+                                                                        id="" placeholder="">
+                                                                </div>
+                                                                <div class="form-group-sm ml-2" style="font-size: 7pt;">
+                                                                    <label for="">PPN %</label>
+                                                                    <input type="text" style="width: 5rem" class="form-control form-control-sm"
+                                                                        id="" placeholder="">
+                                                                </div>
+                                                                <div class="form-group-sm ml-2" style="font-size: 7pt;">
+                                                                    <label for="">PPH %</label>
+                                                                    <input type="text" style="width: 5rem" class="form-control form-control-sm"
+                                                                        id="" placeholder="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="d-flex justify-content-end" style="font-size: 10pt; width : 100%;">
+                                                <button class="btn btn-sm btn-success" type="submit"><i class="fa fa-save"></i> Simpan</button>
+                                            </div>
+                                        </form><br>
+
+                                    </div>
+                                </div>
+
+                                <div class="row card">
+                                    <div class="col p-2">
+                                        <form class="form-inline">
+                                            <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="basic-addon1"><i class="fa fa-search"></i></span>
+                                            </div>
+                                            <input type="text" class="form-control form-control-sm" placeholder="Search" aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                    <div class="col p-1">
+                                        <div class="table-responsive table-responsive-sm">
+                                            <table class="table table-striped table-hover"  style="font-size: 8pt">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">Aksi</th>
+                                                        <th scope="col">No</th>
+                                                        <th style="width:70%" scope="col">Nama Bahan Baku</th>
+                                                        <th scope="col">Spesifikasi</th>
+                                                        <th scope="col">Satuan Bahan Baku</th>
+                                                        <th scope="col">Negara Asal</th>
+                                                        <th scope="col">Pemasok / Produsen Tingkat 2</th>
+                                                        <th scope="col">TKDN %</th>
+                                                        <th scope="col">Jumlah / Satuan Bahan Baku</th>
+                                                        <th scope="col">Harga Satuan Material (Rp)</th>
+                                                        <th scope="col">KDN</th>
+                                                        <th scope="col">KLN</th>
+                                                        <th scope="col">Total</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="dropdown">
+                                                                <i data-feather="more-vertical" id="dropdownMenuButton"
+                                                                    class="feather-icon dropdown-toggle" style="cursor: pointer;"
+                                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+                                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                                    <a class="dropdown-item buttonEditNews"
+                                                                        onclick=""><i class="fa fa-edit"></i> Edit</a>
+                                                                    <form action="" method="post">
+                                                                        <button class="dropdown-item" type="submit"><i class="fa fa-trash"></i> Delete</button>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <th scope="row">1</th>
+                                                        <td>Niku niku Nomi</td>
+                                                        <td>AMD RYZEN 7000</td>
+                                                        <td>Kg</td>
+                                                        <td>Zimbabwe</td>
+                                                        <td>Bambang</td>
+                                                        <td>32 %</td>
+                                                        <td>120</td>
+                                                        <td>Rp.345.000.000</td>
+                                                        <td>1</td>
+                                                        <td>0</td>
+                                                        <td>780.000.000.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="dropdown">
+                                                                <i data-feather="more-vertical" id="dropdownMenuButton"
+                                                                    class="feather-icon dropdown-toggle" style="cursor: pointer;"
+                                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+                                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                                    <a class="dropdown-item buttonEditNews"
+                                                                        onclick=""><i class="fa fa-edit"></i> Edit</a>
+                                                                    <form action="" method="post">
+                                                                        <button class="dropdown-item" type="submit"><i class="fa fa-trash"></i> Delete</button>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td scope="row">2</td>
+                                                        <td>Niku niku Nomi</td>
+                                                        <td>AMD RYZEN 7000</td>
+                                                        <td>Kg</td>
+                                                        <td>Zimbabwe</td>
+                                                        <td>Bambang</td>
+                                                        <td>32 %</td>
+                                                        <td>120</td>
+                                                        <td>Rp.345.000.000</td>
+                                                        <td>1</td>
+                                                        <td>0</td>
+                                                        <td>780.000.000.00</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                </div>
+
+                            <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
+                                aria-labelledby="v-pills-profile-tab">
+                                <div class="row">
+                                    <div class="col">
+                                        <h5>Form 1.2 : Tingkat Komponen Dalam Negeri Bahan Baku</h5>
+                                        <p style="font-size: 13px; opacity: 60%;">List data bahan baku untuk jasa jasa terkait</p>
+                                    </div>
+                                </div>
+                                <div class="row card">
+                                    <div class="col ">
+                                        <form class="d-flex flex-wrap" style="width: 100%">
+                                            <div class="form-group-sm mx-2 mt-2" style="font-size: 10pt; width : 13rem">
+                                                <label for="">Jasa Terkait <i data-toggle="tooltip" data-placement="top" title="Nama bahan baku adalah nama yang ditunjukkan pada nama material bahan baku dalam pembuatan produk. Contoh : Biji besi, Bracket dll" class="fas fa-info-circle">
+                                                    </i></label>
+                                                <input type="text" class="form-control form-control-sm " id=""
+                                                    placeholder="">
+                                            </div>
+
+                                            <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
+                                                <label for="">Pemasok / Produsen Tingkat 2 <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                    </i></label>
+                                                <input type="text" class="form-control form-control-sm" id=""
+                                                    placeholder="">
+                                            </div>
+
+                                            <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
+                                                <label for="">Jumlah <i
+                                                        class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                    </i></label>
+                                                <input type="text" class="form-control form-control-sm" id=""
+                                                    placeholder="">
+                                            </div>
+
+                                            <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
+                                                <label for="">TKDN % <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                    </i></label>
+                                                <input type="text" class="form-control form-control-sm" id=""
+                                                    placeholder="">
+                                            </div>
+
+                                            <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
+                                                <label for="">Biaya <i
+                                                        class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                    </i></label>
+                                                <input type="text" class="form-control form-control-sm" id=""
+                                                    placeholder="">
+                                            </div>
+
+                                            <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
+                                                <label for="">Alokasi Biaya <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                    </i></label>
+                                                <input type="text" class="form-control form-control-sm" id=""
+                                                    placeholder="">
+                                            </div>
+
+                                            <div class="d-flex justify-content-end mt-2" style="font-size: 10pt; width : 100%;">
+                                                <button class="btn btn-sm btn-success" type="submit"><i class="fa fa-save"></i> Simpan</button>
+                                            </div>
+                                        </form><br>
+
+                                    </div>
+                                </div>
+                                <div class="row card">
+                                    <div class="col p-2">
+                                        <form class="form-inline">
+                                            <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="basic-addon1"><i class="fa fa-search"></i></span>
+                                            </div>
+                                            <input type="text" class="form-control form-control-sm" placeholder="Search" aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                    <div class="col p-1">
+                                        <div class="table-responsive table-responsive-sm">
+                                            <table class="table table-striped table-hover"  style="font-size: 8pt">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">Aksi</th>
+                                                        <th scope="col">No</th>
+                                                        <th scope="col">Uraian</th>
+                                                        <th scope="col">Pemasok / Produsen Tingkat 2</th>
+                                                        <th scope="col">Jumlah</th>
+                                                        <th scope="col">TKDN %</th>
+                                                        <th scope="col">Biaya (Rp)</th>
+                                                        <th scope="col">Alokasi</th>
+                                                        <th scope="col">KDN</th>
+                                                        <th scope="col">KLN</th>
+                                                        <th scope="col">Total</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="dropdown">
+                                                                <i data-feather="more-vertical" id="dropdownMenuButton"
+                                                                    class="feather-icon dropdown-toggle" style="cursor: pointer;"
+                                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+                                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                                    <a class="dropdown-item buttonEditNews"
+                                                                        onclick=""><i class="fa fa-edit"></i> Edit</a>
+                                                                    <form action="" method="post">
+                                                                        <button class="dropdown-item" type="submit"><i class="fa fa-trash"></i> Delete</button>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <th scope="row">1</th>
+                                                        <td>Niku niku Nomi</td>
+                                                        <td>AMD RYZEN 7000</td>
+                                                        <td>23</td>
+                                                        <td>45.5</td>
+                                                        <td>543.000.000</td>
+                                                        <td>Unit unitan</td>
+                                                        <td>3</td>
+                                                        <td>8</td>
+                                                        <td>780.000.000.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="dropdown">
+                                                                <i data-feather="more-vertical" id="dropdownMenuButton"
+                                                                    class="feather-icon dropdown-toggle" style="cursor: pointer;"
+                                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+                                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                                    <a class="dropdown-item buttonEditNews"
+                                                                        onclick=""><i class="fa fa-edit"></i> Edit</a>
+                                                                    <form action="" method="post">
+                                                                        <button class="dropdown-item" type="submit"><i class="fa fa-trash"></i> Delete</button>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <th scope="row">2</th>
+                                                        <td>Niku niku Nomi</td>
+                                                        <td>AMD RYZEN 7000</td>
+                                                        <td>23</td>
+                                                        <td>45.5</td>
+                                                        <td>543.000.000</td>
+                                                        <td>Unit unitan</td>
+                                                        <td>3</td>
+                                                        <td>8</td>
+                                                        <td>780.000.000.00</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="v-pills-messages" role="tabpanel"
+                                aria-labelledby="v-pills-messages-tab">
+                            
+                                <div class="row">
+                                    <div class="col">
+                                        <h5>Form 1.3 : Tingkat Komponen Dalam Tenaga Kerja Langsung</h5>
+                                        <p style="font-size: 13px; opacity: 60%;">List data tenaga kerja langsung</p>
+                                    </div>
+                                </div>
+                                <div class="row card">
+                                    <div class="col ">
+                                        <form class="d-flex flex-wrap" style="width: 100%">
+                                            <div class="form-group-sm mx-2 mt-2" style="font-size: 10pt; width : 13rem">
+                                                <label for="">Uraian Posisi <i data-toggle="tooltip" data-placement="top" title="Nama bahan baku adalah nama yang ditunjukkan pada nama material bahan baku dalam pembuatan produk. Contoh : Biji besi, Bracket dll" class="fas fa-info-circle">
+                                                    </i></label>
+                                                <input type="text" class="form-control form-control-sm " id=""
+                                                    placeholder="">
+                                            </div>
+
+                                            <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
+                                                <label for="">Kewarganegaraan <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                    </i></label>
+                                                <select class="form-control form-control-sm" id="">
+                                                    <option></option>
+                                                    <option>Indonesia</option>
+                                                    <option>Zimbabwe</option>
+                                                    <option>Asoy</option>
+                                                    <option>Geboy</option>
+                                                    <option>Tabrak tabrak masuk</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
+                                                <label for="">Jumlah Orang <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                    </i></label>
+                                                <input type="text" class="form-control form-control-sm" id=""
+                                                    placeholder="">
+                                            </div>
+
+                                            <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
+                                                <label for="">Jumlah <i
+                                                        class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                    </i></label>
+                                                <input type="text" class="form-control form-control-sm" id=""
+                                                    placeholder="">
+                                            </div>
+
+                                            <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
+                                                <label for="">Gaji Perbulan<i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                    </i></label>
+                                                <input type="text" class="form-control form-control-sm" id=""
+                                                    placeholder="Rp.">
+                                            </div>
+
+                                            <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
+                                                <label for="">Alokasi Gaji % <i
+                                                        class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                    </i></label>
+                                                <input type="text" class="form-control form-control-sm" id=""
+                                                    placeholder="">
+                                            </div>
+                                            
+                                            <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt;">
+                                                <div class="card p-2" ">
+                                                        <div class="col">
+                                                            <div class="row">
+                                                                <label for="" class="mx-auto">Biaya (Rp.) <i
+                                                                        class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                                    </i></label>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="form-group-sm ml-2" style="font-size: 7pt;">
+                                                                    <label for="">BPJS </label>
+                                                                    <input type="text" style="width: 8rem" class="form-control form-control-sm"
+                                                                        id="" placeholder="Rp">
+                                                                </div>
+                                                                <div class="form-group-sm ml-2" style="font-size: 7pt;">
+                                                                    <label for="">Tunjangan Lainnya</label>
+                                                                    <input type="text" style="width: 8rem" class="form-control form-control-sm"
+                                                                        id="" placeholder="Rp">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="d-flex justify-content-end" style="font-size: 10pt; width : 100%;">
+                                                <button class="btn btn-sm btn-success" type="submit"><i class="fa fa-save"></i> Simpan</button>
+                                            </div>
+                                        </form><br>
+
+                                    </div>
+                                </div>
+                                <div class="row card">
+                                    <div class="col p-2">
+                                        <form class="form-inline">
+                                            <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="basic-addon1"><i class="fa fa-search"></i></span>
+                                            </div>
+                                            <input type="text" class="form-control form-control-sm" placeholder="Search" aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                    <div class="col p-1">
+                                        <div class="table-responsive table-responsive-sm">
+                                            <table class="table table-striped table-hover"  style="font-size: 8pt">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">Aksi</th>
+                                                        <th scope="col">No</th>
+                                                        <th scope="col">Uraian Posisi</th>
+                                                        <th scope="col">Kewarganegaraan</th>
+                                                        <th scope="col">TKDN %</th>
+                                                        <th scope="col">Jumlah Orang</th>
+                                                        <th scope="col">Gaji Per Bulan (Rp)</th>
+                                                        <th scope="col">Alokasi %</th>
+                                                        <th scope="col">KDN</th>
+                                                        <th scope="col">KLN</th>
+                                                        <th scope="col">Total</th>
+                                                        <th scope="col">BPJS</th>
+                                                        <th scope="col">Tunjangan Lainnya</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="dropdown">
+                                                                <i data-feather="more-vertical" id="dropdownMenuButton"
+                                                                    class="feather-icon dropdown-toggle" style="cursor: pointer;"
+                                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+                                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                                    <a class="dropdown-item buttonEditNews"
+                                                                        onclick=""><i class="fa fa-edit"></i> Edit</a>
+                                                                    <form action="" method="post">
+                                                                        <button class="dropdown-item" type="submit"><i class="fa fa-trash"></i> Delete</button>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <th scope="row">1</th>
+                                                        <td>Center Back</td>
+                                                        <td>Brazil</td>
+                                                        <td>45.5</td>
+                                                        <td>12</td>
+                                                        <td>13.000.000</td>
+                                                        <td>Unit unitan</td>
+                                                        <td>3</td>
+                                                        <td>8</td>
+                                                        <td>780.000.000.00</td>
+                                                        <td>122.000</td>
+                                                        <td>45.000.000</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="dropdown">
+                                                                <i data-feather="more-vertical" id="dropdownMenuButton"
+                                                                    class="feather-icon dropdown-toggle" style="cursor: pointer;"
+                                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+                                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                                    <a class="dropdown-item buttonEditNews"
+                                                                        onclick=""><i class="fa fa-edit"></i> Edit</a>
+                                                                    <form action="" method="post">
+                                                                        <button class="dropdown-item" type="submit"><i class="fa fa-trash"></i> Delete</button>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <th scope="row">2</th>
+                                                        <td>Striker</td>
+                                                        <td>Pantai Gading</td>
+                                                        <td>25.5</td>
+                                                        <td>12</td>
+                                                        <td>13.000.000</td>
+                                                        <td>Unit unitan</td>
+                                                        <td>3</td>
+                                                        <td>8</td>
+                                                        <td>780.000.000.00</td>
+                                                        <td>122.000</td>
+                                                        <td>45.000.000</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="tab-pane fade" id="v-pills-settings" role="tabpanel"
+                                aria-labelledby="v-pills-settings-tab">
+                            
+                                <div class="row">
+                                    <div class="col">
+                                        <h5>Form 1.4 : Tingkat Komponen Dalam Negeri Jasa Tenaga Kerja Langsung</h5>
+                                        <p style="font-size: 13px; opacity: 60%;">List data untuk biaya terkait lainnya</p>
+                                    </div>
+                                </div>
+                                <div class="row card">
+                                    <div class="col ">
+                                        <form class="d-flex flex-wrap" style="width: 100%">
+                                            <div class="form-group-sm mx-2 mt-2" style="font-size: 10pt; width : 13rem">
+                                                <label for="">Uraian Posisi <i data-toggle="tooltip" data-placement="top" title="Nama bahan baku adalah nama yang ditunjukkan pada nama material bahan baku dalam pembuatan produk. Contoh : Biji besi, Bracket dll" class="fas fa-info-circle">
+                                                    </i></label>
+                                                <input type="text" class="form-control form-control-sm " id=""
+                                                    placeholder="">
+                                            </div>
+
+                                            <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
+                                                <label for="">Pemasok / Produsen Tingkat 2 <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                    </i></label>
+                                                <input type="text" class="form-control form-control-sm" id=""
+                                                    placeholder="">
+                                            </div>
+
+
+                                            <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
+                                                <label for="">TKDN % <i
+                                                        class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                    </i></label>
+                                                <input type="text" class="form-control form-control-sm" id=""
+                                                    placeholder="">
+                                            </div>
+
+                                            <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
+                                                <label for="">Jumlah Orang <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                    </i></label>
+                                                <input type="text" class="form-control form-control-sm" id=""
+                                                    placeholder="Rp.">
+                                            </div>
+
+                                            <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
+                                                <label for="">Biaya Pengurusan Per Bulan <i
+                                                        class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                    </i></label>
+                                                <input type="text" class="form-control form-control-sm" id=""
+                                                    placeholder="">
+                                            </div>
+
+                                            <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
+                                                <label for="">Alokasi % <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                    </i></label>
+                                                <input type="text" class="form-control form-control-sm" id=""
+                                                    placeholder="">
+                                            </div>
+
+
+                                            <div class="d-flex justify-content-end mt-2" style="font-size: 10pt; width : 100%;">
+                                                <button class="btn btn-sm btn-success" type="submit"><i class="fa fa-save"></i> Simpan</button>
+                                            </div>
+                                        </form><br>
+
+                                    </div>
+                                </div>
+                                <div class="row card">
+                                    <div class="col p-2">
+                                        <form class="form-inline">
+                                            <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="basic-addon1"><i class="fa fa-search"></i></span>
+                                            </div>
+                                            <input type="text" class="form-control form-control-sm" placeholder="Search" aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                    <div class="col p-1">
+                                        <div class="table-responsive table-responsive-sm">
+                                            <table class="table table-striped table-hover"  style="font-size: 8pt">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">Aksi</th>
+                                                        <th scope="col">No</th>
+                                                        <th scope="col">Uraian</th>
+                                                        <th scope="col">Pemasok / Produsen Tingkat 2</th>
+                                                        <th scope="col">TKDN %</th>
+                                                        <th scope="col">Jumlah</th>
+                                                        <th scope="col">Biaya Pengurusan Per Bulan</th>
+                                                        <th scope="col">Alokasi %</th>
+                                                        <th scope="col">KDN</th>
+                                                        <th scope="col">KLN</th>
+                                                        <th scope="col">Total</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="dropdown">
+                                                                <i data-feather="more-vertical" id="dropdownMenuButton"
+                                                                    class="feather-icon dropdown-toggle" style="cursor: pointer;"
+                                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+                                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                                    <a class="dropdown-item buttonEditNews"
+                                                                        onclick=""><i class="fa fa-edit"></i> Edit</a>
+                                                                    <form action="" method="post">
+                                                                        <button class="dropdown-item" type="submit"><i class="fa fa-trash"></i> Delete</button>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <th scope="row">1</th>
+                                                        <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</td>
+                                                        <td>Lorem, ipsum dolor.</td>
+                                                        <td>45.5</td>
+                                                        <td>12</td>
+                                                        <td>13.000.000</td>
+                                                        <td>32.1</td>
+                                                        <td>3</td>
+                                                        <td>8</td>
+                                                        <td>780.000.000.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="dropdown">
+                                                                <i data-feather="more-vertical" id="dropdownMenuButton"
+                                                                    class="feather-icon dropdown-toggle" style="cursor: pointer;"
+                                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+                                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                                    <a class="dropdown-item buttonEditNews"
+                                                                        onclick=""><i class="fa fa-edit"></i> Edit</a>
+                                                                    <form action="" method="post">
+                                                                        <button class="dropdown-item" type="submit"><i class="fa fa-trash"></i> Delete</button>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <th scope="row">2</th>
+                                                        <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</td>
+                                                        <td>Lorem, ipsum dolor.</td>
+                                                        <td>45.5</td>
+                                                        <td>12</td>
+                                                        <td>13.000.000</td>
+                                                        <td>32.1</td>
+                                                        <td>3</td>
+                                                        <td>8</td>
+                                                        <td>780.000.000.00</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -68,51 +795,68 @@
                 </div>
                 <div class="card">
                     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                        <a class="nav-link text-dark" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">
+                        <a class="nav-link text-dark" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home"
+                            role="tab" aria-controls="v-pills-home" aria-selected="true">
                             <button class="btn-primary">1.1</button>
                             Bahan Baku
                         </a>
-                        <a class="nav-link text-dark" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">
+                        <a class="nav-link text-dark" id="v-pills-profile-tab" data-toggle="pill"
+                            href="#v-pills-profile" role="tab" aria-controls="v-pills-profile"
+                            aria-selected="false">
                             <button class="btn-primary">1.2</button>
                             Jasa Terkait Bahan Baku
                         </a>
-                        <a class="nav-link text-dark" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">
+                        <a class="nav-link text-dark" id="v-pills-messages-tab" data-toggle="pill"
+                            href="#v-pills-messages" role="tab" aria-controls="v-pills-messages"
+                            aria-selected="false">
                             <button class="btn-primary">1.3</button>
                             Tenaga Kerja Langsung
                         </a>
-                        <a class="nav-link text-dark" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">
+                        <a class="nav-link text-dark" id="v-pills-settings-tab" data-toggle="pill"
+                            href="#v-pills-settings" role="tab" aria-controls="v-pills-settings"
+                            aria-selected="false">
                             <button class="btn-primary">1.4</button>
                             Biaya Tenaga Kerja Langsung
                         </a>
-                        <a class="nav-link text-dark" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">
+                        <a class="nav-link text-dark" id="v-pills-settings-tab" data-toggle="pill"
+                            href="#v-pills-settings" role="tab" aria-controls="v-pills-settings"
+                            aria-selected="false">
                             <button class="btn-primary">1.5</button>
                             Tenaga Kerja Tidak Langsung
                         </a>
-                        <a class="nav-link text-dark" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">
+                        <a class="nav-link text-dark" id="v-pills-settings-tab" data-toggle="pill"
+                            href="#v-pills-settings" role="tab" aria-controls="v-pills-settings"
+                            aria-selected="false">
                             <button class="btn-primary">1.6</button>
                             Mesin Yang Dimiliki Sendiri
                         </a>
-                        <a class="nav-link text-dark" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">
+                        <a class="nav-link text-dark" id="v-pills-settings-tab" data-toggle="pill"
+                            href="#v-pills-settings" role="tab" aria-controls="v-pills-settings"
+                            aria-selected="false">
                             <button class="btn-primary">1.7</button>
                             Mesin Yang Sewa
                         </a>
-                        <a class="nav-link text-dark" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">
+                        <a class="nav-link text-dark" id="v-pills-settings-tab" data-toggle="pill"
+                            href="#v-pills-settings" role="tab" aria-controls="v-pills-settings"
+                            aria-selected="false">
                             <button class="btn-primary">1.8</button>
                             Overhead Yang Lainnya
                         </a>
-                        <a class="nav-link text-dark" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">
+                        <a class="nav-link text-dark" id="v-pills-settings-tab" data-toggle="pill"
+                            href="#v-pills-settings" role="tab" aria-controls="v-pills-settings"
+                            aria-selected="false">
                             <button class="btn-primary">1.9</button>
                             Rekapitulasi
                         </a>
-                    </div> 
+                    </div>
                 </div>
             </div>
         </div>
-    </div> 
+    </div>
 @endsection
 
 @push('scripts')
     <script src="{{ asset('library/sweetalert/dist/sweetalert.min.js') }}"></script>
-    <script src="{{ asset('assets/extra-libs/sparkline/sparkline.js') }}"></script>
-    {{-- <script src="{{ asset('dist/js/users/script.js') }}"></script> --}}
+                                        <script src="{{ asset('assets/extra-libs/sparkline/sparkline.js') }}"></script>
+                                        {{-- <script src="{{ asset('dist/js/users/script.js') }}"></script> --}}
 @endpush
