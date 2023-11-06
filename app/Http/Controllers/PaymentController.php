@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Payment;
+use Spatie\Permission\Models\Role;
 use App\Models\UserCategory;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Notifications\PaymentNotifications;
 use Illuminate\Support\Facades\Auth;
+use DB;
 
 class PaymentController extends Controller
 {
@@ -127,9 +129,19 @@ class PaymentController extends Controller
         if ($created) {
             // send notif user
             User::find(Auth::user()->id)->notify(new PaymentNotifications($req));
-            // send notif admin
 
-            
+            // send notif admin
+            $user = User::all();
+            if ($user) {
+                foreach ($user as $item) {
+                    $user = User::find($item->id);
+                    $roleName = $user->roles->first()->name;
+                    if ($roleName == 'Admin' || $roleName == 'Administrator' || $roleName == 'SuperAdmin') {
+                        User::find($item->id)->notify(new PaymentNotifications($req));
+                    }   
+                } 
+            }
+
             // send email
             $subject = "Payment E-learning";
             $details = [

@@ -87,7 +87,7 @@
                         <span class="badge badge-primary notify-no rounded-circle">{{auth()->user()->unreadNotifications->count()}}</span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-left mailbox animated bounceInDown">
-                        <ul class="list-style-none">
+                        <ul class="list-style-none" style="overflow-y: scroll; height: 300px;">
                             @if (auth()->user()->unreadNotifications)
                                 <li class="">
                                     <a href="{{route('mark-as-read')}}" class="btn btn-success btn-sm text-white">Mark All as Read</a>
@@ -96,11 +96,11 @@
                             <li>
                                 <div class="message-center notifications position-relative">
                                     @foreach (auth()->user()->unreadNotifications as $notification)
-                                        <a href="#" class="message-item d-flex align-items-center border-bottom px-3 py-2 text-success">
+                                        <a href="#" class="message-item d-flex align-items-center border-bottom px-3 py-2">
                                             <div class="btn btn-danger rounded-circle btn-circle"><i data-feather="airplay" class="text-white"></i></div>
                                             <div class="w-75 d-inline-block v-middle pl-2">
                                                 <h6 class="message-title mb-0 mt-1">Luanch Admin</h6>
-                                                <span class="font-12 text-nowrap d-block text-muted">
+                                                <span class="font-12 text-nowrap d-block text-muted font-weight-bold">
                                                     {{$notification->data['message']}}
                                                 </span>
                                                 <span class="font-12 text-nowrap d-block text-muted">{{ date('d M Y, g:ia', strtotime($notification->created_at)) }}</span>
@@ -112,7 +112,7 @@
                                             <div class="btn btn-danger rounded-circle btn-circle"><i data-feather="airplay" class="text-white"></i></div>
                                             <div class="w-75 d-inline-block v-middle pl-2">
                                                 <h6 class="message-title mb-0 mt-1">Luanch Admin</h6>
-                                                <span class="font-12 text-nowrap d-block text-muted">J
+                                                <span class="font-12 text-nowrap d-block text-muted">
                                                     {{$notification->data['message']}}
                                                 </span>
                                                 <span class="font-12 text-nowrap d-block text-muted">{{ date('d M Y, g:ia', strtotime($notification->created_at)) }}</span>
@@ -121,12 +121,12 @@
                                     @endforeach
                                 </div>
                             </li>
-                            <li>
+                            {{-- <li>
                                 <a class="nav-link pt-3 text-center text-dark" href="javascript:void(0);">
                                     <strong>Check all notifications</strong>
                                     <i class="fa fa-angle-right"></i>
                                 </a>
-                            </li>
+                            </li> --}}
                         </ul>
                     </div>
                 </li>

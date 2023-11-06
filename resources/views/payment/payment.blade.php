@@ -41,7 +41,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-7">
-                                <form method="POST" action="{{ route('uploadPayment') }}" role="form" enctype="multipart/form-data">
+                                <form method="POST" action="{{ route('uploadPayment') }}" role="form" enctype="multipart/form-data" onsubmit="showPreloader()">
                                     @csrf
                                     <div class="row">
                                         <div class="col-12">
@@ -339,5 +339,15 @@
         $(function () {
             $('[data-toggle="tooltip"]').tooltip()
         })
+
+        function showPreloader() {
+            document.getElementById('preloader').style.display = 'block';
+            document.querySelector('button[type="submit"]').disabled = true;
+        }
+
+        window.addEventListener('load', function() {
+            document.getElementById('preloader').style.display = 'none';
+            document.querySelector('button[type="submit"]').disabled = false;
+        });
     </script>
 @endpush
