@@ -21,7 +21,6 @@ class UserSeeder extends Seeder
         $data = [
             [
                 "id" => 1,
-                "fullname" => "Reki Naufal",
                 "email" => "rekinaufal@gmail.com",
                 "email_verified_at" => date("Y-m-d H:i:s"),
                 "password" => Hash::make("1234"),
@@ -33,7 +32,6 @@ class UserSeeder extends Seeder
             ],
             [
                 "id" => 2,
-                "fullname" => "Brata Blessza",
                 "email" => "bratablessza@gmail.com",
                 "email_verified_at" => date("Y-m-d H:i:s"),
                 "password" => Hash::make("admin"),
@@ -45,7 +43,6 @@ class UserSeeder extends Seeder
             ],
             [
                 "id" => 3,
-                "fullname" => "Muhammad Ikhsan Bintang",
                 "email" => "ikhsanbintang@gmail.com",
                 "email_verified_at" => date("Y-m-d H:i:s"),
                 "password" => Hash::make("password"),
@@ -57,7 +54,6 @@ class UserSeeder extends Seeder
             ],
             [
                 "id" => 4,
-                "fullname" => "Administrator",
                 "email" => "admin@gmail.com",
                 "email_verified_at" => date("Y-m-d H:i:s"),
                 "password" => Hash::make("password"),
@@ -69,7 +65,6 @@ class UserSeeder extends Seeder
             ],
             [
                 "id" => 5,
-                "fullname" => "Staff IT",
                 "email" => "staffit@gmail.com",
                 "email_verified_at" => date("Y-m-d H:i:s"),
                 "password" => Hash::make("password"),
@@ -88,7 +83,6 @@ class UserSeeder extends Seeder
         for ($i = 6; $i <= 30; $i++) {
             DB::table('users')->insert([
                 "id" => $i,
-                "fullname" => $faker->name, // Ini akan mengisi dengan nama acak
                 "email" => $faker->email,
                 "email_verified_at" => Carbon::now(),
                 "password" => Hash::make("password"),

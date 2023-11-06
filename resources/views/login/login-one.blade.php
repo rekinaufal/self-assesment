@@ -152,13 +152,11 @@
     <style>
         .card-auth {
             aspect-ratio: auto;
-            width: 100%;
         }
 
         @media only screen and (min-width: 1024px) {
             .card-auth {
-                width: 70%;
-                aspect-ratio: @if (session('errors') && !session('errors')->has('section')) auto @else 16/9 @endif;
+                aspect-ratio: 16/9;
             }
         }
     </style>
@@ -379,13 +377,11 @@
 
 
         {{-- ! New Login --}}
-        <section
-            class="w-100 bg-light mx-auto rounded d-flex justify-content-center align-items-center px-3 px-lg-0 py-5"
-            style="min-height: 100vh; max-width: 1920px; height: auto">
-            <div class="card-auth bg-white rounded" style="height: auto; box-shadow: 0 0 20px -5px black">
+        <section class="w-100 bg-light mx-auto rounded d-flex justify-content-center align-items-center px-3 px-lg-0"
+            style="height: 100vh; max-width: 1920px">
+            <div class="card-auth w-100 w-lg-75 bg-white rounded" style="height: auto; overflow: hidden">
                 <div class="w-100 h-100 row no-gutters">
-                    <div class="left-content col-12 col-lg-6 d-none d-lg-block"
-                        style="transform: scale(1.1) translateX(-2rem);">
+                    <div class="left-content col-12 col-lg-6 d-none d-lg-block">
                         <div class="closer w-100 h-100 position-relative"
                             style="background: rgb(181,0,0); background: linear-gradient(45deg, rgba(181,0,0,1) 0%, rgba(121,9,9,1) 31%, rgba(0,0,0,1) 100%);">
                             <div class="brand-logo w-100 h-auto d-flex justify-content-center"
@@ -407,7 +403,7 @@
                                         </svg>
                                         <div class="svg-gradient w-100"
                                             style="height: 3rem; background: rgb(0,0,0);
-                                        background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(243,244,245,0.07) 50%, rgba(243,244,245,0.07) 100%); transform: translateY(-0.5px)">
+                                        background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(243,244,245,0.07) 50%, rgba(243,244,245,0.07) 100%); transform: translateY(-0.3px)">
                                         </div>
                                     </div>
                                     <div class="wave-2 position-absolute w-100" style="bottom: 3rem; left: 0;">
@@ -418,7 +414,7 @@
                                         </svg>
                                         <div class="svg-gradient w-100"
                                             style="height: 5rem; background: rgb(0,0,0);
-                                        background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(243,244,245,0.07) 50%, rgba(243,244,245,0.07) 100%); transform: translateY(-0.5px)">
+                                        background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(243,244,245,0.07) 50%, rgba(243,244,245,0.07) 100%); transform: translateY(-0.3px)">
                                         </div>
                                     </div>
                                     <div class="wave-3 position-absolute w-100"
@@ -430,7 +426,7 @@
                                         </svg>
                                         <div class="svg-gradient w-100"
                                             style="height: 5rem; background: rgb(0,0,0);
-                                        background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(243,244,245,0.07) 50%, rgba(243,244,245,0.07) 100%); transform: translateY(-0.5px)">
+                                        background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(243,244,245,0.07) 50%, rgba(243,244,245,0.07) 100%); transform: translateY(-0.3px)">
                                         </div>
                                     </div>
                                     <div class="wave-4 position-absolute w-100"
@@ -442,25 +438,23 @@
                                         </svg>
                                         <div class="svg-gradient w-100"
                                             style="height: 5rem; background: rgb(0,0,0);
-                                        background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(243,244,245,0.07) 50%, rgba(243,244,245,0.07) 100%); transform: translateY(-0.5px)">
+                                        background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(243,244,245,0.07) 50%, rgba(243,244,245,0.07) 100%); transform: translateY(-0.3px)">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="right-content col-12 col-lg-6 px-3 py-3 p-md-5 w-100 h-100 d-flex justify-content-center align-items-center"
+                    <div class="right-content col-12 col-lg-6 p-3 p-md-5 w-100 h-100 d-flex justify-content-center align-items-center"
                         style="overflow: hidden">
                         <div id="authContent" class="content d-flex justify-content-center align-items-center w-100"
-                            style="transform: translateX(@if (session('errors') && !session('errors')->has('section')) 75% @else -50% @endif); transition-duration: 400ms">
+                            style="transform: translateX(-50%); transition-duration: 400ms">
                             <div class="regist-form w-100" style="min-width: 100%; transform: translateX(-25%)">
-                                <div class="welcome-text d-flex justify-content-center flex-col">
-                                    <p>
-                                        <small class="text-center">
-                                            Create Your Account
-                                        </small>
-                                    </p>
-                                    {{-- @if (session('errors') && !session('errors')->has('section'))
+                                <div class="welcome-text d-flex justify-content-center">
+                                    <small class="text-center">
+                                        Create Your Account
+                                    </small>
+                                    @if ($errors->any())
                                         <div class="alert alert-danger alert-dismissible show fade">
                                             <div class="alert-body">
                                                 <button class="close" data-dismiss="alert">
@@ -469,36 +463,21 @@
                                                 <strong>Error!</strong> {{ $errors->first() }}
                                             </div>
                                         </div>
-                                    @endif --}}
+                                    @endif
                                 </div>
                                 <div class="form" style="padding-top: 4rem">
                                     <form action="{{ route('register') }}" method="post">
                                         @csrf
                                         <div class="form-group">
+                                            <input type="text" class="form-control mb-3"
+                                                style="border: none; border-bottom: 1px solid rgba(0, 0, 0, 0.2);"
+                                                id="fullname" aria-describedby="emailHelp" placeholder="Full Name">
+                                            <input type="email" class="form-control mb-3"
+                                                style="border: none; border-bottom: 1px solid rgba(0, 0, 0, 0.2);"
+                                                id="email" aria-describedby="emailHelp" placeholder="Email">
                                             <div class="input-group mb-3">
-                                                <input type="text" name="fullname"
-                                                    class="form-control @error('fullname') is-invalid @enderror"
-                                                    style="border: none; @error('fullname') border-bottom: 1px solid rgba(255, 0, 0, 0.2); @else border-bottom: 1px solid rgba(0, 0, 0, 0.2); @enderror"
-                                                    id="fullname" placeholder="Full Name" value="@if (session('errors') && !session('errors')->has('section')){{ old('fullname') }} @endif">
-                                                @error('fullname')
-                                                    <div class="invalid-feedback">{{ $message }}</div>
-                                                @enderror
-                                            </div>
-                                            <div class="input-group mb-3">
-                                                <input type="email" name="email"
-                                                    class="form-control @if (session('errors') && !session('errors')->has('section')) @error('email') is-invalid @enderror @endif"
-                                                    style="border: none; @if (session('errors') && !session('errors')->has('section')) @error('email') border-bottom: 1px solid rgba(255, 0, 0, 0.2); @else border-bottom: 1px solid rgba(0, 0, 0, 0.2); @enderror @else border-bottom: 1px solid rgba(0, 0, 0, 0.2); @endif"
-                                                    id="email" aria-describedby="emailHelp" placeholder="Email" value="@if (session('errors') && !session('errors')->has('section')){{ old('email') }} @endif">
-                                                    @if (session('errors') && !session('errors')->has('section'))
-                                                        @error('email')
-                                                            <div class="invalid-feedback">{{ $message }}</div>
-                                                        @enderror
-                                                    @endif
-                                            </div>
-                                            <div class="input-group mb-3">
-                                                <input type="password" name="password"
-                                                    class="form-control form-password @error('password') is-invalid @enderror"
-                                                    style="border: none; @error('password') border-bottom: 1px solid rgba(255, 0, 0, 0.2); @else border-bottom: 1px solid rgba(0, 0, 0, 0.2); @enderror"
+                                                <input type="password" class="form-control form-password"
+                                                    style="border: none; border-bottom: 1px solid rgba(0, 0, 0, 0.2);"
                                                     id="password" placeholder="Password">
                                                 <div class="input-group-append icon-eyes"
                                                     style="background-color: transparent">
@@ -526,15 +505,11 @@
                                                         </svg>
                                                     </span>
                                                 </div>
-                                                @error('password')
-                                                    <div class="invalid-feedback">{{ $message }}</div>
-                                                @enderror
                                             </div>
                                             <div class="input-group">
-                                                <input type="password" name="password_confirmation"
-                                                    class="form-control form-password @error('password_confirmation') is-invalid @enderror"
-                                                    style="border: none; @error('password_confirmation') border-bottom: 1px solid rgba(255, 0, 0, 0.2); @else border-bottom: 1px solid rgba(0, 0, 0, 0.2); @enderror"
-                                                    id="password_confirmation" placeholder="Confirm Password">
+                                                <input type="password" class="form-control form-password"
+                                                    style="border: none; border-bottom: 1px solid rgba(0, 0, 0, 0.2);"
+                                                    id="password" placeholder="Confirm Password">
                                                 <div class="input-group-append icon-eyes"
                                                     style="background-color: transparent">
                                                     <span class="input-group-text" id="basic-addon2"
@@ -581,6 +556,16 @@
                             </div>
                             <div class="login-form w-100" style="min-width: 100%;">
                                 <div class="welcome-text d-flex justify-content-center">
+                                    @if ($errors->any())
+                                        <div class="alert alert-danger alert-dismissible show fade">
+                                            <div class="alert-body">
+                                                <button class="close" data-dismiss="alert">
+                                                    <span>&times;</span>
+                                                </button>
+                                                <strong>Error!</strong> {{ $errors->first() }}
+                                            </div>
+                                        </div>
+                                    @endif
                                     <small class="text-center">
                                         Welcome back!, Please login to your account.
                                     </small>
@@ -589,16 +574,15 @@
                                     <form action="{{ route('login.post') }}" method="post">
                                         @csrf
                                         <div class="form-group">
-                                            <input type="email"
-                                                class="form-control @if (session('errors') && session('errors')->first('section') == 'login') is-invalid @endif"
-                                                style="border: none; @if (session('errors') && session('errors')->first('section') == 'login') border-bottom: 1px solid rgba(255, 0, 0, 0.2); @else border-bottom: 1px solid rgba(0, 0, 0, 0.2); @endif"
+                                            <input type="email" class="form-control"
+                                                style="border: none; border-bottom: 1px solid rgba(0, 0, 0, 0.2);"
                                                 id="exampleInputEmail1" aria-describedby="emailHelp"
                                                 placeholder="Enter email" name="email">
                                         </div>
                                         <div class="form-group py-3">
                                             <div class="input-group mb-3">
                                                 <input type="password" class="form-control form-password"
-                                                    style="border: none; @if (session('errors') && session('errors')->first('section') == 'login') border-bottom: 1px solid rgba(255, 0, 0, 0.2); @else border-bottom: 1px solid rgba(0, 0, 0, 0.2); @endif"
+                                                    style="border: none; border-bottom: 1px solid rgba(0, 0, 0, 0.2);"
                                                     id="exampleInputPassword1" placeholder="Password"
                                                     name="password">
                                                 <div class="input-group-append icon-eyes"
@@ -628,13 +612,6 @@
                                                     </span>
                                                 </div>
                                             </div>
-                                            @if (session('errors') && session('errors')->has('section'))
-                                                @if (session('errors')->first('section') == 'login')
-                                                    <small class="text-danger">
-                                                        {{ session('errors')->first() }}
-                                                    </small>
-                                                @endif
-                                            @endif
                                         </div>
                                         <div class="form-footer d-flex justify-content-between">
                                             <div class="form-check">
@@ -792,24 +769,12 @@
             });
 
 
-            let innerWidth = window.innerWidth;
             $("#signupButton").on("click", () => {
-                $("#authContent").css('transform', 'translateX(75%)');
-                if (innerWidth >= 1024) {
-                    $('.card-auth').css('aspect-ratio', 'auto')
-                }
+                $("#authContent").css('transform', 'translateX(75%)')
             })
             $("#signinButton").on("click", () => {
                 $("#authContent").css('transform', 'translateX(-50%)')
-                if (innerWidth >= 1024) {
-                    $('.card-auth').css('aspect-ratio', '16/9')
-                } else {
-                    $('.card-auth').css('aspect-ratio', 'auto')
-                }
             })
-
-
-
         });
     </script>
     <script>

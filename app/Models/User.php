@@ -23,8 +23,7 @@ class User extends Authenticatable
     static $rules = [
         'fullname' => 'required',
         'email' => 'required|email|unique:users',
-        'password' => 'required|min:8',
-        'user_category_id' => 'required',
+        'password' => 'required|min:8|confirmed'
     ];
 
     protected $fillable = [
