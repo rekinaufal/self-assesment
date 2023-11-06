@@ -281,6 +281,68 @@
                                         </div>
                                     </div>
                                 </div>
+<br><br>
+                                <div class="row card">
+                                    <div class="d-flex">
+                                        <div class="col">
+                                            <p class="mt-5 mr-2 text-right">Total</p>
+                                        </div>
+                                        <div class="col-6 p-1">
+                                            <div class="table-responsive table-responsive-sm">
+                                                <table class="table table-bordered table-hover"  style="font-size: 8pt">
+                                                <thead class="thead-dark">
+                                                    <tr>
+                                                    <th scope="col">KDN</th>
+                                                    <th scope="col">KLN</th>
+                                                    <th scope="col">Total</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                    <td>Rp.10.000</td>
+                                                    <td>Rp.2300</td>
+                                                    <td>Rp.12.300</td>
+                                                </tr>
+                                                </tbody>
+                                                
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex">
+                                        <div class="col">
+                                                <p class="mt-5 text-right">Total</p>
+                                        </div>
+                                        <div class="col-9 p-1">
+                                            <div class="table-responsive table-responsive-sm">
+                                                <table class="table table-bordered table-hover"  style="font-size: 8pt">
+                                                <thead style="text-align: center"class="thead-dark">
+                                                    <tr>
+                                                        <th scope="col" rowspan="2" class="align-middle">Lokal PPN</th>
+                                                        <th scope="col" colspan="4">PDRI</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="col">BM</th>
+                                                        <th scope="col">PPN</th>
+                                                        <th scope="col">PPH</th>
+                                                        <th scope="col">Total</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Rp.10.000</td>
+                                                        <td>Rp.2300</td>
+                                                        <td>Rp.12.300</td>
+                                                        <td>Rp.10.000</td>
+                                                        <td>Rp.2300</td>
+                                                    </tr>
+                                                </tbody>
+                                                
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
                                 </div>
 
@@ -434,6 +496,71 @@
                                         </div>
                                     </div>
                                 </div>
+
+                                <br><br>
+                                <div class="row card">
+                                    <div class="d-flex">
+                                        <div class="col">
+                                            <p class="mt-5 mr-2 text-right">Total</p>
+                                        </div>
+                                        <div class="col-6 p-1">
+                                            <div class="table-responsive table-responsive-sm">
+                                                <table class="table table-bordered table-hover"  style="font-size: 8pt">
+                                                <thead class="thead-dark">
+                                                    <tr>
+                                                    <th scope="col">KDN</th>
+                                                    <th scope="col">KLN</th>
+                                                    <th scope="col">Total</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                    <td>Rp.10.000</td>
+                                                    <td>Rp.2300</td>
+                                                    <td>Rp.12.300</td>
+                                                </tr>
+                                                </tbody>
+                                                
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex">
+                                        <div class="col">
+                                                <p class="mt-5 text-right">Total</p>
+                                        </div>
+                                        <div class="col-9 p-1">
+                                            <div class="table-responsive table-responsive-sm">
+                                                <table class="table table-bordered table-hover"  style="font-size: 8pt">
+                                                <thead style="text-align: center"class="thead-dark">
+                                                    <tr>
+                                                        <th scope="col" rowspan="2" class="align-middle">Lokal PPN</th>
+                                                        <th scope="col" colspan="4">PDRI</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="col">BM</th>
+                                                        <th scope="col">PPN</th>
+                                                        <th scope="col">PPH</th>
+                                                        <th scope="col">Total</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Rp.10.000</td>
+                                                        <td>Rp.2300</td>
+                                                        <td>Rp.12.300</td>
+                                                        <td>Rp.10.000</td>
+                                                        <td>Rp.2300</td>
+                                                    </tr>
+                                                </tbody>
+                                                
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
                             </div>
                             <div class="tab-pane fade" id="v-pills-messages" role="tabpanel"
                                 aria-labelledby="v-pills-messages-tab">
@@ -623,6 +750,58 @@
                                     </div>
                                 </div>
 
+                                <br><br>
+                                <div class="row card">
+                                    <div class="d-flex">
+                                        <div class="col">
+                                            <p class="pt-5 mr-2 text-right">Total</p>
+                                        </div>
+                                        <div class="col-7 p-1">
+                                            <div class="table-responsive table-responsive-sm">
+                                                <table class="table table-bordered table-hover"  style="font-size: 10pt">
+                                                <thead class="thead-dark">
+                                                    <tr>
+                                                    <th scope="col">Jumlah Orang</th>
+                                                    <th scope="col">KDN</th>
+                                                    <th scope="col">KLN</th>
+                                                    <th scope="col">Total</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                    <td>17</td>
+                                                    <td>Rp.10.000</td>
+                                                    <td>Rp.2300</td>
+                                                    <td>Rp.12.300</td>
+                                                </tr>
+                                                </tbody>
+                                                
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex">
+                                        <div class="col p-1">
+                                            <div class="table-responsive table-responsive-sm">
+                                                <table class="table table-hover"  style="font-size: 10pt">
+                                                <tr>
+                                                    <td class="text-center" style="width: 45%">Kapasitas Per Bulan <i class="fa fa-info"></i></td>
+                                                    <td class="text-center" colspan="3"><input type="text" class="form-control text-center" value="0" disabled></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center">Biaya Produksi / Produk <i class="fa fa-info"></i></td>
+                                                    <td class="text-center"><input type="text" class="form-control text-center" value="Rp.10.000" disabled></td>
+                                                    <td class="text-center"><input type="text" class="form-control text-center" value="Rp.17.000" disabled></td>
+                                                    <td class="text-center"><input type="text" class="form-control text-center" value="Rp.6.200" disabled></td>
+                                                </tr>
+                                                
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
                             </div>
                             <div class="tab-pane fade" id="v-pills-settings" role="tabpanel"
                                 aria-labelledby="v-pills-settings-tab">
@@ -778,6 +957,58 @@
                                     </div>
                                 </div>
                             
+                                
+                                <br><br>
+                                <div class="row card">
+                                    <div class="d-flex">
+                                        <div class="col">
+                                            <p class="pt-5 mr-2 text-right">Total</p>
+                                        </div>
+                                        <div class="col-7 p-1">
+                                            <div class="table-responsive table-responsive-sm">
+                                                <table class="table table-bordered table-hover"  style="font-size: 10pt">
+                                                <thead class="thead-dark">
+                                                    <tr>
+                                                    <th scope="col">Jumlah Orang</th>
+                                                    <th scope="col">KDN</th>
+                                                    <th scope="col">KLN</th>
+                                                    <th scope="col">Total</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                    <td>17</td>
+                                                    <td>Rp.10.000</td>
+                                                    <td>Rp.2300</td>
+                                                    <td>Rp.12.300</td>
+                                                </tr>
+                                                </tbody>
+                                                
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex">
+                                        <div class="col p-1">
+                                            <div class="table-responsive table-responsive-sm">
+                                                <table class="table table-hover"  style="font-size: 10pt">
+                                                <tr>
+                                                    <td class="text-center" style="width: 45%">Kapasitas Per Bulan <i class="fa fa-info"></i></td>
+                                                    <td class="text-center" colspan="3"><input type="text" class="form-control text-center" value="0" disabled></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center">Biaya Produksi / Produk <i class="fa fa-info"></i></td>
+                                                    <td class="text-center"><input type="text" class="form-control text-center" value="Rp.10.000" disabled></td>
+                                                    <td class="text-center"><input type="text" class="form-control text-center" value="Rp.17.000" disabled></td>
+                                                    <td class="text-center"><input type="text" class="form-control text-center" value="Rp.6.200" disabled></td>
+                                                </tr>
+                                                
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
 
                         </div>
