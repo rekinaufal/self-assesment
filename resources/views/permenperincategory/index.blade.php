@@ -12,31 +12,11 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        @if (session()->has('success'))
-                            <div class="alert alert-success alert-dismissible show fade">
-                                <div class="alert-body">
-                                    <button class="close" data-dismiss="alert">
-                                        <span>&times;</span>
-                                    </button>
-                                    <strong>{{ session('success') }}</strong>
-                                </div>
-                            </div>
-                        @endif
-                        @if (session()->has('failed'))
-                            <div class="alert alert-danger alert-dismissible show fade">
-                                <div class="alert-body">
-                                    <button class="close" data-dismiss="alert">
-                                        <span>&times;</span>
-                                    </button>
-                                    <strong>{{ session('failed') }}</strong>
-                                </div>
-                            </div>
-                        @endif
                         <div class="float-left">
                             <h4 class="card-title">{{ $pageTitle }} Data</h4>
                         </div>
                         <div class="float-right">
-                            <a onclick="setValue(``,`` , '{{ route('permenperincategory.store') }}', 'Add Permenperin')"
+                            <a onclick="setValue(``,`` , '{{ route('permenperincategory.store') }}', 'Add Permenperin', 'POST', '')"
                                 type="button" style="color: white" data-toggle="modal" data-target="#info-header-modal"
                                 class="btn btn-primary mb-3">Add New &nbsp;<i class="fas fa-plus"></i></a>
                         </div>
@@ -46,6 +26,7 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Name</th>
+                                        <th>Badge</th>
                                         <th>Created At</th>
                                         <th class="text-center" width="1%">#</th>
                                     </tr>
@@ -60,11 +41,14 @@
                                                 {{ $item->name }}
                                             </td>
                                             <td>
+                                                <span class="badge badge-{{ $item->color }}">{{ $item->color }}</span>
+                                            </td>
+                                            <td>
                                                 {{ $item->created_at }}
                                             </td>
                                             <td class="d-flex">
                                                 <button class="btn btn-success btn-action mr-1"
-                                                    onclick="setValue(`{{ $item->id }}`,`{{ $item->name }}` , `{{ route('permenperincategory.update', $item->id) }}` , 'Edit Permenperin' , 'PUT')"
+                                                    onclick="setValue(`{{ $item->id }}`,`{{ $item->name }}` , `{{ route('permenperincategory.update', $item->id) }}` , 'Edit Permenperin' , 'PUT', `{{ $item->color }}`)"
                                                     data-toggle="modal" data-target="#info-header-modal">
                                                     <i class="fa fa-pencil-alt p-0"></i>
                                                 </button>
@@ -101,8 +85,24 @@
                         @csrf
                         <div class="form-group">
                             <input type="hidden" id="textInputId" name="id">
-                            <label for="exampleInputEmail1">Category permenperin</label>
-                            <input type="text" name="name" class="form-control" id="textInputName">
+                            <div class="input-group d-flex flex-column">
+                                <label for="textInputName">Category permenperin</label>
+                                <input type="text" name="name" class="form-control w-100" id="textInputName">
+                            </div>
+                            <div class="input-group d-flex flex-column w-100 mt-4">
+                                <label for="colors">Checklist the badge color</label>
+                                <div class="color-group row">
+                                    @foreach ($options['colors'] as $key => $color)
+                                        <div class="colors col-4 d-flex align-items-center mt-2">
+                                            <input type="radio" name="color" class="form-control"
+                                                id="color-{{ $color }}" value="{{ $color }}"
+                                                style="width: 15px; height: auto;" {{ $key == 0 ? "checked" : "" }}>
+                                            <label for="color-{{ $color }}" style="width: 20px; height: 20px;"
+                                                class="ml-2"><span class="badge badge-{{ $color }}">{{ $color }}</span></label>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
                         </div>
                 </div>
                 <div class="modal-footer">
@@ -123,11 +123,17 @@
             $('#myForm-' + id).submit();
         }
 
-        function setValue(id, name, action, title, method) {
+        function setValue(id, name, action, title, method, color) {
             var inputId = document.getElementById('textInputId');
             var inputName = document.getElementById('textInputName');
             var form = document.getElementById('formAddOrEdit');
             var modal = document.getElementById('exampleModalLabel');
+            if(color != '') {
+                $("input[checked]").removeAttr("checked");
+                $("input[value='" + color + "']").prop("checked", true);
+            } else {
+                $("input[value='primary']").prop("checked", true);
+            }
             inputId.value = id;
             inputName.value = name;
             form.action = action;
@@ -137,7 +143,7 @@
             if (getInput) {
                 getInput.remove();
             }
-            if (method) {
+            if (method != "POST") {
                 var hiddenInput = document.createElement('input');
                 hiddenInput.id = 'inputMethod'
                 hiddenInput.type = 'hidden';
@@ -147,15 +153,7 @@
             }
         }
     </script>
-    {{-- <script src="{{ asset('assets/libs/jquery/dist/jquery.min.js') }}"></script> --}}
-    {{-- <script src="{{ asset('assets/libs/popper.js/dist/umd/popper.min.js') }}"></script> --}}
-    {{-- <script src="{{ asset('assets/libs/bootstrap/dist/js/bootstrap.min.js') }}"></script> --}}
-    {{-- <script src="{{ asset('dist/js/app-style-switcher.js') }}"></script> --}}
-    {{-- <script src="{{ asset('dist/js/feather.min.js') }}"></script> --}}
-    {{-- <script src="{{ asset('assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js') }}"></script> --}}
     <script src="{{ asset('assets/extra-libs/sparkline/sparkline.js') }}"></script>
-    {{-- <script src="{{ asset('dist/js/sidebarmenu.js') }}"></script> --}}
-    {{-- <script src="{{ asset('dist/js/custom.min.js') }}"></script> --}}
     <script src="{{ asset('assets/extra-libs/datatables.net/js/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('dist/js/pages/datatable/datatable-basic.init.js') }}"></script>
 @endpush
