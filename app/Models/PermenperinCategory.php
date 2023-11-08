@@ -12,7 +12,7 @@ class PermenperinCategory extends Model
 
     protected $table = "permenperin_categories";
 
-    protected $fillable = ['name'];
+    protected $fillable = ['name', "color"];
 
     protected $guarded = ["id"];
 
@@ -24,5 +24,14 @@ class PermenperinCategory extends Model
     public function computations(): HasMany
     {
         return $this->hasMany(Computation::class, 'permenperin_category_id', 'id');
+    }
+
+    public static function getOptions() {
+        $options = [];
+        $colorOptions = ["primary", "secondary", "light", "dark", "warning", "info", "danger"];
+
+        $options["colors"] = $colorOptions;
+
+        return $options;
     }
 }

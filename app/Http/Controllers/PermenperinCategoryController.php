@@ -23,9 +23,13 @@ class PermenperinCategoryController extends Controller
      */
     public function index()
     {
-        $permenperin = PermenperinCategory::get();
-        $pageTitle = self::$pageTitle;
-        return view('permenperincategory.index', compact('pageTitle', 'permenperin'));
+        $data = [
+            "permenperin" => PermenperinCategory::get(),
+            "pageTitle" => self::$pageTitle,
+            "options" => PermenperinCategory::getOptions(),
+        ];
+
+        return view('permenperincategory.index', $data);
     }
 
     /**
@@ -45,14 +49,17 @@ class PermenperinCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        if (!$this->validateInput($request)) {
-            return redirect()->back()->with('failed', 'Permenperin gagal dibuat');
-        }
-
-        $created = PermenperinCategory::create([
-            "name" => $request->name
+        // if (!$this->validateInput($request)) {
+        //     return redirect()->back()->with('failed', 'Permenperin gagal dibuat');
+        // }
+        $credentials = $request->validate([
+            "name" => ["required"],
+            "color" => ["required"],
         ]);
-        if ($created) {
+
+        $permenperinCategory = PermenperinCategory::create($credentials);
+
+        if ($permenperinCategory) {
             return redirect()->back()->with('success', 'Permenperin berhasil dibuat');
         } else {
             return redirect()->back()->with('failed', 'Permenperin gagal dibuat');
@@ -95,13 +102,15 @@ class PermenperinCategoryController extends Controller
      */
     public function update(Request $request)
     {
-        if (!$this->validateInput($request)) {
-            return redirect()->back()->with('failed', 'Permenperin gagal diedit');
-        }
-        $isEdited = PermenperinCategory::where('id', $request->id)->update([
-            'name' => $request->name
+        $credentials = $request->validate([
+            "name" => ["required"],
+            "color" => ["required"],
         ]);
-        if ($isEdited) {
+
+        // dd($permenperinCategory);
+        $permenperinCategory = PermenperinCategory::find($request->id);
+        $permenperinCategory->update($credentials);
+        if ($permenperinCategory) {
             return redirect()->back()
                 ->with('success', 'Data updated successfully');
         }
@@ -126,7 +135,8 @@ class PermenperinCategoryController extends Controller
     private function validateInput(Request $request)
     {
         $isvalid = $request->validate([
-            'name' => ['required', 'max:255', 'min:3']
+            'name' => ['required', 'max:255', 'min:3'],
+            'color' => ['required'],
         ]);
 
         return $isvalid;
