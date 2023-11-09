@@ -18,7 +18,7 @@
                 <div class="card">
                     <div class="card-header bg-transparent">
                         <div class="float-right">
-                            <button class="btn btn-primary">Permenperin 16</button>
+                            <button class="badge badge-{{ $computation->permenperin_category->color }}">{{ $computation->permenperin_category->name }}</button>
                         </div>
                     </div>
                     <div class="card-body">
@@ -26,22 +26,22 @@
                             <tr class="spaceUnder">
                                 <td>Hasil Produksi</td>
                                 <td width="10">:</td>
-                                <td></td>
+                                <td>{{ $computation->production_result }}</td>
                             </tr>
                             <tr class="spaceUnder">
                                 <td>Jenis Produk</td>
                                 <td>:</td>
-                                <td></td>
+                                <td>{{ $computation->product_type }}</td>
                             </tr>
                             <tr class="spaceUnder">
                                 <td>Spesifikasi</td>
                                 <td>:</td>
-                                <td></td>
+                                <td>{{ $computation->specification }}</td>
                             </tr>
                             <tr class="spaceUnder">
                                 <td>Merek & Tipe</td>
                                 <td>:</td>
-                                <td></td>
+                                <td>{{ $computation->brand }}</td>
                             </tr>
                         </table>
                     </div>
@@ -61,25 +61,25 @@
                                 </div>
                                 <div class="row card">
                                     <div class="col ">
-                                        <form class="d-flex flex-wrap" style="width: 100%">
+                                        <form class="d-flex flex-wrap" style="width: 100%" id="form-1">
                                             <div class="form-group-sm mx-2 mt-2" style="font-size: 10pt; width : 13rem">
-                                                <label for="">Nama Bahan Baku <i data-toggle="tooltip" data-placement="top" title="Nama bahan baku adalah nama yang ditunjukkan pada nama material bahan baku dalam pembuatan produk. Contoh : Biji besi, Bracket dll" class="fas fa-info-circle">
+                                                <label for="bahan_baku">Nama Bahan Baku <i data-toggle="tooltip" data-placement="top" title="Nama bahan baku adalah nama yang ditunjukkan pada nama material bahan baku dalam pembuatan produk. Contoh : Biji besi, Bracket dll" class="fas fa-info-circle">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm " id=""
+                                                <input type="text" name="bahan_baku" class="form-control form-control-sm " id="bahan_baku"
                                                     placeholder="">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="">Spesifikasi <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                <label for="spesifikasi">Spesifikasi <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm" id=""
+                                                <input type="text" name="spesifikasi" class="form-control form-control-sm" id="spesifikasi"
                                                     placeholder="">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="">Satuan bahan baku <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                <label for="satuan_bahan_baku">Satuan bahan baku <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
                                                     </i></label>
-                                                <select class="form-control form-control-sm" id="">
+                                                <select class="form-control form-control-sm" id="satuan_bahan_baku" name="satuan_bahan_baku">
                                                     <option></option>
                                                     <option>Pcs</option>
                                                     <option>Pack</option>
@@ -90,9 +90,9 @@
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="">Negara asal <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                <label for="negara_asal">Negara asal <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
                                                     </i></label>
-                                                <select class="form-control form-control-sm" id="">
+                                                <select class="form-control form-control-sm" id="negara_asal" name="negara_asal">
                                                     <option></option>
                                                     <option>Indonesia</option>
                                                     <option>Zimbabwe</option>
@@ -103,32 +103,32 @@
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="">Pemasok / Produsen Tingkat 2 <i
+                                                <label for="pemasok">Pemasok / Produsen Tingkat 2 <i
                                                         class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm" id=""
+                                                <input type="text" name="pemasok" class="form-control form-control-sm" id="pemasok"
                                                     placeholder="">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="">TKDN % <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                <label for="tkdn">TKDN % <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm" id=""
+                                                <input type="number" class="form-control form-control-sm" id="tkdn" name="tkdn"
                                                     placeholder="">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="">Jumlah / Satuan Bahan Baku <i
+                                                <label for="jumlah">Jumlah / Satuan Bahan Baku <i
                                                         class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm" id=""
+                                                <input type="number" name="jumlah" class="form-control form-control-sm" id="jumlah"
                                                     placeholder="">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="">Harga Satuan Material <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                <label for="harga_satuan">Harga Satuan Material <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm" id=""
+                                                <input type="number" name="harga_satuan" class="form-control form-control-sm" id="harga_satuan"
                                                     placeholder="">
                                             </div>
 
@@ -143,9 +143,9 @@
                                                         </div>
                                                         <div class="row">
                                                             <div class="form-group-sm" style="font-size: 7pt;">
-                                                                <label for="">PPN %</label>
-                                                                <input type="text" style=" width : 15rem" class="form-control form-control-sm"
-                                                                    id="" placeholder="">
+                                                                <label for="ppn">PPN %</label>
+                                                                <input type="number" name="ppn" style=" width : 15rem" class="form-control form-control-sm"
+                                                                    id="ppn" placeholder="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -162,19 +162,19 @@
                                                         </div>
                                                         <div class="row">
                                                             <div class="form-group-sm ml-2" style="font-size: 7pt;">
-                                                                <label for="">BM %</label>
-                                                                <input type="text" style="width: 5rem" class="form-control form-control-sm"
-                                                                    id="" placeholder="">
+                                                                <label for="bm">BM %</label>
+                                                                <input type="number" name="bm" style="width: 5rem" class="form-control form-control-sm"
+                                                                    id="bm" placeholder="">
                                                             </div>
                                                             <div class="form-group-sm ml-2" style="font-size: 7pt;">
-                                                                <label for="">PPN %</label>
-                                                                <input type="text" style="width: 5rem" class="form-control form-control-sm"
-                                                                    id="" placeholder="">
+                                                                <label for="pdri_ppn">PPN %</label>
+                                                                <input type="number" name="pdri_ppn" style="width: 5rem" class="form-control form-control-sm"
+                                                                    id="pdri_ppn" placeholder="">
                                                             </div>
                                                             <div class="form-group-sm ml-2" style="font-size: 7pt;">
-                                                                <label for="">PPH %</label>
-                                                                <input type="text" style="width: 5rem" class="form-control form-control-sm"
-                                                                    id="" placeholder="">
+                                                                <label for="pph">PPH %</label>
+                                                                <input type="number" name="pph" style="width: 5rem" class="form-control form-control-sm"
+                                                                    id="pph" placeholder="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1198,7 +1198,7 @@
     <script src="{{ asset('library/sweetalert/dist/sweetalert.min.js') }}"></script>
     <script src="{{ asset('assets/extra-libs/sparkline/sparkline.js') }}"></script>
     <script>
-        let data = [
+        let calculations = [
             {
                 "no": "1.1",
                 "nama": "Bahan Baku",
@@ -1211,8 +1211,22 @@
                 "slug": "jasa-terkait-bahan-baku",
                 "data" : []
             },
-
         ];
+
+        $(() => {
+            $("#form-1").on("submit", (event) => {
+                event.preventDefault();
+                let serializedArray = $("#form-1").serializeArray();
+                let resultObject = {};
+
+                for (let i = 0; i < serializedArray.length; i++) {
+                    let input = serializedArray[i];
+                    resultObject[input.name] = input.value;
+                }
+
+                console.log(resultObject);
+            })
+        })
     </script>
     {{-- <script src="{{ asset('dist/js/users/script.js') }}"></script> --}}
 @endpush
