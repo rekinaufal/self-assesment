@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\CalculationResult;
+use App\Models\Computation;
 use Illuminate\Http\Request;
 
 class CalculationResultController extends Controller
 {
+    private static $pageTitle = "Calculation Result";
     /**
      * Display a listing of the resource.
      *

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Computation;
+use App\Models\PermenperinCategory;
 use Illuminate\Http\Request;
 
 class ComputationController extends Controller
@@ -11,10 +12,14 @@ class ComputationController extends Controller
 
     public function index()
     {
-        $pageTitle = self::$pageTitle;
+        $data = [
+            "pageTitle" => self::$pageTitle,
+            "computations" => Computation::latest()->get(),
+            "permenperinCategories" => PermenperinCategory::all(),
+        ];
+        // $pageTitle = self::$pageTitle;
 
-        return view('computation.index', compact('pageTitle'));
-        
+        return view('computation.index', $data);
     }
 
     /**
@@ -24,9 +29,7 @@ class ComputationController extends Controller
      */
     public function create()
     {
-        $pageTitle = self::$pageTitle;
-
-        return view('computation.computation', compact('pageTitle'));
+        //
     }
 
     /**
@@ -37,7 +40,16 @@ class ComputationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $credentials = $request->validate(Computation::$rules);
+
+        $computation = Computation::updateOrInsert(["id" => $request->id], $credentials);
+
+        if (!$computation) return redirect()->route("computation.index")->with("failed", "Failed to create new computation!");
+
+        if ($request->id != null) {
+            return redirect()->route("computation.index")->with("success", "Success to edit the computation!");
+        }
+        return redirect()->route("computation.index")->with("success", "Success to create new computation!");
     }
 
     /**
@@ -48,7 +60,12 @@ class ComputationController extends Controller
      */
     public function show(Computation $computation)
     {
-        //
+        $data = [
+            "pageTitle" => self::$pageTitle,
+            "computation" => $computation,
+        ];
+
+        return view('calculation-result.index', $data);
     }
 
     /**
@@ -82,6 +99,12 @@ class ComputationController extends Controller
      */
     public function destroy(Computation $computation)
     {
-        //
+        $computation = $computation->delete();
+
+        if (!$computation) {
+            return redirect()->route("computation.index")->with("failed", "Failed to delete the computation");
+        }
+
+        return redirect()->route("computation.index")->with("success", "Success to delete the computation!");
     }
 }
