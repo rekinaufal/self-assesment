@@ -27,26 +27,26 @@
         }
 
         a.active {
-        border-bottom: 2px solid #55c57a;
+            border-bottom: 2px solid #55c57a;
         }
 
         .nav-link {
-        color: rgb(110, 110, 110);
+            color: rgb(110, 110, 110);
         /* font-weight: 500; */
         }
         .nav-link:hover {
-        color: #55c57a;
+            color: #55c57a;
         }
 
         .nav-pills .nav-link.active {
-        color: black;
-        background-color: white;
-        border-radius: 0.5rem 0.5rem 0 0;
-        font-weight: 600;
+            color: black;
+            background-color: white;
+            border-radius: 0.5rem 0.5rem 0 0;
+            font-weight: 600;
         }
 
         .tab-content {
-        padding-bottom: 1.3rem;
+            padding-bottom: 1.3rem;
         }
 
         /* .form-control {
@@ -65,7 +65,7 @@
         } */
 
         .third {
-        padding: 0 1.5rem 0 1.5rem;
+            padding: 0 1.5rem 0 1.5rem;
         }
 
         /* label {
@@ -78,22 +78,22 @@
         } */
 
         .form-control:focus {
-        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 7px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 7px rgba(0, 0, 0, 0.2);
         }
 
-        select {
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        text-indent: 1px;
-        text-overflow: "";
-        }
+        /* select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            text-indent: 1px;
+            text-overflow: "";
+        } */
 
         /* 1st card */
 
         ul {
-        list-style: none;
-        margin-top: 1rem;
-        padding-inline-start: 0;
+            list-style: none;
+            margin-top: 1rem;
+            padding-inline-start: 0;
         }
 
         /* .search {
@@ -101,7 +101,7 @@
         } */
 
         .ccontent li .wrapp {
-        padding: 0.3rem 1rem 0.001rem 1rem;
+            padding: 0.3rem 1rem 0.001rem 1rem;
         }
 
         /* .ccontent li .wrapp div {
@@ -113,15 +113,34 @@
         }  */
 
         .ccontent li:hover {
-        background-color: rgb(117, 93, 255);
-        color: white;
+            background-color: rgb(117, 93, 255);
+            color: white;
         }
 
-        /* 2nd card */
+        /* checkbox round */
+        .checkbox-round {
+            width: 13px;
+            height: 13px;
+            background-color: white;
+            border-radius: 50%;
+            /* vertical-align: middle; */
+            border: 1px solid #838383;
+            appearance: none;
+            -webkit-appearance: none;
+            outline: none;
+            cursor: pointer;
+        }
+        .checkbox-round:checked {
+            background-color: rgb(93, 166, 255);
+        }
+        /* checkbox round */
 
-        /* .addinfo {
-        padding: 0 1rem;
-        } */
+        .btn-outline-danger {
+            color: #000000 !important;
+        }
+        .btn-outline-danger:hover {
+            color: #ffffff !important;
+        }
     </style>
 @endpush
 
@@ -130,22 +149,36 @@
         <div class="row">
             <div class="col-12">
                 <div class="card">
-                    <div class="card-header bg-transparent">
+                    <div class="card-body">
                         <h4 class="card-title">Check List Kebutuhan Verifikasi</h4>
                         <p class="text-secondary">TKDN Barang</p>
-                    </div>
-                    <div class="card-body">
+                        <hr>
+
+                        @if (request('type-create') == 'get')
+                            <div class="form-gorup">
+                                <label>Pilih Perhitungan</label>
+                                <select name="computation_id" class="form-control">
+                                    @if (count($computation) > 0)
+                                        @foreach ($computation as $item)
+                                            <option value="">{{ $item->id }}</option>
+                                        @endforeach
+                                    @else
+                                        <option value="">Empty data</option>
+                                    @endif
+                                </select>
+                            </div>
+                        @endif
                         <div class="form-gorup">
                             <label>Nama Perusahaan</label>
-                            <input type="text" class="form-control" name="company_name">
+                            <input type="text" class="form-control" name="company_name" {{ request('type-create') == 'get' ? 'readonly' : '' }}>
                         </div>
                         <div class="form-gorup">
                             <label>Jenis Produk</label>
-                            <input type="text" class="form-control" name="type_product">
+                            <input type="text" class="form-control" name="type_product" {{ request('type-create') == 'get' ? 'readonly' : '' }}>
                         </div>
                         <div class="form-gorup">
                             <label>Tipe Produk</label>
-                            <input type="text" class="form-control" name="type_product">
+                            <input type="text" class="form-control" name="type_product" {{ request('type-create') == 'get' ? 'readonly' : '' }}>
                         </div>
                     </div>
                 </div>
@@ -162,10 +195,8 @@
                         {{-- Profil Perusahaan --}}
                         <div class="form-group d-flex align-items-center">
                             <button type="button" class="btn btn-outline-danger mr-2 flex-grow-1 text-left">
-                                <div class="text-dark">
-                                    <i class="far fa-building"></i>
-                                    Profil Perusahaan
-                                </div>
+                                <i class="far fa-building"></i>
+                                Profil Perusahaan
                             </button>
                             <div class="mr-2">
                                 <a href="#" data-toggle="tooltip" title="This is a tooltip example that displays on the top">
@@ -173,16 +204,14 @@
                                 </a>
                             </div>
                             <div class="mr-2">
-                                <input type="radio" name="profil_perusahaan" style="transform: scale(1.3);">
+                                <input type="checkbox" name="profil_perusahaan" class="checkbox-round">
                             </div>
                         </div>
                         {{-- Akta Pendidikan dan Akta Perubahan Terakhir --}}
                         <div class="form-group d-flex align-items-center">
                             <button type="button" class="btn btn-outline-danger mr-2 flex-grow-1 text-left">
-                                <div class="text-dark">
-                                    <i class="far fa-file-archive"></i>
-                                    Akta Pendidikan dan Akta Perubahan Terakhir
-                                </div>
+                                <i class="far fa-file-archive"></i>
+                                Akta Pendidikan dan Akta Perubahan Terakhir
                             </button>
                             <div class="mr-2">
                                 <a href="#" data-toggle="tooltip" title="This is a tooltip example that displays on the top">
@@ -190,16 +219,14 @@
                                 </a>
                             </div>
                             <div class="mr-2">
-                                <input type="radio" name="profil" style="transform: scale(1.3);">
+                                <input type="checkbox" name="akta_pendidikan" class="checkbox-round">
                             </div>
                         </div>
                         {{-- Izin Usaha IUI/UT/OSS --}}
                         <div class="form-group d-flex align-items-center">
                             <button type="button" class="btn btn-outline-danger mr-2 flex-grow-1 text-left">
-                                <div class="text-dark">
-                                    <i class="far fa-file-code"></i>
-                                    Izin Usaha (IUI/UT/OSS)
-                                </div>
+                                <i class="far fa-file-code"></i>
+                                Izin Usaha (IUI/UT/OSS)
                             </button>
                             <div class="mr-2">
                                 <a href="#" data-toggle="tooltip" title="This is a tooltip example that displays on the top">
@@ -207,16 +234,14 @@
                                 </a>
                             </div>
                             <div class="mr-2">
-                                <input type="radio" name="profil" style="transform: scale(1.3);">
+                                <input type="checkbox" name="izin_usaha_iui" class="checkbox-round">
                             </div>
                         </div>
                         {{-- Izin Usaha --}}
                         <div class="form-group d-flex align-items-center">
                             <button type="button" class="btn btn-outline-danger mr-2 flex-grow-1 text-left">
-                                <div class="text-dark">
-                                    <i class="far fa-file-powerpoint"></i>
-                                    Izin Usaha
-                                </div>
+                                <i class="far fa-file-powerpoint"></i>
+                                Izin Usaha
                             </button>
                             <div class="mr-2">
                                 <a href="#" data-toggle="tooltip" title="This is a tooltip example that displays on the top">
@@ -224,16 +249,14 @@
                                 </a>
                             </div>
                             <div class="mr-2">
-                                <input type="radio" name="profil" style="transform: scale(1.3);">
+                                <input type="checkbox" name="izin_usaha" class="checkbox-round">
                             </div>
                         </div>
                         {{-- Nomor Pokok Wajib Pajak (NPWP) --}}
                         <div class="form-group d-flex align-items-center">
                             <button type="button" class="btn btn-outline-danger mr-2 flex-grow-1 text-left">
-                                <div class="text-dark">
-                                    <i class=" far fa-file"></i>
-                                    Nomor Pokok Wajib Pajak (NPWP)
-                                </div>
+                                <i class=" far fa-file"></i>
+                                Nomor Pokok Wajib Pajak (NPWP)
                             </button>
                             <div class="mr-2">
                                 <a href="#" data-toggle="tooltip" title="This is a tooltip example that displays on the top">
@@ -241,16 +264,14 @@
                                 </a>
                             </div>
                             <div class="mr-2">
-                                <input type="radio" name="profil" style="transform: scale(1.3);">
+                                <input type="checkbox" name="npwp" class="checkbox-round">
                             </div>
                         </div>
                         {{-- Struktur Organisani --}}
                         <div class="form-group d-flex align-items-center">
                             <button type="button" class="btn btn-outline-danger mr-2 flex-grow-1 text-left">
-                                <div class="text-dark">
-                                    <i class="fas fa-sitemap"></i>
-                                    Struktur Organisani
-                                </div>
+                                <i class="fas fa-sitemap"></i>
+                                Struktur Organisani
                             </button>
                             <div class="mr-2">
                                 <a href="#" data-toggle="tooltip" title="This is a tooltip example that displays on the top">
@@ -258,16 +279,14 @@
                                 </a>
                             </div>
                             <div class="mr-2">
-                                <input type="radio" name="profil" style="transform: scale(1.3);">
+                                <input type="checkbox" name="struktur_organisasi" class="checkbox-round">
                             </div>
                         </div>
                         {{-- Katalog Produk --}}
                         <div class="form-group d-flex align-items-center">
                             <button type="button" class="btn btn-outline-dark mr-2 flex-grow-1 text-left">
-                                <div class="text-dark">
-                                    <i class="far fa-file-alt"></i>
-                                    Katalog Produk
-                                </div>
+                                <i class="far fa-file-alt"></i>
+                                Katalog Produk
                             </button>
                             <div class="mr-2">
                                 <a href="#" data-toggle="tooltip" title="This is a tooltip example that displays on the top">
@@ -275,16 +294,14 @@
                                 </a>
                             </div>
                             <div class="mr-2">
-                                <input type="radio" name="profil" style="transform: scale(1.3);">
+                                <input type="checkbox" name="katalog_produk" class="checkbox-round">
                             </div>
                         </div>
                         {{-- Sertifikat Merek --}}
                         <div class="form-group d-flex align-items-center">
                             <button type="button" class="btn btn-outline-dark mr-2 flex-grow-1 text-left">
-                                <div class="text-dark">
-                                    <i class="far fa-file-powerpoint"></i>
-                                    Sertifikat Merek
-                                </div>
+                                <i class="far fa-file-powerpoint"></i>
+                                Sertifikat Merek
                             </button>
                             <div class="mr-2">
                                 <a href="#" data-toggle="tooltip" title="This is a tooltip example that displays on the top">
@@ -292,16 +309,14 @@
                                 </a>
                             </div>
                             <div class="mr-2">
-                                <input type="radio" name="profil" style="transform: scale(1.3);">
+                                <input type="checkbox" name="sertifikat_merek" class="checkbox-round">
                             </div>
                         </div>
                         {{-- Surat Pelimpahan Penggunaan Merk --}}
                         <div class="form-group d-flex align-items-center">
                             <button type="button" class="btn btn-outline-dark mr-2 flex-grow-1 text-left">
-                                <div class="text-dark">
-                                    <i class="far fa-file-pdf"></i>
-                                    Surat Pelimpahan Penggunaan Merk
-                                </div>
+                                <i class="far fa-file-pdf"></i>
+                                Surat Pelimpahan Penggunaan Merk
                             </button>
                             <div class="mr-2">
                                 <a href="#" data-toggle="tooltip" title="This is a tooltip example that displays on the top">
@@ -309,7 +324,7 @@
                                 </a>
                             </div>
                             <div class="mr-2">
-                                <input type="radio" name="profil" style="transform: scale(1.3);">
+                                <input type="checkbox" name="surat_pelimpangan" class="checkbox-round">
                             </div>
                         </div>
                     </div>
@@ -340,11 +355,9 @@
                                 <ul class="ccontent">
                                     {{-- Daftar Kebutuhan Bahan Baku Untuk Satuan Produk Yang Dinilai --}}
                                     <div class="form-group d-flex align-items-center">
-                                        <button type="button" class="btn btn-outline-danger mr-2 flex-grow-1 text-left">
-                                            <div class="text-dark h6">
-                                                <i class="far fa-file"></i>
-                                                Daftar Kebutuhan Bahan Baku Untuk Satuan Produk Yang Dinilai
-                                            </div>
+                                        <button type="button" class="btn btn-outline-danger mr-2 flex-grow-1 text-left h6">
+                                            <i class="far fa-file"></i>
+                                            Daftar Kebutuhan Bahan Baku Untuk Satuan Produk Yang Dinilai
                                         </button>
                                         <div class="mr-2">
                                             <a href="#" data-toggle="tooltip" title="This is a tooltip example that displays on the top">
@@ -352,16 +365,14 @@
                                             </a>
                                         </div>
                                         <div class="mr-2">
-                                            <input type="radio" name="profil" style="transform: scale(1.3);">
+                                            <input type="checkbox" name="daftar_kebutuhan" class="checkbox-round">
                                         </div>
                                     </div>
                                     {{-- Bukti Pembelian Bahan Baku Terhadap Produk Yang Dinilai --}}
                                     <div class="form-group d-flex align-items-center">
-                                        <button type="button" class="btn btn-outline-dark mr-2 flex-grow-1 text-left">
-                                            <div class="text-dark h6">
-                                                <i class="far fa-file"></i>
-                                                Bukti Pembelian Bahan Baku Terhadap Produk Yang Dinilai
-                                            </div>
+                                        <button type="button" class="btn btn-outline-dark mr-2 flex-grow-1 text-left h6">
+                                            <i class="far fa-file"></i>
+                                            Bukti Pembelian Bahan Baku Terhadap Produk Yang Dinilai
                                         </button>
                                         <div class="mr-2">
                                             <a href="#" data-toggle="tooltip" title="This is a tooltip example that displays on the top">
@@ -369,16 +380,14 @@
                                             </a>
                                         </div>
                                         <div class="mr-2">
-                                            <input type="radio" name="profil" style="transform: scale(1.3);">
+                                            <input type="checkbox" name="bukti_pembelian" class="checkbox-round">
                                         </div>
                                     </div>
                                     {{-- Jasa Terkait Pembelian Bahan Baku --}}
                                     <div class="form-group d-flex align-items-center">
-                                        <button type="button" class="btn btn-outline-dark mr-2 flex-grow-1 text-left">
-                                            <div class="text-dark h6">
-                                                <i class="far fa-file"></i>
-                                                Jasa Terkait Pembelian Bahan Baku
-                                            </div>
+                                        <button type="button" class="btn btn-outline-dark mr-2 flex-grow-1 text-left h6">
+                                            <i class="far fa-file"></i>
+                                            Jasa Terkait Pembelian Bahan Baku
                                         </button>
                                         <div class="mr-2">
                                             <a href="#" data-toggle="tooltip" title="This is a tooltip example that displays on the top">
@@ -386,7 +395,7 @@
                                             </a>
                                         </div>
                                         <div class="mr-2">
-                                            <input type="radio" name="profil" style="transform: scale(1.3);">
+                                            <input type="checkbox" name="jasa_bahan_baku" class="checkbox-round">
                                         </div>
                                     </div>
                                 </ul>

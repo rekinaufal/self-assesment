@@ -42,7 +42,7 @@
                         {{-- <h2 class="text-center mb-4 mt-0 mt-md-4 px-2">Upgrade akun anda dan dapatkan kelebihannya</h2> --}}
                         <div class="row">
                             <div class="col-6">
-                                <a href="{{ route('needs.create') }}" class="text-decoration-none text-dark">
+                                <a href="{{ route('needs.create', ['type-create' => 'new']) }}" class="text-decoration-none text-dark">
                                     <div class="card border-secondary border shadow-none" style="border-radius: 15px;">
                                         <div class="card-body position-relative">
                                             <div class="my-3 pt-2 pb-2 text-center">
@@ -60,20 +60,22 @@
                                 </a>
                             </div>
                             <div class="col-6">
-                                <div class="card border-secondary border shadow-none" style="border-radius: 15px;">
-                                    <div class="card-body position-relative">
-                                        <div class="my-3 pt-2 pb-2 text-center">
-                                            <img src="{{ asset('assets/images/kebutuhan/file.png') }}" alt="Pro Image" height="60">
-                                        </div>
-                                        <h3 class="card-title text-center mb-4">Get File</h3>
-                                        <p class="text-center pb-4 pt-4">Membuat file list kebutuhan baru dan telah memiliki data perhitungan</p>
-                                        <div class="text-center pt-4">
-                                            <div class="d-flex justify-content-center">
-                                                <input type="radio" style="transform: scale(1.5);" checked>
+                                <a href="{{ route('needs.create', ['type-create' => 'get']) }}" class="text-decoration-none text-dark">
+                                    <div class="card border-secondary border shadow-none" style="border-radius: 15px;">
+                                        <div class="card-body position-relative">
+                                            <div class="my-3 pt-2 pb-2 text-center">
+                                                <img src="{{ asset('assets/images/kebutuhan/file.png') }}" alt="Pro Image" height="60">
+                                            </div>
+                                            <h3 class="card-title text-center mb-4">Get File</h3>
+                                            <p class="text-center pb-4 pt-4">Membuat file list kebutuhan baru dan telah memiliki data perhitungan</p>
+                                            <div class="text-center pt-4">
+                                                <div class="d-flex justify-content-center">
+                                                    <input type="radio" style="transform: scale(1.5);" checked>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </a>
                             </div>
                         </div>
                     </div>
