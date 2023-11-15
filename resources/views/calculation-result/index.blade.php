@@ -18,7 +18,8 @@
                 <div class="card">
                     <div class="card-header bg-transparent">
                         <div class="float-right">
-                            <button class="badge badge-{{ $computation->permenperin_category->color }}">{{ $computation->permenperin_category->name }}</button>
+                            <button
+                                class="badge badge-{{ $computation->permenperin_category->color }}">{{ $computation->permenperin_category->name }}</button>
                         </div>
                     </div>
                     <div class="card-body">
@@ -61,25 +62,33 @@
                                 </div>
                                 <div class="row card">
                                     <div class="col ">
-                                        <form class="d-flex flex-wrap" style="width: 100%" id="form-1">
+                                        <form action="" class="d-flex flex-wrap" style="width: 100%" id="form-1"
+                                            method="post">
                                             <div class="form-group-sm mx-2 mt-2" style="font-size: 10pt; width : 13rem">
-                                                <label for="bahan_baku">Nama Bahan Baku <i data-toggle="tooltip" data-placement="top" title="Nama bahan baku adalah nama yang ditunjukkan pada nama material bahan baku dalam pembuatan produk. Contoh : Biji besi, Bracket dll" class="fas fa-info-circle">
+                                                <label for="bahan_baku">Nama Bahan Baku <i data-toggle="tooltip"
+                                                        data-placement="top"
+                                                        title="Nama bahan baku adalah nama yang ditunjukkan pada nama material bahan baku dalam pembuatan produk. Contoh : Biji besi, Bracket dll"
+                                                        class="fas fa-info-circle">
                                                     </i></label>
-                                                <input type="text" name="bahan_baku" class="form-control form-control-sm " id="bahan_baku"
-                                                    placeholder="">
+                                                <input type="text" name="bahan_baku"
+                                                    class="form-control form-control-sm " id="bahan_baku" placeholder="" required>
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="spesifikasi">Spesifikasi <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                <label for="spesifikasi">Spesifikasi <i class="fas fa-info-circle"
+                                                        data-toggle="tooltip" data-placement="top" title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" name="spesifikasi" class="form-control form-control-sm" id="spesifikasi"
-                                                    placeholder="">
+                                                <input type="text" name="spesifikasi"
+                                                    class="form-control form-control-sm" id="spesifikasi" placeholder="" required>
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="satuan_bahan_baku">Satuan bahan baku <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                <label for="satuan_bahan_baku">Satuan bahan baku <i
+                                                        class="fas fa-info-circle" data-toggle="tooltip"
+                                                        data-placement="top" title="Tooltip on top">
                                                     </i></label>
-                                                <select class="form-control form-control-sm" id="satuan_bahan_baku" name="satuan_bahan_baku">
+                                                <select class="form-control form-control-sm" id="satuan_bahan_baku"
+                                                    name="satuan_bahan_baku" required>
                                                     <option></option>
                                                     <option>Pcs</option>
                                                     <option>Pack</option>
@@ -90,9 +99,11 @@
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="negara_asal">Negara asal <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                <label for="negara_asal">Negara asal <i class="fas fa-info-circle"
+                                                        data-toggle="tooltip" data-placement="top" title="Tooltip on top">
                                                     </i></label>
-                                                <select class="form-control form-control-sm" id="negara_asal" name="negara_asal">
+                                                <select class="form-control form-control-sm" id="negara_asal"
+                                                    name="negara_asal" required>
                                                     <option></option>
                                                     <option>Indonesia</option>
                                                     <option>Zimbabwe</option>
@@ -104,32 +115,38 @@
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
                                                 <label for="pemasok">Pemasok / Produsen Tingkat 2 <i
-                                                        class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                        class="fas fa-info-circle" data-toggle="tooltip"
+                                                        data-placement="top" title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" name="pemasok" class="form-control form-control-sm" id="pemasok"
-                                                    placeholder="">
+                                                <input type="text" name="pemasok" class="form-control form-control-sm"
+                                                    id="pemasok" placeholder="" required>
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="tkdn">TKDN % <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                <label for="tkdn">TKDN % <i class="fas fa-info-circle"
+                                                        data-toggle="tooltip" data-placement="top" title="Tooltip on top">
                                                     </i></label>
-                                                <input type="number" class="form-control form-control-sm" id="tkdn" name="tkdn"
-                                                    placeholder="">
+                                                <input type="number" class="form-control form-control-sm" id="tkdn"
+                                                    name="tkdn" placeholder="" required>
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
                                                 <label for="jumlah">Jumlah / Satuan Bahan Baku <i
-                                                        class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                        class="fas fa-info-circle" data-toggle="tooltip"
+                                                        data-placement="top" title="Tooltip on top">
                                                     </i></label>
-                                                <input type="number" name="jumlah" class="form-control form-control-sm" id="jumlah"
-                                                    placeholder="">
+                                                <input type="number" name="jumlah" class="form-control form-control-sm"
+                                                    id="jumlah" placeholder="" required>
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="harga_satuan">Harga Satuan Material <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                <label for="harga_satuan">Harga Satuan Material <i
+                                                        class="fas fa-info-circle" data-toggle="tooltip"
+                                                        data-placement="top" title="Tooltip on top">
                                                     </i></label>
-                                                <input type="number" name="harga_satuan" class="form-control form-control-sm" id="harga_satuan"
-                                                    placeholder="">
+                                                <input type="number" name="harga_satuan"
+                                                    class="form-control form-control-sm" id="harga_satuan"
+                                                    placeholder="" required>
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt;">
@@ -138,14 +155,17 @@
                                                         <div class="row">
                                                             <label for="" class="mx-auto">
                                                                 Lokal
-                                                                <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top"></i>
+                                                                <i class="fas fa-info-circle" data-toggle="tooltip"
+                                                                    data-placement="top" title="Tooltip on top"></i>
                                                             </label>
                                                         </div>
                                                         <div class="row">
                                                             <div class="form-group-sm" style="font-size: 7pt;">
                                                                 <label for="ppn">PPN %</label>
-                                                                <input type="number" name="ppn" style=" width : 15rem" class="form-control form-control-sm"
-                                                                    id="ppn" placeholder="">
+                                                                <input type="number" name="ppn"
+                                                                    style=" width : 15rem"
+                                                                    class="form-control form-control-sm" id="ppn"
+                                                                    placeholder="" required>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -157,31 +177,37 @@
                                                     <div class="col">
                                                         <div class="row">
                                                             <label for="" class="mx-auto">PDRI <i
-                                                                    class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                                    class="fas fa-info-circle" data-toggle="tooltip"
+                                                                    data-placement="top" title="Tooltip on top">
                                                                 </i></label>
                                                         </div>
                                                         <div class="row">
                                                             <div class="form-group-sm ml-2" style="font-size: 7pt;">
                                                                 <label for="bm">BM %</label>
-                                                                <input type="number" name="bm" style="width: 5rem" class="form-control form-control-sm"
-                                                                    id="bm" placeholder="">
+                                                                <input type="number" name="bm" style="width: 5rem"
+                                                                    class="form-control form-control-sm" id="bm"
+                                                                    placeholder="" required>
                                                             </div>
                                                             <div class="form-group-sm ml-2" style="font-size: 7pt;">
                                                                 <label for="pdri_ppn">PPN %</label>
-                                                                <input type="number" name="pdri_ppn" style="width: 5rem" class="form-control form-control-sm"
-                                                                    id="pdri_ppn" placeholder="">
+                                                                <input type="number" name="pdri_ppn" style="width: 5rem"
+                                                                    class="form-control form-control-sm" id="pdri_ppn"
+                                                                    placeholder="" required>
                                                             </div>
                                                             <div class="form-group-sm ml-2" style="font-size: 7pt;">
                                                                 <label for="pph">PPH %</label>
-                                                                <input type="number" name="pph" style="width: 5rem" class="form-control form-control-sm"
-                                                                    id="pph" placeholder="">
+                                                                <input type="number" name="pph" style="width: 5rem"
+                                                                    class="form-control form-control-sm" id="pph"
+                                                                    placeholder="" required>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="d-flex justify-content-end" style="font-size: 10pt; width : 100%;">
-                                                <button class="btn btn-sm btn-success" type="submit"><i class="fa fa-save"></i> Simpan</button>
+                                            <div class="d-flex justify-content-end"
+                                                style="font-size: 10pt; width : 100%;">
+                                                <button class="btn btn-sm btn-success" type="submit"><i
+                                                        class="fa fa-save"></i> Simpan</button>
                                             </div>
                                         </form><br>
                                     </div>
@@ -191,10 +217,13 @@
                                     <div class="col p-2">
                                         <form class="form-inline">
                                             <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text" id="basic-addon1"><i class="fa fa-search"></i></span>
-                                            </div>
-                                            <input type="text" class="form-control form-control-sm" placeholder="Search" aria-label="Username" aria-describedby="basic-addon1">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon1"><i
+                                                            class="fa fa-search"></i></span>
+                                                </div>
+                                                <input type="text" class="form-control form-control-sm"
+                                                    placeholder="Search" aria-label="Username"
+                                                    aria-describedby="basic-addon1">
                                             </div>
                                         </form>
                                     </div>
@@ -219,18 +248,23 @@
                                                         <th scope="col">Total</th>
                                                     </tr>
                                                 </thead>
-                                                <tbody>
+                                                <tbody id="tbody-1">
+                                                    {{-- append javascript --}}
                                                     <tr>
                                                         <td>
                                                             <div class="dropdown">
                                                                 <i data-feather="more-vertical" id="dropdownMenuButton"
-                                                                    class="feather-icon dropdown-toggle" style="cursor: pointer;"
-                                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
-                                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                                    <a class="dropdown-item buttonEditNews" onclick=""><i class="fa fa-edit"></i> Edit
+                                                                    class="feather-icon dropdown-toggle"
+                                                                    style="cursor: pointer;" data-toggle="dropdown"
+                                                                    aria-haspopup="true" aria-expanded="false"></i>
+                                                                <div class="dropdown-menu"
+                                                                    aria-labelledby="dropdownMenuButton">
+                                                                    <a class="dropdown-item buttonEditNews"
+                                                                        onclick=""><i class="fa fa-edit"></i> Edit
                                                                     </a>
                                                                     <form action="" method="post">
-                                                                        <button class="dropdown-item" type="submit"><i class="fa fa-trash"></i> Delete</button>
+                                                                        <button class="dropdown-item" type="submit"><i
+                                                                                class="fa fa-trash"></i> Delete</button>
                                                                     </form>
                                                                 </div>
                                                             </div>
@@ -248,37 +282,71 @@
                                                         <td>0</td>
                                                         <td>780.000.000.00</td>
                                                     </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="dropdown">
-                                                                <i data-feather="more-vertical" id="dropdownMenuButton"
-                                                                    class="feather-icon dropdown-toggle" style="cursor: pointer;"
-                                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
-                                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                                    <a class="dropdown-item buttonEditNews" onclick="">
-                                                                        <i class="fa fa-edit"></i> Edit
-                                                                    </a>
-                                                                    <form action="" method="post">
-                                                                        <button class="dropdown-item" type="submit"><i class="fa fa-trash"></i> Delete</button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td scope="row">2</td>
-                                                        <td>Niku niku Nomi</td>
-                                                        <td>AMD RYZEN 7000</td>
-                                                        <td>Kg</td>
-                                                        <td>Zimbabwe</td>
-                                                        <td>Bambang</td>
-                                                        <td>32 %</td>
-                                                        <td>120</td>
-                                                        <td>Rp.345.000.000</td>
-                                                        <td>1</td>
-                                                        <td>0</td>
-                                                        <td>780.000.000.00</td>
-                                                    </tr>
                                                 </tbody>
                                             </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row card">
+                                    <div class="d-flex">
+                                        <div class="col">
+                                            <p class="mt-5 mr-2 text-right">Total</p>
+                                        </div>
+                                        <div class="col-6 p-1">
+                                            <div class="table-responsive table-responsive-sm">
+                                                <table class="table table-bordered table-hover" style="font-size: 8pt">
+                                                    <thead class="thead-dark">
+                                                        <tr>
+                                                            <th scope="col">KDN</th>
+                                                            <th scope="col">KLN</th>
+                                                            <th scope="col">Total</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td id="sum-kdn">Rp.10.000</td>
+                                                            <td id="sum-kln">Rp.2300</td>
+                                                            <td id="sum-total">Rp.12.300</td>
+                                                        </tr>
+                                                    </tbody>
+
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex">
+                                        <div class="col">
+                                            <p class="mt-5 text-right">Total</p>
+                                        </div>
+                                        <div class="col-9 p-1">
+                                            <div class="table-responsive table-responsive-sm">
+                                                <table class="table table-bordered table-hover" style="font-size: 8pt">
+                                                    <thead style="text-align: center"class="thead-dark">
+                                                        <tr>
+                                                            <th scope="col" rowspan="2" class="align-middle">Lokal
+                                                                PPN</th>
+                                                            <th scope="col" colspan="4">PDRI</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="col">BM</th>
+                                                            <th scope="col">PPN</th>
+                                                            <th scope="col">PPH</th>
+                                                            <th scope="col">Total</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td id="sum-ppn">Rp.10.000</td>
+                                                            <td id="sum-bm">Rp.2300</td>
+                                                            <td id="sum-pdri-ppn">Rp.12.300</td>
+                                                            <td id="sum-pph">Rp.10.000</td>
+                                                            <td id="sum-pdri-total">Rp.2300</td>
+                                                        </tr>
+                                                    </tbody>
+
+                                                </table>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -290,58 +358,72 @@
                                 <div class="row">
                                     <div class="col">
                                         <h5>Form 1.2 : Tingkat Komponen Dalam Negeri Bahan Baku</h5>
-                                        <p style="font-size: 13px; opacity: 60%;">List data bahan baku untuk jasa jasa terkait</p>
+                                        <p style="font-size: 13px; opacity: 60%;">List data bahan baku untuk jasa jasa
+                                            terkait</p>
                                     </div>
                                 </div>
                                 <div class="row card">
                                     <div class="col ">
                                         <form class="d-flex flex-wrap" style="width: 100%">
                                             <div class="form-group-sm mx-2 mt-2" style="font-size: 10pt; width : 13rem">
-                                                <label for="">Jasa Terkait <i data-toggle="tooltip" data-placement="top" title="Nama bahan baku adalah nama yang ditunjukkan pada nama material bahan baku dalam pembuatan produk. Contoh : Biji besi, Bracket dll" class="fas fa-info-circle">
+                                                <label for="">Jasa Terkait <i data-toggle="tooltip"
+                                                        data-placement="top"
+                                                        title="Nama bahan baku adalah nama yang ditunjukkan pada nama material bahan baku dalam pembuatan produk. Contoh : Biji besi, Bracket dll"
+                                                        class="fas fa-info-circle">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm " id=""
-                                                    placeholder="">
+                                                <input type="text" class="form-control form-control-sm "
+                                                    id="" placeholder="">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="">Pemasok / Produsen Tingkat 2 <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                <label for="">Pemasok / Produsen Tingkat 2 <i
+                                                        class="fas fa-info-circle" data-toggle="tooltip"
+                                                        data-placement="top" title="Tooltip on top">
                                                     </i></label>
                                                 <input type="text" class="form-control form-control-sm" id=""
                                                     placeholder="">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="">Jumlah <i
-                                                        class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                <label for="">Jumlah <i class="fas fa-info-circle"
+                                                        data-toggle="tooltip" data-placement="top"
+                                                        title="Tooltip on top">
                                                     </i></label>
                                                 <input type="text" class="form-control form-control-sm" id=""
                                                     placeholder="">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="">TKDN % <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                <label for="">TKDN % <i class="fas fa-info-circle"
+                                                        data-toggle="tooltip" data-placement="top"
+                                                        title="Tooltip on top">
                                                     </i></label>
                                                 <input type="text" class="form-control form-control-sm" id=""
                                                     placeholder="">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="">Biaya <i
-                                                        class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                <label for="">Biaya <i class="fas fa-info-circle"
+                                                        data-toggle="tooltip" data-placement="top"
+                                                        title="Tooltip on top">
                                                     </i></label>
                                                 <input type="text" class="form-control form-control-sm" id=""
                                                     placeholder="">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="">Alokasi Biaya <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                <label for="">Alokasi Biaya <i class="fas fa-info-circle"
+                                                        data-toggle="tooltip" data-placement="top"
+                                                        title="Tooltip on top">
                                                     </i></label>
                                                 <input type="text" class="form-control form-control-sm" id=""
                                                     placeholder="">
                                             </div>
 
-                                            <div class="d-flex justify-content-end mt-2" style="font-size: 10pt; width : 100%;">
-                                                <button class="btn btn-sm btn-success" type="submit"><i class="fa fa-save"></i> Simpan</button>
+                                            <div class="d-flex justify-content-end mt-2"
+                                                style="font-size: 10pt; width : 100%;">
+                                                <button class="btn btn-sm btn-success" type="submit"><i
+                                                        class="fa fa-save"></i> Simpan</button>
                                             </div>
                                         </form><br>
 
@@ -351,17 +433,20 @@
                                     <div class="col p-2">
                                         <form class="form-inline">
                                             <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text" id="basic-addon1"><i class="fa fa-search"></i></span>
-                                            </div>
-                                            <input type="text" class="form-control form-control-sm" placeholder="Search" aria-label="Username" aria-describedby="basic-addon1">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon1"><i
+                                                            class="fa fa-search"></i></span>
+                                                </div>
+                                                <input type="text" class="form-control form-control-sm"
+                                                    placeholder="Search" aria-label="Username"
+                                                    aria-describedby="basic-addon1">
                                             </div>
                                         </form>
                                     </div>
 
                                     <div class="col p-1">
                                         <div class="table-responsive table-responsive-sm">
-                                            <table class="table table-striped table-hover"  style="font-size: 8pt">
+                                            <table class="table table-striped table-hover" style="font-size: 8pt">
                                                 <thead>
                                                     <tr>
                                                         <th scope="col">Aksi</th>
@@ -382,13 +467,16 @@
                                                         <td>
                                                             <div class="dropdown">
                                                                 <i data-feather="more-vertical" id="dropdownMenuButton"
-                                                                    class="feather-icon dropdown-toggle" style="cursor: pointer;"
-                                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
-                                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                                    class="feather-icon dropdown-toggle"
+                                                                    style="cursor: pointer;" data-toggle="dropdown"
+                                                                    aria-haspopup="true" aria-expanded="false"></i>
+                                                                <div class="dropdown-menu"
+                                                                    aria-labelledby="dropdownMenuButton">
                                                                     <a class="dropdown-item buttonEditNews"
                                                                         onclick=""><i class="fa fa-edit"></i> Edit</a>
                                                                     <form action="" method="post">
-                                                                        <button class="dropdown-item" type="submit"><i class="fa fa-trash"></i> Delete</button>
+                                                                        <button class="dropdown-item" type="submit"><i
+                                                                                class="fa fa-trash"></i> Delete</button>
                                                                     </form>
                                                                 </div>
                                                             </div>
@@ -408,13 +496,16 @@
                                                         <td>
                                                             <div class="dropdown">
                                                                 <i data-feather="more-vertical" id="dropdownMenuButton"
-                                                                    class="feather-icon dropdown-toggle" style="cursor: pointer;"
-                                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
-                                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                                    class="feather-icon dropdown-toggle"
+                                                                    style="cursor: pointer;" data-toggle="dropdown"
+                                                                    aria-haspopup="true" aria-expanded="false"></i>
+                                                                <div class="dropdown-menu"
+                                                                    aria-labelledby="dropdownMenuButton">
                                                                     <a class="dropdown-item buttonEditNews"
                                                                         onclick=""><i class="fa fa-edit"></i> Edit</a>
                                                                     <form action="" method="post">
-                                                                        <button class="dropdown-item" type="submit"><i class="fa fa-trash"></i> Delete</button>
+                                                                        <button class="dropdown-item" type="submit"><i
+                                                                                class="fa fa-trash"></i> Delete</button>
                                                                     </form>
                                                                 </div>
                                                             </div>
@@ -451,14 +542,19 @@
                                     <div class="col ">
                                         <form class="d-flex flex-wrap" style="width: 100%">
                                             <div class="form-group-sm mx-2 mt-2" style="font-size: 10pt; width : 13rem">
-                                                <label for="">Uraian Posisi <i data-toggle="tooltip" data-placement="top" title="Nama bahan baku adalah nama yang ditunjukkan pada nama material bahan baku dalam pembuatan produk. Contoh : Biji besi, Bracket dll" class="fas fa-info-circle">
+                                                <label for="">Uraian Posisi <i data-toggle="tooltip"
+                                                        data-placement="top"
+                                                        title="Nama bahan baku adalah nama yang ditunjukkan pada nama material bahan baku dalam pembuatan produk. Contoh : Biji besi, Bracket dll"
+                                                        class="fas fa-info-circle">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm " id=""
-                                                    placeholder="">
+                                                <input type="text" class="form-control form-control-sm "
+                                                    id="" placeholder="">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="">Kewarganegaraan <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                <label for="">Kewarganegaraan <i class="fas fa-info-circle"
+                                                        data-toggle="tooltip" data-placement="top"
+                                                        title="Tooltip on top">
                                                     </i></label>
                                                 <select class="form-control form-control-sm" id="">
                                                     <option></option>
@@ -471,30 +567,36 @@
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="">Jumlah Orang <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                <label for="">Jumlah Orang <i class="fas fa-info-circle"
+                                                        data-toggle="tooltip" data-placement="top"
+                                                        title="Tooltip on top">
                                                     </i></label>
                                                 <input type="text" class="form-control form-control-sm" id=""
                                                     placeholder="">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="">Jumlah <i
-                                                        class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                <label for="">Jumlah <i class="fas fa-info-circle"
+                                                        data-toggle="tooltip" data-placement="top"
+                                                        title="Tooltip on top">
                                                     </i></label>
                                                 <input type="text" class="form-control form-control-sm" id=""
                                                     placeholder="">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="">Gaji Perbulan<i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                <label for="">Gaji Perbulan<i class="fas fa-info-circle"
+                                                        data-toggle="tooltip" data-placement="top"
+                                                        title="Tooltip on top">
                                                     </i></label>
                                                 <input type="text" class="form-control form-control-sm" id=""
                                                     placeholder="Rp.">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="">Alokasi Gaji % <i
-                                                        class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                <label for="">Alokasi Gaji % <i class="fas fa-info-circle"
+                                                        data-toggle="tooltip" data-placement="top"
+                                                        title="Tooltip on top">
                                                     </i></label>
                                                 <input type="text" class="form-control form-control-sm" id=""
                                                     placeholder="">
@@ -502,30 +604,35 @@
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt;">
                                                 <div class="card p-2">
-                                                        <div class="col">
-                                                            <div class="row">
-                                                                <label for="" class="mx-auto">Biaya (Rp.) <i
-                                                                        class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
-                                                                    </i></label>
+                                                    <div class="col">
+                                                        <div class="row">
+                                                            <label for="" class="mx-auto">Biaya (Rp.) <i
+                                                                    class="fas fa-info-circle" data-toggle="tooltip"
+                                                                    data-placement="top" title="Tooltip on top">
+                                                                </i></label>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="form-group-sm ml-2" style="font-size: 7pt;">
+                                                                <label for="">BPJS </label>
+                                                                <input type="text" style="width: 8rem"
+                                                                    class="form-control form-control-sm" id=""
+                                                                    placeholder="Rp">
                                                             </div>
-                                                            <div class="row">
-                                                                <div class="form-group-sm ml-2" style="font-size: 7pt;">
-                                                                    <label for="">BPJS </label>
-                                                                    <input type="text" style="width: 8rem" class="form-control form-control-sm"
-                                                                        id="" placeholder="Rp">
-                                                                </div>
-                                                                <div class="form-group-sm ml-2" style="font-size: 7pt;">
-                                                                    <label for="">Tunjangan Lainnya</label>
-                                                                    <input type="text" style="width: 8rem" class="form-control form-control-sm"
-                                                                        id="" placeholder="Rp">
-                                                                </div>
+                                                            <div class="form-group-sm ml-2" style="font-size: 7pt;">
+                                                                <label for="">Tunjangan Lainnya</label>
+                                                                <input type="text" style="width: 8rem"
+                                                                    class="form-control form-control-sm" id=""
+                                                                    placeholder="Rp">
                                                             </div>
                                                         </div>
+                                                    </div>
                                                 </div>
                                             </div>
 
-                                            <div class="d-flex justify-content-end" style="font-size: 10pt; width : 100%;">
-                                                <button class="btn btn-sm btn-success" type="submit"><i class="fa fa-save"></i> Simpan</button>
+                                            <div class="d-flex justify-content-end"
+                                                style="font-size: 10pt; width : 100%;">
+                                                <button class="btn btn-sm btn-success" type="submit"><i
+                                                        class="fa fa-save"></i> Simpan</button>
                                             </div>
                                         </form><br>
 
@@ -535,17 +642,20 @@
                                     <div class="col p-2">
                                         <form class="form-inline">
                                             <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text" id="basic-addon1"><i class="fa fa-search"></i></span>
-                                            </div>
-                                            <input type="text" class="form-control form-control-sm" placeholder="Search" aria-label="Username" aria-describedby="basic-addon1">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon1"><i
+                                                            class="fa fa-search"></i></span>
+                                                </div>
+                                                <input type="text" class="form-control form-control-sm"
+                                                    placeholder="Search" aria-label="Username"
+                                                    aria-describedby="basic-addon1">
                                             </div>
                                         </form>
                                     </div>
 
                                     <div class="col p-1">
                                         <div class="table-responsive table-responsive-sm">
-                                            <table class="table table-striped table-hover"  style="font-size: 8pt">
+                                            <table class="table table-striped table-hover" style="font-size: 8pt">
                                                 <thead>
                                                     <tr>
                                                         <th scope="col">Aksi</th>
@@ -568,13 +678,16 @@
                                                         <td>
                                                             <div class="dropdown">
                                                                 <i data-feather="more-vertical" id="dropdownMenuButton"
-                                                                    class="feather-icon dropdown-toggle" style="cursor: pointer;"
-                                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
-                                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                                    class="feather-icon dropdown-toggle"
+                                                                    style="cursor: pointer;" data-toggle="dropdown"
+                                                                    aria-haspopup="true" aria-expanded="false"></i>
+                                                                <div class="dropdown-menu"
+                                                                    aria-labelledby="dropdownMenuButton">
                                                                     <a class="dropdown-item buttonEditNews"
                                                                         onclick=""><i class="fa fa-edit"></i> Edit</a>
                                                                     <form action="" method="post">
-                                                                        <button class="dropdown-item" type="submit"><i class="fa fa-trash"></i> Delete</button>
+                                                                        <button class="dropdown-item" type="submit"><i
+                                                                                class="fa fa-trash"></i> Delete</button>
                                                                     </form>
                                                                 </div>
                                                             </div>
@@ -596,13 +709,16 @@
                                                         <td>
                                                             <div class="dropdown">
                                                                 <i data-feather="more-vertical" id="dropdownMenuButton"
-                                                                    class="feather-icon dropdown-toggle" style="cursor: pointer;"
-                                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
-                                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                                    class="feather-icon dropdown-toggle"
+                                                                    style="cursor: pointer;" data-toggle="dropdown"
+                                                                    aria-haspopup="true" aria-expanded="false"></i>
+                                                                <div class="dropdown-menu"
+                                                                    aria-labelledby="dropdownMenuButton">
                                                                     <a class="dropdown-item buttonEditNews"
                                                                         onclick=""><i class="fa fa-edit"></i> Edit</a>
                                                                     <form action="" method="post">
-                                                                        <button class="dropdown-item" type="submit"><i class="fa fa-trash"></i> Delete</button>
+                                                                        <button class="dropdown-item" type="submit"><i
+                                                                                class="fa fa-trash"></i> Delete</button>
                                                                     </form>
                                                                 </div>
                                                             </div>
@@ -642,30 +758,38 @@
                                     <div class="col ">
                                         <form class="d-flex flex-wrap" style="width: 100%">
                                             <div class="form-group-sm mx-2 mt-2" style="font-size: 10pt; width : 13rem">
-                                                <label for="">Uraian Posisi <i data-toggle="tooltip" data-placement="top" title="Nama bahan baku adalah nama yang ditunjukkan pada nama material bahan baku dalam pembuatan produk. Contoh : Biji besi, Bracket dll" class="fas fa-info-circle">
+                                                <label for="">Uraian Posisi <i data-toggle="tooltip"
+                                                        data-placement="top"
+                                                        title="Nama bahan baku adalah nama yang ditunjukkan pada nama material bahan baku dalam pembuatan produk. Contoh : Biji besi, Bracket dll"
+                                                        class="fas fa-info-circle">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm " id=""
-                                                    placeholder="">
+                                                <input type="text" class="form-control form-control-sm "
+                                                    id="" placeholder="">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="">Pemasok / Produsen Tingkat 2 <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
-                                                    </i></label>
-                                                <input type="text" class="form-control form-control-sm" id=""
-                                                    placeholder="">
-                                            </div>
-
-
-                                            <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="">TKDN % <i
-                                                        class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                <label for="">Pemasok / Produsen Tingkat 2 <i
+                                                        class="fas fa-info-circle" data-toggle="tooltip"
+                                                        data-placement="top" title="Tooltip on top">
                                                     </i></label>
                                                 <input type="text" class="form-control form-control-sm" id=""
                                                     placeholder="">
                                             </div>
 
+
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="">Jumlah Orang <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                <label for="">TKDN % <i class="fas fa-info-circle"
+                                                        data-toggle="tooltip" data-placement="top"
+                                                        title="Tooltip on top">
+                                                    </i></label>
+                                                <input type="text" class="form-control form-control-sm" id=""
+                                                    placeholder="">
+                                            </div>
+
+                                            <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
+                                                <label for="">Jumlah Orang <i class="fas fa-info-circle"
+                                                        data-toggle="tooltip" data-placement="top"
+                                                        title="Tooltip on top">
                                                     </i></label>
                                                 <input type="text" class="form-control form-control-sm" id=""
                                                     placeholder="Rp.">
@@ -673,22 +797,27 @@
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
                                                 <label for="">Biaya Pengurusan Per Bulan <i
-                                                        class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                        class="fas fa-info-circle" data-toggle="tooltip"
+                                                        data-placement="top" title="Tooltip on top">
                                                     </i></label>
                                                 <input type="text" class="form-control form-control-sm" id=""
                                                     placeholder="">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="">Alokasi % <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                <label for="">Alokasi % <i class="fas fa-info-circle"
+                                                        data-toggle="tooltip" data-placement="top"
+                                                        title="Tooltip on top">
                                                     </i></label>
                                                 <input type="text" class="form-control form-control-sm" id=""
                                                     placeholder="">
                                             </div>
 
 
-                                            <div class="d-flex justify-content-end mt-2" style="font-size: 10pt; width : 100%;">
-                                                <button class="btn btn-sm btn-success" type="submit"><i class="fa fa-save"></i> Simpan</button>
+                                            <div class="d-flex justify-content-end mt-2"
+                                                style="font-size: 10pt; width : 100%;">
+                                                <button class="btn btn-sm btn-success" type="submit"><i
+                                                        class="fa fa-save"></i> Simpan</button>
                                             </div>
                                         </form><br>
 
@@ -698,17 +827,20 @@
                                     <div class="col p-2">
                                         <form class="form-inline">
                                             <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text" id="basic-addon1"><i class="fa fa-search"></i></span>
-                                            </div>
-                                            <input type="text" class="form-control form-control-sm" placeholder="Search" aria-label="Username" aria-describedby="basic-addon1">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon1"><i
+                                                            class="fa fa-search"></i></span>
+                                                </div>
+                                                <input type="text" class="form-control form-control-sm"
+                                                    placeholder="Search" aria-label="Username"
+                                                    aria-describedby="basic-addon1">
                                             </div>
                                         </form>
                                     </div>
 
                                     <div class="col p-1">
                                         <div class="table-responsive table-responsive-sm">
-                                            <table class="table table-striped table-hover"  style="font-size: 8pt">
+                                            <table class="table table-striped table-hover" style="font-size: 8pt">
                                                 <thead>
                                                     <tr>
                                                         <th scope="col">Aksi</th>
@@ -729,13 +861,16 @@
                                                         <td>
                                                             <div class="dropdown">
                                                                 <i data-feather="more-vertical" id="dropdownMenuButton"
-                                                                    class="feather-icon dropdown-toggle" style="cursor: pointer;"
-                                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
-                                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                                    class="feather-icon dropdown-toggle"
+                                                                    style="cursor: pointer;" data-toggle="dropdown"
+                                                                    aria-haspopup="true" aria-expanded="false"></i>
+                                                                <div class="dropdown-menu"
+                                                                    aria-labelledby="dropdownMenuButton">
                                                                     <a class="dropdown-item buttonEditNews"
                                                                         onclick=""><i class="fa fa-edit"></i> Edit</a>
                                                                     <form action="" method="post">
-                                                                        <button class="dropdown-item" type="submit"><i class="fa fa-trash"></i> Delete</button>
+                                                                        <button class="dropdown-item" type="submit"><i
+                                                                                class="fa fa-trash"></i> Delete</button>
                                                                     </form>
                                                                 </div>
                                                             </div>
@@ -755,13 +890,16 @@
                                                         <td>
                                                             <div class="dropdown">
                                                                 <i data-feather="more-vertical" id="dropdownMenuButton"
-                                                                    class="feather-icon dropdown-toggle" style="cursor: pointer;"
-                                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
-                                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                                    class="feather-icon dropdown-toggle"
+                                                                    style="cursor: pointer;" data-toggle="dropdown"
+                                                                    aria-haspopup="true" aria-expanded="false"></i>
+                                                                <div class="dropdown-menu"
+                                                                    aria-labelledby="dropdownMenuButton">
                                                                     <a class="dropdown-item buttonEditNews"
                                                                         onclick=""><i class="fa fa-edit"></i> Edit</a>
                                                                     <form action="" method="post">
-                                                                        <button class="dropdown-item" type="submit"><i class="fa fa-trash"></i> Delete</button>
+                                                                        <button class="dropdown-item" type="submit"><i
+                                                                                class="fa fa-trash"></i> Delete</button>
                                                                     </form>
                                                                 </div>
                                                             </div>
@@ -792,7 +930,8 @@
                                 <div class="row">
                                     <div class="col">
                                         <h5>Form 1.5 : Tingkat Komponen Dalam Negeri Biaya Tidak Langsung Pabrik</h5>
-                                        <p style="font-size: 13px; opacity: 60%;">List data tenaga kerja tidak langsung / manajemen</p>
+                                        <p style="font-size: 13px; opacity: 60%;">List data tenaga kerja tidak langsung /
+                                            manajemen</p>
                                     </div>
                                 </div>
                                 <div class="row card">
@@ -801,14 +940,18 @@
                                             <div class="form-group-sm mx-2 mt-2" style="font-size: 10pt; width : 13rem">
                                                 <label for="">
                                                     Uraian Posisi
-                                                    <i data-toggle="tooltip" data-placement="top" title="Nama bahan baku adalah nama yang ditunjukkan pada nama material bahan baku dalam pembuatan produk. Contoh : Biji besi, Bracket dll" class="fas fa-info-circle">
+                                                    <i data-toggle="tooltip" data-placement="top"
+                                                        title="Nama bahan baku adalah nama yang ditunjukkan pada nama material bahan baku dalam pembuatan produk. Contoh : Biji besi, Bracket dll"
+                                                        class="fas fa-info-circle">
                                                     </i>
                                                 </label>
                                                 <input type="text" class="form-control form-control-sm">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="">Kewarganegaraan <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                <label for="">Kewarganegaraan <i class="fas fa-info-circle"
+                                                        data-toggle="tooltip" data-placement="top"
+                                                        title="Tooltip on top">
                                                     </i></label>
                                                 <select class="form-control form-control-sm" id="">
                                                     <option></option>
@@ -823,7 +966,8 @@
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
                                                 <label>
                                                     Jumlah Orang
-                                                    <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top"></i>
+                                                    <i class="fas fa-info-circle" data-toggle="tooltip"
+                                                        data-placement="top" title="Tooltip on top"></i>
                                                 </label>
                                                 <input type="text" class="form-control form-control-sm">
                                             </div>
@@ -831,21 +975,27 @@
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
                                                 <label>
                                                     Gaji Per Bulan
-                                                    <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top"></i>
+                                                    <i class="fas fa-info-circle" data-toggle="tooltip"
+                                                        data-placement="top" title="Tooltip on top"></i>
                                                 </label>
-                                                <input type="text" class="form-control form-control-sm" placeholder="Rp.">
+                                                <input type="text" class="form-control form-control-sm"
+                                                    placeholder="Rp.">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
                                                 <label>
                                                     Alokasi Gaji %
-                                                    <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top"></i>
+                                                    <i class="fas fa-info-circle" data-toggle="tooltip"
+                                                        data-placement="top" title="Tooltip on top"></i>
                                                 </label>
-                                                <input type="text" class="form-control form-control-sm" placeholder="">
+                                                <input type="text" class="form-control form-control-sm"
+                                                    placeholder="">
                                             </div>
 
-                                            <div class="d-flex justify-content-end mt-2" style="font-size: 10pt; width : 100%;">
-                                                <button class="btn btn-sm btn-success" type="submit"><i class="fa fa-save"></i> Simpan</button>
+                                            <div class="d-flex justify-content-end mt-2"
+                                                style="font-size: 10pt; width : 100%;">
+                                                <button class="btn btn-sm btn-success" type="submit"><i
+                                                        class="fa fa-save"></i> Simpan</button>
                                             </div>
                                         </form><br>
 
@@ -855,17 +1005,20 @@
                                     <div class="col p-2">
                                         <form class="form-inline">
                                             <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text" id="basic-addon1"><i class="fa fa-search"></i></span>
-                                            </div>
-                                            <input type="text" class="form-control form-control-sm" placeholder="Search" aria-label="Username" aria-describedby="basic-addon1">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon1"><i
+                                                            class="fa fa-search"></i></span>
+                                                </div>
+                                                <input type="text" class="form-control form-control-sm"
+                                                    placeholder="Search" aria-label="Username"
+                                                    aria-describedby="basic-addon1">
                                             </div>
                                         </form>
                                     </div>
 
                                     <div class="col p-1">
                                         <div class="table-responsive table-responsive-sm">
-                                            <table class="table table-striped table-hover"  style="font-size: 8pt">
+                                            <table class="table table-striped table-hover" style="font-size: 8pt">
                                                 <thead>
                                                     <tr>
                                                         <th scope="col">Aksi</th>
@@ -885,15 +1038,20 @@
                                                     <tr>
                                                         <td>
                                                             <div class="dropdown">
-                                                                <i data-feather="more-vertical" id="dropdownMenuButton" class="feather-icon dropdown-toggle" style="cursor: pointer;"
-                                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
-                                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                                    <a class="dropdown-item buttonEditNews" onclick="">
+                                                                <i data-feather="more-vertical" id="dropdownMenuButton"
+                                                                    class="feather-icon dropdown-toggle"
+                                                                    style="cursor: pointer;" data-toggle="dropdown"
+                                                                    aria-haspopup="true" aria-expanded="false"></i>
+                                                                <div class="dropdown-menu"
+                                                                    aria-labelledby="dropdownMenuButton">
+                                                                    <a class="dropdown-item buttonEditNews"
+                                                                        onclick="">
                                                                         <i class="fa fa-edit"></i>
                                                                         Edit
                                                                     </a>
                                                                     <form action="" method="post">
-                                                                        <button class="dropdown-item" type="submit"><i class="fa fa-trash"></i> Delete</button>
+                                                                        <button class="dropdown-item" type="submit"><i
+                                                                                class="fa fa-trash"></i> Delete</button>
                                                                     </form>
                                                                 </div>
                                                             </div>
@@ -913,13 +1071,16 @@
                                                         <td>
                                                             <div class="dropdown">
                                                                 <i data-feather="more-vertical" id="dropdownMenuButton"
-                                                                    class="feather-icon dropdown-toggle" style="cursor: pointer;"
-                                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
-                                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                                    class="feather-icon dropdown-toggle"
+                                                                    style="cursor: pointer;" data-toggle="dropdown"
+                                                                    aria-haspopup="true" aria-expanded="false"></i>
+                                                                <div class="dropdown-menu"
+                                                                    aria-labelledby="dropdownMenuButton">
                                                                     <a class="dropdown-item buttonEditNews"
                                                                         onclick=""><i class="fa fa-edit"></i> Edit</a>
                                                                     <form action="" method="post">
-                                                                        <button class="dropdown-item" type="submit"><i class="fa fa-trash"></i> Delete</button>
+                                                                        <button class="dropdown-item" type="submit"><i
+                                                                                class="fa fa-trash"></i> Delete</button>
                                                                     </form>
                                                                 </div>
                                                             </div>
@@ -944,49 +1105,60 @@
                             </div>
 
                             {{-- tab content 1.6 mesin yang dimiliki sendiri --}}
-                            <div class="tab-pane fade" id="v-mesin-sendiri" role="tabpanel" aria-labelledby="v-mesin-sendiri-tab">
+                            <div class="tab-pane fade" id="v-mesin-sendiri" role="tabpanel"
+                                aria-labelledby="v-mesin-sendiri-tab">
                                 <div class="row">
                                     <div class="col">
                                         <h5>Form 1.6 : Tingkat Komponen Dalam Biaya Tidak Langsung Pabrik</h5>
-                                        <p style="font-size: 13px; opacity: 60%;">List data untuk mesin / alat kerja yang dimiliki sendiri</p>
+                                        <p style="font-size: 13px; opacity: 60%;">List data untuk mesin / alat kerja yang
+                                            dimiliki sendiri</p>
                                     </div>
                                 </div>
                                 <div class="row card">
                                     <div class="col ">
                                         <form class="d-flex flex-wrap" style="width: 100%">
                                             <div class="form-group-sm mx-2 mt-2" style="font-size: 10pt; width : 13rem">
-                                                <label for="">Uraian <i data-toggle="tooltip" data-placement="top" title="Nama bahan baku adalah nama yang ditunjukkan pada nama material bahan baku dalam pembuatan produk. Contoh : Biji besi, Bracket dll" class="fas fa-info-circle">
+                                                <label for="">Uraian <i data-toggle="tooltip"
+                                                        data-placement="top"
+                                                        title="Nama bahan baku adalah nama yang ditunjukkan pada nama material bahan baku dalam pembuatan produk. Contoh : Biji besi, Bracket dll"
+                                                        class="fas fa-info-circle">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm " id=""
-                                                    placeholder="">
+                                                <input type="text" class="form-control form-control-sm "
+                                                    id="" placeholder="">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="">Spesifikasi <i
-                                                        class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
-                                                    </i></label>
-                                                <input type="text" class="form-control form-control-sm" id=""
-                                                    placeholder="">
-                                            </div>
-
-                                            <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="">Jumlah Unit <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                <label for="">Spesifikasi <i class="fas fa-info-circle"
+                                                        data-toggle="tooltip" data-placement="top"
+                                                        title="Tooltip on top">
                                                     </i></label>
                                                 <input type="text" class="form-control form-control-sm" id=""
                                                     placeholder="">
                                             </div>
 
+                                            <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
+                                                <label for="">Jumlah Unit <i class="fas fa-info-circle"
+                                                        data-toggle="tooltip" data-placement="top"
+                                                        title="Tooltip on top">
+                                                    </i></label>
+                                                <input type="text" class="form-control form-control-sm" id=""
+                                                    placeholder="">
+                                            </div>
+
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="">Biaya Depresiasi Per Bulan<i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                <label for="">Biaya Depresiasi Per Bulan<i
+                                                        class="fas fa-info-circle" data-toggle="tooltip"
+                                                        data-placement="top" title="Tooltip on top">
                                                     </i></label>
                                                 <input type="text" class="form-control form-control-sm" id=""
                                                     placeholder="Rp.">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="">Alokasi Mesin % <i
-                                                        class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                <label for="">Alokasi Mesin % <i class="fas fa-info-circle"
+                                                        data-toggle="tooltip" data-placement="top"
+                                                        title="Tooltip on top">
                                                     </i></label>
                                                 <input type="text" class="form-control form-control-sm" id=""
                                                     placeholder="">
@@ -994,32 +1166,39 @@
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt;">
                                                 <div class="card p-2">
-                                                        <div class="col">
-                                                            <div class="row">
-                                                                <label for="" class="mx-auto">Alat Kerja<i
-                                                                        class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
-                                                                    </i></label>
+                                                    <div class="col">
+                                                        <div class="row">
+                                                            <label for="" class="mx-auto">Alat Kerja<i
+                                                                    class="fas fa-info-circle" data-toggle="tooltip"
+                                                                    data-placement="top" title="Tooltip on top">
+                                                                </i></label>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="form-group-sm ml-2" style="font-size: 7pt;">
+                                                                <label for="">Dibuat</label>
+                                                                <select name="" id=""
+                                                                    class="form-control form-control-sm"
+                                                                    style="width: 8rem">
+                                                                    <option value="">Dalam Negeri</option>
+                                                                </select>
                                                             </div>
-                                                            <div class="row">
-                                                                <div class="form-group-sm ml-2" style="font-size: 7pt;">
-                                                                    <label for="">Dibuat</label>
-                                                                    <select name="" id="" class="form-control form-control-sm" style="width: 8rem">
-                                                                        <option value="">Dalam Negeri</option>
-                                                                    </select>
-                                                                </div>
-                                                                <div class="form-group-sm ml-2" style="font-size: 7pt;">
-                                                                    <label for="">Dimiliki</label>
-                                                                    <select name="" id="" class="form-control form-control-sm" style="width: 8rem">
-                                                                        <option value="">Dalam Negeri</option>
-                                                                    </select>
-                                                                </div>
+                                                            <div class="form-group-sm ml-2" style="font-size: 7pt;">
+                                                                <label for="">Dimiliki</label>
+                                                                <select name="" id=""
+                                                                    class="form-control form-control-sm"
+                                                                    style="width: 8rem">
+                                                                    <option value="">Dalam Negeri</option>
+                                                                </select>
                                                             </div>
                                                         </div>
+                                                    </div>
                                                 </div>
                                             </div>
 
-                                            <div class="d-flex justify-content-end" style="font-size: 10pt; width : 100%;">
-                                                <button class="btn btn-sm btn-success" type="submit"><i class="fa fa-save"></i> Simpan</button>
+                                            <div class="d-flex justify-content-end"
+                                                style="font-size: 10pt; width : 100%;">
+                                                <button class="btn btn-sm btn-success" type="submit"><i
+                                                        class="fa fa-save"></i> Simpan</button>
                                             </div>
                                         </form><br>
 
@@ -1029,17 +1208,20 @@
                                     <div class="col p-2">
                                         <form class="form-inline">
                                             <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text" id="basic-addon1"><i class="fa fa-search"></i></span>
-                                            </div>
-                                            <input type="text" class="form-control form-control-sm" placeholder="Search" aria-label="Username" aria-describedby="basic-addon1">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon1"><i
+                                                            class="fa fa-search"></i></span>
+                                                </div>
+                                                <input type="text" class="form-control form-control-sm"
+                                                    placeholder="Search" aria-label="Username"
+                                                    aria-describedby="basic-addon1">
                                             </div>
                                         </form>
                                     </div>
 
                                     <div class="col p-1">
                                         <div class="table-responsive table-responsive-sm">
-                                            <table class="table table-striped table-hover"  style="font-size: 8pt">
+                                            <table class="table table-striped table-hover" style="font-size: 8pt">
                                                 <thead>
                                                     <tr>
                                                         <th scope="col">Aksi</th>
@@ -1061,13 +1243,17 @@
                                                         <td>
                                                             <div class="dropdown">
                                                                 <i data-feather="more-vertical" id="dropdownMenuButton"
-                                                                    class="feather-icon dropdown-toggle" style="cursor: pointer;"
-                                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
-                                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                                    class="feather-icon dropdown-toggle"
+                                                                    style="cursor: pointer;" data-toggle="dropdown"
+                                                                    aria-haspopup="true" aria-expanded="false"></i>
+                                                                <div class="dropdown-menu"
+                                                                    aria-labelledby="dropdownMenuButton">
                                                                     <a class="dropdown-item buttonEditNews"
-                                                                        onclick=""><i class="fa fa-edit"></i> Edit</a>
+                                                                        onclick=""><i class="fa fa-edit"></i>
+                                                                        Edit</a>
                                                                     <form action="" method="post">
-                                                                        <button class="dropdown-item" type="submit"><i class="fa fa-trash"></i> Delete</button>
+                                                                        <button class="dropdown-item" type="submit"><i
+                                                                                class="fa fa-trash"></i> Delete</button>
                                                                     </form>
                                                                 </div>
                                                             </div>
@@ -1088,13 +1274,17 @@
                                                         <td>
                                                             <div class="dropdown">
                                                                 <i data-feather="more-vertical" id="dropdownMenuButton"
-                                                                    class="feather-icon dropdown-toggle" style="cursor: pointer;"
-                                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
-                                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                                    class="feather-icon dropdown-toggle"
+                                                                    style="cursor: pointer;" data-toggle="dropdown"
+                                                                    aria-haspopup="true" aria-expanded="false"></i>
+                                                                <div class="dropdown-menu"
+                                                                    aria-labelledby="dropdownMenuButton">
                                                                     <a class="dropdown-item buttonEditNews"
-                                                                        onclick=""><i class="fa fa-edit"></i> Edit</a>
+                                                                        onclick=""><i class="fa fa-edit"></i>
+                                                                        Edit</a>
                                                                     <form action="" method="post">
-                                                                        <button class="dropdown-item" type="submit"><i class="fa fa-trash"></i> Delete</button>
+                                                                        <button class="dropdown-item" type="submit"><i
+                                                                                class="fa fa-trash"></i> Delete</button>
                                                                     </form>
                                                                 </div>
                                                             </div>
@@ -1124,7 +1314,14 @@
             <div class="col-4">
                 {{-- button selanjutnya dan hapus --}}
                 <div class="card">
-                    <div class="form-group p-2">
+                    <div class="save-draft">
+                        <div class="form-group p-2 pt-0 pb-2">
+                            <button class="btn btn-success btn-block"
+                                onclick="store('{{ route('calculation-results.store') }}', calculations, '{{ route('computation.index') }}', '{{ $computation->id }}')">Save
+                                Draft</button>
+                        </div>
+                    </div>
+                    <div class="form-group p-2 pb-0">
                         <a href="#" class="btn btn-success btn-block">Selanjutnya ></a>
                     </div>
                     <div class="form-group p-2">
@@ -1133,9 +1330,10 @@
                 </div>
                 {{-- header tab panel --}}
                 <div class="card">
-                    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                        <a class="nav-link text-dark active" id="v-bahan-baku-tab" data-toggle="pill" href="#v-bahan-baku"
-                            role="tab" aria-controls="v-bahan-baku" aria-selected="true">
+                    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist"
+                        aria-orientation="vertical">
+                        <a class="nav-link text-dark active" id="v-bahan-baku-tab" data-toggle="pill"
+                            href="#v-bahan-baku" role="tab" aria-controls="v-bahan-baku" aria-selected="true">
                             <button class="btn-primary">1.1</button>
                             Bahan Baku
                         </a>
@@ -1158,8 +1356,8 @@
                             Biaya Tenaga Kerja Langsung
                         </a>
                         <a class="nav-link text-dark" id="v-tenaga-kerja-tidak-langsung-tab" data-toggle="pill"
-                            href="#v-tenaga-kerja-tidak-langsung" role="tab" aria-controls="v-tenaga-kerja-tidak-langsung"
-                            aria-selected="false">
+                            href="#v-tenaga-kerja-tidak-langsung" role="tab"
+                            aria-controls="v-tenaga-kerja-tidak-langsung" aria-selected="false">
                             <button class="btn-primary">1.5</button>
                             Tenaga Kerja Tidak Langsung
                         </a>
@@ -1169,15 +1367,13 @@
                             <button class="btn-primary">1.6</button>
                             Mesin Yang Dimiliki Sendiri
                         </a>
-                        <a class="nav-link text-dark" id="v-mesin-sewa-tab" data-toggle="pill"
-                            href="#v-mesin-sewa" role="tab" aria-controls="v-mesin-sewa"
-                            aria-selected="false">
+                        <a class="nav-link text-dark" id="v-mesin-sewa-tab" data-toggle="pill" href="#v-mesin-sewa"
+                            role="tab" aria-controls="v-mesin-sewa" aria-selected="false">
                             <button class="btn-primary">1.7</button>
                             Mesin Yang Sewa
                         </a>
-                        <a class="nav-link text-dark" id="v-overhead-tab" data-toggle="pill"
-                            href="#v-overhead" role="tab" aria-controls="v-overhead"
-                            aria-selected="false">
+                        <a class="nav-link text-dark" id="v-overhead-tab" data-toggle="pill" href="#v-overhead"
+                            role="tab" aria-controls="v-overhead" aria-selected="false">
                             <button class="btn-primary">1.8</button>
                             Overhead Yang Lainnya
                         </a>
@@ -1198,35 +1394,358 @@
     <script src="{{ asset('library/sweetalert/dist/sweetalert.min.js') }}"></script>
     <script src="{{ asset('assets/extra-libs/sparkline/sparkline.js') }}"></script>
     <script>
-        let calculations = [
-            {
+        let calculations = [{
+                "id": "1",
                 "no": "1.1",
                 "nama": "Bahan Baku",
                 "slug": "bahan-baku",
-                "data" : []
+                "formulas": {
+                    kdn: "{tkdn}% * {jumlah} * {harga_satuan}",
+                    kln: "(100% - {tkdn}%) * {jumlah} * {harga_satuan}",
+                    total: "{formulas.kdn} + {formulas.kln}",
+                    sumKdn: "sum:kdn",
+                    sumKln: "sum:kln",
+                    sumTotal: "sum:total",
+                    sumPpn: "sum:ppn",
+                    sumBm: "sum:bm",
+                    sumPdriPpn: "sum:pdri_ppn",
+                    sumPph: "sum:pph",
+                    // sumPdriTotal: "{formulas.sumBm} + {formulas.sumPdriPpn} + {formulas.sumPph}"
+                    sumPdriTotal: "sum:bm + sum:pdri_ppn + sum:pph"
+                },
+                "data": []
             },
             {
+                "id": "2",
                 "no": "1.2",
                 "nama": "Jasa Terkait Bahan Baku",
                 "slug": "jasa-terkait-bahan-baku",
-                "data" : []
+                "data": []
             },
         ];
+        $.ajax({
+            type: 'GET',
+            url: '{{ $computation->calculation_result != null ?route('calculation-results.show', $computation->calculation_result->id) : 'fail' }}', // Ganti URL dengan endpoint yang sesuai
+            success: function(response) {
+                // Tampilkan data yang diterima di dalam elemen dengan ID 'result'
+                calculations = response.calculationResult.results;
+                reloadTable("tbody-1", 1);
+            },
+            error: function(error) {
+                // Tampilkan pesan kesalahan jika permintaan gagal
+                console.log("error");
+            }
+        });
 
         $(() => {
+            $(window).on('beforeunload', function() {
+                return "save terlebih dahulu data anda!";
+            });
+
+            $(document).keydown(function(e) {
+                // Mendeteksi kombinasi tombol "F5"
+                if (e.which === 116) {
+                    e.preventDefault();
+                    swal({
+                        title: "Warning",
+                        text: "You haven't save the calculation. If you want to refresh the page, you will lose any change that you have made.",
+                        icon: "warning",
+                        buttons: true,
+                        dangerMode: true
+                    }).then((willReload) => {
+                        if (willReload) {
+                            location.reload()
+                        } else {
+                            return false;
+                        }
+                    });
+                }
+
+                // Mendeteksi kombinasi tombol "Ctrl + R"
+                if (e.ctrlKey && e.which === 82) {
+                    e.preventDefault();
+                    swal({
+                        title: "Warning",
+                        text: "You haven't save the calculation. If you want to refresh the page, you will lose any change that you have made.",
+                        icon: "warning",
+                        buttons: true,
+                        dangerMode: true
+                    }).then((willReload) => {
+                        if (willReload) {
+                            location.reload()
+                        } else {
+                            return false;
+                        }
+                    });
+                }
+
+                // Mendeteksi kombinasi tombol "Ctrl + F5"
+                if (e.ctrlKey && e.which === 116) {
+                    e.preventDefault();
+                    swal({
+                        title: "Warning",
+                        text: "You haven't save the calculation. If you want to refresh the page, you will lose any change that you have made.",
+                        icon: "warning",
+                        buttons: true,
+                        dangerMode: true
+                    }).then((willReload) => {
+                        if (willReload) {
+                            location.reload()
+                        } else {
+                            return false;
+                        }
+                    });
+                }
+
+                // Mendeteksi kombinasi tombol "Ctrl + Shift + R"
+                if (e.ctrlKey && e.shiftKey && e.which === 82) {
+                    e.preventDefault();
+                    console.log('Ctrl + Shift + R dinonaktifkan.');
+                    swal({
+                        title: "Warning",
+                        text: "You haven't save the calculation. If you want to refresh the page, you will lose any change that you have made.",
+                        icon: "warning",
+                        buttons: true,
+                        dangerMode: true
+                    }).then((willReload) => {
+                        if (willReload) {
+                            location.reload()
+                        } else {
+                            return false;
+                        }
+                    });
+                }
+            });
+
             $("#form-1").on("submit", (event) => {
                 event.preventDefault();
                 let serializedArray = $("#form-1").serializeArray();
-                let resultObject = {};
+                let formResult = {};
 
                 for (let i = 0; i < serializedArray.length; i++) {
                     let input = serializedArray[i];
-                    resultObject[input.name] = input.value;
+                    formResult[input.name] = input.value;
                 }
 
-                console.log(resultObject);
+                formResult["id"] = new Date().getTime()
+
+                let storeCalculation = calculateAndBind(formResult, 1);
+
+                reloadTable("tbody-1", 1);
+
+                $("#form-1")[0].reset();
+
+                swal({
+                    title: "Success",
+                    text: "Success to add new calculation",
+                    icon: "success",
+                })
             })
+
+
         })
+
+        function calculateAndBind(formResult, id) {
+            const sumRegex = /sum:(\w+)/g
+            let calculation = calculations.find(f => f.id == id);
+            let results = calculation.data;
+            let formulas = calculation.formulas;
+            let finalResult = {
+                ...formResult
+            };
+
+            let replacedFormulas = replaceFormulas(formulas, formResult);
+
+            for (let key in replacedFormulas) {
+                let hasSum = false;
+                replacedFormulas[key] = replacedFormulas[key].replace(sumRegex, function(match, formulaName) {
+                    if (formulaName) {
+                        let sum = 0;
+                        if (results.length > 0) {
+                            for (let i = 0; i < results.length; i++) {
+                                sum += (parseFloat(results[i][formulaName]))
+                                if (i == 0) {
+                                    sum = sum + parseFloat(finalResult[formulaName]);
+                                }
+                            }
+                        } else {
+                            sum = parseFloat(finalResult[formulaName]);
+                        }
+
+                        calculation[key] = eval(sum);
+
+                        hasSum = true;
+                        return `(${sum})`;
+                    }
+                });
+
+
+                if (!sumRegex.test(replacedFormulas[key])) {
+                    finalResult[key] = eval(replacedFormulas[key]);
+                }
+                // else {
+                //     console.log("sum");
+                //     finalResult[key] = replacedFormulas[key];
+                // }
+
+                if (hasSum) {
+                    calculation[key] = finalResult[key];
+                    hasSum = false;
+                }
+            }
+
+            calculation.data.push(finalResult);
+        }
+
+        function replaceFormulas(formulas, resultObject) {
+            const variableRegex = /{(\w+)}/g;
+            const variableRegex2 = /\{formulas\.(\w+)\}/g;
+            let result = {};
+            let replacedFormulas = {};
+            for (let key in formulas) {
+                replacedFormulas[key] = formulas[key].replace(variableRegex, function(match, fieldName) {
+                    return resultObject[fieldName] || match;
+                });
+            }
+            for (let key in replacedFormulas) {
+                replacedFormulas[key] = replacedFormulas[key].replace(variableRegex2, function(match, formulaName) {
+                    return `(${replacedFormulas[formulaName]})` || match;
+                });
+
+                let replacedPercent = replacePercent(replacedFormulas[key]);
+                result[key] = replacedPercent;
+            }
+
+            console.log(result);
+            return result;
+        }
+
+        function replacePercent(expression) {
+            let percentageRegex = /(\d+(\.\d+)?)%/;
+
+            expression = expression.replace(/(\d+)%/g, function(match, p1) {
+                return parseFloat(p1) / 100 || match;
+            })
+
+            return expression;
+        }
+
+        function reloadTable(tbodyId, calculationId) {
+            const tbody = $(`#${tbodyId}`);
+            tbody.empty();
+            calculation = calculations.find(f => f.id == calculationId);
+            let sumKdn = parseInt(calculation.sumKdn).toLocaleString()
+            let sumKln = parseInt(calculation.sumKln).toLocaleString()
+            let sumTotal = parseInt(calculation.sumTotal).toLocaleString()
+            let sumPpn = parseInt(calculation.sumPpn).toLocaleString()
+            let sumBm = parseInt(calculation.sumBm).toLocaleString()
+            let sumPdriPpn = parseInt(calculation.sumPdriPpn).toLocaleString()
+            let sumPph = parseInt(calculation.sumPph).toLocaleString()
+            let sumPdriTotal = parseInt(calculation.sumPdriTotal).toLocaleString()
+            $('#sum-kdn').text(`Rp.${sumKdn}`)
+            $('#sum-kln').text(`Rp.${sumKln}`)
+            $('#sum-total').text(`Rp.${sumTotal}`)
+            $('#sum-ppn').text(`Rp.${sumPpn}`)
+            $('#sum-bm').text(`Rp.${sumBm}`)
+            $('#sum-pdri-ppn').text(`Rp.${sumPdriPpn}`)
+            $('#sum-pph').text(`Rp.${sumPph}`)
+            $('#sum-pdri-total').text(`Rp.${sumPdriTotal}`)
+            calculation.data.forEach(function(item, index) {
+                let row = "<tr>" +
+                    `<td>
+                        <div class="dropdown">
+                            <div class="btn btn-secondary btn-sm" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">!</div>
+                            <div class="dropdown-menu"
+                                aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item buttonEditNews"
+                                    onclick="edit(${item.id})"><i class="fa fa-edit"></i> Edit
+                                </a>
+                                <button class="dropdown-item" type="submit" onclick="destroy(${item.id})"><i
+                                        class="fa fa-trash"></i> Delete</button>
+                            </div>
+                        </div>
+                    </td>` +
+                    "<td>" + (index + 1) + "</td>" +
+                    "<td>" + item.bahan_baku + "</td>" +
+                    "<td>" + item.spesifikasi + "</td>" +
+                    "<td>" + item.satuan_bahan_baku + "</td>" +
+                    "<td>" + item.negara_asal + "</td>" +
+                    "<td>" + item.pemasok + "</td>" +
+                    "<td>" + item.tkdn + "</td>" +
+                    "<td>" + item.jumlah + "</td>" +
+                    "<td>" + item.harga_satuan + "</td>" +
+                    "<td>" + item.kdn + "</td>" +
+                    "<td>" + item.kln + "</td>" +
+                    "<td>" + item.total + "</td>" +
+                    "</tr>";
+
+                tbody.append(row);
+            });
+        }
+
+        function store(url, formData, redirectUrl, computationId) {
+            formData = {
+                results: JSON.stringify(formData),
+                computation_id: computationId,
+            };
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                data: formData,
+                success: function(response) {
+                    // Handle respons sukses di sini
+                    swal({
+                        title: "Success",
+                        text: response.success,
+                        icon: "success",
+                        buttons: true,
+                        dangerMode: false
+                    }).then((willRedirect) => {
+                        if (willRedirect) {
+                            location.href = redirectUrl
+                        } else {
+                            calculations = JSON.parse(response.calculationResult.results);
+                        }
+                    });
+                },
+                error: function(error) {
+                    // Handle kesalahan di sini
+                    console.log(error);
+                }
+            });
+        }
+
+        function edit(calculation_id) {
+            alert(`edit ${calculation_id}`)
+        }
+
+        function destroy(calculation_id) {
+            let computation = calculations.find(f => f.id == 1);
+            let calculationIndex = computation.data.findIndex(f => f.id == calculation_id);
+
+            // Jika calculation dengan id yang diberikan ditemukan
+            if (calculationIndex !== -1) {
+                // Hapus calculation dari array computation.data
+                computation.data.splice(calculationIndex, 1);
+
+                reloadTable("tbody-1", 1);
+
+                swal({
+                    title: "Success",
+                    text: "Success to delete the calculation",
+                    icon: "success",
+                })
+            } else {
+                console.log("Calculation tidak ditemukan");
+            }
+        }
     </script>
     {{-- <script src="{{ asset('dist/js/users/script.js') }}"></script> --}}
 @endpush
