@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\CalculationResultController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\UserCategoryController;
+use App\Models\CalculationResult;
 use App\Models\Computation;
 use App\Models\PermenperinCategory;
 use App\Models\User;
@@ -76,6 +78,9 @@ Route::group(['middleware' => ['auth']], function () {
 
     //computation
     Route::resource("computation", ComputationController::class);
+
+    //calculation
+    Route::resource("calculation-results", CalculationResultController::class);
 
     // notification
     Route::get('/mark-as-read', 'NotificationController@markAsRead')->name('mark-as-read');
