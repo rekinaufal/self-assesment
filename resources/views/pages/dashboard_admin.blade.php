@@ -159,7 +159,7 @@
         <!-- *************************************************************** -->
         <div class="row">
             <div class="col-lg-4 col-md-12">
-                <div class="card">
+                <div class="card" style="height: 450px">
                     <div class="card-body">
                         <h4 class="card-title">Pemilihan Permenperin</h4>
                     	<div class="radial">
@@ -186,11 +186,6 @@
                                 <div>21.8 %</div>
                             </div>
                         </div>
-                        <div class="float-left" style="display: flex; justify-content: space-between; align-items: center;">
-                            <br>
-                        </div>
-                        <div class="float-right" style="display: flex; justify-content: space-between; align-items: center;">
-                        </div>
                         {{-- <div id="campaign-v2" class="mt-2" style="height:283px; width:100%;"></div>
                         <ul class="list-style-none mb-0">
                             <li>
@@ -213,14 +208,19 @@
                 </div>
             </div>
             <div class="col-lg-4 col-md-12">
-                <div class="card">
+                <div class="card" style="height: 450px">
                     <div class="card-header bg-transparent">
+                        <div class="form-group pb-4">
+                            <select class="form-control" style="width:130px; float:right">
+                                <option value="">Oct 2023</option>
+                            </select>
+                        </div>
                         <h4 class="card-title">Grafik Pengguna</h4>
                         <div class="float-left" style="display: flex; justify-content: space-between; align-items: center;">
                             <span class="donut" style="border: 5px solid #FF0000;"></span> 
                             <span>Premium</span>
                         </div>
-                        <div class="float-right" style="display: flex; justify-content: space-between; align-items: center;">
+                        <div class="float-right" style="display: flex; justify-content: space-between; align-items: center;"> 
                             <span class="donut" style="border: 5px solid #1991EB;"></span>
                             <span>Regular</span>
                         </div>
@@ -237,13 +237,15 @@
                 </div>
             </div>
             <div class="col-lg-4 col-md-12">
-                <div class="card">
+                <div class="card" style="height: 450px">
                     <div class="card-body">
                         <h4 class="card-title">Pengguna Aktif</h4>
-                        <div class="net-income2 mt-4 position-relative" style="height:294px;"></div>
+                        <h6>Last 6 Months</h6>
+                        <canvas id="marksChart" width="600" height="600"></canvas>
+                        {{-- <div class="net-income2 mt-4 position-relative" style="height:294px;"></div>
                         <ul class="list-inline text-center mt-5 mb-2">
                             <li class="list-inline-item text-muted font-italic"></li>
-                        </ul>
+                        </ul> --}}
                     </div>
                 </div>
             </div>
@@ -607,4 +609,27 @@
             };
         </script>
         {{-- charts dounat  --}}
+
+        {{-- charts radar --}}
+        <script>
+            var marksCanvas = document.getElementById("marksChart");
+
+            var marksData = {
+            labels: ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun"],
+            datasets: [{
+                label: "Premium",
+                backgroundColor: "rgba(200,0,0,0.2)",
+                data: [65, 75, 70, 80, 60, 80]
+            }, {
+                label: "Regular",
+                backgroundColor: "rgba(0,0,200,0.2)",
+                data: [54, 65, 60, 70, 70, 75]
+            }]
+            };
+
+            var radarChart = new Chart(marksCanvas, {
+            type: 'radar',
+            data: marksData
+            });
+        </script>
     @endpush
