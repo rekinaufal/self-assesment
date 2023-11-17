@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Computation;
+use App\Models\Needs;
 
 use Illuminate\Http\Request;
 
@@ -25,6 +26,7 @@ class NeedsController extends Controller
 
         $id = auth()->user()->id;
         $computation = Computation::where('user_id', $id)->get();
-        return view('needs.create', compact('pageTitle', 'computation'));
+        $needs = Needs::latest('created_at')->first()->json_needs;
+        return view('needs.create', compact('pageTitle', 'computation', 'needs'));
     }
 }

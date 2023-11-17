@@ -4,26 +4,24 @@
 
 @push('style')
     <!-- CSS Libraries -->
-    <link rel="stylesheet"
-        href="{{ asset('library/summernote/dist/summernote-bs4.css') }}">
-    <link rel="stylesheet"
-        href="{{ asset('library/selectric/public/selectric.css') }}">
-    <link rel="stylesheet"
-        href="{{ asset('library/bootstrap-tagsinput/dist/bootstrap-tagsinput.css') }}">
-    <link rel="stylesheet"
-        href="{{ asset('library/select2/dist/css/select2.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('library/summernote/dist/summernote-bs4.css') }}">
+    <link rel="stylesheet" href="{{ asset('library/selectric/public/selectric.css') }}">
+    <link rel="stylesheet" href="{{ asset('library/bootstrap-tagsinput/dist/bootstrap-tagsinput.css') }}">
+    <link rel="stylesheet" href="{{ asset('library/select2/dist/css/select2.min.css') }}">
 
     <style>
         /* nav */
         /* .card {
-        max-width: 25rem;
-        padding: 0;
-        border: none;
-        border-radius: 0.5rem;
-        } */
+                                                                                                                                                                                                                                max-width: 25rem;
+                                                                                                                                                                                                                                padding: 0;
+                                                                                                                                                                                                                                border: none;
+                                                                                                                                                                                                                                border-radius: 0.5rem;
+                                                                                                                                                                                                                                } */
         a {
-            color: black; /* Set your desired text color */
-            text-decoration: none; /* Remove underline */
+            color: black;
+            /* Set your desired text color */
+            text-decoration: none;
+            /* Remove underline */
         }
 
         a.active {
@@ -32,8 +30,9 @@
 
         .nav-link {
             color: rgb(110, 110, 110);
-        /* font-weight: 500; */
+            /* font-weight: 500; */
         }
+
         .nav-link:hover {
             color: #55c57a;
         }
@@ -50,43 +49,43 @@
         }
 
         /* .form-control {
-        background-color: rgb(241, 243, 247);
-        border: none;
-        } */
+                                                                                                                                                                                                                                background-color: rgb(241, 243, 247);
+                                                                                                                                                                                                                                border: none;
+                                                                                                                                                                                                                                } */
 
         /* 3nd card */
         /* span {
-        margin-left: 0.5rem;
-        padding: 1px 10px;
-        color: white;
-        background-color: rgb(143, 143, 143);
-        border-radius: 4px;
-        font-weight: 600;
-        } */
+                                                                                                                                                                                                                                margin-left: 0.5rem;
+                                                                                                                                                                                                                                padding: 1px 10px;
+                                                                                                                                                                                                                                color: white;
+                                                                                                                                                                                                                                background-color: rgb(143, 143, 143);
+                                                                                                                                                                                                                                border-radius: 4px;
+                                                                                                                                                                                                                                font-weight: 600;
+                                                                                                                                                                                                                                } */
 
         .third {
             padding: 0 1.5rem 0 1.5rem;
         }
 
         /* label {
-        font-weight: 500;
-        color: rgb(104, 104, 104);
-        } */
+                                                                                                                                                                                                                                font-weight: 500;
+                                                                                                                                                                                                                                color: rgb(104, 104, 104);
+                                                                                                                                                                                                                                } */
 
         /* .btn-success {
-        float: right;
-        } */
+                                                                                                                                                                                                                                float: right;
+                                                                                                                                                                                                                                } */
 
         .form-control:focus {
             box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 7px rgba(0, 0, 0, 0.2);
         }
 
         /* select {
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            text-indent: 1px;
-            text-overflow: "";
-        } */
+                                                                                                                                                                                                                                    -webkit-appearance: none;
+                                                                                                                                                                                                                                    -moz-appearance: none;
+                                                                                                                                                                                                                                    text-indent: 1px;
+                                                                                                                                                                                                                                    text-overflow: "";
+                                                                                                                                                                                                                                } */
 
         /* 1st card */
 
@@ -97,20 +96,20 @@
         }
 
         /* .search {
-        padding: 0 1rem 0 1rem;
-        } */
+                                                                                                                                                                                                                                padding: 0 1rem 0 1rem;
+                                                                                                                                                                                                                                } */
 
         .ccontent li .wrapp {
             padding: 0.3rem 1rem 0.001rem 1rem;
         }
 
         /* .ccontent li .wrapp div {
-        font-weight: 600;
-        }
+                                                                                                                                                                                                                                font-weight: 600;
+                                                                                                                                                                                                                                }
 
-        .ccontent li .wrapp p {
-        font-weight: 360;
-        }  */
+                                                                                                                                                                                                                                .ccontent li .wrapp p {
+                                                                                                                                                                                                                                font-weight: 360;
+                                                                                                                                                                                                                                }  */
 
         .ccontent li:hover {
             background-color: rgb(117, 93, 255);
@@ -130,14 +129,17 @@
             outline: none;
             cursor: pointer;
         }
+
         .checkbox-round:checked {
             background-color: rgb(93, 166, 255);
         }
+
         /* checkbox round */
 
         .btn-outline-danger {
             color: #000000 !important;
         }
+
         .btn-outline-danger:hover {
             color: #ffffff !important;
         }
@@ -150,8 +152,8 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Check List Kebutuhan Verifikasi</h4>
-                        <p class="text-secondary">TKDN Barang</p>
+                        <h3 class="card-title">Check List Kebutuhan Verifikasi</h3>
+                        <h4 class="text-secondary">TKDN Barang</h4>
                         <hr>
 
                         @if (request('type-create') == 'get')
@@ -170,21 +172,24 @@
                         @endif
                         <div class="form-gorup">
                             <label>Nama Perusahaan</label>
-                            <input type="text" class="form-control" name="company_name" {{ request('type-create') == 'get' ? 'readonly' : '' }}>
+                            <input type="text" class="form-control" name="company_name"
+                                {{ request('type-create') == 'get' ? 'readonly' : '' }}>
                         </div>
                         <div class="form-gorup">
                             <label>Jenis Produk</label>
-                            <input type="text" class="form-control" name="type_product" {{ request('type-create') == 'get' ? 'readonly' : '' }}>
+                            <input type="text" class="form-control" name="type_product"
+                                {{ request('type-create') == 'get' ? 'readonly' : '' }}>
                         </div>
                         <div class="form-gorup">
                             <label>Tipe Produk</label>
-                            <input type="text" class="form-control" name="type_product" {{ request('type-create') == 'get' ? 'readonly' : '' }}>
+                            <input type="text" class="form-control" name="type_product"
+                                {{ request('type-create') == 'get' ? 'readonly' : '' }}>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row" id="form-content">
             <div class="col-6">
                 <div class="card">
                     <div class="card-header bg-transparent">
@@ -199,7 +204,8 @@
                                 Profil Perusahaan
                             </button>
                             <div class="mr-2">
-                                <a href="#" data-toggle="tooltip" title="This is a tooltip example that displays on the top">
+                                <a href="#" data-toggle="tooltip"
+                                    title="This is a tooltip example that displays on the top">
                                     <span class="icon-question"></span>
                                 </a>
                             </div>
@@ -214,7 +220,8 @@
                                 Akta Pendidikan dan Akta Perubahan Terakhir
                             </button>
                             <div class="mr-2">
-                                <a href="#" data-toggle="tooltip" title="This is a tooltip example that displays on the top">
+                                <a href="#" data-toggle="tooltip"
+                                    title="This is a tooltip example that displays on the top">
                                     <span class="icon-question"></span>
                                 </a>
                             </div>
@@ -229,7 +236,8 @@
                                 Izin Usaha (IUI/UT/OSS)
                             </button>
                             <div class="mr-2">
-                                <a href="#" data-toggle="tooltip" title="This is a tooltip example that displays on the top">
+                                <a href="#" data-toggle="tooltip"
+                                    title="This is a tooltip example that displays on the top">
                                     <span class="icon-question"></span>
                                 </a>
                             </div>
@@ -244,7 +252,8 @@
                                 Izin Usaha
                             </button>
                             <div class="mr-2">
-                                <a href="#" data-toggle="tooltip" title="This is a tooltip example that displays on the top">
+                                <a href="#" data-toggle="tooltip"
+                                    title="This is a tooltip example that displays on the top">
                                     <span class="icon-question"></span>
                                 </a>
                             </div>
@@ -259,7 +268,8 @@
                                 Nomor Pokok Wajib Pajak (NPWP)
                             </button>
                             <div class="mr-2">
-                                <a href="#" data-toggle="tooltip" title="This is a tooltip example that displays on the top">
+                                <a href="#" data-toggle="tooltip"
+                                    title="This is a tooltip example that displays on the top">
                                     <span class="icon-question"></span>
                                 </a>
                             </div>
@@ -274,7 +284,8 @@
                                 Struktur Organisani
                             </button>
                             <div class="mr-2">
-                                <a href="#" data-toggle="tooltip" title="This is a tooltip example that displays on the top">
+                                <a href="#" data-toggle="tooltip"
+                                    title="This is a tooltip example that displays on the top">
                                     <span class="icon-question"></span>
                                 </a>
                             </div>
@@ -289,7 +300,8 @@
                                 Katalog Produk
                             </button>
                             <div class="mr-2">
-                                <a href="#" data-toggle="tooltip" title="This is a tooltip example that displays on the top">
+                                <a href="#" data-toggle="tooltip"
+                                    title="This is a tooltip example that displays on the top">
                                     <span class="icon-question"></span>
                                 </a>
                             </div>
@@ -304,7 +316,8 @@
                                 Sertifikat Merek
                             </button>
                             <div class="mr-2">
-                                <a href="#" data-toggle="tooltip" title="This is a tooltip example that displays on the top">
+                                <a href="#" data-toggle="tooltip"
+                                    title="This is a tooltip example that displays on the top">
                                     <span class="icon-question"></span>
                                 </a>
                             </div>
@@ -319,7 +332,8 @@
                                 Surat Pelimpahan Penggunaan Merk
                             </button>
                             <div class="mr-2">
-                                <a href="#" data-toggle="tooltip" title="This is a tooltip example that displays on the top">
+                                <a href="#" data-toggle="tooltip"
+                                    title="This is a tooltip example that displays on the top">
                                     <span class="icon-question"></span>
                                 </a>
                             </div>
@@ -335,32 +349,41 @@
                     <div class="card-header bg-transparent">
                         <h4 class="card-title">II. TINGKAT KOMPONEN DALAM NEGERI (TKDN)</h4>
                         {{-- <p class="h6">PERUSAHAAN PEMOHON (BRAND OWNER)</p> --}}
-                            <!-- nav options -->
-                        <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab" role="tablist" style="font-size: 11px">
+                        <!-- nav options -->
+                        <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab" role="tablist"
+                            style="font-size: 11px">
                             <li class="nav-item">
-                                <a class="nav-link active" id="bahan-baku-tab" data-toggle="pill" href="#bahan-baku" role="tab" aria-controls="bahan-baku" aria-selected="true">BAHAN BAKU LANGSUNG</a>
+                                <a class="nav-link active" id="bahan-baku-tab" data-toggle="pill" href="#bahan-baku"
+                                    role="tab" aria-controls="bahan-baku" aria-selected="true">BAHAN BAKU
+                                    LANGSUNG</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="tenaga-kerja-tab" data-toggle="pill" href="#tenaga-kerja" role="tab" aria-controls="tenaga-kerja" aria-selected="false">TENAGA KERJA LANGSUNG</a>
+                                <a class="nav-link" id="tenaga-kerja-tab" data-toggle="pill" href="#tenaga-kerja"
+                                    role="tab" aria-controls="tenaga-kerja" aria-selected="false">TENAGA KERJA
+                                    LANGSUNG</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="overhead-tab" data-toggle="pill" href="#overhead" role="tab" aria-controls="overhead" aria-selected="false">OVERHEAD PABRIK</a>
+                                <a class="nav-link" id="overhead-tab" data-toggle="pill" href="#overhead"
+                                    role="tab" aria-controls="overhead" aria-selected="false">OVERHEAD PABRIK</a>
                             </li>
                         </ul>
 
                         <!-- content -->
                         <div class="tab-content" id="pills-tabContent p-3">
                             <!-- bahan baku -->
-                            <div class="tab-pane fade show active" id="bahan-baku" role="tabpanel" aria-labelledby="bahan-baku-tab">
+                            <div class="tab-pane fade show active" id="bahan-baku" role="tabpanel"
+                                aria-labelledby="bahan-baku-tab">
                                 <ul class="ccontent">
                                     {{-- Daftar Kebutuhan Bahan Baku Untuk Satuan Produk Yang Dinilai --}}
                                     <div class="form-group d-flex align-items-center">
-                                        <button type="button" class="btn btn-outline-danger mr-2 flex-grow-1 text-left h6">
+                                        <button type="button"
+                                            class="btn btn-outline-danger mr-2 flex-grow-1 text-left h6">
                                             <i class="far fa-file"></i>
                                             Daftar Kebutuhan Bahan Baku Untuk Satuan Produk Yang Dinilai
                                         </button>
                                         <div class="mr-2">
-                                            <a href="#" data-toggle="tooltip" title="This is a tooltip example that displays on the top">
+                                            <a href="#" data-toggle="tooltip"
+                                                title="This is a tooltip example that displays on the top">
                                                 <span class="icon-question"></span>
                                             </a>
                                         </div>
@@ -375,7 +398,8 @@
                                             Bukti Pembelian Bahan Baku Terhadap Produk Yang Dinilai
                                         </button>
                                         <div class="mr-2">
-                                            <a href="#" data-toggle="tooltip" title="This is a tooltip example that displays on the top">
+                                            <a href="#" data-toggle="tooltip"
+                                                title="This is a tooltip example that displays on the top">
                                                 <span class="icon-question"></span>
                                             </a>
                                         </div>
@@ -390,7 +414,8 @@
                                             Jasa Terkait Pembelian Bahan Baku
                                         </button>
                                         <div class="mr-2">
-                                            <a href="#" data-toggle="tooltip" title="This is a tooltip example that displays on the top">
+                                            <a href="#" data-toggle="tooltip"
+                                                title="This is a tooltip example that displays on the top">
                                                 <span class="icon-question"></span>
                                             </a>
                                         </div>
@@ -401,17 +426,19 @@
                                 </ul>
                             </div>
                             <!-- tenaga kerja -->
-                            <div class="tab-pane fade" id="tenaga-kerja" role="tabpanel" aria-labelledby="tenaga-kerja-tab">
+                            <div class="tab-pane fade" id="tenaga-kerja" role="tabpanel"
+                                aria-labelledby="tenaga-kerja-tab">
                                 <div class="form-group addinfo">
                                     <label for="exampleFormControlTextarea1">Write additional info.</label>
                                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                                 </div>
                             </div>
                             <!-- overhead -->
-                            <div class="tab-pane fade third" id="overhead" role="tabpanel" aria-labelledby="overhead-tab">
+                            <div class="tab-pane fade third" id="overhead" role="tabpanel"
+                                aria-labelledby="overhead-tab">
                                 <div class="form">
                                     <div class="form-group">
-                                    <label for="exampleFormControlSelect1">Value Type<span>i</span></label>
+                                        <label for="exampleFormControlSelect1">Value Type<span>i</span></label>
                                         <select class="form-control round" id="exampleFormControlSelect1">
                                             <option class="">United States Dollar</option>
                                             <option class="amount">Indian Rupees</option>
@@ -430,6 +457,14 @@
                     </div>
                 </div>
             </div>
+            <div class="col-12">
+                <div class="card p-2">
+                    <div class="d-flex justify-content-end">
+                        <button class="btn btn-warning mr-2">Reset</button>
+                        <button class="btn btn-success">Simpan</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 @endsection
@@ -442,4 +477,144 @@
     <script src="{{ asset('library/upload-preview/upload-preview.js') }}"></script>
 
     <script src="{{ asset('library/select2/dist/js/select2.full.min.js') }}"></script>
+    <script>
+        var data = <?= json_encode($needs) ?>;
+
+        $(document).ready(function() {
+            if (JSONParser()) {
+                renderData(data);
+            }
+        });
+
+        function JSONParser() {
+            if (data) {
+                data = '[' + data + ']';
+                data = JSON.parse(data);
+                console.log(data);
+                return true;
+            }
+            return false;
+        }
+
+        function renderData(val) {
+            var div = $('#form-content');
+
+            $.each(data[0], function(key, value) {
+                var i = 1;
+                if (key.includes('form_')) {
+                    var formData = value;
+                    var hasTabProperty = Object.keys(formData).some(function(prop) {
+                        return prop.includes('tab_');
+                    });
+
+                    if (!hasTabProperty) {
+                        var newDiv = $(
+                            '<div class="col-6">' +
+                            '</div>');
+                        var cardDiv = $(
+                            '<div class="card">' +
+                            '<div class="card-header bg-transparent">' +
+                            '<h4 class="card-title">' + formData.name + '</h4>' +
+                            '<p class="h6">PERUSAHAAN PEMOHON (BRAND OWNER)</p>' +
+                            '</div>' +
+                            '</div>');
+                        var cardBody = $('<div class="card-body">' +
+                            '</div>');
+                        for (var i = 1; formData['data_' + i]; i++) {
+                            var data = formData['data_' + i];
+                            var isElRequired = data.is_required ?
+                                '<button type="button" class="btn btn-outline-danger mr-2 flex-grow-1 text-left">' :
+                                '<button type="button" class="btn btn-outline-dark mr-2 flex-grow-1 text-left">';
+                            var divContent = $(
+                                '<div class="form-group d-flex align-items-center">' + isElRequired +
+                                '<i class="' + data.icon + '"> &nbsp;</i>' + data.name +
+                                '</button>' +
+                                '<div class="mr-2">' +
+                                '<a data-toggle="tooltip" title="' + data.tooltip + '">' +
+                                '<span class="icon-question"></span>' +
+                                '</a>' +
+                                '</div>' +
+                                '<div class="mr-2">' +
+                                '<input type="checkbox" name="profil_perusahaan" class="checkbox-round">' +
+                                '</div>'
+                            );
+                            cardBody.append(divContent);
+                        }
+                        cardDiv.append(cardBody);
+                        newDiv.append(cardDiv);
+                        div.append(newDiv);
+                    } else {
+                        // console.log("has tab :", formData);
+                        var newDiv = $(
+                            '<div class="col-6">' +
+                            '</div>');
+                        var cardDiv = $(
+                            '<div class="card">' +
+                            '<div class="card-header bg-transparent">' +
+                            '<h4 class="card-title">' + formData.name + '</h4>' +
+                            '</div>' +
+                            '</div>');
+                        var elListTab = $(` <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab" role="tablist"
+                            style="font-size: 11px">
+                            
+                        </ul>`);
+                        var tabContent = $(`<div class="tab-content" id="pills-tabContent p-3">
+                            </div>`);
+                        for (var i = 1; formData['tab_' + i]; i++) {
+                            var tabData = formData['tab_' + i];
+                            var listTab = `
+                                <li class="nav-item">
+                                    <a class="nav-link ${tabData.id === 1? 'active' : '' }" id="${tabData.id}" data-toggle="pill" href="#tab-${tabData.id}"
+                                        role="tab" aria-controls="tab-${tabData.id}" aria-selected="true">${tabData.name}</a>
+                                </li>
+                            `;
+                            elListTab.append(listTab);
+                            var listContent = $(`
+                            <div class="ml-2 tab-pane fade ${tabData.id === 1? 'show active' : '' }" id="tab-${tabData.id}" role="tabpanel"
+                                aria-labelledby="bahan-baku-tab">
+                            </div>
+                            `);
+                            var elListContent = $(`
+                            <ul class="ccontent">
+
+                            </ul>
+                            `);
+
+                            for (var x = 1; tabData['data_' + x]; x++) {
+                                var data_value = tabData['data_' + x];
+                                console.log(data_value);
+                                var dataContent = $(`
+                                <div class="form-group d-flex align-items-center">
+                                        <button type="button"
+                                            class="btn btn-outline-danger mr-2 flex-grow-1 text-left h6">
+                                            <i class="far fa-file"></i> ${data_value.name}
+                                        </button>
+                                        <div class="mr-2">
+                                            <a href="#" data-toggle="tooltip"
+                                                title="This is a tooltip example that displays on the top">
+                                                <span class="icon-question"></span>
+                                            </a>
+                                        </div>
+                                        <div class="mr-2">
+                                            <input type="checkbox" name="daftar_kebutuhan" class="checkbox-round">
+                                        </div>
+                                    </div>
+                                `);
+                                elListContent.append(dataContent);
+                                listContent.append(elListContent);
+                                tabContent.append(listContent);
+                            }
+                        }
+                        cardDiv.append(elListTab);
+                        cardDiv.append(tabContent);
+                        newDiv.append(cardDiv);
+                        div.append(newDiv);
+                    }
+                }
+
+            });
+
+            console.log(val.length);
+        }
+    </script>
 @endpush
