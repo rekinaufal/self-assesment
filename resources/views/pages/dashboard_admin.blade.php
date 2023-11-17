@@ -6,6 +6,33 @@
     <link href="{{ asset('assets/libs/chartist/dist/chartist.min.css') }}" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js" ></script>
     <style>
+        #overflow_canvas{
+            overflow: auto; 
+            white-space: nowrap;
+        }
+        /* width */
+        #overflow_canvas::-webkit-scrollbar {
+            width: 5px;
+            height: 7px;
+        }
+
+        /* Track */
+        #overflow_canvas::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px grey; 
+        border-radius: 10px;
+        }
+        
+        /* Handle */
+        #overflow_canvas::-webkit-scrollbar-thumb {
+        background: red; 
+        border-radius: 10px;
+        }
+
+        /* Handle on hover */
+        #overflow_canvas::-webkit-scrollbar-thumb:hover {
+        background: #b30000; 
+        }
+
         /* css charts bar user diagram */
         canvas {
             -moz-user-select: none;
@@ -225,7 +252,7 @@
                             <span>Regular</span>
                         </div>
                     </div>
-                    <div class="card-body" style="overflow: auto; white-space: nowrap;">
+                    <div class="card-body" id="overflow_canvas">
                         <div class="container-canvas">
                             <canvas id="canvas"></canvas>
                         </div>

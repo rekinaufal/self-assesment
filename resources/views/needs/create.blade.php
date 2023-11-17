@@ -193,7 +193,7 @@
             <div class="col-6">
                 <div class="card">
                     <div class="card-header bg-transparent">
-                        <h4 class="card-title">1. DATA UMUM DAN ASPEK LEGAL</h4>
+                        <h4 class="card-title">I. DATA UMUM DAN ASPEK LEGAL</h4>
                         <p class="h6">PERUSAHAAN PEMOHON (BRAND OWNER)</p>
                     </div>
                     <div class="card-body">

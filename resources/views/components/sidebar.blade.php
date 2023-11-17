@@ -55,7 +55,7 @@
                 <li class="sidebar-item {{ parse_url(request()->url())['path'] == '/news' ? 'active selected' : '' }}">
                     <a class="sidebar-link sidebar-link" href="{{ url('news') }}" aria-expanded="false">
                         <i data-feather="file-text" class="feather-icon"></i>
-                        <span class="hide-menu">Berita</span>
+                        <span class="hide-menu">News</span>
                     </a>
                 </li>
 
@@ -86,7 +86,7 @@
                 <li class="sidebar-item {{ Request::is('users') ? 'active' : '' }}">
                     <a class="sidebar-link sidebar-link" href="{{ url('users') }}" aria-expanded="false">
                         <i data-feather="message-square" class="feather-icon"></i>
-                        <span class="hide-menu">Profil Pengguna</span>
+                        <span class="hide-menu">User Profile</span>
                     </a>
                 </li>
 
@@ -98,20 +98,20 @@
                 <li class="sidebar-item {{ Request::is('permenperincategory') ? 'active' : '' }}">
                     <a class="sidebar-link sidebar-link" href="{{ url('permenperincategory') }}" aria-expanded="false">
                         <i data-feather="file-text" class="feather-icon"></i>
-                        <span class="hide-menu">Kategori Regulasi</span>
+                        <span class="hide-menu">Permen Category</span>
                     </a>
                 </li>
                 <li class="sidebar-item {{ parse_url(request()->url())['path'] == '/needs' ? 'active selected' : '' }}">
                     <a class="sidebar-link sidebar-link" href="{{ url('needs') }}" aria-expanded="false">
                         <i data-feather="file-text" class="feather-icon"></i>
-                        <span class="hide-menu">List Kebutuhan</span>
+                        <span class="hide-menu">List Of Needs</span>
                     </a>
                 </li>
 
                 <li class="sidebar-item {{ Request::is('computation') ? 'active' : '' }}">
                     <a class="sidebar-link sidebar-link" href="{{ url('computation') }}" aria-expanded="false">
                         <i data-feather="file-text" class="feather-icon"></i>
-                        <span class="hide-menu">Perhitungan</span>
+                        <span class="hide-menu">Calculation</span>
                     </a>
                 </li>
 

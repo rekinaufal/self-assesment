@@ -643,7 +643,7 @@
                                                         me</small></label>
                                             </div>
                                             <div class="forgot-password">
-                                                <a href="" class="text-danger">
+                                                <a href="/auth-forgot-password" class="text-danger">
                                                     <small style="border-bottom: 1px solid #ff4f70;">
                                                         Forgot Password
                                                     </small>
