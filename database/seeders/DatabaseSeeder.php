@@ -23,9 +23,10 @@ class DatabaseSeeder extends Seeder
             RoleHasPermissionSeeder::class,
             ModelHasRoleSeeder::class,
             PermenperinCategorySeeder::class,
-            // ComputationSeeder::class,
+            ComputationSeeder::class,
             NewsSeeder::class,
-            PaymentSeeder::class
+            PaymentSeeder::class,
+            NeedsSeeder::class
         ]);
     }
 }
