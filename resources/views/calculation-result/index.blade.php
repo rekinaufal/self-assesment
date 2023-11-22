@@ -71,7 +71,8 @@
                                                         class="fas fa-info-circle">
                                                     </i></label>
                                                 <input type="text" name="bahan_baku"
-                                                    class="form-control form-control-sm " id="bahan_baku" placeholder="" required>
+                                                    class="form-control form-control-sm " id="bahan_baku" placeholder=""
+                                                    required>
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -79,7 +80,8 @@
                                                         data-toggle="tooltip" data-placement="top" title="Tooltip on top">
                                                     </i></label>
                                                 <input type="text" name="spesifikasi"
-                                                    class="form-control form-control-sm" id="spesifikasi" placeholder="" required>
+                                                    class="form-control form-control-sm" id="spesifikasi" placeholder=""
+                                                    required>
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -105,11 +107,9 @@
                                                 <select class="form-control form-control-sm" id="negara_asal"
                                                     name="negara_asal" required>
                                                     <option></option>
-                                                    <option>Indonesia</option>
-                                                    <option>Zimbabwe</option>
-                                                    <option>Asoy</option>
-                                                    <option>Geboy</option>
-                                                    <option>Tabrak tabrak masuk</option>
+                                                    @foreach ($countries as $country)
+                                                        <option value="{{ $country }}">{{ $country }}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
 
@@ -145,8 +145,8 @@
                                                         data-placement="top" title="Tooltip on top">
                                                     </i></label>
                                                 <input type="number" name="harga_satuan"
-                                                    class="form-control form-control-sm" id="harga_satuan"
-                                                    placeholder="" required>
+                                                    class="form-control form-control-sm" id="harga_satuan" placeholder=""
+                                                    required>
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt;">
@@ -165,7 +165,7 @@
                                                                 <input type="number" name="ppn"
                                                                     style=" width : 15rem"
                                                                     class="form-control form-control-sm" id="ppn"
-                                                                    placeholder="" required>
+                                                                    placeholder="" value="0">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -186,19 +186,19 @@
                                                                 <label for="bm">BM %</label>
                                                                 <input type="number" name="bm" style="width: 5rem"
                                                                     class="form-control form-control-sm" id="bm"
-                                                                    placeholder="" required>
+                                                                    placeholder="" value="0">
                                                             </div>
                                                             <div class="form-group-sm ml-2" style="font-size: 7pt;">
                                                                 <label for="pdri_ppn">PPN %</label>
                                                                 <input type="number" name="pdri_ppn" style="width: 5rem"
                                                                     class="form-control form-control-sm" id="pdri_ppn"
-                                                                    placeholder="" required>
+                                                                    placeholder="" value="0">
                                                             </div>
                                                             <div class="form-group-sm ml-2" style="font-size: 7pt;">
                                                                 <label for="pph">PPH %</label>
                                                                 <input type="number" name="pph" style="width: 5rem"
                                                                     class="form-control form-control-sm" id="pph"
-                                                                    placeholder="" required>
+                                                                    placeholder="" value="0">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -364,15 +364,16 @@
                                 </div>
                                 <div class="row card">
                                     <div class="col ">
-                                        <form class="d-flex flex-wrap" style="width: 100%">
+                                        <form class="d-flex flex-wrap" style="width: 100%" id="form-2"
+                                            method="post">
                                             <div class="form-group-sm mx-2 mt-2" style="font-size: 10pt; width : 13rem">
                                                 <label for="">Jasa Terkait <i data-toggle="tooltip"
                                                         data-placement="top"
                                                         title="Nama bahan baku adalah nama yang ditunjukkan pada nama material bahan baku dalam pembuatan produk. Contoh : Biji besi, Bracket dll"
                                                         class="fas fa-info-circle">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm "
-                                                    id="" placeholder="">
+                                                <input type="text" name="uraian"
+                                                    class="form-control form-control-sm " id="" placeholder="">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -380,8 +381,8 @@
                                                         class="fas fa-info-circle" data-toggle="tooltip"
                                                         data-placement="top" title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm" id=""
-                                                    placeholder="">
+                                                <input type="text" name="produsen_tingkat_dua"
+                                                    class="form-control form-control-sm" id="" placeholder="">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -390,7 +391,7 @@
                                                         title="Tooltip on top">
                                                     </i></label>
                                                 <input type="text" class="form-control form-control-sm" id=""
-                                                    placeholder="">
+                                                    placeholder="" name="jumlah">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -399,7 +400,7 @@
                                                         title="Tooltip on top">
                                                     </i></label>
                                                 <input type="text" class="form-control form-control-sm" id=""
-                                                    placeholder="">
+                                                    placeholder="" name="tkdn">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -408,7 +409,7 @@
                                                         title="Tooltip on top">
                                                     </i></label>
                                                 <input type="text" class="form-control form-control-sm" id=""
-                                                    placeholder="">
+                                                    placeholder="" name="biaya">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -417,7 +418,7 @@
                                                         title="Tooltip on top">
                                                     </i></label>
                                                 <input type="text" class="form-control form-control-sm" id=""
-                                                    placeholder="">
+                                                    placeholder="" name="alokasi">
                                             </div>
 
                                             <div class="d-flex justify-content-end mt-2"
@@ -461,8 +462,6 @@
                                                         <th scope="col">KLN</th>
                                                         <th scope="col">Total</th>
                                                     </tr>
-                                                </thead>
-                                                <tbody>
                                                     <tr>
                                                         <td>
                                                             <div class="dropdown">
@@ -482,15 +481,15 @@
                                                             </div>
                                                         </td>
                                                         <th scope="row">1</th>
-                                                        <td>Niku niku Nomi</td>
-                                                        <td>AMD RYZEN 7000</td>
-                                                        <td>23</td>
-                                                        <td>45.5</td>
-                                                        <td>543.000.000</td>
-                                                        <td>Unit unitan</td>
-                                                        <td>3</td>
-                                                        <td>8</td>
-                                                        <td>780.000.000.00</td>
+                                                        <td>Local PPN</td>
+                                                        <td>Dirjen Pajak</td>
+                                                        <td>1</td>
+                                                        <td>100%</td>
+                                                        <td class="1-2-sumLocalPpn">0</td>
+                                                        <td>100%</td>
+                                                        <td class="1-2-sumKdn">0</td>
+                                                        <td class="1-2-sumKln">0</td>
+                                                        <td class="1-2-sumTotal">0</td>
                                                     </tr>
                                                     <tr>
                                                         <td>
@@ -510,17 +509,19 @@
                                                                 </div>
                                                             </div>
                                                         </td>
-                                                        <th scope="row">2</th>
-                                                        <td>Niku niku Nomi</td>
-                                                        <td>AMD RYZEN 7000</td>
-                                                        <td>23</td>
-                                                        <td>45.5</td>
-                                                        <td>543.000.000</td>
-                                                        <td>Unit unitan</td>
-                                                        <td>3</td>
-                                                        <td>8</td>
-                                                        <td>780.000.000.00</td>
+                                                        <th scope="row">1</th>
+                                                        <td>PDRI</td>
+                                                        <td>Bea Cukai</td>
+                                                        <td>1</td>
+                                                        <td>100%</td>
+                                                        <td class="1-2-sumPdriPpn">0</td>
+                                                        <td>100%</td>
+                                                        <td class="1-2-sumKdn">0</td>
+                                                        <td class="1-2-sumKln">0</td>
+                                                        <td class="1-2-sumTotal">0</td>
                                                     </tr>
+                                                </thead>
+                                                <tbody id="tbody-2">
                                                 </tbody>
                                             </table>
                                         </div>
@@ -540,7 +541,7 @@
                                 </div>
                                 <div class="row card">
                                     <div class="col ">
-                                        <form class="d-flex flex-wrap" style="width: 100%">
+                                        <form class="d-flex flex-wrap" style="width: 100%" method="post" id="form-3">
                                             <div class="form-group-sm mx-2 mt-2" style="font-size: 10pt; width : 13rem">
                                                 <label for="">Uraian Posisi <i data-toggle="tooltip"
                                                         data-placement="top"
@@ -548,7 +549,7 @@
                                                         class="fas fa-info-circle">
                                                     </i></label>
                                                 <input type="text" class="form-control form-control-sm "
-                                                    id="" placeholder="">
+                                                    id="" placeholder="" name="uraian posisi">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -556,13 +557,11 @@
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <select class="form-control form-control-sm" id="">
+                                                <select class="form-control form-control-sm" id="" name="kewarganegaraan">
                                                     <option></option>
-                                                    <option>Indonesia</option>
-                                                    <option>Zimbabwe</option>
-                                                    <option>Asoy</option>
-                                                    <option>Geboy</option>
-                                                    <option>Tabrak tabrak masuk</option>
+                                                    @foreach ($countries as $country)
+                                                        <option value="{{ $country }}">{{ $country }}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
 
@@ -572,7 +571,7 @@
                                                         title="Tooltip on top">
                                                     </i></label>
                                                 <input type="text" class="form-control form-control-sm" id=""
-                                                    placeholder="">
+                                                    placeholder="" name="jumlah_orang" value="0">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -581,7 +580,7 @@
                                                         title="Tooltip on top">
                                                     </i></label>
                                                 <input type="text" class="form-control form-control-sm" id=""
-                                                    placeholder="">
+                                                    placeholder="" name="jumlah" value="0">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -590,7 +589,7 @@
                                                         title="Tooltip on top">
                                                     </i></label>
                                                 <input type="text" class="form-control form-control-sm" id=""
-                                                    placeholder="Rp.">
+                                                    placeholder="Rp." name="gaji_perbulan" value="0">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -599,7 +598,7 @@
                                                         title="Tooltip on top">
                                                     </i></label>
                                                 <input type="text" class="form-control form-control-sm" id=""
-                                                    placeholder="">
+                                                    placeholder="" name="alokasi_gaji" value="0">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt;">
@@ -616,13 +615,13 @@
                                                                 <label for="">BPJS </label>
                                                                 <input type="text" style="width: 8rem"
                                                                     class="form-control form-control-sm" id=""
-                                                                    placeholder="Rp">
+                                                                    placeholder="Rp" value="0" name="bpjs">
                                                             </div>
                                                             <div class="form-group-sm ml-2" style="font-size: 7pt;">
                                                                 <label for="">Tunjangan Lainnya</label>
                                                                 <input type="text" style="width: 8rem"
                                                                     class="form-control form-control-sm" id=""
-                                                                    placeholder="Rp">
+                                                                    placeholder="Rp" value="0" name="tunjangan_lainnya">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1394,7 +1393,12 @@
     <script src="{{ asset('library/sweetalert/dist/sweetalert.min.js') }}"></script>
     <script src="{{ asset('assets/extra-libs/sparkline/sparkline.js') }}"></script>
     <script>
-        let calculations = [{
+        console.log(localStorage.getItem('calculations'));
+        let calculations = localStorage.getItem('calculations');
+        if(calculations != null) {
+            calculations = JSON.parse(calculations);
+        } else {
+            calculations = [{
                 "id": "1",
                 "no": "1.1",
                 "nama": "Bahan Baku",
@@ -1403,15 +1407,19 @@
                     kdn: "{tkdn}% * {jumlah} * {harga_satuan}",
                     kln: "(100% - {tkdn}%) * {jumlah} * {harga_satuan}",
                     total: "{formulas.kdn} + {formulas.kln}",
+                    ppnCalc: "{ppn}% * ({formulas.kdn} + {formulas.kln})",
+                    bmCalc: "{bm}% * ({formulas.kdn} + {formulas.kln})",
+                    pdriPpnCalc: "{pdri_ppn}% * ({formulas.kdn} + {formulas.kln})",
+                    pphCalc: "{pph}% * ({formulas.kdn} + {formulas.kln})",
                     sumKdn: "sum:kdn",
                     sumKln: "sum:kln",
                     sumTotal: "sum:total",
-                    sumPpn: "sum:ppn",
-                    sumBm: "sum:bm",
-                    sumPdriPpn: "sum:pdri_ppn",
-                    sumPph: "sum:pph",
+                    sumPpn: "sum:ppnCalc",
+                    sumBm: "sum:bmCalc",
+                    sumPdriPpn: "sum:pdriPpnCalc",
+                    sumPph: "sum:pphCalc",
                     // sumPdriTotal: "{formulas.sumBm} + {formulas.sumPdriPpn} + {formulas.sumPph}"
-                    sumPdriTotal: "sum:bm + sum:pdri_ppn + sum:pph"
+                    sumPdriTotal: "sum:bmCalc + sum:pdriPpnCalc + sum:pphCalc"
                 },
                 "data": []
             },
@@ -1420,22 +1428,45 @@
                 "no": "1.2",
                 "nama": "Jasa Terkait Bahan Baku",
                 "slug": "jasa-terkait-bahan-baku",
+                "formulas": {
+                    kdn: "{tkdn}% * {jumlah} * {biaya} * {alokasi}%",
+                    kln: "(100% - {tkdn}%) * {jumlah} * {biaya} * {alokasi}%",
+                    total: "{formulas.kdn} + {formulas.kln}",
+                },
+                "data": []
+            },
+            {
+                "id": "3",
+                "no": "1.3",
+                "nama": "Jasa Terkait Bahan Baku",
+                "slug": "jasa-terkait-bahan-baku",
+                "formulas": {
+                    kdn: "{tkdn}% * {jumlah_orang} * {gaji_per_bulan} * {alokasi}%",
+                    kln: "(100% - {tkdn}%) * {jumlah_orang} * {gaji_per_bulan} * {alokasi}%",
+                    total: "{formulas.kdn} + {formulas.kln}",
+                },
                 "data": []
             },
         ];
-        $.ajax({
-            type: 'GET',
-            url: '{{ $computation->calculation_result != null ?route('calculation-results.show', $computation->calculation_result->id) : 'fail' }}', // Ganti URL dengan endpoint yang sesuai
-            success: function(response) {
-                // Tampilkan data yang diterima di dalam elemen dengan ID 'result'
-                calculations = response.calculationResult.results;
-                reloadTable("tbody-1", 1);
-            },
-            error: function(error) {
-                // Tampilkan pesan kesalahan jika permintaan gagal
-                console.log("error");
-            }
-        });
+        }
+
+        if(localStorage.getItem('calculations') == null) {
+            $.ajax({
+                type: 'GET',
+                url: '{{ $computation->calculation_result != null ? route('calculation-results.show', $computation->calculation_result->id) : 'fail' }}', // Ganti URL dengan endpoint yang sesuai
+                success: function(response) {
+                    // Tampilkan data yang diterima di dalam elemen dengan ID 'result'
+                    calculations = response.calculationResult.results;
+                    reloadTable("tbody-1", 1);
+                    reloadTable("tbody-2", 2);
+                    reloadTable("tbody-3", 3);
+                },
+                error: function(error) {
+                    // Tampilkan pesan kesalahan jika permintaan gagal
+                    console.log("error");
+                }
+            });
+        }
 
         $(() => {
             $(window).on('beforeunload', function() {
@@ -1532,8 +1563,64 @@
                 let storeCalculation = calculateAndBind(formResult, 1);
 
                 reloadTable("tbody-1", 1);
+                reloadTable("tbody-2", 2);
+                reloadTable("tbody-3", 3);
 
                 $("#form-1")[0].reset();
+
+                swal({
+                    title: "Success",
+                    text: "Success to add new calculation",
+                    icon: "success",
+                })
+            })
+
+            $("#form-2").on("submit", (event) => {
+                event.preventDefault();
+                let serializedArray = $("#form-2").serializeArray();
+                let formResult = {};
+
+                for (let i = 0; i < serializedArray.length; i++) {
+                    let input = serializedArray[i];
+                    formResult[input.name] = input.value;
+                }
+
+                formResult["id"] = new Date().getTime()
+
+                let storeCalculation = calculateAndBind(formResult, 2);
+
+                reloadTable("tbody-1", 1);
+                reloadTable("tbody-2", 2);
+                reloadTable("tbody-3", 3);
+
+                $("#form-2")[0].reset();
+
+                swal({
+                    title: "Success",
+                    text: "Success to add new calculation",
+                    icon: "success",
+                })
+            })
+
+            $("#form-3").on("submit", (event) => {
+                event.preventDefault();
+                let serializedArray = $("#form-3").serializeArray();
+                let formResult = {};
+
+                for (let i = 0; i < serializedArray.length; i++) {
+                    let input = serializedArray[i];
+                    formResult[input.name] = input.value;
+                }
+
+                formResult["id"] = new Date().getTime()
+
+                let storeCalculation = calculateAndBind(formResult, 3);
+
+                reloadTable("tbody-1", 1);
+                reloadTable("tbody-2", 2);
+                reloadTable("tbody-3", 3);
+
+                $("#form-3")[0].reset();
 
                 swal({
                     title: "Success",
@@ -1595,6 +1682,11 @@
             }
 
             calculation.data.push(finalResult);
+            // Mengonversi objek menjadi string JSON
+            var jsonCalculations = JSON.stringify(calculations);
+
+            // Menyimpan data di Local Storage dengan kunci tertentu
+            localStorage.setItem('calculations', jsonCalculations);
         }
 
         function replaceFormulas(formulas, resultObject) {
@@ -1602,21 +1694,21 @@
             const variableRegex2 = /\{formulas\.(\w+)\}/g;
             let result = {};
             let replacedFormulas = {};
+            console.log(formulas)
             for (let key in formulas) {
                 replacedFormulas[key] = formulas[key].replace(variableRegex, function(match, fieldName) {
-                    return resultObject[fieldName] || match;
+                    return resultObject[fieldName] || 0;
                 });
             }
             for (let key in replacedFormulas) {
                 replacedFormulas[key] = replacedFormulas[key].replace(variableRegex2, function(match, formulaName) {
-                    return `(${replacedFormulas[formulaName]})` || match;
+                    return `(${replacedFormulas[formulaName]})` || 0;
                 });
 
                 let replacedPercent = replacePercent(replacedFormulas[key]);
                 result[key] = replacedPercent;
             }
 
-            console.log(result);
             return result;
         }
 
@@ -1624,6 +1716,7 @@
             let percentageRegex = /(\d+(\.\d+)?)%/;
 
             expression = expression.replace(/(\d+)%/g, function(match, p1) {
+                if(p1 == 0) return 0;
                 return parseFloat(p1) / 100 || match;
             })
 
@@ -1631,56 +1724,150 @@
         }
 
         function reloadTable(tbodyId, calculationId) {
-            const tbody = $(`#${tbodyId}`);
-            tbody.empty();
-            calculation = calculations.find(f => f.id == calculationId);
-            let sumKdn = parseInt(calculation.sumKdn).toLocaleString()
-            let sumKln = parseInt(calculation.sumKln).toLocaleString()
-            let sumTotal = parseInt(calculation.sumTotal).toLocaleString()
-            let sumPpn = parseInt(calculation.sumPpn).toLocaleString()
-            let sumBm = parseInt(calculation.sumBm).toLocaleString()
-            let sumPdriPpn = parseInt(calculation.sumPdriPpn).toLocaleString()
-            let sumPph = parseInt(calculation.sumPph).toLocaleString()
-            let sumPdriTotal = parseInt(calculation.sumPdriTotal).toLocaleString()
-            $('#sum-kdn').text(`Rp.${sumKdn}`)
-            $('#sum-kln').text(`Rp.${sumKln}`)
-            $('#sum-total').text(`Rp.${sumTotal}`)
-            $('#sum-ppn').text(`Rp.${sumPpn}`)
-            $('#sum-bm').text(`Rp.${sumBm}`)
-            $('#sum-pdri-ppn').text(`Rp.${sumPdriPpn}`)
-            $('#sum-pph').text(`Rp.${sumPph}`)
-            $('#sum-pdri-total').text(`Rp.${sumPdriTotal}`)
-            calculation.data.forEach(function(item, index) {
-                let row = "<tr>" +
-                    `<td>
-                        <div class="dropdown">
-                            <div class="btn btn-secondary btn-sm" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">!</div>
-                            <div class="dropdown-menu"
-                                aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item buttonEditNews"
-                                    onclick="edit(${item.id})"><i class="fa fa-edit"></i> Edit
-                                </a>
-                                <button class="dropdown-item" type="submit" onclick="destroy(${item.id})"><i
-                                        class="fa fa-trash"></i> Delete</button>
+            if (tbodyId == 'tbody-1') {
+                const tbody = $(`#${tbodyId}`);
+                tbody.empty();
+                calculation = calculations.find(f => f.id == calculationId);
+                let sumKdn = parseInt(calculation.sumKdn).toLocaleString()
+                let sumKln = parseInt(calculation.sumKln).toLocaleString()
+                let sumTotal = parseInt(calculation.sumTotal).toLocaleString()
+                let sumPpn = parseInt(calculation.sumPpn).toLocaleString()
+                let sumBm = parseInt(calculation.sumBm).toLocaleString()
+                let sumPdriPpn = parseInt(calculation.sumPdriPpn).toLocaleString()
+                let sumPph = parseInt(calculation.sumPph).toLocaleString()
+                let sumPdriTotal = parseInt(calculation.sumPdriTotal).toLocaleString()
+                $('#sum-kdn').text(`Rp.${sumKdn}`)
+                $('#sum-kln').text(`Rp.${sumKln}`)
+                $('#sum-total').text(`Rp.${sumTotal}`)
+                $('#sum-ppn').text(`Rp.${sumPpn}`)
+                $('#sum-bm').text(`Rp.${sumBm}`)
+                $('#sum-pdri-ppn').text(`Rp.${sumPdriPpn}`)
+                $('#sum-pph').text(`Rp.${sumPph}`)
+                $('#sum-pdri-total').text(`Rp.${sumPdriTotal}`)
+                calculation.data.forEach(function(item, index) {
+                    let row = "<tr>" +
+                        `<td>
+                            <div class="dropdown">
+                                <div class="btn btn-secondary btn-sm" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">!</div>
+                                <div class="dropdown-menu"
+                                    aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item buttonEditNews"
+                                        onclick="edit(${item.id})"><i class="fa fa-edit"></i> Edit
+                                    </a>
+                                    <button class="dropdown-item" type="submit" onclick="destroy(${item.id})"><i
+                                            class="fa fa-trash"></i> Delete</button>
+                                </div>
                             </div>
-                        </div>
-                    </td>` +
-                    "<td>" + (index + 1) + "</td>" +
-                    "<td>" + item.bahan_baku + "</td>" +
-                    "<td>" + item.spesifikasi + "</td>" +
-                    "<td>" + item.satuan_bahan_baku + "</td>" +
-                    "<td>" + item.negara_asal + "</td>" +
-                    "<td>" + item.pemasok + "</td>" +
-                    "<td>" + item.tkdn + "</td>" +
-                    "<td>" + item.jumlah + "</td>" +
-                    "<td>" + item.harga_satuan + "</td>" +
-                    "<td>" + item.kdn + "</td>" +
-                    "<td>" + item.kln + "</td>" +
-                    "<td>" + item.total + "</td>" +
-                    "</tr>";
+                        </td>` +
+                        "<td>" + (index + 1) + "</td>" +
+                        "<td>" + item.bahan_baku + "</td>" +
+                        "<td>" + item.spesifikasi + "</td>" +
+                        "<td>" + item.satuan_bahan_baku + "</td>" +
+                        "<td>" + item.negara_asal + "</td>" +
+                        "<td>" + item.pemasok + "</td>" +
+                        "<td>" + item.tkdn + "</td>" +
+                        "<td>" + item.jumlah + "</td>" +
+                        "<td>" + item.harga_satuan + "</td>" +
+                        "<td>" + item.kdn + "</td>" +
+                        "<td>" + item.kln + "</td>" +
+                        "<td>" + item.total + "</td>" +
+                        "</tr>";
 
-                tbody.append(row);
-            });
+                    tbody.append(row);
+                });
+            } else if (tbodyId == "tbody-2") {
+                const tbody = $(`#${tbodyId}`);
+                tbody.empty();
+                calculation = calculations.find(f => f.id == calculationId);
+                calculation1 = calculations.find(f => f.id == 1);
+                // let sumKdn = parseInt(calculation.sumKdn).toLocaleString()
+                // let sumKln = parseInt(calculation.sumKln).toLocaleString()
+                // let sumTotal = parseInt(calculation.sumTotal).toLocaleString()
+                // let sumPpn = parseInt(calculation.sumPpn).toLocaleString()
+                // let sumBm = parseInt(calculation.sumBm).toLocaleString()
+                // let sumPdriPpn = parseInt(calculation.sumPdriPpn).toLocaleString()
+                // let sumPph = parseInt(calculation.sumPph).toLocaleString()
+                // let sumPdriTotal = parseInt(calculation.sumPdriTotal).toLocaleString()
+                $(`.1-2-sumLocalPpn`).text(calculation1.sumPpn)
+                $(`.1-2-sumKdn`).text(calculation1.sumKdn)
+                $(`.1-2-sumKln`).text(calculation1.sumKln)
+                $(`.1-2-sumTotal`).text(calculation1.sumTotal)
+                $(`.1-2-sumPdriPpn`).text(calculation1.sumPdriPpn)
+                console.log(calculation);
+                calculation.data.forEach(function(item, index) {
+                    index = index + 2;
+                    let row = "<tr>" +
+                        `<td>
+                            <div class="dropdown">
+                                <div class="btn btn-secondary btn-sm" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">!</div>
+                                <div class="dropdown-menu"
+                                    aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item buttonEditNews"
+                                        onclick="edit(${item.id})"><i class="fa fa-edit"></i> Edit
+                                    </a>
+                                    <button class="dropdown-item" type="submit" onclick="destroy(${item.id})"><i
+                                            class="fa fa-trash"></i> Delete</button>
+                                </div>
+                            </div>
+                        </td>` +
+                        "<td>" + (index + 1) + "</td>" +
+                        "<td>" + item.uraian + "</td>" +
+                        "<td>" + item.produsen_tingkat_dua + "</td>" +
+                        "<td>" + item.jumlah + "</td>" +
+                        "<td>" + item.tkdn + "</td>" +
+                        "<td>" + item.biaya + "</td>" +
+                        "<td>" + item.alokasi + "%</td>" +
+                        "<td>" + item.kdn + "</td>" +
+                        "<td>" + item.kln + "</td>" +
+                        "<td>" + item.total + "</td>" +
+                        "</tr>";
+
+                    tbody.append(row);
+                });
+            } else if (tbodyId == "tbody-3") {
+                const tbody = $(`#${tbodyId}`);
+                tbody.empty();
+                calculation = calculations.find(f => f.id == calculationId);
+                // let sumKdn = parseInt(calculation.sumKdn).toLocaleString()
+                // let sumKln = parseInt(calculation.sumKln).toLocaleString()
+                // let sumTotal = parseInt(calculation.sumTotal).toLocaleString()
+                // let sumPpn = parseInt(calculation.sumPpn).toLocaleString()
+                // let sumBm = parseInt(calculation.sumBm).toLocaleString()
+                // let sumPdriPpn = parseInt(calculation.sumPdriPpn).toLocaleString()
+                // let sumPph = parseInt(calculation.sumPph).toLocaleString()
+                // let sumPdriTotal = parseInt(calculation.sumPdriTotal).toLocaleString()
+                console.log(calculation);
+                calculation.data.forEach(function(item, index) {
+                    let row = "<tr>" +
+                        `<td>
+                            <div class="dropdown">
+                                <div class="btn btn-secondary btn-sm" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">!</div>
+                                <div class="dropdown-menu"
+                                    aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item buttonEditNews"
+                                        onclick="edit(${item.id})"><i class="fa fa-edit"></i> Edit
+                                    </a>
+                                    <button class="dropdown-item" type="submit" onclick="destroy(${item.id})"><i
+                                            class="fa fa-trash"></i> Delete</button>
+                                </div>
+                            </div>
+                        </td>` +
+                        "<td>" + (index + 1) + "</td>" +
+                        "<td>" + item.uraian_posisi + "</td>" +
+                        "<td>" + item.kewarganegaraan + "</td>" +
+                        "<td>" + item.kewarganegaraan == "Indonesia" ? "100%" : "0%" + "</td>" +
+                        "<td>" + item.jumlah_orang + "</td>" +
+                        "<td>" + item.gaji_per_bulan + "</td>" +
+                        "<td>" + item.alokasi + "%</td>" +
+                        "<td>" + item.kdn + "</td>" +
+                        "<td>" + item.kln + "</td>" +
+                        "<td>" + item.bpjs + "</td>" +
+                        "<td>" + item.tunjangan_lainnya + "</td>" +
+                        "</tr>";
+
+                    tbody.append(row);
+                });
+            }
         }
 
         function store(url, formData, redirectUrl, computationId) {
@@ -1736,6 +1923,8 @@
                 computation.data.splice(calculationIndex, 1);
 
                 reloadTable("tbody-1", 1);
+                reloadTable("tbody-2", 2);
+                reloadTable("tbody-3", 3);
 
                 swal({
                     title: "Success",
