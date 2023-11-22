@@ -1198,7 +1198,7 @@
     <script src="{{ asset('library/sweetalert/dist/sweetalert.min.js') }}"></script>
     <script src="{{ asset('assets/extra-libs/sparkline/sparkline.js') }}"></script>
     <script>
-        let data = [
+        let calculations = [
             {
                 "no": "1.1",
                 "nama": "Bahan Baku",
@@ -1211,8 +1211,9 @@
                 "slug": "jasa-terkait-bahan-baku",
                 "data" : []
             },
-
         ];
+
+
     </script>
     {{-- <script src="{{ asset('dist/js/users/script.js') }}"></script> --}}
 @endpush
