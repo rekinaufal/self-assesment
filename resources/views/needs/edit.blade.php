@@ -110,35 +110,36 @@
                         <h4 class="text-secondary">TKDN Barang</h4>
                         <hr>
 
-                        @if (request('type-create') == 'get')
+                        {{-- @if (request('type-create') == 'get') --}}
                             <div class="form-gorup">
                                 <label>Pilih Perhitungan</label>
                                 <select name="computation_id" class="form-control" id="selectComputation">
                                     @if (count($computation) > 0)
                                         @foreach ($computation as $item)
-                                            <option value="">{{ $item->id }}</option>
+                                            @if ($need->computation_id ==  $item->id)
+                                                <option value="{{ $item->id }}" selected>{{ $item->id }}</option>
+                                            @endif
+                                            <option value="{{ $item->id }}">{{ $item->id }}</option>
                                         @endforeach
                                     @else
                                         <option value="">Empty data</option>
                                         <option value="1">1</option>
+                                        <option value="1">2</option>
                                     @endif
                                 </select>
                             </div>
-                        @endif
+                        {{-- @endif  --}}
                         <div class="form-gorup">
                             <label>Nama Perusahaan</label>
-                            <input type="text" class="form-control" name="company_name"
-                                {{ request('type-create') == 'get' ? 'readonly' : '' }}>
+                            <input type="text" class="form-control" name="company_name" value="{{ auth()->user()->user_profile->company_name }}" readonly>
                         </div>
                         <div class="form-gorup">
                             <label>Jenis Produk</label>
-                            <input type="text" class="form-control" name="type_product"
-                                {{ request('type-create') == 'get' ? 'readonly' : '' }}>
+                            <input type="text" class="form-control" name="jenis_product" value="{{ $need->computation->brand ?? '' }}" readonly>
                         </div>
                         <div class="form-gorup">
                             <label>Tipe Produk</label>
-                            <input type="text" class="form-control" name="type_product"
-                                {{ request('type-create') == 'get' ? 'readonly' : '' }}>
+                            <input type="text" class="form-control" name="type_product" value="{{ $need->computation->product_type ?? '' }}" readonly>
                         </div>
                     </div>
                 </div>
@@ -729,7 +730,7 @@
                     <div class="d-flex justify-content-end">
                         <button class="btn btn-warning mr-2">Reset</button>
                         <button class="btn btn-success" id="simpan"
-                            onclick="store('{{ route('needs.store') }}', '{{ route('needs.index') }}')">
+                            onclick="update('{{ route('needs.store') }}', '{{ route('needs.index') }}', '{{ $need->id }}')">
                             Simpan
                         </button>
                     </div>
@@ -750,69 +751,43 @@
     <script src="{{ asset('library/sweetalert/dist/sweetalert.min.js') }}"></script>
     <script src="{{ asset('assets/extra-libs/sparkline/sparkline.js') }}"></script>
     <script>
+        // var data = <?= json_encode($need) ?>;
+        // datas = JSON.parse(response.jsonNeeds.json_needs);
+        
+        // var jsonParse = JSON.parse('{{ json_encode($need) }}');
         let formData = {};
-        // $("#simpan").click(function(){
-            // var formData = {};
-
-            // Process data for "1-1"
-            // formData["1-1"] = [];
-            // $("#1-1 input[type='checkbox']").each(function(){
-            //     var checkboxName = $(this).attr('name');
-            //     var checkboxValue = $(this).prop('checked');
-            //     formData["1-1"].push({ name: checkboxName, value: checkboxValue });
-            // });
-
-            // Process data for "2-1"
-            // formData["2-1"] = [];
-            // $("#2-1 input[type='checkbox']").each(function(){
-            //     var checkboxName = $(this).attr('name');
-            //     var checkboxValue = $(this).prop('checked');
-            //     formData["2-1"].push({ name: checkboxName, value: checkboxValue });
-            // });
-
-            // Process data for "2-2"
-            // formData["2-2"] = [];
-            // $("#2-2 input[type='checkbox']").each(function(){
-            //     var checkboxName = $(this).attr('name');
-            //     var checkboxValue = $(this).prop('checked');
-            //     formData["2-2"].push({ name: checkboxName, value: checkboxValue });
-            // });
-
-            // Process data for "2-3"
-            // formData["2-3"] = [];
-            // $("#2-3 input[type='checkbox']").each(function(){
-            //     var checkboxName = $(this).attr('name');
-            //     var checkboxValue = $(this).prop('checked');
-            //     formData["2-3"].push({ name: checkboxName, value: checkboxValue });
-            // });
-
-            // console.log(formData);
-            // console.log(formData["1-1"]);
-            // ini untuk pakai array
-            //  var arr = [];
-            // var form1 = {};
-            // form1["1-1"] = [];
-            // $("#1-1 input[type='checkbox']").each(function(){
-            //     var checkboxName = $(this).attr('name');
-            //     var checkboxValue = $(this).prop('checked');
-
-            //     form1["1-1"].push({ name: checkboxName, value: checkboxValue });
-            // });
-            // arr.push(form1);
-
-            // var form21 = {};
-            // form21["2-1"] = [];
-            // $("#2-1 input[type='checkbox']").each(function(){
-            //     var checkboxName = $(this).attr('name');
-            //     var checkboxValue = $(this).prop('checked');
-
-            //     form21["2-1"].push({ name: checkboxName, value: checkboxValue });
-            // });
-            // arr.push(form21);
-            // console.log(arr);
-        // });
-
-        function store(url, redirectUrl) {
+        let datas = {};
+        // get data
+        $.ajax({
+            type: 'GET',
+            url: '{{ $need->id != null ? route('needs.show', $need->id) : 'fail' }}',
+            success: function(response) {
+                // datas = JSON.parse(response.jsonNeeds.json_needs);
+                datas = response.jsonNeeds.json_needs;
+                datas["1-1"].forEach(function(data) {
+                    var val = data.value;
+                    console.log(val);
+                    $('input[name="' + data.name + '"]').prop('checked', val);
+                });
+                datas["2-1"].forEach(function(data) {
+                    var val = data.value;
+                    $('input[name="' + data.name + '"]').prop('checked', val);
+                });
+                datas["2-2"].forEach(function(data) {
+                    var val = data.value;
+                    $('input[name="' + data.name + '"]').prop('checked', val);
+                });
+                datas["2-3"].forEach(function(data) {
+                    var val = data.value;
+                    $('input[name="' + data.name + '"]').prop('checked', val);
+                });
+            },
+            error: function(error) {
+                console.log("error");
+            }
+        });
+        // update data 
+        function update(url, redirectUrl, id) {
             formData["1-1"] = [];
             $("#1-1 input[type='checkbox']").each(function(){
                 var checkboxName = $(this).attr('name');
@@ -845,14 +820,13 @@
             });
             var arrToString = JSON.stringify(formData);
             var computationId = $('#selectComputation').find(":selected").val();
-            // console.log(computationId); 
+
             formDataStore = {
                 json_needs: arrToString,
                 computation_id: computationId,
-                id: 0,
-
+                id: id,
             };
-            // console.log(formDataStore);
+            console.log(formDataStore);
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -881,146 +855,6 @@
                 }
             });
         }
+        console.log(datas);
     </script>
-    {{-- untuk menampilkan data json, comment sementara --}}
-    {{-- <script>
-        var data = <?= json_encode($needs) ?>;
-
-        $(document).ready(function() {
-            if (JSONParser()) {
-                renderData(data);
-            }
-        });
-
-        function JSONParser() {
-            if (data) {
-                data = '[' + data + ']';
-                data = JSON.parse(data);
-                console.log(data);
-                return true;
-            }
-            return false;
-        }
-
-        function renderData(val) {
-            var div = $('#form-content');
-
-            $.each(data[0], function(key, value) {
-                var i = 1;
-                if (key.includes('form_')) {
-                    var formData = value;
-                    var hasTabProperty = Object.keys(formData).some(function(prop) {
-                        return prop.includes('tab_');
-                    });
-
-                    if (!hasTabProperty) {
-                        var newDiv = $(
-                            '<div class="col-6">' +
-                            '</div>');
-                        var cardDiv = $(
-                            '<div class="card">' +
-                            '<div class="card-header bg-transparent">' +
-                            '<h4 class="card-title">' + formData.name + '</h4>' +
-                            '<p class="h6">PERUSAHAAN PEMOHON (BRAND OWNER)</p>' +
-                            '</div>' +
-                            '</div>');
-                        var cardBody = $('<div class="card-body">' +
-                            '</div>');
-                        for (var i = 1; formData['data_' + i]; i++) {
-                            var data = formData['data_' + i];
-                            var isElRequired = data.is_required ?
-                                '<button type="button" class="btn btn-outline-danger mr-2 flex-grow-1 text-left">' :
-                                '<button type="button" class="btn btn-outline-dark mr-2 flex-grow-1 text-left">';
-                            var divContent = $(
-                                '<div class="form-group d-flex align-items-center">' + isElRequired +
-                                '<i class="' + data.icon + '"> &nbsp;</i>' + data.name +
-                                '</button>' +
-                                '<div class="mr-2">' +
-                                '<a data-toggle="tooltip" title="' + data.tooltip + '">' +
-                                '<span class="icon-question"></span>' +
-                                '</a>' +
-                                '</div>' +
-                                '<div class="mr-2">' +
-                                '<input type="checkbox" name="profil_perusahaan" class="checkbox-round">' +
-                                '</div>'
-                            );
-                            cardBody.append(divContent);
-                        }
-                        cardDiv.append(cardBody);
-                        newDiv.append(cardDiv);
-                        div.append(newDiv);
-                    } else {
-                        // console.log("has tab :", formData);
-                        var newDiv = $(
-                            '<div class="col-6">' +
-                            '</div>');
-                        var cardDiv = $(
-                            '<div class="card">' +
-                            '<div class="card-header bg-transparent">' +
-                            '<h4 class="card-title">' + formData.name + '</h4>' +
-                            '</div>' +
-                            '</div>');
-                        var elListTab = $(` <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab" role="tablist"
-                            style="font-size: 11px">
-                            
-                        </ul>`);
-                        var tabContent = $(`<div class="tab-content" id="pills-tabContent p-3">
-                            </div>`);
-                        for (var i = 1; formData['tab_' + i]; i++) {
-                            var tabData = formData['tab_' + i];
-                            var listTab = `
-                                <li class="nav-item">
-                                    <a class="nav-link ${tabData.id === 1? 'active' : '' }" id="${tabData.id}" data-toggle="pill" href="#tab-${tabData.id}"
-                                        role="tab" aria-controls="tab-${tabData.id}" aria-selected="true">${tabData.name}</a>
-                                </li>
-                            `;
-                            elListTab.append(listTab);
-                            var listContent = $(`
-                            <div class="ml-2 tab-pane fade ${tabData.id === 1? 'show active' : '' }" id="tab-${tabData.id}" role="tabpanel"
-                                aria-labelledby="bahan-baku-tab">
-                            </div>
-                            `);
-                            var elListContent = $(`
-                            <ul class="ccontent">
-
-                            </ul>
-                            `);
-
-                            for (var x = 1; tabData['data_' + x]; x++) {
-                                var data_value = tabData['data_' + x];
-                                console.log(data_value);
-                                var dataContent = $(`
-                                <div class="form-group d-flex align-items-center">
-                                        <button type="button"
-                                            class="btn btn-outline-danger mr-2 flex-grow-1 text-left h6">
-                                            <i class="fas fa-address-card"></i> ${data_value.name}
-                                        </button>
-                                        <div class="mr-2">
-                                            <a href="#" data-toggle="tooltip"
-                                                title="This is a tooltip example that displays on the top">
-                                                <span class="icon-question"></span>
-                                            </a>
-                                        </div>
-                                        <div class="mr-2">
-                                            <input type="checkbox" name="daftar_kebutuhan" class="checkbox-round">
-                                        </div>
-                                    </div>
-                                `);
-                                elListContent.append(dataContent);
-                                listContent.append(elListContent);
-                                tabContent.append(listContent);
-                            }
-                        }
-                        cardDiv.append(elListTab);
-                        cardDiv.append(tabContent);
-                        newDiv.append(cardDiv);
-                        div.append(newDiv);
-                    }
-                }
-
-            });
-
-            console.log(val.length);
-        }
-    </script> --}}
 @endpush

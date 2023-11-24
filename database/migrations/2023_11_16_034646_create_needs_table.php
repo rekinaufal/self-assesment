@@ -15,8 +15,12 @@ return new class extends Migration
     {
         Schema::create('needs', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger("computation_id")->nullable();
             $table->json('json_needs');
             $table->timestamps();
+
+            $table->foreign("computation_id")->references("id")->on("computations")->nullOnDelete()->cascadeOnUpdate();
+
         });
     }
 

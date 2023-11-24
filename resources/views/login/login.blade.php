@@ -379,8 +379,7 @@
 
 
         {{-- ! New Login --}}
-        <section
-            class="w-100 bg-light mx-auto rounded d-flex justify-content-center align-items-center px-3 px-lg-0 py-5"
+        <section class="w-100 bg-light mx-auto rounded d-flex justify-content-center align-items-center px-3 px-lg-0 py-5"
             style="min-height: 100vh; max-width: 1920px; height: auto">
             <div class="card-auth bg-white rounded" style="height: auto; box-shadow: 0 0 20px -5px black">
                 <div class="w-100 h-100 row no-gutters">
@@ -580,6 +579,38 @@
                                 </div>
                             </div>
                             <div class="login-form w-100" style="min-width: 100%;">
+                                @if ($errors->any())
+                                    <div class="alert alert-danger alert-dismissible show fade">
+                                        <div class="alert-body">
+                                            <button class="close" data-dismiss="alert">
+                                                <span>&times;</span>
+                                            </button>
+                                            <strong>Error!</strong> {{ $errors->first() }}
+                                        </div>
+                                    </div>
+                                @endif
+                                @if (session()->has('success'))
+                                    <div class="alert alert-success alert-dismissible show fade">
+                                        <div class="alert-body">
+                                            <button class="close"
+                                                data-dismiss="alert">
+                                                <span>&times;</span>
+                                            </button>
+                                            <strong>{{ session('success') }}</strong>
+                                        </div>
+                                    </div>
+                                @endif
+                                @if (session()->has('failed'))
+                                    <div class="alert alert-danger alert-dismissible show fade">
+                                        <div class="alert-body">
+                                            <button class="close"
+                                                data-dismiss="alert">
+                                                <span>&times;</span>
+                                            </button>
+                                            <strong>{{ session('failed') }}</strong>
+                                        </div>
+                                    </div>
+                                @endif
                                 <div class="welcome-text d-flex justify-content-center">
                                     <small class="text-center">
                                         Welcome back!, Please login to your account.

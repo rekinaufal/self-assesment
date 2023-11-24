@@ -84,7 +84,7 @@
         </div>
 
         <div class="row">
-            {{-- @foreach ($users as $item) --}}
+            @foreach ($needs as $item)
                 <div class="col-12 col-md-6 col-lg-6">
                     <div class="card">
                         <div class="card-header bg-transparent">
@@ -102,7 +102,7 @@
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                         {{-- @can('user-edit') --}}
                                             {{-- <a class="dropdown-item" href="{{ route('users.edit',$item->id) }}"> --}}
-                                            <a class="dropdown-item" href="">
+                                            <a class="dropdown-item" href="{{ route('needs.edit', $item->id) }}">
                                                 <i class="fa fa-pencil-alt p-0"></i>&nbsp;&nbsp;&nbsp;Edit
                                             </a>
                                         {{-- @endcan --}}
@@ -125,9 +125,12 @@
                                 </div>
                             </div>
                             <div class="float-right pr-3">
-                                <button class="btn btn-secondary" type="button">
-                                    Permenperin 29 - HKT
-                                </button>
+                                <span class="badge badge-{{ $item->computation->permenperin_category->color }}">
+                                    {{ $item->computation->permenperin_category->name }}
+                                </span>
+                                {{-- <button class="btn btn-secondary" type="button">
+                                    {{ $item->computation->permenperin_category->name }}
+                                </button> --}}
                             </div>
                         </div>
                         <div class="card-body">
@@ -138,12 +141,12 @@
                                         <tr>
                                             <td>Jenis Produk</td>
                                             <td style="width: 10%" class="text-center">:</td>
-                                            <td></td>
+                                            <td>{{ $item->computation->product_type }}</td>
                                         </tr>
                                         <tr>
                                             <td>Tipe Produk</td>
                                             <td style="width: 10%" class="text-center">:</td>
-                                            <td></td>
+                                            <td>{{ $item->computation->brand }}</td>
                                         </tr>
                                     </table>
                                 </div>
@@ -174,7 +177,7 @@
                         </div>
                     </div>
                 </div>
-            {{-- @endforeach --}}
+            @endforeach
         </div>
         <div class="float-left">
             <input class="text-secondary mt-3 mb-3" type="checkbox" id="selectAllCheckbox" style="transform: scale(1.5);">&nbsp;&nbsp;&nbsp;Jumlah : 1 dari 1 Pengguna
