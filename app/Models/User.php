@@ -4,6 +4,9 @@ namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -18,16 +21,21 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     static $rules = [
-		'name' => 'required',
-		'username' => 'required|unique:users',
-		'email' => 'required|email|unique:users',
+        'fullname' => 'required',
+        'email' => 'required|email|unique:users',
+        'password' => 'required|min:8|confirmed'
     ];
-    
+
     protected $fillable = [
-        'name',
+        'fullname',
         'email',
-        'username',
         'password',
+        'user_category_id',
+        'is_active',
+    ];
+
+    protected $guarded = [
+        "id"
     ];
 
     /**
@@ -47,5 +55,41 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'expired_at' => 'date',
     ];
+
+    /**
+     * Get all of the computations for the User
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function computations(): HasMany
+    {
+        return $this->hasMany(Computation::class, 'user_id', 'id');
+    }
+
+    /**
+     * Get the user_profile that owns the User
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user_profile(): HasOne
+    {
+        return $this->hasOne(UserProfile::class, 'user_id', 'id');
+    }
+
+    public function user_category(): BelongsTo
+    {
+        return $this->belongsTo(UserCategory::class, "user_category_id", "id");
+    }
+
+    /**
+     * Get all of the payments for the User
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function payments(): HasMany
+    {
+        return $this->hasMany(Payment::class, 'user_id', 'id');
+    }
 }

@@ -35,20 +35,30 @@
 
 </aside>
 </div> --}}
-
 <aside class="left-sidebar" data-sidebarbg="skin6">
     <!-- Sidebar scroll-->
     <div class="scroll-sidebar" data-sidebarbg="skin6">
+        {{-- @dd(parse_url(request()->url())) --}}
+        {{-- @if(request()->has('news'))
+                asd
+        @endif --}}
         <!-- Sidebar navigation-->
         <nav class="sidebar-nav">
             <ul id="sidebarnav">
-                <li class="sidebar-item"> 
+                <li class="sidebar-item {{ Request::is('dashboard') ? 'active selected' : '' }}">
                     <a class="sidebar-link sidebar-link" href="{{ url('/') }}" aria-expanded="false">
                         <i data-feather="home" class="feather-icon"></i>
-                        <span class="hide-menu">Dashboard</span>
+                        <span class="hide-menu">Beranda</span>
                     </a>
                 </li>
                 
+                <li class="sidebar-item {{ parse_url(request()->url())['path'] == '/news' ? 'active selected' : '' }}">
+                    <a class="sidebar-link sidebar-link" href="{{ url('news') }}" aria-expanded="false">
+                        <i data-feather="file-text" class="feather-icon"></i>
+                        <span class="hide-menu">News</span>
+                    </a>
+                </li>
+
                 <li class="list-divider"></li>
                 <li class="nav-small-cap">
                     <span class="hide-menu">Admin</span>
@@ -60,12 +70,62 @@
                         <span class="hide-menu">Roles</span>
                     </a>
                 </li>
+
+                <li class="sidebar-item {{ Request::is('payment') ? 'active' : '' }}">
+                    <a class="sidebar-link sidebar-link" href="{{ url('payment') }}" aria-expanded="false">
+                        <i data-feather="file-text" class="feather-icon"></i>
+                        <span class="hide-menu">Payment Approval</span>
+                    </a>
+                </li>
+                
+                <li class="list-divider"></li>
+                <li class="nav-small-cap">
+                    <span class="hide-menu">Data Pengguna</span>
+                </li>
+
                 <li class="sidebar-item {{ Request::is('users') ? 'active' : '' }}">
                     <a class="sidebar-link sidebar-link" href="{{ url('users') }}" aria-expanded="false">
                         <i data-feather="message-square" class="feather-icon"></i>
-                        <span class="hide-menu">Users</span>
+                        <span class="hide-menu">User Profile</span>
                     </a>
                 </li>
+
+                <li class="list-divider"></li>
+                <li class="nav-small-cap">
+                    <span class="hide-menu">Regulasi TKDN</span>
+                </li>
+
+                <li class="sidebar-item {{ Request::is('permenperincategory') ? 'active' : '' }}">
+                    <a class="sidebar-link sidebar-link" href="{{ url('permenperincategory') }}" aria-expanded="false">
+                        <i data-feather="file-text" class="feather-icon"></i>
+                        <span class="hide-menu">Permen Category</span>
+                    </a>
+                </li>
+                <li class="sidebar-item {{ parse_url(request()->url())['path'] == '/needs' ? 'active selected' : '' }}">
+                    <a class="sidebar-link sidebar-link" href="{{ url('needs') }}" aria-expanded="false">
+                        <i data-feather="file-text" class="feather-icon"></i>
+                        <span class="hide-menu">List Of Needs</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item {{ Request::is('computation') ? 'active' : '' }}">
+                    <a class="sidebar-link sidebar-link" href="{{ url('computation') }}" aria-expanded="false">
+                        <i data-feather="file-text" class="feather-icon"></i>
+                        <span class="hide-menu">Calculation</span>
+                    </a>
+                </li>
+
+                {{-- <li class="list-divider"></li>
+                <li class="nav-small-cap">
+                    <span class="hide-menu">Data Pengguna</span>
+                </li>
+
+                <li class="sidebar-item {{ Request::is('roles') ? 'active' : '' }}">
+                    <a class="sidebar-link" href="{{ url('roles') }}" aria-expanded="false">
+                        <i  class="fas fa-user"></i>
+                        <span class="hide-menu">Profil Pengguna</span>
+                    </a>
+                </li> --}}
                 {{-- ================================================================================================== --}}
                 {{-- <li class="list-divider"></li>
                 <li class="nav-small-cap">
@@ -274,21 +334,21 @@
                                     1.4</span></a></li>
                     </ul>
                 </li> --}}
-                <li class="list-divider"></li>
+                {{-- <li class="list-divider"></li>
                 <li class="nav-small-cap">
                     <span class="hide-menu">Extra</span>
-                </li>
-                {{-- <li class="sidebar-item"> 
+                </li> --}}
+                {{-- <li class="sidebar-item">
                     <a class="sidebar-link sidebar-link" href="docs/docs.html" aria-expanded="false">
                         <i data-feather="edit-3" class="feather-icon"></i>
                         <span class="hide-menu">Documentation</span>
                     </a>
                 </li> --}}
-                <li class="sidebar-item"> 
+                {{-- <li class="sidebar-item">
                     <a class="sidebar-link sidebar-link" href="{{ route('logout') }}" aria-expanded="false"><i data-feather="log-out" class="feather-icon"></i>
                         <span class="hide-menu">Logout</span>
                     </a>
-                </li>
+                </li> --}}
             </ul>
         </nav>
         <!-- End Sidebar navigation -->

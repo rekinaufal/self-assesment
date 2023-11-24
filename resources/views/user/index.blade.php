@@ -4,7 +4,7 @@
 
 @push('style')
     <link href="{{ asset('assets/extra-libs/datatables.net-bs4/css/dataTables.bootstrap4.css') }}" rel="stylesheet">
-    <link href="{{ asset('dist/css/style.min.css') }}" rel="stylesheet">
+    {{-- <link href="{{ asset('dist/css/style.min.css') }}" rel="stylesheet"> --}}
 @endpush
 
 @section('main')
@@ -31,7 +31,7 @@
                 <p class="section-lead">
                     You can manage all posts, such as editing, deleting and more.
                 </p>
-                @if(session()->has('success'))
+                @if (session()->has('success'))
                     <div class="alert alert-success alert-dismissible show fade">
                         <div class="alert-body">
                             <button class="close"
@@ -42,7 +42,7 @@
                         </div>
                     </div>
                 @endif
-                @if(session()->has('failed'))
+                @if (session()->has('failed'))
                     <div class="alert alert-danger alert-dismissible show fade">
                         <div class="alert-body">
                             <button class="close"
@@ -81,7 +81,7 @@
                                 <div class="clearfix mb-3"></div>
                                 <div class="table-responsive">
                                     <div id="table-wrapper">
-                                        <div id="table-scroll">                        
+                                        <div id="table-scroll">
                                             <table class="table-striped table" id="table-users">
                                                 <thead>
                                                     <tr>
@@ -180,29 +180,27 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        @if(session()->has('success'))
+                        {{-- @if (session()->has('success'))
                             <div class="alert alert-success alert-dismissible show fade">
                                 <div class="alert-body">
-                                    <button class="close"
-                                        data-dismiss="alert">
+                                    <button class="close" data-dismiss="alert">
                                         <span>&times;</span>
                                     </button>
                                     <strong>{{ session('success') }}</strong>
                                 </div>
                             </div>
                         @endif
-                        @if(session()->has('failed'))
+                        @if (session()->has('failed'))
                             <div class="alert alert-danger alert-dismissible show fade">
                                 <div class="alert-body">
-                                    <button class="close"
-                                        data-dismiss="alert">
+                                    <button class="close" data-dismiss="alert">
                                         <span>&times;</span>
                                     </button>
                                     <strong>{{ session('failed') }}</strong>
                                 </div>
                             </div>
-                        @endif
-                        <div class="float-left">
+                        @endif --}}
+                        {{-- <div class="float-left">
                             <h4 class="card-title">{{ $pageTitle }} Data</h4>
                             @can('user-pdf')
                                 <div class="input-group">
@@ -212,10 +210,10 @@
                                     </a>
                                 </div>
                             @endcan
-                        </div>
-                        
-                        <div class="float-right">
-                            <a href="{{ route('roles.create') }}" class="btn btn-primary mb-1">
+                        </div> --}}
+
+                        {{-- <div class="float-right">
+                            <a href="{{ route('users.create') }}" class="btn btn-primary mb-1">
                                 Add New &nbsp;<i class="fas fa-plus"></i>
                             </a>
                             @can('user-excel')
@@ -233,7 +231,6 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Name</th>
-                                        <th>Username</th>
                                         <th>Email</th>
                                         <th>Created At</th>
                                         <th class="text-center" width="1%">#</th>
@@ -246,10 +243,7 @@
                                                 {{ $loop->iteration }}.
                                             </td>
                                             <td>
-                                                {{ $item->name }}
-                                            </td>
-                                            <td>
-                                                {{ $item->username }}
+                                                {{ $item->fullname }}
                                             </td>
                                             <td>
                                                 {{ $item->email }}
@@ -282,6 +276,181 @@
                                     @endforeach
                                 </tbody>
                             </table>
+                        </div> --}}
+
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="float-left">
+                                        <h4 class="card-title">{{ $pageTitle }} Data</h4>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="basic-addon1"><i
+                                                        class="fas fa-search"></i></span>
+                                            </div>
+                                            <input type="text" class="form-control" placeholder="Cari pengguna"
+                                                aria-label="Search" aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+                                    <div class="float-right pt-4">
+                                        <a href="{{ route('users.create') }}" class="btn btn-primary"><i
+                                                class="fas fa-plus"></i></a>
+                                    </div>
+                                    <div class="float-right pt-4 pr-3">
+                                        <div class="dropdown">
+                                            <button class="btn btn-secondary dropdown-toggle" type="button"
+                                                id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false">
+                                                Aksi&nbsp;&nbsp;&nbsp;<i class="fas fa-angle-down"></i>
+                                            </button>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                <a class="dropdown-item"><i
+                                                        class="fas fa-download"></i>&nbsp;&nbsp;&nbsp;Download</a>
+                                                <form action="{{ route('users.deletedBatch') }}" method="post"
+                                                    id="formDeleteBatch">
+                                                    @csrf
+                                                    <input type="hidden" name="delete_ids" id="usersWantDelete" />
+                                                    <button type="button"
+                                                        class="btn-sm px-lg-3 py-lg-2 text-nowrap dropdown-item"
+                                                        style="height: min-content" id="deleteSelectedUsers">
+                                                        <i class="fa fa-trash mr-3"></i>delete selected users
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                @foreach ($users as $item)
+                                    <div class="col-12 col-md-4 col-lg-4">
+                                        <div class="card">
+                                            <div class="card-header bg-transparent">
+                                                <div class="float-left">
+
+                                                    <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input checkbox-users"
+                                                            style="transform: scale(1.4); cursor: pointer;"
+                                                            data-id="{{ $item->id }}">
+                                                    </div>
+                                                </div>
+                                                <div class="float-right">
+                                                    <div class="dropdown">
+                                                        <button class="btn dropdown-toggle" type="button"
+                                                            id="dropdownMenuButton" data-toggle="dropdown"
+                                                            aria-haspopup="true" aria-expanded="false">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                                height="16" fill="currentColor"
+                                                                class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                                                            </svg>
+                                                        </button>
+                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                            @can('user-edit')
+                                                                <a class="dropdown-item"
+                                                                    href="{{ route('users.edit', $item->id) }}">
+                                                                    <i class="fa fa-pencil-alt p-0"></i>&nbsp;&nbsp;&nbsp;Edit
+                                                                </a>
+                                                            @endcan
+                                                            <a class="dropdown-item">
+                                                                <i class="fas fa-download"></i>&nbsp;&nbsp;&nbsp;Download
+                                                            </a>
+                                                            @can('user-delete')
+                                                                <form id="myForm-{{ $item->id }}"
+                                                                    action="{{ route('users.destroy', $item->id) }}"
+                                                                    method="POST" class="d-flex">
+                                                                    @csrf
+                                                                    @method('DELETE')
+                                                                    @can('user-delete')
+                                                                        <button type="submit" class="dropdown-item"
+                                                                            onclick="return confirm('Are you sure?')"
+                                                                            data-confirm-yes="confirmDelete({{ $item->id }})">
+                                                                            <i class="fas fa-trash-alt"></i>&nbsp;&nbsp;&nbsp;Hapus
+                                                                            Data
+                                                                        </button>
+                                                                    @endcan
+                                                                </form>
+                                                            @endcan
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-sm-6 col-md-7">
+                                                        <h5 class="text-center font-weight-bold">
+                                                            {{ $item->user_profile->company_name ?? '' }}</h5>
+                                                        <table>
+                                                            <tr>
+                                                                <td>@</td>
+                                                                <td style="width: 10%" class="text-center">:</td>
+                                                                <td>{{ $item->user_profile->fullname ?? '' }}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><i class=" fas fa-hospital"></i></td>
+                                                                <td style="width: 10%" class="text-center">:</td>
+                                                                <td>{{ $item->user_profile->company_address ?? '' }}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><i class="fas fa-phone"></i></td>
+                                                                <td style="width: 10%" class="text-center">:</td>
+                                                                <td>{{ $item->user_profile->phone_number ?? '' }}</td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                    <div class="col-sm-6 col-md-5">
+                                                        <div class="item">
+                                                            <div
+                                                                class="item__photo d-flex justify-content-center align-items-center">
+                                                                <img src="{{ asset($item->user_profile != null ? $item->user_profile->getAvatarPath() : 'assets/images/users/d1.jpg') }}"
+                                                                    alt="user" class="rounded-circle" width="100">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="float-left">
+                                                    @if ($item->user_category->name == 'Regular')
+                                                        <img src="{{ asset('assets/images/users/quality.png') }}"
+                                                            alt="reguler" width="20" style="vertical-align: top;">
+                                                    @else
+                                                        <img src="{{ asset('assets/images/users/crown.png') }}"
+                                                            alt="premium" width="20" style="vertical-align: top;">
+                                                    @endif
+                                                    {{ $item->user_category->name }}
+                                                </div>
+                                                <div class="float-right">
+                                                    @can('user-show')
+                                                        <a class="btn btn-sm btn-primary mr-1"
+                                                            href="{{ route('users.show', $item->id) }}" title="Show">
+                                                            Lihat Profil
+                                                        </a>
+                                                    @endcan
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <form action="{{ route('users.index') }}" id="form-perpage" class="pb-3">
+                                    <div class="form-group d-flex align-items-center">
+                                        <select name="perpage" id="perpage" class="form-control" style="width: 7rem">
+                                            <option value="6" {{ $perpage == 6 ? 'selected' : '' }}>Default</option>
+                                            <option value="15" {{ $perpage == 15 ? 'selected' : '' }}>15</option>
+                                            <option value="30" {{ $perpage == 30 ? 'selected' : '' }}>30</option>
+                                            <option value="45" {{ $perpage == 45 ? 'selected' : '' }}>45</option>
+                                            <option value="60" {{ $perpage == 60 ? 'selected' : '' }}>60</option>
+                                        </select>
+                                        <label for="perpage" class="pt-2 pl-2">Users per page</label>
+                                    </div>
+                                </form>
+                                <div>
+                                    {{ $users->links() }}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -289,16 +458,70 @@
         </div>
     </div>
 @endsection
-@push('scripts')
-    <script src="{{ asset('assets/libs/jquery/dist/jquery.min.js') }}"></script>
-    <script src="{{ asset('assets/libs/popper.js/dist/umd/popper.min.js') }}"></script>
-    <script src="{{ asset('assets/libs/bootstrap/dist/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('dist/js/app-style-switcher.js') }}"></script>
-    <script src="{{ asset('dist/js/feather.min.js') }}"></script>
-    <script src="{{ asset('assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js') }}"></script>
-    <script src="{{ asset('assets/extra-libs/sparkline/sparkline.js') }}"></script>
-    <script src="{{ asset('dist/js/sidebarmenu.js') }}"></script>
-    <script src="{{ asset('dist/js/custom.min.js') }}"></script>
-    <script src="{{ asset('assets/extra-libs/datatables.net/js/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ asset('dist/js/pages/datatable/datatable-basic.init.js') }}"></script>
-@endpush
+    @push('scripts')
+        <script>
+            $("#destroyByCheckbox").click(function() {
+                var checked = [];
+                $('.selectedUser:checkbox:checked').each(function() {
+                    checked.push($(this).data("id"));
+                });
+                if (checked.length > 0) {
+                    $("#idDownload").val(checked);
+                } else {
+                    alert('No users selected!');
+                }
+                console.log(checked);
+            });
+        </script>
+
+        <script>
+            // var selectAllCheckbox = document.getElementById('selectAllCheckbox');
+            // var ceklisCheckboxes = document.querySelectorAll('input[name="ceklis"]');
+
+            // selectAllCheckbox.addEventListener('change', function() {
+            //     if (selectAllCheckbox.checked) {
+            //         ceklisCheckboxes.forEach(function(checkbox) {
+            //             checkbox.checked = true;
+            //         });
+            //     } else {
+            //         ceklisCheckboxes.forEach(function(checkbox) {
+            //             checkbox.checked = false;
+            //         });
+            //     }
+            // });
+
+            // ceklisCheckboxes.forEach(function(checkbox) {
+            //     checkbox.addEventListener('change', function() {
+            //         if (!this.checked) {
+            //             selectAllCheckbox.checked = false;
+            //         }
+            //     });
+            // });
+        </script>
+        {{-- <script src="{{ asset('assets/extra-libs/sparkline/sparkline.js') }}"></script> --}}
+        {{-- <script src="{{ asset('assets/extra-libs/datatables.net/js/jquery.dataTables.min.js') }}"></script> --}}
+        {{-- <script src="{{ asset('dist/js/pages/datatable/datatable-basic.init.js') }}"></script> --}}
+        <script src="{{ asset('library/sweetalert/dist/sweetalert.min.js') }}"></script>
+        <script src="{{ asset('assets/extra-libs/sparkline/sparkline.js') }}"></script>
+        <script src="{{ asset('dist/js/users/script.js') }}"></script>
+        <script>
+            let originalPerpage;
+            originalPerpage = $("#perpage").val();
+            $("#perpage").change(() => {
+                swal({
+                    title: "Warning",
+                    text: "You have checked some users. If you want to change the 'perpage', you will lose any users that you have checked.",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true
+                }).then((willChange) => {
+                    if (willChange) {
+                        sessionStorage.removeItem("selectedUsers");
+                        $("#form-perpage").submit();
+                    } else {
+                        $("#perpage option[value='" + originalPerpage + "']").prop('selected', true);
+                    }
+                });
+            })
+        </script>
+    @endpush

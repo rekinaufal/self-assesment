@@ -27,15 +27,9 @@
                         </div>
                         <div class="card-body">
                             <div class="form-group row mb-4">
-                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Name</label>
+                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Full Name</label>
                                 <div class="col-sm-12 col-md-7">
-                                    <input type="text" name="name" placeholder="Name" class="form-control {{ ($errors->has('name') ? ' is-invalid' : '') }}" value="{{ $user->name }}"  required>
-                                </div>
-                            </div>
-                            <div class="form-group row mb-4">
-                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Username</label>
-                                <div class="col-sm-12 col-md-7">
-                                    <input type="text" name="username" placeholder="Username" class="form-control" value="{{ $user->username }}" required>
+                                    <input type="text" name="fullname" placeholder="Full Name" class="form-control {{ ($errors->has('fulname') ? ' is-invalid' : '') }}" value="{{ $user->fullname }}" required>
                                 </div>
                             </div>
                             <div class="form-group row mb-4">
@@ -50,16 +44,6 @@
                                     <input type="text" name="password" placeholder="Password" class="form-control" required>
                                 </div>
                             </div>
-                            {{-- <div class="form-group row mb-4">
-                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Roles</label>
-                                <div class="col-sm-12 col-md-7">
-                                    <select class="form-control select2">
-                                        @foreach($missingDataRoleUserForOption as $item)
-                                            <option value="{{ $item->name }}" {{ $item == $userRole ? 'selected' : '' }}>{{ $item->name }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                            </div> --}}
                             <div class="form-group row mb-4">
                                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Roles</label>
                                 <div class="col-sm-12 col-md-7">

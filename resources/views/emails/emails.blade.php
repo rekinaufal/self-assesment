@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Screening Indonesia</title>
+    <title>E-learning</title>
 </head>
 <body>
     @if (!empty($details['title']))

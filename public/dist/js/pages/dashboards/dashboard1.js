@@ -8,10 +8,10 @@ $(function () {
         bindto: '#campaign-v2',
         data: {
             columns: [
-                ['Direct Sales', 25],
-                ['Referral Sales', 15],
-                ['Afilliate Sales', 10],
-                ['Indirect Sales', 15]
+                ['Permenperin 1', 25],
+                ['Permenperin 2', 15],
+                ['Permenperin 3', 10],
+                ['Permenperin 4', 15]
             ],
 
             type: 'donut',
@@ -80,6 +80,7 @@ $(function () {
         }]
     ];
     new Chartist.Bar('.net-income', data, options, responsiveOptions);
+    new Chartist.Bar('.net-income2', data, options, responsiveOptions);
 
     // ============================================================== 
     // Visit By Location
