@@ -65,7 +65,9 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Bank Account Name</th>
+                                        <th>Bank Account Number</th>
                                         <th>Bank Name</th>
+                                        <th>Transaction Receipt</th>
                                         <th>Created At</th>
                                         <th class="text-center" width="1%">#</th>
                                     </tr>
@@ -80,7 +82,36 @@
                                                 {{ $item->bank_account_name ?? '' }}
                                             </td>
                                             <td>
+                                                {{ $item->bank_account_number ?? '' }}
+                                            </td>
+                                            <td>
                                                 {{ $item->bank_name ?? '' }}
+                                            </td>
+                                            <td>
+                                                @if ($item->transaction_receipt)
+                                                <button class="btn btn-link" data-toggle="modal" data-target="#previewModal-{{ $loop->iteration }}">View Receipt &nbsp;<i class="fa fa-eye"></i></button>
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="previewModal-{{ $loop->iteration }}" tabindex="-1" role="dialog" aria-labelledby="previewModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="previewModalLabel">Transaction Receipt</h5>
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <img src="{{ asset('assets/'.$item->transaction_receipt) }}" alt=" Receipt Preview" class="img-fluid">
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            @else
+                                                No Receipt Available
+                                            @endif
                                             </td>
                                             <td>
                                                 {{ $item->created_at ?? '' }}
@@ -104,6 +135,10 @@
     </div>
 @endsection
 @push('scripts')
+    <script src="{{ asset('assets/extra-libs/sparkline/sparkline.js') }}"></script>
+    <script src="{{ asset('assets/libs/sweetalert/dist/sweetalert.min.js') }}"></script>
+    <script src="{{ asset('assets/extra-libs/datatables.net/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('dist/js/pages/datatable/datatable-basic.init.js') }}"></script>
     <script>
         $(document).ready(function() {
             $('.approve-payment').on('click', function(e) {
@@ -135,8 +170,5 @@
         });
     </script>
 
-    <script src="{{ asset('assets/extra-libs/sparkline/sparkline.js') }}"></script>
-    <script src="{{ asset('library/sweetalert/dist/sweetalert.min.js') }}"></script>
-    <script src="{{ asset('assets/extra-libs/datatables.net/js/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ asset('dist/js/pages/datatable/datatable-basic.init.js') }}"></script>
+    
 @endpush
