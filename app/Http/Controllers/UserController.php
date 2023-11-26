@@ -64,7 +64,9 @@ class UserController extends Controller
                   ->whereColumn('roles.id', 'model_has_roles.role_id');
         })
         ->get();
-        return view('user.create', compact('user', 'pageTitle', 'missingDataRoleUserForOption'));
+        $roles = Role::get();
+        // dd($roles);
+        return view('user.create', compact('user', 'pageTitle', 'missingDataRoleUserForOption', 'roles'));
     }
 
     public function store(Request $req)

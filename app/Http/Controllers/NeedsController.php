@@ -39,7 +39,7 @@ class NeedsController extends Controller
 
         $credentials = $request->validate([
             "json_needs" => ["required", "json"],
-            "computation_id" => ["required"],
+            // "computation_id" => ["required"],
             "id" => '',
         ]);
 
@@ -47,7 +47,7 @@ class NeedsController extends Controller
         $needs = Needs::updateOrInsert(["id" => $credentials["id"]] ,$credentials);
 
 
-        return response()->json(["success" => "Berhasil simpan list kebutuhan"], 200);
+        return response()->json(["success" => "Success Insert List Of Need"], 200);
     }
 
     public function edit($id)

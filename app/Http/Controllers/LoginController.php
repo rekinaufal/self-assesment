@@ -64,11 +64,10 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
-        $user = User::where('email', $request->email)->first();
         // $profile = UserProfile::where('user_id', $user->id)->first();
         $remember = request('remember');
         // if (!empty($user)) {
-        //     // $userRole = $user->roles->pluck('name')->first();
+            //     // $userRole = $user->roles->pluck('name')->first();
         //     // // Validate login on the admin page and use a non-admin account.
         //     // if ($request->type == 'admin' && $userRole != 'Administrator') {
         //     //     return back()->withErrors([
@@ -81,7 +80,17 @@ class LoginController extends Controller
         //     //     ]);
         //     // }
         // }
-
+        // $user = User::where('email', $email)->get();
+        // $email = '';
+        // $email = (string)$request->email;
+        $user = DB::table('users')->where('email', $request->email)->first();
+        if (!$user || !$user->email_verified_at) {
+            return back()->withErrors([
+                'email' => 'The provided credentials do not match our records or the email is not verified.',
+                'section' => 'login',
+            ]);
+        }
+        
         if (Auth::attempt($request->only('email', 'password'), $remember)) {
             $request->session()->regenerate();
             // Menyimpan avatar ke session
@@ -168,7 +177,8 @@ class LoginController extends Controller
         $credentials = [
             "email" => $request->email,
             "password" => Hash::make($request->password),
-            "user_category_id" => 1
+            "user_category_id" => 1,
+            "is_active" => 1
         ];
 
         $user = User::create($credentials);
@@ -178,10 +188,48 @@ class LoginController extends Controller
             "fullname" => $request->fullname
         ]);
 
+        $user->assignRole('Pengguna');
+
+        // dd($user->id, $request->fullname, $request->email);
+        $this->sendEmailRegister($user->id, $request->fullname, $request->email);
+
         if ($user_profile) {
-            return redirect()->route('login')->with('success', 'Registrasi Berhasil');
+            return redirect()->route('login')->with('success', 'Please check your email for verification. If its not in your inbox, check your spam folder. ');
         } else {
             return redirect()->back()->with('failed', 'Registrasi gagal');
         }
+    }
+
+    public function sendEmailRegister ($id, $name, $email) {
+        // dd($name . '-' . $email );
+        $subject = "Registration Comfirmation";
+        $details = [
+            'title' => 'Registration E-learning',
+            'body1' => 'Dear ' . $name . ' , Thank you for creating an account through our website 
+                        E-learning. For your security, please kindly 
+                        verify your account for a better experience by clicking the 
+                        button below',
+            'button'=> $id, 
+            'body2' => 'If in any case, you need our assistance, please do not 
+                        hesitate to contact us through email at 
+                        artexsinergi@smtp14.mailtarget.co.',
+            ];
+           
+            \Mail::to($email)->send(new \App\Mail\VerifyRegister($details, $subject));
+    }
+
+    public function verify ($id) {
+        $Get = DB::table('users')->where('id', $id)->first();
+        if ($Get->email_verified_at != null) {
+            return redirect ('/')->with('failed', 'Your email has been verified on '. $Get->email_verified_at);
+        } else {
+            $mytime = Carbon::now();
+            $fieldUpdate = [
+                'email_verified_at' =>  $mytime->toDatetimeString()
+                ];
+            $update = DB::table('users')->where('id', $id)->update($fieldUpdate);
+            return redirect ('/')->with('success', 'Verify email successfully, Please login');
+        }
+
     }
 }

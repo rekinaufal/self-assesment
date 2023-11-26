@@ -18,7 +18,7 @@ class RoleSeeder extends Seeder
         $data = [
             [
                 "id" => 1,
-                "name" => "Administrator",
+                "name" => "Admin",
                 "guard_name" => "web",
                 "created_at" => date("Y-m-d H:i:s"),
                 "updated_at" => NULL
@@ -26,6 +26,13 @@ class RoleSeeder extends Seeder
             [
                 "id" => 2,
                 "name" => "Staff IT",
+                "guard_name" => "web",
+                "created_at" => date("Y-m-d H:i:s"),
+                "updated_at" => NULL
+            ],
+            [
+                "id" => 3,
+                "name" => "Pengguna",
                 "guard_name" => "web",
                 "created_at" => date("Y-m-d H:i:s"),
                 "updated_at" => NULL

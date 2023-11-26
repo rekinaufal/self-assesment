@@ -826,34 +826,59 @@
                 computation_id: computationId,
                 id: id,
             };
-            console.log(formDataStore);
+            // console.log(formDataStore);
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
             });
 
-            $.ajax({
-                type: 'POST',
-                url: url,
-                data: formDataStore,
-                success: function(response) {
-                    swal({
-                        title: "Success",
-                        text: response.success,
-                        icon: "success"
-                    }).then((willRedirect) => {
-                        if (willRedirect) {
-                            location.href = redirectUrl
-                        } else {
-                            // calculations = JSON.parse(response.calculationResult.results);
-                        }
-                    });
-                },
-                error: function(error) {
-                    console.log(error);
-                }
-            });
+            var approveUrl = $(this).attr('href');
+            swal({
+                    title: 'Are you sure?',
+                    text: 'Do you want to make calculations?',
+                    icon: 'warning',
+                    buttons: [
+                        'No',
+                        'Yes'
+                    ],
+                }).then(function(isConfirm) {
+                    if (isConfirm) {
+                        window.location.href = approveUrl;
+                        // swal({
+                        //     title: 'Shortlisted!',
+                        //     text: 'Candidates are successfully shortlisted!',
+                        //     icon: 'success'
+                        // }).then(function() {
+                        //     form.submit(); // <--- submit form programmatically
+                        // });
+                    } else {
+                        // simpan list kebutuhan
+                        $.ajax({
+                            type: 'POST',
+                            url: url,
+                            data: formDataStore,
+                            success: function(response) {
+                                swal({
+                                    title: "Success",
+                                    text: response.success,
+                                    icon: "success"
+                                }).then((willRedirect) => {
+                                    if (willRedirect) {
+                                        location.href = redirectUrl
+                                    } else {
+                                        // calculations = JSON.parse(response.calculationResult.results);
+                                    }
+                                });
+                            },
+                            error: function(error) {
+                                console.log(error);
+                            }
+                        });
+                    }
+                });
+
+
         }
         console.log(datas);
     </script>

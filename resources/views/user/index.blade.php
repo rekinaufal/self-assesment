@@ -412,14 +412,16 @@
                                                 </div>
                                                 <hr>
                                                 <div class="float-left">
-                                                    @if ($item->user_category->name == 'Regular')
-                                                        <img src="{{ asset('assets/images/users/quality.png') }}"
-                                                            alt="reguler" width="20" style="vertical-align: top;">
-                                                    @else
-                                                        <img src="{{ asset('assets/images/users/crown.png') }}"
-                                                            alt="premium" width="20" style="vertical-align: top;">
+                                                    @if(!empty($item->user_category->name))
+                                                        @if ($item->user_category->name == 'Regular')
+                                                            <img src="{{ asset('assets/images/users/quality.png') }}"
+                                                                alt="reguler" width="20" style="vertical-align: top;">
+                                                        @else
+                                                            <img src="{{ asset('assets/images/users/crown.png') }}"
+                                                                alt="premium" width="20" style="vertical-align: top;">
+                                                        @endif
                                                     @endif
-                                                    {{ $item->user_category->name }}
+                                                    {{ $item->user_category->name ?? '' }}
                                                 </div>
                                                 <div class="float-right">
                                                     @can('user-show')

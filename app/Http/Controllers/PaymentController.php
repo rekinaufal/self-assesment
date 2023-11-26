@@ -135,8 +135,14 @@ class PaymentController extends Controller
             if ($user) {
                 foreach ($user as $item) {
                     $user = User::find($item->id);
-                    $roleName = $user->roles->first()->name;
-                    if ($roleName == 'Admin' || $roleName == 'Administrator' || $roleName == 'SuperAdmin') {
+                    // $roleName = $user->roles->first()->name;
+                    $userRole = "";
+                    if (!$user->roles->isEmpty()) {
+                        $userRole == $user->roles[0]->name;
+                    } 
+                    // dd($userRole);
+
+                    if ($userRole == 'Admin' || $userRole == 'Administrator' || $userRole == 'SuperAdmin' || $userRole == 'Staff IT') {
                         User::find($item->id)->notify(new PaymentNotifications($req));
                     }   
                 } 
@@ -156,8 +162,8 @@ class PaymentController extends Controller
                 'closing'       => 'Segera check pembayaran tersebut.',
             ];
             // send email admin 
-            \Mail::to('rekinaufal@gmail.com')->send(new \App\Mail\NotifPayment($details, $subject));
-            // \Mail::to('artexsinergi@smtp14.mailtarget.co')->send(new \App\Mail\NotifPayment($details, $subject));
+            // \Mail::to('rekinaufal@gmail.com')->send(new \App\Mail\NotifPayment($details, $subject));
+            \Mail::to('artexsinergi@smtp14.mailtarget.co')->send(new \App\Mail\NotifPayment($details, $subject));
 
             return redirect()->back()->with('success', 'Pembayaran berhasil dibuat');
         } else {

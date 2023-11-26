@@ -36,8 +36,10 @@ Route::get('/', 'LoginController@index')->name('login');
 Route::get('/admin_panel', 'LoginController@loginAdmin')->name('loginAdmin');
 Route::post('/login', 'LoginController@login')->name('login.post');
 Route::get('/logout', 'LoginController@logout')->name('logout');
-Route::post('/register', 'LoginController@register')->name('register');
 
+//register
+Route::post('/register', 'LoginController@register')->name('register');
+Route::get('/verify/{id}', [LoginController::class, 'verify']);
 // Route::get("testing-login-one", [LoginController::class, "loginOne"]);
 // Route::get("testing-login-two", [LoginController::class, "loginTwo"]);
 

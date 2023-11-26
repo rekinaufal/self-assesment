@@ -101,54 +101,57 @@
                     <div class="card-header">
                         <h4>Write Your {{ $pageTitle ?? '' }}</h4>
                     </div>
-                    <div class="card-body">
-                        <div class="form-group row mb-4">
-                            <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Name</label>
-                            <div class="col-sm-12 col-md-7">
-                                <input type="text" name="name" placeholder="Name" class="form-control" required>
+                    <form method="POST" action="{{ route('roles.store') }}"  role="form" enctype="multipart/form-data">
+                        @csrf
+                        <div class="card-body">
+                            <div class="form-group row mb-4">
+                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Name</label>
+                                <div class="col-sm-12 col-md-7">
+                                    <input type="text" name="name" placeholder="Name" class="form-control" required>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group row mb-4">
-                            <label>Permission</label>
-                            <table class="table table-bordered">
-                                <tr class="bg-success">
-                                    <td width="1%">
-                                        <input id="head" type="checkbox">
-                                    </td>
-                                    <td>
-                                        <label for="head" class="m-0 text-white">Check All</label>
-                                    </td>
-                                </tr>
-                                @php $lastp = ""; @endphp
-                                @foreach($permissions as $value)
-                                    @php $v = explode('-', $value->name)[0]; @endphp
-                                    @if($lastp != $v)
-                                        <tr class="bg-primary">
-                                            <td>
-                                                <input class="head-2" data-child=".{{ $v }}" type="checkbox" id="{{ $v }}-head">
-                                            <td>
-                                                <label for="{{ $v }}-head" class="m-0 text-white">{{ ucfirst($v) }}</label>
-                                            </td>
-                                        </tr>
-                                    @endif
-                                    <tr>
+                            <div class="form-group row mb-4">
+                                <label>Permission</label>
+                                <table class="table table-bordered">
+                                    <tr class="bg-success">
                                         <td width="1%">
-                                            <input type="checkbox" name="permission[]" class="name all {{ $v }}" id="{{ $value->name }}" value="{{ $value->id }}">
+                                            <input id="head" type="checkbox">
                                         </td>
                                         <td>
-                                            <label for="{{ $value->name }}" class="m-0">{{ $value->name }}</label>
+                                            <label for="head" class="m-0 text-white">Check All</label>
                                         </td>
                                     </tr>
-                                    @php $lastp = $v; @endphp
-                                @endforeach
-                            </table>
-                        </div>
-                        <div class="form-group row mb-4">
-                            <div class="col-sm-12 col-md-7">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                    @php $lastp = ""; @endphp
+                                    @foreach($permissions as $value)
+                                        @php $v = explode('-', $value->name)[0]; @endphp
+                                        @if($lastp != $v)
+                                            <tr class="bg-primary">
+                                                <td>
+                                                    <input class="head-2" data-child=".{{ $v }}" type="checkbox" id="{{ $v }}-head">
+                                                <td>
+                                                    <label for="{{ $v }}-head" class="m-0 text-white">{{ ucfirst($v) }}</label>
+                                                </td>
+                                            </tr>
+                                        @endif
+                                        <tr>
+                                            <td width="1%">
+                                                <input type="checkbox" name="permission[]" class="name all {{ $v }}" id="{{ $value->name }}" value="{{ $value->id }}">
+                                            </td>
+                                            <td>
+                                                <label for="{{ $value->name }}" class="m-0">{{ $value->name }}</label>
+                                            </td>
+                                        </tr>
+                                        @php $lastp = $v; @endphp
+                                    @endforeach
+                                </table>
+                            </div>
+                            <div class="form-group row mb-4">
+                                <div class="col-sm-12 col-md-7">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>

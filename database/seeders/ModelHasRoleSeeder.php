@@ -18,6 +18,7 @@ class ModelHasRoleSeeder extends Seeder
         $users = DB::table("users")->get();
         $administratorRole = DB::table("roles")->find(1);
         $staffItRole = DB::table("roles")->find(2);
+        $penggunaRole = DB::table("roles")->find(3);
 
         $userAdminIds = [1, 2, 3, 4];
 
@@ -28,7 +29,13 @@ class ModelHasRoleSeeder extends Seeder
                     "model_type" => "App\\Models\\User",
                     "model_id" => $user->id
                 ]);
-            } else {
+            } elseif (in_array($user->id, $userAdminIds)) {
+                DB::table("model_has_roles")->insert([
+                    "role_id" => $penggunaRole->id,
+                    "model_type" => "App\\Models\\User",
+                    "model_id" => $user->id
+                ]);
+            } elseif (in_array($user->id, $userAdminIds)) {
                 DB::table("model_has_roles")->insert([
                     "role_id" => $staffItRole->id,
                     "model_type" => "App\\Models\\User",

@@ -21,13 +21,14 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     static $rules = [
-        'fullname' => 'required',
+        // 'fullname' => 'required',
         'email' => 'required|email|unique:users',
-        'password' => 'required|min:8|confirmed'
+        'password' => 'required|min:8'
+        // 'password' => 'required|min:8|confirmed'
     ];
 
     protected $fillable = [
-        'fullname',
+        // 'fullname',
         'email',
         'password',
         'user_category_id',

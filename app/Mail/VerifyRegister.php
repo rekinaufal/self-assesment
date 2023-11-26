@@ -9,7 +9,7 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class Email extends Mailable
+class VerifyRegister extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -29,6 +29,6 @@ class Email extends Mailable
     public function build()
     {
         return $this->subject($this->subject)
-        ->view('emails.emails');
+        ->view('emails.verify-register');
     }
 }
