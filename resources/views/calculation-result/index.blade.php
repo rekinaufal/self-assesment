@@ -549,7 +549,7 @@
                                                         class="fas fa-info-circle">
                                                     </i></label>
                                                 <input type="text" class="form-control form-control-sm "
-                                                    id="" placeholder="" name="uraian posisi">
+                                                    id="" placeholder="" name="uraian_posisi">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -672,7 +672,7 @@
                                                         <th scope="col">Tunjangan Lainnya</th>
                                                     </tr>
                                                 </thead>
-                                                <tbody>
+                                                <tbody id="tbody-3">
                                                     <tr>
                                                         <td>
                                                             <div class="dropdown">
@@ -755,60 +755,60 @@
                                 </div>
                                 <div class="row card">
                                     <div class="col ">
-                                        <form class="d-flex flex-wrap" style="width: 100%">
+                                        <form class="d-flex flex-wrap" style="width: 100%" id="form-4" method="post">
                                             <div class="form-group-sm mx-2 mt-2" style="font-size: 10pt; width : 13rem">
-                                                <label for="">Uraian Posisi <i data-toggle="tooltip"
+                                                <label for="uraian_posisi">Uraian Posisi <i data-toggle="tooltip"
                                                         data-placement="top"
                                                         title="Nama bahan baku adalah nama yang ditunjukkan pada nama material bahan baku dalam pembuatan produk. Contoh : Biji besi, Bracket dll"
                                                         class="fas fa-info-circle">
                                                     </i></label>
                                                 <input type="text" class="form-control form-control-sm "
-                                                    id="" placeholder="">
+                                                    id="uraian_posisi" name="uraian_posisi" placeholder="">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="">Pemasok / Produsen Tingkat 2 <i
+                                                <label for="produsen_tingkat_dua">Pemasok / Produsen Tingkat 2 <i
                                                         class="fas fa-info-circle" data-toggle="tooltip"
                                                         data-placement="top" title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm" id=""
+                                                <input type="text" class="form-control form-control-sm" id="produsen_tingkat_dua" name="produsen_tingkat_dua"
                                                     placeholder="">
                                             </div>
 
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="">TKDN % <i class="fas fa-info-circle"
+                                                <label for="tkdn">TKDN % <i class="fas fa-info-circle"
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm" id=""
+                                                <input type="text" class="form-control form-control-sm" id="tkdn" name="tkdn"
                                                     placeholder="">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="">Jumlah Orang <i class="fas fa-info-circle"
+                                                <label for="jumlah_orang">Jumlah Orang <i class="fas fa-info-circle"
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm" id=""
+                                                <input type="text" class="form-control form-control-sm" id="jumlah_orang" name="jumlah_orang"
                                                     placeholder="Rp.">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="">Biaya Pengurusan Per Bulan <i
+                                                <label for="biaya_pengurusan_per_bulan">Biaya Pengurusan Per Bulan <i
                                                         class="fas fa-info-circle" data-toggle="tooltip"
                                                         data-placement="top" title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm" id=""
+                                                <input type="text" class="form-control form-control-sm" id="biaya_pengurusan_per_bulan" name="biaya_pengurusan_per_bulan"
                                                     placeholder="">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="">Alokasi % <i class="fas fa-info-circle"
+                                                <label for="alokasi">Alokasi % <i class="fas fa-info-circle"
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm" id=""
+                                                <input type="text" class="form-control form-control-sm" id="alokasi" name="alokasi"
                                                     placeholder="">
                                             </div>
 
@@ -855,7 +855,7 @@
                                                         <th scope="col">Total</th>
                                                     </tr>
                                                 </thead>
-                                                <tbody>
+                                                <tbody id="tbody-4">
                                                     <tr>
                                                         <td>
                                                             <div class="dropdown">
@@ -935,24 +935,24 @@
                                 </div>
                                 <div class="row card">
                                     <div class="col ">
-                                        <form class="d-flex flex-wrap" style="width: 100%">
+                                        <form class="d-flex flex-wrap" style="width: 100%" id="form-5" method="post">
                                             <div class="form-group-sm mx-2 mt-2" style="font-size: 10pt; width : 13rem">
-                                                <label for="">
+                                                <label for="uraian_posisi">
                                                     Uraian Posisi
                                                     <i data-toggle="tooltip" data-placement="top"
                                                         title="Nama bahan baku adalah nama yang ditunjukkan pada nama material bahan baku dalam pembuatan produk. Contoh : Biji besi, Bracket dll"
                                                         class="fas fa-info-circle">
                                                     </i>
                                                 </label>
-                                                <input type="text" class="form-control form-control-sm">
+                                                <input type="text" class="form-control form-control-sm" id="uraian_posisi" name="uraian_posisi">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="">Kewarganegaraan <i class="fas fa-info-circle"
+                                                <label for="kewarganegaraan">Kewarganegaraan <i class="fas fa-info-circle"
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <select class="form-control form-control-sm" id="">
+                                                <select class="form-control form-control-sm" id="kewarganegaraan" name="kewarganegaraan">
                                                     <option></option>
                                                     <option>Indonesia</option>
                                                     <option>Zimbabwe</option>
@@ -968,7 +968,7 @@
                                                     <i class="fas fa-info-circle" data-toggle="tooltip"
                                                         data-placement="top" title="Tooltip on top"></i>
                                                 </label>
-                                                <input type="text" class="form-control form-control-sm">
+                                                <input type="text" class="form-control form-control-sm" id="jumlah_orang" name="jumlah_orang">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -978,7 +978,7 @@
                                                         data-placement="top" title="Tooltip on top"></i>
                                                 </label>
                                                 <input type="text" class="form-control form-control-sm"
-                                                    placeholder="Rp.">
+                                                    placeholder="Rp." id="gaji_perbulan" name="gaji_perbulan">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -988,7 +988,7 @@
                                                         data-placement="top" title="Tooltip on top"></i>
                                                 </label>
                                                 <input type="text" class="form-control form-control-sm"
-                                                    placeholder="">
+                                                    placeholder="" id="alokasi" name="alokasi">
                                             </div>
 
                                             <div class="d-flex justify-content-end mt-2"
@@ -1033,7 +1033,7 @@
                                                         <th scope="col">Total</th>
                                                     </tr>
                                                 </thead>
-                                                <tbody>
+                                                <tbody id="tbody-5">
                                                     <tr>
                                                         <td>
                                                             <div class="dropdown">
@@ -1115,7 +1115,7 @@
                                 </div>
                                 <div class="row card">
                                     <div class="col ">
-                                        <form class="d-flex flex-wrap" style="width: 100%">
+                                        <form class="d-flex flex-wrap" style="width: 100%" id="form-6" method="post">
                                             <div class="form-group-sm mx-2 mt-2" style="font-size: 10pt; width : 13rem">
                                                 <label for="">Uraian <i data-toggle="tooltip"
                                                         data-placement="top"
@@ -1123,7 +1123,7 @@
                                                         class="fas fa-info-circle">
                                                     </i></label>
                                                 <input type="text" class="form-control form-control-sm "
-                                                    id="" placeholder="">
+                                                    id="" placeholder="" name="uraian">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -1132,7 +1132,7 @@
                                                         title="Tooltip on top">
                                                     </i></label>
                                                 <input type="text" class="form-control form-control-sm" id=""
-                                                    placeholder="">
+                                                    placeholder="" name="spesifikasi">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -1141,7 +1141,7 @@
                                                         title="Tooltip on top">
                                                     </i></label>
                                                 <input type="text" class="form-control form-control-sm" id=""
-                                                    placeholder="">
+                                                    placeholder="" name="jumlah_unit">
                                             </div>
 
 
@@ -1151,7 +1151,7 @@
                                                         data-placement="top" title="Tooltip on top">
                                                     </i></label>
                                                 <input type="text" class="form-control form-control-sm" id=""
-                                                    placeholder="Rp.">
+                                                    placeholder="Rp." name="biaya_depresiasi_perbulan">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -1160,7 +1160,7 @@
                                                         title="Tooltip on top">
                                                     </i></label>
                                                 <input type="text" class="form-control form-control-sm" id=""
-                                                    placeholder="">
+                                                    placeholder="" name="alokasi_mesin">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt;">
@@ -1175,18 +1175,20 @@
                                                         <div class="row">
                                                             <div class="form-group-sm ml-2" style="font-size: 7pt;">
                                                                 <label for="">Dibuat</label>
-                                                                <select name="" id=""
+                                                                <select name="alat_kerja" id=""
                                                                     class="form-control form-control-sm"
                                                                     style="width: 8rem">
-                                                                    <option value="">Dalam Negeri</option>
+                                                                    <option value="Dalam Negeri">Dalam Negeri</option>
+                                                                    <option value="Luar Negeri">Luar Negeri</option>
                                                                 </select>
                                                             </div>
                                                             <div class="form-group-sm ml-2" style="font-size: 7pt;">
                                                                 <label for="">Dimiliki</label>
-                                                                <select name="" id=""
+                                                                <select name="dimiliki" id=""
                                                                     class="form-control form-control-sm"
                                                                     style="width: 8rem">
-                                                                    <option value="">Dalam Negeri</option>
+                                                                    <option value="Dalam Negeri">Dalam Negeri</option>
+                                                                    <option value="Luar Negeri">Luar Negeri</option>
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -1447,6 +1449,30 @@
                 },
                 "data": []
             },
+            {
+                "id": "4",
+                "no": "1.4",
+                "nama": "Jasa Terkait Bahan Baku",
+                "slug": "jasa-terkait-bahan-baku",
+                "formulas": {
+                    kdn: "{tkdn}% * {jumlah_orang} * {biaya_pengurusan_per_bulan} * {alokasi}%",
+                    kln: "(100% - {tkdn}%) * {jumlah_orang} * {biaya_pengurusan_per_bulan} * {alokasi}%",
+                    total: "{formulas.kdn} + {formulas.kln}",
+                },
+                "data": []
+            },
+            {
+                "id": "5",
+                "no": "1.5",
+                "nama": "Jasa Terkait Bahan Baku",
+                "slug": "jasa-terkait-bahan-baku",
+                "formulas": {
+                    kdn: "{tkdn}% * {jumlah_orang} * {gaji_perbulan} * {alokasi}%",
+                    kln: "(100% - {tkdn}%) * {jumlah_orang} * {gaji_perbulan} * {alokasi}%",
+                    total: "{formulas.kdn} + {formulas.kln}",
+                },
+                "data": []
+            },
         ];
         }
 
@@ -1460,6 +1486,8 @@
                     reloadTable("tbody-1", 1);
                     reloadTable("tbody-2", 2);
                     reloadTable("tbody-3", 3);
+                    reloadTable("tbody-4", 4);
+                    reloadTable("tbody-5", 5);
                 },
                 error: function(error) {
                     // Tampilkan pesan kesalahan jika permintaan gagal
@@ -1468,6 +1496,7 @@
             });
         }
 
+        console.log(calculations);
         $(() => {
             $(window).on('beforeunload', function() {
                 return "save terlebih dahulu data anda!";
@@ -1621,6 +1650,63 @@
                 reloadTable("tbody-3", 3);
 
                 $("#form-3")[0].reset();
+
+                swal({
+                    title: "Success",
+                    text: "Success to add new calculation",
+                    icon: "success",
+                })
+            })
+
+            $("#form-4").on("submit", (event) => {
+                event.preventDefault();
+                let serializedArray = $("#form-4").serializeArray();
+                let formResult = {};
+
+                for (let i = 0; i < serializedArray.length; i++) {
+                    let input = serializedArray[i];
+                    formResult[input.name] = input.value;
+                }
+
+                formResult["id"] = new Date().getTime()
+
+                let storeCalculation = calculateAndBind(formResult, 4);
+
+                reloadTable("tbody-1", 1);
+                reloadTable("tbody-2", 2);
+                reloadTable("tbody-3", 3);
+                reloadTable("tbody-4", 4);
+
+                $("#form-4")[0].reset();
+
+                swal({
+                    title: "Success",
+                    text: "Success to add new calculation",
+                    icon: "success",
+                })
+            })
+
+            $("#form-5").on("submit", (event) => {
+                event.preventDefault();
+                let serializedArray = $("#form-5").serializeArray();
+                let formResult = {};
+
+                for (let i = 0; i < serializedArray.length; i++) {
+                    let input = serializedArray[i];
+                    formResult[input.name] = input.value;
+                }
+
+                formResult["id"] = new Date().getTime()
+
+                let storeCalculation = calculateAndBind(formResult, 5);
+
+                reloadTable("tbody-1", 1);
+                reloadTable("tbody-2", 2);
+                reloadTable("tbody-3", 3);
+                reloadTable("tbody-4", 4);
+                reloadTable("tbody-5", 5);
+
+                $("#form-5")[0].reset();
 
                 swal({
                     title: "Success",
@@ -1838,6 +1924,93 @@
                 // let sumPdriTotal = parseInt(calculation.sumPdriTotal).toLocaleString()
                 console.log(calculation);
                 calculation.data.forEach(function(item, index) {
+                    let row = `
+                    <tr>
+                        <td>
+                            <div class="dropdown">
+                                <div class="btn btn-secondary btn-sm" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">!</div>
+                                <div class="dropdown-menu"
+                                    aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item buttonEditNews"
+                                        onclick="edit(${item.id})"><i class="fa fa-edit"></i> Edit
+                                    </a>
+                                    <button class="dropdown-item" type="submit" onclick="destroy(${item.id})"><i
+                                            class="fa fa-trash"></i> Delete</button>
+                                </div>
+                            </div>
+                        </td>
+                        <td>${(index + 1)}</td>
+                        <td>${item.uraian_posisi}</td>
+                        <td>${item.kewarganegaraan}</td>
+                        <td>${item.kewarganegaraan == "Indonesia" ? "100%" : "0%"}</td>
+                        <td>${item.jumlah_orang}</td>
+                        <td>${item.gaji_perbulan}</td>
+                        <td>${item.alokasi_gaji}%</td>
+                        <td>${item.kdn}</td>
+                        <td>${item.kln}</td>
+                        <td>${item.total}</td>
+                        <td>${item.bpjs}</td>
+                        <td>${item.tunjangan_lainnya}</td>
+                        </tr>
+                        `;
+
+                    tbody.append(row);
+                });
+            }  else if (tbodyId == "tbody-4") {
+                const tbody = $(`#${tbodyId}`);
+                tbody.empty();
+                calculation = calculations.find(f => f.id == calculationId);
+                // let sumKdn = parseInt(calculation.sumKdn).toLocaleString()
+                // let sumKln = parseInt(calculation.sumKln).toLocaleString()
+                // let sumTotal = parseInt(calculation.sumTotal).toLocaleString()
+                // let sumPpn = parseInt(calculation.sumPpn).toLocaleString()
+                // let sumBm = parseInt(calculation.sumBm).toLocaleString()
+                // let sumPdriPpn = parseInt(calculation.sumPdriPpn).toLocaleString()
+                // let sumPph = parseInt(calculation.sumPph).toLocaleString()
+                // let sumPdriTotal = parseInt(calculation.sumPdriTotal).toLocaleString()
+                console.log(calculation);
+                calculation.data.forEach(function(item, index) {
+                    let row = "<tr>" +
+                        `<td>
+                            <div class="dropdown">
+                                <div class="btn btn-secondary btn-sm" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">!</div>
+                                <div class="dropdown-menu"
+                                    aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item buttonEditNews"
+                                        onclick="edit(${item.id})"><i class="fa fa-edit"></i> Edit
+                                    </a>
+                                    <button class="dropdown-item" type="submit" onclick="destroy(${item.id})"><i
+                                            class="fa fa-trash"></i> Delete</button>
+                                </div>
+                            </div>
+                        </td>` +
+                        "<td>" + (index + 1) + "</td>" +
+                        "<td>" + item.uraian_posisi + "</td>" +
+                        "<td>" + item.produsen_tingkat_dua + "</td>" +
+                        "<td>" + item.kewarganegaraan == "Indonesia" ? "100%" : "0%" + "</td>" +
+                        "<td>" + item.jumlah_orang + "</td>" +
+                        "<td>" + item.biaya_pengurusan_per_bulan + "</td>" +
+                        "<td>" + item.alokasi + "%</td>" +
+                        "<td>" + item.kdn + "</td>" +
+                        "<td>" + item.kln + "</td>" +
+                        "</tr>";
+
+                    tbody.append(row);
+                });
+            } else if (tbodyId == "tbody-5") {
+                const tbody = $(`#${tbodyId}`);
+                tbody.empty();
+                calculation = calculations.find(f => f.id == calculationId);
+                // let sumKdn = parseInt(calculation.sumKdn).toLocaleString()
+                // let sumKln = parseInt(calculation.sumKln).toLocaleString()
+                // let sumTotal = parseInt(calculation.sumTotal).toLocaleString()
+                // let sumPpn = parseInt(calculation.sumPpn).toLocaleString()
+                // let sumBm = parseInt(calculation.sumBm).toLocaleString()
+                // let sumPdriPpn = parseInt(calculation.sumPdriPpn).toLocaleString()
+                // let sumPph = parseInt(calculation.sumPph).toLocaleString()
+                // let sumPdriTotal = parseInt(calculation.sumPdriTotal).toLocaleString()
+                console.log(calculation);
+                calculation.data.forEach(function(item, index) {
                     let row = "<tr>" +
                         `<td>
                             <div class="dropdown">
@@ -1855,14 +2028,13 @@
                         "<td>" + (index + 1) + "</td>" +
                         "<td>" + item.uraian_posisi + "</td>" +
                         "<td>" + item.kewarganegaraan + "</td>" +
-                        "<td>" + item.kewarganegaraan == "Indonesia" ? "100%" : "0%" + "</td>" +
+                        "<td>" + item.tkdn + "%" + "</td>" +
                         "<td>" + item.jumlah_orang + "</td>" +
-                        "<td>" + item.gaji_per_bulan + "</td>" +
+                        "<td>" + item.gaji_perbulan + "</td>" +
                         "<td>" + item.alokasi + "%</td>" +
                         "<td>" + item.kdn + "</td>" +
                         "<td>" + item.kln + "</td>" +
-                        "<td>" + item.bpjs + "</td>" +
-                        "<td>" + item.tunjangan_lainnya + "</td>" +
+                        "<td>" + item.total + "</td>" +
                         "</tr>";
 
                     tbody.append(row);
