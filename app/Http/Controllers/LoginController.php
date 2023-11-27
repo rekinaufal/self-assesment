@@ -137,7 +137,7 @@ class LoginController extends Controller
         $type_menu = 'dashboard';
         $newsData = News::all();
         $permenperinCount = PermenperinCategory::all()->count();
-        if ($userRole == "Administrator") {
+        if ($userRole == "Admin") {
             return view('pages.dashboard_admin', compact('permenperinCount', 'allUserPremiumCount', 'user', 'userRole', 'userCount', 'roleCount', 'pageTitle', 'type_menu'));
         }
         return view('pages.dashboard', compact('newsData', 'permenperinCount', 'allUserPremiumCount', 'user', 'userRole', 'userCount', 'roleCount', 'pageTitle', 'type_menu'));

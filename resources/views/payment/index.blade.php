@@ -138,7 +138,7 @@
 @endsection
 @push('scripts')
     <script src="{{ asset('assets/extra-libs/sparkline/sparkline.js') }}"></script>
-    <script src="{{ asset('assets/libs/sweetalert/dist/sweetalert.min.js') }}"></script>
+    <script src="{{ asset('library/sweetalert/dist/sweetalert.min.js') }}"></script>
     <script src="{{ asset('assets/extra-libs/datatables.net/js/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('dist/js/pages/datatable/datatable-basic.init.js') }}"></script>
     <script>
