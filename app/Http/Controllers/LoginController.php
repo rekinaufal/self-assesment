@@ -101,6 +101,10 @@ class LoginController extends Controller
             //     $fullname = $profile->fullname;
             //     session(['avatar' => $avatar]);
             //     session(['fullname' => $fullname]);
+            $user = auth()->user();
+            $userRole = $user->roles->pluck('name')->first();
+            session(['role' => $userRole]);
+
             // }
             return redirect()->route('dashboard');
         } else {

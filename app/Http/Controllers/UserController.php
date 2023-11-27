@@ -119,10 +119,10 @@ class UserController extends Controller
 
     public function update(Request $req, User $user)
     {
-        request()->validate(User::$rules);
-
+        
         $req = $req->all();
         if (!empty($req['password'])) {
+            request()->validate(User::$rules);
             $req['password'] = Hash::make($req['password']);
         } else {
             unset($req['password']);

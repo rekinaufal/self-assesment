@@ -89,39 +89,41 @@
                                             </td>
                                             <td>
                                                 @if ($item->transaction_receipt)
-                                                <button class="btn btn-link" data-toggle="modal" data-target="#previewModal-{{ $loop->iteration }}">View Receipt &nbsp;<i class="fa fa-eye"></i></button>
-                                                <!-- Modal -->
-                                                <div class="modal fade" id="previewModal-{{ $loop->iteration }}" tabindex="-1" role="dialog" aria-labelledby="previewModalLabel" aria-hidden="true">
-                                                    <div class="modal-dialog" role="document">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <h5 class="modal-title" id="previewModalLabel">Transaction Receipt</h5>
-                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                    <span aria-hidden="true">&times;</span>
-                                                                </button>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                                <img src="{{ asset('assets/'.$item->transaction_receipt) }}" alt=" Receipt Preview" class="img-fluid">
-                                                            </div>
-                                                            <div class="modal-footer">
-                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                    <button class="btn btn-link" data-toggle="modal" data-target="#previewModal-{{ $loop->iteration }}">View Receipt &nbsp;<i class="fa fa-eye"></i></button>
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="previewModal-{{ $loop->iteration }}" tabindex="-1" role="dialog" aria-labelledby="previewModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="previewModalLabel">Transaction Receipt</h5>
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <img src="{{ asset($item->getPaymentPath()) }}" alt=" Receipt Preview" class="img-fluid">
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            @else
-                                                No Receipt Available
-                                            @endif
+                                                @else
+                                                    No Receipt Available
+                                                @endif
                                             </td>
                                             <td>
                                                 {{ $item->created_at ?? '' }}
                                             </td>
                                             <td class="text-center">
-                                                <div class="d-flex justify-content-center">
-                                                    <a id="modal-user-show" class="btn btn-warning mr-1 approve-payment" href="{{ route('approvePayment',$item->id) }}" title="Show">
-                                                        <i class="fa fa-check p-0 text-white"></i>
-                                                    </a>
-                                                </div>
+                                                @can('payment-approve')
+                                                    <div class="d-flex justify-content-center">
+                                                        <a id="modal-user-show" class="btn btn-warning mr-1 approve-payment" href="{{ route('approvePayment',$item->id) }}" title="Show">
+                                                            <i class="fa fa-check p-0 text-white"></i>
+                                                        </a>
+                                                    </div>
+                                                @endcan
                                             </td>
                                         </tr>
                                     @endforeach

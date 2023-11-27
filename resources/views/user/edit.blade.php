@@ -26,12 +26,12 @@
                             <h4>Write Your {{ $pageTitle ?? '' }}</h4>
                         </div>
                         <div class="card-body">
-                            <div class="form-group row mb-4">
+                            {{-- <div class="form-group row mb-4">
                                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Full Name</label>
                                 <div class="col-sm-12 col-md-7">
                                     <input type="text" name="fullname" placeholder="Full Name" class="form-control {{ ($errors->has('fulname') ? ' is-invalid' : '') }}" value="{{ $user->fullname }}" required>
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="form-group row mb-4">
                                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Email</label>
                                 <div class="col-sm-12 col-md-7">
@@ -41,7 +41,7 @@
                             <div class="form-group row mb-4">
                                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Password</label>
                                 <div class="col-sm-12 col-md-7">
-                                    <input type="text" name="password" placeholder="Password" class="form-control" required>
+                                    <input type="text" name="password" placeholder="Password" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group row mb-4">

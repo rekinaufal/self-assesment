@@ -301,111 +301,114 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card">
-                        <div class="card-header bg-transparent" style="display: flex; justify-content: space-between; align-items: center;">
-                            <div class="float-left">
-                                <button type="button" class="btn btn-outline-{{ $user->user_category->color ?? 'dark' }}" style="border-radius: 15px">{{ $user->user_category->name ?? '' }}</button>
+                    @can('payment-view')
+                        <div class="card">
+                            <div class="card-header bg-transparent" style="display: flex; justify-content: space-between; align-items: center;">
+                                <div class="float-left">
+                                    {{ $user->user_category->color }}
+                                    <button type="button" class="btn btn-outline-{{ $user->user_category->color ?? 'dark' }}" style="border-radius: 15px">{{ $user->user_category->name ?? '' }}</button>
+                                </div>
+                                <div class="float-right">
+                                    <span class="text-primary font-weight-bold">Rp.200.000</span><span>/Kapasitas</span>
+                                </div>
                             </div>
-                            <div class="float-right">
-                                <span class="text-primary font-weight-bold">Rp.200.000</span><span>/Kapasitas</span>
+                            <div class="card-body">
+                                <table class="mb-3">
+                                    <tr>
+                                        <td width="30">
+                                            <input type="radio" style="transform: scale(1.2);" checked>
+                                        </td>
+                                        <td>
+                                            <div>100 capasity Files</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="radio" style="transform: scale(1.2);" checked>
+                                        </td>
+                                        <td>
+                                            <div>Basic Support</div>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <div class="float-left">Kapasitas File</div>
+                                <div class="float-right">100 File</div>
+                                <br>
+                                <div data-progress="html" data-value="70">
+                                    <span class="progress-file">
+                                        <span id="html" class="progress-bar-file"></span>
+                                    </span>
+                                </div>
+                                <p>
+                                    <small>Terpakai : 12 File</small>
+                                </p>
                             </div>
-                        </div>
-                        <div class="card-body">
-                            <table class="mb-3">
-                                <tr>
-                                    <td width="30">
-                                        <input type="radio" style="transform: scale(1.2);" checked>
-                                    </td>
-                                    <td>
-                                        <div>100 capasity Files</div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input type="radio" style="transform: scale(1.2);" checked>
-                                    </td>
-                                    <td>
-                                        <div>Basic Support</div>
-                                    </td>
-                                </tr>
-                            </table>
-                            <div class="float-left">Kapasitas File</div>
-                            <div class="float-right">100 File</div>
-                            <br>
-                            <div data-progress="html" data-value="70">
-                                <span class="progress-file">
-                                    <span id="html" class="progress-bar-file"></span>
-                                </span>
-                            </div>
-                            <p>
-                                <small>Terpakai : 12 File</small>
-                            </p>
-                        </div>
-                        <div class="card-footer bg-transparent">
-                            <a class="btn btn-block btn-primary" href="#" data-toggle="modal" data-target="#upgrade-plan">UPGRADE PLAN</a>
-                            <!--  Modal content for upgrade plan -->
-                            <div class="modal fade" id="upgrade-plan" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                                <div class="modal-dialog modal-xl">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h4 class="modal-title" id="myLargeModalLabel">Upgrade Plan</h4>
-                                            <button type="button" class="close" data-dismiss="modal"aria-hidden="true">×</button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <h2 class="text-center mb-4 mt-0 mt-md-4 px-2">Upgrade akun anda dan dapatkan kelebihannya</h2>
-                                            <div class="row">
-                                                @foreach ($userCategory as $item)
-                                                    <div class="col-4 mt-4">
-                                                        <div class="card border-{{ $item->color ?? '' }} border shadow-none">
-                                                            <div class="card-body position-relative">
-                                                                {{-- <div class="position-absolute end-0 me-4 top-0 mt-4">
-                                                                    <span class="badge bg-label-primary">Popular</span>
-                                                                </div> --}}
-                                                                <div class="my-3 pt-2 text-center">
-                                                                    <img src="{{ asset('assets/images/users/crown.png') }}" alt="Pro Image" height="80">
-                                                                </div>
-                                                                <h3 class="card-title text-center text-capitalize mb-1">{{ $item->name ?? '' }}</h3>
-                                                                <p class="text-center">For small to medium businesses</p>
-                                                                <div class="text-center">
-                                                                    <div class="d-flex justify-content-center">
-                                                                        <sup class="h6 pricing-currency mt-3 mb-0 me-1 text-primary">Rp.</sup>
-                                                                        <h1 class="price-toggle price-yearly display-6 text-primary mb-0">{{ 'Rp. ' . number_format($item->price, 0, ',', '.') }}</h1>
-                                                                        <h1 class="price-toggle price-monthly display-4 text-primary mb-0 d-none">1</h1>
-                                                                        <sub class="h6 text-muted pricing-duration mt-auto mb-2 fw-normal">/{{ $item->limit_file ?? '' }} files</sub>
+                            <div class="card-footer bg-transparent">
+                                <a class="btn btn-block btn-primary" href="#" data-toggle="modal" data-target="#upgrade-plan">UPGRADE PLAN</a>
+                                <!--  Modal content for upgrade plan -->
+                                <div class="modal fade" id="upgrade-plan" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-xl">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title" id="myLargeModalLabel">Upgrade Plan</h4>
+                                                <button type="button" class="close" data-dismiss="modal"aria-hidden="true">×</button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <h2 class="text-center mb-4 mt-0 mt-md-4 px-2">Upgrade akun anda dan dapatkan kelebihannya</h2>
+                                                <div class="row">
+                                                    @foreach ($userCategory as $item)
+                                                        <div class="col-4 mt-4">
+                                                            <div class="card border-{{ $item->color ?? '' }} border shadow-none">
+                                                                <div class="card-body position-relative">
+                                                                    {{-- <div class="position-absolute end-0 me-4 top-0 mt-4">
+                                                                        <span class="badge bg-label-primary">Popular</span>
+                                                                    </div> --}}
+                                                                    <div class="my-3 pt-2 text-center">
+                                                                        <img src="{{ asset('assets/images/users/crown.png') }}" alt="Pro Image" height="80">
                                                                     </div>
-                                                                    {{-- <small class="position-absolute start-0 end-0 m-auto price-yearly price-yearly-toggle text-muted">$ 499 / year</small> --}}
-                                                                </div>
-                                            
-                                                                <ul class="list-group my-4 list-unstyled">
-                                                                    <li class="mb-2 d-flex align-items-center">
-                                                                        <span class="badge badge-center w-px-20 h-px-20 rounded-pill bg-label-primary me-2">
-                                                                            <i class="fas fa-check"></i>
-                                                                        </span>
-                                                                        <span>Up to {{ $item->limit_file ?? '' }} files</span>
-                                                                    </li>
-                                                                    @foreach ($item->benefits as $b)
+                                                                    <h3 class="card-title text-center text-capitalize mb-1">{{ $item->name ?? '' }}</h3>
+                                                                    <p class="text-center">For small to medium businesses</p>
+                                                                    <div class="text-center">
+                                                                        <div class="d-flex justify-content-center">
+                                                                            <sup class="h6 pricing-currency mt-3 mb-0 me-1 text-primary">Rp.</sup>
+                                                                            <h1 class="price-toggle price-yearly display-6 text-primary mb-0">{{ 'Rp. ' . number_format($item->price, 0, ',', '.') }}</h1>
+                                                                            <h1 class="price-toggle price-monthly display-4 text-primary mb-0 d-none">1</h1>
+                                                                            <sub class="h6 text-muted pricing-duration mt-auto mb-2 fw-normal">/{{ $item->limit_file ?? '' }} files</sub>
+                                                                        </div>
+                                                                        {{-- <small class="position-absolute start-0 end-0 m-auto price-yearly price-yearly-toggle text-muted">$ 499 / year</small> --}}
+                                                                    </div>
+                                                
+                                                                    <ul class="list-group my-4 list-unstyled">
                                                                         <li class="mb-2 d-flex align-items-center">
                                                                             <span class="badge badge-center w-px-20 h-px-20 rounded-pill bg-label-primary me-2">
                                                                                 <i class="fas fa-check"></i>
                                                                             </span>
-                                                                            <span>{{ $b ?? '' }}</span>
+                                                                            <span>Up to {{ $item->limit_file ?? '' }} files</span>
                                                                         </li>
-                                                                    @endforeach
-                                                                </ul>
-                                                                @if ($user->user_category_id != $item->id)
-                                                                        <a href="/payment-display/{{ $item->id ?? '' }}" class="btn btn-primary d-grid w-100" data-bs-dismiss="modal">Upgrade</a>
-                                                                @endif
+                                                                        @foreach ($item->benefits as $b)
+                                                                            <li class="mb-2 d-flex align-items-center">
+                                                                                <span class="badge badge-center w-px-20 h-px-20 rounded-pill bg-label-primary me-2">
+                                                                                    <i class="fas fa-check"></i>
+                                                                                </span>
+                                                                                <span>{{ $b ?? '' }}</span>
+                                                                            </li>
+                                                                        @endforeach
+                                                                    </ul>
+                                                                    @if ($user->user_category_id != $item->id)
+                                                                            <a href="/payment-display/{{ $item->id ?? '' }}" class="btn btn-primary d-grid w-100" data-bs-dismiss="modal">Upgrade</a>
+                                                                    @endif
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                @endforeach
+                                                    @endforeach
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    @endcan
                 </div>
                 <div class="col-7">
                     <div class="card">

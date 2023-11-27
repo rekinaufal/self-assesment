@@ -34,6 +34,7 @@ class UserCategorySeeder extends Seeder
                 "benefits" => $regularBenefits,
                 "limit_file" => 1,
                 "price" => 0,
+                "color" => 'primary',
                 "created_at" => date("Y-m-d H:i:s")
             ],
             [
@@ -42,6 +43,7 @@ class UserCategorySeeder extends Seeder
                 "benefits" => $premiumBenefits,
                 "limit_file" => 50,
                 "price" => 50000,
+                "color" => 'danger',
                 "created_at" => date("Y-m-d H:i:s")
             ]
         ];
