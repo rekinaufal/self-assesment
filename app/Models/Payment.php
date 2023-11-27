@@ -59,4 +59,13 @@ class Payment extends Model
 
         return $options;
     }
+
+    public function getPaymentPath() {
+        $paymentPath = $this->transaction_receipt;
+        if($paymentPath != null) {
+            return "uploads/" . $paymentPath;
+        }
+
+        return null;
+    }
 }

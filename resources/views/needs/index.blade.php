@@ -20,9 +20,11 @@
                     </div>
                 </div>
                 <div class="float-right">
-                    <button class="btn btn-primary" data-toggle="modal" data-target="#select-create">
-                        <i class="fas fa-plus"></i>
-                    </button>
+                    @can('need-create')
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#select-create">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    @endcan
                 </div>
             </div>
             <div class="col-12">
@@ -100,16 +102,16 @@
                                         </svg>
                                     </button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        {{-- @can('user-edit') --}}
+                                        @can('need-edit')
                                             {{-- <a class="dropdown-item" href="{{ route('users.edit',$item->id) }}"> --}}
                                             <a class="dropdown-item" href="{{ route('needs.edit', $item->id) }}">
                                                 <i class="fa fa-pencil-alt p-0"></i>&nbsp;&nbsp;&nbsp;Edit
                                             </a>
-                                        {{-- @endcan --}}
+                                        @endcan
                                         <a class="dropdown-item" >
                                             <i class="fas fa-download"></i>&nbsp;&nbsp;&nbsp;Download
                                         </a>
-                                        {{-- @can('user-delete') --}}
+                                        @can('need-delete')
                                             {{-- <form id="myForm-{{ $item->id }}" action="{{ route('users.destroy',$item->id) }}" method="POST" class="d-flex">
                                                 @csrf
                                                 @method('DELETE')
@@ -120,7 +122,7 @@
                                                     </button>
                                                 {{-- @endcan
                                             </form> --}}
-                                        {{-- @endcan --}}
+                                        @endcan
                                     </div>
                                 </div>
                             </div>

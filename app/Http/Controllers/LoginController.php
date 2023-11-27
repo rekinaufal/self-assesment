@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use Spatie\Permission\Models\Role;
+use Carbon\Carbon;
+
 use DB;
 
 class LoginController extends Controller
@@ -99,6 +101,10 @@ class LoginController extends Controller
             //     $fullname = $profile->fullname;
             //     session(['avatar' => $avatar]);
             //     session(['fullname' => $fullname]);
+            $user = auth()->user();
+            $userRole = $user->roles->pluck('name')->first();
+            session(['role' => $userRole]);
+
             // }
             return redirect()->route('dashboard');
         } else {
@@ -131,7 +137,7 @@ class LoginController extends Controller
         $type_menu = 'dashboard';
         $newsData = News::all();
         $permenperinCount = PermenperinCategory::all()->count();
-        if ($userRole == "Administrator") {
+        if ($userRole == "Admin") {
             return view('pages.dashboard_admin', compact('permenperinCount', 'allUserPremiumCount', 'user', 'userRole', 'userCount', 'roleCount', 'pageTitle', 'type_menu'));
         }
         return view('pages.dashboard', compact('newsData', 'permenperinCount', 'allUserPremiumCount', 'user', 'userRole', 'userCount', 'roleCount', 'pageTitle', 'type_menu'));
@@ -172,32 +178,37 @@ class LoginController extends Controller
 
     public function register(Request $request)
     {
-        request()->validate(User::$rules);
+        // try {
+            request()->validate(User::$rules);
 
-        $credentials = [
-            "email" => $request->email,
-            "password" => Hash::make($request->password),
-            "user_category_id" => 1,
-            "is_active" => 1
-        ];
+            $credentials = [
+                "email" => $request->email,
+                "password" => Hash::make($request->password),
+                "user_category_id" => 1,
+                "is_active" => 1
+            ];
 
-        $user = User::create($credentials);
+            $user = User::create($credentials);
 
-        $user_profile = UserProfile::create([
-            "user_id" => $user->id,
-            "fullname" => $request->fullname
-        ]);
+            $user_profile = UserProfile::create([
+                "user_id" => $user->id,
+                "fullname" => $request->fullname
+            ]);
 
-        $user->assignRole('Pengguna');
+            $user->assignRole('Pengguna');
 
-        // dd($user->id, $request->fullname, $request->email);
-        $this->sendEmailRegister($user->id, $request->fullname, $request->email);
+            // dd($user->id, $request->fullname, $request->email);
+            $this->sendEmailRegister($user->id, $request->fullname, $request->email);
 
-        if ($user_profile) {
-            return redirect()->route('login')->with('success', 'Please check your email for verification. If its not in your inbox, check your spam folder. ');
-        } else {
-            return redirect()->back()->with('failed', 'Registrasi gagal');
-        }
+            if ($user_profile) {
+                return redirect()->route('login')->with('success', 'Please check your email for verification. If its not in your inbox, check your spam folder. ');
+            } else {
+                return redirect()->back()->with('failed', 'Registrasi gagal');
+            }
+        // } catch (\Exception $e) {
+        //     // Handle other exceptions
+        //     return redirect()->back()->with('failed', 'An error occurred during registration. Please try again.');
+        // }
     }
 
     public function sendEmailRegister ($id, $name, $email) {
@@ -220,6 +231,9 @@ class LoginController extends Controller
 
     public function verify ($id) {
         $Get = DB::table('users')->where('id', $id)->first();
+        if(!$Get) {
+            return redirect ('/')->with('failed', 'Error');
+        }
         if ($Get->email_verified_at != null) {
             return redirect ('/')->with('failed', 'Your email has been verified on '. $Get->email_verified_at);
         } else {

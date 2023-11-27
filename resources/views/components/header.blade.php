@@ -182,7 +182,9 @@
                 <!-- ============================================================== -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img src="{{ asset(auth()->user()->user_profile->getAvatarPath() ?? '') }}" alt="user" class="rounded-circle" width="40" height="40">
+                        @if (!auth()->user()->user_profile)
+                            <img src="{{ asset(auth()->user()->user_profile->getAvatarPath()) }}" alt="user" class="rounded-circle" width="40" height="40">
+                        @endif
                         <span class="ml-2 d-none d-lg-inline-block">
                             <span>Hello,</span>
                             <span class="text-dark">{{ auth()->user()->user_profile->fullname ?? '' }}</span>

@@ -16,9 +16,12 @@
                             <h4 class="card-title">{{ $pageTitle }} Data</h4>
                         </div>
                         <div class="float-right">
-                            <a onclick="setValue(``,`` , '{{ route('permenperincategory.store') }}', 'Add Permenperin', 'POST', '')"
-                                type="button" style="color: white" data-toggle="modal" data-target="#info-header-modal"
-                                class="btn btn-primary mb-3">Add New &nbsp;<i class="fas fa-plus"></i></a>
+                            @can('permenperin-category-create')
+                                <a onclick="setValue(``,`` , '{{ route('permenperincategory.store') }}', 'Add Permenperin', 'POST', '')"
+                                    type="button" style="color: white" data-toggle="modal" data-target="#info-header-modal"
+                                    class="btn btn-primary mb-3">Add New &nbsp;<i class="fas fa-plus"></i>
+                                </a>
+                            @endcan
                         </div>
                         <div class="table-responsive">
                             <table id="zero_config" class="table table-striped table-bordered no-wrap">
@@ -47,20 +50,24 @@
                                                 {{ $item->created_at }}
                                             </td>
                                             <td class="d-flex">
-                                                <button class="btn btn-success btn-action mr-1"
-                                                    onclick="setValue(`{{ $item->id }}`,`{{ $item->name }}` , `{{ route('permenperincategory.update', $item->id) }}` , 'Edit Permenperin' , 'PUT', `{{ $item->color }}`)"
-                                                    data-toggle="modal" data-target="#info-header-modal">
-                                                    <i class="fa fa-pencil-alt p-0"></i>
-                                                </button>
-
-                                                <form action="{{ route('permenperincategory.destroy', $item->id) }}"
-                                                    method="POST">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-action" title="Delete">
-                                                        <i class="fa fa-trash-alt p-0"></i>
+                                                @can('permenperin-category-edit')
+                                                    <button class="btn btn-success btn-action mr-1"
+                                                        onclick="setValue(`{{ $item->id }}`,`{{ $item->name }}` , `{{ route('permenperincategory.update', $item->id) }}` , 'Edit Permenperin' , 'PUT', `{{ $item->color }}`)"
+                                                        data-toggle="modal" data-target="#info-header-modal">
+                                                        <i class="fa fa-pencil-alt p-0"></i>
                                                     </button>
-                                                </form>
+                                                @endcan
+                                                @can('permenperin-category-delete')
+                                                    <form action="{{ route('permenperincategory.destroy', $item->id) }}"
+                                                        method="POST">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="btn btn-danger btn-action" title="Delete">
+                                                            <i class="fa fa-trash-alt p-0"></i>
+                                                        </button>
+                                                    </form>
+                                                @endcan
+
                                             </td>
                                         </tr>
                                     @endforeach

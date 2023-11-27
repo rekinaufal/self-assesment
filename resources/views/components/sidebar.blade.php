@@ -51,69 +51,109 @@
                         <span class="hide-menu">Beranda</span>
                     </a>
                 </li>
-                
-                <li class="sidebar-item {{ parse_url(request()->url())['path'] == '/news' ? 'active selected' : '' }}">
-                    <a class="sidebar-link sidebar-link" href="{{ url('news') }}" aria-expanded="false">
-                        <i data-feather="file-text" class="feather-icon"></i>
-                        <span class="hide-menu">News</span>
-                    </a>
-                </li>
 
+                @can('news-list')
+                    <li class="sidebar-item {{ parse_url(request()->url())['path'] == '/news' ? 'active selected' : '' }}">
+                        <a class="sidebar-link sidebar-link" href="{{ url('news') }}" aria-expanded="false">
+                            <i data-feather="file-text" class="feather-icon"></i>
+                            <span class="hide-menu">News</span>
+                        </a>
+                    </li>
+                @endcan
+                
+                {{-- @php $roles = session('role') @endphp
+                {{ $roles }}
+                @if (!empty($roles))
+                    @if ($roles == 'Admin' || $roles == 'StaffIT')
+                        <li class="list-divider"></li>
+                        <li class="nav-small-cap">
+                            <span class="hide-menu">Admin</span>
+                        </li>
+                        @can('role-list')
+                            <li class="sidebar-item {{ Request::is('roles') ? 'active' : '' }}">
+                                <a class="sidebar-link" href="{{ url('roles') }}" aria-expanded="false">
+                                    <i data-feather="tag" class="feather-icon"></i>
+                                    <span class="hide-menu">Roles</span>
+                                </a>
+                            </li>
+                        @endcan
+        
+                        @can('payment-list')
+                            <li class="sidebar-item {{ Request::is('payment') ? 'active' : '' }}">
+                                <a class="sidebar-link sidebar-link" href="{{ url('payment') }}" aria-expanded="false">
+                                    <i data-feather="file-text" class="feather-icon"></i>
+                                    <span class="hide-menu">Payment Approval</span>
+                                </a>
+                            </li>
+                        @endcan
+                    @endif
+                @endif --}}
+                @can('role-list')
                 <li class="list-divider"></li>
                 <li class="nav-small-cap">
                     <span class="hide-menu">Admin</span>
                 </li>
+                    <li class="sidebar-item {{ Request::is('roles') ? 'active' : '' }}">
+                        <a class="sidebar-link" href="{{ url('roles') }}" aria-expanded="false">
+                            <i data-feather="tag" class="feather-icon"></i>
+                            <span class="hide-menu">Roles</span>
+                        </a>
+                    </li>
+                @endcan
 
-                <li class="sidebar-item {{ Request::is('roles') ? 'active' : '' }}">
-                    <a class="sidebar-link" href="{{ url('roles') }}" aria-expanded="false">
-                        <i data-feather="tag" class="feather-icon"></i>
-                        <span class="hide-menu">Roles</span>
-                    </a>
-                </li>
-
-                <li class="sidebar-item {{ Request::is('payment') ? 'active' : '' }}">
-                    <a class="sidebar-link sidebar-link" href="{{ url('payment') }}" aria-expanded="false">
-                        <i data-feather="file-text" class="feather-icon"></i>
-                        <span class="hide-menu">Payment Approval</span>
-                    </a>
-                </li>
+                @can('payment-list')
+                    <li class="sidebar-item {{ Request::is('payment') ? 'active' : '' }}">
+                        <a class="sidebar-link sidebar-link" href="{{ url('payment') }}" aria-expanded="false">
+                            <i data-feather="file-text" class="feather-icon"></i>
+                            <span class="hide-menu">Payment Approval</span>
+                        </a>
+                    </li>
+                @endcan
                 
-                <li class="list-divider"></li>
-                <li class="nav-small-cap">
-                    <span class="hide-menu">Data Pengguna</span>
-                </li>
+                @can('user-list')
+                    <li class="list-divider"></li>
+                    <li class="nav-small-cap">
+                        <span class="hide-menu">Data Pengguna</span>
+                    </li>
 
-                <li class="sidebar-item {{ Request::is('users') ? 'active' : '' }}">
-                    <a class="sidebar-link sidebar-link" href="{{ url('users') }}" aria-expanded="false">
-                        <i data-feather="message-square" class="feather-icon"></i>
-                        <span class="hide-menu">User Profile</span>
-                    </a>
-                </li>
+                    <li class="sidebar-item {{ Request::is('users') ? 'active' : '' }}">
+                        <a class="sidebar-link sidebar-link" href="{{ url('users') }}" aria-expanded="false">
+                            <i data-feather="message-square" class="feather-icon"></i>
+                            <span class="hide-menu">User Profile</span>
+                        </a>
+                    </li>
+                @endcan
 
+                @can('permenperin-category-list')
                 <li class="list-divider"></li>
                 <li class="nav-small-cap">
                     <span class="hide-menu">Regulasi TKDN</span>
                 </li>
+                    <li class="sidebar-item {{ Request::is('permenperincategory') ? 'active' : '' }}">
+                        <a class="sidebar-link sidebar-link" href="{{ url('permenperincategory') }}" aria-expanded="false">
+                            <i data-feather="file-text" class="feather-icon"></i>
+                            <span class="hide-menu">Permen Category</span>
+                        </a>
+                    </li>
+                @endcan
 
-                <li class="sidebar-item {{ Request::is('permenperincategory') ? 'active' : '' }}">
-                    <a class="sidebar-link sidebar-link" href="{{ url('permenperincategory') }}" aria-expanded="false">
-                        <i data-feather="file-text" class="feather-icon"></i>
-                        <span class="hide-menu">Permen Category</span>
-                    </a>
-                </li>
-                <li class="sidebar-item {{ parse_url(request()->url())['path'] == '/needs' ? 'active selected' : '' }}">
-                    <a class="sidebar-link sidebar-link" href="{{ url('needs') }}" aria-expanded="false">
-                        <i data-feather="file-text" class="feather-icon"></i>
-                        <span class="hide-menu">List Of Needs</span>
-                    </a>
-                </li>
+                @can('need-list')
+                    <li class="sidebar-item {{ parse_url(request()->url())['path'] == '/needs' ? 'active selected' : '' }}">
+                        <a class="sidebar-link sidebar-link" href="{{ url('needs') }}" aria-expanded="false">
+                            <i data-feather="file-text" class="feather-icon"></i>
+                            <span class="hide-menu">List Of Needs</span>
+                        </a>
+                    </li>
+                @endcan
 
-                <li class="sidebar-item {{ Request::is('computation') ? 'active' : '' }}">
-                    <a class="sidebar-link sidebar-link" href="{{ url('computation') }}" aria-expanded="false">
-                        <i data-feather="file-text" class="feather-icon"></i>
-                        <span class="hide-menu">Calculation</span>
-                    </a>
-                </li>
+                @can('calculation-list')
+                    <li class="sidebar-item {{ Request::is('computation') ? 'active' : '' }}">
+                        <a class="sidebar-link sidebar-link" href="{{ url('computation') }}" aria-expanded="false">
+                            <i data-feather="file-text" class="feather-icon"></i>
+                            <span class="hide-menu">Calculation</span>
+                        </a>
+                    </li>
+                @endcan
 
                 {{-- <li class="list-divider"></li>
                 <li class="nav-small-cap">
