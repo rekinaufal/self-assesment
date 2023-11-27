@@ -22,8 +22,8 @@ Homestead.json
 /.vagrant
 .phpunit.result.cache
 
-public/library/*
-public/library/**/*
+# public/library/*
+# public/library/**/*
 
 public/uploads/**/*
 public/uploads/**/**/*

@@ -179,6 +179,7 @@ class PaymentController extends Controller
         }
 
         $payment = Payment::find($id);
+        // dd($payment);
         if (!$payment) {
             return redirect()->route('dashboard')
             ->with('failed', 'Payment Data Is Empty');
@@ -188,6 +189,8 @@ class PaymentController extends Controller
         if ($user->user_category_id == $payment->upgraded_category) {
             return redirect()->back()->with('failed', 'Tidak bisa di upgrade, karena user yang dituju sudah sesuai');
         }
+        // User::find($user->id)->notify(new ApprovePaymentNotifications($req));
+
         
         $isEditedUserCategory = User::where('id', $user->id)->update([
             'user_category_id' => $payment->upgraded_category
