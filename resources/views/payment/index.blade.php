@@ -4,6 +4,28 @@
 
 @push('style')
     <link href="{{ asset('assets/extra-libs/datatables.net-bs4/css/dataTables.bootstrap4.css') }}" rel="stylesheet">
+    <style>
+        .img_receipt_container {
+        width: auto;
+        height: 450px;
+        position: relative;
+        overflow: hidden;
+        cursor: zoom-in;
+        }
+        .img_receipt {
+        cursor: crosshair;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        transition: transform 0.5s ease-out;
+        }
+
+    </style>
 @endpush
 
 @section('main')
@@ -64,9 +86,9 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Bank Account Name</th>
+                                        <th>Name</th>
                                         <th>Bank Account Number</th>
-                                        <th>Bank Name</th>
+                                        <th>Bank Account Name</th>
                                         <th>Transaction Receipt</th>
                                         <th>Created At</th>
                                         <th class="text-center" width="1%">#</th>
@@ -101,7 +123,18 @@
                                                                     </button>
                                                                 </div>
                                                                 <div class="modal-body">
-                                                                    <img src="{{ asset($item->getPaymentPath()) }}" alt=" Receipt Preview" class="img-fluid">
+                                                                        <div class="p-2 mb-2 img_receipt_container" data-scale="1.2" style="border-radius: 7px;">
+                                                                            <a
+                                                                            class="dslc-lightbox-image img_receipt p-2"
+                                                                            href="{{ asset($item->getPaymentPath()) }}"
+                                                                            target="_blank"
+                                                                            style="background-image:url('{{ asset($item->getPaymentPath()) }}')"
+                                                                            >
+                                                                            </a>
+                                                                        </div>
+                                                                    {{-- <div class="p-2 mb-2">
+                                                                        <img src="{{ asset($item->getPaymentPath()) }}" alt="..."  style="border-radius: 7px;" class="img-fluid">
+                                                                    </div> --}}
                                                                 </div>
                                                                 <div class="modal-footer">
                                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -170,7 +203,30 @@
                 });
             });
         });
+        
+        // script zoom on hovernya gan
+        $(".img_receipt_container")
+        .on("mouseover", function() {
+            $(this)
+            .children(".img_receipt")
+            .css({ transform: "scale(" + $(this).attr("data-scale") + ")" });
+        })
+        .on("mouseout", function() {
+            $(this)
+            .children(".img_receipt")
+            .css({ transform: "scale(1)" });
+        })
+        .on("mousemove", function(e) {
+            $(this)
+            .children(".img_receipt")
+            .css({
+                "transform-origin":
+                ((e.pageX - $(this).offset().left) / $(this).width()) * 100 +
+                "% " +
+                ((e.pageY - $(this).offset().top) / $(this).height()) * 100 +
+                "%"
+            });
+        });
     </script>
-
     
 @endpush
