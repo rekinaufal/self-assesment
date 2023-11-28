@@ -178,7 +178,8 @@ class LoginController extends Controller
 
     public function register(Request $request)
     {
-        // try {
+        DB::beginTransaction();
+        try {
             request()->validate(User::$rules);
 
             $credentials = [
@@ -200,15 +201,12 @@ class LoginController extends Controller
             // dd($user->id, $request->fullname, $request->email);
             $this->sendEmailRegister($user->id, $request->fullname, $request->email);
 
-            if ($user_profile) {
-                return redirect()->route('login')->with('success', 'Please check your email for verification. If its not in your inbox, check your spam folder. ');
-            } else {
-                return redirect()->back()->with('failed', 'Registrasi gagal');
-            }
-        // } catch (\Exception $e) {
-        //     // Handle other exceptions
-        //     return redirect()->back()->with('failed', 'An error occurred during registration. Please try again.');
-        // }
+            DB::commit();
+            return redirect()->route('login')->with('success', 'Please check your email for verification. If its not in your inbox, check your spam folder. ');
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return redirect()->back()->with('failed', 'An error occurred during registration. Please try again.');
+        }
     }
 
     public function sendEmailRegister ($id, $name, $email) {

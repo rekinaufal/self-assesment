@@ -134,7 +134,7 @@
                 <!-- ============================================================== -->
                 <!-- create new -->
                 <!-- ============================================================== -->
-                <li class="nav-item dropdown">
+                {{-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i data-feather="settings" class="svg-icon"></i>
@@ -145,8 +145,8 @@
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Something else here</a>
                     </div>
-                </li>
-                <li class="nav-item d-none d-md-block">
+                </li> --}}
+                {{-- <li class="nav-item d-none d-md-block">
                     <a class="nav-link" href="javascript:void(0)">
                         <div class="customize-input">
                             <select class="custom-select form-control bg-white custom-radius custom-shadow border-0">
@@ -157,7 +157,7 @@
                             </select>
                         </div>
                     </a>
-                </li>
+                </li> --}}
             </ul>
             <!-- ============================================================== -->
             <!-- Right side toggle and nav items -->
@@ -166,7 +166,7 @@
                 <!-- ============================================================== -->
                 <!-- Search -->
                 <!-- ============================================================== -->
-                <li class="nav-item d-none d-md-block">
+                {{-- <li class="nav-item d-none d-md-block">
                     <a class="nav-link" href="javascript:void(0)">
                         <form>
                             <div class="customize-input">
@@ -176,7 +176,7 @@
                             </div>
                         </form>
                     </a>
-                </li>
+                </li> --}}
                 <!-- ============================================================== -->
                 <!-- User profile and search -->
                 <!-- ============================================================== -->

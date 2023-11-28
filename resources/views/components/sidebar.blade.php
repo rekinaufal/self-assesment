@@ -100,15 +100,6 @@
                         </a>
                     </li>
                 @endcan
-
-                @can('payment-list')
-                    <li class="sidebar-item {{ Request::is('payment') ? 'active' : '' }}">
-                        <a class="sidebar-link sidebar-link" href="{{ url('payment') }}" aria-expanded="false">
-                            <i data-feather="file-text" class="feather-icon"></i>
-                            <span class="hide-menu">Payment Approval</span>
-                        </a>
-                    </li>
-                @endcan
                 
                 @can('user-list')
                     <li class="list-divider"></li>
@@ -132,7 +123,7 @@
                     <li class="sidebar-item {{ Request::is('permenperincategory') ? 'active' : '' }}">
                         <a class="sidebar-link sidebar-link" href="{{ url('permenperincategory') }}" aria-expanded="false">
                             <i data-feather="file-text" class="feather-icon"></i>
-                            <span class="hide-menu">Permen Category</span>
+                            <span class="hide-menu">Kategori Peraturan</span>
                         </a>
                     </li>
                 @endcan
@@ -150,7 +141,16 @@
                     <li class="sidebar-item {{ Request::is('computation') ? 'active' : '' }}">
                         <a class="sidebar-link sidebar-link" href="{{ url('computation') }}" aria-expanded="false">
                             <i data-feather="file-text" class="feather-icon"></i>
-                            <span class="hide-menu">Calculation</span>
+                            <span class="hide-menu">Perhitungan</span>
+                        </a>
+                    </li>
+                @endcan
+
+                @can('payment-list')
+                    <li class="sidebar-item {{ Request::is('payment') ? 'active' : '' }}">
+                        <a class="sidebar-link sidebar-link" href="{{ url('payment') }}" aria-expanded="false">
+                            <i data-feather="file-text" class="feather-icon"></i>
+                            <span class="hide-menu">Membership Plan</span>
                         </a>
                     </li>
                 @endcan

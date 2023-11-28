@@ -83,6 +83,29 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.7/dist/css/autoComplete.02.min.css">
+    <style>
+        .header-cart {
+            position: relative;
+            display: inline-block;
+            /* margin-right: 40px; */
+        }
+
+        .fixed {
+            position: fixed;
+            background: #FFBD59;
+            width: 8ex;
+            height: 8ex;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* box-shadow: 0 0 6px #000; */
+            color: #fff;
+            z-index: 9999;
+            border-radius: 50%;
+            top: 85%;
+            right: 1%;
+        }
+    </style>
     @stack('style')
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -137,8 +160,13 @@
                 </div>
             @endif
 
+            <a href="#" class="fixed">
+                <div class="btn header-cart" style="border-radius: 50%;">
+                    {{-- <img src="{{ asset('assets/images/live-chat.png') }}" alt="Trolley Icon" width="30" /> --}}
+                    <i data-feather="message-square" class="feather-icon" style="color:white"></i>
+                </div>
+            </a>
             @yield('main')
-
             <!-- Footer -->
             @include('components.footer')
         </div>
