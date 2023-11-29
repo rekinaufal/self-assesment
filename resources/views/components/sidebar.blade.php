@@ -61,10 +61,9 @@
                     </li>
                 @endcan
                 
-                {{-- @php $roles = session('role') @endphp
-                {{ $roles }}
+                @php $roles = session('role') @endphp
                 @if (!empty($roles))
-                    @if ($roles == 'Admin' || $roles == 'StaffIT')
+                    @if ($roles != 'Pengguna')
                         <li class="list-divider"></li>
                         <li class="nav-small-cap">
                             <span class="hide-menu">Admin</span>
@@ -87,8 +86,8 @@
                             </li>
                         @endcan
                     @endif
-                @endif --}}
-                @can('role-list')
+                @endif
+                {{-- @can('role-list')
                 <li class="list-divider"></li>
                 <li class="nav-small-cap">
                     <span class="hide-menu">Admin</span>
@@ -99,7 +98,7 @@
                             <span class="hide-menu">Roles</span>
                         </a>
                     </li>
-                @endcan
+                @endcan --}}
                 
                 @can('user-list')
                     <li class="list-divider"></li>
@@ -115,11 +114,11 @@
                     </li>
                 @endcan
 
-                @can('permenperin-category-list')
                 <li class="list-divider"></li>
                 <li class="nav-small-cap">
                     <span class="hide-menu">Regulasi TKDN</span>
                 </li>
+                @can('permenperin-category-list')
                     <li class="sidebar-item {{ Request::is('permenperincategory') ? 'active' : '' }}">
                         <a class="sidebar-link sidebar-link" href="{{ url('permenperincategory') }}" aria-expanded="false">
                             <i data-feather="file-text" class="feather-icon"></i>

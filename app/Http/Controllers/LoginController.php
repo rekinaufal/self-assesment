@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use Spatie\Permission\Models\Role;
 use Carbon\Carbon;
-
+use Illuminate\Support\Str;
 use DB;
 
 class LoginController extends Controller
@@ -93,17 +93,26 @@ class LoginController extends Controller
             ]);
         }
 
-        if (Auth::attempt($request->only('email', 'password'), $remember)) {
+        // remember me
+        if ($request->remember == null) {
+            // setcookie('login_email',$request->email,100);
+            // setcookie('login_pass',$request->password,100);
+        } else {
+            setcookie('login_email', $request->email, time() + 60 * 60 * 24 * 100);
+            setcookie('login_pass', $request->password, time() + 60 * 60 * 24 * 100);
+        }
+
+        if (Auth::attempt($request->only('email', 'password'))) {
             $request->session()->regenerate();
+            $user = auth()->user();
+            $userRole = $user->roles->pluck('name')->first();
+            session(['role' => $userRole]);
             // Menyimpan avatar ke session
             // if ($profile) {
             //     $avatar = url('uploads/'.$profile->avatar);
             //     $fullname = $profile->fullname;
             //     session(['avatar' => $avatar]);
             //     session(['fullname' => $fullname]);
-            $user = auth()->user();
-            $userRole = $user->roles->pluck('name')->first();
-            session(['role' => $userRole]);
 
             // }
             return redirect()->route('dashboard');
@@ -174,29 +183,36 @@ class LoginController extends Controller
 
     public function forgetPassword(Request $request)
     {
-        $getUser = DB::table('users')->where('email', $request->email)->first();
-        // dd($getUser);
-        if (!empty($getUser)) {
+        DB::beginTransaction();
+        try {
+            $getUser = DB::table('users')->where('email', $request->email)->first();
+            // dd(Str::random(12));
+            // if (!empty($getUser)) {
+            $randomString = Str::random(12);
             $fieldUpdate = [
-                'password'      => Hash::make('Rapp@' . $getUser->username),
-                'updated_by' => $getUser->id,
+                'password'      => Hash::make($randomString),
+                // 'updated_by' => $getUser->id,
             ];
-            $update = DB::table('users')->where('id', $getUser->id)->update($fieldUpdate);
+            DB::table('users')->where('id', $getUser->id)->update($fieldUpdate);
             // send email
             $subject = "Forget Password E-learning";
             $details = [
                 'title' => 'Forget Password',
-                'body1' => 'Hai ' . $getUser->name . ', You have requested a password reset. ',
-                'body2' => 'Your password will be changed to learning@' . $getUser->username,
-                'body3' => 'Please log in and change your password in the profile form.',
+                'opener' => 'Hai, You have requested a password reset. ',
+                'opener_desc' => 'Your password will be changed to ' . $randomString,
+                'closing' => 'Please log in and change your password in the profile form.',
             ];
 
-            \Mail::to($getUser->email)->send(new \App\Mail\Email($details, $subject));
+            \Mail::to($getUser->email)->send(new \App\Mail\ForgetPassword($details, $subject));
             // return back()->with('success', 'Password reset successful, please check your email');
-            return redirect()->route('login')
-                ->with('success', 'Password reset successful, please check your email');
-        } else {
-            return back()->with('failed', 'Invalid Email');
+            // } else {
+            // return back()->with('failed', 'Invalid Email');
+            // }
+            DB::commit();
+            return redirect()->route('login')->with('success', 'Password reset successful, please check your email');
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return redirect()->back()->with('failed', 'An error occurred during forget password. Please try again.');
         }
     }
 
