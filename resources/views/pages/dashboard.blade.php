@@ -57,9 +57,9 @@
             </div>
             <div class="col-5 align-self-center">
                 <div class="customize-input float-right">
-                    <select
+                    <select id="news-filter"
                         class="custom-select custom-select-set form-control bg-white border-0 custom-shadow custom-radius">
-                        <option selected>Aug 19</option>
+                        <option selected>No Filter</option>
                         <option value="1">July 19</option>
                         <option value="2">Jun 19</option>
                     </select>
@@ -72,6 +72,24 @@
         <!-- Start First Cards -->
         <!-- *************************************************************** -->
         <div class="news-content">
+            <div class="card-group">
+                @foreach ($newsData as $item)
+                    <div class="card border-right" style="margin-right: 20px; min-width: 300px; max-width: 350px;">
+                        <div class="card-body content">
+                            <div style="min-height : 50px;">
+                                <p>{{ $item->title }}</p>
+                            </div>
+                            <img class="card-img-top" style="border-radius:8px; object-fit: cover;" height="150"
+                                width="100" src="{{ asset($item->getThumbnailPath()) }}" alt="Card image cap">
+                            <br><br>
+                            <p class="card-text" style="word-wrap:break-all;">
+                                {{ $item->description }}
+                            </p>
+                            <a class="button-goto w-100 d-flex justify-content-end" href="{{ $item->link }}">Link</a>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
         </div>
         <div class="text-center">
             <button id="loadMore">Load More</button>
@@ -232,20 +250,112 @@
     <script src="{{ asset('assets/libs/chartist/dist/chartist.min.js') }}"></script>
     <script src="{{ asset('assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js') }}"></script>
     <script src="{{ asset('dist/js/pages/dashboards/dashboard1.min.js') }}"></script>
+    <script src="{{ asset('library/moment/min/moment.min.js') }}"></script>
     <script type="text/javascript">
-        var news_data = [{
-            "id": 1,
-            "title": "Judul Berita",
-            "url-image": "{{ asset('assets/images/big/1.jpg') }}",
-            "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sodales non magna lobortis vestibulum. Mauris nec ante vel sapien porttitor viverra. Fusce sit amet ullamcorper mi, a luctus tortor. Cras.",
-            "link-detail": "news/id/detail"
-        }, ];
+        var news_data = [];
         var loadedData = [];
         var itemsPerPage = 6;
         var data = JSON.parse(`{!! $newsData !!}`);
         var dataImage = JSON.parse(`{!! $newsData !!}`);
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log("data", data)
+        var buttonLoad = document.getElementById('loadMore');
+
+        $('#news-filter').change(function() {
+            var selected_item = this.value;
+            doAjax(selected_item);
+        });
+
+        function doAjax(param) {
+            var requestData = {
+                filterName: param
+            };
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            $.ajax({
+                url: '/filter-news-dashboard-user',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(requestData),
+                success: function(response) {
+                    console.log('Success:', response);
+                    data = response;
+                    console.log('data suc:', data);
+                    news_data = [];
+                    console.log('news_data suc:', news_data);
+                    loadedData = [];
+                    redrawNewsData(response)
+                    $('#loadMore').click();
+                    //generateCallback();
+                    // loadData(news_data);
+                },
+                error: function(error) {
+                    console.error('Error:', error);
+                }
+            });
+        }
+
+        function redrawNewsData(newsList) {
+            var parentNewsEls = document.getElementsByClassName('card-group');
+            for (var i = 0; i < parentNewsEls.length; i++) {
+                var parentNewsEl = parentNewsEls[i];
+                while (parentNewsEl.firstChild) {
+                    parentNewsEl.removeChild(parentNewsEl.firstChild);
+                }
+            }
+            for (var j = 0; j < newsList.length; j++) {
+                console.log(newsList[j]);
+                var content = document.createElement('div');
+                content.innerHTML = `
+                        <div class="card border-right" style="margin-right: 20px; min-width: 300px; max-width: 350px;">
+                            <div class="card-body content">
+                                <div style="min-height : 50px;">
+                                    <p>${newsList[j].title}</p>
+                                </div>
+                                <img class="card-img-top" style="border-radius:8px; object-fit: cover;" height="150"
+                                    width="100" src="uploads/${newsList[j].thumbnail}" alt="Card image cap">
+                                <br><br>
+                                <p class="card-text" style="word-wrap:break-all;">
+                                    ${newsList[j].description}
+                                </p>
+                                <a class="button-goto w-100 d-flex justify-content-end" href="${newsList[j].link}">Link</a>
+                            </div>
+                        </div>
+                    `;
+                parentNewsEl.appendChild(content);
+            }
+        }
+
+
+
+        function createFilterElement() {
+            var date = new Date();
+            var latest_date = moment(date);
+
+            var selectElement = $('#news-filter');
+
+            selectElement.empty();
+            selectElement.append($('<option>', {
+                text: 'No filter',
+                value: ''
+            }));
+
+            for (var i = 0; i < 3; i++) {
+                var optionValue = latest_date.format('YYYY-MM');
+                var optionText = latest_date.format('MMM YY');
+                selectElement.append($('<option>', {
+                    value: optionValue,
+                    text: optionText
+                }));
+
+                latest_date.subtract(1, 'months');
+            }
+        };
+
+        function generateCallback() {
+            console.log("news", news_data);
             for (var i = 0; i < data.length; i++) {
                 var imageUrl = '{{ $newsData[0]->getThumbnailPath() }}'.replace('[0]', `[${i}]`);
                 var items = {
@@ -257,43 +367,54 @@
                 };
                 news_data.push(items);
             }
-            console.log("news", news_data)
             loadData(news_data);
-            var buttonLoad = document.getElementById('loadMore');
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            createFilterElement();
             buttonLoad.addEventListener('click', function() {
                 loadData(news_data);
             });
+            //generateCallback();
+        });
 
+        function loadData(arrData) {
+            var parentNewsEls = document.getElementsByClassName('news-content');
+            parentNewsEls.innerHTML = '';
+            // var elementsArray = Array.from(parentNewsEls);
 
-            function loadData(arrData) {
-                var parentNewsEls = document.getElementsByClassName('news-content');
-                var newsItems = arrData.slice(loadedData.length, loadedData.length + itemsPerPage);
-                for (var i = 0; i < parentNewsEls.length; i++) {
-                    var parentNewsEl = parentNewsEls[i];
+            // // Remove all child elements for each 'news-content' element
+            // elementsArray.forEach(function(element) {
+            //     while (element.firstChild) {
+            //         element.removeChild(element.firstChild);
+            //     }
+            // });
+            var newsItems = arrData.slice(loadedData.length, loadedData.length + itemsPerPage);
+            for (var i = 0; i < parentNewsEls.length; i++) {
+                var parentNewsEl = parentNewsEls[i];
 
-                    if (newsItems.length === 0) {
-                        buttonLoad.style.display = 'none';
-                        return;
+                if (newsItems.length === 0) {
+                    buttonLoad.style.display = 'none';
+                    return;
+                }
+                var parentCardGroup = document.createElement('div');
+                parentCardGroup.className = 'card-group ';
+                parentNewsEl.appendChild(parentCardGroup);
+
+                for (var j = 0; j < newsItems.length; j++) {
+                    if (j % 3 === 0) {
+                        var parentCardGroup = document.createElement('div');
+                        parentCardGroup.className = 'card-group ';
+                        parentNewsEl.appendChild(parentCardGroup);
                     }
-                    var parentCardGroup = document.createElement('div');
-                    parentCardGroup.className = 'card-group ';
-                    parentNewsEl.appendChild(parentCardGroup);
+                    var newsItem = newsItems[j];
 
-                    for (var j = 0; j < newsItems.length; j++) {
-                        if (j % 3 === 0) {
-                            var parentCardGroup = document.createElement('div');
-                            parentCardGroup.className = 'card-group ';
-                            parentNewsEl.appendChild(parentCardGroup);
-                        }
-                        var newsItem = newsItems[j];
+                    var card = document.createElement('div');
+                    card.className = 'card border-right';
+                    card.style.marginRight = '20px';
+                    card.style.minWidth = '300px';
+                    card.style.maxWidth = '350px';
 
-                        var card = document.createElement('div');
-                        card.className = 'card border-right';
-                        card.style.marginRight = '20px';
-                        card.style.minWidth = '300px';
-                        card.style.maxWidth = '350px';
-
-                        card.innerHTML = `
+                    card.innerHTML = `
                             <div class="card-body content">
                                 <div style="min-height : 50px;">
                                     <p>${newsItem.title}</p>
@@ -306,12 +427,11 @@
                                 <a class="button-goto w-100 d-flex justify-content-end" href="${newsItem['link-detail']}">Link</a>
                             </div>`;
 
-                        parentCardGroup.appendChild(card);
-                    }
+                    parentCardGroup.appendChild(card);
                 }
-                loadedData = loadedData.concat(newsItems);
-                $('#loadMore').click();
             }
-        });
+            loadedData = loadedData.concat(newsItems);
+            $('#loadMore').click();
+        }
     </script>
 @endpush
