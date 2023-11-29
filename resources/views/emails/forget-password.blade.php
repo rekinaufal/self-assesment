@@ -13,7 +13,7 @@
     @endif
 
     @if (!empty($details['opener_desc']))
-        <p>{{ $details['opener_desc'] }}</p>
+        <p>{!! $details['opener_desc'] !!}</p>
     @endif
 
     @if (!empty($details['personal_data']))

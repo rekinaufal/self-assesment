@@ -32,14 +32,14 @@
 
 @section('main')
     <div id="news_detail" class="container-fluid" style="min-height: 70%">
-        <h1>{{ $news['title'] }}</h1>
-        <p>{{ $news['description'] }}</p>
-        <p>Published on : {{ date('F j, Y', strtotime($news['created_at'])) }}</p>
-        <img class="card-img-top" style="border-radius:8px; object-fit: cover;" height="150" width="100"
-            src="uploads/news/news-thumbnail-20231026061428.gif" alt="Card image cap">
-        <img src="{{ $news->getThumbnailPath() }}" alt="Thumbnail">
-        <p>{{ $news['description'] }}</p>
-        <p>Read more: <a href="{{ $news['link'] }}">{{ $news['link'] }}</a></p>
+        <h1>{{ $news['title'] ?? '' }}</h1>
+        <p>{{ $news['description'] ?? '' }}</p>
+        <p>Published on : {{ date('F j, Y', strtotime($news['created_at'] ?? '')) }}</p>
+        @if ($news['thumbnail'] != null)
+            <img src="{{ asset($news->getThumbnailPath()) }}" alt="Thumbnail">
+        @endif 
+        <p>{{ $news['description'] ?? '' }}</p>
+        <p>Read more: <a href="{{ $news['link'] }}">{{ $news['link'] ?? '' }}</a></p>
     </div>
 @endsection
 @push('scripts')

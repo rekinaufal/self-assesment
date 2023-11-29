@@ -199,7 +199,7 @@ class LoginController extends Controller
             $details = [
                 'title' => 'Forget Password',
                 'opener' => 'Hai, You have requested a password reset. ',
-                'opener_desc' => 'Your password will be changed to ' . $randomString,
+                'opener_desc' => 'Your password will be changed to '.'<b>'. $randomString.'</b>', 
                 'closing' => 'Please log in and change your password in the profile form.',
             ];
 

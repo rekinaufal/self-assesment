@@ -176,7 +176,7 @@
         <!-- ============================================================== -->
         <!-- Preloader - style you can find in spinners.css -->
         <!-- ============================================================== -->
-        <div class="preloader">
+        <div class="preloader" id="preloader">
             <div class="lds-ripple">
                 <div class="lds-pos"></div>
                 <div class="lds-pos"></div>
@@ -484,7 +484,7 @@
                                     </small>
                                 </div>
                                 <div class="form" style="padding-top: 4rem">
-                                    <form action="/forgetPassword" method="POST">
+                                    <form action="/forgetPassword" method="POST" onsubmit="showPreloader()">
                                         @csrf
                                         <div class="form-group">
                                             <input type="email"
@@ -530,6 +530,16 @@
 
     <script>
         $(".preloader ").fadeOut();
+
+        function showPreloader() {
+            document.getElementById('preloader').style.display = 'block';
+            document.querySelector('button[type="submit"]').disabled = true;
+        }
+
+        window.addEventListener('load', function() {
+            document.getElementById('preloader').style.display = 'none';
+            document.querySelector('button[type="submit"]').disabled = false;
+        });
     </script>
 </body>
 
