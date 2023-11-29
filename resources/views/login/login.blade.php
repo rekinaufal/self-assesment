@@ -616,11 +616,23 @@
                                         Welcome back!, Please login to your account.
                                     </small>
                                 </div>
+                                @php if(isset($_COOKIE['login_email']) && isset($_COOKIE['login_pass']))
+                                {
+                                   $login_email = $_COOKIE['login_email'];
+                                   $login_pass  = $_COOKIE['login_pass'];
+                                   $is_remember = "checked='checked'";
+                                }
+                                else{
+                                   $login_email ='';
+                                   $login_pass = '';
+                                   $is_remember = "";
+                                 }
+                                @endphp
                                 <div class="form" style="padding-top: 4rem">
                                     <form action="{{ route('login.post') }}" method="post">
                                         @csrf
                                         <div class="form-group">
-                                            <input type="email"
+                                            <input type="email" value="{{$login_email}}"
                                                 class="form-control @if (session('errors') && session('errors')->first('section') == 'login') is-invalid @endif"
                                                 style="border: none; @if (session('errors') && session('errors')->first('section') == 'login') border-bottom: 1px solid rgba(255, 0, 0, 0.2); @else border-bottom: 1px solid rgba(0, 0, 0, 0.2); @endif"
                                                 id="exampleInputEmail1" aria-describedby="emailHelp"
@@ -628,7 +640,7 @@
                                         </div>
                                         <div class="form-group py-3">
                                             <div class="input-group mb-3">
-                                                <input type="password" class="form-control form-password"
+                                                <input type="password" class="form-control form-password" value="{{$login_pass}}"
                                                     style="border: none; @if (session('errors') && session('errors')->first('section') == 'login') border-bottom: 1px solid rgba(255, 0, 0, 0.2); @else border-bottom: 1px solid rgba(0, 0, 0, 0.2); @endif"
                                                     id="exampleInputPassword1" placeholder="Password"
                                                     name="password">
@@ -669,7 +681,7 @@
                                         </div>
                                         <div class="form-footer d-flex justify-content-between">
                                             <div class="form-check">
-                                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                                <input type="checkbox" class="form-check-input" id="exampleCheck1" name="remember" {{$is_remember}}>
                                                 <label class="form-check-label" for="exampleCheck1"><small>Remember
                                                         me</small></label>
                                             </div>

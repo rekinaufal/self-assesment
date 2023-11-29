@@ -160,7 +160,7 @@
                 </div>
             @endif
 
-            <a href="#" class="fixed">
+            <a href="#" class="fixed" id="live-chat">
                 <div class="btn header-cart" style="border-radius: 50%;">
                     {{-- <img src="{{ asset('assets/images/live-chat.png') }}" alt="Trolley Icon" width="30" /> --}}
                     <i data-feather="message-square" class="feather-icon" style="color:white"></i>
@@ -190,7 +190,25 @@
     {{-- Session Storage Config --}}
     <script src="{{ asset("dist/js/session-storage-config.js") }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.7/dist/autoComplete.min.js"></script>
+    <script src="{{ asset('library/sweetalert/dist/sweetalert.min.js') }}"></script>
+    
+    <script>
+        $("#live-chat").click(() => {
+            // swal({
+            //     title: "Warning",
+            //     text: "sedang dalam pembuatan / under construction",
+            //     icon: "warning",
+            //     buttons: true,
+            //     dangerMode: true
+            // });
+            swal({
+                text: "Warning",
+                text: "sedang dalam pembuatan / under construction",
+                icon: "warning",
 
+            });
+        })
+    </script>
     @stack('scripts')
 
 </body>
