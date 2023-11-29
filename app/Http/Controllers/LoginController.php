@@ -69,7 +69,7 @@ class LoginController extends Controller
         // $profile = UserProfile::where('user_id', $user->id)->first();
         $remember = request('remember');
         // if (!empty($user)) {
-            //     // $userRole = $user->roles->pluck('name')->first();
+        //     // $userRole = $user->roles->pluck('name')->first();
         //     // // Validate login on the admin page and use a non-admin account.
         //     // if ($request->type == 'admin' && $userRole != 'Administrator') {
         //     //     return back()->withErrors([
@@ -92,7 +92,7 @@ class LoginController extends Controller
                 'section' => 'login',
             ]);
         }
-        
+
         if (Auth::attempt($request->only('email', 'password'), $remember)) {
             $request->session()->regenerate();
             // Menyimpan avatar ke session
@@ -142,6 +142,30 @@ class LoginController extends Controller
         }
         return view('pages.dashboard', compact('newsData', 'permenperinCount', 'allUserPremiumCount', 'user', 'userRole', 'userCount', 'roleCount', 'pageTitle', 'type_menu'));
     }
+
+    public function filteredNewsDashboardUser(Request $request)
+    {
+        $permenperinCount = PermenperinCategory::all()->count();
+        $userCount = User::count();
+        $roleCount = Role::count();
+        $allUserPremiumCount = User::with('user_category')->where("user_category_id", "1")->count();
+        $user = auth()->user();
+        $userRole = $user->roles->pluck('name')->first();
+        $pageTitle = 'Dashboard';
+        $type_menu = 'dashboard';
+        $newsData = News::all();
+        $requestValue = $request->input('filterName');
+        if ($requestValue != '') {
+            $filteredNewsData = News::where("created_at", "like", "%{$requestValue}%")->get();
+            //dd($filteredNewsData);
+            if ($filteredNewsData != null) {
+                return response()->json($filteredNewsData, 200);
+            }
+        }
+        //return view('pages.dashboard', compact('newsData', 'permenperinCount', 'allUserPremiumCount', 'user', 'userRole', 'userCount', 'roleCount', 'pageTitle', 'type_menu'));
+        return response()->json($newsData, 200);
+    }
+
     public function viewForgetPassword()
     {
         $pageTitle = 'Forget Password';
@@ -209,7 +233,8 @@ class LoginController extends Controller
         }
     }
 
-    public function sendEmailRegister ($id, $name, $email) {
+    public function sendEmailRegister($id, $name, $email)
+    {
         // dd($name . '-' . $email );
         $subject = "Registration Comfirmation";
         $details = [
@@ -218,30 +243,30 @@ class LoginController extends Controller
                         E-learning. For your security, please kindly 
                         verify your account for a better experience by clicking the 
                         button below',
-            'button'=> $id, 
+            'button' => $id,
             'body2' => 'If in any case, you need our assistance, please do not 
                         hesitate to contact us through email at 
                         artexsinergi@smtp14.mailtarget.co.',
-            ];
-           
-            \Mail::to($email)->send(new \App\Mail\VerifyRegister($details, $subject));
+        ];
+
+        \Mail::to($email)->send(new \App\Mail\VerifyRegister($details, $subject));
     }
 
-    public function verify ($id) {
+    public function verify($id)
+    {
         $Get = DB::table('users')->where('id', $id)->first();
-        if(!$Get) {
-            return redirect ('/')->with('failed', 'Error');
+        if (!$Get) {
+            return redirect('/')->with('failed', 'Error');
         }
         if ($Get->email_verified_at != null) {
-            return redirect ('/')->with('failed', 'Your email has been verified on '. $Get->email_verified_at);
+            return redirect('/')->with('failed', 'Your email has been verified on ' . $Get->email_verified_at);
         } else {
             $mytime = Carbon::now();
             $fieldUpdate = [
                 'email_verified_at' =>  $mytime->toDatetimeString()
-                ];
+            ];
             $update = DB::table('users')->where('id', $id)->update($fieldUpdate);
-            return redirect ('/')->with('success', 'Verify email successfully, Please login');
+            return redirect('/')->with('success', 'Verify email successfully, Please login');
         }
-
     }
 }

@@ -49,6 +49,7 @@ Route::get('/auth-forgot-password', 'LoginController@viewForgetPassword');
 Route::group(['middleware' => ['auth']], function () {
     //roles
     Route::get('/dashboard', 'LoginController@dashboard')->name('dashboard');
+    Route::post('/filter-news-dashboard-user', 'LoginController@filteredNewsDashboardUser')->name('filteredNewsDashboardUser');
     //roles
     Route::resource('roles', 'RoleController');
     //user
