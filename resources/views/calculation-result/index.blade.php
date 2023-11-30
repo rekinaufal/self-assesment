@@ -95,8 +95,6 @@
                                                     <option>Pcs</option>
                                                     <option>Pack</option>
                                                     <option>Kg</option>
-                                                    <option>Wakwau</option>
-                                                    <option>Cukrukuk</option>
                                                 </select>
                                             </div>
 
@@ -144,9 +142,13 @@
                                                         class="fas fa-info-circle" data-toggle="tooltip"
                                                         data-placement="top" title="Tooltip on top">
                                                     </i></label>
-                                                <input type="number" name="harga_satuan"
-                                                    class="form-control form-control-sm" id="harga_satuan" placeholder=""
-                                                    required>
+                                                <div class="input-group input-group-sm mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon1">Rp.</span>
+                                                    </div>
+                                                    <input type="text" class="form-control rupiahInput" placeholder=""
+                                                        id="harga_satuan" name="harga_satuan">
+                                                </div>
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt;">
@@ -246,6 +248,10 @@
                                                         <th scope="col">KDN</th>
                                                         <th scope="col">KLN</th>
                                                         <th scope="col">Total</th>
+                                                        <th scope="col">Lokal PPN</th>
+                                                        <th scope="col">PDRI BM</th>
+                                                        <th scope="col">PDRI PPN</th>
+                                                        <th scope="col">PDRI PPH</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody id="tbody-1">
@@ -376,12 +382,17 @@
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm" id=""
-                                                    placeholder="" name="biaya">
+                                                <div class="input-group input-group-sm mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon1">Rp.</span>
+                                                    </div>
+                                                    <input type="text" class="form-control biaya12" placeholder=""
+                                                        id="1-2-biaya" name="biaya">
+                                                </div>
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="">Alokasi Biaya <i class="fas fa-info-circle"
+                                                <label for="">Alokasi Biaya % <i class="fas fa-info-circle"
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
@@ -453,11 +464,11 @@
                                                         <td>Dirjen Pajak</td>
                                                         <td>1</td>
                                                         <td>100%</td>
-                                                        <td class="1-2-sumLocalPpn">0</td>
+                                                        <td id="sumLocalPpn-1-2">0</td>
                                                         <td>100%</td>
-                                                        <td class="1-2-sumKdn">0</td>
-                                                        <td class="1-2-sumKln">0</td>
-                                                        <td class="1-2-sumTotal">0</td>
+                                                        <td id="sumLocalKdn-1-2">0</td>
+                                                        <td>Rp 0,00</td>
+                                                        <td id="sumLocalTotal-1-2">0</td>
                                                     </tr>
                                                     <tr>
                                                         <td>
@@ -477,16 +488,16 @@
                                                                 </div>
                                                             </div>
                                                         </td>
-                                                        <th scope="row">1</th>
+                                                        <th scope="row">2</th>
                                                         <td>PDRI</td>
                                                         <td>Bea Cukai</td>
                                                         <td>1</td>
                                                         <td>100%</td>
-                                                        <td class="1-2-sumPdriPpn">0</td>
+                                                        <td id="sumPdriTotal-1-2">0</td>
                                                         <td>100%</td>
-                                                        <td class="1-2-sumKdn">0</td>
-                                                        <td class="1-2-sumKln">0</td>
-                                                        <td class="1-2-sumTotal">0</td>
+                                                        <td id="sumPdriKln-1-2"></td>
+                                                        <td>Rp 0,00</td>
+                                                        <td id="sumPdri-1-2">0</td>
                                                     </tr>
                                                 </thead>
                                                 <tbody id="tbody-2">
@@ -512,9 +523,9 @@
                                                     </thead>
                                                     <tbody>
                                                         <tr>
-                                                            <td id="1-2-sumKdn">Rp.0</td>
-                                                            <td id="1-2-sumKln">Rp.0</td>
-                                                            <td id="1-2-sumTotal">Rp.0</td>
+                                                            <td id="sumKdn-1-2">Rp.0</td>
+                                                            <td id="sumKln-1-2">Rp.0</td>
+                                                            <td id="sumTotal-1-2">Rp.0</td>
                                                         </tr>
                                                     </tbody>
 
@@ -554,13 +565,14 @@
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <select class="form-control form-control-sm" id=""
+                                                <select class="form-control form-control-sm setTkdn" id=""
                                                     name="kewarganegaraan">
                                                     <option></option>
                                                     @foreach ($countries as $country)
                                                         <option value="{{ $country }}">{{ $country }}</option>
                                                     @endforeach
                                                 </select>
+                                                <input type="hidden" id="tkdn-1-3" value="" name="tkdn">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -573,21 +585,17 @@
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="">Jumlah <i class="fas fa-info-circle"
-                                                        data-toggle="tooltip" data-placement="top"
-                                                        title="Tooltip on top">
-                                                    </i></label>
-                                                <input type="text" class="form-control form-control-sm" id=""
-                                                    placeholder="" name="jumlah" value="0">
-                                            </div>
-
-                                            <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
                                                 <label for="">Gaji Perbulan<i class="fas fa-info-circle"
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm" id=""
-                                                    placeholder="Rp." name="gaji_perbulan" value="0">
+                                                <div class="input-group input-group-sm mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon1">Rp.</span>
+                                                    </div>
+                                                    <input type="text" class="form-control gaji_perbulan13"
+                                                        placeholder="" id="1-2-gaji_perbulan" name="gaji_perbulan">
+                                                </div>
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -768,6 +776,51 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="d-flex align-items-center">
+                                        <div class="col">
+                                            <p class="mr-2 text-right">Kapasitas Normal Perbulan</p>
+                                        </div>
+                                        <div class="col-6 p-1">
+                                            <div class="table-responsive table-responsive-sm">
+                                                <table class="table table-bordered table-hover" style="font-size: 8pt">
+                                                    <thead class="">
+                                                        <tr>
+                                                            <th scope="col">
+                                                                <div class="input-group input-group-sm mb-3">
+                                                                    <div class="input-group-prepend">
+                                                                        <span class="input-group-text"
+                                                                            id="basic-addon1">Rp.</span>
+                                                                    </div>
+                                                                    <input type="text"
+                                                                        class="form-control kapasitasNormalPerbulan"
+                                                                        placeholder="" name="gaji_perbulan">
+                                                                </div>
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex">
+                                        <div class="col">
+                                            <p class="mt-5 mr-2 text-right">Biaya Satuan Product</p>
+                                        </div>
+                                        <div class="col-6 p-1">
+                                            <div class="table-responsive table-responsive-sm">
+                                                <table class="table table-bordered table-hover" style="font-size: 8pt">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col" id="kdn-biaya-satuan-product-1-3">KDN</th>
+                                                            <th scope="col" id="kln-biaya-satuan-product-1-3">KLN</th>
+                                                            <th scope="col" id="total-biaya-satuan-product-1-3">Total
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
@@ -828,9 +881,14 @@
                                                         class="fas fa-info-circle" data-toggle="tooltip"
                                                         data-placement="top" title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm"
-                                                    id="biaya_pengurusan_per_bulan" name="biaya_pengurusan_per_bulan"
-                                                    placeholder="">
+                                                <div class="input-group input-group-sm mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon1">Rp.</span>
+                                                    </div>
+                                                    <input type="text" class="form-control biaya_pengurusan_perbulan14"
+                                                        placeholder="" id="biaya_pengurusan_per_bulan"
+                                                        name="biaya_pengurusan_per_bulan">
+                                                </div>
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -883,6 +941,64 @@
                                                         <th scope="col">KDN</th>
                                                         <th scope="col">KLN</th>
                                                         <th scope="col">Total</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="dropdown">
+                                                                <i data-feather="more-vertical" id="dropdownMenuButton"
+                                                                    class="feather-icon dropdown-toggle"
+                                                                    style="cursor: pointer;" data-toggle="dropdown"
+                                                                    aria-haspopup="true" aria-expanded="false"></i>
+                                                                <div class="dropdown-menu"
+                                                                    aria-labelledby="dropdownMenuButton">
+                                                                    <a class="dropdown-item buttonEditNews"
+                                                                        onclick=""><i class="fa fa-edit"></i> Edit</a>
+                                                                    <form action="" method="post">
+                                                                        <button class="dropdown-item" type="submit"><i
+                                                                                class="fa fa-trash"></i> Delete</button>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <th scope="row">1</th>
+                                                        <td>BPJS</td>
+                                                        <td>-</td>
+                                                        <td>100%</td>
+                                                        <td>-</td>
+                                                        <td id="sumBpjs-1-4-3">Rp 0,00</td>
+                                                        <td>100%</td>
+                                                        <td id="sumBpjsKdn-1-4-3">Rp 0,00</td>
+                                                        <td>Rp 0,00</td>
+                                                        <td id="sumBpjsTotal-1-4-3">Rp 0,00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="dropdown">
+                                                                <i data-feather="more-vertical" id="dropdownMenuButton"
+                                                                    class="feather-icon dropdown-toggle"
+                                                                    style="cursor: pointer;" data-toggle="dropdown"
+                                                                    aria-haspopup="true" aria-expanded="false"></i>
+                                                                <div class="dropdown-menu"
+                                                                    aria-labelledby="dropdownMenuButton">
+                                                                    <a class="dropdown-item buttonEditNews"
+                                                                        onclick=""><i class="fa fa-edit"></i> Edit</a>
+                                                                    <form action="" method="post">
+                                                                        <button class="dropdown-item" type="submit"><i
+                                                                                class="fa fa-trash"></i> Delete</button>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <th scope="row">1</th>
+                                                        <td>Tunjangan Lainnya</td>
+                                                        <td>-</td>
+                                                        <td>100%</td>
+                                                        <td>-</td>
+                                                        <td id="sumTunjanganLainnya-1-4-3">Rp 0,00</td>
+                                                        <td>100%</td>
+                                                        <td id="sumTunjanganLainnyaKdn-1-4-3">Rp 0,00</td>
+                                                        <td>Rp 0,00</td>
+                                                        <td id="sumTunjanganLainnyaTotal-1-4-3">Rp 0,00</td>
                                                     </tr>
                                                 </thead>
                                                 <tbody id="tbody-4">
@@ -978,6 +1094,51 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="d-flex align-items-center">
+                                        <div class="col">
+                                            <p class="mr-2 text-right">Kapasitas Normal Perbulan</p>
+                                        </div>
+                                        <div class="col-6 p-1">
+                                            <div class="table-responsive table-responsive-sm">
+                                                <table class="table table-bordered table-hover" style="font-size: 8pt">
+                                                    <thead class="">
+                                                        <tr>
+                                                            <th scope="col">
+                                                                <div class="input-group input-group-sm mb-3">
+                                                                    <div class="input-group-prepend">
+                                                                        <span class="input-group-text"
+                                                                            id="basic-addon1">Rp.</span>
+                                                                    </div>
+                                                                    <input type="text"
+                                                                        class="form-control kapasitasNormalPerbulan"
+                                                                        placeholder="" name="gaji_perbulan">
+                                                                </div>
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex">
+                                        <div class="col">
+                                            <p class="mt-5 mr-2 text-right">Biaya Satuan Product</p>
+                                        </div>
+                                        <div class="col-6 p-1">
+                                            <div class="table-responsive table-responsive-sm">
+                                                <table class="table table-bordered table-hover" style="font-size: 8pt">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col" id="kdn-biaya-satuan-product-1-4">KDN</th>
+                                                            <th scope="col" id="kln-biaya-satuan-product-1-4">KLN</th>
+                                                            <th scope="col" id="total-biaya-satuan-product-1-4">Total
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
@@ -1013,15 +1174,14 @@
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <select class="form-control form-control-sm" id="kewarganegaraan"
+                                                <select class="form-control form-control-sm setTkdn" id=""
                                                     name="kewarganegaraan">
                                                     <option></option>
-                                                    <option>Indonesia</option>
-                                                    <option>Zimbabwe</option>
-                                                    <option>Asoy</option>
-                                                    <option>Geboy</option>
-                                                    <option>Tabrak tabrak masuk</option>
+                                                    @foreach ($countries as $country)
+                                                        <option value="{{ $country }}">{{ $country }}</option>
+                                                    @endforeach
                                                 </select>
+                                                <input type="hidden" id="tkdn-1-5" value="" name="tkdn">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -1040,8 +1200,13 @@
                                                     <i class="fas fa-info-circle" data-toggle="tooltip"
                                                         data-placement="top" title="Tooltip on top"></i>
                                                 </label>
-                                                <input type="text" class="form-control form-control-sm"
-                                                    placeholder="Rp." id="gaji_perbulan" name="gaji_perbulan">
+                                                <div class="input-group input-group-sm mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon1">Rp.</span>
+                                                    </div>
+                                                    <input type="text" class="form-control gaji_perbulan15"
+                                                        placeholder="" id="gaji_perbulan" name="gaji_perbulan">
+                                                </div>
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -1139,7 +1304,8 @@
                                                                 <div class="dropdown-menu"
                                                                     aria-labelledby="dropdownMenuButton">
                                                                     <a class="dropdown-item buttonEditNews"
-                                                                        onclick=""><i class="fa fa-edit"></i> Edit</a>
+                                                                        onclick=""><i class="fa fa-edit"></i>
+                                                                        Edit</a>
                                                                     <form action="" method="post">
                                                                         <button class="dropdown-item" type="submit"><i
                                                                                 class="fa fa-trash"></i> Delete</button>
@@ -1192,6 +1358,53 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="d-flex align-items-center">
+                                        <div class="col">
+                                            <p class="mr-2 text-right">Kapasitas Normal Perbulan</p>
+                                        </div>
+                                        <div class="col-6 p-1">
+                                            <div class="table-responsive table-responsive-sm">
+                                                <table class="table table-bordered table-hover" style="font-size: 8pt">
+                                                    <thead class="">
+                                                        <tr>
+                                                            <th scope="col">
+                                                                <div class="input-group input-group-sm mb-3">
+                                                                    <div class="input-group-prepend">
+                                                                        <span class="input-group-text"
+                                                                            id="basic-addon1">Rp.</span>
+                                                                    </div>
+                                                                    <input type="text"
+                                                                        class="form-control kapasitasNormalPerbulan"
+                                                                        placeholder="" name="gaji_perbulan">
+                                                                </div>
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex">
+                                        <div class="col">
+                                            <p class="mt-5 mr-2 text-right">Biaya Satuan Product</p>
+                                        </div>
+                                        <div class="col-6 p-1">
+                                            <div class="table-responsive table-responsive-sm">
+                                                <table class="table table-bordered table-hover" style="font-size: 8pt">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col" id="kdn-biaya-satuan-product-1-5">KDN
+                                                            </th>
+                                                            <th scope="col" id="kln-biaya-satuan-product-1-5">KLN
+                                                            </th>
+                                                            <th scope="col" id="total-biaya-satuan-product-1-5">Total
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
@@ -1219,41 +1432,52 @@
                                                     id="" placeholder="" name="uraian">
                                             </div>
 
-                                            <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
+                                            <div class="form-group-sm mx-2 mt-2 "
+                                                style="font-size: 10pt; width : 13rem">
                                                 <label for="">Spesifikasi <i class="fas fa-info-circle"
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm" id=""
-                                                    placeholder="" name="spesifikasi">
+                                                <input type="text" class="form-control form-control-sm"
+                                                    id="" placeholder="" name="spesifikasi"
+                                                    name="spesifikasi">
                                             </div>
 
-                                            <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
+                                            <div class="form-group-sm mx-2 mt-2 "
+                                                style="font-size: 10pt; width : 13rem">
                                                 <label for="">Jumlah Unit <i class="fas fa-info-circle"
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm" id=""
-                                                    placeholder="" name="jumlah_unit">
+                                                <input type="text" class="form-control form-control-sm"
+                                                    id="" placeholder="" name="jumlah_unit">
                                             </div>
 
 
-                                            <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
+                                            <div class="form-group-sm mx-2 mt-2 "
+                                                style="font-size: 10pt; width : 13rem">
                                                 <label for="">Biaya Depresiasi Per Bulan<i
                                                         class="fas fa-info-circle" data-toggle="tooltip"
                                                         data-placement="top" title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm" id=""
-                                                    placeholder="Rp." name="biaya_depresiasi_perbulan">
+                                                <div class="input-group input-group-sm mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon1">Rp.</span>
+                                                    </div>
+                                                    <input type="text" class="form-control biayaDepresiasiPerbulan16"
+                                                        placeholder="" id="biaya_depresiasi_perbulan"
+                                                        name="biaya_depresiasi_perbulan">
+                                                </div>
                                             </div>
 
-                                            <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
+                                            <div class="form-group-sm mx-2 mt-2 "
+                                                style="font-size: 10pt; width : 13rem">
                                                 <label for="">Alokasi Mesin % <i class="fas fa-info-circle"
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm" id=""
-                                                    placeholder="" name="alokasi_mesin">
+                                                <input type="text" class="form-control form-control-sm"
+                                                    id="" placeholder="" name="alokasi">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt;">
@@ -1268,7 +1492,7 @@
                                                         <div class="row">
                                                             <div class="form-group-sm ml-2" style="font-size: 7pt;">
                                                                 <label for="">Dibuat</label>
-                                                                <select name="alat_kerja" id=""
+                                                                <select name="dibuat" id="dibuat-1-6"
                                                                     class="form-control form-control-sm"
                                                                     style="width: 8rem">
                                                                     <option value="Dalam Negeri">Dalam Negeri</option>
@@ -1277,13 +1501,15 @@
                                                             </div>
                                                             <div class="form-group-sm ml-2" style="font-size: 7pt;">
                                                                 <label for="">Dimiliki</label>
-                                                                <select name="dimiliki" id=""
+                                                                <select name="dimiliki" id="dimiliki-1-6"
                                                                     class="form-control form-control-sm"
                                                                     style="width: 8rem">
                                                                     <option value="Dalam Negeri">Dalam Negeri</option>
                                                                     <option value="Luar Negeri">Luar Negeri</option>
                                                                 </select>
                                                             </div>
+                                                            <input type="hidden" name="tkdn" id="tkdn-1-6"
+                                                                value="100">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1332,7 +1558,7 @@
                                                         <th scope="col">Total</th>
                                                     </tr>
                                                 </thead>
-                                                <tbody>
+                                                <tbody id="tbody-6">
                                                     <tr>
                                                         <td>
                                                             <div class="dropdown">
@@ -1396,6 +1622,79 @@
                                                         <td>45.000.000</td>
                                                     </tr>
                                                 </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex">
+                                    <div class="col">
+                                        <p class="mt-5 mr-2 text-right">Total</p>
+                                    </div>
+                                    <div class="col-6 p-1">
+                                        <div class="table-responsive table-responsive-sm">
+                                            <table class="table table-bordered table-hover" style="font-size: 8pt">
+                                                <thead class="thead-dark">
+                                                    <tr>
+                                                        <th scope="col">Jumlah Unit</th>
+                                                        <th scope="col">KDN</th>
+                                                        <th scope="col">KLN</th>
+                                                        <th scope="col">Total</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td id="1-6-sumJumlahUnit">0</td>
+                                                        <td id="1-6-sumKdn">Rp.0</td>
+                                                        <td id="1-6-sumKln">Rp.0</td>
+                                                        <td id="1-6-sumTotal">Rp.0</td>
+                                                    </tr>
+                                                </tbody>
+
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <div class="col">
+                                        <p class="mr-2 text-right">Kapasitas Normal Perbulan</p>
+                                    </div>
+                                    <div class="col-6 p-1">
+                                        <div class="table-responsive table-responsive-sm">
+                                            <table class="table table-bordered table-hover" style="font-size: 8pt">
+                                                <thead class="">
+                                                    <tr>
+                                                        <th scope="col">
+                                                            <div class="input-group input-group-sm mb-3">
+                                                                <div class="input-group-prepend">
+                                                                    <span class="input-group-text"
+                                                                        id="basic-addon1">Rp.</span>
+                                                                </div>
+                                                                <input type="text"
+                                                                    class="form-control kapasitasNormalPerbulan"
+                                                                    placeholder="" name="gaji_perbulan">
+                                                            </div>
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex">
+                                    <div class="col">
+                                        <p class="mt-5 mr-2 text-right">Biaya Satuan Product</p>
+                                    </div>
+                                    <div class="col-6 p-1">
+                                        <div class="table-responsive table-responsive-sm">
+                                            <table class="table table-bordered table-hover" style="font-size: 8pt">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col" id="kdn-biaya-satuan-product-1-6">KDN</th>
+                                                        <th scope="col" id="kln-biaya-satuan-product-1-6">KLN</th>
+                                                        <th scope="col" id="total-biaya-satuan-product-1-6">Total
+                                                        </th>
+                                                    </tr>
+                                                </thead>
                                             </table>
                                         </div>
                                     </div>
@@ -1487,21 +1786,73 @@
 @push('scripts')
     <script src="{{ asset('library/sweetalert/dist/sweetalert.min.js') }}"></script>
     <script src="{{ asset('assets/extra-libs/sparkline/sparkline.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/autonumeric/4.10.0/autoNumeric.min.js"></script>
+    <script>
+        $(() => {
+            var rupiahInput = new AutoNumeric('.rupiahInput', {
+                digitGroupSeparator: '.',
+                decimalCharacter: ',',
+                decimalPlaces: 2,
+                minimumValue: '0'
+            });
+
+            var rupiahInput12 = new AutoNumeric('.biaya12', {
+                digitGroupSeparator: '.',
+                decimalCharacter: ',',
+                decimalPlaces: 2,
+                minimumValue: '0'
+            });
+
+            var rupiahInput13 = new AutoNumeric('.gaji_perbulan13', {
+                digitGroupSeparator: '.',
+                decimalCharacter: ',',
+                decimalPlaces: 2,
+                minimumValue: '0'
+            });
+
+            var rupiahInput14 = new AutoNumeric('.biaya_pengurusan_perbulan14', {
+                digitGroupSeparator: '.',
+                decimalCharacter: ',',
+                decimalPlaces: 2,
+                minimumValue: '0'
+            });
+
+            var rupiahInput15 = new AutoNumeric('.gaji_perbulan15', {
+                digitGroupSeparator: '.',
+                decimalCharacter: ',',
+                decimalPlaces: 2,
+                minimumValue: '0'
+            });
+            var kapasitasNormalPerbulan = new AutoNumeric('.kapasitasNormalPerbulan', {
+                digitGroupSeparator: '.',
+                decimalCharacter: ',',
+                decimalPlaces: 2,
+                minimumValue: '0'
+            });
+            var biayaDepresiasiPerbulan16 = new AutoNumeric('.biayaDepresiasiPerbulan16', {
+                digitGroupSeparator: '.',
+                decimalCharacter: ',',
+                decimalPlaces: 2,
+                minimumValue: '0'
+            });
+        })
+    </script>
     <script>
         var url = new URL(window.location.href);
         var path = url.pathname;
         var match = path.match(/\/(\d+)$/);
         let computationId = match[1];
-        let draftCalculations = localStorage.getItem("draftCalculations") != null ? localStorage.getItem("draftCalculations") : null;
+        let draftCalculations = localStorage.getItem("draftCalculations") != null ? localStorage.getItem(
+            "draftCalculations") : null;
 
         function init() {
             let calculations = null;
-            if(draftCalculations != null) {
-                if(typeof(draftCalculations) == 'string') {
+            if (draftCalculations != null) {
+                if (typeof(draftCalculations) == 'string') {
                     draftCalculations = JSON.parse(draftCalculations);
                 }
                 let draftCalculation = draftCalculations.find(f => f.computationId == computationId);
-                if(draftCalculation != null) { // ada tpi id computation tidak ditemukan
+                if (draftCalculation != null) { // ada tpi id computation tidak ditemukan
                     calculations = draftCalculation.calculations;
                 } else {
                     $.ajax({
@@ -1528,8 +1879,8 @@
                                         total: "{formulas.kdn} + {formulas.kln}",
                                         ppnCalc: "{ppn}% * ({formulas.kdn} + {formulas.kln})",
                                         bmCalc: "{bm}% * ({formulas.kdn} + {formulas.kln})",
-                                        pdriPpnCalc: "{pdri_ppn}% * ({formulas.kdn} + {formulas.kln})",
-                                        pphCalc: "{pph}% * ({formulas.kdn} + {formulas.kln})",
+                                        pdriPpnCalc: "{pdri_ppn}% * ({formulas.bmCalc} + ({formulas.kdn} + {formulas.kln}))",
+                                        pphCalc: "{pph}% * ({formulas.bmCalc} + ({formulas.kdn} + {formulas.kln}))",
                                         sumKdn: "sum:kdn",
                                         sumKln: "sum:kln",
                                         sumTotal: "sum:total",
@@ -1563,13 +1914,15 @@
                                     "nama": "Jasa Terkait Bahan Baku",
                                     "slug": "jasa-terkait-bahan-baku",
                                     "formulas": {
-                                        kdn: "{tkdn}% * {jumlah_orang} * {gaji_per_bulan} * {alokasi}%",
-                                        kln: "(100% - {tkdn}%) * {jumlah_orang} * {gaji_per_bulan} * {alokasi}%",
+                                        kdn: "{tkdn}% * {jumlah_orang} * {gaji_perbulan} * {alokasi_gaji}%",
+                                        kln: "(100% - {tkdn}%) * {jumlah_orang} * {gaji_perbulan} * {alokasi_gaji}%",
                                         total: "{formulas.kdn} + {formulas.kln}",
                                         sumJumlahOrang: "sum:jumlah_orang",
                                         sumKdn: "sum:kdn",
                                         sumKln: "sum:kln",
                                         sumTotal: "sum:total",
+                                        sumBpjs: "sum:bpjs",
+                                        sumTunjanganLainnya: "sum:tunjangan_lainnya",
                                     },
                                     "data": []
                                 },
@@ -1605,6 +1958,22 @@
                                     },
                                     "data": []
                                 },
+                                {
+                                    "id": "6",
+                                    "no": "1.6",
+                                    "nama": "Jasa Terkait Bahan Baku",
+                                    "slug": "jasa-terkait-bahan-baku",
+                                    "formulas": {
+                                        kdn: "{tkdn}% * {jumlah_unit} * {biaya_depresiasi_perbulan} * {alokasi}%",
+                                        kln: "(100% - {tkdn}%) * {jumlah_unit} * {biaya_depresiasi_perbulan} * {alokasi}%",
+                                        total: "{formulas.kdn} + {formulas.kln}",
+                                        sumJumlahUnit: "sum:jumlah_unit",
+                                        sumKdn: "sum:kdn",
+                                        sumKln: "sum:kln",
+                                        sumTotal: "sum:total",
+                                    },
+                                    "data": []
+                                },
                             ];
                             draftCalculation = {
                                 computationId: computationId,
@@ -1619,96 +1988,6 @@
                 draftCalculations = [];
                 init();
             }
-            // let calculations = draftCalculations.find(f => f.calculationId == calculationId);
-            // let calculations = localStorage.getItem('calculations');
-            // if (calculations != null) {
-            //     calculations = JSON.parse(calculations);
-            // } else {
-            //     $.ajax({
-            //         type: 'GET',
-            //         url: '{{ $computation->calculation_result != null ? route('calculation-results.show', $computation->calculation_result->id) : 'fail' }}',
-            //         async: false,
-            //         success: function(response) {
-            //             calculations = response.calculationResult.results;
-            //         },
-            //         error: function(error) {
-            //             calculations = [{
-            //                     "id": "1",
-            //                     "no": "1.1",
-            //                     "nama": "Bahan Baku",
-            //                     "slug": "bahan-baku",
-            //                     "formulas": {
-            //                         kdn: "{tkdn}% * {jumlah} * {harga_satuan}",
-            //                         kln: "(100% - {tkdn}%) * {jumlah} * {harga_satuan}",
-            //                         total: "{formulas.kdn} + {formulas.kln}",
-            //                         ppnCalc: "{ppn}% * ({formulas.kdn} + {formulas.kln})",
-            //                         bmCalc: "{bm}% * ({formulas.kdn} + {formulas.kln})",
-            //                         pdriPpnCalc: "{pdri_ppn}% * ({formulas.kdn} + {formulas.kln})",
-            //                         pphCalc: "{pph}% * ({formulas.kdn} + {formulas.kln})",
-            //                         sumKdn: "sum:kdn",
-            //                         sumKln: "sum:kln",
-            //                         sumTotal: "sum:total",
-            //                         sumPpn: "sum:ppnCalc",
-            //                         sumBm: "sum:bmCalc",
-            //                         sumPdriPpn: "sum:pdriPpnCalc",
-            //                         sumPph: "sum:pphCalc",
-            //                         // sumPdriTotal: "{formulas.sumBm} + {formulas.sumPdriPpn} + {formulas.sumPph}"
-            //                         sumPdriTotal: "sum:bmCalc + sum:pdriPpnCalc + sum:pphCalc"
-            //                     },
-            //                     "data": []
-            //                 },
-            //                 {
-            //                     "id": "2",
-            //                     "no": "1.2",
-            //                     "nama": "Jasa Terkait Bahan Baku",
-            //                     "slug": "jasa-terkait-bahan-baku",
-            //                     "formulas": {
-            //                         kdn: "{tkdn}% * {jumlah} * {biaya} * {alokasi}%",
-            //                         kln: "(100% - {tkdn}%) * {jumlah} * {biaya} * {alokasi}%",
-            //                         total: "{formulas.kdn} + {formulas.kln}",
-            //                     },
-            //                     "data": []
-            //                 },
-            //                 {
-            //                     "id": "3",
-            //                     "no": "1.3",
-            //                     "nama": "Jasa Terkait Bahan Baku",
-            //                     "slug": "jasa-terkait-bahan-baku",
-            //                     "formulas": {
-            //                         kdn: "{tkdn}% * {jumlah_orang} * {gaji_per_bulan} * {alokasi}%",
-            //                         kln: "(100% - {tkdn}%) * {jumlah_orang} * {gaji_per_bulan} * {alokasi}%",
-            //                         total: "{formulas.kdn} + {formulas.kln}",
-            //                     },
-            //                     "data": []
-            //                 },
-            //                 {
-            //                     "id": "4",
-            //                     "no": "1.4",
-            //                     "nama": "Jasa Terkait Bahan Baku",
-            //                     "slug": "jasa-terkait-bahan-baku",
-            //                     "formulas": {
-            //                         kdn: "{tkdn}% * {jumlah_orang} * {biaya_pengurusan_per_bulan} * {alokasi}%",
-            //                         kln: "(100% - {tkdn}%) * {jumlah_orang} * {biaya_pengurusan_per_bulan} * {alokasi}%",
-            //                         total: "{formulas.kdn} + {formulas.kln}",
-            //                     },
-            //                     "data": []
-            //                 },
-            //                 {
-            //                     "id": "5",
-            //                     "no": "1.5",
-            //                     "nama": "Jasa Terkait Bahan Baku",
-            //                     "slug": "jasa-terkait-bahan-baku",
-            //                     "formulas": {
-            //                         kdn: "{tkdn}% * {jumlah_orang} * {gaji_perbulan} * {alokasi}%",
-            //                         kln: "(100% - {tkdn}%) * {jumlah_orang} * {gaji_perbulan} * {alokasi}%",
-            //                         total: "{formulas.kdn} + {formulas.kln}",
-            //                     },
-            //                     "data": []
-            //                 },
-            //             ];
-            //         }
-            //     });
-            // }
             return calculations
         }
 
@@ -1716,30 +1995,9 @@
         reloadAllTable()
 
         $(() => {
-            $(window).on('beforeunload', function() {
-                return "save terlebih dahulu data anda!";
-            });
-
-            $(document).keydown(function(e) {
-                // Mendeteksi kombinasi tombol "F5"
-                if (e.which === 116 || (e.ctrlKey && e.which === 82) || (e.ctrlKey && e.which === 116) || (e
-                        .ctrlKey && e.shiftKey && e.which === 82)) {
-                    e.preventDefault();
-                    swal({
-                        title: "Warning",
-                        text: "You haven't save the calculation. If you want to refresh the page, you will lose any change that you have made.",
-                        icon: "warning",
-                        buttons: true,
-                        dangerMode: true
-                    }).then((willReload) => {
-                        if (willReload) {
-                            location.reload()
-                        } else {
-                            return false;
-                        }
-                    });
-                }
-            });
+            // $(window).on('beforeunload', function() {
+            //     return "save terlebih dahulu data anda!";
+            // });
 
             $("#form-1").on("submit", (event) => {
                 event.preventDefault();
@@ -1865,6 +2123,31 @@
                     icon: "success",
                 })
             })
+
+            $("#form-6").on("submit", (event) => {
+                event.preventDefault();
+                let serializedArray = $("#form-6").serializeArray();
+                let formResult = {};
+
+                for (let i = 0; i < serializedArray.length; i++) {
+                    let input = serializedArray[i];
+                    formResult[input.name] = input.value;
+                }
+
+                formResult["id"] = new Date().getTime()
+
+                let storeCalculation = calculateAndBind(formResult, 6);
+
+                reloadAllTable()
+
+                $("#form-6")[0].reset();
+
+                swal({
+                    title: "Success",
+                    text: "Success to add new calculation",
+                    icon: "success",
+                })
+            })
         })
 
         function calculateAndBind(formResult, id) {
@@ -1920,11 +2203,9 @@
 
 
             // Mengonversi objek menjadi string JSON
-            // var jsonCalculations = JSON.stringify(calculations);
             let jsonDraftCalculations = JSON.stringify(draftCalculations);
 
             // Menyimpan data di Local Storage dengan kunci tertentu
-            // localStorage.setItem('calculations', jsonCalculations);
             localStorage.setItem('draftCalculations', jsonDraftCalculations);
         }
 
@@ -1936,11 +2217,12 @@
             console.log(formulas)
             for (let key in formulas) {
                 replacedFormulas[key] = formulas[key].replace(variableRegex, function(match, fieldName) {
-                    return resultObject[fieldName] || 0;
+                    return parseCurrencyOrDecimal(resultObject[fieldName]) || 0;
                 });
             }
             for (let key in replacedFormulas) {
-                replacedFormulas[key] = replacedFormulas[key].replace(variableRegex2, function(match, formulaName) {
+                replacedFormulas[key] = replacedFormulas[key].replace(variableRegex2, function(match,
+                    formulaName) {
                     return `(${replacedFormulas[formulaName]})` || 0;
                 });
 
@@ -1954,13 +2236,52 @@
         function replacePercent(expression) {
             let percentageRegex = /(\d+(\.\d+)?)%/;
 
-            expression = expression.replace(/(\d+)%/g, function(match, p1) {
-                if (p1 == 0) return 0;
-                return parseFloat(p1) / 100 || match;
-            })
+            for (let i = 0; i < 10; i++) {
+                expression = expression.replace(percentageRegex, function(match, p1) {
+                    if (p1 == 0) return 0;
+                    return parseFloat(match).toFixed(14) / 100 || match;
+                })
+            }
+
+            for (let i = 0; i < 5; i++) {
+                expression = expression.replace(/(\d{1,3}(?:,\d{3})*(?:\.\d+)?)%$/, function(match, p1) {
+                    if (p1 == 0) return 0;
+                    let float = parseFloat(match).toFixed(14) / 100
+                    return float || match;
+                })
+            }
 
             return expression;
         }
+
+        function parseCurrencyOrDecimal(input) {
+            var cleanedInput = "";
+            // Hapus semua karakter titik sebagai pemisah ribuan
+            if (input != null) {
+                var cleanedInput = input.replace(/\./g, '');
+            }
+
+            // Periksa apakah string memiliki format mata uang (misal: 20.000,00)
+            if (/^\d+,\d{2}$/.test(cleanedInput)) {
+                // Jika iya, replace koma dengan titik dan parse ke float
+                return parseFloat(cleanedInput.replace(',', '.'));
+            } else if (/^\d+(\.\d+)?$/.test(cleanedInput)) {
+                // Jika hanya angka desimal, parse ke float langsung
+                return parseFloat(cleanedInput);
+            } else {
+                // Jika tidak sesuai dengan format yang diharapkan, kembalikan NaN atau penanganan kesalahan sesuai kebutuhan
+                return input;
+            }
+        }
+
+        function formatToCurrency(number) {
+            // Format angka menjadi mata uang dengan dua desimal dan pemisah ribuan
+            return new Intl.NumberFormat('id-ID', {
+                style: 'currency',
+                currency: 'IDR'
+            }).format(number ?? 0);
+        }
+
 
         function store(url, formData, redirectUrl, computationId) {
             formData = {
@@ -2017,6 +2338,8 @@
                 reloadTable("tbody-1", 1);
                 reloadTable("tbody-2", 2);
                 reloadTable("tbody-3", 3);
+                reloadTable("tbody-4", 4);
+                reloadTable("tbody-5", 5);
 
                 swal({
                     title: "Success",
@@ -2034,27 +2357,27 @@
                 const tbody = $(`#${tbodyId}`);
                 tbody.empty();
                 calculation = calculations.find(f => f.id == calculationId);
-                let sumKdn = parseInt(calculation.sumKdn).toLocaleString()
-                let sumKln = parseInt(calculation.sumKln).toLocaleString()
-                let sumTotal = parseInt(calculation.sumTotal).toLocaleString()
-                let sumPpn = parseInt(calculation.sumPpn).toLocaleString()
-                let sumBm = parseInt(calculation.sumBm).toLocaleString()
-                let sumPdriPpn = parseInt(calculation.sumPdriPpn).toLocaleString()
-                let sumPph = parseInt(calculation.sumPph).toLocaleString()
-                let sumPdriTotal = parseInt(calculation.sumPdriTotal).toLocaleString()
-                $('#sum-kdn').text(`Rp.${sumKdn}`)
-                $('#sum-kln').text(`Rp.${sumKln}`)
-                $('#sum-total').text(`Rp.${sumTotal}`)
-                $('#sum-ppn').text(`Rp.${sumPpn}`)
-                $('#sum-bm').text(`Rp.${sumBm}`)
-                $('#sum-pdri-ppn').text(`Rp.${sumPdriPpn}`)
-                $('#sum-pph').text(`Rp.${sumPph}`)
-                $('#sum-pdri-total').text(`Rp.${sumPdriTotal}`)
+                let sumKdn = formatToCurrency(calculation.sumKdn);
+                let sumKln = formatToCurrency(calculation.sumKln);
+                let sumTotal = formatToCurrency(calculation.sumTotal);
+                let sumPpn = formatToCurrency(calculation.sumPpn);
+                let sumBm = formatToCurrency(calculation.sumBm);
+                let sumPdriPpn = formatToCurrency(calculation.sumPdriPpn);
+                let sumPph = formatToCurrency(calculation.sumPph);
+                let sumPdriTotal = formatToCurrency(calculation.sumPdriTotal);
+                $('#sum-kdn').text(`${sumKdn}`)
+                $('#sum-kln').text(`${sumKln}`)
+                $('#sum-total').text(`${sumTotal}`)
+                $('#sum-ppn').text(`${sumPpn}`)
+                $('#sum-bm').text(`${sumBm}`)
+                $('#sum-pdri-ppn').text(`${sumPdriPpn}`)
+                $('#sum-pph').text(`${sumPph}`)
+                $('#sum-pdri-total').text(`${sumPdriTotal}`)
                 calculation.data.forEach(function(item, index) {
                     let row = "<tr>" +
                         `<td>
                             <div class="dropdown">
-                                <div class="btn btn-secondary btn-sm" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">!</div>
+                                <div class="btn btn-sm" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;"><i class="fa-solid fa-ellipsis-vertical"></i></div>
                                 <div class="dropdown-menu"
                                     aria-labelledby="dropdownMenuButton">
                                     <a class="dropdown-item buttonEditNews"
@@ -2071,12 +2394,16 @@
                         "<td>" + item.satuan_bahan_baku + "</td>" +
                         "<td>" + item.negara_asal + "</td>" +
                         "<td>" + item.pemasok + "</td>" +
-                        "<td>" + item.tkdn + "</td>" +
+                        "<td>" + item.tkdn + "%</td>" +
                         "<td>" + item.jumlah + "</td>" +
                         "<td>" + item.harga_satuan + "</td>" +
-                        "<td>" + item.kdn + "</td>" +
-                        "<td>" + item.kln + "</td>" +
-                        "<td>" + item.total + "</td>" +
+                        "<td>" + formatToCurrency(item.kdn) + "</td>" +
+                        "<td>" + formatToCurrency(item.kln) + "</td>" +
+                        "<td>" + formatToCurrency(item.total) + "</td>" +
+                        "<td>" + formatToCurrency(item.ppnCalc) + "</td>" +
+                        "<td>" + formatToCurrency(item.bmCalc) + "</td>" +
+                        "<td>" + formatToCurrency(item.pdriPpnCalc) + "</td>" +
+                        "<td>" + formatToCurrency(item.pphCalc) + "</td>" +
                         "</tr>";
 
                     tbody.append(row);
@@ -2086,24 +2413,32 @@
                 tbody.empty();
                 calculation = calculations.find(f => f.id == calculationId);
                 calculation1 = calculations.find(f => f.id == 1);
-                let sumKdnCalc1 = parseInt(calculation1.sumKdn).toLocaleString()
-                let sumKlnCalc1 = parseInt(calculation1.sumKln).toLocaleString()
-                let sumTotalCalc1 = parseInt(calculation1.sumTotal).toLocaleString()
-                let sumKdn = parseInt(calculation.sumKdn).toLocaleString()
-                let sumKln = parseInt(calculation.sumKln).toLocaleString()
-                let sumTotal = parseInt(calculation.sumTotal).toLocaleString()
+                let sumLocalPpn12 = formatToCurrency(calculation1.sumPpn)
+                let sumLocalKdn12 = formatToCurrency(calculation1.sumPpn)
+                let sumLocalTotal12 = formatToCurrency(calculation1.sumPpn)
+                let sumPdriTotal12 = formatToCurrency(calculation1.sumPdriTotal)
+                let sumPdriKln12 = formatToCurrency(calculation1.sumPdriTotal)
+                let sumPdri12 = formatToCurrency(calculation1.sumPdriTotal)
+                let sumKdn = formatToCurrency(calculation.sumKdn)
+                let sumKln = formatToCurrency(calculation.sumKln)
+                let sumTotal = formatToCurrency(calculation.sumTotal)
                 // let sumPpn = parseInt(calculation.sumPpn).toLocaleString()
                 // let sumBm = parseInt(calculation.sumBm).toLocaleString()
                 // let sumPdriPpn = parseInt(calculation.sumPdriPpn).toLocaleString()
                 // let sumPph = parseInt(calculation.sumPph).toLocaleString()
                 // let sumPdriTotal = parseInt(calculation.sumPdriTotal).toLocaleString()
-                $(`.1-2-sumKdn`).text(sumKdnCalc1)
-                $(`.1-2-sumKln`).text(sumKlnCalc1)
-                $(`.1-2-sumTotal`).text(sumTotalCalc1)
-                $(`#1-2-sumKdn`).text("Rp." + sumKdn)
-                $(`#1-2-sumKln`).text("Rp." + sumKln)
-                $(`#1-2-sumTotal`).text("Rp." + sumTotal)
-                console.log(calculation);
+                $(`#sumLocalPpn-1-2`).text(sumLocalPpn12)
+                $(`#sumLocalKdn-1-2`).text(sumLocalKdn12)
+                $(`#sumLocalTotal-1-2`).text(sumLocalTotal12)
+                $(`#sumPdriTotal-1-2`).text(sumPdriTotal12)
+                $(`#sumPdriKln-1-2`).text(sumPdriKln12)
+                $(`#sumPdri-1-2`).text(sumPdri12)
+                $(`#sumKdn-1-2`).text(formatToCurrency(((calculation.sumKdn ?? 0) + (calculation1.sumPpn ?? 0) + (
+                    calculation1.sumPdriTotal ?? 0))))
+                $(`#sumKln-1-2`).text(formatToCurrency((calculation.sumKln ?? 0)))
+                $(`#sumTotal-1-2`).text(formatToCurrency(((calculation.sumKdn ?? 0) + (calculation1.sumPpn ?? 0)) + ((
+                        calculation.sumKln ?? 0) +
+                    (calculation1.sumPdriTotal ?? 0))));
                 calculation.data.forEach(function(item, index) {
                     index = index + 2;
                     let row = "<tr>" +
@@ -2124,12 +2459,12 @@
                         "<td>" + item.uraian + "</td>" +
                         "<td>" + item.produsen_tingkat_dua + "</td>" +
                         "<td>" + item.jumlah + "</td>" +
-                        "<td>" + item.tkdn + "</td>" +
-                        "<td>" + item.biaya + "</td>" +
+                        "<td>" + item.tkdn + "%</td>" +
+                        "<td>" + "Rp " + item.biaya + "</td>" +
                         "<td>" + item.alokasi + "%</td>" +
-                        "<td>" + item.kdn + "</td>" +
-                        "<td>" + item.kln + "</td>" +
-                        "<td>" + item.total + "</td>" +
+                        "<td>" + formatToCurrency(item.kdn) + "</td>" +
+                        "<td>" + formatToCurrency(item.kln) + "</td>" +
+                        "<td>" + formatToCurrency(item.total) + "</td>" +
                         "</tr>";
 
                     tbody.append(row);
@@ -2138,13 +2473,19 @@
                 const tbody = $(`#${tbodyId}`);
                 tbody.empty();
                 calculation = calculations.find(f => f.id == calculationId);
-                let sumKdn = parseInt(calculation.sumKdn).toLocaleString()
-                let sumKln = parseInt(calculation.sumKln).toLocaleString()
-                let sumTotal = parseInt(calculation.sumTotal).toLocaleString()
+                let sumKdn = formatToCurrency(calculation.sumKdn);
+                let sumKln = formatToCurrency(calculation.sumKln);
+                let sumTotal = formatToCurrency(calculation.sumTotal);
                 $(`#1-3-sumJumlahOrang`).text(calculation.sumJumlahOrang)
                 $(`#1-3-sumKdn`).text(sumKdn)
                 $(`#1-3-sumKln`).text(sumKln)
                 $(`#1-3-sumTotal`).text(sumTotal)
+                $(`#kdn-biaya-satuan-product-1-3`).text(formatToCurrency(calculation.sumKdn / parseCurrencyOrDecimal(
+                    calculations.kapasitasNormalPerbulan)))
+                $(`#kln-biaya-satuan-product-1-3`).text(formatToCurrency(calculation.sumKln / parseCurrencyOrDecimal(
+                    calculations.kapasitasNormalPerbulan)))
+                $(`#total-biaya-satuan-product-1-3`).text(formatToCurrency(calculation.sumTotal / parseCurrencyOrDecimal(
+                    calculations.kapasitasNormalPerbulan)))
                 console.log(calculation);
                 calculation.data.forEach(function(item, index) {
                     let row = `
@@ -2167,13 +2508,13 @@
                         <td>${item.kewarganegaraan}</td>
                         <td>${item.kewarganegaraan == "Indonesia" ? "100%" : "0%"}</td>
                         <td>${item.jumlah_orang}</td>
-                        <td>${item.gaji_perbulan}</td>
+                        <td>Rp ${item.gaji_perbulan}</td>
                         <td>${item.alokasi_gaji}%</td>
-                        <td>${item.kdn}</td>
-                        <td>${item.kln}</td>
-                        <td>${item.total}</td>
-                        <td>${item.bpjs}</td>
-                        <td>${item.tunjangan_lainnya}</td>
+                        <td>${formatToCurrency(item.kdn)}</td>
+                        <td>${formatToCurrency(item.kln)}</td>
+                        <td>${formatToCurrency(item.total)}</td>
+                        <td>${formatToCurrency(item.bpjs)}</td>
+                        <td>${formatToCurrency(item.tunjangan_lainnya)}</td>
                         </tr>
                         `;
 
@@ -2183,17 +2524,27 @@
                 const tbody = $(`#${tbodyId}`);
                 tbody.empty();
                 calculation = calculations.find(f => f.id == calculationId);
-                let sumKdn = parseInt(calculation.sumKdn).toLocaleString()
-                let sumKln = parseInt(calculation.sumKln).toLocaleString()
-                let sumTotal = parseInt(calculation.sumTotal).toLocaleString()
+                calculation3 = calculations.find(f => f.di == 3);
+                let sumKdn = formatToCurrency(calculation.sumKdn)
+                let sumKln = formatToCurrency(calculation.sumKln)
+                let sumTotal = formatToCurrency(calculation.sumTotal)
                 $(`#1-4-sumJumlahOrang`).text(calculation.sumJumlahOrang)
                 $(`#1-4-sumKdn`).text(sumKdn)
                 $(`#1-4-sumKln`).text(sumKln)
                 $(`#1-4-sumTotal`).text(sumTotal)
+                // $(`sumBpjs-1-4-3`).text(formatToCurrency(calculation3.sumBpjs ?? 0))
+                // $(`sumBpjsKdn-1-4-3`).text(formatToCurrency(calculation3.sumBpjs ?? 0))
+                // $(`sumBpjsTotal-1-4-3`).text(formatToCurrency(calculation3.sumBpjs ?? 0))
+                $(`#kdn-biaya-satuan-product-1-4`).text(formatToCurrency(calculation.sumKdn / parseCurrencyOrDecimal(
+                    calculations.kapasitasNormalPerbulan)))
+                $(`#kln-biaya-satuan-product-1-4`).text(formatToCurrency(calculation.sumKln / parseCurrencyOrDecimal(
+                    calculations.kapasitasNormalPerbulan)))
+                $(`#total-biaya-satuan-product-1-4`).text(formatToCurrency(calculation.sumTotal / parseCurrencyOrDecimal(
+                    calculations.kapasitasNormalPerbulan)))
                 console.log(calculation);
                 calculation.data.forEach(function(item, index) {
-                    let row = "<tr>" +
-                        `<td>
+                    let row = `<tr> +
+                        <td>
                             <div class="dropdown">
                                 <div class="btn btn-secondary btn-sm" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">!</div>
                                 <div class="dropdown-menu"
@@ -2205,17 +2556,18 @@
                                             class="fa fa-trash"></i> Delete</button>
                                 </div>
                             </div>
-                        </td>` +
-                        "<td>" + (index + 1) + "</td>" +
-                        "<td>" + item.uraian_posisi + "</td>" +
-                        "<td>" + item.produsen_tingkat_dua + "</td>" +
-                        "<td>" + item.kewarganegaraan == "Indonesia" ? "100%" : "0%" + "</td>" +
-                        "<td>" + item.jumlah_orang + "</td>" +
-                        "<td>" + item.biaya_pengurusan_per_bulan + "</td>" +
-                        "<td>" + item.alokasi + "%</td>" +
-                        "<td>" + item.kdn + "</td>" +
-                        "<td>" + item.kln + "</td>" +
-                        "</tr>";
+                        </td>
+                        <td>${(index + 1)}</td>
+                        <td> ${item.uraian_posisi} </td>
+                        <td> ${item.produsen_tingkat_dua} </td>
+                        <td> ${item.kewarganegaraan == "Indonesia" ? "100%" : "0%"} </td>
+                        <td> ${item.jumlah_orang} </td>
+                        <td> Rp ${item.biaya_pengurusan_per_bulan} </td>
+                        <td> ${item.alokasi} "%</td>
+                        <td> ${formatToCurrency(item.kdn)} </td>
+                        <td> ${formatToCurrency(item.kln)} </td>
+                        <td> ${formatToCurrency(item.total)} </td>
+                        </tr>`;
 
                     tbody.append(row);
                 });
@@ -2223,13 +2575,19 @@
                 const tbody = $(`#${tbodyId}`);
                 tbody.empty();
                 calculation = calculations.find(f => f.id == calculationId);
-                let sumKdn = parseInt(calculation.sumKdn).toLocaleString()
-                let sumKln = parseInt(calculation.sumKln).toLocaleString()
-                let sumTotal = parseInt(calculation.sumTotal).toLocaleString()
+                let sumKdn = formatToCurrency(calculation.sumKdn);
+                let sumKln = formatToCurrency(calculation.sumKln);
+                let sumTotal = formatToCurrency(calculation.sumTotal);
                 $(`#1-5-sumJumlahOrang`).text(calculation.sumJumlahOrang)
                 $(`#1-5-sumKdn`).text(sumKdn)
                 $(`#1-5-sumKln`).text(sumKln)
                 $(`#1-5-sumTotal`).text(sumTotal)
+                $(`#kdn-biaya-satuan-product-1-5`).text(formatToCurrency(calculation.sumKdn / parseCurrencyOrDecimal(
+                    calculations.kapasitasNormalPerbulan)))
+                $(`#kln-biaya-satuan-product-1-5`).text(formatToCurrency(calculation.sumKln / parseCurrencyOrDecimal(
+                    calculations.kapasitasNormalPerbulan)))
+                $(`#total-biaya-satuan-product-1-5`).text(formatToCurrency(calculation.sumTotal / parseCurrencyOrDecimal(
+                    calculations.kapasitasNormalPerbulan)))
                 console.log(calculation);
                 calculation.data.forEach(function(item, index) {
                     let row = "<tr>" +
@@ -2251,12 +2609,60 @@
                         "<td>" + item.kewarganegaraan + "</td>" +
                         "<td>" + item.tkdn + "%" + "</td>" +
                         "<td>" + item.jumlah_orang + "</td>" +
-                        "<td>" + item.gaji_perbulan + "</td>" +
+                        "<td>" + "Rp " + item.gaji_perbulan + "</td>" +
                         "<td>" + item.alokasi + "%</td>" +
-                        "<td>" + item.kdn + "</td>" +
-                        "<td>" + item.kln + "</td>" +
-                        "<td>" + item.total + "</td>" +
+                        "<td>" + formatToCurrency(item.kdn) + "</td>" +
+                        "<td>" + formatToCurrency(item.kln) + "</td>" +
+                        "<td>" + formatToCurrency(item.total) + "</td>" +
                         "</tr>";
+
+                    tbody.append(row);
+                });
+            } else if (tbodyId == "tbody-6") {
+                const tbody = $(`#${tbodyId}`);
+                tbody.empty();
+                calculation = calculations.find(f => f.id == calculationId);
+                let sumKdn = formatToCurrency(calculation.sumKdn)
+                let sumKln = formatToCurrency(calculation.sumKln)
+                let sumTotal = formatToCurrency(calculation.sumTotal)
+                $(`#1-6-sumJumlahUnit`).text(calculation.sumJumlahUnit)
+                $(`#1-6-sumKdn`).text(sumKdn)
+                $(`#1-6-sumKln`).text(sumKln)
+                $(`#1-6-sumTotal`).text(sumTotal)
+                $(`#kdn-biaya-satuan-product-1-6`).text(formatToCurrency(calculation.sumKdn / parseCurrencyOrDecimal(
+                    calculations.kapasitasNormalPerbulan)))
+                $(`#kln-biaya-satuan-product-1-6`).text(formatToCurrency(calculation.sumKln / parseCurrencyOrDecimal(
+                    calculations.kapasitasNormalPerbulan)))
+                $(`#total-biaya-satuan-product-1-6`).text(formatToCurrency(calculation.sumTotal / parseCurrencyOrDecimal(
+                    calculations.kapasitasNormalPerbulan)))
+                console.log(calculation);
+                calculation.data.forEach(function(item, index) {
+                    let row = `<tr> +
+                        <td>
+                            <div class="dropdown">
+                                <div class="btn btn-secondary btn-sm" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">!</div>
+                                <div class="dropdown-menu"
+                                    aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item buttonEditNews"
+                                        onclick="edit(${item.id})"><i class="fa fa-edit"></i> Edit
+                                    </a>
+                                    <button class="dropdown-item" type="submit" onclick="destroy(${item.id})"><i
+                                            class="fa fa-trash"></i> Delete</button>
+                                </div>
+                            </div>
+                        </td>
+                        <td>${(index + 1)}</td>
+                        <td> ${item.uraian} </td>
+                        <td> ${item.spesifikasi} </td>
+                        <td> ${item.jumlah_unit} </td>
+                        <td> ${item.dibuat} </td>
+                        <td> ${item.tkdn}% </td>
+                        <td> Rp ${item.biaya_depresiasi_perbulan} </td>
+                        <td> ${item.alokasi}%</td>
+                        <td> ${formatToCurrency(item.kdn)} </td>
+                        <td> ${formatToCurrency(item.kln)} </td>
+                        <td> ${formatToCurrency(item.total)} </td>
+                        </tr>`;
 
                     tbody.append(row);
                 });
@@ -2269,7 +2675,58 @@
             reloadTable("tbody-3", 3);
             reloadTable("tbody-4", 4);
             reloadTable("tbody-5", 5);
+            reloadTable("tbody-6", 6);
         }
+
+        $(() => {
+            $(".setTkdn").on("change", (event) => {
+                if (event.currentTarget.value == "Indonesia") {
+                    event.currentTarget.nextElementSibling.value = 100;
+                } else {
+                    event.currentTarget.nextElementSibling.value = 0;
+                }
+            })
+
+            $(".kapasitasNormalPerbulan").on("change", () => {
+                let kapasitasNormalPerbulan = $(event.currentTarget).val();
+                $(".kapasitasNormalPerbulan").val(kapasitasNormalPerbulan);
+                calculations.kapasitasNormalPerbulan = kapasitasNormalPerbulan;
+
+                // Mengonversi objek menjadi string JSON
+                let jsonDraftCalculations = JSON.stringify(draftCalculations);
+
+                // Menyimpan data di Local Storage dengan kunci tertentu
+                localStorage.setItem('draftCalculations', jsonDraftCalculations);
+
+                reloadAllTable();
+            });
+
+            $("#dimiliki-1-6").on("change", () => {
+                let dimilikiValue = $("#dimiliki-1-6").val();
+                let dibuatValue = $("#dibuat-1-6").val();
+
+                if (dimilikiValue == "Dalam Negeri" && dibuatValue == "Dalam Negeri") {
+                    $("#tkdn-1-6").val("100");
+                } else if (dimilikiValue == "Luar Negeri" && dibuatValue == "Luar Negeri") {
+                    $("#tkdn-1-6").val("0");
+                } else {
+                    $("#tkdn-1-6").val("75");
+                }
+            });
+
+            $("#dibuat-1-6").on("change", () => {
+                let dimilikiValue = $("#dimiliki-1-6").val();
+                let dibuatValue = $("#dibuat-1-6").val();
+
+                if (dimilikiValue == "Dalam Negeri" && dibuatValue == "Dalam Negeri") {
+                    $("#tkdn-1-6").val("100");
+                } else if (dimilikiValue == "Luar Negeri" && dibuatValue == "Luar Negeri") {
+                    $("#tkdn-1-6").val("0");
+                } else {
+                    $("#tkdn-1-6").val("75");
+                }
+            });
+        })
     </script>
-    {{-- <script src="{{ asset('dist/js/users/script.js') }}"></script> --}}
+    // {{-- <script src="{{ asset('dist/js/users/script.js') }}"></script> --}}
 @endpush

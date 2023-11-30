@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Computation;
 use App\Models\PermenperinCategory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 use function PHPSTORM_META\type;
 
@@ -16,7 +17,7 @@ class ComputationController extends Controller
     {
         $data = [
             "pageTitle" => self::$pageTitle,
-            "computations" => Computation::latest()->get(),
+            "computations" => Computation::orderBy("id", "desc")->whereUserId(Auth::user()->id)->get(),
             "permenperinCategories" => PermenperinCategory::all(),
         ];
         // $pageTitle = self::$pageTitle;
@@ -43,6 +44,7 @@ class ComputationController extends Controller
     public function store(Request $request)
     {
         $credentials = $request->validate(Computation::$rules);
+        $credentials["user_id"] = Auth::user()->id;
 
         $computation = Computation::updateOrInsert(["id" => $request->id], $credentials);
 
