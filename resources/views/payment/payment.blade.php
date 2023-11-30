@@ -95,7 +95,7 @@
                                                 {{-- <h6 class="mb-0 me-2">Tatang</h6> --}}
                                                 {{-- <span class="card-number">∗∗∗∗ ∗∗∗∗ 9856</span> --}}
                                                 <div class="h6">
-                                                    10 menit untuk memverifikasi pembayaran
+                                                    1 x 24jam untuk memverifikasi pembayaran
                                                     <br>
                                                     Menerima transfer dari Bank Mastercard saja
                                                 </div>

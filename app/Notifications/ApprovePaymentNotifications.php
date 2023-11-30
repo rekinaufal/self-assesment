@@ -7,13 +7,13 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class PaymentNotifications extends Notification
+class ApprovePaymentNotifications extends Notification
 {
     use Queueable;
-    protected $payment_data; 
-    public function __construct($payment_data)
+    protected $category_name; 
+    public function __construct($category_name)
     {
-        $this->payment_data = $payment_data;
+        $this->category_name = $category_name;
     }
 
     /**
@@ -45,7 +45,7 @@ class PaymentNotifications extends Notification
     {
         // dd($this->payment_data->bank_account_name);
         return [
-            'message' => 'Your Payment of was successful'.$this->payment_data->bank_account_name
+            'message' => 'Your Payment of was approve. Now your account status is '.$this->category_name
         ];
     }
 

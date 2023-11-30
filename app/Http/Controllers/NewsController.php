@@ -84,7 +84,11 @@ class NewsController extends Controller
      */
     public function show(News $news)
     {
-        //
+        if ($news) {
+            return view("news.detail", compact('news'));
+        } else {
+            return redirect()->back()->with('failed', 'Cannot found the news');
+        }
     }
 
     /**

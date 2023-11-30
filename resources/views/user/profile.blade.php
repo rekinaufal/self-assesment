@@ -301,11 +301,10 @@
                             </div>
                         </div>
                     </div>
-                    @can('payment-view')
+                    {{-- @can('payment-view')
                         <div class="card">
                             <div class="card-header bg-transparent" style="display: flex; justify-content: space-between; align-items: center;">
                                 <div class="float-left">
-                                    {{ $user->user_category->color }}
                                     <button type="button" class="btn btn-outline-{{ $user->user_category->color ?? 'dark' }}" style="border-radius: 15px">{{ $user->user_category->name ?? '' }}</button>
                                 </div>
                                 <div class="float-right">
@@ -345,7 +344,6 @@
                             </div>
                             <div class="card-footer bg-transparent">
                                 <a class="btn btn-block btn-primary" href="#" data-toggle="modal" data-target="#upgrade-plan">UPGRADE PLAN</a>
-                                <!--  Modal content for upgrade plan -->
                                 <div class="modal fade" id="upgrade-plan" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-xl">
                                         <div class="modal-content">
@@ -360,9 +358,6 @@
                                                         <div class="col-4 mt-4">
                                                             <div class="card border-{{ $item->color ?? '' }} border shadow-none">
                                                                 <div class="card-body position-relative">
-                                                                    {{-- <div class="position-absolute end-0 me-4 top-0 mt-4">
-                                                                        <span class="badge bg-label-primary">Popular</span>
-                                                                    </div> --}}
                                                                     <div class="my-3 pt-2 text-center">
                                                                         <img src="{{ asset('assets/images/users/crown.png') }}" alt="Pro Image" height="80">
                                                                     </div>
@@ -375,7 +370,6 @@
                                                                             <h1 class="price-toggle price-monthly display-4 text-primary mb-0 d-none">1</h1>
                                                                             <sub class="h6 text-muted pricing-duration mt-auto mb-2 fw-normal">/{{ $item->limit_file ?? '' }} files</sub>
                                                                         </div>
-                                                                        {{-- <small class="position-absolute start-0 end-0 m-auto price-yearly price-yearly-toggle text-muted">$ 499 / year</small> --}}
                                                                     </div>
                                                 
                                                                     <ul class="list-group my-4 list-unstyled">
@@ -408,7 +402,7 @@
                                 </div>
                             </div>
                         </div>
-                    @endcan
+                    @endcan --}}
                 </div>
                 <div class="col-7">
                     <div class="card">
