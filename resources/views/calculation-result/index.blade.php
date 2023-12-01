@@ -92,9 +92,11 @@
                                                 <select class="form-control form-control-sm" id="satuan_bahan_baku"
                                                     name="satuan_bahan_baku" required>
                                                     <option></option>
-                                                    <option>Pcs</option>
-                                                    <option>Pack</option>
-                                                    <option>Kg</option>
+                                                    <option value="Pcs">Pcs</option>
+                                                    <option value="Pack">Pack</option>
+                                                    <option value="Kg">Kg</option>
+                                                    <option value="Liter">Liter</option>
+                                                    <option value="Meter">Meter</option>
                                                 </select>
                                             </div>
 
@@ -164,7 +166,7 @@
                                                         <div class="row">
                                                             <div class="form-group-sm" style="font-size: 7pt;">
                                                                 <label for="ppn">PPN %</label>
-                                                                <input type="number" name="ppn"
+                                                                <input type="text" name="ppn"
                                                                     style=" width : 15rem"
                                                                     class="form-control form-control-sm" id="ppn"
                                                                     placeholder="" value="0">
@@ -186,19 +188,19 @@
                                                         <div class="row">
                                                             <div class="form-group-sm ml-2" style="font-size: 7pt;">
                                                                 <label for="bm">BM %</label>
-                                                                <input type="number" name="bm" style="width: 5rem"
+                                                                <input type="text" name="bm" style="width: 5rem"
                                                                     class="form-control form-control-sm" id="bm"
                                                                     placeholder="" value="0">
                                                             </div>
                                                             <div class="form-group-sm ml-2" style="font-size: 7pt;">
                                                                 <label for="pdri_ppn">PPN %</label>
-                                                                <input type="number" name="pdri_ppn" style="width: 5rem"
+                                                                <input type="text" name="pdri_ppn" style="width: 5rem"
                                                                     class="form-control form-control-sm" id="pdri_ppn"
                                                                     placeholder="" value="0">
                                                             </div>
                                                             <div class="form-group-sm ml-2" style="font-size: 7pt;">
                                                                 <label for="pph">PPH %</label>
-                                                                <input type="number" name="pph" style="width: 5rem"
+                                                                <input type="text" name="pph" style="width: 5rem"
                                                                     class="form-control form-control-sm" id="pph"
                                                                     placeholder="" value="0">
                                                             </div>
@@ -618,17 +620,20 @@
                                                         </div>
                                                         <div class="row">
                                                             <div class="form-group-sm ml-2" style="font-size: 7pt;">
-                                                                <label for="">BPJS </label>
+                                                                <label for="">BPJS %</label>
                                                                 <input type="text" style="width: 8rem"
-                                                                    class="form-control form-control-sm" id=""
-                                                                    placeholder="Rp" value="0" name="bpjs">
+                                                                    class="form-control form-control-sm" id="" value="0" name="bpjs_percent">
                                                             </div>
                                                             <div class="form-group-sm ml-2" style="font-size: 7pt;">
                                                                 <label for="">Tunjangan Lainnya</label>
-                                                                <input type="text" style="width: 8rem"
-                                                                    class="form-control form-control-sm" id=""
-                                                                    placeholder="Rp" value="0"
-                                                                    name="tunjangan_lainnya">
+                                                                <div class="input-group input-group-sm mb-3">
+                                                                    <div class="input-group-prepend">
+                                                                        <span class="input-group-text" id="basic-addon1">Rp.</span>
+                                                                    </div>
+                                                                    <input type="text" class="form-control form-control-sm tunjanganLainnya13"
+                                                                        placeholder="" id="currency_tunjangan_lainnya"
+                                                                        name="currency_tunjangan_lainnya">
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -786,15 +791,9 @@
                                                     <thead class="">
                                                         <tr>
                                                             <th scope="col">
-                                                                <div class="input-group input-group-sm mb-3">
-                                                                    <div class="input-group-prepend">
-                                                                        <span class="input-group-text"
-                                                                            id="basic-addon1">Rp.</span>
-                                                                    </div>
-                                                                    <input type="text"
-                                                                        class="form-control kapasitasNormalPerbulan"
-                                                                        placeholder="" name="gaji_perbulan">
-                                                                </div>
+                                                                <input type="text"
+                                                                    class="form-control kapasitasNormalPerbulan kapasitasNormalPerbulan-1-3"
+                                                                    placeholder="" name="kapasitasNormalPerbulan" value="0">
                                                             </th>
                                                         </tr>
                                                     </thead>
@@ -989,7 +988,7 @@
                                                                 </div>
                                                             </div>
                                                         </td>
-                                                        <th scope="row">1</th>
+                                                        <th scope="row">2</th>
                                                         <td>Tunjangan Lainnya</td>
                                                         <td>-</td>
                                                         <td>100%</td>
@@ -1104,15 +1103,9 @@
                                                     <thead class="">
                                                         <tr>
                                                             <th scope="col">
-                                                                <div class="input-group input-group-sm mb-3">
-                                                                    <div class="input-group-prepend">
-                                                                        <span class="input-group-text"
-                                                                            id="basic-addon1">Rp.</span>
-                                                                    </div>
-                                                                    <input type="text"
-                                                                        class="form-control kapasitasNormalPerbulan"
-                                                                        placeholder="" name="gaji_perbulan">
-                                                                </div>
+                                                                <input type="text"
+                                                                    class="form-control kapasitasNormalPerbulan kapasitasNormalPerbulan-1-4"
+                                                                    placeholder="" name="kapasitasNormalPerbulan" value="0">
                                                             </th>
                                                         </tr>
                                                     </thead>
@@ -1368,15 +1361,9 @@
                                                     <thead class="">
                                                         <tr>
                                                             <th scope="col">
-                                                                <div class="input-group input-group-sm mb-3">
-                                                                    <div class="input-group-prepend">
-                                                                        <span class="input-group-text"
-                                                                            id="basic-addon1">Rp.</span>
-                                                                    </div>
-                                                                    <input type="text"
-                                                                        class="form-control kapasitasNormalPerbulan"
-                                                                        placeholder="" name="gaji_perbulan">
-                                                                </div>
+                                                                <input type="text"
+                                                                    class="form-control kapasitasNormalPerbulan kapasitasNormalPerbulan-1-5"
+                                                                    placeholder="" name="kapasitasNormalPerbulan" value="0">
                                                             </th>
                                                         </tr>
                                                     </thead>
@@ -1664,15 +1651,9 @@
                                                 <thead class="">
                                                     <tr>
                                                         <th scope="col">
-                                                            <div class="input-group input-group-sm mb-3">
-                                                                <div class="input-group-prepend">
-                                                                    <span class="input-group-text"
-                                                                        id="basic-addon1">Rp.</span>
-                                                                </div>
-                                                                <input type="text"
-                                                                    class="form-control kapasitasNormalPerbulan"
-                                                                    placeholder="" name="gaji_perbulan">
-                                                            </div>
+                                                            <input type="text"
+                                                                class="form-control kapasitasNormalPerbulan kapasitasNormalPerbulan-1-6"
+                                                                placeholder="" name="kapasitasNormalPerbulan">
                                                         </th>
                                                     </tr>
                                                 </thead>
@@ -1695,6 +1676,646 @@
                                                         </th>
                                                     </tr>
                                                 </thead>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {{-- tab content 1.7 MESIN / ALAT KERJA / FASILITAS KERJA YANG DISEWA --}}
+                            <div class="tab-pane fade" id="v-mesin-sewa" role="tabpanel"
+                                aria-labelledby="v-mesin-sewa-tab">
+                                <div class="row">
+                                    <div class="col">
+                                        <h5>Form 1.7 : Tingkat Komponen Dalam Negeri Biaya Tidak Langsung Pabrik</h5>
+                                        <p style="font-size: 13px; opacity: 60%;">List data untuk mesin / alat kerja yang
+                                            disewa</p>
+                                    </div>
+                                </div>
+                                <div class="row card">
+                                    <div class="col ">
+                                        <form class="d-flex flex-wrap" style="width: 100%" id="form-7"
+                                            method="post">
+                                            <div class="form-group-sm mx-2 mt-2" style="font-size: 10pt; width : 13rem">
+                                                <label for="">Uraian <i data-toggle="tooltip"
+                                                        data-placement="top"
+                                                        title="Nama bahan baku adalah nama yang ditunjukkan pada nama material bahan baku dalam pembuatan produk. Contoh : Biji besi, Bracket dll"
+                                                        class="fas fa-info-circle">
+                                                    </i></label>
+                                                <input type="text" class="form-control form-control-sm "
+                                                    id="" placeholder="" name="uraian">
+                                            </div>
+
+                                            <div class="form-group-sm mx-2 mt-2 "
+                                                style="font-size: 10pt; width : 13rem">
+                                                <label for="">Spesifikasi <i class="fas fa-info-circle"
+                                                        data-toggle="tooltip" data-placement="top"
+                                                        title="Tooltip on top">
+                                                    </i></label>
+                                                <input type="text" class="form-control form-control-sm"
+                                                    id="" placeholder="" name="spesifikasi"
+                                                    name="spesifikasi">
+                                            </div>
+
+                                            <div class="form-group-sm mx-2 mt-2 "
+                                                style="font-size: 10pt; width : 13rem">
+                                                <label for="">Produsen Tingkat 2 <i class="fas fa-info-circle"
+                                                        data-toggle="tooltip" data-placement="top"
+                                                        title="Tooltip on top">
+                                                    </i></label>
+                                                <input type="text" class="form-control form-control-sm"
+                                                    id="" placeholder="" name="produsen_tingkat_dua">
+                                            </div>
+
+                                            <div class="form-group-sm mx-2 mt-2 "
+                                                style="font-size: 10pt; width : 13rem">
+                                                <label for="">Jumlah Unit <i class="fas fa-info-circle"
+                                                        data-toggle="tooltip" data-placement="top"
+                                                        title="Tooltip on top">
+                                                    </i></label>
+                                                <input type="text" class="form-control form-control-sm"
+                                                    id="" placeholder="" name="jumlah_unit">
+                                            </div>
+
+
+                                            <div class="form-group-sm mx-2 mt-2 "
+                                                style="font-size: 10pt; width : 13rem">
+                                                <label for="">Biaya Sewa Per Bulan<i
+                                                        class="fas fa-info-circle" data-toggle="tooltip"
+                                                        data-placement="top" title="Tooltip on top">
+                                                    </i></label>
+                                                <div class="input-group input-group-sm mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon1">Rp.</span>
+                                                    </div>
+                                                    <input type="text" class="form-control biayaSewaPerbulan17"
+                                                        placeholder="" id="biaya_sewa_perbulan"
+                                                        name="biaya_sewa_perbulan">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group-sm mx-2 mt-2 "
+                                                style="font-size: 10pt; width : 13rem">
+                                                <label for="">Alokasi Mesin % <i class="fas fa-info-circle"
+                                                        data-toggle="tooltip" data-placement="top"
+                                                        title="Tooltip on top">
+                                                    </i></label>
+                                                <input type="text" class="form-control form-control-sm"
+                                                    id="" placeholder="" name="alokasi">
+                                            </div>
+
+                                            <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt;">
+                                                <div class="card p-2">
+                                                    <div class="col">
+                                                        <div class="row">
+                                                            <label for="" class="mx-auto">Alat Kerja<i
+                                                                    class="fas fa-info-circle" data-toggle="tooltip"
+                                                                    data-placement="top" title="Tooltip on top">
+                                                                </i></label>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="form-group-sm ml-2" style="font-size: 7pt;">
+                                                                <label for="">Dibuat</label>
+                                                                <select name="dibuat" id="dibuat-1-7"
+                                                                    class="form-control form-control-sm"
+                                                                    style="width: 8rem">
+                                                                    <option value="Dalam Negeri">Dalam Negeri</option>
+                                                                    <option value="Luar Negeri">Luar Negeri</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="form-group-sm ml-2" style="font-size: 7pt;">
+                                                                <label for="">Dimiliki</label>
+                                                                <select name="dimiliki" id="dimiliki-1-7"
+                                                                    class="form-control form-control-sm"
+                                                                    style="width: 8rem">
+                                                                    <option value="Dalam Negeri">Dalam Negeri</option>
+                                                                    <option value="Luar Negeri">Luar Negeri</option>
+                                                                </select>
+                                                            </div>
+                                                            <input type="hidden" name="tkdn" id="tkdn-1-7"
+                                                                value="100">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="d-flex justify-content-end"
+                                                style="font-size: 10pt; width : 100%;">
+                                                <button class="btn btn-sm btn-success" type="submit"><i
+                                                        class="fa fa-save"></i> Simpan</button>
+                                            </div>
+                                        </form><br>
+
+                                    </div>
+                                </div>
+                                <div class="row card">
+                                    <div class="col p-2">
+                                        <form class="form-inline">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon1"><i
+                                                            class="fa fa-search"></i></span>
+                                                </div>
+                                                <input type="text" class="form-control form-control-sm"
+                                                    placeholder="Search" aria-label="Username"
+                                                    aria-describedby="basic-addon1">
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                    <div class="col p-1">
+                                        <div class="table-responsive table-responsive-sm">
+                                            <table class="table table-striped table-hover" style="font-size: 8pt">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">Aksi</th>
+                                                        <th scope="col">No</th>
+                                                        <th scope="col">Uraian</th>
+                                                        <th scope="col">Spesifikasi</th>
+                                                        <th scope="col">Jumlah Unit</th>
+                                                        <th scope="col">Dibuat</th>
+                                                        <th scope="col">TKDN %</th>
+                                                        <th scope="col">Biaya Per Bulan</th>
+                                                        <th scope="col">Alokasi %</th>
+                                                        <th scope="col">KDN</th>
+                                                        <th scope="col">KLN</th>
+                                                        <th scope="col">Total</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="tbody-7">
+                                                    <tr>
+                                                        <td>
+                                                            <div class="dropdown">
+                                                                <i data-feather="more-vertical" id="dropdownMenuButton"
+                                                                    class="feather-icon dropdown-toggle"
+                                                                    style="cursor: pointer;" data-toggle="dropdown"
+                                                                    aria-haspopup="true" aria-expanded="false"></i>
+                                                                <div class="dropdown-menu"
+                                                                    aria-labelledby="dropdownMenuButton">
+                                                                    <a class="dropdown-item buttonEditNews"
+                                                                        onclick=""><i class="fa fa-edit"></i>
+                                                                        Edit</a>
+                                                                    <form action="" method="post">
+                                                                        <button class="dropdown-item" type="submit"><i
+                                                                                class="fa fa-trash"></i> Delete</button>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <th scope="row">1</th>
+                                                        <td>Center Back</td>
+                                                        <td>Brazil</td>
+                                                        <td>45.5</td>
+                                                        <td>12</td>
+                                                        <td>13.000.000</td>
+                                                        <td>Unit unitan</td>
+                                                        <td>3</td>
+                                                        <td>8</td>
+                                                        <td>122.000</td>
+                                                        <td>45.000.000</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="dropdown">
+                                                                <i data-feather="more-vertical" id="dropdownMenuButton"
+                                                                    class="feather-icon dropdown-toggle"
+                                                                    style="cursor: pointer;" data-toggle="dropdown"
+                                                                    aria-haspopup="true" aria-expanded="false"></i>
+                                                                <div class="dropdown-menu"
+                                                                    aria-labelledby="dropdownMenuButton">
+                                                                    <a class="dropdown-item buttonEditNews"
+                                                                        onclick=""><i class="fa fa-edit"></i>
+                                                                        Edit</a>
+                                                                    <form action="" method="post">
+                                                                        <button class="dropdown-item" type="submit"><i
+                                                                                class="fa fa-trash"></i> Delete</button>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <th scope="row">2</th>
+                                                        <td>Striker</td>
+                                                        <td>Pantai Gading</td>
+                                                        <td>25.5</td>
+                                                        <td>12</td>
+                                                        <td>13.000.000</td>
+                                                        <td>Unit unitan</td>
+                                                        <td>3</td>
+                                                        <td>8</td>
+                                                        <td>122.000</td>
+                                                        <td>45.000.000</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex">
+                                    <div class="col">
+                                        <p class="mt-5 mr-2 text-right">Total</p>
+                                    </div>
+                                    <div class="col-6 p-1">
+                                        <div class="table-responsive table-responsive-sm">
+                                            <table class="table table-bordered table-hover" style="font-size: 8pt">
+                                                <thead class="thead-dark">
+                                                    <tr>
+                                                        <th scope="col">Jumlah Unit</th>
+                                                        <th scope="col">KDN</th>
+                                                        <th scope="col">KLN</th>
+                                                        <th scope="col">Total</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td id="1-7-sumJumlahUnit">0</td>
+                                                        <td id="1-7-sumKdn">Rp.0</td>
+                                                        <td id="1-7-sumKln">Rp.0</td>
+                                                        <td id="1-7-sumTotal">Rp.0</td>
+                                                    </tr>
+                                                </tbody>
+
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <div class="col">
+                                        <p class="mr-2 text-right">Kapasitas Normal Perbulan</p>
+                                    </div>
+                                    <div class="col-6 p-1">
+                                        <div class="table-responsive table-responsive-sm">
+                                            <table class="table table-bordered table-hover" style="font-size: 8pt">
+                                                <thead class="">
+                                                    <tr>
+                                                        <th scope="col">
+                                                            <input type="text"
+                                                                class="form-control kapasitasNormalPerbulan kapasitasNormalPerbulan-1-7"
+                                                                placeholder="" name="kapasitasNormalPerbulan">
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex">
+                                    <div class="col">
+                                        <p class="mt-5 mr-2 text-right">Biaya Satuan Product</p>
+                                    </div>
+                                    <div class="col-6 p-1">
+                                        <div class="table-responsive table-responsive-sm">
+                                            <table class="table table-bordered table-hover" style="font-size: 8pt">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col" id="kdn-biaya-satuan-product-1-7">KDN</th>
+                                                        <th scope="col" id="kln-biaya-satuan-product-1-7">KLN</th>
+                                                        <th scope="col" id="total-biaya-satuan-product-1-7">Total
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {{-- tab content 1.8 List data untuk jasa jasa terkait --}}
+                            <div class="tab-pane fade" id="v-overhead" role="tabpanel"
+                                aria-labelledby="v-overhead">
+                                <div class="row">
+                                    <div class="col">
+                                        <h5>Form 1.8 : Tingkat Komponen Dalam Negeri Biaya Tidak Langsung Pabrik</h5>
+                                        <p style="font-size: 13px; opacity: 60%;">List data untuk jasa jasa terkait</p>
+                                    </div>
+                                </div>
+                                <div class="row card">
+                                    <div class="col ">
+                                        <form class="d-flex flex-wrap" style="width: 100%" id="form-8"
+                                            method="post">
+                                            <div class="form-group-sm mx-2 mt-2" style="font-size: 10pt; width : 13rem">
+                                                <label for="">Uraian <i data-toggle="tooltip"
+                                                        data-placement="top"
+                                                        title="Nama bahan baku adalah nama yang ditunjukkan pada nama material bahan baku dalam pembuatan produk. Contoh : Biji besi, Bracket dll"
+                                                        class="fas fa-info-circle">
+                                                    </i></label>
+                                                <input type="text" class="form-control form-control-sm "
+                                                    id="" placeholder="" name="uraian">
+                                            </div>
+
+                                            <div class="form-group-sm mx-2 mt-2 "
+                                                style="font-size: 10pt; width : 13rem">
+                                                <label for="">Pemasok <i class="fas fa-info-circle"
+                                                        data-toggle="tooltip" data-placement="top"
+                                                        title="Tooltip on top">
+                                                    </i></label>
+                                                <input type="text" class="form-control form-control-sm"
+                                                    id="" placeholder="" name="pemasok">
+                                            </div>
+
+                                            <div class="form-group-sm mx-2 mt-2 "
+                                                style="font-size: 10pt; width : 13rem">
+                                                <label for="">Jumlah <i class="fas fa-info-circle"
+                                                        data-toggle="tooltip" data-placement="top"
+                                                        title="Tooltip on top">
+                                                    </i></label>
+                                                <input type="text" class="form-control form-control-sm"
+                                                    id="" placeholder="" name="jumlah">
+                                            </div>
+
+                                            <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
+                                                <label for="tkdn">TKDN % <i class="fas fa-info-circle"
+                                                        data-toggle="tooltip" data-placement="top"
+                                                        title="Tooltip on top">
+                                                    </i></label>
+                                                <input type="text" class="form-control form-control-sm" id="tkdn"
+                                                    name="tkdn" placeholder="">
+                                            </div>
+
+                                            <div class="form-group-sm mx-2 mt-2 "
+                                                style="font-size: 10pt; width : 13rem">
+                                                <label for="">Biaya Per Bulan<i
+                                                        class="fas fa-info-circle" data-toggle="tooltip"
+                                                        data-placement="top" title="Tooltip on top">
+                                                    </i></label>
+                                                <div class="input-group input-group-sm mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon1">Rp.</span>
+                                                    </div>
+                                                    <input type="text" class="form-control biayaPerbulan18"
+                                                        placeholder="" id="biaya_perbulan"
+                                                        name="biaya_perbulan">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group-sm mx-2 mt-2 "
+                                                style="font-size: 10pt; width : 13rem">
+                                                <label for="">Alokasi Pengguna % <i class="fas fa-info-circle"
+                                                        data-toggle="tooltip" data-placement="top"
+                                                        title="Tooltip on top">
+                                                    </i></label>
+                                                <input type="text" class="form-control form-control-sm"
+                                                    id="" placeholder="" name="alokasi">
+                                            </div>
+
+                                            <div class="d-flex justify-content-end"
+                                                style="font-size: 10pt; width : 100%;">
+                                                <button class="btn btn-sm btn-success" type="submit"><i
+                                                        class="fa fa-save"></i> Simpan</button>
+                                            </div>
+                                        </form><br>
+
+                                    </div>
+                                </div>
+                                <div class="row card">
+                                    <div class="col p-2">
+                                        <form class="form-inline">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon1"><i
+                                                            class="fa fa-search"></i></span>
+                                                </div>
+                                                <input type="text" class="form-control form-control-sm"
+                                                    placeholder="Search" aria-label="Username"
+                                                    aria-describedby="basic-addon1">
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                    <div class="col p-1">
+                                        <div class="table-responsive table-responsive-sm">
+                                            <table class="table table-striped table-hover" style="font-size: 8pt">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">Aksi</th>
+                                                        <th scope="col">No</th>
+                                                        <th scope="col">Uraian</th>
+                                                        <th scope="col">Pemasok</th>
+                                                        <th scope="col">Jumlah</th>
+                                                        <th scope="col">TKDN %</th>
+                                                        <th scope="col">Biaya Per Bulan</th>
+                                                        <th scope="col">Alokasi %</th>
+                                                        <th scope="col">KDN</th>
+                                                        <th scope="col">KLN</th>
+                                                        <th scope="col">Total</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="tbody-8">
+                                                    <tr>
+                                                        <td>
+                                                            <div class="dropdown">
+                                                                <i data-feather="more-vertical" id="dropdownMenuButton"
+                                                                    class="feather-icon dropdown-toggle"
+                                                                    style="cursor: pointer;" data-toggle="dropdown"
+                                                                    aria-haspopup="true" aria-expanded="false"></i>
+                                                                <div class="dropdown-menu"
+                                                                    aria-labelledby="dropdownMenuButton">
+                                                                    <a class="dropdown-item buttonEditNews"
+                                                                        onclick=""><i class="fa fa-edit"></i>
+                                                                        Edit</a>
+                                                                    <form action="" method="post">
+                                                                        <button class="dropdown-item" type="submit"><i
+                                                                                class="fa fa-trash"></i> Delete</button>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <th scope="row">1</th>
+                                                        <td>Center Back</td>
+                                                        <td>Brazil</td>
+                                                        <td>45.5</td>
+                                                        <td>12</td>
+                                                        <td>13.000.000</td>
+                                                        <td>Unit unitan</td>
+                                                        <td>3</td>
+                                                        <td>8</td>
+                                                        <td>122.000</td>
+                                                        <td>45.000.000</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="dropdown">
+                                                                <i data-feather="more-vertical" id="dropdownMenuButton"
+                                                                    class="feather-icon dropdown-toggle"
+                                                                    style="cursor: pointer;" data-toggle="dropdown"
+                                                                    aria-haspopup="true" aria-expanded="false"></i>
+                                                                <div class="dropdown-menu"
+                                                                    aria-labelledby="dropdownMenuButton">
+                                                                    <a class="dropdown-item buttonEditNews"
+                                                                        onclick=""><i class="fa fa-edit"></i>
+                                                                        Edit</a>
+                                                                    <form action="" method="post">
+                                                                        <button class="dropdown-item" type="submit"><i
+                                                                                class="fa fa-trash"></i> Delete</button>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <th scope="row">2</th>
+                                                        <td>Striker</td>
+                                                        <td>Pantai Gading</td>
+                                                        <td>25.5</td>
+                                                        <td>12</td>
+                                                        <td>13.000.000</td>
+                                                        <td>Unit unitan</td>
+                                                        <td>3</td>
+                                                        <td>8</td>
+                                                        <td>122.000</td>
+                                                        <td>45.000.000</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex">
+                                    <div class="col">
+                                        <p class="mt-5 mr-2 text-right">Total</p>
+                                    </div>
+                                    <div class="col-6 p-1">
+                                        <div class="table-responsive table-responsive-sm">
+                                            <table class="table table-bordered table-hover" style="font-size: 8pt">
+                                                <thead class="thead-dark">
+                                                    <tr>
+                                                        <th scope="col">Jumlah</th>
+                                                        <th scope="col">KDN</th>
+                                                        <th scope="col">KLN</th>
+                                                        <th scope="col">Total</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td id="1-8-sumJumlah">0</td>
+                                                        <td id="1-8-sumKdn">Rp.0</td>
+                                                        <td id="1-8-sumKln">Rp.0</td>
+                                                        <td id="1-8-sumTotal">Rp.0</td>
+                                                    </tr>
+                                                </tbody>
+
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <div class="col">
+                                        <p class="mr-2 text-right">Kapasitas Normal Perbulan</p>
+                                    </div>
+                                    <div class="col-6 p-1">
+                                        <div class="table-responsive table-responsive-sm">
+                                            <table class="table table-bordered table-hover" style="font-size: 8pt">
+                                                <thead class="">
+                                                    <tr>
+                                                        <th scope="col">
+                                                            <input type="text"
+                                                                class="form-control kapasitasNormalPerbulan kapasitasNormalPerbulan-1-8"
+                                                                placeholder="" name="kapasitasNormalPerbulan">
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex">
+                                    <div class="col">
+                                        <p class="mt-5 mr-2 text-right">Biaya Satuan Product</p>
+                                    </div>
+                                    <div class="col-6 p-1">
+                                        <div class="table-responsive table-responsive-sm">
+                                            <table class="table table-bordered table-hover" style="font-size: 8pt">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col" id="kdn-biaya-satuan-product-1-8">KDN</th>
+                                                        <th scope="col" id="kln-biaya-satuan-product-1-8">KLN</th>
+                                                        <th scope="col" id="total-biaya-satuan-product-1-8">Total
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {{-- tab content 1.9 TINGKAT KOMPONEN DALAM NEGERI RANGKA, DAN/ATAU BODI  --}}
+                            <div class="tab-pane fade" id="v-rekapitulasi" role="tabpanel"
+                                aria-labelledby="v-rekapitulasi">
+                                <div class="row">
+                                    <div class="col">
+                                        <h5>Form 1.9 : Tingkat Komponen Dalam Negeri Rekapitulasi Penilaian</h5>
+                                        <p style="font-size: 13px; opacity: 60%;">List data rekapitulasi penilaian</p>
+                                    </div>
+                                </div>
+                                <div class="row card">
+                                    <div class="col p-2">
+                                        <form class="form-inline">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon1"><i
+                                                            class="fa fa-search"></i></span>
+                                                </div>
+                                                <input type="text" class="form-control form-control-sm"
+                                                    placeholder="Search" aria-label="Username"
+                                                    aria-describedby="basic-addon1">
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                    <div class="col p-1">
+                                        <div class="table-responsive table-responsive-sm">
+                                            <table class="table table-striped table-hover" style="font-size: 8pt">
+                                                <thead class="bg-dark text-light">
+                                                    <tr>
+                                                        <th scope="col" colspan="2" rowspan="2" class="border align-middle">Uraian</th>
+                                                        <th colspan="3" class="border text-center">Biaya</th>
+                                                        <th scope="col" rowspan="2" class="border align-middle">TKDN %</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>KDN</th>
+                                                        <th>KLN</th>
+                                                        <th>Total</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="tbody-9">
+                                                    <tr>
+                                                        <td>
+                                                            1.1
+                                                        </td>
+                                                        <td>
+                                                            Bahan Baku
+                                                        </td>
+                                                        <td>
+                                                            Rp 0,00
+                                                        </td>
+                                                        <td>
+                                                            Rp 0,00
+                                                        </td>
+                                                        <td>
+                                                            Rp 0,00
+                                                        </td>
+                                                        <td>
+                                                            0%
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                                <tfoot class="bg-dark text-light">
+                                                    <tr>
+                                                        <td colspan="2">
+                                                            Biaya Produksi
+                                                        </td>
+                                                        <td id="sumKdn-1-9">
+                                                            Rp 0,00
+                                                        </td>
+                                                        <td id="sumKln-1-9">
+                                                            Rp 0,00
+                                                        </td>
+                                                        <td id="sumTotal-1-9">
+                                                            Rp 0,00
+                                                        </td>
+                                                        <td id="sumTkdn-1-9">
+                                                            0%
+                                                        </td>
+                                                    </tr>
+                                                </tfoot>
                                             </table>
                                         </div>
                                     </div>
@@ -1823,13 +2444,25 @@
                 decimalPlaces: 2,
                 minimumValue: '0'
             });
-            var kapasitasNormalPerbulan = new AutoNumeric('.kapasitasNormalPerbulan', {
+            var biayaDepresiasiPerbulan16 = new AutoNumeric('.biayaDepresiasiPerbulan16', {
                 digitGroupSeparator: '.',
                 decimalCharacter: ',',
                 decimalPlaces: 2,
                 minimumValue: '0'
             });
-            var biayaDepresiasiPerbulan16 = new AutoNumeric('.biayaDepresiasiPerbulan16', {
+            var biayaSewaPerbulan17 = new AutoNumeric('.biayaSewaPerbulan17', {
+                digitGroupSeparator: '.',
+                decimalCharacter: ',',
+                decimalPlaces: 2,
+                minimumValue: '0'
+            });
+            var biayaPerbulan18 = new AutoNumeric('.biayaPerbulan18', {
+                digitGroupSeparator: '.',
+                decimalCharacter: ',',
+                decimalPlaces: 2,
+                minimumValue: '0'
+            });
+            var tunjanganLainnya13 = new AutoNumeric('.tunjanganLainnya13', {
                 digitGroupSeparator: '.',
                 decimalCharacter: ',',
                 decimalPlaces: 2,
@@ -1871,8 +2504,8 @@
                             calculations = [{
                                     "id": "1",
                                     "no": "1.1",
-                                    "nama": "Bahan Baku",
-                                    "slug": "bahan-baku",
+                                    "nama": "Bahan Baku Material Langsung",
+                                    "slug": "bahan-baku-material-langsung",
                                     "formulas": {
                                         kdn: "{tkdn}% * {jumlah} * {harga_satuan}",
                                         kln: "(100% - {tkdn}%) * {jumlah} * {harga_satuan}",
@@ -1896,8 +2529,8 @@
                                 {
                                     "id": "2",
                                     "no": "1.2",
-                                    "nama": "Jasa Terkait Bahan Baku",
-                                    "slug": "jasa-terkait-bahan-baku",
+                                    "nama": "Bahan Baku Material Tidak Langsung",
+                                    "slug": "bahan-baku-material-tidak-langsung",
                                     "formulas": {
                                         kdn: "{tkdn}% * {jumlah} * {biaya} * {alokasi}%",
                                         kln: "(100% - {tkdn}%) * {jumlah} * {biaya} * {alokasi}%",
@@ -1911,12 +2544,14 @@
                                 {
                                     "id": "3",
                                     "no": "1.3",
-                                    "nama": "Jasa Terkait Bahan Baku",
-                                    "slug": "jasa-terkait-bahan-baku",
+                                    "nama": "Tenaga Kerja Langsung",
+                                    "slug": "tenaga-kerja-langsung",
                                     "formulas": {
                                         kdn: "{tkdn}% * {jumlah_orang} * {gaji_perbulan} * {alokasi_gaji}%",
                                         kln: "(100% - {tkdn}%) * {jumlah_orang} * {gaji_perbulan} * {alokasi_gaji}%",
                                         total: "{formulas.kdn} + {formulas.kln}",
+                                        bpjs: "{bpjs_percent}% * ({gaji_perbulan} >= 12000000 ? 12000000 : {gaji_perbulan}) * {jumlah_orang}",
+                                        tunjangan_lainnya: "{currency_tunjangan_lainnya}",
                                         sumJumlahOrang: "sum:jumlah_orang",
                                         sumKdn: "sum:kdn",
                                         sumKln: "sum:kln",
@@ -1929,8 +2564,8 @@
                                 {
                                     "id": "4",
                                     "no": "1.4",
-                                    "nama": "Jasa Terkait Bahan Baku",
-                                    "slug": "jasa-terkait-bahan-baku",
+                                    "nama": "Tenaga Kerja Langsung Untuk Biaya Terkait Lainnya",
+                                    "slug": "tenaga-kerja-langsung-untuk-biaya-terkait-lainnya",
                                     "formulas": {
                                         kdn: "{tkdn}% * {jumlah_orang} * {biaya_pengurusan_per_bulan} * {alokasi}%",
                                         kln: "(100% - {tkdn}%) * {jumlah_orang} * {biaya_pengurusan_per_bulan} * {alokasi}%",
@@ -1945,8 +2580,8 @@
                                 {
                                     "id": "5",
                                     "no": "1.5",
-                                    "nama": "Jasa Terkait Bahan Baku",
-                                    "slug": "jasa-terkait-bahan-baku",
+                                    "nama": "Tenaga Kerja Tidak Langsung",
+                                    "slug": "tenaga-kerja-tidak-langsung",
                                     "formulas": {
                                         kdn: "{tkdn}% * {jumlah_orang} * {gaji_perbulan} * {alokasi}%",
                                         kln: "(100% - {tkdn}%) * {jumlah_orang} * {gaji_perbulan} * {alokasi}%",
@@ -1961,13 +2596,45 @@
                                 {
                                     "id": "6",
                                     "no": "1.6",
-                                    "nama": "Jasa Terkait Bahan Baku",
-                                    "slug": "jasa-terkait-bahan-baku",
+                                    "nama": "Mesin Yang Dimiliki",
+                                    "slug": "mesin-yang-dimiliki",
                                     "formulas": {
                                         kdn: "{tkdn}% * {jumlah_unit} * {biaya_depresiasi_perbulan} * {alokasi}%",
                                         kln: "(100% - {tkdn}%) * {jumlah_unit} * {biaya_depresiasi_perbulan} * {alokasi}%",
                                         total: "{formulas.kdn} + {formulas.kln}",
                                         sumJumlahUnit: "sum:jumlah_unit",
+                                        sumKdn: "sum:kdn",
+                                        sumKln: "sum:kln",
+                                        sumTotal: "sum:total",
+                                    },
+                                    "data": []
+                                },
+                                {
+                                    "id": "7",
+                                    "no": "1.7",
+                                    "nama": "Mesin Yang Disewa",
+                                    "slug": "mesin-yang-disewa",
+                                    "formulas": {
+                                        kdn: "{tkdn}% * {jumlah_unit} * {biaya_sewa_perbulan} * {alokasi}%",
+                                        kln: "(100% - {tkdn}%) * {jumlah_unit} * {biaya_sewa_perbulan} * {alokasi}%",
+                                        total: "{formulas.kdn} + {formulas.kln}",
+                                        sumJumlahUnit: "sum:jumlah_unit",
+                                        sumKdn: "sum:kdn",
+                                        sumKln: "sum:kln",
+                                        sumTotal: "sum:total",
+                                    },
+                                    "data": []
+                                },
+                                {
+                                    "id": "8",
+                                    "no": "1.8",
+                                    "nama": "Biaya Tidak Langsung Terkait Lainnya",
+                                    "slug": "biaya-tidak-langsung-terkait-lainnya",
+                                    "formulas": {
+                                        kdn: "{tkdn}% * {jumlah} * {biaya_perbulan} * {alokasi}%",
+                                        kln: "(100% - {tkdn}%) * {jumlah} * {biaya_perbulan} * {alokasi}%",
+                                        total: "{formulas.kdn} + {formulas.kln}",
+                                        sumJumlah: "sum:jumlah",
                                         sumKdn: "sum:kdn",
                                         sumKln: "sum:kln",
                                         sumTotal: "sum:total",
@@ -1980,6 +2647,7 @@
                                 calculations: calculations
                             }
                             draftCalculations.push(draftCalculation);
+                            init();
                         }
                     });
                     localStorage.setItem("draftCalculations", JSON.stringify(draftCalculations))
@@ -2141,6 +2809,56 @@
                 reloadAllTable()
 
                 $("#form-6")[0].reset();
+
+                swal({
+                    title: "Success",
+                    text: "Success to add new calculation",
+                    icon: "success",
+                })
+            })
+
+            $("#form-7").on("submit", (event) => {
+                event.preventDefault();
+                let serializedArray = $("#form-7").serializeArray();
+                let formResult = {};
+
+                for (let i = 0; i < serializedArray.length; i++) {
+                    let input = serializedArray[i];
+                    formResult[input.name] = input.value;
+                }
+
+                formResult["id"] = new Date().getTime()
+
+                let storeCalculation = calculateAndBind(formResult, 7);
+
+                reloadAllTable()
+
+                $("#form-7")[0].reset();
+
+                swal({
+                    title: "Success",
+                    text: "Success to add new calculation",
+                    icon: "success",
+                })
+            })
+
+            $("#form-8").on("submit", (event) => {
+                event.preventDefault();
+                let serializedArray = $("#form-8").serializeArray();
+                let formResult = {};
+
+                for (let i = 0; i < serializedArray.length; i++) {
+                    let input = serializedArray[i];
+                    formResult[input.name] = input.value;
+                }
+
+                formResult["id"] = new Date().getTime()
+
+                let storeCalculation = calculateAndBind(formResult, 8);
+
+                reloadAllTable()
+
+                $("#form-8")[0].reset();
 
                 swal({
                     title: "Success",
@@ -2396,7 +3114,7 @@
                         "<td>" + item.pemasok + "</td>" +
                         "<td>" + item.tkdn + "%</td>" +
                         "<td>" + item.jumlah + "</td>" +
-                        "<td>" + item.harga_satuan + "</td>" +
+                        "<td>" + "Rp " + item.harga_satuan + "</td>" +
                         "<td>" + formatToCurrency(item.kdn) + "</td>" +
                         "<td>" + formatToCurrency(item.kln) + "</td>" +
                         "<td>" + formatToCurrency(item.total) + "</td>" +
@@ -2524,17 +3242,20 @@
                 const tbody = $(`#${tbodyId}`);
                 tbody.empty();
                 calculation = calculations.find(f => f.id == calculationId);
-                calculation3 = calculations.find(f => f.di == 3);
+                calculation3 = calculations.find(f => f.id == 3);
                 let sumKdn = formatToCurrency(calculation.sumKdn)
                 let sumKln = formatToCurrency(calculation.sumKln)
                 let sumTotal = formatToCurrency(calculation.sumTotal)
                 $(`#1-4-sumJumlahOrang`).text(calculation.sumJumlahOrang)
-                $(`#1-4-sumKdn`).text(sumKdn)
+                $(`#1-4-sumKdn`).text(formatToCurrency((calculation.sumKdn ?? 0) + (calculation3.sumBpjs ?? 0) + (calculation3.sumTunjanganLainnya ?? 0)))
                 $(`#1-4-sumKln`).text(sumKln)
-                $(`#1-4-sumTotal`).text(sumTotal)
-                // $(`sumBpjs-1-4-3`).text(formatToCurrency(calculation3.sumBpjs ?? 0))
-                // $(`sumBpjsKdn-1-4-3`).text(formatToCurrency(calculation3.sumBpjs ?? 0))
-                // $(`sumBpjsTotal-1-4-3`).text(formatToCurrency(calculation3.sumBpjs ?? 0))
+                $(`#1-4-sumTotal`).text(formatToCurrency((calculation.sumTotal ?? 0) + (calculation3.sumBpjs ?? 0) + (calculation3.sumTunjanganLainnya ?? 0)))
+                $(`#sumBpjs-1-4-3`).text(formatToCurrency(calculation3.sumBpjs ?? 0))
+                $(`#sumBpjsKdn-1-4-3`).text(formatToCurrency(calculation3.sumBpjs ?? 0))
+                $(`#sumBpjsTotal-1-4-3`).text(formatToCurrency(calculation3.sumBpjs ?? 0))
+                $(`#sumTunjanganLainnya-1-4-3`).text(formatToCurrency(calculation3.sumTunjanganLainnya ?? 0))
+                $(`#sumTunjanganLainnyaKdn-1-4-3`).text(formatToCurrency(calculation3.sumTunjanganLainnya ?? 0))
+                $(`#sumTunjanganLainnyaTotal-1-4-3`).text(formatToCurrency(calculation3.sumTunjanganLainnya ?? 0))
                 $(`#kdn-biaya-satuan-product-1-4`).text(formatToCurrency(calculation.sumKdn / parseCurrencyOrDecimal(
                     calculations.kapasitasNormalPerbulan)))
                 $(`#kln-biaya-satuan-product-1-4`).text(formatToCurrency(calculation.sumKln / parseCurrencyOrDecimal(
@@ -2557,10 +3278,10 @@
                                 </div>
                             </div>
                         </td>
-                        <td>${(index + 1)}</td>
+                        <td>${(index + 3)}</td>
                         <td> ${item.uraian_posisi} </td>
                         <td> ${item.produsen_tingkat_dua} </td>
-                        <td> ${item.kewarganegaraan == "Indonesia" ? "100%" : "0%"} </td>
+                        <td> ${item.tkdn}% </td>
                         <td> ${item.jumlah_orang} </td>
                         <td> Rp ${item.biaya_pengurusan_per_bulan} </td>
                         <td> ${item.alokasi} "%</td>
@@ -2666,6 +3387,144 @@
 
                     tbody.append(row);
                 });
+            } else if (tbodyId == "tbody-7") {
+                const tbody = $(`#${tbodyId}`);
+                tbody.empty();
+                calculation = calculations.find(f => f.id == calculationId);
+                let sumKdn = formatToCurrency(calculation.sumKdn)
+                let sumKln = formatToCurrency(calculation.sumKln)
+                let sumTotal = formatToCurrency(calculation.sumTotal)
+                $(`#1-7-sumJumlahUnit`).text(calculation.sumJumlahUnit)
+                $(`#1-7-sumKdn`).text(sumKdn)
+                $(`#1-7-sumKln`).text(sumKln)
+                $(`#1-7-sumTotal`).text(sumTotal)
+                $(`#kdn-biaya-satuan-product-1-7`).text(formatToCurrency(calculation.sumKdn / parseCurrencyOrDecimal(
+                    calculations.kapasitasNormalPerbulan)))
+                $(`#kln-biaya-satuan-product-1-7`).text(formatToCurrency(calculation.sumKln / parseCurrencyOrDecimal(
+                    calculations.kapasitasNormalPerbulan)))
+                $(`#total-biaya-satuan-product-1-7`).text(formatToCurrency(calculation.sumTotal / parseCurrencyOrDecimal(
+                    calculations.kapasitasNormalPerbulan)))
+                console.log(calculation);
+                calculation.data.forEach(function(item, index) {
+                    let row = `<tr> +
+                        <td>
+                            <div class="dropdown">
+                                <div class="btn btn-secondary btn-sm" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">!</div>
+                                <div class="dropdown-menu"
+                                    aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item buttonEditNews"
+                                        onclick="edit(${item.id})"><i class="fa fa-edit"></i> Edit
+                                    </a>
+                                    <button class="dropdown-item" type="submit" onclick="destroy(${item.id})"><i
+                                            class="fa fa-trash"></i> Delete</button>
+                                </div>
+                            </div>
+                        </td>
+                        <td>${(index + 1)}</td>
+                        <td> ${item.uraian} </td>
+                        <td> ${item.spesifikasi} </td>
+                        <td> ${item.jumlah_unit} </td>
+                        <td> ${item.dibuat} </td>
+                        <td> ${item.tkdn}% </td>
+                        <td> Rp ${item.biaya_sewa_perbulan} </td>
+                        <td> ${item.alokasi}%</td>
+                        <td> ${formatToCurrency(item.kdn)} </td>
+                        <td> ${formatToCurrency(item.kln)} </td>
+                        <td> ${formatToCurrency(item.total)} </td>
+                        </tr>`;
+
+                    tbody.append(row);
+                });
+            } else if (tbodyId == "tbody-8") {
+                const tbody = $(`#${tbodyId}`);
+                tbody.empty();
+                calculation = calculations.find(f => f.id == calculationId);
+                let sumKdn = formatToCurrency(calculation.sumKdn)
+                let sumKln = formatToCurrency(calculation.sumKln)
+                let sumTotal = formatToCurrency(calculation.sumTotal)
+                $(`#1-8-sumJumlah`).text(calculation.sumJumlah)
+                $(`#1-8-sumKdn`).text(sumKdn)
+                $(`#1-8-sumKln`).text(sumKln)
+                $(`#1-8-sumTotal`).text(sumTotal)
+                $(`#kdn-biaya-satuan-product-1-8`).text(formatToCurrency(calculation.sumKdn / parseCurrencyOrDecimal(
+                    calculations.kapasitasNormalPerbulan)))
+                $(`#kln-biaya-satuan-product-1-8`).text(formatToCurrency(calculation.sumKln / parseCurrencyOrDecimal(
+                    calculations.kapasitasNormalPerbulan)))
+                $(`#total-biaya-satuan-product-1-8`).text(formatToCurrency(calculation.sumTotal / parseCurrencyOrDecimal(
+                    calculations.kapasitasNormalPerbulan)))
+                console.log(calculation);
+                calculation.data.forEach(function(item, index) {
+                    let row = `<tr> +
+                        <td>
+                            <div class="dropdown">
+                                <div class="btn btn-secondary btn-sm" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">!</div>
+                                <div class="dropdown-menu"
+                                    aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item buttonEditNews"
+                                        onclick="edit(${item.id})"><i class="fa fa-edit"></i> Edit
+                                    </a>
+                                    <button class="dropdown-item" type="submit" onclick="destroy(${item.id})"><i
+                                            class="fa fa-trash"></i> Delete</button>
+                                </div>
+                            </div>
+                        </td>
+                        <td>${(index + 1)}</td>
+                        <td> ${item.uraian} </td>
+                        <td> ${item.pemasok} </td>
+                        <td> ${item.jumlah} </td>
+                        <td> ${item.tkdn}% </td>
+                        <td> Rp ${item.biaya_perbulan} </td>
+                        <td> ${item.alokasi}%</td>
+                        <td> ${formatToCurrency(item.kdn)} </td>
+                        <td> ${formatToCurrency(item.kln)} </td>
+                        <td> ${formatToCurrency(item.total)} </td>
+                        </tr>`;
+
+                    tbody.append(row);
+                });
+            } else if (tbodyId == "tbody-9") {
+                const tbody = $(`#${tbodyId}`);
+                tbody.empty();
+                // calculation = calculations.find(f => f.id == calculationId);
+                // let sumKdn = formatToCurrency(calculation.sumKdn)
+                // let sumKln = formatToCurrency(calculation.sumKln)
+                // let sumTotal = formatToCurrency(calculation.sumTotal)
+                // $(`#1-8-sumJumlah`).text(calculation.sumJumlah)
+                // $(`#1-8-sumKdn`).text(sumKdn)
+                // $(`#1-8-sumKln`).text(sumKln)
+                // $(`#1-8-sumTotal`).text(sumTotal)
+                // $(`#kdn-biaya-satuan-product-1-8`).text(formatToCurrency(calculation.sumKdn / parseCurrencyOrDecimal(
+                //     calculations.kapasitasNormalPerbulan)))
+                // $(`#kln-biaya-satuan-product-1-8`).text(formatToCurrency(calculation.sumKln / parseCurrencyOrDecimal(
+                //     calculations.kapasitasNormalPerbulan)))
+                // $(`#total-biaya-satuan-product-1-8`).text(formatToCurrency(calculation.sumTotal / parseCurrencyOrDecimal(
+                //     calculations.kapasitasNormalPerbulan)))
+                let sumKdn19 = 0;
+                let sumKln19 = 0;
+                let sumTotal19 = 0;
+                calculations.forEach(function(item, index) {
+                    sumKdn19 += item.sumKdn;
+                    sumKln19 += item.sumKln;
+                    sumTotal19 += item.sumTotal;
+                })
+
+                calculations.forEach(function(item, index) {
+                    let row = `<tr>
+                        <td> ${item.no} </td>
+                        <td> ${item.nama} </td>
+                        <td> ${formatToCurrency(item.sumKdn) ?? ("Rp " + 0 + ",00")} </td>
+                        <td> ${formatToCurrency(item.sumKln) ?? ("Rp " + 0 + ",00")} </td>
+                        <td> ${formatToCurrency(item.sumTotal) ?? ("Rp " + 0 + ",00")} </td>
+                        <td> ${(item.sumKdn / sumTotal19 * 100).toFixed(2)} </td>
+                        </tr>`;
+
+                    tbody.append(row);
+                });
+
+                $("#sumKdn-1-9").text(formatToCurrency(sumKdn19));
+                $("#sumKln-1-9").text(formatToCurrency(sumKln19));
+                $("#sumTotal-1-9").text(formatToCurrency(sumTotal19));
+                $("#sumTkdn-1-9").text((sumKdn19 / sumTotal19).toFixed(2));
             }
         }
 
@@ -2676,6 +3535,9 @@
             reloadTable("tbody-4", 4);
             reloadTable("tbody-5", 5);
             reloadTable("tbody-6", 6);
+            reloadTable("tbody-7", 7);
+            reloadTable("tbody-8", 8);
+            reloadTable("tbody-9", 9);
         }
 
         $(() => {
@@ -2724,6 +3586,32 @@
                     $("#tkdn-1-6").val("0");
                 } else {
                     $("#tkdn-1-6").val("75");
+                }
+            });
+
+            $("#dimiliki-1-7").on("change", () => {
+                let dimilikiValue = $("#dimiliki-1-7").val();
+                let dibuatValue = $("#dibuat-1-7").val();
+
+                if (dimilikiValue == "Dalam Negeri" && dibuatValue == "Dalam Negeri") {
+                    $("#tkdn-1-7").val("100");
+                } else if (dimilikiValue == "Luar Negeri" && dibuatValue == "Luar Negeri") {
+                    $("#tkdn-1-7").val("0");
+                } else {
+                    $("#tkdn-1-7").val("75");
+                }
+            });
+
+            $("#dibuat-1-7").on("change", () => {
+                let dimilikiValue = $("#dimiliki-1-7").val();
+                let dibuatValue = $("#dibuat-1-7").val();
+
+                if (dimilikiValue == "Dalam Negeri" && dibuatValue == "Dalam Negeri") {
+                    $("#tkdn-1-7").val("100");
+                } else if (dimilikiValue == "Luar Negeri" && dibuatValue == "Luar Negeri") {
+                    $("#tkdn-1-7").val("0");
+                } else {
+                    $("#tkdn-1-7").val("75");
                 }
             });
         })
