@@ -10,33 +10,43 @@ use Maatwebsite\Excel\Concerns\WithEvents;
 use Maatwebsite\Excel\Events\AfterSheet;
 use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 
-class UserExport implements FromQuery, WithHeadings, ShouldAutoSize, WithEvents
+use Maatwebsite\Excel\Concerns\FromArray;
+use Maatwebsite\Excel\Concerns\WithMultipleSheets;
+class UserExport implements FromArray, WithMultipleSheets 
 {
-    /**
-    * @return \Illuminate\Support\Collection
-    */
-    public function query()
+    protected $sheets;
+    public function __construct(array $sheets)
     {
-        return User::query()
-                    ->select('fullname', 'email', 'created_at');
+        $this->sheets = $sheets;
     }
 
-    public function headings(): array
+    public function array(): array
     {
-        return [
-            'fullname',
-            'email',
-            'created at',
-        ];
+        return $this->sheets;
     }
 
-    public function registerEvents(): array
+    public function sheets(): array
     {
-        return [
-            AfterSheet::class    => function(AfterSheet $event) {
-                $cellRange = 'A1:C1'; // All headers
-                $event->sheet->getDelegate()->getStyle($cellRange)->getFont()->setSize(14);
-            },
+        // dd($this->sheets['1.1']);
+        $sheets = [
+            new CalculationForm1($this->sheets['1.1']),
+            new CalculationForm2($this->sheets['1.2']),
+            // new CalculationForm3($this->sheets['1.3']),
+            // new CalculationForm4($this->sheets['1.4']),
+            // new CalculationForm5($this->sheets['1.5']),
+            // new CalculationForm6($this->sheets['1.6']),
+            // new CalculationForm7($this->sheets['1.7']),
+            // new CalculationForm8($this->sheets['1.8']),
+            // new CalculationForm9($this->sheets['1.9']),
         ];
+
+        return $sheets;
     }
+    // public function sheets(): array 
+    // {   
+    //     return [
+    //         new CalculationForm1(),
+    //         new CalculationForm2(),
+    //     ];
+    // }
 }

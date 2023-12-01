@@ -7,6 +7,9 @@ use Spatie\Permission\Models\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
+use App\Models\Computation;
+use App\Models\CalculationResult;
+
 use Illuminate\Support\Facades\Auth;
 use Excel;
 use Dompdf\Dompdf;
@@ -166,8 +169,25 @@ class UserController extends Controller
 
     public function exportExcel()
     {
-        return Excel::download(new UserExport, 'user.xlsx');
-        return redirect()->back();
+        $data = [
+            "computations" => Computation::latest()->get()->toArray(),
+            "form_detail" => CalculationResult::where('computation_id', 1)->get()->toArray(),
+        ];
+        // dd($data['form_detail'][0]['results']);
+        if(!$data['form_detail'][0]){
+            return redirect()->back()->with('failed', 'Data is Empty');
+        }
+        $form =[];
+        foreach ($data['form_detail'][0]['results'] as $item) {
+            // dd($item['no']);
+            $form[$item['no']] = $item['data'];
+        }
+        // dd($form);
+        $export = new UserExport($form);
+        // Excel::download($export, 'report.xlsx');
+        // return Excel::download(new UserExport, 'user.xlsx');
+        return Excel::download($export, 'report.xlsx');
+        // return redirect()->back();
     }
 
     public function exportPdf()
@@ -221,7 +241,7 @@ class UserController extends Controller
 
     public function deletedBatch(Request $request)
     {
-        dd($request->delete_ids);
+        // dd($request->delete_ids);
         $deleteIds = json_decode($request->delete_ids);
 
         $deletedNews = User::whereIn('id', $deleteIds)->delete();
