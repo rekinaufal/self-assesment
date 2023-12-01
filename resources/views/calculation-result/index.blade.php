@@ -149,7 +149,7 @@
                                                         <span class="input-group-text" id="basic-addon1">Rp.</span>
                                                     </div>
                                                     <input type="text" class="form-control rupiahInput" placeholder=""
-                                                        id="harga_satuan" name="harga_satuan" required autocomplete="false">
+                                                        id="harga_satuan" name="harga_satuan" required autocomplete="off">
                                                 </div>
                                             </div>
 
@@ -389,7 +389,7 @@
                                                         <span class="input-group-text" id="basic-addon1">Rp.</span>
                                                     </div>
                                                     <input type="text" class="form-control biaya12" placeholder=""
-                                                        id="1-2-biaya" name="biaya" required autocomplete="false">
+                                                        id="1-2-biaya" name="biaya" required autocomplete="off">
                                                 </div>
                                             </div>
 
@@ -596,7 +596,7 @@
                                                         <span class="input-group-text" id="basic-addon1">Rp.</span>
                                                     </div>
                                                     <input type="text" class="form-control gaji_perbulan13"
-                                                        placeholder="" id="1-2-gaji_perbulan" name="gaji_perbulan" required autocomplete="false">
+                                                        placeholder="" id="1-2-gaji_perbulan" name="gaji_perbulan" required autocomplete="off">
                                                 </div>
                                             </div>
 
@@ -632,7 +632,7 @@
                                                                     </div>
                                                                     <input type="text" class="form-control form-control-sm tunjanganLainnya13"
                                                                         placeholder="" id="currency_tunjangan_lainnya"
-                                                                        name="currency_tunjangan_lainnya" required autocomplete="false">
+                                                                        name="currency_tunjangan_lainnya" required autocomplete="off">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -886,7 +886,7 @@
                                                     </div>
                                                     <input type="text" class="form-control biaya_pengurusan_perbulan14"
                                                         placeholder="" id="biaya_pengurusan_per_bulan"
-                                                        name="biaya_pengurusan_per_bulan" required autocomplete="false">
+                                                        name="biaya_pengurusan_per_bulan" required autocomplete="off">
                                                 </div>
                                             </div>
 
@@ -1198,7 +1198,7 @@
                                                         <span class="input-group-text" id="basic-addon1">Rp.</span>
                                                     </div>
                                                     <input type="text" class="form-control gaji_perbulan15"
-                                                        placeholder="" id="gaji_perbulan" name="gaji_perbulan" required autocomplete="false">
+                                                        placeholder="" id="gaji_perbulan" name="gaji_perbulan" required autocomplete="off">
                                                 </div>
                                             </div>
 
@@ -1453,7 +1453,7 @@
                                                     </div>
                                                     <input type="text" class="form-control biayaDepresiasiPerbulan16"
                                                         placeholder="" id="biaya_depresiasi_perbulan"
-                                                        name="biaya_depresiasi_perbulan" required autocomplete="false">
+                                                        name="biaya_depresiasi_perbulan" required autocomplete="off">
                                                 </div>
                                             </div>
 
@@ -1750,7 +1750,7 @@
                                                     </div>
                                                     <input type="text" class="form-control biayaSewaPerbulan17"
                                                         placeholder="" id="biaya_sewa_perbulan"
-                                                        name="biaya_sewa_perbulan" required autocomplete="false">
+                                                        name="biaya_sewa_perbulan" required autocomplete="off">
                                                 </div>
                                             </div>
 
@@ -2043,7 +2043,7 @@
                                                     </div>
                                                     <input type="text" class="form-control biayaPerbulan18"
                                                         placeholder="" id="biaya_perbulan"
-                                                        name="biaya_perbulan" required autocomplete="false">
+                                                        name="biaya_perbulan" required autocomplete="off">
                                                 </div>
                                             </div>
 
