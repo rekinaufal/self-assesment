@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\News;
+use App\Models\UserProfile;
 use Illuminate\Http\Request;
 
 class NewsController extends Controller
@@ -85,7 +86,9 @@ class NewsController extends Controller
     public function show(News $news)
     {
         if ($news) {
-            return view("news.detail", compact('news'));
+            $userLogged = auth()->user();
+            $user = UserProfile::where('user_id', $userLogged->id)->first();
+            return view("news.detail", compact('news', 'user'));
         } else {
             return redirect()->back()->with('failed', 'Cannot found the news');
         }
