@@ -126,7 +126,7 @@
                                                 <label for="tkdn">TKDN % <i class="fas fa-info-circle"
                                                         data-toggle="tooltip" data-placement="top" title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm" id="tkdn"
+                                                <input type="text" class="form-control form-control-sm replaceDot" id="tkdn"
                                                     name="tkdn" placeholder="" required>
                                             </div>
 
@@ -149,7 +149,7 @@
                                                         <span class="input-group-text" id="basic-addon1">Rp.</span>
                                                     </div>
                                                     <input type="text" class="form-control rupiahInput" placeholder=""
-                                                        id="harga_satuan" name="harga_satuan" required autocomplete="off">
+                                                        id="harga_satuan" name="harga_satuan" required autocomplete="off" value="0,00">
                                                 </div>
                                             </div>
 
@@ -168,7 +168,7 @@
                                                                 <label for="ppn">PPN %</label>
                                                                 <input type="text" name="ppn"
                                                                     style=" width : 15rem"
-                                                                    class="form-control form-control-sm" id="ppn"
+                                                                    class="form-control form-control-sm replaceDot" id="ppn"
                                                                     placeholder="" value="0">
                                                             </div>
                                                         </div>
@@ -189,19 +189,19 @@
                                                             <div class="form-group-sm ml-2" style="font-size: 7pt;">
                                                                 <label for="bm">BM %</label>
                                                                 <input type="text" name="bm" style="width: 5rem"
-                                                                    class="form-control form-control-sm" id="bm"
+                                                                    class="form-control form-control-sm replaceDot" id="bm"
                                                                     placeholder="" value="0">
                                                             </div>
                                                             <div class="form-group-sm ml-2" style="font-size: 7pt;">
                                                                 <label for="pdri_ppn">PPN %</label>
                                                                 <input type="text" name="pdri_ppn" style="width: 5rem"
-                                                                    class="form-control form-control-sm" id="pdri_ppn"
+                                                                    class="form-control form-control-sm replaceDot" id="pdri_ppn"
                                                                     placeholder="" value="0">
                                                             </div>
                                                             <div class="form-group-sm ml-2" style="font-size: 7pt;">
                                                                 <label for="pph">PPH %</label>
                                                                 <input type="text" name="pph" style="width: 5rem"
-                                                                    class="form-control form-control-sm" id="pph"
+                                                                    class="form-control form-control-sm replaceDot" id="pph"
                                                                     placeholder="" value="0">
                                                             </div>
                                                         </div>
@@ -389,7 +389,7 @@
                                                         <span class="input-group-text" id="basic-addon1">Rp.</span>
                                                     </div>
                                                     <input type="text" class="form-control biaya12" placeholder=""
-                                                        id="1-2-biaya" name="biaya" required autocomplete="off">
+                                                        id="1-2-biaya" name="biaya" required autocomplete="off" value="0,00">
                                                 </div>
                                             </div>
 
@@ -596,7 +596,7 @@
                                                         <span class="input-group-text" id="basic-addon1">Rp.</span>
                                                     </div>
                                                     <input type="text" class="form-control gaji_perbulan13"
-                                                        placeholder="" id="1-2-gaji_perbulan" name="gaji_perbulan" required autocomplete="off">
+                                                        placeholder="" id="1-2-gaji_perbulan" name="gaji_perbulan" required autocomplete="off" value="0,00">
                                                 </div>
                                             </div>
 
@@ -632,7 +632,7 @@
                                                                     </div>
                                                                     <input type="text" class="form-control form-control-sm tunjanganLainnya13"
                                                                         placeholder="" id="currency_tunjangan_lainnya"
-                                                                        name="currency_tunjangan_lainnya" required autocomplete="off">
+                                                                        name="currency_tunjangan_lainnya" required autocomplete="off" value="0,00">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -886,7 +886,7 @@
                                                     </div>
                                                     <input type="text" class="form-control biaya_pengurusan_perbulan14"
                                                         placeholder="" id="biaya_pengurusan_per_bulan"
-                                                        name="biaya_pengurusan_per_bulan" required autocomplete="off">
+                                                        name="biaya_pengurusan_per_bulan" required autocomplete="off" value="0,00">
                                                 </div>
                                             </div>
 
@@ -1198,7 +1198,7 @@
                                                         <span class="input-group-text" id="basic-addon1">Rp.</span>
                                                     </div>
                                                     <input type="text" class="form-control gaji_perbulan15"
-                                                        placeholder="" id="gaji_perbulan" name="gaji_perbulan" required autocomplete="off">
+                                                        placeholder="" id="gaji_perbulan" name="gaji_perbulan" required autocomplete="off" value="0,00">
                                                 </div>
                                             </div>
 
@@ -1453,7 +1453,7 @@
                                                     </div>
                                                     <input type="text" class="form-control biayaDepresiasiPerbulan16"
                                                         placeholder="" id="biaya_depresiasi_perbulan"
-                                                        name="biaya_depresiasi_perbulan" required autocomplete="off">
+                                                        name="biaya_depresiasi_perbulan" required autocomplete="off" value="0,00">
                                                 </div>
                                             </div>
 
@@ -1750,7 +1750,7 @@
                                                     </div>
                                                     <input type="text" class="form-control biayaSewaPerbulan17"
                                                         placeholder="" id="biaya_sewa_perbulan"
-                                                        name="biaya_sewa_perbulan" required autocomplete="off">
+                                                        name="biaya_sewa_perbulan" required autocomplete="off" value="0,00">
                                                 </div>
                                             </div>
 
@@ -2043,7 +2043,7 @@
                                                     </div>
                                                     <input type="text" class="form-control biayaPerbulan18"
                                                         placeholder="" id="biaya_perbulan"
-                                                        name="biaya_perbulan" required autocomplete="off">
+                                                        name="biaya_perbulan" required autocomplete="off" value="0,00">
                                                 </div>
                                             </div>
 
@@ -2813,6 +2813,7 @@
                 reloadAllTable()
 
                 $("#form-6")[0].reset();
+                $("#tkdn-1-6").val("100");
 
                 swal({
                     title: "Success",
@@ -2838,6 +2839,7 @@
                 reloadAllTable()
 
                 $("#form-7")[0].reset();
+                $("#tkdn-1-7").val("100");
 
                 swal({
                     title: "Success",
@@ -3048,8 +3050,8 @@
             alert(`edit ${calculation_id}`)
         }
 
-        function destroy(calculation_id) {
-            let computation = calculations.find(f => f.id == 1);
+        function destroy(computation_id, calculation_id) {
+            let computation = calculations.find(f => f.id == computation_id);
             let calculationIndex = computation.data.findIndex(f => f.id == calculation_id);
 
             // Jika calculation dengan id yang diberikan ditemukan
@@ -3057,11 +3059,7 @@
                 // Hapus calculation dari array computation.data
                 computation.data.splice(calculationIndex, 1);
 
-                reloadTable("tbody-1", 1);
-                reloadTable("tbody-2", 2);
-                reloadTable("tbody-3", 3);
-                reloadTable("tbody-4", 4);
-                reloadTable("tbody-5", 5);
+                reloadAllTable()
 
                 swal({
                     title: "Success",
@@ -3105,7 +3103,7 @@
                                     <a class="dropdown-item buttonEditNews"
                                         onclick="edit(${item.id})"><i class="fa fa-edit"></i> Edit
                                     </a>
-                                    <button class="dropdown-item" type="submit" onclick="destroy(${item.id})"><i
+                                    <button class="dropdown-item" type="submit" onclick="destroy(${calculation.id}, ${item.id})"><i
                                             class="fa fa-trash"></i> Delete</button>
                                 </div>
                             </div>
@@ -3178,7 +3176,7 @@
                             </div>
                         </td>` +
                         "<td>" + (index + 1) + "</td>" +
-                        "<td>" + item.uraian + "</td>" +
+                        "<td class='text-nowrap'>" + item.uraian + "</td>" +
                         "<td>" + item.produsen_tingkat_dua + "</td>" +
                         "<td>" + item.jumlah + "</td>" +
                         "<td>" + item.tkdn + "%</td>" +
@@ -3226,17 +3224,17 @@
                             </div>
                         </td>
                         <td>${(index + 1)}</td>
-                        <td>${item.uraian_posisi}</td>
+                        <td class="text-nowrap">${item.uraian_posisi}</td>
                         <td>${item.kewarganegaraan}</td>
                         <td>${item.kewarganegaraan == "Indonesia" ? "100%" : "0%"}</td>
                         <td>${item.jumlah_orang}</td>
-                        <td>Rp ${item.gaji_perbulan}</td>
+                        <td class="text-nowrap">Rp ${item.gaji_perbulan}</td>
                         <td>${item.alokasi_gaji}%</td>
-                        <td>${formatToCurrency(item.kdn)}</td>
-                        <td>${formatToCurrency(item.kln)}</td>
-                        <td>${formatToCurrency(item.total)}</td>
-                        <td>${formatToCurrency(item.bpjs)}</td>
-                        <td>${formatToCurrency(item.tunjangan_lainnya)}</td>
+                        <td class="text-nowrap">${formatToCurrency(item.kdn)}</td>
+                        <td class="text-nowrap">${formatToCurrency(item.kln)}</td>
+                        <td class="text-nowrap">${formatToCurrency(item.total)}</td>
+                        <td class="text-nowrap">${formatToCurrency(item.bpjs)}</td>
+                        <td class="text-nowrap">${formatToCurrency(item.tunjangan_lainnya)}</td>
                         </tr>
                         `;
 
@@ -3283,15 +3281,15 @@
                             </div>
                         </td>
                         <td>${(index + 3)}</td>
-                        <td> ${item.uraian_posisi} </td>
+                        <td class="text-nowrap"> ${item.uraian_posisi} </td>
                         <td> ${item.produsen_tingkat_dua} </td>
                         <td> ${item.tkdn}% </td>
                         <td> ${item.jumlah_orang} </td>
-                        <td> Rp ${item.biaya_pengurusan_per_bulan} </td>
+                        <td class="text-nowrap"> Rp ${item.biaya_pengurusan_per_bulan} </td>
                         <td> ${item.alokasi} "%</td>
-                        <td> ${formatToCurrency(item.kdn)} </td>
-                        <td> ${formatToCurrency(item.kln)} </td>
-                        <td> ${formatToCurrency(item.total)} </td>
+                        <td class="text-nowrap"> ${formatToCurrency(item.kdn)} </td>
+                        <td class="text-nowrap"> ${formatToCurrency(item.kln)} </td>
+                        <td class="text-nowrap"> ${formatToCurrency(item.total)} </td>
                         </tr>`;
 
                     tbody.append(row);
@@ -3330,15 +3328,15 @@
                             </div>
                         </td>` +
                         "<td>" + (index + 1) + "</td>" +
-                        "<td>" + item.uraian_posisi + "</td>" +
+                        "<td class='text-nowrap'>" + item.uraian_posisi + "</td>" +
                         "<td>" + item.kewarganegaraan + "</td>" +
                         "<td>" + item.tkdn + "%" + "</td>" +
                         "<td>" + item.jumlah_orang + "</td>" +
-                        "<td>" + "Rp " + item.gaji_perbulan + "</td>" +
+                        "<td class='text-nowrap'>" + "Rp " + item.gaji_perbulan + "</td>" +
                         "<td>" + item.alokasi + "%</td>" +
-                        "<td>" + formatToCurrency(item.kdn) + "</td>" +
-                        "<td>" + formatToCurrency(item.kln) + "</td>" +
-                        "<td>" + formatToCurrency(item.total) + "</td>" +
+                        "<td class='text-nowrap'>" + formatToCurrency(item.kdn) + "</td>" +
+                        "<td class='text-nowrap'>" + formatToCurrency(item.kln) + "</td>" +
+                        "<td class='text-nowrap'>" + formatToCurrency(item.total) + "</td>" +
                         "</tr>";
 
                     tbody.append(row);
@@ -3377,16 +3375,16 @@
                             </div>
                         </td>
                         <td>${(index + 1)}</td>
-                        <td> ${item.uraian} </td>
+                        <td class="text-nowrap"> ${item.uraian} </td>
                         <td> ${item.spesifikasi} </td>
                         <td> ${item.jumlah_unit} </td>
                         <td> ${item.dibuat} </td>
                         <td> ${item.tkdn}% </td>
-                        <td> Rp ${item.biaya_depresiasi_perbulan} </td>
+                        <td class="text-nowrap"> Rp ${item.biaya_depresiasi_perbulan} </td>
                         <td> ${item.alokasi}%</td>
-                        <td> ${formatToCurrency(item.kdn)} </td>
-                        <td> ${formatToCurrency(item.kln)} </td>
-                        <td> ${formatToCurrency(item.total)} </td>
+                        <td class="text-nowrap"> ${formatToCurrency(item.kdn)} </td>
+                        <td class="text-nowrap"> ${formatToCurrency(item.kln)} </td>
+                        <td class="text-nowrap"> ${formatToCurrency(item.total)} </td>
                         </tr>`;
 
                     tbody.append(row);
@@ -3425,16 +3423,16 @@
                             </div>
                         </td>
                         <td>${(index + 1)}</td>
-                        <td> ${item.uraian} </td>
+                        <td class="text-nowrap"> ${item.uraian} </td>
                         <td> ${item.spesifikasi} </td>
                         <td> ${item.jumlah_unit} </td>
                         <td> ${item.dibuat} </td>
                         <td> ${item.tkdn}% </td>
-                        <td> Rp ${item.biaya_sewa_perbulan} </td>
+                        <td class="text-nowrap"> Rp ${item.biaya_sewa_perbulan} </td>
                         <td> ${item.alokasi}%</td>
-                        <td> ${formatToCurrency(item.kdn)} </td>
-                        <td> ${formatToCurrency(item.kln)} </td>
-                        <td> ${formatToCurrency(item.total)} </td>
+                        <td class="text-nowrap"> ${formatToCurrency(item.kdn)} </td>
+                        <td class="text-nowrap"> ${formatToCurrency(item.kln)} </td>
+                        <td class="text-nowrap"> ${formatToCurrency(item.total)} </td>
                         </tr>`;
 
                     tbody.append(row);
@@ -3473,15 +3471,15 @@
                             </div>
                         </td>
                         <td>${(index + 1)}</td>
-                        <td> ${item.uraian} </td>
+                        <td class="text-nowrap"> ${item.uraian} </td>
                         <td> ${item.pemasok} </td>
                         <td> ${item.jumlah} </td>
                         <td> ${item.tkdn}% </td>
-                        <td> Rp ${item.biaya_perbulan} </td>
+                        <td class="text-nowrap"> Rp ${item.biaya_perbulan} </td>
                         <td> ${item.alokasi}%</td>
-                        <td> ${formatToCurrency(item.kdn)} </td>
-                        <td> ${formatToCurrency(item.kln)} </td>
-                        <td> ${formatToCurrency(item.total)} </td>
+                        <td class="text-nowrap"> ${formatToCurrency(item.kdn)} </td>
+                        <td class="text-nowrap"> ${formatToCurrency(item.kln)} </td>
+                        <td class="text-nowrap"> ${formatToCurrency(item.total)} </td>
                         </tr>`;
 
                     tbody.append(row);
@@ -3514,12 +3512,12 @@
 
                 calculations.forEach(function(item, index) {
                     let row = `<tr>
-                        <td> ${item.no} </td>
-                        <td> ${item.nama} </td>
-                        <td> ${formatToCurrency(item.sumKdn) ?? ("Rp " + 0 + ",00")} </td>
-                        <td> ${formatToCurrency(item.sumKln) ?? ("Rp " + 0 + ",00")} </td>
-                        <td> ${formatToCurrency(item.sumTotal) ?? ("Rp " + 0 + ",00")} </td>
-                        <td> ${((item.sumKdn ?? 0) / sumTotal19 * 100).toFixed(2)} </td>
+                        <td class="text-nowrap"> ${item.no} </td>
+                        <td class="text-nowrap"> ${item.nama} </td>
+                        <td class="text-nowrap"> ${formatToCurrency(item.sumKdn) ?? ("Rp " + 0 + ",00")} </td>
+                        <td class="text-nowrap"> ${formatToCurrency(item.sumKln) ?? ("Rp " + 0 + ",00")} </td>
+                        <td class="text-nowrap"> ${formatToCurrency(item.sumTotal) ?? ("Rp " + 0 + ",00")} </td>
+                        <td class="text-nowrap"> ${((item.sumKdn ?? 0) / sumTotal19 * 100).toFixed(2)} </td>
                         </tr>`;
 
                     tbody.append(row);
@@ -3528,7 +3526,7 @@
                 $("#sumKdn-1-9").text(formatToCurrency(sumKdn19));
                 $("#sumKln-1-9").text(formatToCurrency(sumKln19));
                 $("#sumTotal-1-9").text(formatToCurrency(sumTotal19));
-                $("#sumTkdn-1-9").text((sumKdn19 / sumTotal19).toFixed(2));
+                $("#sumTkdn-1-9").text((sumKdn19 / sumTotal19 * 100).toFixed(2) + "%");
             }
         }
 
@@ -3618,6 +3616,13 @@
                     $("#tkdn-1-7").val("75");
                 }
             });
+
+            $(".replaceDot").on("change", (event) => {
+                let number = $(event.currentTarget).val();
+                let output = number.replace(/\./g, ",");
+
+                $(event.currentTarget).val(output);
+            })
         })
     </script>
     // {{-- <script src="{{ asset('dist/js/users/script.js') }}"></script> --}}
