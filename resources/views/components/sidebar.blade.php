@@ -61,7 +61,7 @@
                     </li>
                 @endcan
                 
-                @php $roles = session('role') @endphp
+                {{-- @php $roles = session('role') @endphp
                 @if (!empty($roles))
                     @if ($roles != 'Pengguna')
                         <li class="list-divider"></li>
@@ -86,8 +86,8 @@
                             </li>
                         @endcan
                     @endif
-                @endif
-                {{-- @can('role-list')
+                @endif --}}
+                @can('role-list')
                 <li class="list-divider"></li>
                 <li class="nav-small-cap">
                     <span class="hide-menu">Admin</span>
@@ -98,7 +98,7 @@
                             <span class="hide-menu">Roles</span>
                         </a>
                     </li>
-                @endcan --}}
+                @endcan
                 
                 @can('user-list')
                     <li class="list-divider"></li>
