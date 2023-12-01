@@ -126,7 +126,7 @@
                                                 <label for="tkdn">TKDN % <i class="fas fa-info-circle"
                                                         data-toggle="tooltip" data-placement="top" title="Tooltip on top">
                                                     </i></label>
-                                                <input type="number" class="form-control form-control-sm" id="tkdn"
+                                                <input type="text" class="form-control form-control-sm" id="tkdn"
                                                     name="tkdn" placeholder="" required>
                                             </div>
 
@@ -2478,8 +2478,12 @@
         let draftCalculations = localStorage.getItem("draftCalculations") != null ? localStorage.getItem(
             "draftCalculations") : null;
 
+        let calculations = null;
+
+        init();
+
         function init() {
-            let calculations = null;
+            calculations = null;
             if (draftCalculations != null) {
                 if (typeof(draftCalculations) == 'string') {
                     draftCalculations = JSON.parse(draftCalculations);
@@ -2487,6 +2491,7 @@
                 let draftCalculation = draftCalculations.find(f => f.computationId == computationId);
                 if (draftCalculation != null) { // ada tpi id computation tidak ditemukan
                     calculations = draftCalculation.calculations;
+                    return calculations;
                 } else {
                     $.ajax({
                         type: 'GET',
@@ -2656,10 +2661,9 @@
                 draftCalculations = [];
                 init();
             }
-            return calculations
+            return calculations;
         }
 
-        let calculations = init();
         reloadAllTable()
 
         $(() => {
