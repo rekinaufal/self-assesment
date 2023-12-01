@@ -2265,14 +2265,14 @@
                                             <table class="table table-striped table-hover" style="font-size: 8pt">
                                                 <thead class="bg-dark text-light">
                                                     <tr>
-                                                        <th scope="col" class="text-nowrap pr-4" colspan="2" rowspan="2" class="border align-middle">Uraian</th>
+                                                        <th scope="col" class="text-nowrap pr-4 border align-middle" colspan="2" rowspan="2">Uraian</th>
                                                         <th colspan="3" class="border text-center">Biaya</th>
-                                                        <th scope="col" class="text-nowrap pr-4" rowspan="2" class="border align-middle">TKDN %</th>
+                                                        <th scope="col" class="text-nowrap pr-4 border align-middle" rowspan="2">TKDN %</th>
                                                     </tr>
                                                     <tr>
-                                                        <th>KDN</th>
-                                                        <th>KLN</th>
-                                                        <th>Total</th>
+                                                        <th class="border">KDN</th>
+                                                        <th class="border">KLN</th>
+                                                        <th class="border">Total</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody id="tbody-9">
@@ -2299,19 +2299,19 @@
                                                 </tbody>
                                                 <tfoot class="bg-dark text-light">
                                                     <tr>
-                                                        <td colspan="2">
+                                                        <td colspan="2" class="border">
                                                             Biaya Produksi
                                                         </td>
-                                                        <td id="sumKdn-1-9">
+                                                        <td id="sumKdn-1-9" class="border">
                                                             Rp 0,00
                                                         </td>
-                                                        <td id="sumKln-1-9">
+                                                        <td id="sumKln-1-9" class="border">
                                                             Rp 0,00
                                                         </td>
-                                                        <td id="sumTotal-1-9">
+                                                        <td id="sumTotal-1-9" class="border">
                                                             Rp 0,00
                                                         </td>
-                                                        <td id="sumTkdn-1-9">
+                                                        <td id="sumTkdn-1-9" class="border">
                                                             0%
                                                         </td>
                                                     </tr>
