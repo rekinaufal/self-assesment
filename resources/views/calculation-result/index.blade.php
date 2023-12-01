@@ -149,7 +149,7 @@
                                                         <span class="input-group-text" id="basic-addon1">Rp.</span>
                                                     </div>
                                                     <input type="text" class="form-control rupiahInput" placeholder=""
-                                                        id="harga_satuan" name="harga_satuan">
+                                                        id="harga_satuan" name="harga_satuan" required>
                                                 </div>
                                             </div>
 
