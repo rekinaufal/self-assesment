@@ -10,7 +10,7 @@ use Maatwebsite\Excel\Concerns\WithTitle;
 use Maatwebsite\Excel\Concerns\FromArray;
 use PhpOffice\PhpSpreadsheet\Style\NumberFormat;
 
-class CalculationForm2 implements FromArray, WithHeadings, WithTitle, ShouldAutoSize, WithColumnFormatting, WithMapping
+class CalculationForm7 implements FromArray, WithHeadings, WithTitle, ShouldAutoSize, WithColumnFormatting, WithMapping
 {
     protected $rows;
     protected $parent_rows;
@@ -24,7 +24,7 @@ class CalculationForm2 implements FromArray, WithHeadings, WithTitle, ShouldAuto
 
     public function title(): string
     {
-        return 'Form 1.2';
+        return 'Form 1.7';
     }
 
     public function map($row): array
@@ -32,15 +32,19 @@ class CalculationForm2 implements FromArray, WithHeadings, WithTitle, ShouldAuto
         // dd($this->rows);
         return [
             $row["uraian"],
+            $row["spesifikasi"],
             $row["produsen_tingkat_dua"],
-            $row["jumlah"],
-            $row["tkdn"],
-            $row["biaya"],
+            $row["jumlah_unit"],
+            $row["biaya_sewa_perbulan"],
             $row["alokasi"],
+            $row["dibuat"],
+            $row["dimiliki"],
+            $row["tkdn"],
             $row["id"],
             $row["kdn"],
             $row["kln"],
             $row["total"],
+            $row["sumJumlahUnit"],
             $row["sumKdn"],
             $row["sumKln"],
             $row["sumTotal"],
@@ -51,15 +55,19 @@ class CalculationForm2 implements FromArray, WithHeadings, WithTitle, ShouldAuto
     {
         return [
             "uraian",
+            "spesifikasi",
             "produsen_tingkat_dua",
-            "jumlah",
-            "tkdn",
-            "biaya",
+            "jumlah_unit",
+            "biaya_sewa_perbulan",
             "alokasi",
+            "dibuat",
+            "dimiliki",
+            "tkdn",
             "id",
             "kdn",
             "kln",
             "total",
+            "sumJumlahUnit",
             "sumKdn",
             "sumKln",
             "sumTotal",

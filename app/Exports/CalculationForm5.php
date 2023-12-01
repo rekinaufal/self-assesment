@@ -10,7 +10,7 @@ use Maatwebsite\Excel\Concerns\WithTitle;
 use Maatwebsite\Excel\Concerns\FromArray;
 use PhpOffice\PhpSpreadsheet\Style\NumberFormat;
 
-class CalculationForm2 implements FromArray, WithHeadings, WithTitle, ShouldAutoSize, WithColumnFormatting, WithMapping
+class CalculationForm5 implements FromArray, WithHeadings, WithTitle, ShouldAutoSize, WithColumnFormatting, WithMapping
 {
     protected $rows;
     protected $parent_rows;
@@ -24,23 +24,24 @@ class CalculationForm2 implements FromArray, WithHeadings, WithTitle, ShouldAuto
 
     public function title(): string
     {
-        return 'Form 1.2';
+        return 'Form 1.5';
     }
 
     public function map($row): array
     {
         // dd($this->rows);
         return [
-            $row["uraian"],
-            $row["produsen_tingkat_dua"],
-            $row["jumlah"],
+            $row["uraian_posisi"],
+            $row["kewarganegaraan"],
             $row["tkdn"],
-            $row["biaya"],
+            $row["jumlah_orang"],
+            $row["gaji_perbulan"],
             $row["alokasi"],
             $row["id"],
             $row["kdn"],
             $row["kln"],
             $row["total"],
+            $row["sumJumlahOrang"],
             $row["sumKdn"],
             $row["sumKln"],
             $row["sumTotal"],
@@ -50,16 +51,17 @@ class CalculationForm2 implements FromArray, WithHeadings, WithTitle, ShouldAuto
     public function headings(): array
     {
         return [
-            "uraian",
-            "produsen_tingkat_dua",
-            "jumlah",
+            "uraian_posisi",
+            "kewarganegaraan",
             "tkdn",
-            "biaya",
+            "jumlah_orang",
+            "gaji_perbulan",
             "alokasi",
             "id",
             "kdn",
             "kln",
             "total",
+            "sumJumlahOrang",
             "sumKdn",
             "sumKln",
             "sumTotal",

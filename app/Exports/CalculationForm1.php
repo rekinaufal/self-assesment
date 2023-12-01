@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Exports;
 
 use Maatwebsite\Excel\Concerns\WithHeadings;
@@ -12,13 +13,15 @@ use PhpOffice\PhpSpreadsheet\Style\NumberFormat;
 class CalculationForm1 implements FromArray, WithHeadings, WithTitle, ShouldAutoSize, WithColumnFormatting, WithMapping
 {
     protected $rows;
-    
-    public function __construct(array $rows)
+    protected $parent_row;
+
+    public function __construct(array $rows, array $parent_row)
     {
+        $this->parent_row = $parent_row;
         $this->rows = $rows;
         // dd($this->rows);
     }
-    
+
     public function title(): string
     {
         return 'Form 1.1';
@@ -40,6 +43,23 @@ class CalculationForm1 implements FromArray, WithHeadings, WithTitle, ShouldAuto
             $row['bm'],
             $row['pdri_ppn'],
             $row['pph'],
+
+            $row["id"],
+            $row["kdn"],
+            $row["kln"],
+            $row["total"],
+            $row["ppnCalc"],
+            $row["bmCalc"],
+            $row["pdriPpnCalc"],
+            $row["pphCalc"],
+            $row["sumKdn"],
+            $row["sumKln"],
+            $row["sumTotal"],
+            $row["sumPpn"],
+            $row["sumBm"],
+            $row["sumPdriPpn"],
+            $row["sumPph"],
+            $row["sumPdriTotal"],
         ];
     }
 
@@ -58,6 +78,23 @@ class CalculationForm1 implements FromArray, WithHeadings, WithTitle, ShouldAuto
             'bm',
             'pdri_ppn',
             'pph',
+
+            "id",
+            "kdn",
+            "kln",
+            "total",
+            "ppnCalc",
+            "bmCalc",
+            "pdriPpnCalc",
+            "pphCalc",
+            "sumKdn",
+            "sumKln",
+            "sumTotal",
+            "sumPpn",
+            "sumBm",
+            "sumPdriPpn",
+            "sumPph",
+            "sumPdriTotal",
         ];
     }
 

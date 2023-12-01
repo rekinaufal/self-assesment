@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Auth;
 use Excel;
 use Dompdf\Dompdf;
 use App\Exports\UserExport;
+
 /**
  * Class UserController
  * @package App\Http\Controllers
@@ -63,10 +64,10 @@ class UserController extends Controller
 
         $missingDataRoleUserForOption = Role::whereNotExists(function ($query) {
             $query->select('id')
-                  ->from('model_has_roles')
-                  ->whereColumn('roles.id', 'model_has_roles.role_id');
+                ->from('model_has_roles')
+                ->whereColumn('roles.id', 'model_has_roles.role_id');
         })
-        ->get();
+            ->get();
         $roles = Role::get();
         // dd($roles);
         return view('user.create', compact('user', 'pageTitle', 'missingDataRoleUserForOption', 'roles'));
@@ -92,7 +93,6 @@ class UserController extends Controller
         if (!$user->roles->isEmpty()) {
             $userRole = $user->roles[0]->name;
         } else {
-
         }
         $pageTitle = self::$pageTitle;
 
@@ -110,7 +110,7 @@ class UserController extends Controller
         $user = User::find($id);
         if (!$user) {
             return redirect()->route('users.index')
-            ->with('failed', 'Users Id '. $id . ' Not Found');
+                ->with('failed', 'Users Id ' . $id . ' Not Found');
         }
         $userRole = $user->roles->pluck('name')->first();
         // dd($userRole);
@@ -122,7 +122,7 @@ class UserController extends Controller
 
     public function update(Request $req, User $user)
     {
-        
+
         $req = $req->all();
         if (!empty($req['password'])) {
             request()->validate(User::$rules);
@@ -174,16 +174,16 @@ class UserController extends Controller
             "form_detail" => CalculationResult::where('computation_id', 1)->get()->toArray(),
         ];
         // dd($data['form_detail'][0]['results']);
-        if(!$data['form_detail'][0]){
+        if (!$data['form_detail'][0]) {
             return redirect()->back()->with('failed', 'Data is Empty');
         }
-        $form =[];
+        $form = [];
         foreach ($data['form_detail'][0]['results'] as $item) {
             // dd($item['no']);
             $form[$item['no']] = $item['data'];
         }
         // dd($form);
-        $export = new UserExport($form);
+        $export = new UserExport($form, $data['computations'][0]);
         // Excel::download($export, 'report.xlsx');
         // return Excel::download(new UserExport, 'user.xlsx');
         return Excel::download($export, 'report.xlsx');
@@ -223,7 +223,6 @@ class UserController extends Controller
                         ->with('success', 'Data berhasil diupdate');
                 }
             }
-
         } else {
             return redirect()->back()->with('failed', 'Current password is wrong !');
         }
