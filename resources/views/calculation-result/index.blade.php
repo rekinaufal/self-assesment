@@ -237,23 +237,23 @@
                                             <table class="table table-striped table-hover" style="font-size: 8pt">
                                                 <thead>
                                                     <tr>
-                                                        <th scope="col">Aksi</th>
-                                                        <th scope="col">No</th>
-                                                        <th style="width:70%" scope="col">Nama Bahan Baku</th>
-                                                        <th scope="col">Spesifikasi</th>
-                                                        <th scope="col">Satuan Bahan Baku</th>
-                                                        <th scope="col">Negara Asal</th>
-                                                        <th scope="col">Pemasok / Produsen Tingkat 2</th>
-                                                        <th scope="col">TKDN %</th>
-                                                        <th scope="col">Jumlah / Satuan Bahan Baku</th>
-                                                        <th scope="col">Harga Satuan Material (Rp)</th>
-                                                        <th scope="col">KDN</th>
-                                                        <th scope="col">KLN</th>
-                                                        <th scope="col">Total</th>
-                                                        <th scope="col">Lokal PPN</th>
-                                                        <th scope="col">PDRI BM</th>
-                                                        <th scope="col">PDRI PPN</th>
-                                                        <th scope="col">PDRI PPH</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Aksi</th>
+                                                        <th scope="col" class="text-nowrap pr-4">No</th>
+                                                        <th style="width:70%" scope="col" class="text-nowrap pr-4">Nama Bahan Baku</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Spesifikasi</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Satuan Bahan Baku</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Negara Asal</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Pemasok / Produsen Tingkat 2</th>
+                                                        <th scope="col" class="text-nowrap pr-4">TKDN %</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Jumlah / Satuan Bahan Baku</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Harga Satuan Material (Rp)</th>
+                                                        <th scope="col" class="text-nowrap pr-4">KDN</th>
+                                                        <th scope="col" class="text-nowrap pr-4">KLN</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Total</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Lokal PPN</th>
+                                                        <th scope="col" class="text-nowrap pr-4">PDRI BM</th>
+                                                        <th scope="col" class="text-nowrap pr-4">PDRI PPN</th>
+                                                        <th scope="col" class="text-nowrap pr-4">PDRI PPH</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody id="tbody-1">
@@ -274,9 +274,9 @@
                                                 <table class="table table-bordered table-hover" style="font-size: 8pt">
                                                     <thead class="thead-dark">
                                                         <tr>
-                                                            <th scope="col">KDN</th>
-                                                            <th scope="col">KLN</th>
-                                                            <th scope="col">Total</th>
+                                                            <th scope="col" class="text-nowrap pr-4">KDN</th>
+                                                            <th scope="col" class="text-nowrap pr-4">KLN</th>
+                                                            <th scope="col" class="text-nowrap pr-4">Total</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -300,15 +300,15 @@
                                                 <table class="table table-bordered table-hover" style="font-size: 8pt">
                                                     <thead style="text-align: center"class="thead-dark">
                                                         <tr>
-                                                            <th scope="col" rowspan="2" class="align-middle">Lokal
+                                                            <th scope="col" class="text-nowrap pr-4" rowspan="2" class="align-middle">Lokal
                                                                 PPN</th>
-                                                            <th scope="col" colspan="4">PDRI</th>
+                                                            <th scope="col" class="text-nowrap pr-4" colspan="4">PDRI</th>
                                                         </tr>
                                                         <tr>
-                                                            <th scope="col">BM</th>
-                                                            <th scope="col">PPN</th>
-                                                            <th scope="col">PPH</th>
-                                                            <th scope="col">Total</th>
+                                                            <th scope="col" class="text-nowrap pr-4">BM</th>
+                                                            <th scope="col" class="text-nowrap pr-4">PPN</th>
+                                                            <th scope="col" class="text-nowrap pr-4">PPH</th>
+                                                            <th scope="col" class="text-nowrap pr-4">Total</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -431,17 +431,17 @@
                                             <table class="table table-striped table-hover" style="font-size: 8pt">
                                                 <thead>
                                                     <tr>
-                                                        <th scope="col">Aksi</th>
-                                                        <th scope="col">No</th>
-                                                        <th scope="col">Uraian</th>
-                                                        <th scope="col">Pemasok / Produsen Tingkat 2</th>
-                                                        <th scope="col">Jumlah</th>
-                                                        <th scope="col">TKDN %</th>
-                                                        <th scope="col">Biaya (Rp)</th>
-                                                        <th scope="col">Alokasi</th>
-                                                        <th scope="col">KDN</th>
-                                                        <th scope="col">KLN</th>
-                                                        <th scope="col">Total</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Aksi</th>
+                                                        <th scope="col" class="text-nowrap pr-4">No</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Uraian</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Pemasok / Produsen Tingkat 2</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Jumlah</th>
+                                                        <th scope="col" class="text-nowrap pr-4">TKDN %</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Biaya (Rp)</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Alokasi</th>
+                                                        <th scope="col" class="text-nowrap pr-4">KDN</th>
+                                                        <th scope="col" class="text-nowrap pr-4">KLN</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Total</th>
                                                     </tr>
                                                     <tr>
                                                         <td>
@@ -518,9 +518,9 @@
                                                 <table class="table table-bordered table-hover" style="font-size: 8pt">
                                                     <thead class="thead-dark">
                                                         <tr>
-                                                            <th scope="col">KDN</th>
-                                                            <th scope="col">KLN</th>
-                                                            <th scope="col">Total</th>
+                                                            <th scope="col" class="text-nowrap pr-4">KDN</th>
+                                                            <th scope="col" class="text-nowrap pr-4">KLN</th>
+                                                            <th scope="col" class="text-nowrap pr-4">Total</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -669,19 +669,19 @@
                                             <table class="table table-striped table-hover" style="font-size: 8pt">
                                                 <thead>
                                                     <tr>
-                                                        <th scope="col">Aksi</th>
-                                                        <th scope="col">No</th>
-                                                        <th scope="col">Uraian Posisi</th>
-                                                        <th scope="col">Kewarganegaraan</th>
-                                                        <th scope="col">TKDN %</th>
-                                                        <th scope="col">Jumlah Orang</th>
-                                                        <th scope="col">Gaji Per Bulan (Rp)</th>
-                                                        <th scope="col">Alokasi %</th>
-                                                        <th scope="col">KDN</th>
-                                                        <th scope="col">KLN</th>
-                                                        <th scope="col">Total</th>
-                                                        <th scope="col">BPJS</th>
-                                                        <th scope="col">Tunjangan Lainnya</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Aksi</th>
+                                                        <th scope="col" class="text-nowrap pr-4">No</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Uraian Posisi</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Kewarganegaraan</th>
+                                                        <th scope="col" class="text-nowrap pr-4">TKDN %</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Jumlah Orang</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Gaji Per Bulan (Rp)</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Alokasi %</th>
+                                                        <th scope="col" class="text-nowrap pr-4">KDN</th>
+                                                        <th scope="col" class="text-nowrap pr-4">KLN</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Total</th>
+                                                        <th scope="col" class="text-nowrap pr-4">BPJS</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Tunjangan Lainnya</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody id="tbody-3">
@@ -762,10 +762,10 @@
                                                 <table class="table table-bordered table-hover" style="font-size: 8pt">
                                                     <thead class="thead-dark">
                                                         <tr>
-                                                            <th scope="col">Jumlah Orang</th>
-                                                            <th scope="col">KDN</th>
-                                                            <th scope="col">KLN</th>
-                                                            <th scope="col">Total</th>
+                                                            <th scope="col" class="text-nowrap pr-4">Jumlah Orang</th>
+                                                            <th scope="col" class="text-nowrap pr-4">KDN</th>
+                                                            <th scope="col" class="text-nowrap pr-4">KLN</th>
+                                                            <th scope="col" class="text-nowrap pr-4">Total</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -790,7 +790,7 @@
                                                 <table class="table table-bordered table-hover" style="font-size: 8pt">
                                                     <thead class="">
                                                         <tr>
-                                                            <th scope="col">
+                                                            <th scope="col" class="text-nowrap pr-4">
                                                                 <input type="text"
                                                                     class="form-control kapasitasNormalPerbulan kapasitasNormalPerbulan-1-3"
                                                                     placeholder="" name="kapasitasNormalPerbulan" value="0">
@@ -810,9 +810,9 @@
                                                 <table class="table table-bordered table-hover" style="font-size: 8pt">
                                                     <thead>
                                                         <tr>
-                                                            <th scope="col" id="kdn-biaya-satuan-product-1-3">KDN</th>
-                                                            <th scope="col" id="kln-biaya-satuan-product-1-3">KLN</th>
-                                                            <th scope="col" id="total-biaya-satuan-product-1-3">Total
+                                                            <th scope="col" class="text-nowrap pr-4" id="kdn-biaya-satuan-product-1-3">KDN</th>
+                                                            <th scope="col" class="text-nowrap pr-4" id="kln-biaya-satuan-product-1-3">KLN</th>
+                                                            <th scope="col" class="text-nowrap pr-4" id="total-biaya-satuan-product-1-3">Total
                                                             </th>
                                                         </tr>
                                                     </thead>
@@ -929,17 +929,17 @@
                                             <table class="table table-striped table-hover" style="font-size: 8pt">
                                                 <thead>
                                                     <tr>
-                                                        <th scope="col">Aksi</th>
-                                                        <th scope="col">No</th>
-                                                        <th scope="col">Uraian</th>
-                                                        <th scope="col">Pemasok / Produsen Tingkat 2</th>
-                                                        <th scope="col">TKDN %</th>
-                                                        <th scope="col">Jumlah</th>
-                                                        <th scope="col">Biaya Pengurusan Per Bulan</th>
-                                                        <th scope="col">Alokasi %</th>
-                                                        <th scope="col">KDN</th>
-                                                        <th scope="col">KLN</th>
-                                                        <th scope="col">Total</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Aksi</th>
+                                                        <th scope="col" class="text-nowrap pr-4">No</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Uraian</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Pemasok / Produsen Tingkat 2</th>
+                                                        <th scope="col" class="text-nowrap pr-4">TKDN %</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Jumlah</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Biaya Pengurusan Per Bulan</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Alokasi %</th>
+                                                        <th scope="col" class="text-nowrap pr-4">KDN</th>
+                                                        <th scope="col" class="text-nowrap pr-4">KLN</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Total</th>
                                                     </tr>
                                                     <tr>
                                                         <td>
@@ -1074,10 +1074,10 @@
                                                 <table class="table table-bordered table-hover" style="font-size: 8pt">
                                                     <thead class="thead-dark">
                                                         <tr>
-                                                            <th scope="col">Jumlah Orang</th>
-                                                            <th scope="col">KDN</th>
-                                                            <th scope="col">KLN</th>
-                                                            <th scope="col">Total</th>
+                                                            <th scope="col" class="text-nowrap pr-4">Jumlah Orang</th>
+                                                            <th scope="col" class="text-nowrap pr-4">KDN</th>
+                                                            <th scope="col" class="text-nowrap pr-4">KLN</th>
+                                                            <th scope="col" class="text-nowrap pr-4">Total</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -1102,7 +1102,7 @@
                                                 <table class="table table-bordered table-hover" style="font-size: 8pt">
                                                     <thead class="">
                                                         <tr>
-                                                            <th scope="col">
+                                                            <th scope="col" class="text-nowrap pr-4">
                                                                 <input type="text"
                                                                     class="form-control kapasitasNormalPerbulan kapasitasNormalPerbulan-1-4"
                                                                     placeholder="" name="kapasitasNormalPerbulan" value="0">
@@ -1122,9 +1122,9 @@
                                                 <table class="table table-bordered table-hover" style="font-size: 8pt">
                                                     <thead>
                                                         <tr>
-                                                            <th scope="col" id="kdn-biaya-satuan-product-1-4">KDN</th>
-                                                            <th scope="col" id="kln-biaya-satuan-product-1-4">KLN</th>
-                                                            <th scope="col" id="total-biaya-satuan-product-1-4">Total
+                                                            <th scope="col" class="text-nowrap pr-4" id="kdn-biaya-satuan-product-1-4">KDN</th>
+                                                            <th scope="col" class="text-nowrap pr-4" id="kln-biaya-satuan-product-1-4">KLN</th>
+                                                            <th scope="col" class="text-nowrap pr-4" id="total-biaya-satuan-product-1-4">Total
                                                             </th>
                                                         </tr>
                                                     </thead>
@@ -1241,17 +1241,17 @@
                                             <table class="table table-striped table-hover" style="font-size: 8pt">
                                                 <thead>
                                                     <tr>
-                                                        <th scope="col">Aksi</th>
-                                                        <th scope="col">No</th>
-                                                        <th scope="col">Uraian Posisi</th>
-                                                        <th scope="col">Kewarganegaraan</th>
-                                                        <th scope="col">TKDN %</th>
-                                                        <th scope="col">Jumlah Orang</th>
-                                                        <th scope="col">Gaji Per Bulan</th>
-                                                        <th scope="col">Alokasi %</th>
-                                                        <th scope="col">KDN</th>
-                                                        <th scope="col">KLN</th>
-                                                        <th scope="col">Total</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Aksi</th>
+                                                        <th scope="col" class="text-nowrap pr-4">No</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Uraian Posisi</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Kewarganegaraan</th>
+                                                        <th scope="col" class="text-nowrap pr-4">TKDN %</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Jumlah Orang</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Gaji Per Bulan</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Alokasi %</th>
+                                                        <th scope="col" class="text-nowrap pr-4">KDN</th>
+                                                        <th scope="col" class="text-nowrap pr-4">KLN</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Total</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody id="tbody-5">
@@ -1332,10 +1332,10 @@
                                                 <table class="table table-bordered table-hover" style="font-size: 8pt">
                                                     <thead class="thead-dark">
                                                         <tr>
-                                                            <th scope="col">Jumlah Orang</th>
-                                                            <th scope="col">KDN</th>
-                                                            <th scope="col">KLN</th>
-                                                            <th scope="col">Total</th>
+                                                            <th scope="col" class="text-nowrap pr-4">Jumlah Orang</th>
+                                                            <th scope="col" class="text-nowrap pr-4">KDN</th>
+                                                            <th scope="col" class="text-nowrap pr-4">KLN</th>
+                                                            <th scope="col" class="text-nowrap pr-4">Total</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -1360,7 +1360,7 @@
                                                 <table class="table table-bordered table-hover" style="font-size: 8pt">
                                                     <thead class="">
                                                         <tr>
-                                                            <th scope="col">
+                                                            <th scope="col" class="text-nowrap pr-4">
                                                                 <input type="text"
                                                                     class="form-control kapasitasNormalPerbulan kapasitasNormalPerbulan-1-5"
                                                                     placeholder="" name="kapasitasNormalPerbulan" value="0">
@@ -1380,11 +1380,11 @@
                                                 <table class="table table-bordered table-hover" style="font-size: 8pt">
                                                     <thead>
                                                         <tr>
-                                                            <th scope="col" id="kdn-biaya-satuan-product-1-5">KDN
+                                                            <th scope="col" class="text-nowrap pr-4" id="kdn-biaya-satuan-product-1-5">KDN
                                                             </th>
-                                                            <th scope="col" id="kln-biaya-satuan-product-1-5">KLN
+                                                            <th scope="col" class="text-nowrap pr-4" id="kln-biaya-satuan-product-1-5">KLN
                                                             </th>
-                                                            <th scope="col" id="total-biaya-satuan-product-1-5">Total
+                                                            <th scope="col" class="text-nowrap pr-4" id="total-biaya-satuan-product-1-5">Total
                                                             </th>
                                                         </tr>
                                                     </thead>
@@ -1531,18 +1531,18 @@
                                             <table class="table table-striped table-hover" style="font-size: 8pt">
                                                 <thead>
                                                     <tr>
-                                                        <th scope="col">Aksi</th>
-                                                        <th scope="col">No</th>
-                                                        <th scope="col">Uraian</th>
-                                                        <th scope="col">Spesifikasi</th>
-                                                        <th scope="col">Jumlah Unit</th>
-                                                        <th scope="col">Dibuat</th>
-                                                        <th scope="col">TKDN %</th>
-                                                        <th scope="col">Biaya Per Bulan</th>
-                                                        <th scope="col">Alokasi %</th>
-                                                        <th scope="col">KDN</th>
-                                                        <th scope="col">KLN</th>
-                                                        <th scope="col">Total</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Aksi</th>
+                                                        <th scope="col" class="text-nowrap pr-4">No</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Uraian</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Spesifikasi</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Jumlah Unit</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Dibuat</th>
+                                                        <th scope="col" class="text-nowrap pr-4">TKDN %</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Biaya Per Bulan</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Alokasi %</th>
+                                                        <th scope="col" class="text-nowrap pr-4">KDN</th>
+                                                        <th scope="col" class="text-nowrap pr-4">KLN</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Total</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody id="tbody-6">
@@ -1622,10 +1622,10 @@
                                             <table class="table table-bordered table-hover" style="font-size: 8pt">
                                                 <thead class="thead-dark">
                                                     <tr>
-                                                        <th scope="col">Jumlah Unit</th>
-                                                        <th scope="col">KDN</th>
-                                                        <th scope="col">KLN</th>
-                                                        <th scope="col">Total</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Jumlah Unit</th>
+                                                        <th scope="col" class="text-nowrap pr-4">KDN</th>
+                                                        <th scope="col" class="text-nowrap pr-4">KLN</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Total</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -1650,7 +1650,7 @@
                                             <table class="table table-bordered table-hover" style="font-size: 8pt">
                                                 <thead class="">
                                                     <tr>
-                                                        <th scope="col">
+                                                        <th scope="col" class="text-nowrap pr-4">
                                                             <input type="text"
                                                                 class="form-control kapasitasNormalPerbulan kapasitasNormalPerbulan-1-6"
                                                                 placeholder="" name="kapasitasNormalPerbulan">
@@ -1670,9 +1670,9 @@
                                             <table class="table table-bordered table-hover" style="font-size: 8pt">
                                                 <thead>
                                                     <tr>
-                                                        <th scope="col" id="kdn-biaya-satuan-product-1-6">KDN</th>
-                                                        <th scope="col" id="kln-biaya-satuan-product-1-6">KLN</th>
-                                                        <th scope="col" id="total-biaya-satuan-product-1-6">Total
+                                                        <th scope="col" class="text-nowrap pr-4" id="kdn-biaya-satuan-product-1-6">KDN</th>
+                                                        <th scope="col" class="text-nowrap pr-4" id="kln-biaya-satuan-product-1-6">KLN</th>
+                                                        <th scope="col" class="text-nowrap pr-4" id="total-biaya-satuan-product-1-6">Total
                                                         </th>
                                                     </tr>
                                                 </thead>
@@ -1828,18 +1828,18 @@
                                             <table class="table table-striped table-hover" style="font-size: 8pt">
                                                 <thead>
                                                     <tr>
-                                                        <th scope="col">Aksi</th>
-                                                        <th scope="col">No</th>
-                                                        <th scope="col">Uraian</th>
-                                                        <th scope="col">Spesifikasi</th>
-                                                        <th scope="col">Jumlah Unit</th>
-                                                        <th scope="col">Dibuat</th>
-                                                        <th scope="col">TKDN %</th>
-                                                        <th scope="col">Biaya Per Bulan</th>
-                                                        <th scope="col">Alokasi %</th>
-                                                        <th scope="col">KDN</th>
-                                                        <th scope="col">KLN</th>
-                                                        <th scope="col">Total</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Aksi</th>
+                                                        <th scope="col" class="text-nowrap pr-4">No</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Uraian</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Spesifikasi</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Jumlah Unit</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Dibuat</th>
+                                                        <th scope="col" class="text-nowrap pr-4">TKDN %</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Biaya Per Bulan</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Alokasi %</th>
+                                                        <th scope="col" class="text-nowrap pr-4">KDN</th>
+                                                        <th scope="col" class="text-nowrap pr-4">KLN</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Total</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody id="tbody-7">
@@ -1919,10 +1919,10 @@
                                             <table class="table table-bordered table-hover" style="font-size: 8pt">
                                                 <thead class="thead-dark">
                                                     <tr>
-                                                        <th scope="col">Jumlah Unit</th>
-                                                        <th scope="col">KDN</th>
-                                                        <th scope="col">KLN</th>
-                                                        <th scope="col">Total</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Jumlah Unit</th>
+                                                        <th scope="col" class="text-nowrap pr-4">KDN</th>
+                                                        <th scope="col" class="text-nowrap pr-4">KLN</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Total</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -1947,7 +1947,7 @@
                                             <table class="table table-bordered table-hover" style="font-size: 8pt">
                                                 <thead class="">
                                                     <tr>
-                                                        <th scope="col">
+                                                        <th scope="col" class="text-nowrap pr-4">
                                                             <input type="text"
                                                                 class="form-control kapasitasNormalPerbulan kapasitasNormalPerbulan-1-7"
                                                                 placeholder="" name="kapasitasNormalPerbulan">
@@ -1967,9 +1967,9 @@
                                             <table class="table table-bordered table-hover" style="font-size: 8pt">
                                                 <thead>
                                                     <tr>
-                                                        <th scope="col" id="kdn-biaya-satuan-product-1-7">KDN</th>
-                                                        <th scope="col" id="kln-biaya-satuan-product-1-7">KLN</th>
-                                                        <th scope="col" id="total-biaya-satuan-product-1-7">Total
+                                                        <th scope="col" class="text-nowrap pr-4" id="kdn-biaya-satuan-product-1-7">KDN</th>
+                                                        <th scope="col" class="text-nowrap pr-4" id="kln-biaya-satuan-product-1-7">KLN</th>
+                                                        <th scope="col" class="text-nowrap pr-4" id="total-biaya-satuan-product-1-7">Total
                                                         </th>
                                                     </tr>
                                                 </thead>
@@ -2086,17 +2086,17 @@
                                             <table class="table table-striped table-hover" style="font-size: 8pt">
                                                 <thead>
                                                     <tr>
-                                                        <th scope="col">Aksi</th>
-                                                        <th scope="col">No</th>
-                                                        <th scope="col">Uraian</th>
-                                                        <th scope="col">Pemasok</th>
-                                                        <th scope="col">Jumlah</th>
-                                                        <th scope="col">TKDN %</th>
-                                                        <th scope="col">Biaya Per Bulan</th>
-                                                        <th scope="col">Alokasi %</th>
-                                                        <th scope="col">KDN</th>
-                                                        <th scope="col">KLN</th>
-                                                        <th scope="col">Total</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Aksi</th>
+                                                        <th scope="col" class="text-nowrap pr-4">No</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Uraian</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Pemasok</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Jumlah</th>
+                                                        <th scope="col" class="text-nowrap pr-4">TKDN %</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Biaya Per Bulan</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Alokasi %</th>
+                                                        <th scope="col" class="text-nowrap pr-4">KDN</th>
+                                                        <th scope="col" class="text-nowrap pr-4">KLN</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Total</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody id="tbody-8">
@@ -2176,10 +2176,10 @@
                                             <table class="table table-bordered table-hover" style="font-size: 8pt">
                                                 <thead class="thead-dark">
                                                     <tr>
-                                                        <th scope="col">Jumlah</th>
-                                                        <th scope="col">KDN</th>
-                                                        <th scope="col">KLN</th>
-                                                        <th scope="col">Total</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Jumlah</th>
+                                                        <th scope="col" class="text-nowrap pr-4">KDN</th>
+                                                        <th scope="col" class="text-nowrap pr-4">KLN</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Total</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -2204,7 +2204,7 @@
                                             <table class="table table-bordered table-hover" style="font-size: 8pt">
                                                 <thead class="">
                                                     <tr>
-                                                        <th scope="col">
+                                                        <th scope="col" class="text-nowrap pr-4">
                                                             <input type="text"
                                                                 class="form-control kapasitasNormalPerbulan kapasitasNormalPerbulan-1-8"
                                                                 placeholder="" name="kapasitasNormalPerbulan">
@@ -2224,9 +2224,9 @@
                                             <table class="table table-bordered table-hover" style="font-size: 8pt">
                                                 <thead>
                                                     <tr>
-                                                        <th scope="col" id="kdn-biaya-satuan-product-1-8">KDN</th>
-                                                        <th scope="col" id="kln-biaya-satuan-product-1-8">KLN</th>
-                                                        <th scope="col" id="total-biaya-satuan-product-1-8">Total
+                                                        <th scope="col" class="text-nowrap pr-4" id="kdn-biaya-satuan-product-1-8">KDN</th>
+                                                        <th scope="col" class="text-nowrap pr-4" id="kln-biaya-satuan-product-1-8">KLN</th>
+                                                        <th scope="col" class="text-nowrap pr-4" id="total-biaya-satuan-product-1-8">Total
                                                         </th>
                                                     </tr>
                                                 </thead>
@@ -2265,9 +2265,9 @@
                                             <table class="table table-striped table-hover" style="font-size: 8pt">
                                                 <thead class="bg-dark text-light">
                                                     <tr>
-                                                        <th scope="col" colspan="2" rowspan="2" class="border align-middle">Uraian</th>
+                                                        <th scope="col" class="text-nowrap pr-4" colspan="2" rowspan="2" class="border align-middle">Uraian</th>
                                                         <th colspan="3" class="border text-center">Biaya</th>
-                                                        <th scope="col" rowspan="2" class="border align-middle">TKDN %</th>
+                                                        <th scope="col" class="text-nowrap pr-4" rowspan="2" class="border align-middle">TKDN %</th>
                                                     </tr>
                                                     <tr>
                                                         <th>KDN</th>
@@ -3111,21 +3111,21 @@
                             </div>
                         </td>` +
                         "<td>" + (index + 1) + "</td>" +
-                        "<td>" + item.bahan_baku + "</td>" +
+                        "<td class='text-nowrap'>" + item.bahan_baku + "</td>" +
                         "<td>" + item.spesifikasi + "</td>" +
                         "<td>" + item.satuan_bahan_baku + "</td>" +
                         "<td>" + item.negara_asal + "</td>" +
                         "<td>" + item.pemasok + "</td>" +
                         "<td>" + item.tkdn + "%</td>" +
                         "<td>" + item.jumlah + "</td>" +
-                        "<td>" + "Rp " + item.harga_satuan + "</td>" +
-                        "<td>" + formatToCurrency(item.kdn) + "</td>" +
-                        "<td>" + formatToCurrency(item.kln) + "</td>" +
-                        "<td>" + formatToCurrency(item.total) + "</td>" +
-                        "<td>" + formatToCurrency(item.ppnCalc) + "</td>" +
-                        "<td>" + formatToCurrency(item.bmCalc) + "</td>" +
-                        "<td>" + formatToCurrency(item.pdriPpnCalc) + "</td>" +
-                        "<td>" + formatToCurrency(item.pphCalc) + "</td>" +
+                        "<td class='text-nowrap'>" + "Rp " + item.harga_satuan + "</td>" +
+                        "<td class='text-nowrap'>" + formatToCurrency(item.kdn) + "</td>" +
+                        "<td class='text-nowrap'>" + formatToCurrency(item.kln) + "</td>" +
+                        "<td class='text-nowrap'>" + formatToCurrency(item.total) + "</td>" +
+                        "<td class='text-nowrap'>" + formatToCurrency(item.ppnCalc) + "</td>" +
+                        "<td class='text-nowrap'>" + formatToCurrency(item.bmCalc) + "</td>" +
+                        "<td class='text-nowrap'>" + formatToCurrency(item.pdriPpnCalc) + "</td>" +
+                        "<td class='text-nowrap'>" + formatToCurrency(item.pphCalc) + "</td>" +
                         "</tr>";
 
                     tbody.append(row);
@@ -3182,11 +3182,11 @@
                         "<td>" + item.produsen_tingkat_dua + "</td>" +
                         "<td>" + item.jumlah + "</td>" +
                         "<td>" + item.tkdn + "%</td>" +
-                        "<td>" + "Rp " + item.biaya + "</td>" +
+                        "<td class='text-nowrap'>" + "Rp " + item.biaya + "</td>" +
                         "<td>" + item.alokasi + "%</td>" +
-                        "<td>" + formatToCurrency(item.kdn) + "</td>" +
-                        "<td>" + formatToCurrency(item.kln) + "</td>" +
-                        "<td>" + formatToCurrency(item.total) + "</td>" +
+                        "<td class='text-nowrap'>" + formatToCurrency(item.kdn) + "</td>" +
+                        "<td class='text-nowrap'>" + formatToCurrency(item.kln) + "</td>" +
+                        "<td class='text-nowrap'>" + formatToCurrency(item.total) + "</td>" +
                         "</tr>";
 
                     tbody.append(row);
