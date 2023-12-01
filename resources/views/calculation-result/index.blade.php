@@ -801,9 +801,9 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="d-flex">
+                                    <div class="d-flex align-items-center">
                                         <div class="col">
-                                            <p class="mt-5 mr-2 text-right">Biaya Satuan Product</p>
+                                            <p class="mr-2 text-right">Biaya Satuan Product</p>
                                         </div>
                                         <div class="col-6 p-1">
                                             <div class="table-responsive table-responsive-sm">
@@ -1113,9 +1113,9 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="d-flex">
+                                    <div class="d-flex align-items-center">
                                         <div class="col">
-                                            <p class="mt-5 mr-2 text-right">Biaya Satuan Product</p>
+                                            <p class="mr-2 text-right">Biaya Satuan Product</p>
                                         </div>
                                         <div class="col-6 p-1">
                                             <div class="table-responsive table-responsive-sm">
@@ -1371,9 +1371,9 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="d-flex">
+                                    <div class="d-flex align-items-center">
                                         <div class="col">
-                                            <p class="mt-5 mr-2 text-right">Biaya Satuan Product</p>
+                                            <p class="mr-2 text-right">Biaya Satuan Product</p>
                                         </div>
                                         <div class="col-6 p-1">
                                             <div class="table-responsive table-responsive-sm">
@@ -1661,9 +1661,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="d-flex">
+                                <div class="d-flex align-items-center">
                                     <div class="col">
-                                        <p class="mt-5 mr-2 text-right">Biaya Satuan Product</p>
+                                        <p class="mr-2 text-right">Biaya Satuan Product</p>
                                     </div>
                                     <div class="col-6 p-1">
                                         <div class="table-responsive table-responsive-sm">
@@ -1958,9 +1958,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="d-flex">
+                                <div class="d-flex align-items-center">
                                     <div class="col">
-                                        <p class="mt-5 mr-2 text-right">Biaya Satuan Product</p>
+                                        <p class="mr-2 text-right">Biaya Satuan Product</p>
                                     </div>
                                     <div class="col-6 p-1">
                                         <div class="table-responsive table-responsive-sm">
@@ -2215,9 +2215,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="d-flex">
+                                <div class="d-flex align-items-center">
                                     <div class="col">
-                                        <p class="mt-5 mr-2 text-right">Biaya Satuan Product</p>
+                                        <p class="mr-2 text-right">Biaya Satuan Product</p>
                                     </div>
                                     <div class="col-6 p-1">
                                         <div class="table-responsive table-responsive-sm">
