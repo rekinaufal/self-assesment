@@ -445,7 +445,7 @@
                                                     </tr>
                                                     <tr>
                                                         <td>
-                                                            <div class="dropdown">
+                                                            {{-- <div class="dropdown">
                                                                 <i data-feather="more-vertical" id="dropdownMenuButton"
                                                                     class="feather-icon dropdown-toggle"
                                                                     style="cursor: pointer;" data-toggle="dropdown"
@@ -459,22 +459,22 @@
                                                                                 class="fa fa-trash"></i> Delete</button>
                                                                     </form>
                                                                 </div>
-                                                            </div>
+                                                            </div> --}}
                                                         </td>
                                                         <th scope="row">1</th>
-                                                        <td>Local PPN</td>
-                                                        <td>Dirjen Pajak</td>
+                                                        <td class="text-nowrap">Local PPN</td>
+                                                        <td class="text-nowrap">Dirjen Pajak</td>
                                                         <td>1</td>
                                                         <td>100%</td>
-                                                        <td id="sumLocalPpn-1-2">0</td>
+                                                        <td class="text-nowrap" id="sumLocalPpn-1-2">0</td>
                                                         <td>100%</td>
-                                                        <td id="sumLocalKdn-1-2">0</td>
-                                                        <td>Rp 0,00</td>
-                                                        <td id="sumLocalTotal-1-2">0</td>
+                                                        <td class="text-nowrap" id="sumLocalKdn-1-2">0</td>
+                                                        <td class="text-nowrap">Rp 0,00</td>
+                                                        <td class="text-nowrap" id="sumLocalTotal-1-2">0</td>
                                                     </tr>
                                                     <tr>
                                                         <td>
-                                                            <div class="dropdown">
+                                                            {{-- <div class="dropdown">
                                                                 <i data-feather="more-vertical" id="dropdownMenuButton"
                                                                     class="feather-icon dropdown-toggle"
                                                                     style="cursor: pointer;" data-toggle="dropdown"
@@ -488,18 +488,18 @@
                                                                                 class="fa fa-trash"></i> Delete</button>
                                                                     </form>
                                                                 </div>
-                                                            </div>
+                                                            </div> --}}
                                                         </td>
                                                         <th scope="row">2</th>
-                                                        <td>PDRI</td>
-                                                        <td>Bea Cukai</td>
+                                                        <td class="text-nowrap">PDRI</td>
+                                                        <td class="text-nowrap">Bea Cukai</td>
                                                         <td>1</td>
                                                         <td>100%</td>
-                                                        <td id="sumPdriTotal-1-2">0</td>
+                                                        <td class="text-nowrap" id="sumPdriTotal-1-2">0</td>
                                                         <td>100%</td>
-                                                        <td id="sumPdriKln-1-2"></td>
-                                                        <td>Rp 0,00</td>
-                                                        <td id="sumPdri-1-2">0</td>
+                                                        <td class="text-nowrap" id="sumPdriKln-1-2"></td>
+                                                        <td class="text-nowrap">Rp 0,00</td>
+                                                        <td class="text-nowrap" id="sumPdri-1-2">0</td>
                                                     </tr>
                                                 </thead>
                                                 <tbody id="tbody-2">
@@ -943,7 +943,7 @@
                                                     </tr>
                                                     <tr>
                                                         <td>
-                                                            <div class="dropdown">
+                                                            {{-- <div class="dropdown">
                                                                 <i data-feather="more-vertical" id="dropdownMenuButton"
                                                                     class="feather-icon dropdown-toggle"
                                                                     style="cursor: pointer;" data-toggle="dropdown"
@@ -957,22 +957,22 @@
                                                                                 class="fa fa-trash"></i> Delete</button>
                                                                     </form>
                                                                 </div>
-                                                            </div>
+                                                            </div> --}}
                                                         </td>
                                                         <th scope="row">1</th>
-                                                        <td>BPJS</td>
+                                                        <td class="text-nowrap">BPJS</td>
                                                         <td>-</td>
                                                         <td>100%</td>
                                                         <td>-</td>
-                                                        <td id="sumBpjs-1-4-3">Rp 0,00</td>
+                                                        <td class="text-nowrap" id="sumBpjs-1-4-3">Rp 0,00</td>
                                                         <td>100%</td>
-                                                        <td id="sumBpjsKdn-1-4-3">Rp 0,00</td>
-                                                        <td>Rp 0,00</td>
-                                                        <td id="sumBpjsTotal-1-4-3">Rp 0,00</td>
+                                                        <td class="text-nowrap" id="sumBpjsKdn-1-4-3">Rp 0,00</td>
+                                                        <td class="text-nowrap">Rp 0,00</td>
+                                                        <td class="text-nowrap" id="sumBpjsTotal-1-4-3">Rp 0,00</td>
                                                     </tr>
                                                     <tr>
                                                         <td>
-                                                            <div class="dropdown">
+                                                            {{-- <div class="dropdown">
                                                                 <i data-feather="more-vertical" id="dropdownMenuButton"
                                                                     class="feather-icon dropdown-toggle"
                                                                     style="cursor: pointer;" data-toggle="dropdown"
@@ -986,18 +986,18 @@
                                                                                 class="fa fa-trash"></i> Delete</button>
                                                                     </form>
                                                                 </div>
-                                                            </div>
+                                                            </div> --}}
                                                         </td>
                                                         <th scope="row">2</th>
-                                                        <td>Tunjangan Lainnya</td>
+                                                        <td class="text-nowrap">Tunjangan Lainnya</td>
                                                         <td>-</td>
                                                         <td>100%</td>
                                                         <td>-</td>
-                                                        <td id="sumTunjanganLainnya-1-4-3">Rp 0,00</td>
+                                                        <td class="text-nowrap" id="sumTunjanganLainnya-1-4-3">Rp 0,00</td>
                                                         <td>100%</td>
-                                                        <td id="sumTunjanganLainnyaKdn-1-4-3">Rp 0,00</td>
-                                                        <td>Rp 0,00</td>
-                                                        <td id="sumTunjanganLainnyaTotal-1-4-3">Rp 0,00</td>
+                                                        <td class="text-nowrap" id="sumTunjanganLainnyaKdn-1-4-3">Rp 0,00</td>
+                                                        <td class="text-nowrap">Rp 0,00</td>
+                                                        <td class="text-nowrap" id="sumTunjanganLainnyaTotal-1-4-3">Rp 0,00</td>
                                                     </tr>
                                                 </thead>
                                                 <tbody id="tbody-4">
@@ -3170,7 +3170,7 @@
                                     <a class="dropdown-item buttonEditNews"
                                         onclick="edit(${item.id})"><i class="fa fa-edit"></i> Edit
                                     </a>
-                                    <button class="dropdown-item" type="submit" onclick="destroy(${item.id})"><i
+                                    <button class="dropdown-item" type="submit" onclick="destroy(${calculation.id}, ${item.id})"><i
                                             class="fa fa-trash"></i> Delete</button>
                                 </div>
                             </div>
@@ -3218,7 +3218,7 @@
                                     <a class="dropdown-item buttonEditNews"
                                         onclick="edit(${item.id})"><i class="fa fa-edit"></i> Edit
                                     </a>
-                                    <button class="dropdown-item" type="submit" onclick="destroy(${item.id})"><i
+                                    <button class="dropdown-item" type="submit" onclick="destroy(${calculation.id}, ${item.id})"><i
                                             class="fa fa-trash"></i> Delete</button>
                                 </div>
                             </div>
@@ -3275,7 +3275,7 @@
                                     <a class="dropdown-item buttonEditNews"
                                         onclick="edit(${item.id})"><i class="fa fa-edit"></i> Edit
                                     </a>
-                                    <button class="dropdown-item" type="submit" onclick="destroy(${item.id})"><i
+                                    <button class="dropdown-item" type="submit" onclick="destroy(${calculation.id}, ${item.id})"><i
                                             class="fa fa-trash"></i> Delete</button>
                                 </div>
                             </div>
@@ -3322,7 +3322,7 @@
                                     <a class="dropdown-item buttonEditNews"
                                         onclick="edit(${item.id})"><i class="fa fa-edit"></i> Edit
                                     </a>
-                                    <button class="dropdown-item" type="submit" onclick="destroy(${item.id})"><i
+                                    <button class="dropdown-item" type="submit" onclick="destroy(${calculation.id}, ${item.id})"><i
                                             class="fa fa-trash"></i> Delete</button>
                                 </div>
                             </div>
@@ -3369,7 +3369,7 @@
                                     <a class="dropdown-item buttonEditNews"
                                         onclick="edit(${item.id})"><i class="fa fa-edit"></i> Edit
                                     </a>
-                                    <button class="dropdown-item" type="submit" onclick="destroy(${item.id})"><i
+                                    <button class="dropdown-item" type="submit" onclick="destroy(${calculation.id}, ${item.id})"><i
                                             class="fa fa-trash"></i> Delete</button>
                                 </div>
                             </div>
@@ -3417,7 +3417,7 @@
                                     <a class="dropdown-item buttonEditNews"
                                         onclick="edit(${item.id})"><i class="fa fa-edit"></i> Edit
                                     </a>
-                                    <button class="dropdown-item" type="submit" onclick="destroy(${item.id})"><i
+                                    <button class="dropdown-item" type="submit" onclick="destroy(${calculation.id}, ${item.id})"><i
                                             class="fa fa-trash"></i> Delete</button>
                                 </div>
                             </div>
@@ -3465,7 +3465,7 @@
                                     <a class="dropdown-item buttonEditNews"
                                         onclick="edit(${item.id})"><i class="fa fa-edit"></i> Edit
                                     </a>
-                                    <button class="dropdown-item" type="submit" onclick="destroy(${item.id})"><i
+                                    <button class="dropdown-item" type="submit" onclick="destroy(${calculation.id}, ${item.id})"><i
                                             class="fa fa-trash"></i> Delete</button>
                                 </div>
                             </div>
@@ -3517,7 +3517,7 @@
                         <td class="text-nowrap"> ${formatToCurrency(item.sumKdn) ?? ("Rp " + 0 + ",00")} </td>
                         <td class="text-nowrap"> ${formatToCurrency(item.sumKln) ?? ("Rp " + 0 + ",00")} </td>
                         <td class="text-nowrap"> ${formatToCurrency(item.sumTotal) ?? ("Rp " + 0 + ",00")} </td>
-                        <td class="text-nowrap"> ${((item.sumKdn ?? 0) / sumTotal19 * 100).toFixed(2)} </td>
+                        <td class="text-nowrap"> ${((item.sumKdn ?? 0) / sumTotal19 * 100).toFixed(2)}% </td>
                         </tr>`;
 
                     tbody.append(row);
@@ -3617,7 +3617,7 @@
                 }
             });
 
-            $(".replaceDot").on("change", (event) => {
+            $(".replaceDot").on("keyup", (event) => {
                 let number = $(event.currentTarget).val();
                 let output = number.replace(/\./g, ",");
 

@@ -28,7 +28,14 @@ class PermenperinCategory extends Model
 
     public static function getOptions() {
         $options = [];
-        $colorOptions = ["primary", "secondary", "light", "dark", "warning", "info", "danger"];
+        $colorOptions = [
+            "primary" => "Biru",
+            "secondary" => "Abu Abu Tua",
+            "light" => "Abu Abu Muda",
+            "dark" => "Hitam",
+            "warning" => "Kuning",
+            "danger" => "Merah"
+        ];
 
         $options["colors"] = $colorOptions;
 
