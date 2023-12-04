@@ -26,11 +26,20 @@ class PermenperinCategory extends Model
         return $this->hasMany(Computation::class, 'permenperin_category_id', 'id');
     }
 
-    public static function getOptions() {
+    public static function getOptions($color = null) {
         $options = [];
-        $colorOptions = ["primary", "secondary", "light", "dark", "warning", "info", "danger"];
+        $colorOptions = [
+            "primary" => "Biru",
+            "secondary" => "Abu Abu Tua",
+            "light" => "Abu Abu Muda",
+            "dark" => "Hitam",
+            "warning" => "Kuning",
+            "danger" => "Merah"
+        ];
 
         $options["colors"] = $colorOptions;
+
+        if($color != null) return $options["colors"][$color];
 
         return $options;
     }

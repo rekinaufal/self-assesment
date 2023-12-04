@@ -44,7 +44,7 @@
                                                 {{ $item->name }}
                                             </td>
                                             <td>
-                                                <span class="badge badge-{{ $item->color }}">{{ $item->color }}</span>
+                                                <span class="badge badge-{{ $item->color }}">{{ $item->color_name }}</span>
                                             </td>
                                             <td>
                                                 {{ $item->created_at }}
@@ -102,10 +102,10 @@
                                     @foreach ($options['colors'] as $key => $color)
                                         <div class="colors col-4 d-flex align-items-center mt-2">
                                             <input type="radio" name="color" class="form-control"
-                                                id="color-{{ $color }}" value="{{ $color }}"
+                                                id="color-{{ $key }}" value="{{ $key }}"
                                                 style="width: 15px; height: auto;" {{ $key == 0 ? "checked" : "" }}>
-                                            <label for="color-{{ $color }}" style="width: 20px; height: 20px;"
-                                                class="ml-2"><span class="badge badge-{{ $color }}">{{ $color }}</span></label>
+                                            <label for="color-{{ $key }}" style="width: 20px; height: 20px;"
+                                                class="ml-2"><span class="badge badge-{{ $key }}">{{ $color }}</span></label>
                                         </div>
                                     @endforeach
                                 </div>
