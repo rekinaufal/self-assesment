@@ -3315,7 +3315,7 @@
                         <td> ${item.tkdn}% </td>
                         <td> ${item.jumlah_orang} </td>
                         <td class="text-nowrap"> Rp ${item.biaya_pengurusan_per_bulan} </td>
-                        <td> ${item.alokasi} "%</td>
+                        <td> ${item.alokasi}%</td>
                         <td class="text-nowrap"> ${formatToCurrency(item.kdn)} </td>
                         <td class="text-nowrap"> ${formatToCurrency(item.kln)} </td>
                         <td class="text-nowrap"> ${formatToCurrency(item.total)} </td>
