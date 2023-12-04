@@ -2399,7 +2399,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="card px-3 py-3">
+                <div class="card px-3 py-3 d-none" id="table-biaya-produksi-1-9">
                     <table class="table">
                         <thead class="bg-dark text-light border">
                             <tr>
@@ -2408,20 +2408,8 @@
                         </thead>
                         <tbody id="tbody-10">
                             <tr>
-                                <th>KDN</th>
-                                <td id="BiayaProduksiFinalKdn">Rp 0,00</td>
-                            </tr>
-                            <tr>
-                                <th>KLN</th>
-                                <td id="BiayaProduksiFinalKln">Rp 0,00</td>
-                            </tr>
-                            <tr>
-                                <th>Total</th>
-                                <td id="BiayaProduksiFinalTotal">Rp 0,00</td>
-                            </tr>
-                            <tr>
-                                <th>TKDN %</th>
-                                <td id="BiayaProduksiFinalTkdn">0%</td>
+                                <th><h4>TKDN %</h4></th>
+                                <th><h3 id="BiayaProduksiFinalTkdn">0%</h3></th>
                             </tr>
                         </tbody>
                     </table>
@@ -3536,30 +3524,49 @@
             } else if (tbodyId == "tbody-9") {
                 const tbody = $(`#${tbodyId}`);
                 tbody.empty();
-                // calculation = calculations.find(f => f.id == calculationId);
-                // let sumKdn = formatToCurrency(calculation.sumKdn)
-                // let sumKln = formatToCurrency(calculation.sumKln)
-                // let sumTotal = formatToCurrency(calculation.sumTotal)
-                // $(`#1-8-sumJumlah`).text(calculation.sumJumlah)
-                // $(`#1-8-sumKdn`).text(sumKdn)
-                // $(`#1-8-sumKln`).text(sumKln)
-                // $(`#1-8-sumTotal`).text(sumTotal)
-                // $(`#kdn-biaya-satuan-product-1-8`).text(formatToCurrency(calculation.sumKdn / parseCurrencyOrDecimal(
-                //     calculations.kapasitasNormalPerbulan)))
-                // $(`#kln-biaya-satuan-product-1-8`).text(formatToCurrency(calculation.sumKln / parseCurrencyOrDecimal(
-                //     calculations.kapasitasNormalPerbulan)))
-                // $(`#total-biaya-satuan-product-1-8`).text(formatToCurrency(calculation.sumTotal / parseCurrencyOrDecimal(
-                //     calculations.kapasitasNormalPerbulan)))
                 let sumKdn19 = 0;
                 let sumKln19 = 0;
                 let sumTotal19 = 0;
+                let sumPpn12 = 0;
+                let sumPdriTotal12 = 0;
+                let sumBpjs13 = 0;
+                let sumTunjanganLainnya13 = 0;
                 calculations.forEach(function(item, index) {
-                    sumKdn19 += item.sumKdn ?? 0;
+                    if(index == 0) {
+                        sumPpn12 = item.sumPpn;
+                        sumPdriTotal12 = item.sumPdriTotal;
+                    } else if(index == 2) {
+                        sumBpjs13 = item.sumBpjs;
+                        sumTunjanganLainnya13 = item.sumTunjanganLainnya;
+                    }
+
+                    if(index == 1) {
+                        sumKdn19 += (item.sumKdn ?? 0) + (sumPpn12 ?? 0) + (sumPdriTotal12 ?? 0)
+                    } else if(index == 3) {
+                        sumKdn19 += (item.sumKdn ?? 0) + (sumBpjs13 ?? 0) + (sumTunjanganLainnya13 ?? 0)
+                    } else {
+                        sumKdn19 += item.sumKdn ?? 0;
+                    }
+
                     sumKln19 += item.sumKln ?? 0;
-                    sumTotal19 += item.sumTotal ?? 0;
+
+                    if(index == 1) {
+                        sumTotal19 += (item.sumTotal ?? 0) + (item.sumKdn ?? 0) + (sumPpn12 ?? 0) + (sumPdriTotal12 ?? 0);
+                    } else if(index == 3) {
+                        sumTotal19 += (item.sumTotal ?? 0) + (item.sumKdn ?? 0) + (sumBpjs13 ?? 0) + (sumTunjanganLainnya13 ?? 0);
+                    } else {
+                        sumTotal19 += item.sumTotal ?? 0;
+                    }
                 })
 
                 calculations.forEach(function(item, index) {
+                    if(index == 1) {
+                        item.sumTotal = (item.sumKdn ?? 0) + (item.sumKln ?? 0) + (sumPpn12 ?? 0) + (sumPdriTotal12 ?? 0);
+                        item.sumKdn = (item.sumKdn ?? 0) + (sumPpn12 ?? 0) + (sumPdriTotal12 ?? 0);
+                    } else if(index == 3) {
+                        item.sumTotal = (item.sumKdn ?? 0) + (item.sumKln ?? 0) + (sumBpjs13 ?? 0) + (sumTunjanganLainnya13 ?? 0);
+                        item.sumKdn = (item.sumKdn ?? 0) + (sumBpjs13 ?? 0) + (sumTunjanganLainnya13 ?? 0);
+                    }
                     let row = `<tr>
                         <td class="text-nowrap"> ${item.no} </td>
                         <td class="text-nowrap"> ${item.nama} </td>
@@ -3587,9 +3594,6 @@
                     sumTotal19 += item.sumTotal ?? 0;
                 })
 
-                $("#BiayaProduksiFinalKdn").text(formatToCurrency(sumKdn19));
-                $("#BiayaProduksiFinalKln").text(formatToCurrency(sumKln19));
-                $("#BiayaProduksiFinalTotal").text(formatToCurrency(sumTotal19));
                 $("#BiayaProduksiFinalTkdn").text((sumKdn19 / sumTotal19 * 100).toFixed(2) + "%");
             }
         }
@@ -3690,6 +3694,14 @@
                 let output = number.replace(/\./g, ",");
 
                 $(event.currentTarget).val(output);
+            })
+
+            $(".nav-link").on("click", (event) => {
+                if($(event.currentTarget).attr("id") == "v-rekapitulasi-tab") {
+                    $("#table-biaya-produksi-1-9").removeClass("d-none");
+                } else {
+                    $("#table-biaya-produksi-1-9").addClass("d-none");
+                }
             })
         })
     </script>
