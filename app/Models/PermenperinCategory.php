@@ -26,7 +26,7 @@ class PermenperinCategory extends Model
         return $this->hasMany(Computation::class, 'permenperin_category_id', 'id');
     }
 
-    public static function getOptions() {
+    public static function getOptions($color = null) {
         $options = [];
         $colorOptions = [
             "primary" => "Biru",
@@ -38,6 +38,8 @@ class PermenperinCategory extends Model
         ];
 
         $options["colors"] = $colorOptions;
+
+        if($color != null) return $options["colors"][$color];
 
         return $options;
     }

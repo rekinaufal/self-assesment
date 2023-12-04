@@ -24,10 +24,15 @@ class PermenperinCategoryController extends Controller
     public function index()
     {
         $data = [
-            "permenperin" => PermenperinCategory::get(),
+            "permenperin" => PermenperinCategory::orderBy("id", "desc")->get(),
             "pageTitle" => self::$pageTitle,
             "options" => PermenperinCategory::getOptions(),
         ];
+
+        $data["permenperin"]->map(function ($permenperin) {
+            $permenperin['color_name'] = PermenperinCategory::getOptions($permenperin['color']);
+            return $permenperin;
+        });
 
         return view('permenperincategory.index', $data);
     }

@@ -44,7 +44,7 @@
                                                 {{ $item->name }}
                                             </td>
                                             <td>
-                                                <span class="badge badge-{{ $item->color }}">{{ $item->color }}</span>
+                                                <span class="badge badge-{{ $item->color }}">{{ $item->color_name }}</span>
                                             </td>
                                             <td>
                                                 {{ $item->created_at }}

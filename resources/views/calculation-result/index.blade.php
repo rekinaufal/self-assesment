@@ -375,7 +375,7 @@
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm" id=""
+                                                <input type="text" class="form-control form-control-sm replaceDot" id=""
                                                     placeholder="" name="tkdn">
                                             </div>
 
@@ -394,7 +394,7 @@
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="">Alokasi Biaya % <i class="fas fa-info-circle"
+                                                <label for="">Alokasi Biaya % <i class="fas fa-info-circle replaceDot"
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
@@ -605,7 +605,7 @@
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm" id=""
+                                                <input type="text" class="form-control form-control-sm replaceDot" id=""
                                                     placeholder="" name="alokasi_gaji" value="0">
                                             </div>
 
@@ -622,7 +622,7 @@
                                                             <div class="form-group-sm ml-2" style="font-size: 7pt;">
                                                                 <label for="">BPJS %</label>
                                                                 <input type="text" style="width: 8rem"
-                                                                    class="form-control form-control-sm" id="" value="0" name="bpjs_percent">
+                                                                    class="form-control form-control-sm replaceDot" id="" value="0" name="bpjs_percent">
                                                             </div>
                                                             <div class="form-group-sm ml-2" style="font-size: 7pt;">
                                                                 <label for="">Tunjangan Lainnya</label>
@@ -862,7 +862,7 @@
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm" id="tkdn"
+                                                <input type="text" class="form-control form-control-sm replaceDot" id="tkdn"
                                                     name="tkdn" placeholder="">
                                             </div>
 
@@ -895,7 +895,7 @@
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm" id="alokasi"
+                                                <input type="text" class="form-control form-control-sm replaceDot" id="alokasi"
                                                     name="alokasi" placeholder="">
                                             </div>
 
@@ -1208,7 +1208,7 @@
                                                     <i class="fas fa-info-circle" data-toggle="tooltip"
                                                         data-placement="top" title="Tooltip on top"></i>
                                                 </label>
-                                                <input type="text" class="form-control form-control-sm" placeholder=""
+                                                <input type="text" class="form-control form-control-sm replaceDot" placeholder=""
                                                     id="alokasi" name="alokasi">
                                             </div>
 
@@ -1463,7 +1463,7 @@
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm"
+                                                <input type="text" class="form-control form-control-sm replaceDot"
                                                     id="" placeholder="" name="alokasi">
                                             </div>
 
@@ -1760,7 +1760,7 @@
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm"
+                                                <input type="text" class="form-control form-control-sm replaceDot"
                                                     id="" placeholder="" name="alokasi">
                                             </div>
 
@@ -2027,7 +2027,7 @@
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm" id="tkdn"
+                                                <input type="text" class="form-control form-control-sm replaceDot" id="tkdn"
                                                     name="tkdn" placeholder="">
                                             </div>
 
@@ -2053,7 +2053,7 @@
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm"
+                                                <input type="text" class="form-control form-control-sm replaceDot"
                                                     id="" placeholder="" name="alokasi">
                                             </div>
 
@@ -2398,6 +2398,33 @@
                             Rekapitulasi
                         </a>
                     </div>
+                </div>
+                <div class="card px-3 py-3">
+                    <table class="table">
+                        <thead class="bg-dark text-light border">
+                            <tr>
+                                <th colspan="2">Biaya Produksi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody-10">
+                            <tr>
+                                <th>KDN</th>
+                                <td id="BiayaProduksiFinalKdn">Rp 0,00</td>
+                            </tr>
+                            <tr>
+                                <th>KLN</th>
+                                <td id="BiayaProduksiFinalKln">Rp 0,00</td>
+                            </tr>
+                            <tr>
+                                <th>Total</th>
+                                <td id="BiayaProduksiFinalTotal">Rp 0,00</td>
+                            </tr>
+                            <tr>
+                                <th>TKDN %</th>
+                                <td id="BiayaProduksiFinalTkdn">0%</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -3059,6 +3086,12 @@
                 // Hapus calculation dari array computation.data
                 computation.data.splice(calculationIndex, 1);
 
+                // Mengonversi objek menjadi string JSON
+                let jsonDraftCalculations = JSON.stringify(draftCalculations);
+
+                // Menyimpan data di Local Storage dengan kunci tertentu
+                localStorage.setItem('draftCalculations', jsonDraftCalculations);
+
                 reloadAllTable()
 
                 swal({
@@ -3096,8 +3129,10 @@
                 calculation.data.forEach(function(item, index) {
                     let row = "<tr>" +
                         `<td>
-                            <div class="dropdown">
-                                <div class="btn btn-sm" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;"><i class="fa-solid fa-ellipsis-vertical"></i></div>
+                            <div class="dropdown text-secondary">
+                                <div id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" stroke="gray" height="16" width="4" viewBox="0 0 128 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M64 360a56 56 0 1 0 0 112 56 56 0 1 0 0-112zm0-160a56 56 0 1 0 0 112 56 56 0 1 0 0-112zM120 96A56 56 0 1 0 8 96a56 56 0 1 0 112 0z"/></svg>
+                            </div>
                                 <div class="dropdown-menu"
                                     aria-labelledby="dropdownMenuButton">
                                     <a class="dropdown-item buttonEditNews"
@@ -3164,7 +3199,9 @@
                     let row = "<tr>" +
                         `<td>
                             <div class="dropdown">
-                                <div class="btn btn-secondary btn-sm" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">!</div>
+                                <div id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="16" width="4" viewBox="0 0 128 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M64 360a56 56 0 1 0 0 112 56 56 0 1 0 0-112zm0-160a56 56 0 1 0 0 112 56 56 0 1 0 0-112zM120 96A56 56 0 1 0 8 96a56 56 0 1 0 112 0z"/></svg>
+                                </div>
                                 <div class="dropdown-menu"
                                     aria-labelledby="dropdownMenuButton">
                                     <a class="dropdown-item buttonEditNews"
@@ -3201,18 +3238,20 @@
                 $(`#1-3-sumKln`).text(sumKln)
                 $(`#1-3-sumTotal`).text(sumTotal)
                 $(`#kdn-biaya-satuan-product-1-3`).text(formatToCurrency(calculation.sumKdn / parseCurrencyOrDecimal(
-                    calculations.kapasitasNormalPerbulan)))
+                    draftCalculations.find(f => f.computationId == computationId).kapasitasNormalPerbulan)))
                 $(`#kln-biaya-satuan-product-1-3`).text(formatToCurrency(calculation.sumKln / parseCurrencyOrDecimal(
-                    calculations.kapasitasNormalPerbulan)))
+                    draftCalculations.find(f => f.computationId == computationId).kapasitasNormalPerbulan)))
                 $(`#total-biaya-satuan-product-1-3`).text(formatToCurrency(calculation.sumTotal / parseCurrencyOrDecimal(
-                    calculations.kapasitasNormalPerbulan)))
+                    draftCalculations.find(f => f.computationId == computationId).kapasitasNormalPerbulan)))
                 console.log(calculation);
                 calculation.data.forEach(function(item, index) {
                     let row = `
                     <tr>
                         <td>
                             <div class="dropdown">
-                                <div class="btn btn-secondary btn-sm" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">!</div>
+                                <div id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="16" width="4" viewBox="0 0 128 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M64 360a56 56 0 1 0 0 112 56 56 0 1 0 0-112zm0-160a56 56 0 1 0 0 112 56 56 0 1 0 0-112zM120 96A56 56 0 1 0 8 96a56 56 0 1 0 112 0z"/></svg>
+                                </div>
                                 <div class="dropdown-menu"
                                     aria-labelledby="dropdownMenuButton">
                                     <a class="dropdown-item buttonEditNews"
@@ -3259,17 +3298,19 @@
                 $(`#sumTunjanganLainnyaKdn-1-4-3`).text(formatToCurrency(calculation3.sumTunjanganLainnya ?? 0))
                 $(`#sumTunjanganLainnyaTotal-1-4-3`).text(formatToCurrency(calculation3.sumTunjanganLainnya ?? 0))
                 $(`#kdn-biaya-satuan-product-1-4`).text(formatToCurrency(calculation.sumKdn / parseCurrencyOrDecimal(
-                    calculations.kapasitasNormalPerbulan)))
+                    draftCalculations.find(f => f.computationId == computationId).kapasitasNormalPerbulan)))
                 $(`#kln-biaya-satuan-product-1-4`).text(formatToCurrency(calculation.sumKln / parseCurrencyOrDecimal(
-                    calculations.kapasitasNormalPerbulan)))
+                    draftCalculations.find(f => f.computationId == computationId).kapasitasNormalPerbulan)))
                 $(`#total-biaya-satuan-product-1-4`).text(formatToCurrency(calculation.sumTotal / parseCurrencyOrDecimal(
-                    calculations.kapasitasNormalPerbulan)))
+                    draftCalculations.find(f => f.computationId == computationId).kapasitasNormalPerbulan)))
                 console.log(calculation);
                 calculation.data.forEach(function(item, index) {
                     let row = `<tr> +
                         <td>
                             <div class="dropdown">
-                                <div class="btn btn-secondary btn-sm" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">!</div>
+                                <div id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="16" width="4" viewBox="0 0 128 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M64 360a56 56 0 1 0 0 112 56 56 0 1 0 0-112zm0-160a56 56 0 1 0 0 112 56 56 0 1 0 0-112zM120 96A56 56 0 1 0 8 96a56 56 0 1 0 112 0z"/></svg>
+                                </div>
                                 <div class="dropdown-menu"
                                     aria-labelledby="dropdownMenuButton">
                                     <a class="dropdown-item buttonEditNews"
@@ -3306,17 +3347,19 @@
                 $(`#1-5-sumKln`).text(sumKln)
                 $(`#1-5-sumTotal`).text(sumTotal)
                 $(`#kdn-biaya-satuan-product-1-5`).text(formatToCurrency(calculation.sumKdn / parseCurrencyOrDecimal(
-                    calculations.kapasitasNormalPerbulan)))
+                    draftCalculations.find(f => f.computationId == computationId).kapasitasNormalPerbulan)))
                 $(`#kln-biaya-satuan-product-1-5`).text(formatToCurrency(calculation.sumKln / parseCurrencyOrDecimal(
-                    calculations.kapasitasNormalPerbulan)))
+                    draftCalculations.find(f => f.computationId == computationId).kapasitasNormalPerbulan)))
                 $(`#total-biaya-satuan-product-1-5`).text(formatToCurrency(calculation.sumTotal / parseCurrencyOrDecimal(
-                    calculations.kapasitasNormalPerbulan)))
+                    draftCalculations.find(f => f.computationId == computationId).kapasitasNormalPerbulan)))
                 console.log(calculation);
                 calculation.data.forEach(function(item, index) {
                     let row = "<tr>" +
                         `<td>
                             <div class="dropdown">
-                                <div class="btn btn-secondary btn-sm" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">!</div>
+                                <div id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="16" width="4" viewBox="0 0 128 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M64 360a56 56 0 1 0 0 112 56 56 0 1 0 0-112zm0-160a56 56 0 1 0 0 112 56 56 0 1 0 0-112zM120 96A56 56 0 1 0 8 96a56 56 0 1 0 112 0z"/></svg>
+                                </div>
                                 <div class="dropdown-menu"
                                     aria-labelledby="dropdownMenuButton">
                                     <a class="dropdown-item buttonEditNews"
@@ -3353,17 +3396,19 @@
                 $(`#1-6-sumKln`).text(sumKln)
                 $(`#1-6-sumTotal`).text(sumTotal)
                 $(`#kdn-biaya-satuan-product-1-6`).text(formatToCurrency(calculation.sumKdn / parseCurrencyOrDecimal(
-                    calculations.kapasitasNormalPerbulan)))
+                    draftCalculations.find(f => f.computationId == computationId).kapasitasNormalPerbulan)))
                 $(`#kln-biaya-satuan-product-1-6`).text(formatToCurrency(calculation.sumKln / parseCurrencyOrDecimal(
-                    calculations.kapasitasNormalPerbulan)))
+                    draftCalculations.find(f => f.computationId == computationId).kapasitasNormalPerbulan)))
                 $(`#total-biaya-satuan-product-1-6`).text(formatToCurrency(calculation.sumTotal / parseCurrencyOrDecimal(
-                    calculations.kapasitasNormalPerbulan)))
+                    draftCalculations.find(f => f.computationId == computationId).kapasitasNormalPerbulan)))
                 console.log(calculation);
                 calculation.data.forEach(function(item, index) {
                     let row = `<tr> +
                         <td>
                             <div class="dropdown">
-                                <div class="btn btn-secondary btn-sm" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">!</div>
+                                <div id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="16" width="4" viewBox="0 0 128 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M64 360a56 56 0 1 0 0 112 56 56 0 1 0 0-112zm0-160a56 56 0 1 0 0 112 56 56 0 1 0 0-112zM120 96A56 56 0 1 0 8 96a56 56 0 1 0 112 0z"/></svg>
+                                </div>
                                 <div class="dropdown-menu"
                                     aria-labelledby="dropdownMenuButton">
                                     <a class="dropdown-item buttonEditNews"
@@ -3401,17 +3446,19 @@
                 $(`#1-7-sumKln`).text(sumKln)
                 $(`#1-7-sumTotal`).text(sumTotal)
                 $(`#kdn-biaya-satuan-product-1-7`).text(formatToCurrency(calculation.sumKdn / parseCurrencyOrDecimal(
-                    calculations.kapasitasNormalPerbulan)))
+                    draftCalculations.find(f => f.computationId == computationId).kapasitasNormalPerbulan)))
                 $(`#kln-biaya-satuan-product-1-7`).text(formatToCurrency(calculation.sumKln / parseCurrencyOrDecimal(
-                    calculations.kapasitasNormalPerbulan)))
+                    draftCalculations.find(f => f.computationId == computationId).kapasitasNormalPerbulan)))
                 $(`#total-biaya-satuan-product-1-7`).text(formatToCurrency(calculation.sumTotal / parseCurrencyOrDecimal(
-                    calculations.kapasitasNormalPerbulan)))
+                    draftCalculations.find(f => f.computationId == computationId).kapasitasNormalPerbulan)))
                 console.log(calculation);
                 calculation.data.forEach(function(item, index) {
                     let row = `<tr> +
                         <td>
                             <div class="dropdown">
-                                <div class="btn btn-secondary btn-sm" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">!</div>
+                                <div id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="16" width="4" viewBox="0 0 128 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M64 360a56 56 0 1 0 0 112 56 56 0 1 0 0-112zm0-160a56 56 0 1 0 0 112 56 56 0 1 0 0-112zM120 96A56 56 0 1 0 8 96a56 56 0 1 0 112 0z"/></svg>
+                                </div>
                                 <div class="dropdown-menu"
                                     aria-labelledby="dropdownMenuButton">
                                     <a class="dropdown-item buttonEditNews"
@@ -3449,17 +3496,19 @@
                 $(`#1-8-sumKln`).text(sumKln)
                 $(`#1-8-sumTotal`).text(sumTotal)
                 $(`#kdn-biaya-satuan-product-1-8`).text(formatToCurrency(calculation.sumKdn / parseCurrencyOrDecimal(
-                    calculations.kapasitasNormalPerbulan)))
+                    draftCalculations.find(f => f.computationId == computationId).kapasitasNormalPerbulan)))
                 $(`#kln-biaya-satuan-product-1-8`).text(formatToCurrency(calculation.sumKln / parseCurrencyOrDecimal(
-                    calculations.kapasitasNormalPerbulan)))
+                    draftCalculations.find(f => f.computationId == computationId).kapasitasNormalPerbulan)))
                 $(`#total-biaya-satuan-product-1-8`).text(formatToCurrency(calculation.sumTotal / parseCurrencyOrDecimal(
-                    calculations.kapasitasNormalPerbulan)))
+                    draftCalculations.find(f => f.computationId == computationId).kapasitasNormalPerbulan)))
                 console.log(calculation);
                 calculation.data.forEach(function(item, index) {
                     let row = `<tr> +
                         <td>
                             <div class="dropdown">
-                                <div class="btn btn-secondary btn-sm" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">!</div>
+                                <div id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="16" width="4" viewBox="0 0 128 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M64 360a56 56 0 1 0 0 112 56 56 0 1 0 0-112zm0-160a56 56 0 1 0 0 112 56 56 0 1 0 0-112zM120 96A56 56 0 1 0 8 96a56 56 0 1 0 112 0z"/></svg>
+                                </div>
                                 <div class="dropdown-menu"
                                     aria-labelledby="dropdownMenuButton">
                                     <a class="dropdown-item buttonEditNews"
@@ -3527,10 +3576,27 @@
                 $("#sumKln-1-9").text(formatToCurrency(sumKln19));
                 $("#sumTotal-1-9").text(formatToCurrency(sumTotal19));
                 $("#sumTkdn-1-9").text((sumKdn19 / sumTotal19 * 100).toFixed(2) + "%");
+            } else if (tbodyId == "tbody-10") {
+                const tbody = $(`#${tbodyId}`);
+                let sumKdn19 = 0;
+                let sumKln19 = 0;
+                let sumTotal19 = 0;
+                calculations.forEach(function(item, index) {
+                    sumKdn19 += item.sumKdn ?? 0;
+                    sumKln19 += item.sumKln ?? 0;
+                    sumTotal19 += item.sumTotal ?? 0;
+                })
+
+                $("#BiayaProduksiFinalKdn").text(formatToCurrency(sumKdn19));
+                $("#BiayaProduksiFinalKln").text(formatToCurrency(sumKln19));
+                $("#BiayaProduksiFinalTotal").text(formatToCurrency(sumTotal19));
+                $("#BiayaProduksiFinalTkdn").text((sumKdn19 / sumTotal19 * 100).toFixed(2) + "%");
             }
         }
 
         function reloadAllTable() {
+            $(".kapasitasNormalPerbulan").val(draftCalculations.find(f => f.computationId == computationId).kapasitasNormalPerbulan);
+
             reloadTable("tbody-1", 1);
             reloadTable("tbody-2", 2);
             reloadTable("tbody-3", 3);
@@ -3540,6 +3606,7 @@
             reloadTable("tbody-7", 7);
             reloadTable("tbody-8", 8);
             reloadTable("tbody-9", 9);
+            reloadTable("tbody-10", 9);
         }
 
         $(() => {
@@ -3554,7 +3621,8 @@
             $(".kapasitasNormalPerbulan").on("change", () => {
                 let kapasitasNormalPerbulan = $(event.currentTarget).val();
                 $(".kapasitasNormalPerbulan").val(kapasitasNormalPerbulan);
-                calculations.kapasitasNormalPerbulan = kapasitasNormalPerbulan;
+                let draftCalculation = draftCalculations.find(f => f.computationId == computationId);
+                draftCalculation.kapasitasNormalPerbulan = kapasitasNormalPerbulan;
 
                 // Mengonversi objek menjadi string JSON
                 let jsonDraftCalculations = JSON.stringify(draftCalculations);
