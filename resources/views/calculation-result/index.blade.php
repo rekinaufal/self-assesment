@@ -124,10 +124,11 @@
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
                                                 <label for="tkdn">TKDN % <i class="fas fa-info-circle"
-                                                        data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                        data-toggle="tooltip" data-placement="top"
+                                                        title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm replaceDot" id="tkdn"
-                                                    name="tkdn" placeholder="" required>
+                                                <input type="text" class="form-control form-control-sm replaceDot"
+                                                    id="tkdn" name="tkdn" placeholder="" required>
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -149,7 +150,8 @@
                                                         <span class="input-group-text" id="basic-addon1">Rp.</span>
                                                     </div>
                                                     <input type="text" class="form-control rupiahInput" placeholder=""
-                                                        id="harga_satuan" name="harga_satuan" required autocomplete="off" value="0,00">
+                                                        id="harga_satuan" name="harga_satuan" required autocomplete="off"
+                                                        value="0,00">
                                                 </div>
                                             </div>
 
@@ -168,8 +170,8 @@
                                                                 <label for="ppn">PPN %</label>
                                                                 <input type="text" name="ppn"
                                                                     style=" width : 15rem"
-                                                                    class="form-control form-control-sm replaceDot" id="ppn"
-                                                                    placeholder="" value="0">
+                                                                    class="form-control form-control-sm replaceDot"
+                                                                    id="ppn" placeholder="" value="0">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -189,20 +191,20 @@
                                                             <div class="form-group-sm ml-2" style="font-size: 7pt;">
                                                                 <label for="bm">BM %</label>
                                                                 <input type="text" name="bm" style="width: 5rem"
-                                                                    class="form-control form-control-sm replaceDot" id="bm"
-                                                                    placeholder="" value="0">
+                                                                    class="form-control form-control-sm replaceDot"
+                                                                    id="bm" placeholder="" value="0">
                                                             </div>
                                                             <div class="form-group-sm ml-2" style="font-size: 7pt;">
                                                                 <label for="pdri_ppn">PPN %</label>
                                                                 <input type="text" name="pdri_ppn" style="width: 5rem"
-                                                                    class="form-control form-control-sm replaceDot" id="pdri_ppn"
-                                                                    placeholder="" value="0">
+                                                                    class="form-control form-control-sm replaceDot"
+                                                                    id="pdri_ppn" placeholder="" value="0">
                                                             </div>
                                                             <div class="form-group-sm ml-2" style="font-size: 7pt;">
                                                                 <label for="pph">PPH %</label>
                                                                 <input type="text" name="pph" style="width: 5rem"
-                                                                    class="form-control form-control-sm replaceDot" id="pph"
-                                                                    placeholder="" value="0">
+                                                                    class="form-control form-control-sm replaceDot"
+                                                                    id="pph" placeholder="" value="0">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -239,14 +241,18 @@
                                                     <tr>
                                                         <th scope="col" class="text-nowrap pr-4">Aksi</th>
                                                         <th scope="col" class="text-nowrap pr-4">No</th>
-                                                        <th style="width:70%" scope="col" class="text-nowrap pr-4">Nama Bahan Baku</th>
+                                                        <th style="width:70%" scope="col" class="text-nowrap pr-4">
+                                                            Nama Bahan Baku</th>
                                                         <th scope="col" class="text-nowrap pr-4">Spesifikasi</th>
                                                         <th scope="col" class="text-nowrap pr-4">Satuan Bahan Baku</th>
                                                         <th scope="col" class="text-nowrap pr-4">Negara Asal</th>
-                                                        <th scope="col" class="text-nowrap pr-4">Pemasok / Produsen Tingkat 2</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Pemasok / Produsen
+                                                            Tingkat 2</th>
                                                         <th scope="col" class="text-nowrap pr-4">TKDN %</th>
-                                                        <th scope="col" class="text-nowrap pr-4">Jumlah / Satuan Bahan Baku</th>
-                                                        <th scope="col" class="text-nowrap pr-4">Harga Satuan Material (Rp)</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Jumlah / Satuan Bahan
+                                                            Baku</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Harga Satuan Material
+                                                            (Rp)</th>
                                                         <th scope="col" class="text-nowrap pr-4">KDN</th>
                                                         <th scope="col" class="text-nowrap pr-4">KLN</th>
                                                         <th scope="col" class="text-nowrap pr-4">Total</th>
@@ -300,9 +306,11 @@
                                                 <table class="table table-bordered table-hover" style="font-size: 8pt">
                                                     <thead style="text-align: center"class="thead-dark">
                                                         <tr>
-                                                            <th scope="col" class="text-nowrap pr-4" rowspan="2" class="align-middle">Lokal
+                                                            <th scope="col" class="text-nowrap pr-4" rowspan="2"
+                                                                class="align-middle">Lokal
                                                                 PPN</th>
-                                                            <th scope="col" class="text-nowrap pr-4" colspan="4">PDRI</th>
+                                                            <th scope="col" class="text-nowrap pr-4" colspan="4">
+                                                                PDRI</th>
                                                         </tr>
                                                         <tr>
                                                             <th scope="col" class="text-nowrap pr-4">BM</th>
@@ -375,8 +383,8 @@
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm replaceDot" id=""
-                                                    placeholder="" name="tkdn">
+                                                <input type="text" class="form-control form-control-sm replaceDot"
+                                                    id="" placeholder="" name="tkdn">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -389,14 +397,15 @@
                                                         <span class="input-group-text" id="basic-addon1">Rp.</span>
                                                     </div>
                                                     <input type="text" class="form-control biaya12" placeholder=""
-                                                        id="1-2-biaya" name="biaya" required autocomplete="off" value="0,00">
+                                                        id="1-2-biaya" name="biaya" required autocomplete="off"
+                                                        value="0,00">
                                                 </div>
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="">Alokasi Biaya % <i class="fas fa-info-circle replaceDot"
-                                                        data-toggle="tooltip" data-placement="top"
-                                                        title="Tooltip on top">
+                                                <label for="">Alokasi Biaya % <i
+                                                        class="fas fa-info-circle replaceDot" data-toggle="tooltip"
+                                                        data-placement="top" title="Tooltip on top">
                                                     </i></label>
                                                 <input type="text" class="form-control form-control-sm" id=""
                                                     placeholder="" name="alokasi">
@@ -434,7 +443,8 @@
                                                         <th scope="col" class="text-nowrap pr-4">Aksi</th>
                                                         <th scope="col" class="text-nowrap pr-4">No</th>
                                                         <th scope="col" class="text-nowrap pr-4">Uraian</th>
-                                                        <th scope="col" class="text-nowrap pr-4">Pemasok / Produsen Tingkat 2</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Pemasok / Produsen
+                                                            Tingkat 2</th>
                                                         <th scope="col" class="text-nowrap pr-4">Jumlah</th>
                                                         <th scope="col" class="text-nowrap pr-4">TKDN %</th>
                                                         <th scope="col" class="text-nowrap pr-4">Biaya (Rp)</th>
@@ -442,64 +452,6 @@
                                                         <th scope="col" class="text-nowrap pr-4">KDN</th>
                                                         <th scope="col" class="text-nowrap pr-4">KLN</th>
                                                         <th scope="col" class="text-nowrap pr-4">Total</th>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            {{-- <div class="dropdown">
-                                                                <i data-feather="more-vertical" id="dropdownMenuButton"
-                                                                    class="feather-icon dropdown-toggle"
-                                                                    style="cursor: pointer;" data-toggle="dropdown"
-                                                                    aria-haspopup="true" aria-expanded="false"></i>
-                                                                <div class="dropdown-menu"
-                                                                    aria-labelledby="dropdownMenuButton">
-                                                                    <a class="dropdown-item buttonEditNews"
-                                                                        onclick=""><i class="fa fa-edit"></i> Edit</a>
-                                                                    <form action="" method="post">
-                                                                        <button class="dropdown-item" type="submit"><i
-                                                                                class="fa fa-trash"></i> Delete</button>
-                                                                    </form>
-                                                                </div>
-                                                            </div> --}}
-                                                        </td>
-                                                        <th scope="row">1</th>
-                                                        <td class="text-nowrap">Local PPN</td>
-                                                        <td class="text-nowrap">Dirjen Pajak</td>
-                                                        <td>1</td>
-                                                        <td>100%</td>
-                                                        <td class="text-nowrap" id="sumLocalPpn-1-2">0</td>
-                                                        <td>100%</td>
-                                                        <td class="text-nowrap" id="sumLocalKdn-1-2">0</td>
-                                                        <td class="text-nowrap">Rp 0,00</td>
-                                                        <td class="text-nowrap" id="sumLocalTotal-1-2">0</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            {{-- <div class="dropdown">
-                                                                <i data-feather="more-vertical" id="dropdownMenuButton"
-                                                                    class="feather-icon dropdown-toggle"
-                                                                    style="cursor: pointer;" data-toggle="dropdown"
-                                                                    aria-haspopup="true" aria-expanded="false"></i>
-                                                                <div class="dropdown-menu"
-                                                                    aria-labelledby="dropdownMenuButton">
-                                                                    <a class="dropdown-item buttonEditNews"
-                                                                        onclick=""><i class="fa fa-edit"></i> Edit</a>
-                                                                    <form action="" method="post">
-                                                                        <button class="dropdown-item" type="submit"><i
-                                                                                class="fa fa-trash"></i> Delete</button>
-                                                                    </form>
-                                                                </div>
-                                                            </div> --}}
-                                                        </td>
-                                                        <th scope="row">2</th>
-                                                        <td class="text-nowrap">PDRI</td>
-                                                        <td class="text-nowrap">Bea Cukai</td>
-                                                        <td>1</td>
-                                                        <td>100%</td>
-                                                        <td class="text-nowrap" id="sumPdriTotal-1-2">0</td>
-                                                        <td>100%</td>
-                                                        <td class="text-nowrap" id="sumPdriKln-1-2"></td>
-                                                        <td class="text-nowrap">Rp 0,00</td>
-                                                        <td class="text-nowrap" id="sumPdri-1-2">0</td>
                                                     </tr>
                                                 </thead>
                                                 <tbody id="tbody-2">
@@ -596,7 +548,8 @@
                                                         <span class="input-group-text" id="basic-addon1">Rp.</span>
                                                     </div>
                                                     <input type="text" class="form-control gaji_perbulan13"
-                                                        placeholder="" id="1-2-gaji_perbulan" name="gaji_perbulan" required autocomplete="off" value="0,00">
+                                                        placeholder="" id="1-2-gaji_perbulan" name="gaji_perbulan"
+                                                        required autocomplete="off" value="0,00">
                                                 </div>
                                             </div>
 
@@ -605,8 +558,8 @@
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm replaceDot" id=""
-                                                    placeholder="" name="alokasi_gaji" value="0">
+                                                <input type="text" class="form-control form-control-sm replaceDot"
+                                                    id="" placeholder="" name="alokasi_gaji" value="0">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt;">
@@ -622,17 +575,21 @@
                                                             <div class="form-group-sm ml-2" style="font-size: 7pt;">
                                                                 <label for="">BPJS %</label>
                                                                 <input type="text" style="width: 8rem"
-                                                                    class="form-control form-control-sm replaceDot" id="" value="0" name="bpjs_percent">
+                                                                    class="form-control form-control-sm replaceDot"
+                                                                    id="" value="0" name="bpjs_percent">
                                                             </div>
                                                             <div class="form-group-sm ml-2" style="font-size: 7pt;">
                                                                 <label for="">Tunjangan Lainnya</label>
                                                                 <div class="input-group input-group-sm mb-3">
                                                                     <div class="input-group-prepend">
-                                                                        <span class="input-group-text" id="basic-addon1">Rp.</span>
+                                                                        <span class="input-group-text"
+                                                                            id="basic-addon1">Rp.</span>
                                                                     </div>
-                                                                    <input type="text" class="form-control form-control-sm tunjanganLainnya13"
+                                                                    <input type="text"
+                                                                        class="form-control form-control-sm tunjanganLainnya13"
                                                                         placeholder="" id="currency_tunjangan_lainnya"
-                                                                        name="currency_tunjangan_lainnya" required autocomplete="off" value="0,00">
+                                                                        name="currency_tunjangan_lainnya" required
+                                                                        autocomplete="off" value="0,00">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -675,7 +632,8 @@
                                                         <th scope="col" class="text-nowrap pr-4">Kewarganegaraan</th>
                                                         <th scope="col" class="text-nowrap pr-4">TKDN %</th>
                                                         <th scope="col" class="text-nowrap pr-4">Jumlah Orang</th>
-                                                        <th scope="col" class="text-nowrap pr-4">Gaji Per Bulan (Rp)</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Gaji Per Bulan (Rp)
+                                                        </th>
                                                         <th scope="col" class="text-nowrap pr-4">Alokasi %</th>
                                                         <th scope="col" class="text-nowrap pr-4">KDN</th>
                                                         <th scope="col" class="text-nowrap pr-4">KLN</th>
@@ -793,7 +751,8 @@
                                                             <th scope="col" class="text-nowrap pr-4">
                                                                 <input type="text"
                                                                     class="form-control kapasitasNormalPerbulan kapasitasNormalPerbulan-1-3"
-                                                                    placeholder="" name="kapasitasNormalPerbulan" value="0">
+                                                                    placeholder="" name="kapasitasNormalPerbulan"
+                                                                    value="0">
                                                             </th>
                                                         </tr>
                                                     </thead>
@@ -810,9 +769,12 @@
                                                 <table class="table table-bordered table-hover" style="font-size: 8pt">
                                                     <thead>
                                                         <tr>
-                                                            <th scope="col" class="text-nowrap pr-4" id="kdn-biaya-satuan-product-1-3">KDN</th>
-                                                            <th scope="col" class="text-nowrap pr-4" id="kln-biaya-satuan-product-1-3">KLN</th>
-                                                            <th scope="col" class="text-nowrap pr-4" id="total-biaya-satuan-product-1-3">Total
+                                                            <th scope="col" class="text-nowrap pr-4"
+                                                                id="kdn-biaya-satuan-product-1-3">KDN</th>
+                                                            <th scope="col" class="text-nowrap pr-4"
+                                                                id="kln-biaya-satuan-product-1-3">KLN</th>
+                                                            <th scope="col" class="text-nowrap pr-4"
+                                                                id="total-biaya-satuan-product-1-3">Total
                                                             </th>
                                                         </tr>
                                                     </thead>
@@ -862,8 +824,8 @@
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm replaceDot" id="tkdn"
-                                                    name="tkdn" placeholder="">
+                                                <input type="text" class="form-control form-control-sm replaceDot"
+                                                    id="tkdn" name="tkdn" placeholder="">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -886,7 +848,8 @@
                                                     </div>
                                                     <input type="text" class="form-control biaya_pengurusan_perbulan14"
                                                         placeholder="" id="biaya_pengurusan_per_bulan"
-                                                        name="biaya_pengurusan_per_bulan" required autocomplete="off" value="0,00">
+                                                        name="biaya_pengurusan_per_bulan" required autocomplete="off"
+                                                        value="0,00">
                                                 </div>
                                             </div>
 
@@ -895,8 +858,8 @@
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm replaceDot" id="alokasi"
-                                                    name="alokasi" placeholder="">
+                                                <input type="text" class="form-control form-control-sm replaceDot"
+                                                    id="alokasi" name="alokasi" placeholder="">
                                             </div>
 
 
@@ -932,133 +895,19 @@
                                                         <th scope="col" class="text-nowrap pr-4">Aksi</th>
                                                         <th scope="col" class="text-nowrap pr-4">No</th>
                                                         <th scope="col" class="text-nowrap pr-4">Uraian</th>
-                                                        <th scope="col" class="text-nowrap pr-4">Pemasok / Produsen Tingkat 2</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Pemasok / Produsen
+                                                            Tingkat 2</th>
                                                         <th scope="col" class="text-nowrap pr-4">TKDN %</th>
                                                         <th scope="col" class="text-nowrap pr-4">Jumlah</th>
-                                                        <th scope="col" class="text-nowrap pr-4">Biaya Pengurusan Per Bulan</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Biaya Pengurusan Per
+                                                            Bulan</th>
                                                         <th scope="col" class="text-nowrap pr-4">Alokasi %</th>
                                                         <th scope="col" class="text-nowrap pr-4">KDN</th>
                                                         <th scope="col" class="text-nowrap pr-4">KLN</th>
                                                         <th scope="col" class="text-nowrap pr-4">Total</th>
                                                     </tr>
-                                                    <tr>
-                                                        <td>
-                                                            {{-- <div class="dropdown">
-                                                                <i data-feather="more-vertical" id="dropdownMenuButton"
-                                                                    class="feather-icon dropdown-toggle"
-                                                                    style="cursor: pointer;" data-toggle="dropdown"
-                                                                    aria-haspopup="true" aria-expanded="false"></i>
-                                                                <div class="dropdown-menu"
-                                                                    aria-labelledby="dropdownMenuButton">
-                                                                    <a class="dropdown-item buttonEditNews"
-                                                                        onclick=""><i class="fa fa-edit"></i> Edit</a>
-                                                                    <form action="" method="post">
-                                                                        <button class="dropdown-item" type="submit"><i
-                                                                                class="fa fa-trash"></i> Delete</button>
-                                                                    </form>
-                                                                </div>
-                                                            </div> --}}
-                                                        </td>
-                                                        <th scope="row">1</th>
-                                                        <td class="text-nowrap">BPJS</td>
-                                                        <td>-</td>
-                                                        <td>100%</td>
-                                                        <td>-</td>
-                                                        <td class="text-nowrap" id="sumBpjs-1-4-3">Rp 0,00</td>
-                                                        <td>100%</td>
-                                                        <td class="text-nowrap" id="sumBpjsKdn-1-4-3">Rp 0,00</td>
-                                                        <td class="text-nowrap">Rp 0,00</td>
-                                                        <td class="text-nowrap" id="sumBpjsTotal-1-4-3">Rp 0,00</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            {{-- <div class="dropdown">
-                                                                <i data-feather="more-vertical" id="dropdownMenuButton"
-                                                                    class="feather-icon dropdown-toggle"
-                                                                    style="cursor: pointer;" data-toggle="dropdown"
-                                                                    aria-haspopup="true" aria-expanded="false"></i>
-                                                                <div class="dropdown-menu"
-                                                                    aria-labelledby="dropdownMenuButton">
-                                                                    <a class="dropdown-item buttonEditNews"
-                                                                        onclick=""><i class="fa fa-edit"></i> Edit</a>
-                                                                    <form action="" method="post">
-                                                                        <button class="dropdown-item" type="submit"><i
-                                                                                class="fa fa-trash"></i> Delete</button>
-                                                                    </form>
-                                                                </div>
-                                                            </div> --}}
-                                                        </td>
-                                                        <th scope="row">2</th>
-                                                        <td class="text-nowrap">Tunjangan Lainnya</td>
-                                                        <td>-</td>
-                                                        <td>100%</td>
-                                                        <td>-</td>
-                                                        <td class="text-nowrap" id="sumTunjanganLainnya-1-4-3">Rp 0,00</td>
-                                                        <td>100%</td>
-                                                        <td class="text-nowrap" id="sumTunjanganLainnyaKdn-1-4-3">Rp 0,00</td>
-                                                        <td class="text-nowrap">Rp 0,00</td>
-                                                        <td class="text-nowrap" id="sumTunjanganLainnyaTotal-1-4-3">Rp 0,00</td>
-                                                    </tr>
                                                 </thead>
                                                 <tbody id="tbody-4">
-                                                    <tr>
-                                                        <td>
-                                                            <div class="dropdown">
-                                                                <i data-feather="more-vertical" id="dropdownMenuButton"
-                                                                    class="feather-icon dropdown-toggle"
-                                                                    style="cursor: pointer;" data-toggle="dropdown"
-                                                                    aria-haspopup="true" aria-expanded="false"></i>
-                                                                <div class="dropdown-menu"
-                                                                    aria-labelledby="dropdownMenuButton">
-                                                                    <a class="dropdown-item buttonEditNews"
-                                                                        onclick=""><i class="fa fa-edit"></i> Edit</a>
-                                                                    <form action="" method="post">
-                                                                        <button class="dropdown-item" type="submit"><i
-                                                                                class="fa fa-trash"></i> Delete</button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <th scope="row">1</th>
-                                                        <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</td>
-                                                        <td>Lorem, ipsum dolor.</td>
-                                                        <td>45.5</td>
-                                                        <td>12</td>
-                                                        <td>13.000.000</td>
-                                                        <td>32.1</td>
-                                                        <td>3</td>
-                                                        <td>8</td>
-                                                        <td>780.000.000.00</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="dropdown">
-                                                                <i data-feather="more-vertical" id="dropdownMenuButton"
-                                                                    class="feather-icon dropdown-toggle"
-                                                                    style="cursor: pointer;" data-toggle="dropdown"
-                                                                    aria-haspopup="true" aria-expanded="false"></i>
-                                                                <div class="dropdown-menu"
-                                                                    aria-labelledby="dropdownMenuButton">
-                                                                    <a class="dropdown-item buttonEditNews"
-                                                                        onclick=""><i class="fa fa-edit"></i> Edit</a>
-                                                                    <form action="" method="post">
-                                                                        <button class="dropdown-item" type="submit"><i
-                                                                                class="fa fa-trash"></i> Delete</button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <th scope="row">2</th>
-                                                        <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</td>
-                                                        <td>Lorem, ipsum dolor.</td>
-                                                        <td>45.5</td>
-                                                        <td>12</td>
-                                                        <td>13.000.000</td>
-                                                        <td>32.1</td>
-                                                        <td>3</td>
-                                                        <td>8</td>
-                                                        <td>780.000.000.00</td>
-                                                    </tr>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -1105,7 +954,8 @@
                                                             <th scope="col" class="text-nowrap pr-4">
                                                                 <input type="text"
                                                                     class="form-control kapasitasNormalPerbulan kapasitasNormalPerbulan-1-4"
-                                                                    placeholder="" name="kapasitasNormalPerbulan" value="0">
+                                                                    placeholder="" name="kapasitasNormalPerbulan"
+                                                                    value="0">
                                                             </th>
                                                         </tr>
                                                     </thead>
@@ -1122,9 +972,12 @@
                                                 <table class="table table-bordered table-hover" style="font-size: 8pt">
                                                     <thead>
                                                         <tr>
-                                                            <th scope="col" class="text-nowrap pr-4" id="kdn-biaya-satuan-product-1-4">KDN</th>
-                                                            <th scope="col" class="text-nowrap pr-4" id="kln-biaya-satuan-product-1-4">KLN</th>
-                                                            <th scope="col" class="text-nowrap pr-4" id="total-biaya-satuan-product-1-4">Total
+                                                            <th scope="col" class="text-nowrap pr-4"
+                                                                id="kdn-biaya-satuan-product-1-4">KDN</th>
+                                                            <th scope="col" class="text-nowrap pr-4"
+                                                                id="kln-biaya-satuan-product-1-4">KLN</th>
+                                                            <th scope="col" class="text-nowrap pr-4"
+                                                                id="total-biaya-satuan-product-1-4">Total
                                                             </th>
                                                         </tr>
                                                     </thead>
@@ -1177,7 +1030,8 @@
                                                 <input type="hidden" id="tkdn-1-5" value="" name="tkdn">
                                             </div>
 
-                                            <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
+                                            <div class="form-group-sm mx-2 mt-2 "
+                                                style="font-size: 10pt; width : 13rem">
                                                 <label>
                                                     Jumlah Orang
                                                     <i class="fas fa-info-circle" data-toggle="tooltip"
@@ -1187,7 +1041,8 @@
                                                     id="jumlah_orang" name="jumlah_orang">
                                             </div>
 
-                                            <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
+                                            <div class="form-group-sm mx-2 mt-2 "
+                                                style="font-size: 10pt; width : 13rem">
                                                 <label>
                                                     Gaji Per Bulan
                                                     <i class="fas fa-info-circle" data-toggle="tooltip"
@@ -1198,18 +1053,20 @@
                                                         <span class="input-group-text" id="basic-addon1">Rp.</span>
                                                     </div>
                                                     <input type="text" class="form-control gaji_perbulan15"
-                                                        placeholder="" id="gaji_perbulan" name="gaji_perbulan" required autocomplete="off" value="0,00">
+                                                        placeholder="" id="gaji_perbulan" name="gaji_perbulan"
+                                                        required autocomplete="off" value="0,00">
                                                 </div>
                                             </div>
 
-                                            <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
+                                            <div class="form-group-sm mx-2 mt-2 "
+                                                style="font-size: 10pt; width : 13rem">
                                                 <label>
                                                     Alokasi Gaji %
                                                     <i class="fas fa-info-circle" data-toggle="tooltip"
                                                         data-placement="top" title="Tooltip on top"></i>
                                                 </label>
-                                                <input type="text" class="form-control form-control-sm replaceDot" placeholder=""
-                                                    id="alokasi" name="alokasi">
+                                                <input type="text" class="form-control form-control-sm replaceDot"
+                                                    placeholder="" id="alokasi" name="alokasi">
                                             </div>
 
                                             <div class="d-flex justify-content-end mt-2"
@@ -1332,7 +1189,8 @@
                                                 <table class="table table-bordered table-hover" style="font-size: 8pt">
                                                     <thead class="thead-dark">
                                                         <tr>
-                                                            <th scope="col" class="text-nowrap pr-4">Jumlah Orang</th>
+                                                            <th scope="col" class="text-nowrap pr-4">Jumlah Orang
+                                                            </th>
                                                             <th scope="col" class="text-nowrap pr-4">KDN</th>
                                                             <th scope="col" class="text-nowrap pr-4">KLN</th>
                                                             <th scope="col" class="text-nowrap pr-4">Total</th>
@@ -1363,7 +1221,8 @@
                                                             <th scope="col" class="text-nowrap pr-4">
                                                                 <input type="text"
                                                                     class="form-control kapasitasNormalPerbulan kapasitasNormalPerbulan-1-5"
-                                                                    placeholder="" name="kapasitasNormalPerbulan" value="0">
+                                                                    placeholder="" name="kapasitasNormalPerbulan"
+                                                                    value="0">
                                                             </th>
                                                         </tr>
                                                     </thead>
@@ -1380,11 +1239,14 @@
                                                 <table class="table table-bordered table-hover" style="font-size: 8pt">
                                                     <thead>
                                                         <tr>
-                                                            <th scope="col" class="text-nowrap pr-4" id="kdn-biaya-satuan-product-1-5">KDN
+                                                            <th scope="col" class="text-nowrap pr-4"
+                                                                id="kdn-biaya-satuan-product-1-5">KDN
                                                             </th>
-                                                            <th scope="col" class="text-nowrap pr-4" id="kln-biaya-satuan-product-1-5">KLN
+                                                            <th scope="col" class="text-nowrap pr-4"
+                                                                id="kln-biaya-satuan-product-1-5">KLN
                                                             </th>
-                                                            <th scope="col" class="text-nowrap pr-4" id="total-biaya-satuan-product-1-5">Total
+                                                            <th scope="col" class="text-nowrap pr-4"
+                                                                id="total-biaya-satuan-product-1-5">Total
                                                             </th>
                                                         </tr>
                                                     </thead>
@@ -1453,7 +1315,8 @@
                                                     </div>
                                                     <input type="text" class="form-control biayaDepresiasiPerbulan16"
                                                         placeholder="" id="biaya_depresiasi_perbulan"
-                                                        name="biaya_depresiasi_perbulan" required autocomplete="off" value="0,00">
+                                                        name="biaya_depresiasi_perbulan" required autocomplete="off"
+                                                        value="0,00">
                                                 </div>
                                             </div>
 
@@ -1670,9 +1533,12 @@
                                             <table class="table table-bordered table-hover" style="font-size: 8pt">
                                                 <thead>
                                                     <tr>
-                                                        <th scope="col" class="text-nowrap pr-4" id="kdn-biaya-satuan-product-1-6">KDN</th>
-                                                        <th scope="col" class="text-nowrap pr-4" id="kln-biaya-satuan-product-1-6">KLN</th>
-                                                        <th scope="col" class="text-nowrap pr-4" id="total-biaya-satuan-product-1-6">Total
+                                                        <th scope="col" class="text-nowrap pr-4"
+                                                            id="kdn-biaya-satuan-product-1-6">KDN</th>
+                                                        <th scope="col" class="text-nowrap pr-4"
+                                                            id="kln-biaya-satuan-product-1-6">KLN</th>
+                                                        <th scope="col" class="text-nowrap pr-4"
+                                                            id="total-biaya-satuan-product-1-6">Total
                                                         </th>
                                                     </tr>
                                                 </thead>
@@ -1740,9 +1606,9 @@
 
                                             <div class="form-group-sm mx-2 mt-2 "
                                                 style="font-size: 10pt; width : 13rem">
-                                                <label for="">Biaya Sewa Per Bulan<i
-                                                        class="fas fa-info-circle" data-toggle="tooltip"
-                                                        data-placement="top" title="Tooltip on top">
+                                                <label for="">Biaya Sewa Per Bulan<i class="fas fa-info-circle"
+                                                        data-toggle="tooltip" data-placement="top"
+                                                        title="Tooltip on top">
                                                     </i></label>
                                                 <div class="input-group input-group-sm mb-3">
                                                     <div class="input-group-prepend">
@@ -1750,7 +1616,8 @@
                                                     </div>
                                                     <input type="text" class="form-control biayaSewaPerbulan17"
                                                         placeholder="" id="biaya_sewa_perbulan"
-                                                        name="biaya_sewa_perbulan" required autocomplete="off" value="0,00">
+                                                        name="biaya_sewa_perbulan" required autocomplete="off"
+                                                        value="0,00">
                                                 </div>
                                             </div>
 
@@ -1967,9 +1834,12 @@
                                             <table class="table table-bordered table-hover" style="font-size: 8pt">
                                                 <thead>
                                                     <tr>
-                                                        <th scope="col" class="text-nowrap pr-4" id="kdn-biaya-satuan-product-1-7">KDN</th>
-                                                        <th scope="col" class="text-nowrap pr-4" id="kln-biaya-satuan-product-1-7">KLN</th>
-                                                        <th scope="col" class="text-nowrap pr-4" id="total-biaya-satuan-product-1-7">Total
+                                                        <th scope="col" class="text-nowrap pr-4"
+                                                            id="kdn-biaya-satuan-product-1-7">KDN</th>
+                                                        <th scope="col" class="text-nowrap pr-4"
+                                                            id="kln-biaya-satuan-product-1-7">KLN</th>
+                                                        <th scope="col" class="text-nowrap pr-4"
+                                                            id="total-biaya-satuan-product-1-7">Total
                                                         </th>
                                                     </tr>
                                                 </thead>
@@ -1980,8 +1850,7 @@
                             </div>
 
                             {{-- tab content 1.8 List data untuk jasa jasa terkait --}}
-                            <div class="tab-pane fade" id="v-overhead" role="tabpanel"
-                                aria-labelledby="v-overhead">
+                            <div class="tab-pane fade" id="v-overhead" role="tabpanel" aria-labelledby="v-overhead">
                                 <div class="row">
                                     <div class="col">
                                         <h5>Form 1.8 : Tingkat Komponen Dalam Negeri Biaya Tidak Langsung Pabrik</h5>
@@ -2022,28 +1891,29 @@
                                                     id="" placeholder="" name="jumlah">
                                             </div>
 
-                                            <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
+                                            <div class="form-group-sm mx-2 mt-2 "
+                                                style="font-size: 10pt; width : 13rem">
                                                 <label for="tkdn">TKDN % <i class="fas fa-info-circle"
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm replaceDot" id="tkdn"
-                                                    name="tkdn" placeholder="">
+                                                <input type="text" class="form-control form-control-sm replaceDot"
+                                                    id="tkdn" name="tkdn" placeholder="">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 "
                                                 style="font-size: 10pt; width : 13rem">
-                                                <label for="">Biaya Per Bulan<i
-                                                        class="fas fa-info-circle" data-toggle="tooltip"
-                                                        data-placement="top" title="Tooltip on top">
+                                                <label for="">Biaya Per Bulan<i class="fas fa-info-circle"
+                                                        data-toggle="tooltip" data-placement="top"
+                                                        title="Tooltip on top">
                                                     </i></label>
                                                 <div class="input-group input-group-sm mb-3">
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="basic-addon1">Rp.</span>
                                                     </div>
                                                     <input type="text" class="form-control biayaPerbulan18"
-                                                        placeholder="" id="biaya_perbulan"
-                                                        name="biaya_perbulan" required autocomplete="off" value="0,00">
+                                                        placeholder="" id="biaya_perbulan" name="biaya_perbulan"
+                                                        required autocomplete="off" value="0,00">
                                                 </div>
                                             </div>
 
@@ -2224,9 +2094,12 @@
                                             <table class="table table-bordered table-hover" style="font-size: 8pt">
                                                 <thead>
                                                     <tr>
-                                                        <th scope="col" class="text-nowrap pr-4" id="kdn-biaya-satuan-product-1-8">KDN</th>
-                                                        <th scope="col" class="text-nowrap pr-4" id="kln-biaya-satuan-product-1-8">KLN</th>
-                                                        <th scope="col" class="text-nowrap pr-4" id="total-biaya-satuan-product-1-8">Total
+                                                        <th scope="col" class="text-nowrap pr-4"
+                                                            id="kdn-biaya-satuan-product-1-8">KDN</th>
+                                                        <th scope="col" class="text-nowrap pr-4"
+                                                            id="kln-biaya-satuan-product-1-8">KLN</th>
+                                                        <th scope="col" class="text-nowrap pr-4"
+                                                            id="total-biaya-satuan-product-1-8">Total
                                                         </th>
                                                     </tr>
                                                 </thead>
@@ -2265,9 +2138,11 @@
                                             <table class="table table-striped table-hover" style="font-size: 8pt">
                                                 <thead class="bg-dark text-light">
                                                     <tr>
-                                                        <th scope="col" class="text-nowrap pr-4 border align-middle" colspan="2" rowspan="2">Uraian</th>
+                                                        <th scope="col" class="text-nowrap pr-4 border align-middle"
+                                                            colspan="2" rowspan="2">Uraian</th>
                                                         <th colspan="3" class="border text-center">Biaya</th>
-                                                        <th scope="col" class="text-nowrap pr-4 border align-middle" rowspan="2">TKDN %</th>
+                                                        <th scope="col" class="text-nowrap pr-4 border align-middle"
+                                                            rowspan="2">TKDN %</th>
                                                     </tr>
                                                     <tr>
                                                         <th class="border">KDN</th>
@@ -2403,13 +2278,14 @@
                     <table class="table">
                         <thead class="bg-dark text-light border">
                             <tr>
-                                <th colspan="2">Biaya Produksi</th>
+                                <th class="d-flex justify-content-center">TKDN</th>
                             </tr>
                         </thead>
                         <tbody id="tbody-10">
                             <tr>
-                                <th><h4>TKDN %</h4></th>
-                                <th><h3 id="BiayaProduksiFinalTkdn">0%</h3></th>
+                                <th class="d-flex justify-content-center">
+                                    <h2 id="BiayaProduksiFinalTkdn">0%</h2>
+                                </th>
                             </tr>
                         </tbody>
                     </table>
@@ -2542,7 +2418,7 @@
                                         sumPdriPpn: "sum:pdriPpnCalc",
                                         sumPph: "sum:pphCalc",
                                         // sumPdriTotal: "{formulas.sumBm} + {formulas.sumPdriPpn} + {formulas.sumPph}"
-                                        sumPdriTotal: "sum:bmCalc + sum:pdriPpnCalc + sum:pphCalc"
+                                        sumPdriTotal: "sum:bmCalc + sum:pdriPpnCalc + sum:pphCalc",
                                     },
                                     "data": []
                                 },
@@ -2559,7 +2435,31 @@
                                         sumKln: "sum:kln",
                                         sumTotal: "sum:total",
                                     },
-                                    "data": []
+                                    "data": [{
+                                            "uraian": "Local PPN",
+                                            "produsen_tingkat_dua": "Dirjen Pajak",
+                                            "jumlah": "1",
+                                            "tkdn": "100",
+                                            "biaya": "0,00",
+                                            "alokasi": "100",
+                                            "id": new Date().getTime(),
+                                            "kdn": 0,
+                                            "kln": 0,
+                                            "total": 0,
+                                        },
+                                        {
+                                            "uraian": "PDRI",
+                                            "produsen_tingkat_dua": "Bea Cukai",
+                                            "jumlah": "1",
+                                            "tkdn": "100",
+                                            "biaya": "0,00",
+                                            "alokasi": "100",
+                                            "id": new Date().getTime(),
+                                            "kdn": 0,
+                                            "kln": 0,
+                                            "total": 0,
+                                        }
+                                    ]
                                 },
                                 {
                                     "id": "3",
@@ -2595,7 +2495,32 @@
                                         sumKln: "sum:kln",
                                         sumTotal: "sum:total",
                                     },
-                                    "data": []
+                                    "data": [
+                                        {
+                                            "uraian_posisi": "BPJS",
+                                            "produsen_tingkat_dua": "-",
+                                            "tkdn": "100",
+                                            "jumlah_orang": "-",
+                                            "biaya_pengurusan_per_bulan": "0,00",
+                                            "alokasi": "100",
+                                            "id": new Date().getTime(),
+                                            "kdn": 0,
+                                            "kln": 0,
+                                            "total": 0
+                                        },
+                                        {
+                                            "uraian_posisi": "Tunjangan Lainnya",
+                                            "produsen_tingkat_dua": "-",
+                                            "tkdn": "100",
+                                            "jumlah_orang": "-",
+                                            "biaya_pengurusan_per_bulan": "0,00",
+                                            "alokasi": "100",
+                                            "id": new Date().getTime(),
+                                            "kdn": 0,
+                                            "kln": 0,
+                                            "total": 0
+                                        }
+                                    ]
                                 },
                                 {
                                     "id": "5",
@@ -2901,45 +2826,38 @@
             let replacedFormulas = replaceFormulas(formulas, formResult);
 
             for (let key in replacedFormulas) {
-                let hasSum = false;
-                replacedFormulas[key] = replacedFormulas[key].replace(sumRegex, function(match, formulaName) {
-                    if (formulaName) {
-                        let sum = 0;
-                        if (results.length > 0) {
-                            for (let i = 0; i < results.length; i++) {
-                                sum += (parseFloat(results[i][formulaName]))
-                                if (i == 0) {
-                                    sum = sum + parseFloat(finalResult[formulaName]);
-                                }
-                            }
-                        } else {
-                            sum = parseFloat(finalResult[formulaName]);
-                        }
-
-                        calculation[key] = eval(sum);
-
-                        hasSum = true;
-                        return `(${sum})`;
-                    }
-                });
-
-
-                if (!sumRegex.test(replacedFormulas[key])) {
+                sumRegex.lastIndex = 0;
+                if (!sumRegex.test(replacedFormulas[key]) === true) {
                     finalResult[key] = eval(replacedFormulas[key]);
-                }
-                // else {
-                //     console.log("sum");
-                //     finalResult[key] = replacedFormulas[key];
-                // }
-
-                if (hasSum) {
-                    calculation[key] = finalResult[key];
-                    hasSum = false;
                 }
             }
 
             calculation.data.push(finalResult);
 
+            calculateSumFormula();
+            if (id == 1) {
+                let calculation2 = calculations.find(f => f.id == 2);
+
+                calculation2.data[0].kdn = calculation.sumPpn;
+                calculation2.data[0].total = calculation.sumPpn;
+                calculation2.data[1].kdn = calculation.sumPdriTotal;
+                calculation2.data[1].total = calculation.sumPdriTotal;
+
+                calculateSumFormula();
+            }
+
+            if (id == 3) {
+                let calculation4 = calculations.find(f => f.id == 4);
+
+                calculation4.data[0].biaya_pengurusan_per_bulan = formatToCurrency(calculation.sumBpjs);
+                calculation4.data[0].kdn = calculation.sumBpjs;
+                calculation4.data[0].total = calculation.sumBpjs;
+                calculation4.data[1].biaya_pengurusan_per_bulan = formatToCurrency(calculation.sumTunjanganLainnya);
+                calculation4.data[1].kdn = calculation.sumTunjanganLainnya;
+                calculation4.data[1].total = calculation.sumTunjanganLainnya;
+
+                calculateSumFormula();
+            }
 
             // Mengonversi objek menjadi string JSON
             let jsonDraftCalculations = JSON.stringify(draftCalculations);
@@ -2948,12 +2866,45 @@
             localStorage.setItem('draftCalculations', jsonDraftCalculations);
         }
 
+        function calculateSumFormula() {
+            const sumRegex = /sum:(\w+)/g
+
+            calculations.forEach(calculation => {
+                let formulas = calculation.formulas;
+                Object.keys(formulas).forEach(formulaKey => {
+                    if (sumRegex.test(formulas[formulaKey])) {
+                        let sum = 0;
+                        sumRegex.lastIndex = 0;
+                        formulas[formulaKey].replace(sumRegex, (match, key) => {
+                            calculation.data.forEach(calculationResult => {
+                                if(typeof calculationResult[key] == "string") {
+                                    calculationResult[key] = parseFloat(calculationResult[key]);
+                                }
+                                sum += (calculationResult[key] ?? 0);
+                            });
+                        })
+
+                        calculation[formulaKey] = sum;
+                    }
+                })
+            })
+
+            let draftCalculation = draftCalculations.find(f => f.computationId == computationId);
+
+            calculations.forEach((calculation, index) => {
+                if(index >= 2) {
+                    calculation.bspKdn = (calculation.sumKdn ?? 0) / (draftCalculation.kapasitasNormalPerbulan ?? 0);
+                    calculation.bspKln = (calculation.sumKln ?? 0) / (draftCalculation.kapasitasNormalPerbulan ?? 0);
+                    calculation.bspTotal = (calculation.sumTotal ?? 0) / (draftCalculation.kapasitasNormalPerbulan ?? 0);
+                }
+            })
+        }
+
         function replaceFormulas(formulas, resultObject) {
             const variableRegex = /{(\w+)}/g;
             const variableRegex2 = /\{formulas\.(\w+)\}/g;
             let result = {};
             let replacedFormulas = {};
-            console.log(formulas)
             for (let key in formulas) {
                 replacedFormulas[key] = formulas[key].replace(variableRegex, function(match, fieldName) {
                     return parseCurrencyOrDecimal(resultObject[fieldName]) || 0;
@@ -3074,6 +3025,7 @@
                 // Hapus calculation dari array computation.data
                 computation.data.splice(calculationIndex, 1);
 
+                calculateSumFormula();
                 // Mengonversi objek menjadi string JSON
                 let jsonDraftCalculations = JSON.stringify(draftCalculations);
 
@@ -3155,13 +3107,6 @@
                 const tbody = $(`#${tbodyId}`);
                 tbody.empty();
                 calculation = calculations.find(f => f.id == calculationId);
-                calculation1 = calculations.find(f => f.id == 1);
-                let sumLocalPpn12 = formatToCurrency(calculation1.sumPpn)
-                let sumLocalKdn12 = formatToCurrency(calculation1.sumPpn)
-                let sumLocalTotal12 = formatToCurrency(calculation1.sumPpn)
-                let sumPdriTotal12 = formatToCurrency(calculation1.sumPdriTotal)
-                let sumPdriKln12 = formatToCurrency(calculation1.sumPdriTotal)
-                let sumPdri12 = formatToCurrency(calculation1.sumPdriTotal)
                 let sumKdn = formatToCurrency(calculation.sumKdn)
                 let sumKln = formatToCurrency(calculation.sumKln)
                 let sumTotal = formatToCurrency(calculation.sumTotal)
@@ -3170,47 +3115,58 @@
                 // let sumPdriPpn = parseInt(calculation.sumPdriPpn).toLocaleString()
                 // let sumPph = parseInt(calculation.sumPph).toLocaleString()
                 // let sumPdriTotal = parseInt(calculation.sumPdriTotal).toLocaleString()
-                $(`#sumLocalPpn-1-2`).text(sumLocalPpn12)
-                $(`#sumLocalKdn-1-2`).text(sumLocalKdn12)
-                $(`#sumLocalTotal-1-2`).text(sumLocalTotal12)
-                $(`#sumPdriTotal-1-2`).text(sumPdriTotal12)
-                $(`#sumPdriKln-1-2`).text(sumPdriKln12)
-                $(`#sumPdri-1-2`).text(sumPdri12)
-                $(`#sumKdn-1-2`).text(formatToCurrency(((calculation.sumKdn ?? 0) + (calculation1.sumPpn ?? 0) + (
-                    calculation1.sumPdriTotal ?? 0))))
+                $(`#sumKdn-1-2`).text(formatToCurrency((calculation.sumKdn ?? 0)))
                 $(`#sumKln-1-2`).text(formatToCurrency((calculation.sumKln ?? 0)))
-                $(`#sumTotal-1-2`).text(formatToCurrency(((calculation.sumKdn ?? 0) + (calculation1.sumPpn ?? 0)) + ((
-                        calculation.sumKln ?? 0) +
-                    (calculation1.sumPdriTotal ?? 0))));
+                $(`#sumTotal-1-2`).text(formatToCurrency((calculation.sumTotal ?? 0)));
                 calculation.data.forEach(function(item, index) {
-                    index = index + 2;
-                    let row = "<tr>" +
-                        `<td>
-                            <div class="dropdown">
-                                <div id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">
-                                    <svg xmlns="http://www.w3.org/2000/svg" height="16" width="4" viewBox="0 0 128 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M64 360a56 56 0 1 0 0 112 56 56 0 1 0 0-112zm0-160a56 56 0 1 0 0 112 56 56 0 1 0 0-112zM120 96A56 56 0 1 0 8 96a56 56 0 1 0 112 0z"/></svg>
-                                </div>
-                                <div class="dropdown-menu"
-                                    aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item buttonEditNews"
-                                        onclick="edit(${item.id})"><i class="fa fa-edit"></i> Edit
-                                    </a>
-                                    <button class="dropdown-item" type="submit" onclick="destroy(${calculation.id}, ${item.id})"><i
-                                            class="fa fa-trash"></i> Delete</button>
-                                </div>
-                            </div>
-                        </td>` +
-                        "<td>" + (index + 1) + "</td>" +
-                        "<td class='text-nowrap'>" + item.uraian + "</td>" +
-                        "<td>" + item.produsen_tingkat_dua + "</td>" +
-                        "<td>" + item.jumlah + "</td>" +
-                        "<td>" + item.tkdn + "%</td>" +
-                        "<td class='text-nowrap'>" + "Rp " + item.biaya + "</td>" +
-                        "<td>" + item.alokasi + "%</td>" +
-                        "<td class='text-nowrap'>" + formatToCurrency(item.kdn) + "</td>" +
-                        "<td class='text-nowrap'>" + formatToCurrency(item.kln) + "</td>" +
-                        "<td class='text-nowrap'>" + formatToCurrency(item.total) + "</td>" +
-                        "</tr>";
+                    let row = "";
+                    if (index <= 1) {
+                        row = `
+                            <tr>
+                                <td></td>
+                                <td>${(index + 1)}</td>
+                                <td class='text-nowrap'>${item.uraian}</td>
+                                <td>${item.produsen_tingkat_dua}</td>
+                                <td>${item.jumlah}</td>
+                                <td>${item.tkdn}%</td>
+                                <td class='text-nowrap'>Rp ${item.biaya}</td>
+                                <td>${item.alokasi}%</td>
+                                <td class='text-nowrap'>${formatToCurrency(item.kdn)}</td>
+                                <td class='text-nowrap'>${formatToCurrency(item.kln)}</td>
+                                <td class='text-nowrap'>${formatToCurrency(item.total)}</td>
+                            </tr>
+                        `
+                    } else {
+                        row = `
+                            <tr>
+                                <td>
+                                    <div class="dropdown">
+                                        <div id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">
+                                            <svg xmlns="http://www.w3.org/2000/svg" height="16" width="4" viewBox="0 0 128 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M64 360a56 56 0 1 0 0 112 56 56 0 1 0 0-112zm0-160a56 56 0 1 0 0 112 56 56 0 1 0 0-112zM120 96A56 56 0 1 0 8 96a56 56 0 1 0 112 0z"/></svg>
+                                        </div>
+                                        <div class="dropdown-menu"
+                                            aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item buttonEditNews"
+                                                onclick="edit(${item.id})"><i class="fa fa-edit"></i> Edit
+                                            </a>
+                                            <button class="dropdown-item" type="submit" onclick="destroy(${calculation.id}, ${item.id})"><i
+                                                    class="fa fa-trash"></i> Delete</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>${(index + 1)}</td>
+                                <td class='text-nowrap'>${item.uraian}</td>
+                                <td>${item.produsen_tingkat_dua}</td>
+                                <td>${item.jumlah}</td>
+                                <td>${item.tkdn}%</td>
+                                <td class='text-nowrap'>Rp ${item.biaya}</td>
+                                <td>${item.alokasi}%</td>
+                                <td class='text-nowrap'>${formatToCurrency(item.kdn)}</td>
+                                <td class='text-nowrap'>${formatToCurrency(item.kln)}</td>
+                                <td class='text-nowrap'>${formatToCurrency(item.total)}</td>
+                            </tr>
+                        `
+                    }
 
                     tbody.append(row);
                 });
@@ -3225,13 +3181,9 @@
                 $(`#1-3-sumKdn`).text(sumKdn)
                 $(`#1-3-sumKln`).text(sumKln)
                 $(`#1-3-sumTotal`).text(sumTotal)
-                $(`#kdn-biaya-satuan-product-1-3`).text(formatToCurrency(calculation.sumKdn / parseCurrencyOrDecimal(
-                    draftCalculations.find(f => f.computationId == computationId).kapasitasNormalPerbulan)))
-                $(`#kln-biaya-satuan-product-1-3`).text(formatToCurrency(calculation.sumKln / parseCurrencyOrDecimal(
-                    draftCalculations.find(f => f.computationId == computationId).kapasitasNormalPerbulan)))
-                $(`#total-biaya-satuan-product-1-3`).text(formatToCurrency(calculation.sumTotal / parseCurrencyOrDecimal(
-                    draftCalculations.find(f => f.computationId == computationId).kapasitasNormalPerbulan)))
-                console.log(calculation);
+                $(`#kdn-biaya-satuan-product-1-3`).text(formatToCurrency(calculation.bspKdn ?? 0))
+                $(`#kln-biaya-satuan-product-1-3`).text(formatToCurrency(calculation.bspKln ?? 0))
+                $(`#total-biaya-satuan-product-1-3`).text(formatToCurrency(calculation.bspTotal ?? 0))
                 calculation.data.forEach(function(item, index) {
                     let row = `
                     <tr>
@@ -3275,51 +3227,60 @@
                 let sumKdn = formatToCurrency(calculation.sumKdn)
                 let sumKln = formatToCurrency(calculation.sumKln)
                 let sumTotal = formatToCurrency(calculation.sumTotal)
-                $(`#1-4-sumJumlahOrang`).text(calculation.sumJumlahOrang)
-                $(`#1-4-sumKdn`).text(formatToCurrency((calculation.sumKdn ?? 0) + (calculation3.sumBpjs ?? 0) + (calculation3.sumTunjanganLainnya ?? 0)))
+                $(`#1-4-sumJumlahOrang`).text(calculation.sumJumlahOrang ?? 0)
+                $(`#1-4-sumKdn`).text(formatToCurrency((calculation.sumKdn ?? 0)))
                 $(`#1-4-sumKln`).text(sumKln)
-                $(`#1-4-sumTotal`).text(formatToCurrency((calculation.sumTotal ?? 0) + (calculation3.sumBpjs ?? 0) + (calculation3.sumTunjanganLainnya ?? 0)))
-                $(`#sumBpjs-1-4-3`).text(formatToCurrency(calculation3.sumBpjs ?? 0))
-                $(`#sumBpjsKdn-1-4-3`).text(formatToCurrency(calculation3.sumBpjs ?? 0))
-                $(`#sumBpjsTotal-1-4-3`).text(formatToCurrency(calculation3.sumBpjs ?? 0))
-                $(`#sumTunjanganLainnya-1-4-3`).text(formatToCurrency(calculation3.sumTunjanganLainnya ?? 0))
-                $(`#sumTunjanganLainnyaKdn-1-4-3`).text(formatToCurrency(calculation3.sumTunjanganLainnya ?? 0))
-                $(`#sumTunjanganLainnyaTotal-1-4-3`).text(formatToCurrency(calculation3.sumTunjanganLainnya ?? 0))
-                $(`#kdn-biaya-satuan-product-1-4`).text(formatToCurrency(calculation.sumKdn / parseCurrencyOrDecimal(
-                    draftCalculations.find(f => f.computationId == computationId).kapasitasNormalPerbulan)))
-                $(`#kln-biaya-satuan-product-1-4`).text(formatToCurrency(calculation.sumKln / parseCurrencyOrDecimal(
-                    draftCalculations.find(f => f.computationId == computationId).kapasitasNormalPerbulan)))
-                $(`#total-biaya-satuan-product-1-4`).text(formatToCurrency(calculation.sumTotal / parseCurrencyOrDecimal(
-                    draftCalculations.find(f => f.computationId == computationId).kapasitasNormalPerbulan)))
-                console.log(calculation);
+                $(`#1-4-sumTotal`).text(formatToCurrency((calculation.sumTotal ?? 0)))
+                $(`#kdn-biaya-satuan-product-1-4`).text(formatToCurrency(calculation.bspKdn ?? 0))
+                $(`#kln-biaya-satuan-product-1-4`).text(formatToCurrency(calculation.bspKln ?? 0))
+                $(`#total-biaya-satuan-product-1-4`).text(formatToCurrency(calculation.bspTotal ?? 0))
                 calculation.data.forEach(function(item, index) {
-                    let row = `<tr> +
-                        <td>
-                            <div class="dropdown">
-                                <div id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">
-                                    <svg xmlns="http://www.w3.org/2000/svg" height="16" width="4" viewBox="0 0 128 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M64 360a56 56 0 1 0 0 112 56 56 0 1 0 0-112zm0-160a56 56 0 1 0 0 112 56 56 0 1 0 0-112zM120 96A56 56 0 1 0 8 96a56 56 0 1 0 112 0z"/></svg>
-                                </div>
-                                <div class="dropdown-menu"
-                                    aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item buttonEditNews"
-                                        onclick="edit(${item.id})"><i class="fa fa-edit"></i> Edit
-                                    </a>
-                                    <button class="dropdown-item" type="submit" onclick="destroy(${calculation.id}, ${item.id})"><i
-                                            class="fa fa-trash"></i> Delete</button>
-                                </div>
-                            </div>
-                        </td>
-                        <td>${(index + 3)}</td>
-                        <td class="text-nowrap"> ${item.uraian_posisi} </td>
-                        <td> ${item.produsen_tingkat_dua} </td>
-                        <td> ${item.tkdn}% </td>
-                        <td> ${item.jumlah_orang} </td>
-                        <td class="text-nowrap"> Rp ${item.biaya_pengurusan_per_bulan} </td>
-                        <td> ${item.alokasi}%</td>
-                        <td class="text-nowrap"> ${formatToCurrency(item.kdn)} </td>
-                        <td class="text-nowrap"> ${formatToCurrency(item.kln)} </td>
-                        <td class="text-nowrap"> ${formatToCurrency(item.total)} </td>
+                    let row = "";
+                    if(index <= 1) {
+                        row = `
+                        <tr>
+                            <td></td>
+                            <td>${(index + 1)}</td>
+                            <td class="text-nowrap"> ${item.uraian_posisi} </td>
+                            <td> ${item.produsen_tingkat_dua} </td>
+                            <td> ${item.tkdn}% </td>
+                            <td> ${item.jumlah_orang ?? "-"} </td>
+                            <td class="text-nowrap"> ${item.biaya_pengurusan_per_bulan} </td>
+                            <td> ${item.alokasi}%</td>
+                            <td class="text-nowrap"> ${formatToCurrency(item.kdn)} </td>
+                            <td class="text-nowrap"> ${formatToCurrency(item.kln)} </td>
+                            <td class="text-nowrap"> ${formatToCurrency(item.total)} </td>
                         </tr>`;
+                    } else {
+                        row = `
+                            <tr>
+                                <td>
+                                    <div class="dropdown">
+                                        <div id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">
+                                            <svg xmlns="http://www.w3.org/2000/svg" height="16" width="4" viewBox="0 0 128 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M64 360a56 56 0 1 0 0 112 56 56 0 1 0 0-112zm0-160a56 56 0 1 0 0 112 56 56 0 1 0 0-112zM120 96A56 56 0 1 0 8 96a56 56 0 1 0 112 0z"/></svg>
+                                        </div>
+                                        <div class="dropdown-menu"
+                                            aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item buttonEditNews"
+                                                onclick="edit(${item.id})"><i class="fa fa-edit"></i> Edit
+                                            </a>
+                                            <button class="dropdown-item" type="submit" onclick="destroy(${calculation.id}, ${item.id})"><i
+                                                    class="fa fa-trash"></i> Delete</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>${(index + 1)}</td>
+                                <td class="text-nowrap"> ${item.uraian_posisi} </td>
+                                <td> ${item.produsen_tingkat_dua} </td>
+                                <td> ${item.tkdn}% </td>
+                                <td> ${item.jumlah_orang ?? 0} </td>
+                                <td class="text-nowrap"> Rp ${item.biaya_pengurusan_per_bulan} </td>
+                                <td> ${item.alokasi}%</td>
+                                <td class="text-nowrap"> ${formatToCurrency(item.kdn)} </td>
+                                <td class="text-nowrap"> ${formatToCurrency(item.kln)} </td>
+                                <td class="text-nowrap"> ${formatToCurrency(item.total)} </td>
+                            </tr>`;
+                    }
 
                     tbody.append(row);
                 });
@@ -3334,13 +3295,9 @@
                 $(`#1-5-sumKdn`).text(sumKdn)
                 $(`#1-5-sumKln`).text(sumKln)
                 $(`#1-5-sumTotal`).text(sumTotal)
-                $(`#kdn-biaya-satuan-product-1-5`).text(formatToCurrency(calculation.sumKdn / parseCurrencyOrDecimal(
-                    draftCalculations.find(f => f.computationId == computationId).kapasitasNormalPerbulan)))
-                $(`#kln-biaya-satuan-product-1-5`).text(formatToCurrency(calculation.sumKln / parseCurrencyOrDecimal(
-                    draftCalculations.find(f => f.computationId == computationId).kapasitasNormalPerbulan)))
-                $(`#total-biaya-satuan-product-1-5`).text(formatToCurrency(calculation.sumTotal / parseCurrencyOrDecimal(
-                    draftCalculations.find(f => f.computationId == computationId).kapasitasNormalPerbulan)))
-                console.log(calculation);
+                $(`#kdn-biaya-satuan-product-1-5`).text(formatToCurrency(calculation.bspKdn ?? 0))
+                $(`#kln-biaya-satuan-product-1-5`).text(formatToCurrency(calculation.bspKln ?? 0))
+                $(`#total-biaya-satuan-product-1-5`).text(formatToCurrency(calculation.bspTotal ?? 0))
                 calculation.data.forEach(function(item, index) {
                     let row = "<tr>" +
                         `<td>
@@ -3383,13 +3340,9 @@
                 $(`#1-6-sumKdn`).text(sumKdn)
                 $(`#1-6-sumKln`).text(sumKln)
                 $(`#1-6-sumTotal`).text(sumTotal)
-                $(`#kdn-biaya-satuan-product-1-6`).text(formatToCurrency(calculation.sumKdn / parseCurrencyOrDecimal(
-                    draftCalculations.find(f => f.computationId == computationId).kapasitasNormalPerbulan)))
-                $(`#kln-biaya-satuan-product-1-6`).text(formatToCurrency(calculation.sumKln / parseCurrencyOrDecimal(
-                    draftCalculations.find(f => f.computationId == computationId).kapasitasNormalPerbulan)))
-                $(`#total-biaya-satuan-product-1-6`).text(formatToCurrency(calculation.sumTotal / parseCurrencyOrDecimal(
-                    draftCalculations.find(f => f.computationId == computationId).kapasitasNormalPerbulan)))
-                console.log(calculation);
+                $(`#kdn-biaya-satuan-product-1-6`).text(formatToCurrency(calculation.bspKdn ?? 0))
+                $(`#kln-biaya-satuan-product-1-6`).text(formatToCurrency(calculation.bspKln ?? 0))
+                $(`#total-biaya-satuan-product-1-6`).text(formatToCurrency(calculation.bspTotal ?? 0))
                 calculation.data.forEach(function(item, index) {
                     let row = `<tr> +
                         <td>
@@ -3433,13 +3386,9 @@
                 $(`#1-7-sumKdn`).text(sumKdn)
                 $(`#1-7-sumKln`).text(sumKln)
                 $(`#1-7-sumTotal`).text(sumTotal)
-                $(`#kdn-biaya-satuan-product-1-7`).text(formatToCurrency(calculation.sumKdn / parseCurrencyOrDecimal(
-                    draftCalculations.find(f => f.computationId == computationId).kapasitasNormalPerbulan)))
-                $(`#kln-biaya-satuan-product-1-7`).text(formatToCurrency(calculation.sumKln / parseCurrencyOrDecimal(
-                    draftCalculations.find(f => f.computationId == computationId).kapasitasNormalPerbulan)))
-                $(`#total-biaya-satuan-product-1-7`).text(formatToCurrency(calculation.sumTotal / parseCurrencyOrDecimal(
-                    draftCalculations.find(f => f.computationId == computationId).kapasitasNormalPerbulan)))
-                console.log(calculation);
+                $(`#kdn-biaya-satuan-product-1-7`).text(formatToCurrency(calculation.bspKdn ?? 0))
+                $(`#kln-biaya-satuan-product-1-7`).text(formatToCurrency(calculation.bspKln ?? 0))
+                $(`#total-biaya-satuan-product-1-7`).text(formatToCurrency(calculation.bspTotal ?? 0))
                 calculation.data.forEach(function(item, index) {
                     let row = `<tr> +
                         <td>
@@ -3483,13 +3432,9 @@
                 $(`#1-8-sumKdn`).text(sumKdn)
                 $(`#1-8-sumKln`).text(sumKln)
                 $(`#1-8-sumTotal`).text(sumTotal)
-                $(`#kdn-biaya-satuan-product-1-8`).text(formatToCurrency(calculation.sumKdn / parseCurrencyOrDecimal(
-                    draftCalculations.find(f => f.computationId == computationId).kapasitasNormalPerbulan)))
-                $(`#kln-biaya-satuan-product-1-8`).text(formatToCurrency(calculation.sumKln / parseCurrencyOrDecimal(
-                    draftCalculations.find(f => f.computationId == computationId).kapasitasNormalPerbulan)))
-                $(`#total-biaya-satuan-product-1-8`).text(formatToCurrency(calculation.sumTotal / parseCurrencyOrDecimal(
-                    draftCalculations.find(f => f.computationId == computationId).kapasitasNormalPerbulan)))
-                console.log(calculation);
+                $(`#kdn-biaya-satuan-product-1-8`).text(formatToCurrency(calculation.bspKdn ?? 0))
+                $(`#kln-biaya-satuan-product-1-8`).text(formatToCurrency(calculation.bspKln ?? 0))
+                $(`#total-biaya-satuan-product-1-8`).text(formatToCurrency(calculation.bspTotal ?? 0))
                 calculation.data.forEach(function(item, index) {
                     let row = `<tr> +
                         <td>
@@ -3527,54 +3472,39 @@
                 let sumKdn19 = 0;
                 let sumKln19 = 0;
                 let sumTotal19 = 0;
-                let sumPpn12 = 0;
-                let sumPdriTotal12 = 0;
-                let sumBpjs13 = 0;
-                let sumTunjanganLainnya13 = 0;
                 calculations.forEach(function(item, index) {
-                    if(index == 0) {
-                        sumPpn12 = item.sumPpn;
-                        sumPdriTotal12 = item.sumPdriTotal;
-                    } else if(index == 2) {
-                        sumBpjs13 = item.sumBpjs;
-                        sumTunjanganLainnya13 = item.sumTunjanganLainnya;
-                    }
-
-                    if(index == 1) {
-                        sumKdn19 += (item.sumKdn ?? 0) + (sumPpn12 ?? 0) + (sumPdriTotal12 ?? 0)
-                    } else if(index == 3) {
-                        sumKdn19 += (item.sumKdn ?? 0) + (sumBpjs13 ?? 0) + (sumTunjanganLainnya13 ?? 0)
-                    } else {
+                    if(index <= 1) {
                         sumKdn19 += item.sumKdn ?? 0;
-                    }
-
-                    sumKln19 += item.sumKln ?? 0;
-
-                    if(index == 1) {
-                        sumTotal19 += (item.sumTotal ?? 0) + (item.sumKdn ?? 0) + (sumPpn12 ?? 0) + (sumPdriTotal12 ?? 0);
-                    } else if(index == 3) {
-                        sumTotal19 += (item.sumTotal ?? 0) + (item.sumKdn ?? 0) + (sumBpjs13 ?? 0) + (sumTunjanganLainnya13 ?? 0);
-                    } else {
+                        sumKln19 += item.sumKln ?? 0;
                         sumTotal19 += item.sumTotal ?? 0;
+                    } else {
+                        sumKdn19 += item.bspKdn ?? 0;
+                        sumKln19 += item.bspKln ?? 0;
+                        sumTotal19 += item.bspTotal ?? 0;
                     }
                 })
 
                 calculations.forEach(function(item, index) {
-                    if(index == 1) {
-                        item.sumTotal = (item.sumKdn ?? 0) + (item.sumKln ?? 0) + (sumPpn12 ?? 0) + (sumPdriTotal12 ?? 0);
-                        item.sumKdn = (item.sumKdn ?? 0) + (sumPpn12 ?? 0) + (sumPdriTotal12 ?? 0);
-                    } else if(index == 3) {
-                        item.sumTotal = (item.sumKdn ?? 0) + (item.sumKln ?? 0) + (sumBpjs13 ?? 0) + (sumTunjanganLainnya13 ?? 0);
-                        item.sumKdn = (item.sumKdn ?? 0) + (sumBpjs13 ?? 0) + (sumTunjanganLainnya13 ?? 0);
+                    let row = "";
+                    if(index <= 1) {
+                        row = `<tr>
+                            <td class="text-nowrap"> ${item.no} </td>
+                            <td class="text-nowrap"> ${item.nama} </td>
+                            <td class="text-nowrap"> ${formatToCurrency(item.sumKdn) ?? ("Rp " + 0 + ",00")} </td>
+                            <td class="text-nowrap"> ${formatToCurrency(item.sumKln) ?? ("Rp " + 0 + ",00")} </td>
+                            <td class="text-nowrap"> ${formatToCurrency(item.sumTotal) ?? ("Rp " + 0 + ",00")} </td>
+                            <td class="text-nowrap"> ${sumTotal19 != null ? (((item.sumKdn ?? 0) / sumTotal19 * 100).toFixed(2)) : 0}% </td>
+                            </tr>`;
+                    } else {
+                        row = `<tr>
+                            <td class="text-nowrap"> ${item.no} </td>
+                            <td class="text-nowrap"> ${item.nama} </td>
+                            <td class="text-nowrap"> ${formatToCurrency(item.bspKdn ?? 0)} </td>
+                            <td class="text-nowrap"> ${formatToCurrency(item.bspKln ?? 0)} </td>
+                            <td class="text-nowrap"> ${formatToCurrency(item.bspTotal ?? 0)} </td>
+                            <td class="text-nowrap"> ${sumTotal19 != null ? (((item.bspKdn ?? 0) / sumTotal19 * 100).toFixed(2)) : 0}% </td>
+                            </tr>`;
                     }
-                    let row = `<tr>
-                        <td class="text-nowrap"> ${item.no} </td>
-                        <td class="text-nowrap"> ${item.nama} </td>
-                        <td class="text-nowrap"> ${formatToCurrency(item.sumKdn) ?? ("Rp " + 0 + ",00")} </td>
-                        <td class="text-nowrap"> ${formatToCurrency(item.sumKln) ?? ("Rp " + 0 + ",00")} </td>
-                        <td class="text-nowrap"> ${formatToCurrency(item.sumTotal) ?? ("Rp " + 0 + ",00")} </td>
-                        <td class="text-nowrap"> ${((item.sumKdn ?? 0) / sumTotal19 * 100).toFixed(2)}% </td>
-                        </tr>`;
 
                     tbody.append(row);
                 });
@@ -3582,16 +3512,22 @@
                 $("#sumKdn-1-9").text(formatToCurrency(sumKdn19));
                 $("#sumKln-1-9").text(formatToCurrency(sumKln19));
                 $("#sumTotal-1-9").text(formatToCurrency(sumTotal19));
-                $("#sumTkdn-1-9").text((sumKdn19 / sumTotal19 * 100).toFixed(2) + "%");
+                $("#sumTkdn-1-9").text(`${sumTotal19 != null ? (((sumKdn19 ?? 0) / (sumTotal19 ?? 0) * 100).toFixed(2)) : 0}%`);
             } else if (tbodyId == "tbody-10") {
                 const tbody = $(`#${tbodyId}`);
                 let sumKdn19 = 0;
                 let sumKln19 = 0;
                 let sumTotal19 = 0;
                 calculations.forEach(function(item, index) {
-                    sumKdn19 += item.sumKdn ?? 0;
-                    sumKln19 += item.sumKln ?? 0;
-                    sumTotal19 += item.sumTotal ?? 0;
+                    if(index <= 1) {
+                        sumKdn19 += item.sumKdn ?? 0;
+                        sumKln19 += item.sumKln ?? 0;
+                        sumTotal19 += item.sumTotal ?? 0;
+                    } else {
+                        sumKdn19 += item.bspKdn ?? 0;
+                        sumKln19 += item.bspKln ?? 0;
+                        sumTotal19 += item.bspTotal ?? 0;
+                    }
                 })
 
                 $("#BiayaProduksiFinalTkdn").text((sumKdn19 / sumTotal19 * 100).toFixed(2) + "%");
@@ -3599,7 +3535,8 @@
         }
 
         function reloadAllTable() {
-            $(".kapasitasNormalPerbulan").val(draftCalculations.find(f => f.computationId == computationId).kapasitasNormalPerbulan);
+            $(".kapasitasNormalPerbulan").val(draftCalculations.find(f => f.computationId == computationId)
+                .kapasitasNormalPerbulan);
 
             reloadTable("tbody-1", 1);
             reloadTable("tbody-2", 2);
@@ -3628,6 +3565,13 @@
                 let draftCalculation = draftCalculations.find(f => f.computationId == computationId);
                 draftCalculation.kapasitasNormalPerbulan = kapasitasNormalPerbulan;
 
+                calculations.forEach((calculation, index) => {
+                    if(index >= 2) {
+                        calculation.bspKdn = (calculation.sumKdn ?? 0) / (draftCalculation.kapasitasNormalPerbulan ?? 0);
+                        calculation.bspKln = (calculation.sumKln ?? 0) / (draftCalculation.kapasitasNormalPerbulan ?? 0);
+                        calculation.bspTotal = (calculation.sumTotal ?? 0) / (draftCalculation.kapasitasNormalPerbulan ?? 0);
+                    }
+                })
                 // Mengonversi objek menjadi string JSON
                 let jsonDraftCalculations = JSON.stringify(draftCalculations);
 
@@ -3697,7 +3641,7 @@
             })
 
             $(".nav-link").on("click", (event) => {
-                if($(event.currentTarget).attr("id") == "v-rekapitulasi-tab") {
+                if ($(event.currentTarget).attr("id") == "v-rekapitulasi-tab") {
                     $("#table-biaya-produksi-1-9").removeClass("d-none");
                 } else {
                     $("#table-biaya-produksi-1-9").addClass("d-none");
