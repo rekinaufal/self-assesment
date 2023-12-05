@@ -170,7 +170,7 @@ class UserController extends Controller
     public function exportExcel()
     {
         $data = [
-            "computations" => Computation::latest()->get()->toArray(),
+            "computations" => Computation::where('id', 1)->get(),
             "form_detail" => CalculationResult::where('computation_id', 1)->get()->toArray(),
         ];
         // dd($data['form_detail'][0]['results']);
@@ -182,7 +182,7 @@ class UserController extends Controller
             // dd($item['no']);
             $form[$item['no']] = $item['data'];
         }
-        // dd($form);
+        // dd($form, $data['computations'][0]);
         $export = new UserExport($form, $data['computations'][0]);
         // Excel::download($export, 'report.xlsx');
         // return Excel::download(new UserExport, 'user.xlsx');
