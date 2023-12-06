@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Computation;
+use App\Models\CalculationResult;
 use App\Models\PermenperinCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -113,5 +114,23 @@ class ComputationController extends Controller
         }
 
         return redirect()->route("computation.index")->with("success", "Success to delete the computation!");
+    }
+
+    public function exportExcel($id)
+    {
+        $data = [
+            "computations" => Computation::where('id', $id)->get(),
+            "form_detail" => CalculationResult::where('computation_id', $id)->get()->toArray(),
+        ];
+        if (!$data['form_detail'][0]) {
+            return redirect()->back()->with('failed', 'Data is Empty');
+        }
+        // dd($data['form_detail'][0]['results']['calculations']);
+        $form = [];
+        foreach ($data['form_detail'][0]['results']['calculations'] as $item) {
+            $form[$item['no']] = $item;
+        }
+        $export = new UserExport($form, $data['computations'][0]);
+        return Excel::download($export, 'report.xlsx');
     }
 }

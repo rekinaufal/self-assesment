@@ -82,6 +82,7 @@
                                                                 <div class="dropdown-menu"
                                                                     aria-labelledby="dropdownMenuButton">
                                                                     <a class="dropdown-item" href="{{ route('computation.show', $computation) }}">Detail</a>
+                                                                    <a class="dropdown-item" href="{{ url('/exportExcelComputation', $computation) }}">Export Excel</a>
                                                                     <a class="dropdown-item buttonEditNews"
                                                                         onclick="editComputation({{ $computation }})">Edit</a>
                                                                     <form action="{{ route('computation.destroy', $computation) }}"
