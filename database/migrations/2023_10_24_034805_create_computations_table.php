@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string("specification");
             $table->string("brand");
             $table->unsignedBigInteger("user_id")->nullable();
+            $table->enum("status", ["On Editing", "Draft", "Pending", "Finished"])->default("Draft");
             $table->timestamps();
 
             $table->foreign("permenperin_category_id")->references("id")->on("permenperin_categories")->cascadeOnDelete()->cascadeOnUpdate();

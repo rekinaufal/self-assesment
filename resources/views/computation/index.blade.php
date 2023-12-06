@@ -62,8 +62,12 @@
                                     <div class="row">
                                         @foreach ($computations as $computation)
                                             <div class="card-padding col-12 col-lg-6">
-                                                <div class="card px-0 mt-3 mx-0 mx-lg-1"
+                                                <div class="card px-0 mt-3 mx-0 mx-lg-1 position-relative"
                                                     style="box-shadow: 0 0 15px -5px gray !important;">
+                                                    <div
+                                                        class="badge badge-{{ $computation->status == "Draft" ? "success" : "warning" }} text-wrap position-absolute px-4 py-2" style="bottom: 0; right: 0;">
+                                                        {{ $computation->status }}
+                                                    </div>
                                                     <div
                                                         class="card-header d-flex justify-content-between align-items-start">
                                                         <div class="form-check">
@@ -73,7 +77,8 @@
                                                         </div>
                                                         <div class="badges d-flex align-items-center">
                                                             <div
-                                                                class="badge badge-{{ $computation->permenperin_category->color }} text-wrap">{{ $computation->permenperin_category->name }}</div>
+                                                                class="badge badge-{{ $computation->permenperin_category->color }} text-wrap">
+                                                                {{ $computation->permenperin_category->name }}</div>
                                                             <div class="dropdown">
                                                                 <i data-feather="more-vertical" id="dropdownMenuButton"
                                                                     class="feather-icon dropdown-toggle"
@@ -81,11 +86,15 @@
                                                                     aria-haspopup="true" aria-expanded="false"></i>
                                                                 <div class="dropdown-menu"
                                                                     aria-labelledby="dropdownMenuButton">
-                                                                    <a class="dropdown-item" href="{{ route('computation.show', $computation) }}">Detail</a>
-                                                                    <a class="dropdown-item" href="{{ url('/exportExcelComputation', $computation) }}">Export Excel</a>
+                                                                    <a class="dropdown-item"
+                                                                        href="{{ route('computation.show', $computation) }}">Detail</a>
+                                                                    <a class="dropdown-item"
+                                                                        href="{{ url('/exportExcelComputation', $computation) }}">Export
+                                                                        Excel</a>
                                                                     <a class="dropdown-item buttonEditNews"
                                                                         onclick="editComputation({{ $computation }})">Edit</a>
-                                                                    <form action="{{ route('computation.destroy', $computation) }}"
+                                                                    <form
+                                                                        action="{{ route('computation.destroy', $computation) }}"
                                                                         method="post">
                                                                         @csrf
                                                                         @method('DELETE')
@@ -163,9 +172,11 @@
                                 <td>
                                     <select name="permenperin_category_id" id="permenperin_category_id"
                                         class="form-control">
-                                        <option class="permenperin_category_id_default" value="" selected disabled>-- pilih permenperin --</option>
+                                        <option class="permenperin_category_id_default" value="" selected disabled>
+                                            -- pilih permenperin --</option>
                                         @foreach ($permenperinCategories as $permenperinCategory)
-                                            <option class="permenperin_category_id" value="{{ $permenperinCategory->id }}">
+                                            <option class="permenperin_category_id"
+                                                value="{{ $permenperinCategory->id }}">
                                                 {{ $permenperinCategory->name }}
                                             </option>
                                         @endforeach
@@ -246,6 +257,7 @@
                 console.log("Modal Closed")
             })
         })
+
         function editComputation(data) {
             console.log(data);
             $("#id").val(data.id);

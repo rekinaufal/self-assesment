@@ -17,7 +17,7 @@ class Computation extends Model
         "production_result" => "required",
         "product_type" => "required",
         "specification" => "required",
-        "brand" => "required"
+        "brand" => "required",
     ];
 
     protected $table = "computations";
@@ -27,7 +27,8 @@ class Computation extends Model
         "production_result",
         "product_type",
         "specification",
-        "brand"
+        "brand",
+        "status"
     ];
 
     protected $guarded = [

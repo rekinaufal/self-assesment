@@ -71,7 +71,8 @@
                                                         class="fas fa-info-circle">
                                                     </i></label>
                                                 <input type="text" name="bahan_baku"
-                                                    class="form-control form-control-sm trigger-enter" id="bahan_baku" placeholder="">
+                                                    class="form-control form-control-sm trigger-enter" id="bahan_baku"
+                                                    placeholder="">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -79,7 +80,8 @@
                                                         data-toggle="tooltip" data-placement="top" title="Tooltip on top">
                                                     </i></label>
                                                 <input type="text" name="spesifikasi"
-                                                    class="form-control form-control-sm trigger-enter" id="spesifikasi" placeholder="">
+                                                    class="form-control form-control-sm trigger-enter" id="spesifikasi"
+                                                    placeholder="">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -87,8 +89,8 @@
                                                         class="fas fa-info-circle" data-toggle="tooltip"
                                                         data-placement="top" title="Tooltip on top">
                                                     </i></label>
-                                                <select class="form-control form-control-sm trigger-enter" id="satuan_bahan_baku"
-                                                    name="satuan_bahan_baku">
+                                                <select class="form-control form-control-sm trigger-enter"
+                                                    id="satuan_bahan_baku" name="satuan_bahan_baku">
                                                     <option></option>
                                                     <option value="Pcs">Pcs</option>
                                                     <option value="Pack">Pack</option>
@@ -116,8 +118,9 @@
                                                         class="fas fa-info-circle" data-toggle="tooltip"
                                                         data-placement="top" title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" name="pemasok" class="form-control form-control-sm trigger-enter"
-                                                    id="pemasok" placeholder="">
+                                                <input type="text" name="pemasok"
+                                                    class="form-control form-control-sm trigger-enter" id="pemasok"
+                                                    placeholder="">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -125,8 +128,9 @@
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm trigger-enter replaceDot"
-                                                    id="tkdn" name="tkdn" placeholder="">
+                                                <input type="text"
+                                                    class="form-control form-control-sm trigger-enter replaceDot currencyInputFormatter"
+                                                    id="tkdn" name="tkdn" placeholder="" value="0,00">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -134,8 +138,9 @@
                                                         class="fas fa-info-circle" data-toggle="tooltip"
                                                         data-placement="top" title="Tooltip on top">
                                                     </i></label>
-                                                <input type="number" name="jumlah" class="form-control form-control-sm trigger-enter"
-                                                    id="jumlah" placeholder="">
+                                                <input type="text" name="jumlah"
+                                                    class="form-control form-control-sm trigger-enter currencyInputFormatter" id="jumlah"
+                                                    placeholder="" value="0,00">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -147,9 +152,9 @@
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="basic-addon1">Rp.</span>
                                                     </div>
-                                                    <input type="text" class="form-control rupiahInput trigger-enter" placeholder=""
-                                                        id="harga_satuan" name="harga_satuan" required autocomplete="off"
-                                                        value="0,00">
+                                                    <input type="text" class="form-control trigger-enter currencyInputFormatter"
+                                                        placeholder="" id="harga_satuan" name="harga_satuan" required
+                                                        autocomplete="off" value="0,00">
                                                 </div>
                                             </div>
 
@@ -168,8 +173,8 @@
                                                                 <label for="ppn">PPN %</label>
                                                                 <input type="text" name="ppn"
                                                                     style=" width : 15rem"
-                                                                    class="form-control form-control-sm replaceDot trigger-enter"
-                                                                    id="ppn" placeholder="" value="0">
+                                                                    class="form-control form-control-sm replaceDot trigger-enter currencyInputFormatter"
+                                                                    id="ppn" placeholder="" value="0,00">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -189,19 +194,19 @@
                                                             <div class="form-group-sm ml-2" style="font-size: 7pt;">
                                                                 <label for="bm">BM %</label>
                                                                 <input type="text" name="bm" style="width: 5rem"
-                                                                    class="form-control form-control-sm replaceDot trigger-enter"
-                                                                    id="bm" placeholder="" value="0">
+                                                                    class="form-control form-control-sm replaceDot trigger-enter currencyInputFormatter"
+                                                                    id="bm" placeholder="" value="0,00">
                                                             </div>
                                                             <div class="form-group-sm ml-2" style="font-size: 7pt;">
                                                                 <label for="pdri_ppn">PPN %</label>
                                                                 <input type="text" name="pdri_ppn" style="width: 5rem"
-                                                                    class="form-control form-control-sm replaceDot trigger-enter"
-                                                                    id="pdri_ppn" placeholder="" value="0">
+                                                                    class="form-control form-control-sm replaceDot trigger-enter currencyInputFormatter"
+                                                                    id="pdri_ppn" placeholder="" value="0,00">
                                                             </div>
                                                             <div class="form-group-sm ml-2" style="font-size: 7pt;">
                                                                 <label for="pph">PPH %</label>
                                                                 <input type="text" name="pph" style="width: 5rem"
-                                                                    class="form-control form-control-sm replaceDot trigger-enter"
+                                                                    class="form-control form-control-sm replaceDot trigger-enter currencyInputFormatter"
                                                                     id="pph" placeholder="" value="0">
                                                             </div>
                                                         </div>
@@ -356,7 +361,7 @@
                                                         class="fas fa-info-circle">
                                                     </i></label>
                                                 <input type="text" name="uraian"
-                                                    class="form-control form-control-sm " id="" placeholder="">
+                                                    class="form-control trigger-enter form-control-sm " id="" placeholder="">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -365,7 +370,7 @@
                                                         data-placement="top" title="Tooltip on top">
                                                     </i></label>
                                                 <input type="text" name="produsen_tingkat_dua"
-                                                    class="form-control form-control-sm" id="" placeholder="">
+                                                    class="form-control trigger-enter form-control-sm" id="" placeholder="">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -373,8 +378,8 @@
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm" id=""
-                                                    placeholder="" name="jumlah">
+                                                <input type="text" class="form-control trigger-enter form-control-sm currencyInputFormatter" id=""
+                                                    placeholder="" name="jumlah" value="0,00">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -382,8 +387,8 @@
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm replaceDot"
-                                                    id="" placeholder="" name="tkdn">
+                                                <input type="text" class="form-control trigger-enter form-control-sm replaceDot currencyInputFormatter"
+                                                    id="" placeholder="" name="tkdn" value="0,00">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -395,7 +400,7 @@
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="basic-addon1">Rp.</span>
                                                     </div>
-                                                    <input type="text" class="form-control biaya12" placeholder=""
+                                                    <input type="text" class="form-control trigger-enter currencyInputFormatter" placeholder=""
                                                         id="1-2-biaya" name="biaya" required autocomplete="off"
                                                         value="0,00">
                                                 </div>
@@ -403,11 +408,11 @@
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
                                                 <label for="">Alokasi Biaya % <i
-                                                        class="fas fa-info-circle replaceDot" data-toggle="tooltip"
+                                                        class="fas fa-info-circle" data-toggle="tooltip"
                                                         data-placement="top" title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm" id=""
-                                                    placeholder="" name="alokasi">
+                                                <input type="text" class="form-control trigger-enter form-control-sm replaceDot currencyInputFormatter" id=""
+                                                    placeholder="" name="alokasi" value="0,00">
                                             </div>
 
                                             <div class="d-flex justify-content-end mt-2"
@@ -509,7 +514,7 @@
                                                         title="Nama bahan baku adalah nama yang ditunjukkan pada nama material bahan baku dalam pembuatan produk. Contoh : Biji besi, Bracket dll"
                                                         class="fas fa-info-circle">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm "
+                                                <input type="text" class="form-control trigger-enter form-control-sm"
                                                     id="" placeholder="" name="uraian_posisi">
                                             </div>
 
@@ -518,7 +523,7 @@
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <select class="form-control form-control-sm setTkdn" id=""
+                                                <select class="form-control trigger-enter form-control-sm setTkdn" id=""
                                                     name="kewarganegaraan">
                                                     <option></option>
                                                     @foreach ($countries as $country)
@@ -533,8 +538,8 @@
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm" id=""
-                                                    placeholder="" name="jumlah_orang" value="0">
+                                                <input type="number" class="form-control trigger-enter form-control-sm" id=""
+                                                    placeholder="" name="jumlah_orang" value="">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -546,7 +551,7 @@
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="basic-addon1">Rp.</span>
                                                     </div>
-                                                    <input type="text" class="form-control gaji_perbulan13"
+                                                    <input type="text" class="form-control trigger-enter currencyInputFormatter"
                                                         placeholder="" id="1-2-gaji_perbulan" name="gaji_perbulan"
                                                         required autocomplete="off" value="0,00">
                                                 </div>
@@ -557,8 +562,8 @@
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm replaceDot"
-                                                    id="" placeholder="" name="alokasi_gaji" value="0">
+                                                <input type="text" class="form-control trigger-enter form-control-sm replaceDot currencyInputFormatter"
+                                                    id="" placeholder="" name="alokasi_gaji" value="0,00">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt;">
@@ -574,8 +579,8 @@
                                                             <div class="form-group-sm ml-2" style="font-size: 7pt;">
                                                                 <label for="">BPJS %</label>
                                                                 <input type="text" style="width: 8rem"
-                                                                    class="form-control form-control-sm replaceDot"
-                                                                    id="" value="0" name="bpjs_percent">
+                                                                    class="form-control trigger-enter form-control-sm replaceDot currencyInputFormatter"
+                                                                    id="" value="0,00" name="bpjs_percent">
                                                             </div>
                                                             <div class="form-group-sm ml-2" style="font-size: 7pt;">
                                                                 <label for="">Tunjangan Lainnya</label>
@@ -585,7 +590,7 @@
                                                                             id="basic-addon1">Rp.</span>
                                                                     </div>
                                                                     <input type="text"
-                                                                        class="form-control form-control-sm tunjanganLainnya13"
+                                                                        class="form-control trigger-enter form-control-sm currencyInputFormatter"
                                                                         placeholder="" id="currency_tunjangan_lainnya"
                                                                         name="currency_tunjangan_lainnya" required
                                                                         autocomplete="off" value="0,00">
@@ -673,7 +678,7 @@
                                                             style="font-size: 10pt">Kapasitas Normal Perbulan</th>
                                                         <td colspan="3">
                                                             <input type="text"
-                                                                class="form-control kapasitasNormalPerbulan kapasitasNormalPerbulan-1-3"
+                                                                class="form-control trigger-enter kapasitasNormalPerbulan kapasitasNormalPerbulan-1-3"
                                                                 placeholder="" name="kapasitasNormalPerbulan"
                                                                 value="0">
                                                         </td>
@@ -717,7 +722,7 @@
                                                         title="Nama bahan baku adalah nama yang ditunjukkan pada nama material bahan baku dalam pembuatan produk. Contoh : Biji besi, Bracket dll"
                                                         class="fas fa-info-circle">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm "
+                                                <input type="text" class="form-control trigger-enter form-control-sm "
                                                     id="uraian_posisi" name="uraian_posisi" placeholder="">
                                             </div>
 
@@ -726,7 +731,7 @@
                                                         class="fas fa-info-circle" data-toggle="tooltip"
                                                         data-placement="top" title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm"
+                                                <input type="text" class="form-control trigger-enter form-control-sm"
                                                     id="produsen_tingkat_dua" name="produsen_tingkat_dua" placeholder="">
                                             </div>
 
@@ -736,8 +741,8 @@
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm replaceDot"
-                                                    id="tkdn" name="tkdn" placeholder="">
+                                                <input type="text" class="form-control trigger-enter form-control-sm replaceDot currencyInputFormatter"
+                                                    id="tkdn" name="tkdn" placeholder="" value="0,00">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -745,8 +750,8 @@
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm"
-                                                    id="jumlah_orang" name="jumlah_orang" placeholder="">
+                                                <input type="number" class="form-control trigger-enter form-control-sm"
+                                                    id="jumlah_orang" name="jumlah_orang" placeholder="" value="">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -758,7 +763,7 @@
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="basic-addon1">Rp.</span>
                                                     </div>
-                                                    <input type="text" class="form-control biaya_pengurusan_perbulan14"
+                                                    <input type="text" class="form-control trigger-enter currencyInputFormatter"
                                                         placeholder="" id="biaya_pengurusan_per_bulan"
                                                         name="biaya_pengurusan_per_bulan" required autocomplete="off"
                                                         value="0,00">
@@ -770,8 +775,8 @@
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm replaceDot"
-                                                    id="alokasi" name="alokasi" placeholder="">
+                                                <input type="text" class="form-control trigger-enter form-control-sm replaceDot currencyInputFormatter"
+                                                    id="alokasi" name="alokasi" placeholder="" value="0,00">
                                             </div>
 
 
@@ -851,7 +856,7 @@
                                                             style="font-size: 10pt">Kapasitas Normal Perbulan</th>
                                                         <td colspan="3">
                                                             <input type="text"
-                                                                class="form-control kapasitasNormalPerbulan kapasitasNormalPerbulan-1-4"
+                                                                class="form-control trigger-enter kapasitasNormalPerbulan kapasitasNormalPerbulan-1-4"
                                                                 placeholder="" name="kapasitasNormalPerbulan"
                                                                 value="0">
                                                         </td>
@@ -898,7 +903,7 @@
                                                         class="fas fa-info-circle">
                                                     </i>
                                                 </label>
-                                                <input type="text" class="form-control form-control-sm"
+                                                <input type="text" class="form-control trigger-enter form-control-sm"
                                                     id="uraian_posisi" name="uraian_posisi">
                                             </div>
 
@@ -907,7 +912,7 @@
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <select class="form-control form-control-sm setTkdn" id=""
+                                                <select class="form-control trigger-enter form-control-sm setTkdn" id=""
                                                     name="kewarganegaraan">
                                                     <option></option>
                                                     @foreach ($countries as $country)
@@ -923,8 +928,8 @@
                                                     <i class="fas fa-info-circle" data-toggle="tooltip"
                                                         data-placement="top" title="Tooltip on top"></i>
                                                 </label>
-                                                <input type="text" class="form-control form-control-sm"
-                                                    id="jumlah_orang" name="jumlah_orang">
+                                                <input type="number" class="form-control trigger-enter form-control-sm"
+                                                    id="jumlah_orang" name="jumlah_orang" value="">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -937,7 +942,7 @@
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="basic-addon1">Rp.</span>
                                                     </div>
-                                                    <input type="text" class="form-control gaji_perbulan15"
+                                                    <input type="text" class="form-control trigger-enter currencyInputFormatter"
                                                         placeholder="" id="gaji_perbulan" name="gaji_perbulan" required
                                                         autocomplete="off" value="0,00">
                                                 </div>
@@ -949,8 +954,8 @@
                                                     <i class="fas fa-info-circle" data-toggle="tooltip"
                                                         data-placement="top" title="Tooltip on top"></i>
                                                 </label>
-                                                <input type="text" class="form-control form-control-sm replaceDot"
-                                                    placeholder="" id="alokasi" name="alokasi">
+                                                <input type="text" class="form-control trigger-enter form-control-sm replaceDot currencyInputFormatter"
+                                                    placeholder="" id="alokasi" name="alokasi" value="0,00">
                                             </div>
 
                                             <div class="d-flex justify-content-end mt-2"
@@ -1027,7 +1032,7 @@
                                                             style="font-size: 10pt">Kapasitas Normal Perbulan</th>
                                                         <td colspan="3">
                                                             <input type="text"
-                                                                class="form-control kapasitasNormalPerbulan kapasitasNormalPerbulan-1-5"
+                                                                class="form-control trigger-enter kapasitasNormalPerbulan kapasitasNormalPerbulan-1-5"
                                                                 placeholder="" name="kapasitasNormalPerbulan"
                                                                 value="0">
                                                         </td>
@@ -1071,7 +1076,7 @@
                                                         title="Nama bahan baku adalah nama yang ditunjukkan pada nama material bahan baku dalam pembuatan produk. Contoh : Biji besi, Bracket dll"
                                                         class="fas fa-info-circle">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm "
+                                                <input type="text" class="form-control trigger-enter form-control-sm "
                                                     id="" placeholder="" name="uraian">
                                             </div>
 
@@ -1081,7 +1086,7 @@
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm"
+                                                <input type="text" class="form-control trigger-enter form-control-sm"
                                                     id="" placeholder="" name="spesifikasi"
                                                     name="spesifikasi">
                                             </div>
@@ -1092,8 +1097,8 @@
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm"
-                                                    id="" placeholder="" name="jumlah_unit">
+                                                <input type="number" class="form-control trigger-enter form-control-sm"
+                                                    id="" placeholder="" name="jumlah_unit" value="">
                                             </div>
 
 
@@ -1107,7 +1112,7 @@
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="basic-addon1">Rp.</span>
                                                     </div>
-                                                    <input type="text" class="form-control biayaDepresiasiPerbulan16"
+                                                    <input type="text" class="form-control trigger-enter currencyInputFormatter"
                                                         placeholder="" id="biaya_depresiasi_perbulan"
                                                         name="biaya_depresiasi_perbulan" required autocomplete="off"
                                                         value="0,00">
@@ -1120,8 +1125,8 @@
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm replaceDot"
-                                                    id="" placeholder="" name="alokasi">
+                                                <input type="text" class="form-control trigger-enter form-control-sm replaceDot currencyInputFormatter"
+                                                    id="" placeholder="" name="alokasi" value="0,00">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt;">
@@ -1137,7 +1142,7 @@
                                                             <div class="form-group-sm ml-2" style="font-size: 7pt;">
                                                                 <label for="">Dibuat</label>
                                                                 <select name="dibuat" id="dibuat-1-6"
-                                                                    class="form-control form-control-sm"
+                                                                    class="form-control trigger-enter form-control-sm"
                                                                     style="width: 8rem">
                                                                     <option value="Dalam Negeri">Dalam Negeri</option>
                                                                     <option value="Luar Negeri">Luar Negeri</option>
@@ -1146,7 +1151,7 @@
                                                             <div class="form-group-sm ml-2" style="font-size: 7pt;">
                                                                 <label for="">Dimiliki</label>
                                                                 <select name="dimiliki" id="dimiliki-1-6"
-                                                                    class="form-control form-control-sm"
+                                                                    class="form-control trigger-enter form-control-sm"
                                                                     style="width: 8rem">
                                                                     <option value="Dalam Negeri">Dalam Negeri</option>
                                                                     <option value="Luar Negeri">Luar Negeri</option>
@@ -1194,6 +1199,7 @@
                                                         <th scope="col" class="text-nowrap pr-4">Spesifikasi</th>
                                                         <th scope="col" class="text-nowrap pr-4">Jumlah Unit</th>
                                                         <th scope="col" class="text-nowrap pr-4">Dibuat</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Dimiliki</th>
                                                         <th scope="col" class="text-nowrap pr-4">TKDN %</th>
                                                         <th scope="col" class="text-nowrap pr-4">Biaya Per Bulan</th>
                                                         <th scope="col" class="text-nowrap pr-4">Alokasi %</th>
@@ -1234,7 +1240,7 @@
                                                             style="font-size: 10pt">Kapasitas Normal Perbulan</th>
                                                         <td colspan="3">
                                                             <input type="text"
-                                                                class="form-control kapasitasNormalPerbulan kapasitasNormalPerbulan-1-6"
+                                                                class="form-control trigger-enter kapasitasNormalPerbulan kapasitasNormalPerbulan-1-6"
                                                                 placeholder="" name="kapasitasNormalPerbulan"
                                                                 value="0">
                                                         </td>
@@ -1278,7 +1284,7 @@
                                                         title="Nama bahan baku adalah nama yang ditunjukkan pada nama material bahan baku dalam pembuatan produk. Contoh : Biji besi, Bracket dll"
                                                         class="fas fa-info-circle">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm "
+                                                <input type="text" class="form-control trigger-enter form-control-sm "
                                                     id="" placeholder="" name="uraian">
                                             </div>
 
@@ -1288,7 +1294,7 @@
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm"
+                                                <input type="text" class="form-control trigger-enter form-control-sm"
                                                     id="" placeholder="" name="spesifikasi"
                                                     name="spesifikasi">
                                             </div>
@@ -1299,7 +1305,7 @@
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm"
+                                                <input type="text" class="form-control trigger-enter form-control-sm"
                                                     id="" placeholder="" name="produsen_tingkat_dua">
                                             </div>
 
@@ -1309,8 +1315,8 @@
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm"
-                                                    id="" placeholder="" name="jumlah_unit">
+                                                <input type="number" class="form-control trigger-enter form-control-sm"
+                                                    id="" placeholder="" name="jumlah_unit" value="">
                                             </div>
 
 
@@ -1324,7 +1330,7 @@
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="basic-addon1">Rp.</span>
                                                     </div>
-                                                    <input type="text" class="form-control biayaSewaPerbulan17"
+                                                    <input type="text" class="form-control trigger-enter currencyInputFormatter"
                                                         placeholder="" id="biaya_sewa_perbulan"
                                                         name="biaya_sewa_perbulan" required autocomplete="off"
                                                         value="0,00">
@@ -1337,8 +1343,8 @@
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm replaceDot"
-                                                    id="" placeholder="" name="alokasi">
+                                                <input type="text" class="form-control trigger-enter form-control-sm replaceDot currencyInputFormatter"
+                                                    id="" placeholder="" name="alokasi" value="0,00">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt;">
@@ -1354,7 +1360,7 @@
                                                             <div class="form-group-sm ml-2" style="font-size: 7pt;">
                                                                 <label for="">Dibuat</label>
                                                                 <select name="dibuat" id="dibuat-1-7"
-                                                                    class="form-control form-control-sm"
+                                                                    class="form-control trigger-enter form-control-sm"
                                                                     style="width: 8rem">
                                                                     <option value="Dalam Negeri">Dalam Negeri</option>
                                                                     <option value="Luar Negeri">Luar Negeri</option>
@@ -1363,7 +1369,7 @@
                                                             <div class="form-group-sm ml-2" style="font-size: 7pt;">
                                                                 <label for="">Dimiliki</label>
                                                                 <select name="dimiliki" id="dimiliki-1-7"
-                                                                    class="form-control form-control-sm"
+                                                                    class="form-control trigger-enter form-control-sm"
                                                                     style="width: 8rem">
                                                                     <option value="Dalam Negeri">Dalam Negeri</option>
                                                                     <option value="Luar Negeri">Luar Negeri</option>
@@ -1411,6 +1417,7 @@
                                                         <th scope="col" class="text-nowrap pr-4">Spesifikasi</th>
                                                         <th scope="col" class="text-nowrap pr-4">Jumlah Unit</th>
                                                         <th scope="col" class="text-nowrap pr-4">Dibuat</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Dimiliki</th>
                                                         <th scope="col" class="text-nowrap pr-4">TKDN %</th>
                                                         <th scope="col" class="text-nowrap pr-4">Biaya Per Bulan</th>
                                                         <th scope="col" class="text-nowrap pr-4">Alokasi %</th>
@@ -1451,7 +1458,7 @@
                                                             style="font-size: 10pt">Kapasitas Normal Perbulan</th>
                                                         <td colspan="3">
                                                             <input type="text"
-                                                                class="form-control kapasitasNormalPerbulan kapasitasNormalPerbulan-1-7"
+                                                                class="form-control trigger-enter kapasitasNormalPerbulan kapasitasNormalPerbulan-1-7"
                                                                 placeholder="" name="kapasitasNormalPerbulan"
                                                                 value="0">
                                                         </td>
@@ -1493,7 +1500,7 @@
                                                         title="Nama bahan baku adalah nama yang ditunjukkan pada nama material bahan baku dalam pembuatan produk. Contoh : Biji besi, Bracket dll"
                                                         class="fas fa-info-circle">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm "
+                                                <input type="text" class="form-control trigger-enter form-control-sm "
                                                     id="" placeholder="" name="uraian">
                                             </div>
 
@@ -1503,7 +1510,7 @@
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm"
+                                                <input type="text" class="form-control trigger-enter form-control-sm"
                                                     id="" placeholder="" name="pemasok">
                                             </div>
 
@@ -1513,8 +1520,8 @@
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm"
-                                                    id="" placeholder="" name="jumlah">
+                                                <input type="number" class="form-control trigger-enter form-control-sm"
+                                                    id="" placeholder="" name="jumlah" value="">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 "
@@ -1523,8 +1530,8 @@
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm replaceDot"
-                                                    id="tkdn" name="tkdn" placeholder="">
+                                                <input type="text" class="form-control trigger-enter form-control-sm replaceDot currencyInputFormatter"
+                                                    id="tkdn" name="tkdn" placeholder="" value="0,00">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 "
@@ -1537,7 +1544,7 @@
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="basic-addon1">Rp.</span>
                                                     </div>
-                                                    <input type="text" class="form-control biayaPerbulan18"
+                                                    <input type="text" class="form-control trigger-enter currencyInputFormatter"
                                                         placeholder="" id="biaya_perbulan" name="biaya_perbulan"
                                                         required autocomplete="off" value="0,00">
                                                 </div>
@@ -1549,8 +1556,8 @@
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm replaceDot"
-                                                    id="" placeholder="" name="alokasi">
+                                                <input type="text" class="form-control trigger-enter form-control-sm replaceDot currencyInputFormatter"
+                                                    id="" placeholder="" name="alokasi" value="0,00">
                                             </div>
 
                                             <div class="d-flex justify-content-end"
@@ -1627,7 +1634,7 @@
                                                             style="font-size: 10pt">Kapasitas Normal Perbulan</th>
                                                         <td colspan="3">
                                                             <input type="text"
-                                                                class="form-control kapasitasNormalPerbulan kapasitasNormalPerbulan-1-8"
+                                                                class="form-control trigger-enter kapasitasNormalPerbulan kapasitasNormalPerbulan-1-8"
                                                                 placeholder="" name="kapasitasNormalPerbulan"
                                                                 value="0">
                                                         </td>
@@ -1746,23 +1753,27 @@
                 {{-- button selanjutnya dan hapus --}}
                 <div class="card">
                     <div class="save-draft">
-                        <div class="form-group p-2 pt-0 pb-2">
+                        <div class="p-2 pt-0 pb-2">
                             <button class="btn btn-success btn-block"
                                 onclick="store('{{ route('calculation-results.store') }}', '{{ route('computation.index') }}', '{{ $computation->id }}')">Save
                                 Draft</button>
                         </div>
                     </div>
-                    <div class="form-group p-2 pb-0">
-                        <a href="#" class="btn btn-success btn-block">Selanjutnya ></a>
-                    </div>
-                    <div class="form-group p-2">
+                    {{-- <div class="p-2">
                         <a href="#" class="btn btn-danger flex-grow-1 btn-block">Hapus </a>
+                    </div> --}}
+                    <div class="p-2 pb-0">
+                        <a href="#" class="btn btn-success btn-block" id="buttonSelanjutnya">Selanjutnya <span class="pl-2">></span></a>
+                    </div>
+                    <div class="p-2 pb-0">
+                        <a href="#" class="btn btn-danger btn-block d-none" id="buttonKembali">Kembali <span class="pl-2"><</span></a>
                     </div>
                 </div>
                 {{-- header tab panel --}}
                 <div class="card">
-                    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist"
+                    <div class="nav flex-column nav-pills position-relative" id="v-pills-tab" role="tablist"
                         aria-orientation="vertical">
+                        <div class="position-absolute w-100" style="height: 100%"></div>
                         <a class="nav-link text-dark active" id="v-bahan-baku-tab" data-toggle="pill"
                             href="#v-bahan-baku" role="tab" aria-controls="v-bahan-baku" aria-selected="true">
                             <button class="btn-primary">1.1</button>
@@ -1835,6 +1846,168 @@
             </div>
         </div>
     </div>
+
+
+    <div class="modal fade" id="editCalculation-1" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Form 1.1 : Tingkat Komponen Dalam Negeri Bahan Baku</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="modal-edit-calculation">
+                    <form>
+                        <div class="row">
+                            <div class="form-group col-6">
+                                <label for="bahan_baku">Nama Bahan Baku <i data-toggle="tooltip" data-placement="top"
+                                        title="Nama bahan baku adalah nama yang ditunjukkan pada nama material bahan baku dalam pembuatan produk. Contoh : Biji besi, Bracket dll"
+                                        class="fas fa-info-circle">
+                                    </i></label>
+                                <input type="text" name="bahan_baku"
+                                    class="form-control form-control-sm trigger-enter" id="bahan_baku" placeholder="">
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="spesifikasi">Spesifikasi <i class="fas fa-info-circle"
+                                    data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                </i></label>
+                                <input type="text" name="spesifikasi"
+                                    class="form-control form-control-sm trigger-enter" id="spesifikasi"
+                                    placeholder="">
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="satuan_bahan_baku">Satuan bahan baku <i
+                                    class="fas fa-info-circle" data-toggle="tooltip"
+                                    data-placement="top" title="Tooltip on top">
+                                </i></label>
+                                <select class="form-control form-control-sm trigger-enter"
+                                    id="satuan_bahan_baku" name="satuan_bahan_baku">
+                                    <option></option>
+                                    <option value="Pcs">Pcs</option>
+                                    <option value="Pack">Pack</option>
+                                    <option value="Kg">Kg</option>
+                                    <option value="Liter">Liter</option>
+                                    <option value="Meter">Meter</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="negara_asal">Negara asal <i class="fas fa-info-circle"
+                                    data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                </i></label>
+                                <select class="form-control form-control-sm trigger-enter" id="negara_asal"
+                                    name="negara_asal">
+                                    <option></option>
+                                    @foreach ($countries as $country)
+                                        <option value="{{ $country }}">{{ $country }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="pemasok">Pemasok / Produsen Tingkat 2 <i
+                                    class="fas fa-info-circle" data-toggle="tooltip"
+                                    data-placement="top" title="Tooltip on top">
+                                </i></label>
+                                <input type="text" name="pemasok"
+                                    class="form-control form-control-sm trigger-enter" id="pemasok"
+                                    placeholder="">
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="tkdn">TKDN % <i class="fas fa-info-circle"
+                                    data-toggle="tooltip" data-placement="top"
+                                    title="Tooltip on top">
+                                </i></label>
+                                <input type="text"
+                                    class="form-control form-control-sm trigger-enter replaceDot"
+                                    id="tkdn" name="tkdn" placeholder="">
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="jumlah">Jumlah / Satuan Bahan Baku <i
+                                    class="fas fa-info-circle" data-toggle="tooltip"
+                                    data-placement="top" title="Tooltip on top">
+                                </i></label>
+                                <input type="number" name="jumlah"
+                                    class="form-control form-control-sm trigger-enter" id="jumlah"
+                                    placeholder="">
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="harga_satuan">Harga Satuan Material <i
+                                    class="fas fa-info-circle" data-toggle="tooltip"
+                                    data-placement="top" title="Tooltip on top">
+                                </i></label>
+                                <div class="input-group input-group-sm mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1">Rp.</span>
+                                    </div>
+                                    <input type="text" class="form-control rupiahInput trigger-enter"
+                                        placeholder="" id="harga_satuan" name="harga_satuan" required
+                                        autocomplete="off" value="0,00">
+                                </div>
+                            </div>
+                            <div class="form-group col-6">
+                                <div class="card p-2">
+                                    <div class="col">
+                                        <div class="row">
+                                            <label for="" class="mx-auto">
+                                                Lokal
+                                                <i class="fas fa-info-circle" data-toggle="tooltip"
+                                                    data-placement="top" title="Tooltip on top"></i>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <div class="form-group-sm" style="font-size: 7pt;">
+                                                <label for="ppn">PPN %</label>
+                                                <input type="text" name="ppn"
+                                                    class="w-100 form-control form-control-sm replaceDot trigger-enter"
+                                                    id="ppn" placeholder="" value="0">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group col-6">
+                                <div class="card p-2">
+                                    <div class="col">
+                                        <div class="row">
+                                            <label for="" class="mx-auto">PDRI <i
+                                                    class="fas fa-info-circle" data-toggle="tooltip"
+                                                    data-placement="top" title="Tooltip on top">
+                                                </i></label>
+                                        </div>
+                                        <div class="d-flex">
+                                            <div class="form-group-sm flex-fill ml-2" style="font-size: 7pt;">
+                                                <label for="bm">BM %</label>
+                                                <input type="text" name="bm" style="width: 5rem"
+                                                    class="form-control form-control-sm replaceDot trigger-enter"
+                                                    id="bm" placeholder="" value="0">
+                                            </div>
+                                            <div class="form-group-sm flex-fill ml-2" style="font-size: 7pt;">
+                                                <label for="pdri_ppn">PPN %</label>
+                                                <input type="text" name="pdri_ppn" style="width: 5rem"
+                                                    class="form-control form-control-sm replaceDot trigger-enter"
+                                                    id="pdri_ppn" placeholder="" value="0">
+                                            </div>
+                                            <div class="form-group-sm flex-fill ml-2" style="font-size: 7pt;">
+                                                <label for="pph">PPH %</label>
+                                                <input type="text" name="pph" style="width: 5rem"
+                                                    class="form-control form-control-sm replaceDot trigger-enter"
+                                                    id="pph" placeholder="" value="0">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
 
 @push('scripts')
@@ -1843,64 +2016,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/autonumeric/4.10.0/autoNumeric.min.js"></script>
     <script>
         $(() => {
-            var rupiahInput = new AutoNumeric('.rupiahInput', {
+            var currencyInputFormatter = new AutoNumeric.multiple('.currencyInputFormatter', 0, {
                 digitGroupSeparator: '.',
                 decimalCharacter: ',',
                 decimalPlaces: 2,
                 minimumValue: '0'
-            });
-
-            var rupiahInput12 = new AutoNumeric('.biaya12', {
-                digitGroupSeparator: '.',
-                decimalCharacter: ',',
-                decimalPlaces: 2,
-                minimumValue: '0'
-            });
-
-            var rupiahInput13 = new AutoNumeric('.gaji_perbulan13', {
-                digitGroupSeparator: '.',
-                decimalCharacter: ',',
-                decimalPlaces: 2,
-                minimumValue: '0'
-            });
-
-            var rupiahInput14 = new AutoNumeric('.biaya_pengurusan_perbulan14', {
-                digitGroupSeparator: '.',
-                decimalCharacter: ',',
-                decimalPlaces: 2,
-                minimumValue: '0'
-            });
-
-            var rupiahInput15 = new AutoNumeric('.gaji_perbulan15', {
-                digitGroupSeparator: '.',
-                decimalCharacter: ',',
-                decimalPlaces: 2,
-                minimumValue: '0'
-            });
-            var biayaDepresiasiPerbulan16 = new AutoNumeric('.biayaDepresiasiPerbulan16', {
-                digitGroupSeparator: '.',
-                decimalCharacter: ',',
-                decimalPlaces: 2,
-                minimumValue: '0'
-            });
-            var biayaSewaPerbulan17 = new AutoNumeric('.biayaSewaPerbulan17', {
-                digitGroupSeparator: '.',
-                decimalCharacter: ',',
-                decimalPlaces: 2,
-                minimumValue: '0'
-            });
-            var biayaPerbulan18 = new AutoNumeric('.biayaPerbulan18', {
-                digitGroupSeparator: '.',
-                decimalCharacter: ',',
-                decimalPlaces: 2,
-                minimumValue: '0'
-            });
-            var tunjanganLainnya13 = new AutoNumeric('.tunjanganLainnya13', {
-                digitGroupSeparator: '.',
-                decimalCharacter: ',',
-                decimalPlaces: 2,
-                minimumValue: '0'
-            });
+            })
         })
     </script>
     <script>
@@ -2421,7 +2542,8 @@
                                     calculationResult[key] = parseFloat(calculationResult[
                                         key]);
                                 }
-                                sum += (calculationResult[key] != null ? calculationResult[key] : 0);
+                                sum += (calculationResult[key] != null ? calculationResult[
+                                    key] : 0);
                             });
                         })
 
@@ -2435,9 +2557,9 @@
             calculations.forEach((calculation, index) => {
                 if (index >= 2) {
                     calculation.bspKdn = (calculation.sumKdn ?? 0) / (draftCalculation.kapasitasNormalPerbulan ??
-                    0);
+                        0);
                     calculation.bspKln = (calculation.sumKln ?? 0) / (draftCalculation.kapasitasNormalPerbulan ??
-                    0);
+                        0);
                     calculation.bspTotal = (calculation.sumTotal ?? 0) / (draftCalculation
                         .kapasitasNormalPerbulan ?? 0);
                 }
@@ -2541,12 +2663,22 @@
                         title: "Success",
                         text: response.success,
                         icon: "success",
-                        buttons: true,
+                        button: "Okay!",
                         dangerMode: false
-                    }).then((willRedirect) => {
-                        if (willRedirect) {
-                            location.href = redirectUrl
+                    }).then(() => {
+                        computationIndex = draftCalculations.findIndex(f => f.computationId == computationId);
+
+                        if(computationIndex !== -1) {
+                            draftCalculations.splice(computationIndex, 1);
                         }
+
+                        // Mengonversi objek menjadi string JSON
+                        let jsonDraftCalculations = JSON.stringify(draftCalculations);
+
+                        // Menyimpan data di Local Storage dengan kunci tertentu
+                        localStorage.setItem('draftCalculations', jsonDraftCalculations);
+
+                        location.href = redirectUrl;
                     });
                 },
                 error: function(error) {
@@ -2619,7 +2751,7 @@
                             </div>
                                 <div class="dropdown-menu"
                                     aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item buttonEditNews"
+                                    <a class="dropdown-item buttonEditNews" data-toggle="modal" data-target="#editCalculation-${calculationId}"
                                         onclick="edit(${item.id})"><i class="fa fa-edit"></i> Edit
                                     </a>
                                     <button class="dropdown-item" type="submit" onclick="destroy(${calculation.id}, ${item.id})"><i
@@ -2720,9 +2852,12 @@
                 $(`#1-3-sumKdn`).text(sumKdn)
                 $(`#1-3-sumKln`).text(sumKln)
                 $(`#1-3-sumTotal`).text(sumTotal)
-                $(`#kdn-biaya-satuan-product-1-3`).text(formatToCurrency(calculation.bspKdn != null ? calculation.bspKdn : 0))
-                $(`#kln-biaya-satuan-product-1-3`).text(formatToCurrency(calculation.bspKln != null ? calculation.bspKln : 0))
-                $(`#total-biaya-satuan-product-1-3`).text(formatToCurrency(calculation.bspTotal != null ? calculation.bspTotal : 0))
+                $(`#kdn-biaya-satuan-product-1-3`).text(formatToCurrency(calculation.bspKdn != null ? calculation.bspKdn :
+                    0))
+                $(`#kln-biaya-satuan-product-1-3`).text(formatToCurrency(calculation.bspKln != null ? calculation.bspKln :
+                    0))
+                $(`#total-biaya-satuan-product-1-3`).text(formatToCurrency(calculation.bspTotal != null ? calculation
+                    .bspTotal : 0))
                 calculation.data.forEach(function(item, index) {
                     let row = `
                     <tr>
@@ -2770,9 +2905,12 @@
                 $(`#1-4-sumKdn`).text(formatToCurrency((calculation.sumKdn != null ? calculation.sumKdn : 0)))
                 $(`#1-4-sumKln`).text(sumKln)
                 $(`#1-4-sumTotal`).text(formatToCurrency((calculation.sumTotal != null ? calculation.sumTotal : 0)))
-                $(`#kdn-biaya-satuan-product-1-4`).text(formatToCurrency(calculation.bspKdn != null ? calculation.bspKdn : 0))
-                $(`#kln-biaya-satuan-product-1-4`).text(formatToCurrency(calculation.bspKln != null ? calculation.bspKln : 0))
-                $(`#total-biaya-satuan-product-1-4`).text(formatToCurrency(calculation.bspTotal != null ? calculation.bspTotal : 0))
+                $(`#kdn-biaya-satuan-product-1-4`).text(formatToCurrency(calculation.bspKdn != null ? calculation.bspKdn :
+                    0))
+                $(`#kln-biaya-satuan-product-1-4`).text(formatToCurrency(calculation.bspKln != null ? calculation.bspKln :
+                    0))
+                $(`#total-biaya-satuan-product-1-4`).text(formatToCurrency(calculation.bspTotal != null ? calculation
+                    .bspTotal : 0))
                 calculation.data.forEach(function(item, index) {
                     let row = "";
                     if (index <= 1) {
@@ -2904,6 +3042,7 @@
                         <td> ${item.spesifikasi} </td>
                         <td> ${item.jumlah_unit} </td>
                         <td> ${item.dibuat} </td>
+                        <td> ${item.dimiliki} </td>
                         <td> ${item.tkdn}% </td>
                         <td class="text-nowrap"> Rp ${item.biaya_depresiasi_perbulan} </td>
                         <td> ${item.alokasi}%</td>
@@ -2950,6 +3089,7 @@
                         <td> ${item.spesifikasi} </td>
                         <td> ${item.jumlah_unit} </td>
                         <td> ${item.dibuat} </td>
+                        <td> ${item.dimiliki} </td>
                         <td> ${item.tkdn}% </td>
                         <td class="text-nowrap"> Rp ${item.biaya_sewa_perbulan} </td>
                         <td> ${item.alokasi}%</td>
@@ -3032,7 +3172,7 @@
                             <td class="text-nowrap"> ${formatToCurrency(item.sumKdn) ?? ("Rp " + 0 + ",00")} </td>
                             <td class="text-nowrap"> ${formatToCurrency(item.sumKln) ?? ("Rp " + 0 + ",00")} </td>
                             <td class="text-nowrap"> ${formatToCurrency(item.sumTotal) ?? ("Rp " + 0 + ",00")} </td>
-                            <td class="text-nowrap"> ${sumTotal19 != null ? (((item.sumKdn ?? 0) / sumTotal19 * 100).toFixed(2)) : 0}% </td>
+                            <td class="text-nowrap"> ${(sumTotal19 != null) && (sumTotal19 != 0) ? (((item.sumKdn ?? 0) / (sumTotal19 ?? 0) * 100).toFixed(2)) : 0}% </td>
                             </tr>`;
                     } else {
                         row = `<tr>
@@ -3041,7 +3181,7 @@
                             <td class="text-nowrap"> ${formatToCurrency(item.bspKdn ?? 0)} </td>
                             <td class="text-nowrap"> ${formatToCurrency(item.bspKln ?? 0)} </td>
                             <td class="text-nowrap"> ${formatToCurrency(item.bspTotal ?? 0)} </td>
-                            <td class="text-nowrap"> ${sumTotal19 != null ? (((item.bspKdn ?? 0) / sumTotal19 * 100).toFixed(2)) : 0}% </td>
+                            <td class="text-nowrap"> ${(sumTotal19 != null) && (sumTotal19 != 0) ? (((item.bspKdn ?? 0) / (sumTotal19 ?? 0) * 100).toFixed(2)) : 0}% </td>
                             </tr>`;
                     }
 
@@ -3052,7 +3192,7 @@
                 $("#sumKln-1-9").text(formatToCurrency(sumKln19));
                 $("#sumTotal-1-9").text(formatToCurrency(sumTotal19));
                 $("#sumTkdn-1-9").text(
-                    `${sumTotal19 != null ? (((sumKdn19 ?? 0) / (sumTotal19 ?? 0) * 100).toFixed(2)) : 0}%`);
+                    `${(sumTotal19 != null) && (sumTotal19 != 0) ? (((sumKdn19 ?? 0) / (sumTotal19 ?? 0) * 100).toFixed(2)) : 0}%`);
             } else if (tbodyId == "tbody-10") {
                 const tbody = $(`#${tbodyId}`);
                 let sumKdn19 = 0;
@@ -3070,7 +3210,7 @@
                     }
                 })
 
-                $("#BiayaProduksiFinalTkdn").text((sumKdn19 / sumTotal19 * 100).toFixed(2) + "%");
+                $("#BiayaProduksiFinalTkdn").text(((sumKdn19 != null) && (sumKdn19 != 0) ? sumKdn19 / sumTotal19 * 100 : 0).toFixed(2) + "%");
             }
         }
 
@@ -3190,9 +3330,56 @@
                     $("#table-biaya-produksi-1-9").addClass("d-none");
                 }
             })
+
+            var isButtonClickable = true;
+            $("#buttonSelanjutnya").click(function () {
+                if (isButtonClickable) {
+                    isButtonClickable = false;
+                    var activeTab = $(".nav-link.active");
+                    var nextTab = activeTab.next();
+
+                    var activeTabId = nextTab.attr("id");
+                    if (activeTabId === "v-bahan-baku-tab") {
+                        $("#buttonKembali").addClass("d-none");
+                    } else {
+                        $("#buttonKembali").removeClass("d-none");
+                    }
+
+                    if (nextTab.length > 0) {
+                        nextTab.click();
+                    }
+
+                    setTimeout(function () {
+                        isButtonClickable = true;
+                    }, 150);
+                }
+            });
+
+            $("#buttonKembali").click(function () {
+                if (isButtonClickable) {
+                    isButtonClickable = false;
+                    var activeTab = $(".nav-link.active");
+                    var prevTab = activeTab.prev();
+
+                    var activeTabId = prevTab.attr("id");
+                    if (activeTabId === "v-bahan-baku-tab") {
+                        $("#buttonKembali").addClass("d-none");
+                    } else {
+                        $("#buttonKembali").removeClass("d-none");
+                    }
+
+                    if (prevTab.length > 0) {
+                        prevTab.click();
+
+                    }
+                    setTimeout(function () {
+                        isButtonClickable = true;
+                    }, 150);
+                }
+            });
         })
 
-        $(document).on('keydown', '.trigger-enter', function (event) {
+        $(document).on('keydown', '.trigger-enter', function(event) {
             // Jika tombol Enter ditekan
             if (event.key === 'Enter') {
                 // Mencegah perilaku default tombol Enter

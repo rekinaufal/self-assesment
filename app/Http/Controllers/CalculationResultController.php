@@ -44,6 +44,10 @@ class CalculationResultController extends Controller
 
         $calculationResult = CalculationResult::updateOrInsert(["computation_id" => $credentials["computation_id"]] ,$credentials);
 
+        $computation = Computation::find($credentials["computation_id"]);
+        $computation->status = "Draft";
+        $computation->save();
+
         return response()->json(['calculationResult' => $calculationResult, "success" => "Success to save draft the calculation"], 200);
     }
 
