@@ -277,13 +277,13 @@
                                 </tbody>
                             </table>
                         </div> --}}
-                        <div class="float-right">
+                        {{-- <div class="float-right">
                             <div class="input-group">
                                 <a href="{{ url('/exportExcelUsers') }}" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm">
                                     <i class="fas fa-file-excel fa-sm text-white-75">&nbsp;Export Excel</i>
                                 </a>
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col-12">

@@ -1,5 +1,9 @@
 @php
     $borderStyle = 'border:1px solid #000000;'; // Adjust the border style as needed
+
+    $totalSumKdn = ($detail['1.1']['sumKdn'] + $detail['1.2']['sumKdn'] + $detail['1.3']['sumKdn'] + $detail['1.4']['sumKdn'] + $detail['1.5']['sumKdn'] + $detail['1.6']['sumKdn'] + $detail['1.7']['sumKdn'] + $detail['1.8']['sumKdn']);
+    $totalSumKln = ($detail['1.1']['sumKln'] + $detail['1.2']['sumKln'] + $detail['1.3']['sumKln'] + $detail['1.4']['sumKln'] + $detail['1.5']['sumKln'] + $detail['1.6']['sumKln'] + $detail['1.7']['sumKln'] + $detail['1.8']['sumKln']);
+    $totalSumTotal = ($detail['1.1']['sumTotal'] + $detail['1.2']['sumTotal'] + $detail['1.3']['sumTotal'] + $detail['1.4']['sumTotal'] + $detail['1.5']['sumTotal'] + $detail['1.6']['sumTotal'] + $detail['1.7']['sumTotal'] + $detail['1.8']['sumTotal']);
 @endphp
 {{-- @dd($detail) --}}
 <p>
@@ -67,37 +71,37 @@
         <tr>
             <td style="{{ $borderStyle }}">1</td>
             <td style="{{ $borderStyle }}">
-                Bahan Baku untuk Material Langsung	
+                {{ $detail['1.1']['nama'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                130.150,00 
+                {{ $detail['1.1']['sumKdn'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}"> 
-                3.878.940,93 
+                {{ $detail['1.1']['sumKln'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                4.009.090,93 
+                {{ $detail['1.1']['sumTotal'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                2,60 
+                {{ ($detail['1.1']['sumKdn'] / $totalSumTotal) * 100 }}
             </td>
         </tr>
         <tr>
             <td style="{{ $borderStyle }}">2</td>
             <td style="{{ $borderStyle }}">
-                Bahan Baku untuk Biaya Terkait Lainnya		
+                {{ $detail['1.2']['nama'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                978.233,32 
+                {{ $detail['1.2']['sumKdn'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}"> 
-                0
+                {{ $detail['1.2']['sumKln'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                978.233,32 
+                {{ $detail['1.2']['sumTotal'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                19,57 
+                {{ ($detail['1.2']['sumKdn'] / $totalSumTotal) * 100 }}
             </td>
         </tr>
         <tr>
@@ -106,37 +110,38 @@
         <tr>
             <td style="{{ $borderStyle }}">1</td>
             <td style="{{ $borderStyle }}">
-                Tenaga Kerja Langsung	
+                {{ $detail['1.3']['nama'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                8.688,63 
+                {{ $detail['1.3']['sumKdn'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}"> 
-                0
+                {{ $detail['1.3']['sumKln'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                8.688,63 
+                {{ $detail['1.3']['sumTotal'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                0,17 
+                {{ ($detail['1.3']['sumKdn'] / $totalSumTotal) * 100 }}
             </td>
         </tr>
         <tr>
             <td style="{{ $borderStyle }}">2</td>
             <td style="{{ $borderStyle }}">
-                Tenaga Kerja Langsung untuk Biaya Terkait Lainnya	
+                {{ $detail['1.4']['nama'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                227,27 
+                {{ $detail['1.4']['sumKdn'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}"> 
-                227,27 
+                {{ $detail['1.4']['sumKln'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                454,55 
+                {{ $detail['1.4']['sumTotal'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                0,00 
+                {{ ($detail['1.4']['sumKdn'] / $totalSumTotal) * 100 }}
+
             </td>
         </tr>
         <tr>
@@ -145,89 +150,89 @@
         <tr>
             <td style="{{ $borderStyle }}">1</td>
             <td style="{{ $borderStyle }}">
-                Tenaga Kerja Tidak Langsung	
+                {{ $detail['1.5']['nama'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                227,27 
+                {{ $detail['1.5']['sumKdn'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}"> 
-                227,27 
+                {{ $detail['1.5']['sumKln'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                454,55 
+                {{ $detail['1.5']['sumTotal'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                0,00 
+                {{ ($detail['1.5']['sumKdn'] / $totalSumTotal) * 100 }}
             </td>
         </tr>
         <tr>
             <td style="{{ $borderStyle }}">2</td>
             <td style="{{ $borderStyle }}">
-                Mesin yang dimiliki	
+                {{ $detail['1.6']['nama'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                227,27 
+                {{ $detail['1.6']['sumKdn'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}"> 
-                227,27 
+                {{ $detail['1.6']['sumKln'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                454,55 
+                {{ $detail['1.6']['sumTotal'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                0,00 
+                {{ ($detail['1.6']['sumKdn'] / $totalSumTotal) * 100 }}
             </td>
         </tr>
         <tr>
             <td style="{{ $borderStyle }}">3</td>
             <td style="{{ $borderStyle }}">
-                Mesin yang Sewa	
+                {{ $detail['1.7']['nama'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                227,27 
+                {{ $detail['1.7']['sumKdn'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}"> 
-                227,27 
+                {{ $detail['1.7']['sumKln'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                454,55 
+                {{ $detail['1.7']['sumTotal'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                0,00 
+                {{ ($detail['1.7']['sumKdn'] / $totalSumTotal) * 100 }}
             </td>
         </tr>
         <tr>
             <td style="{{ $borderStyle }}">4</td>
             <td style="{{ $borderStyle }}">
-                Biaya tidak langsung terkait lainnya	
+                {{ $detail['1.8']['nama'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                227,27 
+                {{ $detail['1.8']['sumKdn'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}"> 
-                227,27 
+                {{ $detail['1.8']['sumKln'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                454,55 
+                {{ $detail['1.8']['sumTotal'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                0,00 
+                {{ ($detail['1.8']['sumKdn'] / $totalSumTotal) * 100 }}
             </td>
         </tr>
         <tr>
             <td style="{{ $borderStyle }}"><b>Biaya Produksi</b></td>
             <td style="{{ $borderStyle }}"></td>
             <td style="{{ $borderStyle }}">
-                1.119.672,84 
+                {{ $totalSumKdn }}
             </td>
             <td style="{{ $borderStyle }}">
-                1.119.672,84 
+                {{ $totalSumKln }}
             </td>
             <td style="{{ $borderStyle }}">
-                1.119.672,84 
+                {{ $totalSumTotal }}
             </td>
             <td style="{{ $borderStyle }}">
-                <b>22,40%</b>
+                <b>{{ $totalSumKdn / $totalSumTotal }}%</b>
             </td>
         </tr>
     </tbody>

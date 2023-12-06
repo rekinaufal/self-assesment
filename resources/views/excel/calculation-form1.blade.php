@@ -74,7 +74,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach($detail as $item_detail)
+        @foreach($detail['data'] as $item_detail)
             <tr>
                 <td style="{{ $borderStyle }}">{{ $loop->iteration }}</td>
                 <td style="{{ $borderStyle }}">{{ $item_detail['bahan_baku'] }}</td>
@@ -104,14 +104,14 @@
                 <td></td>
                 <td></td>
                 <td style="border:1px solid #000000;background-color: #dbdbdb;text-align: center;"><b>Total</b></td>
-                <td style="{{ $borderStyle }}"><b>Rp {{ $item_detail['sumKdn'] }}</b></td>
-                <td style="{{ $borderStyle }}"><b>Rp {{ $item_detail['sumKln'] }}</b></td>
-                <td style="{{ $borderStyle }}"><b>Rp {{ $item_detail['sumTotal'] }}</b></td>
-                <td style="{{ $borderStyle }}"><b>Rp {{ $item_detail['sumPpn'] }}</b></td>
-                <td style="{{ $borderStyle }}"><b>Rp {{ $item_detail['sumBm'] }}</b></td>
-                <td style="{{ $borderStyle }}"><b>Rp {{ $item_detail['sumPdriPpn'] }}</b></td>
-                <td style="{{ $borderStyle }}"><b>Rp {{ $item_detail['sumPph'] }}</b></td>
-                <td style="{{ $borderStyle }}">Rp {{ $item_detail['sumPdriTotal'] }}</td>
+                <td style="{{ $borderStyle }}"><b>Rp {{ $detail['sumKdn'] }}</b></td>
+                <td style="{{ $borderStyle }}"><b>Rp {{ $detail['sumKln'] }}</b></td>
+                <td style="{{ $borderStyle }}"><b>Rp {{ $detail['sumTotal'] }}</b></td>
+                <td style="{{ $borderStyle }}"><b>Rp {{ $detail['sumPpn'] }}</b></td>
+                <td style="{{ $borderStyle }}"><b>Rp {{ $detail['sumBm'] }}</b></td>
+                <td style="{{ $borderStyle }}"><b>Rp {{ $detail['sumPdriPpn'] }}</b></td>
+                <td style="{{ $borderStyle }}"><b>Rp {{ $detail['sumPph'] }}</b></td>
+                <td style="{{ $borderStyle }}">Rp {{ $detail['sumPdriTotal'] }}</td>
             </tr>
     </tbody>
 </table>

@@ -160,12 +160,12 @@
                 </div>
             @endif
 
-            <a href="#" class="fixed d-none" id="live-chat">
-                <div class="btn header-cart" style="border-radius: 50%;">
+            {{-- <a href="#" class="fixed d-none" id="live-chat">
+                <div class="btn header-cart" style="border-radius: 50%;"> --}}
                     {{-- <img src="{{ asset('assets/images/live-chat.png') }}" alt="Trolley Icon" width="30" /> --}}
-                    <i data-feather="message-square" class="feather-icon" style="color:white"></i>
+                    {{-- <i data-feather="message-square" class="feather-icon" style="color:white"></i>
                 </div>
-            </a>
+            </a> --}}
             @yield('main')
             <!-- Footer -->
             @include('components.footer')

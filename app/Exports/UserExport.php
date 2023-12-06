@@ -40,8 +40,8 @@ class UserExport implements FromArray, WithMultipleSheets
             new CalculationForm6($this->sheets['1.6'], $this->parent_data),
             new CalculationForm7($this->sheets['1.7'], $this->parent_data),
             new CalculationForm8($this->sheets['1.8'], $this->parent_data),
-            // new CalculationForm9($this->sheets['1.9'], $this->parent_data),
-            new CalculationForm9($this->parent_data),
+            new CalculationForm9($this->sheets, $this->parent_data),
+            // new CalculationForm9($this->parent_data),
         ];
 
         return $sheets;

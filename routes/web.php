@@ -81,6 +81,7 @@ Route::group(['middleware' => ['auth']], function () {
 
     //computation
     Route::resource("computation", ComputationController::class);
+    Route::get('/exportExcelComputation/{id}', 'ComputationController@exportExcel')->name('exportExcelComputation');
 
     //calculation
     Route::resource("calculation-results", CalculationResultController::class);

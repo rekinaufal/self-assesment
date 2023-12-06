@@ -8,17 +8,18 @@ use Maatwebsite\Excel\Concerns\WithStyles;
 use PhpOffice\PhpSpreadsheet\Worksheet\Worksheet;
 use Illuminate\Contracts\View\View;
 use Maatwebsite\Excel\Concerns\FromView;
+use Maatwebsite\Excel\Concerns\WithColumnFormatting;
 
-class CalculationForm9 implements WithTitle, FromView, WithStyles, ShouldAutoSize
+class CalculationForm9 implements WithTitle, FromView, WithStyles, ShouldAutoSize, WithColumnFormatting
 {
     protected $rows;
     protected $parent_row;
 
-    // public function __construct(array $rows, $parent_row)
-    public function __construct($parent_row)
+    public function __construct(array $rows, $parent_row)
+    // public function __construct($parent_row)
     {
         $this->parent_row = $parent_row;
-        // $this->rows = $rows;
+        $this->rows = $rows;
         // dd($this->rows);
     }
 
@@ -32,7 +33,7 @@ class CalculationForm9 implements WithTitle, FromView, WithStyles, ShouldAutoSiz
         return view('excel.calculation-form9', [
             
             'parent' => $this->parent_row,
-            // 'detail' => $this->rows
+            'detail' => $this->rows
         ]);
     }
 
@@ -69,7 +70,18 @@ class CalculationForm9 implements WithTitle, FromView, WithStyles, ShouldAutoSiz
         $sheet->getStyle('A10:F10')->getBorders()->getAllBorders()->setBorderStyle('thin');
         $sheet->getStyle('A11:F11')->getBorders()->getAllBorders()->setBorderStyle('thin');
 
+        // outside borders
+        $sheet->getStyle('A4:F4')->getBorders()->getTop()->setBorderStyle('thin');
+        $sheet->getStyle('F4:F23')->getBorders()->getRight()->setBorderStyle('thin');
+
         $sheet->getStyle('A10:F11')->getAlignment()->setHorizontal('center')->setVertical('middle');
+    }
+
+    public function columnFormats(): array
+    {
+        return [
+            'F' => '#,##0.00',
+        ];
     }
     // public function map($row): array
     // {
