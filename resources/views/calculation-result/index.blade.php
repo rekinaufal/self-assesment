@@ -71,8 +71,7 @@
                                                         class="fas fa-info-circle">
                                                     </i></label>
                                                 <input type="text" name="bahan_baku"
-                                                    class="form-control form-control-sm " id="bahan_baku" placeholder=""
-                                                    required>
+                                                    class="form-control form-control-sm trigger-enter" id="bahan_baku" placeholder="">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -80,8 +79,7 @@
                                                         data-toggle="tooltip" data-placement="top" title="Tooltip on top">
                                                     </i></label>
                                                 <input type="text" name="spesifikasi"
-                                                    class="form-control form-control-sm" id="spesifikasi" placeholder=""
-                                                    required>
+                                                    class="form-control form-control-sm trigger-enter" id="spesifikasi" placeholder="">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -89,8 +87,8 @@
                                                         class="fas fa-info-circle" data-toggle="tooltip"
                                                         data-placement="top" title="Tooltip on top">
                                                     </i></label>
-                                                <select class="form-control form-control-sm" id="satuan_bahan_baku"
-                                                    name="satuan_bahan_baku" required>
+                                                <select class="form-control form-control-sm trigger-enter" id="satuan_bahan_baku"
+                                                    name="satuan_bahan_baku">
                                                     <option></option>
                                                     <option value="Pcs">Pcs</option>
                                                     <option value="Pack">Pack</option>
@@ -104,8 +102,8 @@
                                                 <label for="negara_asal">Negara asal <i class="fas fa-info-circle"
                                                         data-toggle="tooltip" data-placement="top" title="Tooltip on top">
                                                     </i></label>
-                                                <select class="form-control form-control-sm" id="negara_asal"
-                                                    name="negara_asal" required>
+                                                <select class="form-control form-control-sm trigger-enter" id="negara_asal"
+                                                    name="negara_asal">
                                                     <option></option>
                                                     @foreach ($countries as $country)
                                                         <option value="{{ $country }}">{{ $country }}</option>
@@ -118,8 +116,8 @@
                                                         class="fas fa-info-circle" data-toggle="tooltip"
                                                         data-placement="top" title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" name="pemasok" class="form-control form-control-sm"
-                                                    id="pemasok" placeholder="" required>
+                                                <input type="text" name="pemasok" class="form-control form-control-sm trigger-enter"
+                                                    id="pemasok" placeholder="">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -127,8 +125,8 @@
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control form-control-sm replaceDot"
-                                                    id="tkdn" name="tkdn" placeholder="" required>
+                                                <input type="text" class="form-control form-control-sm trigger-enter replaceDot"
+                                                    id="tkdn" name="tkdn" placeholder="">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -136,8 +134,8 @@
                                                         class="fas fa-info-circle" data-toggle="tooltip"
                                                         data-placement="top" title="Tooltip on top">
                                                     </i></label>
-                                                <input type="number" name="jumlah" class="form-control form-control-sm"
-                                                    id="jumlah" placeholder="" required>
+                                                <input type="number" name="jumlah" class="form-control form-control-sm trigger-enter"
+                                                    id="jumlah" placeholder="">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -149,7 +147,7 @@
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="basic-addon1">Rp.</span>
                                                     </div>
-                                                    <input type="text" class="form-control rupiahInput" placeholder=""
+                                                    <input type="text" class="form-control rupiahInput trigger-enter" placeholder=""
                                                         id="harga_satuan" name="harga_satuan" required autocomplete="off"
                                                         value="0,00">
                                                 </div>
@@ -170,7 +168,7 @@
                                                                 <label for="ppn">PPN %</label>
                                                                 <input type="text" name="ppn"
                                                                     style=" width : 15rem"
-                                                                    class="form-control form-control-sm replaceDot"
+                                                                    class="form-control form-control-sm replaceDot trigger-enter"
                                                                     id="ppn" placeholder="" value="0">
                                                             </div>
                                                         </div>
@@ -191,19 +189,19 @@
                                                             <div class="form-group-sm ml-2" style="font-size: 7pt;">
                                                                 <label for="bm">BM %</label>
                                                                 <input type="text" name="bm" style="width: 5rem"
-                                                                    class="form-control form-control-sm replaceDot"
+                                                                    class="form-control form-control-sm replaceDot trigger-enter"
                                                                     id="bm" placeholder="" value="0">
                                                             </div>
                                                             <div class="form-group-sm ml-2" style="font-size: 7pt;">
                                                                 <label for="pdri_ppn">PPN %</label>
                                                                 <input type="text" name="pdri_ppn" style="width: 5rem"
-                                                                    class="form-control form-control-sm replaceDot"
+                                                                    class="form-control form-control-sm replaceDot trigger-enter"
                                                                     id="pdri_ppn" placeholder="" value="0">
                                                             </div>
                                                             <div class="form-group-sm ml-2" style="font-size: 7pt;">
                                                                 <label for="pph">PPH %</label>
                                                                 <input type="text" name="pph" style="width: 5rem"
-                                                                    class="form-control form-control-sm replaceDot"
+                                                                    class="form-control form-control-sm replaceDot trigger-enter"
                                                                     id="pph" placeholder="" value="0">
                                                             </div>
                                                         </div>
@@ -272,10 +270,10 @@
 
                                 <div class="row card">
                                     <div class="d-flex">
-                                        <div class="col">
-                                            <p class="mt-5 mr-2 text-right">Total</p>
+                                        <div class="col pt-4 d-flex align-items-center justify-content-end">
+                                            <p class="mr-2 text-right">Total</p>
                                         </div>
-                                        <div class="col-6 p-1">
+                                        <div class="col-7 p-1">
                                             <div class="table-responsive table-responsive-sm">
                                                 <table class="table table-bordered table-hover" style="font-size: 8pt">
                                                     <thead class="thead-dark">
@@ -298,8 +296,9 @@
                                         </div>
                                     </div>
                                     <div class="d-flex">
-                                        <div class="col">
-                                            <p class="mt-5 text-right">Total</p>
+                                        <div class="col d-flex justify-content-end align-items-center"
+                                            style="padding-top: 4.5rem">
+                                            <p class="text-right">Total</p>
                                         </div>
                                         <div class="col-9 p-1">
                                             <div class="table-responsive table-responsive-sm">
@@ -462,10 +461,10 @@
                                 </div>
                                 <div class="row card">
                                     <div class="d-flex">
-                                        <div class="col">
-                                            <p class="mt-5 mr-2 text-right">Total</p>
+                                        <div class="col pt-4 d-flex justify-content-end align-items-center">
+                                            <p class="mr-2 text-right">Total</p>
                                         </div>
-                                        <div class="col-6 p-1">
+                                        <div class="col-7 p-1">
                                             <div class="table-responsive table-responsive-sm">
                                                 <table class="table table-bordered table-hover" style="font-size: 8pt">
                                                     <thead class="thead-dark">
@@ -643,141 +642,54 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody id="tbody-3">
-                                                    <tr>
-                                                        <td>
-                                                            <div class="dropdown">
-                                                                <i data-feather="more-vertical" id="dropdownMenuButton"
-                                                                    class="feather-icon dropdown-toggle"
-                                                                    style="cursor: pointer;" data-toggle="dropdown"
-                                                                    aria-haspopup="true" aria-expanded="false"></i>
-                                                                <div class="dropdown-menu"
-                                                                    aria-labelledby="dropdownMenuButton">
-                                                                    <a class="dropdown-item buttonEditNews"
-                                                                        onclick=""><i class="fa fa-edit"></i> Edit</a>
-                                                                    <form action="" method="post">
-                                                                        <button class="dropdown-item" type="submit"><i
-                                                                                class="fa fa-trash"></i> Delete</button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <th scope="row">1</th>
-                                                        <td>Center Back</td>
-                                                        <td>Brazil</td>
-                                                        <td>45.5</td>
-                                                        <td>12</td>
-                                                        <td>13.000.000</td>
-                                                        <td>Unit unitan</td>
-                                                        <td>3</td>
-                                                        <td>8</td>
-                                                        <td>780.000.000.00</td>
-                                                        <td>122.000</td>
-                                                        <td>45.000.000</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="dropdown">
-                                                                <i data-feather="more-vertical" id="dropdownMenuButton"
-                                                                    class="feather-icon dropdown-toggle"
-                                                                    style="cursor: pointer;" data-toggle="dropdown"
-                                                                    aria-haspopup="true" aria-expanded="false"></i>
-                                                                <div class="dropdown-menu"
-                                                                    aria-labelledby="dropdownMenuButton">
-                                                                    <a class="dropdown-item buttonEditNews"
-                                                                        onclick=""><i class="fa fa-edit"></i> Edit</a>
-                                                                    <form action="" method="post">
-                                                                        <button class="dropdown-item" type="submit"><i
-                                                                                class="fa fa-trash"></i> Delete</button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <th scope="row">2</th>
-                                                        <td>Striker</td>
-                                                        <td>Pantai Gading</td>
-                                                        <td>25.5</td>
-                                                        <td>12</td>
-                                                        <td>13.000.000</td>
-                                                        <td>Unit unitan</td>
-                                                        <td>3</td>
-                                                        <td>8</td>
-                                                        <td>780.000.000.00</td>
-                                                        <td>122.000</td>
-                                                        <td>45.000.000</td>
-                                                    </tr>
                                                 </tbody>
                                             </table>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row card">
-                                    <div class="d-flex">
-                                        <div class="col">
-                                            <p class="mt-5 mr-2 text-right">Total</p>
-                                        </div>
-                                        <div class="col-6 p-1">
-                                            <div class="table-responsive table-responsive-sm">
+                                    <div class="d-flex justify-content-end">
+                                        <div class="w-100 p-1">
+                                            <div class="w-100">
                                                 <table class="table table-bordered table-hover" style="font-size: 8pt">
-                                                    <thead class="thead-dark">
-                                                        <tr>
-                                                            <th scope="col" class="text-nowrap pr-4">Jumlah Orang</th>
-                                                            <th scope="col" class="text-nowrap pr-4">KDN</th>
-                                                            <th scope="col" class="text-nowrap pr-4">KLN</th>
-                                                            <th scope="col" class="text-nowrap pr-4">Total</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td id="1-3-sumJumlahOrang">0</td>
-                                                            <td id="1-3-sumKdn">Rp.0</td>
-                                                            <td id="1-3-sumKln">Rp.0</td>
-                                                            <td id="1-3-sumTotal">Rp.0</td>
-                                                        </tr>
-                                                    </tbody>
-
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex align-items-center">
-                                        <div class="col">
-                                            <p class="mr-2 text-right">Kapasitas Normal Perbulan</p>
-                                        </div>
-                                        <div class="col-6 p-1">
-                                            <div class="table-responsive table-responsive-sm">
-                                                <table class="table table-bordered table-hover" style="font-size: 8pt">
-                                                    <thead class="">
-                                                        <tr>
-                                                            <th scope="col" class="text-nowrap pr-4">
-                                                                <input type="text"
-                                                                    class="form-control kapasitasNormalPerbulan kapasitasNormalPerbulan-1-3"
-                                                                    placeholder="" name="kapasitasNormalPerbulan"
-                                                                    value="0">
-                                                            </th>
-                                                        </tr>
-                                                    </thead>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex align-items-center">
-                                        <div class="col">
-                                            <p class="mr-2 text-right">Biaya Satuan Product</p>
-                                        </div>
-                                        <div class="col-6 p-1">
-                                            <div class="table-responsive table-responsive-sm">
-                                                <table class="table table-bordered table-hover" style="font-size: 8pt">
-                                                    <thead>
-                                                        <tr>
-                                                            <th scope="col" class="text-nowrap pr-4"
-                                                                id="kdn-biaya-satuan-product-1-3">KDN</th>
-                                                            <th scope="col" class="text-nowrap pr-4"
-                                                                id="kln-biaya-satuan-product-1-3">KLN</th>
-                                                            <th scope="col" class="text-nowrap pr-4"
-                                                                id="total-biaya-satuan-product-1-3">Total
-                                                            </th>
-                                                        </tr>
-                                                    </thead>
+                                                    <tr class="bg-dark text-light">
+                                                        <th rowspan="2"
+                                                            class="text-nowrap h-auto align-bottom w-50 bg-white text-dark"
+                                                            style="font-size: 10pt">Total</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Jumlah Orang</th>
+                                                        <th scope="col" class="text-nowrap pr-4">KDN</th>
+                                                        <th scope="col" class="text-nowrap pr-4">KLN</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Total</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td id="1-3-sumJumlahOrang">0</td>
+                                                        <td id="1-3-sumKdn">Rp.0</td>
+                                                        <td id="1-3-sumKln">Rp.0</td>
+                                                        <td id="1-3-sumTotal">Rp.0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th colspan="2"
+                                                            class="text-nowrap h-auto align-middle w-50 bg-white text-dark"
+                                                            style="font-size: 10pt">Kapasitas Normal Perbulan</th>
+                                                        <td colspan="3">
+                                                            <input type="text"
+                                                                class="form-control kapasitasNormalPerbulan kapasitasNormalPerbulan-1-3"
+                                                                placeholder="" name="kapasitasNormalPerbulan"
+                                                                value="0">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th colspan="2"
+                                                            class="text-nowrap h-auto align-middle w-50 bg-white text-dark"
+                                                            style="font-size: 10pt">Biaya Satuan Product</th>
+                                                        <td scope="col" class="text-nowrap pr-4"
+                                                            id="kdn-biaya-satuan-product-1-3">KDN</td>
+                                                        <td scope="col" class="text-nowrap pr-4"
+                                                            id="kln-biaya-satuan-product-1-3">KLN</td>
+                                                        <td scope="col" class="text-nowrap pr-4"
+                                                            id="total-biaya-satuan-product-1-3">Total
+                                                        </td>
+                                                    </tr>
                                                 </table>
                                             </div>
                                         </div>
@@ -914,73 +826,48 @@
                                     </div>
                                 </div>
                                 <div class="row card">
-                                    <div class="d-flex">
-                                        <div class="col">
-                                            <p class="mt-5 mr-2 text-right">Total</p>
-                                        </div>
-                                        <div class="col-6 p-1">
-                                            <div class="table-responsive table-responsive-sm">
+                                    <div class="d-flex justify-content-end">
+                                        <div class="w-100 p-1">
+                                            <div class="w-100">
                                                 <table class="table table-bordered table-hover" style="font-size: 8pt">
-                                                    <thead class="thead-dark">
-                                                        <tr>
-                                                            <th scope="col" class="text-nowrap pr-4">Jumlah Orang</th>
-                                                            <th scope="col" class="text-nowrap pr-4">KDN</th>
-                                                            <th scope="col" class="text-nowrap pr-4">KLN</th>
-                                                            <th scope="col" class="text-nowrap pr-4">Total</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td id="1-4-sumJumlahOrang">0</td>
-                                                            <td id="1-4-sumKdn">Rp.0</td>
-                                                            <td id="1-4-sumKln">Rp.0</td>
-                                                            <td id="1-4-sumTotal">Rp.0</td>
-                                                        </tr>
-                                                    </tbody>
-
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex align-items-center">
-                                        <div class="col">
-                                            <p class="mr-2 text-right">Kapasitas Normal Perbulan</p>
-                                        </div>
-                                        <div class="col-6 p-1">
-                                            <div class="table-responsive table-responsive-sm">
-                                                <table class="table table-bordered table-hover" style="font-size: 8pt">
-                                                    <thead class="">
-                                                        <tr>
-                                                            <th scope="col" class="text-nowrap pr-4">
-                                                                <input type="text"
-                                                                    class="form-control kapasitasNormalPerbulan kapasitasNormalPerbulan-1-4"
-                                                                    placeholder="" name="kapasitasNormalPerbulan"
-                                                                    value="0">
-                                                            </th>
-                                                        </tr>
-                                                    </thead>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex align-items-center">
-                                        <div class="col">
-                                            <p class="mr-2 text-right">Biaya Satuan Product</p>
-                                        </div>
-                                        <div class="col-6 p-1">
-                                            <div class="table-responsive table-responsive-sm">
-                                                <table class="table table-bordered table-hover" style="font-size: 8pt">
-                                                    <thead>
-                                                        <tr>
-                                                            <th scope="col" class="text-nowrap pr-4"
-                                                                id="kdn-biaya-satuan-product-1-4">KDN</th>
-                                                            <th scope="col" class="text-nowrap pr-4"
-                                                                id="kln-biaya-satuan-product-1-4">KLN</th>
-                                                            <th scope="col" class="text-nowrap pr-4"
-                                                                id="total-biaya-satuan-product-1-4">Total
-                                                            </th>
-                                                        </tr>
-                                                    </thead>
+                                                    <tr class="bg-dark text-light">
+                                                        <th rowspan="2"
+                                                            class="text-nowrap h-auto align-bottom w-50 bg-white text-dark"
+                                                            style="font-size: 10pt">Total</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Jumlah Orang</th>
+                                                        <th scope="col" class="text-nowrap pr-4">KDN</th>
+                                                        <th scope="col" class="text-nowrap pr-4">KLN</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Total</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td id="1-4-sumJumlahOrang">0</td>
+                                                        <td id="1-4-sumKdn">Rp.0</td>
+                                                        <td id="1-4-sumKln">Rp.0</td>
+                                                        <td id="1-4-sumTotal">Rp.0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th colspan="2"
+                                                            class="text-nowrap h-auto align-middle w-50 bg-white text-dark"
+                                                            style="font-size: 10pt">Kapasitas Normal Perbulan</th>
+                                                        <td colspan="3">
+                                                            <input type="text"
+                                                                class="form-control kapasitasNormalPerbulan kapasitasNormalPerbulan-1-4"
+                                                                placeholder="" name="kapasitasNormalPerbulan"
+                                                                value="0">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th colspan="2"
+                                                            class="text-nowrap h-auto align-middle w-50 bg-white text-dark"
+                                                            style="font-size: 10pt">Biaya Satuan Product</th>
+                                                        <td scope="col" class="text-nowrap pr-4"
+                                                            id="kdn-biaya-satuan-product-1-4">KDN</td>
+                                                        <td scope="col" class="text-nowrap pr-4"
+                                                            id="kln-biaya-satuan-product-1-4">KLN</td>
+                                                        <td scope="col" class="text-nowrap pr-4"
+                                                            id="total-biaya-satuan-product-1-4">Total
+                                                        </td>
+                                                    </tr>
                                                 </table>
                                             </div>
                                         </div>
@@ -1030,8 +917,7 @@
                                                 <input type="hidden" id="tkdn-1-5" value="" name="tkdn">
                                             </div>
 
-                                            <div class="form-group-sm mx-2 mt-2 "
-                                                style="font-size: 10pt; width : 13rem">
+                                            <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
                                                 <label>
                                                     Jumlah Orang
                                                     <i class="fas fa-info-circle" data-toggle="tooltip"
@@ -1041,8 +927,7 @@
                                                     id="jumlah_orang" name="jumlah_orang">
                                             </div>
 
-                                            <div class="form-group-sm mx-2 mt-2 "
-                                                style="font-size: 10pt; width : 13rem">
+                                            <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
                                                 <label>
                                                     Gaji Per Bulan
                                                     <i class="fas fa-info-circle" data-toggle="tooltip"
@@ -1053,13 +938,12 @@
                                                         <span class="input-group-text" id="basic-addon1">Rp.</span>
                                                     </div>
                                                     <input type="text" class="form-control gaji_perbulan15"
-                                                        placeholder="" id="gaji_perbulan" name="gaji_perbulan"
-                                                        required autocomplete="off" value="0,00">
+                                                        placeholder="" id="gaji_perbulan" name="gaji_perbulan" required
+                                                        autocomplete="off" value="0,00">
                                                 </div>
                                             </div>
 
-                                            <div class="form-group-sm mx-2 mt-2 "
-                                                style="font-size: 10pt; width : 13rem">
+                                            <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
                                                 <label>
                                                     Alokasi Gaji %
                                                     <i class="fas fa-info-circle" data-toggle="tooltip"
@@ -1112,144 +996,54 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody id="tbody-5">
-                                                    <tr>
-                                                        <td>
-                                                            <div class="dropdown">
-                                                                <i data-feather="more-vertical" id="dropdownMenuButton"
-                                                                    class="feather-icon dropdown-toggle"
-                                                                    style="cursor: pointer;" data-toggle="dropdown"
-                                                                    aria-haspopup="true" aria-expanded="false"></i>
-                                                                <div class="dropdown-menu"
-                                                                    aria-labelledby="dropdownMenuButton">
-                                                                    <a class="dropdown-item buttonEditNews"
-                                                                        onclick="">
-                                                                        <i class="fa fa-edit"></i>
-                                                                        Edit
-                                                                    </a>
-                                                                    <form action="" method="post">
-                                                                        <button class="dropdown-item" type="submit"><i
-                                                                                class="fa fa-trash"></i> Delete</button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <th scope="row">1</th>
-                                                        <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</td>
-                                                        <td>Lorem, ipsum dolor.</td>
-                                                        <td>45.5</td>
-                                                        <td>12</td>
-                                                        <td>13.000.000</td>
-                                                        <td>32.1</td>
-                                                        <td>3</td>
-                                                        <td>8</td>
-                                                        <td>780.000.000.00</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="dropdown">
-                                                                <i data-feather="more-vertical" id="dropdownMenuButton"
-                                                                    class="feather-icon dropdown-toggle"
-                                                                    style="cursor: pointer;" data-toggle="dropdown"
-                                                                    aria-haspopup="true" aria-expanded="false"></i>
-                                                                <div class="dropdown-menu"
-                                                                    aria-labelledby="dropdownMenuButton">
-                                                                    <a class="dropdown-item buttonEditNews"
-                                                                        onclick=""><i class="fa fa-edit"></i>
-                                                                        Edit</a>
-                                                                    <form action="" method="post">
-                                                                        <button class="dropdown-item" type="submit"><i
-                                                                                class="fa fa-trash"></i> Delete</button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <th scope="row">2</th>
-                                                        <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</td>
-                                                        <td>Lorem, ipsum dolor.</td>
-                                                        <td>45.5</td>
-                                                        <td>12</td>
-                                                        <td>13.000.000</td>
-                                                        <td>32.1</td>
-                                                        <td>3</td>
-                                                        <td>8</td>
-                                                        <td>780.000.000.00</td>
-                                                    </tr>
                                                 </tbody>
                                             </table>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row card">
-                                    <div class="d-flex">
-                                        <div class="col">
-                                            <p class="mt-5 mr-2 text-right">Total</p>
-                                        </div>
-                                        <div class="col-6 p-1">
-                                            <div class="table-responsive table-responsive-sm">
+                                    <div class="d-flex justify-content-end">
+                                        <div class="w-100 p-1">
+                                            <div class="w-100">
                                                 <table class="table table-bordered table-hover" style="font-size: 8pt">
-                                                    <thead class="thead-dark">
-                                                        <tr>
-                                                            <th scope="col" class="text-nowrap pr-4">Jumlah Orang
-                                                            </th>
-                                                            <th scope="col" class="text-nowrap pr-4">KDN</th>
-                                                            <th scope="col" class="text-nowrap pr-4">KLN</th>
-                                                            <th scope="col" class="text-nowrap pr-4">Total</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td id="1-5-sumJumlahOrang">0</td>
-                                                            <td id="1-5-sumKdn">Rp.0</td>
-                                                            <td id="1-5-sumKln">Rp.0</td>
-                                                            <td id="1-5-sumTotal">Rp.0</td>
-                                                        </tr>
-                                                    </tbody>
-
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex align-items-center">
-                                        <div class="col">
-                                            <p class="mr-2 text-right">Kapasitas Normal Perbulan</p>
-                                        </div>
-                                        <div class="col-6 p-1">
-                                            <div class="table-responsive table-responsive-sm">
-                                                <table class="table table-bordered table-hover" style="font-size: 8pt">
-                                                    <thead class="">
-                                                        <tr>
-                                                            <th scope="col" class="text-nowrap pr-4">
-                                                                <input type="text"
-                                                                    class="form-control kapasitasNormalPerbulan kapasitasNormalPerbulan-1-5"
-                                                                    placeholder="" name="kapasitasNormalPerbulan"
-                                                                    value="0">
-                                                            </th>
-                                                        </tr>
-                                                    </thead>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex align-items-center">
-                                        <div class="col">
-                                            <p class="mr-2 text-right">Biaya Satuan Product</p>
-                                        </div>
-                                        <div class="col-6 p-1">
-                                            <div class="table-responsive table-responsive-sm">
-                                                <table class="table table-bordered table-hover" style="font-size: 8pt">
-                                                    <thead>
-                                                        <tr>
-                                                            <th scope="col" class="text-nowrap pr-4"
-                                                                id="kdn-biaya-satuan-product-1-5">KDN
-                                                            </th>
-                                                            <th scope="col" class="text-nowrap pr-4"
-                                                                id="kln-biaya-satuan-product-1-5">KLN
-                                                            </th>
-                                                            <th scope="col" class="text-nowrap pr-4"
-                                                                id="total-biaya-satuan-product-1-5">Total
-                                                            </th>
-                                                        </tr>
-                                                    </thead>
+                                                    <tr class="bg-dark text-light">
+                                                        <th rowspan="2"
+                                                            class="text-nowrap h-auto align-bottom w-50 bg-white text-dark"
+                                                            style="font-size: 10pt">Total</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Jumlah Orang</th>
+                                                        <th scope="col" class="text-nowrap pr-4">KDN</th>
+                                                        <th scope="col" class="text-nowrap pr-4">KLN</th>
+                                                        <th scope="col" class="text-nowrap pr-4">Total</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td id="1-5-sumJumlahOrang">0</td>
+                                                        <td id="1-5-sumKdn">Rp.0</td>
+                                                        <td id="1-5-sumKln">Rp.0</td>
+                                                        <td id="1-5-sumTotal">Rp.0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th colspan="2"
+                                                            class="text-nowrap h-auto align-middle w-50 bg-white text-dark"
+                                                            style="font-size: 10pt">Kapasitas Normal Perbulan</th>
+                                                        <td colspan="3">
+                                                            <input type="text"
+                                                                class="form-control kapasitasNormalPerbulan kapasitasNormalPerbulan-1-5"
+                                                                placeholder="" name="kapasitasNormalPerbulan"
+                                                                value="0">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th colspan="2"
+                                                            class="text-nowrap h-auto align-middle w-50 bg-white text-dark"
+                                                            style="font-size: 10pt">Biaya Satuan Product</th>
+                                                        <td scope="col" class="text-nowrap pr-4"
+                                                            id="kdn-biaya-satuan-product-1-5">KDN</td>
+                                                        <td scope="col" class="text-nowrap pr-4"
+                                                            id="kln-biaya-satuan-product-1-5">KLN</td>
+                                                        <td scope="col" class="text-nowrap pr-4"
+                                                            id="total-biaya-satuan-product-1-5">Total
+                                                        </td>
+                                                    </tr>
                                                 </table>
                                             </div>
                                         </div>
@@ -1409,140 +1203,56 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody id="tbody-6">
-                                                    <tr>
-                                                        <td>
-                                                            <div class="dropdown">
-                                                                <i data-feather="more-vertical" id="dropdownMenuButton"
-                                                                    class="feather-icon dropdown-toggle"
-                                                                    style="cursor: pointer;" data-toggle="dropdown"
-                                                                    aria-haspopup="true" aria-expanded="false"></i>
-                                                                <div class="dropdown-menu"
-                                                                    aria-labelledby="dropdownMenuButton">
-                                                                    <a class="dropdown-item buttonEditNews"
-                                                                        onclick=""><i class="fa fa-edit"></i>
-                                                                        Edit</a>
-                                                                    <form action="" method="post">
-                                                                        <button class="dropdown-item" type="submit"><i
-                                                                                class="fa fa-trash"></i> Delete</button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <th scope="row">1</th>
-                                                        <td>Center Back</td>
-                                                        <td>Brazil</td>
-                                                        <td>45.5</td>
-                                                        <td>12</td>
-                                                        <td>13.000.000</td>
-                                                        <td>Unit unitan</td>
-                                                        <td>3</td>
-                                                        <td>8</td>
-                                                        <td>122.000</td>
-                                                        <td>45.000.000</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="dropdown">
-                                                                <i data-feather="more-vertical" id="dropdownMenuButton"
-                                                                    class="feather-icon dropdown-toggle"
-                                                                    style="cursor: pointer;" data-toggle="dropdown"
-                                                                    aria-haspopup="true" aria-expanded="false"></i>
-                                                                <div class="dropdown-menu"
-                                                                    aria-labelledby="dropdownMenuButton">
-                                                                    <a class="dropdown-item buttonEditNews"
-                                                                        onclick=""><i class="fa fa-edit"></i>
-                                                                        Edit</a>
-                                                                    <form action="" method="post">
-                                                                        <button class="dropdown-item" type="submit"><i
-                                                                                class="fa fa-trash"></i> Delete</button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <th scope="row">2</th>
-                                                        <td>Striker</td>
-                                                        <td>Pantai Gading</td>
-                                                        <td>25.5</td>
-                                                        <td>12</td>
-                                                        <td>13.000.000</td>
-                                                        <td>Unit unitan</td>
-                                                        <td>3</td>
-                                                        <td>8</td>
-                                                        <td>122.000</td>
-                                                        <td>45.000.000</td>
-                                                    </tr>
                                                 </tbody>
                                             </table>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="d-flex">
-                                    <div class="col">
-                                        <p class="mt-5 mr-2 text-right">Total</p>
-                                    </div>
-                                    <div class="col-6 p-1">
-                                        <div class="table-responsive table-responsive-sm">
-                                            <table class="table table-bordered table-hover" style="font-size: 8pt">
-                                                <thead class="thead-dark">
-                                                    <tr>
+                                <div class="row card">
+                                    <div class="d-flex justify-content-end">
+                                        <div class="w-100 p-1">
+                                            <div class="w-100">
+                                                <table class="table table-bordered table-hover" style="font-size: 8pt">
+                                                    <tr class="bg-dark text-light">
+                                                        <th rowspan="2"
+                                                            class="text-nowrap h-auto align-bottom w-50 bg-white text-dark"
+                                                            style="font-size: 10pt">Total</th>
                                                         <th scope="col" class="text-nowrap pr-4">Jumlah Unit</th>
                                                         <th scope="col" class="text-nowrap pr-4">KDN</th>
                                                         <th scope="col" class="text-nowrap pr-4">KLN</th>
                                                         <th scope="col" class="text-nowrap pr-4">Total</th>
                                                     </tr>
-                                                </thead>
-                                                <tbody>
                                                     <tr>
                                                         <td id="1-6-sumJumlahUnit">0</td>
                                                         <td id="1-6-sumKdn">Rp.0</td>
                                                         <td id="1-6-sumKln">Rp.0</td>
                                                         <td id="1-6-sumTotal">Rp.0</td>
                                                     </tr>
-                                                </tbody>
-
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <div class="col">
-                                        <p class="mr-2 text-right">Kapasitas Normal Perbulan</p>
-                                    </div>
-                                    <div class="col-6 p-1">
-                                        <div class="table-responsive table-responsive-sm">
-                                            <table class="table table-bordered table-hover" style="font-size: 8pt">
-                                                <thead class="">
                                                     <tr>
-                                                        <th scope="col" class="text-nowrap pr-4">
+                                                        <th colspan="2"
+                                                            class="text-nowrap h-auto align-middle w-50 bg-white text-dark"
+                                                            style="font-size: 10pt">Kapasitas Normal Perbulan</th>
+                                                        <td colspan="3">
                                                             <input type="text"
                                                                 class="form-control kapasitasNormalPerbulan kapasitasNormalPerbulan-1-6"
-                                                                placeholder="" name="kapasitasNormalPerbulan">
-                                                        </th>
+                                                                placeholder="" name="kapasitasNormalPerbulan"
+                                                                value="0">
+                                                        </td>
                                                     </tr>
-                                                </thead>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <div class="col">
-                                        <p class="mr-2 text-right">Biaya Satuan Product</p>
-                                    </div>
-                                    <div class="col-6 p-1">
-                                        <div class="table-responsive table-responsive-sm">
-                                            <table class="table table-bordered table-hover" style="font-size: 8pt">
-                                                <thead>
                                                     <tr>
-                                                        <th scope="col" class="text-nowrap pr-4"
-                                                            id="kdn-biaya-satuan-product-1-6">KDN</th>
-                                                        <th scope="col" class="text-nowrap pr-4"
-                                                            id="kln-biaya-satuan-product-1-6">KLN</th>
-                                                        <th scope="col" class="text-nowrap pr-4"
+                                                        <th colspan="2"
+                                                            class="text-nowrap h-auto align-middle w-50 bg-white text-dark"
+                                                            style="font-size: 10pt">Biaya Satuan Product</th>
+                                                        <td scope="col" class="text-nowrap pr-4"
+                                                            id="kdn-biaya-satuan-product-1-6">KDN</td>
+                                                        <td scope="col" class="text-nowrap pr-4"
+                                                            id="kln-biaya-satuan-product-1-6">KLN</td>
+                                                        <td scope="col" class="text-nowrap pr-4"
                                                             id="total-biaya-satuan-product-1-6">Total
-                                                        </th>
+                                                        </td>
                                                     </tr>
-                                                </thead>
-                                            </table>
+                                                </table>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -1710,140 +1420,56 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody id="tbody-7">
-                                                    <tr>
-                                                        <td>
-                                                            <div class="dropdown">
-                                                                <i data-feather="more-vertical" id="dropdownMenuButton"
-                                                                    class="feather-icon dropdown-toggle"
-                                                                    style="cursor: pointer;" data-toggle="dropdown"
-                                                                    aria-haspopup="true" aria-expanded="false"></i>
-                                                                <div class="dropdown-menu"
-                                                                    aria-labelledby="dropdownMenuButton">
-                                                                    <a class="dropdown-item buttonEditNews"
-                                                                        onclick=""><i class="fa fa-edit"></i>
-                                                                        Edit</a>
-                                                                    <form action="" method="post">
-                                                                        <button class="dropdown-item" type="submit"><i
-                                                                                class="fa fa-trash"></i> Delete</button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <th scope="row">1</th>
-                                                        <td>Center Back</td>
-                                                        <td>Brazil</td>
-                                                        <td>45.5</td>
-                                                        <td>12</td>
-                                                        <td>13.000.000</td>
-                                                        <td>Unit unitan</td>
-                                                        <td>3</td>
-                                                        <td>8</td>
-                                                        <td>122.000</td>
-                                                        <td>45.000.000</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="dropdown">
-                                                                <i data-feather="more-vertical" id="dropdownMenuButton"
-                                                                    class="feather-icon dropdown-toggle"
-                                                                    style="cursor: pointer;" data-toggle="dropdown"
-                                                                    aria-haspopup="true" aria-expanded="false"></i>
-                                                                <div class="dropdown-menu"
-                                                                    aria-labelledby="dropdownMenuButton">
-                                                                    <a class="dropdown-item buttonEditNews"
-                                                                        onclick=""><i class="fa fa-edit"></i>
-                                                                        Edit</a>
-                                                                    <form action="" method="post">
-                                                                        <button class="dropdown-item" type="submit"><i
-                                                                                class="fa fa-trash"></i> Delete</button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <th scope="row">2</th>
-                                                        <td>Striker</td>
-                                                        <td>Pantai Gading</td>
-                                                        <td>25.5</td>
-                                                        <td>12</td>
-                                                        <td>13.000.000</td>
-                                                        <td>Unit unitan</td>
-                                                        <td>3</td>
-                                                        <td>8</td>
-                                                        <td>122.000</td>
-                                                        <td>45.000.000</td>
-                                                    </tr>
                                                 </tbody>
                                             </table>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="d-flex">
-                                    <div class="col">
-                                        <p class="mt-5 mr-2 text-right">Total</p>
-                                    </div>
-                                    <div class="col-6 p-1">
-                                        <div class="table-responsive table-responsive-sm">
-                                            <table class="table table-bordered table-hover" style="font-size: 8pt">
-                                                <thead class="thead-dark">
-                                                    <tr>
+                                <div class="row card">
+                                    <div class="d-flex justify-content-end">
+                                        <div class="w-100 p-1">
+                                            <div class="w-100">
+                                                <table class="table table-bordered table-hover" style="font-size: 8pt">
+                                                    <tr class="bg-dark text-light">
+                                                        <th rowspan="2"
+                                                            class="text-nowrap h-auto align-bottom w-50 bg-white text-dark"
+                                                            style="font-size: 10pt">Total</th>
                                                         <th scope="col" class="text-nowrap pr-4">Jumlah Unit</th>
                                                         <th scope="col" class="text-nowrap pr-4">KDN</th>
                                                         <th scope="col" class="text-nowrap pr-4">KLN</th>
                                                         <th scope="col" class="text-nowrap pr-4">Total</th>
                                                     </tr>
-                                                </thead>
-                                                <tbody>
                                                     <tr>
                                                         <td id="1-7-sumJumlahUnit">0</td>
                                                         <td id="1-7-sumKdn">Rp.0</td>
                                                         <td id="1-7-sumKln">Rp.0</td>
                                                         <td id="1-7-sumTotal">Rp.0</td>
                                                     </tr>
-                                                </tbody>
-
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <div class="col">
-                                        <p class="mr-2 text-right">Kapasitas Normal Perbulan</p>
-                                    </div>
-                                    <div class="col-6 p-1">
-                                        <div class="table-responsive table-responsive-sm">
-                                            <table class="table table-bordered table-hover" style="font-size: 8pt">
-                                                <thead class="">
                                                     <tr>
-                                                        <th scope="col" class="text-nowrap pr-4">
+                                                        <th colspan="2"
+                                                            class="text-nowrap h-auto align-middle w-50 bg-white text-dark"
+                                                            style="font-size: 10pt">Kapasitas Normal Perbulan</th>
+                                                        <td colspan="3">
                                                             <input type="text"
                                                                 class="form-control kapasitasNormalPerbulan kapasitasNormalPerbulan-1-7"
-                                                                placeholder="" name="kapasitasNormalPerbulan">
-                                                        </th>
+                                                                placeholder="" name="kapasitasNormalPerbulan"
+                                                                value="0">
+                                                        </td>
                                                     </tr>
-                                                </thead>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <div class="col">
-                                        <p class="mr-2 text-right">Biaya Satuan Product</p>
-                                    </div>
-                                    <div class="col-6 p-1">
-                                        <div class="table-responsive table-responsive-sm">
-                                            <table class="table table-bordered table-hover" style="font-size: 8pt">
-                                                <thead>
                                                     <tr>
-                                                        <th scope="col" class="text-nowrap pr-4"
-                                                            id="kdn-biaya-satuan-product-1-7">KDN</th>
-                                                        <th scope="col" class="text-nowrap pr-4"
-                                                            id="kln-biaya-satuan-product-1-7">KLN</th>
-                                                        <th scope="col" class="text-nowrap pr-4"
+                                                        <th colspan="2"
+                                                            class="text-nowrap h-auto align-middle w-50 bg-white text-dark"
+                                                            style="font-size: 10pt">Biaya Satuan Product</th>
+                                                        <td scope="col" class="text-nowrap pr-4"
+                                                            id="kdn-biaya-satuan-product-1-7">KDN</td>
+                                                        <td scope="col" class="text-nowrap pr-4"
+                                                            id="kln-biaya-satuan-product-1-7">KLN</td>
+                                                        <td scope="col" class="text-nowrap pr-4"
                                                             id="total-biaya-satuan-product-1-7">Total
-                                                        </th>
+                                                        </td>
                                                     </tr>
-                                                </thead>
-                                            </table>
+                                                </table>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -1970,140 +1596,56 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody id="tbody-8">
-                                                    <tr>
-                                                        <td>
-                                                            <div class="dropdown">
-                                                                <i data-feather="more-vertical" id="dropdownMenuButton"
-                                                                    class="feather-icon dropdown-toggle"
-                                                                    style="cursor: pointer;" data-toggle="dropdown"
-                                                                    aria-haspopup="true" aria-expanded="false"></i>
-                                                                <div class="dropdown-menu"
-                                                                    aria-labelledby="dropdownMenuButton">
-                                                                    <a class="dropdown-item buttonEditNews"
-                                                                        onclick=""><i class="fa fa-edit"></i>
-                                                                        Edit</a>
-                                                                    <form action="" method="post">
-                                                                        <button class="dropdown-item" type="submit"><i
-                                                                                class="fa fa-trash"></i> Delete</button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <th scope="row">1</th>
-                                                        <td>Center Back</td>
-                                                        <td>Brazil</td>
-                                                        <td>45.5</td>
-                                                        <td>12</td>
-                                                        <td>13.000.000</td>
-                                                        <td>Unit unitan</td>
-                                                        <td>3</td>
-                                                        <td>8</td>
-                                                        <td>122.000</td>
-                                                        <td>45.000.000</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="dropdown">
-                                                                <i data-feather="more-vertical" id="dropdownMenuButton"
-                                                                    class="feather-icon dropdown-toggle"
-                                                                    style="cursor: pointer;" data-toggle="dropdown"
-                                                                    aria-haspopup="true" aria-expanded="false"></i>
-                                                                <div class="dropdown-menu"
-                                                                    aria-labelledby="dropdownMenuButton">
-                                                                    <a class="dropdown-item buttonEditNews"
-                                                                        onclick=""><i class="fa fa-edit"></i>
-                                                                        Edit</a>
-                                                                    <form action="" method="post">
-                                                                        <button class="dropdown-item" type="submit"><i
-                                                                                class="fa fa-trash"></i> Delete</button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <th scope="row">2</th>
-                                                        <td>Striker</td>
-                                                        <td>Pantai Gading</td>
-                                                        <td>25.5</td>
-                                                        <td>12</td>
-                                                        <td>13.000.000</td>
-                                                        <td>Unit unitan</td>
-                                                        <td>3</td>
-                                                        <td>8</td>
-                                                        <td>122.000</td>
-                                                        <td>45.000.000</td>
-                                                    </tr>
                                                 </tbody>
                                             </table>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="d-flex">
-                                    <div class="col">
-                                        <p class="mt-5 mr-2 text-right">Total</p>
-                                    </div>
-                                    <div class="col-6 p-1">
-                                        <div class="table-responsive table-responsive-sm">
-                                            <table class="table table-bordered table-hover" style="font-size: 8pt">
-                                                <thead class="thead-dark">
-                                                    <tr>
+                                <div class="row card">
+                                    <div class="d-flex justify-content-end">
+                                        <div class="w-100 p-1">
+                                            <div class="w-100">
+                                                <table class="table table-bordered table-hover" style="font-size: 8pt">
+                                                    <tr class="bg-dark text-light">
+                                                        <th rowspan="2"
+                                                            class="text-nowrap h-auto align-bottom w-50 bg-white text-dark"
+                                                            style="font-size: 10pt">Total</th>
                                                         <th scope="col" class="text-nowrap pr-4">Jumlah</th>
                                                         <th scope="col" class="text-nowrap pr-4">KDN</th>
                                                         <th scope="col" class="text-nowrap pr-4">KLN</th>
                                                         <th scope="col" class="text-nowrap pr-4">Total</th>
                                                     </tr>
-                                                </thead>
-                                                <tbody>
                                                     <tr>
                                                         <td id="1-8-sumJumlah">0</td>
                                                         <td id="1-8-sumKdn">Rp.0</td>
                                                         <td id="1-8-sumKln">Rp.0</td>
                                                         <td id="1-8-sumTotal">Rp.0</td>
                                                     </tr>
-                                                </tbody>
-
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <div class="col">
-                                        <p class="mr-2 text-right">Kapasitas Normal Perbulan</p>
-                                    </div>
-                                    <div class="col-6 p-1">
-                                        <div class="table-responsive table-responsive-sm">
-                                            <table class="table table-bordered table-hover" style="font-size: 8pt">
-                                                <thead class="">
                                                     <tr>
-                                                        <th scope="col" class="text-nowrap pr-4">
+                                                        <th colspan="2"
+                                                            class="text-nowrap h-auto align-middle w-50 bg-white text-dark"
+                                                            style="font-size: 10pt">Kapasitas Normal Perbulan</th>
+                                                        <td colspan="3">
                                                             <input type="text"
                                                                 class="form-control kapasitasNormalPerbulan kapasitasNormalPerbulan-1-8"
-                                                                placeholder="" name="kapasitasNormalPerbulan">
-                                                        </th>
+                                                                placeholder="" name="kapasitasNormalPerbulan"
+                                                                value="0">
+                                                        </td>
                                                     </tr>
-                                                </thead>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <div class="col">
-                                        <p class="mr-2 text-right">Biaya Satuan Product</p>
-                                    </div>
-                                    <div class="col-6 p-1">
-                                        <div class="table-responsive table-responsive-sm">
-                                            <table class="table table-bordered table-hover" style="font-size: 8pt">
-                                                <thead>
                                                     <tr>
-                                                        <th scope="col" class="text-nowrap pr-4"
-                                                            id="kdn-biaya-satuan-product-1-8">KDN</th>
-                                                        <th scope="col" class="text-nowrap pr-4"
-                                                            id="kln-biaya-satuan-product-1-8">KLN</th>
-                                                        <th scope="col" class="text-nowrap pr-4"
+                                                        <th colspan="2"
+                                                            class="text-nowrap h-auto align-middle w-50 bg-white text-dark"
+                                                            style="font-size: 10pt">Biaya Satuan Product</th>
+                                                        <td scope="col" class="text-nowrap pr-4"
+                                                            id="kdn-biaya-satuan-product-1-8">KDN</td>
+                                                        <td scope="col" class="text-nowrap pr-4"
+                                                            id="kln-biaya-satuan-product-1-8">KLN</td>
+                                                        <td scope="col" class="text-nowrap pr-4"
                                                             id="total-biaya-satuan-product-1-8">Total
-                                                        </th>
+                                                        </td>
                                                     </tr>
-                                                </thead>
-                                            </table>
+                                                </table>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -2206,7 +1748,7 @@
                     <div class="save-draft">
                         <div class="form-group p-2 pt-0 pb-2">
                             <button class="btn btn-success btn-block"
-                                onclick="store('{{ route('calculation-results.store') }}', calculations, '{{ route('computation.index') }}', '{{ $computation->id }}')">Save
+                                onclick="store('{{ route('calculation-results.store') }}', '{{ route('computation.index') }}', '{{ $computation->id }}')">Save
                                 Draft</button>
                         </div>
                     </div>
@@ -2389,12 +1931,10 @@
                         url: '{{ $computation->calculation_result != null ? route('calculation-results.show', $computation->calculation_result->id) : 'fail' }}',
                         async: false,
                         success: function(response) {
-                            calculations = response.calculationResult.results;
-                            draftCalculation = {
-                                computationId: computationId,
-                                calculations: calculations
-                            }
+                            draftCalculation = response.calculationResult.results;
                             draftCalculations.push(draftCalculation);
+
+                            init();
                         },
                         error: function(error) {
                             calculations = [{
@@ -2495,8 +2035,7 @@
                                         sumKln: "sum:kln",
                                         sumTotal: "sum:total",
                                     },
-                                    "data": [
-                                        {
+                                    "data": [{
                                             "uraian_posisi": "BPJS",
                                             "produsen_tingkat_dua": "-",
                                             "tkdn": "100",
@@ -2589,7 +2128,8 @@
                             ];
                             draftCalculation = {
                                 computationId: computationId,
-                                calculations: calculations
+                                calculations: calculations,
+                                kapasitasNormalPerbulan: 1,
                             }
                             draftCalculations.push(draftCalculation);
                             init();
@@ -2877,10 +2417,11 @@
                         sumRegex.lastIndex = 0;
                         formulas[formulaKey].replace(sumRegex, (match, key) => {
                             calculation.data.forEach(calculationResult => {
-                                if(typeof calculationResult[key] == "string") {
-                                    calculationResult[key] = parseFloat(calculationResult[key]);
+                                if (typeof calculationResult[key] == "string") {
+                                    calculationResult[key] = parseFloat(calculationResult[
+                                        key]);
                                 }
-                                sum += (calculationResult[key] ?? 0);
+                                sum += (calculationResult[key] != null ? calculationResult[key] : 0);
                             });
                         })
 
@@ -2892,10 +2433,13 @@
             let draftCalculation = draftCalculations.find(f => f.computationId == computationId);
 
             calculations.forEach((calculation, index) => {
-                if(index >= 2) {
-                    calculation.bspKdn = (calculation.sumKdn ?? 0) / (draftCalculation.kapasitasNormalPerbulan ?? 0);
-                    calculation.bspKln = (calculation.sumKln ?? 0) / (draftCalculation.kapasitasNormalPerbulan ?? 0);
-                    calculation.bspTotal = (calculation.sumTotal ?? 0) / (draftCalculation.kapasitasNormalPerbulan ?? 0);
+                if (index >= 2) {
+                    calculation.bspKdn = (calculation.sumKdn ?? 0) / (draftCalculation.kapasitasNormalPerbulan ??
+                    0);
+                    calculation.bspKln = (calculation.sumKln ?? 0) / (draftCalculation.kapasitasNormalPerbulan ??
+                    0);
+                    calculation.bspTotal = (calculation.sumTotal ?? 0) / (draftCalculation
+                        .kapasitasNormalPerbulan ?? 0);
                 }
             })
         }
@@ -2973,9 +2517,11 @@
         }
 
 
-        function store(url, formData, redirectUrl, computationId) {
+        function store(url, redirectUrl, computationId) {
+            draftCalculation = draftCalculations.find(f => f.computationId == computationId);
+
             formData = {
-                results: JSON.stringify(formData),
+                results: JSON.stringify(draftCalculation),
                 computation_id: computationId,
             };
 
@@ -3000,8 +2546,6 @@
                     }).then((willRedirect) => {
                         if (willRedirect) {
                             location.href = redirectUrl
-                        } else {
-                            calculations = JSON.parse(response.calculationResult.results);
                         }
                     });
                 },
@@ -3110,11 +2654,6 @@
                 let sumKdn = formatToCurrency(calculation.sumKdn)
                 let sumKln = formatToCurrency(calculation.sumKln)
                 let sumTotal = formatToCurrency(calculation.sumTotal)
-                // let sumPpn = parseInt(calculation.sumPpn).toLocaleString()
-                // let sumBm = parseInt(calculation.sumBm).toLocaleString()
-                // let sumPdriPpn = parseInt(calculation.sumPdriPpn).toLocaleString()
-                // let sumPph = parseInt(calculation.sumPph).toLocaleString()
-                // let sumPdriTotal = parseInt(calculation.sumPdriTotal).toLocaleString()
                 $(`#sumKdn-1-2`).text(formatToCurrency((calculation.sumKdn ?? 0)))
                 $(`#sumKln-1-2`).text(formatToCurrency((calculation.sumKln ?? 0)))
                 $(`#sumTotal-1-2`).text(formatToCurrency((calculation.sumTotal ?? 0)));
@@ -3181,9 +2720,9 @@
                 $(`#1-3-sumKdn`).text(sumKdn)
                 $(`#1-3-sumKln`).text(sumKln)
                 $(`#1-3-sumTotal`).text(sumTotal)
-                $(`#kdn-biaya-satuan-product-1-3`).text(formatToCurrency(calculation.bspKdn ?? 0))
-                $(`#kln-biaya-satuan-product-1-3`).text(formatToCurrency(calculation.bspKln ?? 0))
-                $(`#total-biaya-satuan-product-1-3`).text(formatToCurrency(calculation.bspTotal ?? 0))
+                $(`#kdn-biaya-satuan-product-1-3`).text(formatToCurrency(calculation.bspKdn != null ? calculation.bspKdn : 0))
+                $(`#kln-biaya-satuan-product-1-3`).text(formatToCurrency(calculation.bspKln != null ? calculation.bspKln : 0))
+                $(`#total-biaya-satuan-product-1-3`).text(formatToCurrency(calculation.bspTotal != null ? calculation.bspTotal : 0))
                 calculation.data.forEach(function(item, index) {
                     let row = `
                     <tr>
@@ -3227,16 +2766,16 @@
                 let sumKdn = formatToCurrency(calculation.sumKdn)
                 let sumKln = formatToCurrency(calculation.sumKln)
                 let sumTotal = formatToCurrency(calculation.sumTotal)
-                $(`#1-4-sumJumlahOrang`).text(calculation.sumJumlahOrang ?? 0)
-                $(`#1-4-sumKdn`).text(formatToCurrency((calculation.sumKdn ?? 0)))
+                $(`#1-4-sumJumlahOrang`).text(calculation.sumJumlahOrang != null ? calculation.sumJumlahOrang : 0)
+                $(`#1-4-sumKdn`).text(formatToCurrency((calculation.sumKdn != null ? calculation.sumKdn : 0)))
                 $(`#1-4-sumKln`).text(sumKln)
-                $(`#1-4-sumTotal`).text(formatToCurrency((calculation.sumTotal ?? 0)))
-                $(`#kdn-biaya-satuan-product-1-4`).text(formatToCurrency(calculation.bspKdn ?? 0))
-                $(`#kln-biaya-satuan-product-1-4`).text(formatToCurrency(calculation.bspKln ?? 0))
-                $(`#total-biaya-satuan-product-1-4`).text(formatToCurrency(calculation.bspTotal ?? 0))
+                $(`#1-4-sumTotal`).text(formatToCurrency((calculation.sumTotal != null ? calculation.sumTotal : 0)))
+                $(`#kdn-biaya-satuan-product-1-4`).text(formatToCurrency(calculation.bspKdn != null ? calculation.bspKdn : 0))
+                $(`#kln-biaya-satuan-product-1-4`).text(formatToCurrency(calculation.bspKln != null ? calculation.bspKln : 0))
+                $(`#total-biaya-satuan-product-1-4`).text(formatToCurrency(calculation.bspTotal != null ? calculation.bspTotal : 0))
                 calculation.data.forEach(function(item, index) {
                     let row = "";
-                    if(index <= 1) {
+                    if (index <= 1) {
                         row = `
                         <tr>
                             <td></td>
@@ -3244,7 +2783,7 @@
                             <td class="text-nowrap"> ${item.uraian_posisi} </td>
                             <td> ${item.produsen_tingkat_dua} </td>
                             <td> ${item.tkdn}% </td>
-                            <td> ${item.jumlah_orang ?? "-"} </td>
+                            <td> ${item.jumlah_orang != null ? item.jumlah_orang : "-"} </td>
                             <td class="text-nowrap"> ${item.biaya_pengurusan_per_bulan} </td>
                             <td> ${item.alokasi}%</td>
                             <td class="text-nowrap"> ${formatToCurrency(item.kdn)} </td>
@@ -3473,7 +3012,7 @@
                 let sumKln19 = 0;
                 let sumTotal19 = 0;
                 calculations.forEach(function(item, index) {
-                    if(index <= 1) {
+                    if (index <= 1) {
                         sumKdn19 += item.sumKdn ?? 0;
                         sumKln19 += item.sumKln ?? 0;
                         sumTotal19 += item.sumTotal ?? 0;
@@ -3486,7 +3025,7 @@
 
                 calculations.forEach(function(item, index) {
                     let row = "";
-                    if(index <= 1) {
+                    if (index <= 1) {
                         row = `<tr>
                             <td class="text-nowrap"> ${item.no} </td>
                             <td class="text-nowrap"> ${item.nama} </td>
@@ -3512,14 +3051,15 @@
                 $("#sumKdn-1-9").text(formatToCurrency(sumKdn19));
                 $("#sumKln-1-9").text(formatToCurrency(sumKln19));
                 $("#sumTotal-1-9").text(formatToCurrency(sumTotal19));
-                $("#sumTkdn-1-9").text(`${sumTotal19 != null ? (((sumKdn19 ?? 0) / (sumTotal19 ?? 0) * 100).toFixed(2)) : 0}%`);
+                $("#sumTkdn-1-9").text(
+                    `${sumTotal19 != null ? (((sumKdn19 ?? 0) / (sumTotal19 ?? 0) * 100).toFixed(2)) : 0}%`);
             } else if (tbodyId == "tbody-10") {
                 const tbody = $(`#${tbodyId}`);
                 let sumKdn19 = 0;
                 let sumKln19 = 0;
                 let sumTotal19 = 0;
                 calculations.forEach(function(item, index) {
-                    if(index <= 1) {
+                    if (index <= 1) {
                         sumKdn19 += item.sumKdn ?? 0;
                         sumKln19 += item.sumKln ?? 0;
                         sumTotal19 += item.sumTotal ?? 0;
@@ -3566,10 +3106,13 @@
                 draftCalculation.kapasitasNormalPerbulan = kapasitasNormalPerbulan;
 
                 calculations.forEach((calculation, index) => {
-                    if(index >= 2) {
-                        calculation.bspKdn = (calculation.sumKdn ?? 0) / (draftCalculation.kapasitasNormalPerbulan ?? 0);
-                        calculation.bspKln = (calculation.sumKln ?? 0) / (draftCalculation.kapasitasNormalPerbulan ?? 0);
-                        calculation.bspTotal = (calculation.sumTotal ?? 0) / (draftCalculation.kapasitasNormalPerbulan ?? 0);
+                    if (index >= 2) {
+                        calculation.bspKdn = (calculation.sumKdn ?? 0) / (draftCalculation
+                            .kapasitasNormalPerbulan ?? 0);
+                        calculation.bspKln = (calculation.sumKln ?? 0) / (draftCalculation
+                            .kapasitasNormalPerbulan ?? 0);
+                        calculation.bspTotal = (calculation.sumTotal ?? 0) / (draftCalculation
+                            .kapasitasNormalPerbulan ?? 0);
                     }
                 })
                 // Mengonversi objek menjadi string JSON
@@ -3648,6 +3191,27 @@
                 }
             })
         })
+
+        $(document).on('keydown', '.trigger-enter', function (event) {
+            // Jika tombol Enter ditekan
+            if (event.key === 'Enter') {
+                // Mencegah perilaku default tombol Enter
+                event.preventDefault();
+
+                // Mendapatkan elemen yang sedang dalam fokus
+                const focusedElement = $(this);
+
+                // Mendapatkan daftar semua elemen input dalam urutan tertentu
+                const inputElements = $('.trigger-enter');
+
+                // Menentukan elemen berikutnya yang akan menerima fokus
+                const currentIndex = inputElements.index(focusedElement);
+                const nextIndex = (currentIndex + 1) % inputElements.length;
+
+                // Memberikan fokus ke elemen berikutnya
+                inputElements.eq(nextIndex).focus();
+            }
+        });
     </script>
     // {{-- <script src="{{ asset('dist/js/users/script.js') }}"></script> --}}
 @endpush
