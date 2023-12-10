@@ -4,7 +4,7 @@
 {{-- @dd($detail) --}}
 <p>
     <b>
-        FORMULIR 1.7 : TINGKAT KOMPONEN DALAM NEGERI UNTUK BIAYA TIDAK LANGSUNG PABRIK (UNTUK MESIN / ALAT KERJA / FASILITAS KERJA YANG DISEWA													
+        FORMULIR 1.7 : TINGKAT KOMPONEN DALAM NEGERI UNTUK BIAYA TIDAK LANGSUNG PABRIK (UNTUK MESIN / ALAT KERJA / FASILITAS KERJA YANG DISEWA)												
     </b>
 </p>
 <p>&nbsp;</p>
@@ -96,9 +96,9 @@
                 <td></td>
                 <td></td>
                 <td style="border:1px solid #000000;background-color: #dbdbdb;text-align: center;"><b>Total</b></td>
-                <td style="{{ $borderStyle }}"><b>Rp {{ $detail['sumKdn'] }}</b></td>
-                <td style="{{ $borderStyle }}"><b>Rp {{ $detail['sumKln'] }}</b></td>
-                <td style="{{ $borderStyle }}"><b>Rp {{ $detail['sumTotal'] }}</b></td>
+                <td style="{{ $borderStyle }}"><b>Rp {{ $detail['bspKdn'] }}</b></td>
+                <td style="{{ $borderStyle }}"><b>Rp {{ $detail['bspKln'] }}</b></td>
+                <td style="{{ $borderStyle }}"><b>Rp {{ $detail['bspTotal'] }}</b></td>
             </tr>
     </tbody>
 </table>

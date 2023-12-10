@@ -1,9 +1,9 @@
 @php
     $borderStyle = 'border:1px solid #000000;'; // Adjust the border style as needed
 
-    $totalSumKdn = ($detail['1.1']['sumKdn'] + $detail['1.2']['sumKdn'] + $detail['1.3']['sumKdn'] + $detail['1.4']['sumKdn'] + $detail['1.5']['sumKdn'] + $detail['1.6']['sumKdn'] + $detail['1.7']['sumKdn'] + $detail['1.8']['sumKdn']);
-    $totalSumKln = ($detail['1.1']['sumKln'] + $detail['1.2']['sumKln'] + $detail['1.3']['sumKln'] + $detail['1.4']['sumKln'] + $detail['1.5']['sumKln'] + $detail['1.6']['sumKln'] + $detail['1.7']['sumKln'] + $detail['1.8']['sumKln']);
-    $totalSumTotal = ($detail['1.1']['sumTotal'] + $detail['1.2']['sumTotal'] + $detail['1.3']['sumTotal'] + $detail['1.4']['sumTotal'] + $detail['1.5']['sumTotal'] + $detail['1.6']['sumTotal'] + $detail['1.7']['sumTotal'] + $detail['1.8']['sumTotal']);
+    $totalSumKdn = ($detail['1.1']['sumKdn'] + $detail['1.2']['sumKdn'] + $detail['1.3']['bspKdn'] + $detail['1.4']['bspKdn'] + $detail['1.5']['bspKdn'] + $detail['1.6']['bspKdn'] + $detail['1.7']['bspKdn'] + $detail['1.8']['bspKdn']);
+    $totalSumKln = ($detail['1.1']['sumKln'] + $detail['1.2']['sumKln'] + $detail['1.3']['bspKln'] + $detail['1.4']['bspKln'] + $detail['1.5']['bspKln'] + $detail['1.6']['bspKln'] + $detail['1.7']['bspKln'] + $detail['1.8']['bspKln']);
+    $totalSumTotal = ($detail['1.1']['sumTotal'] + $detail['1.2']['sumTotal'] + $detail['1.3']['bspTotal'] + $detail['1.4']['bspTotal'] + $detail['1.5']['bspTotal'] + $detail['1.6']['bspTotal'] + $detail['1.7']['bspTotal'] + $detail['1.8']['bspTotal']);
 @endphp
 {{-- @dd($detail) --}}
 <p>
@@ -113,16 +113,16 @@
                 {{ $detail['1.3']['nama'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                {{ $detail['1.3']['sumKdn'] ?? '' }}
+                {{ $detail['1.3']['bspKdn'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}"> 
-                {{ $detail['1.3']['sumKln'] ?? '' }}
+                {{ $detail['1.3']['bspKln'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                {{ $detail['1.3']['sumTotal'] ?? '' }}
+                {{ $detail['1.3']['bspTotal'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                {{ ($detail['1.3']['sumKdn'] / $totalSumTotal) * 100 }}
+                {{ ($detail['1.3']['bspKdn'] / $totalSumTotal) * 100 }}
             </td>
         </tr>
         <tr>
@@ -131,16 +131,16 @@
                 {{ $detail['1.4']['nama'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                {{ $detail['1.4']['sumKdn'] ?? '' }}
+                {{ $detail['1.4']['bspKdn'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}"> 
-                {{ $detail['1.4']['sumKln'] ?? '' }}
+                {{ $detail['1.4']['bspKln'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                {{ $detail['1.4']['sumTotal'] ?? '' }}
+                {{ $detail['1.4']['bspTotal'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                {{ ($detail['1.4']['sumKdn'] / $totalSumTotal) * 100 }}
+                {{ ($detail['1.4']['bspKdn'] / $totalSumTotal) * 100 }}
 
             </td>
         </tr>
@@ -153,16 +153,16 @@
                 {{ $detail['1.5']['nama'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                {{ $detail['1.5']['sumKdn'] ?? '' }}
+                {{ $detail['1.5']['bspKdn'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}"> 
-                {{ $detail['1.5']['sumKln'] ?? '' }}
+                {{ $detail['1.5']['bspKln'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                {{ $detail['1.5']['sumTotal'] ?? '' }}
+                {{ $detail['1.5']['bspTotal'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                {{ ($detail['1.5']['sumKdn'] / $totalSumTotal) * 100 }}
+                {{ ($detail['1.5']['bspKdn'] / $totalSumTotal) * 100 }}
             </td>
         </tr>
         <tr>
@@ -171,16 +171,16 @@
                 {{ $detail['1.6']['nama'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                {{ $detail['1.6']['sumKdn'] ?? '' }}
+                {{ $detail['1.6']['bspKdn'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}"> 
-                {{ $detail['1.6']['sumKln'] ?? '' }}
+                {{ $detail['1.6']['bspKln'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                {{ $detail['1.6']['sumTotal'] ?? '' }}
+                {{ $detail['1.6']['bspTotal'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                {{ ($detail['1.6']['sumKdn'] / $totalSumTotal) * 100 }}
+                {{ ($detail['1.6']['bspKdn'] / $totalSumTotal) * 100 }}
             </td>
         </tr>
         <tr>
@@ -189,16 +189,16 @@
                 {{ $detail['1.7']['nama'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                {{ $detail['1.7']['sumKdn'] ?? '' }}
+                {{ $detail['1.7']['bspKdn'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}"> 
-                {{ $detail['1.7']['sumKln'] ?? '' }}
+                {{ $detail['1.7']['bspKln'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                {{ $detail['1.7']['sumTotal'] ?? '' }}
+                {{ $detail['1.7']['bspTotal'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                {{ ($detail['1.7']['sumKdn'] / $totalSumTotal) * 100 }}
+                {{ ($detail['1.7']['bspKdn'] / $totalSumTotal) * 100 }}
             </td>
         </tr>
         <tr>
@@ -207,16 +207,16 @@
                 {{ $detail['1.8']['nama'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                {{ $detail['1.8']['sumKdn'] ?? '' }}
+                {{ $detail['1.8']['bspKdn'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}"> 
-                {{ $detail['1.8']['sumKln'] ?? '' }}
+                {{ $detail['1.8']['bspKln'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                {{ $detail['1.8']['sumTotal'] ?? '' }}
+                {{ $detail['1.8']['bspTotal'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                {{ ($detail['1.8']['sumKdn'] / $totalSumTotal) * 100 }}
+                {{ ($detail['1.8']['bspKdn'] / $totalSumTotal) * 100 }}
             </td>
         </tr>
         <tr>
