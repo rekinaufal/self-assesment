@@ -76,14 +76,14 @@
             <td style="{{ $borderStyle }}">
                 {{ $detail['1.1']['sumKdn'] ?? '' }}
             </td>
-            <td style="{{ $borderStyle }}"> 
+            <td style="{{ $borderStyle }}">
                 {{ $detail['1.1']['sumKln'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
                 {{ $detail['1.1']['sumTotal'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                {{ ($detail['1.1']['sumKdn'] / $totalSumTotal) * 100 }}
+                {{ str_replace('.', ',', number_format((($detail['1.1']['sumKdn'] / $totalSumTotal) * 100), 2)) . "%" }}
             </td>
         </tr>
         <tr>
@@ -94,14 +94,14 @@
             <td style="{{ $borderStyle }}">
                 {{ $detail['1.2']['sumKdn'] ?? '' }}
             </td>
-            <td style="{{ $borderStyle }}"> 
+            <td style="{{ $borderStyle }}">
                 {{ $detail['1.2']['sumKln'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
                 {{ $detail['1.2']['sumTotal'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                {{ ($detail['1.2']['sumKdn'] / $totalSumTotal) * 100 }}
+                {{ str_replace('.', ',', number_format((($detail['1.2']['sumKdn'] / $totalSumTotal) * 100), 2)) . "%" }}
             </td>
         </tr>
         <tr>
@@ -115,14 +115,14 @@
             <td style="{{ $borderStyle }}">
                 {{ $detail['1.3']['bspKdn'] ?? '' }}
             </td>
-            <td style="{{ $borderStyle }}"> 
+            <td style="{{ $borderStyle }}">
                 {{ $detail['1.3']['bspKln'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
                 {{ $detail['1.3']['bspTotal'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                {{ ($detail['1.3']['bspKdn'] / $totalSumTotal) * 100 }}
+                {{ str_replace('.', ',', number_format((($detail['1.3']['bspKdn'] / $totalSumTotal) * 100), 2)) . "%" }}
             </td>
         </tr>
         <tr>
@@ -133,15 +133,14 @@
             <td style="{{ $borderStyle }}">
                 {{ $detail['1.4']['bspKdn'] ?? '' }}
             </td>
-            <td style="{{ $borderStyle }}"> 
+            <td style="{{ $borderStyle }}">
                 {{ $detail['1.4']['bspKln'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
                 {{ $detail['1.4']['bspTotal'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                {{ ($detail['1.4']['bspKdn'] / $totalSumTotal) * 100 }}
-
+                {{ str_replace('.', ',', number_format((($detail['1.4']['bspKdn'] / $totalSumTotal) * 100), 2)) . "%" }}
             </td>
         </tr>
         <tr>
@@ -155,14 +154,14 @@
             <td style="{{ $borderStyle }}">
                 {{ $detail['1.5']['bspKdn'] ?? '' }}
             </td>
-            <td style="{{ $borderStyle }}"> 
+            <td style="{{ $borderStyle }}">
                 {{ $detail['1.5']['bspKln'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
                 {{ $detail['1.5']['bspTotal'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                {{ ($detail['1.5']['bspKdn'] / $totalSumTotal) * 100 }}
+                {{ str_replace('.', ',', number_format((($detail['1.5']['bspKdn'] / $totalSumTotal) * 100), 2)) . "%" }}
             </td>
         </tr>
         <tr>
@@ -173,14 +172,14 @@
             <td style="{{ $borderStyle }}">
                 {{ $detail['1.6']['bspKdn'] ?? '' }}
             </td>
-            <td style="{{ $borderStyle }}"> 
+            <td style="{{ $borderStyle }}">
                 {{ $detail['1.6']['bspKln'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
                 {{ $detail['1.6']['bspTotal'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                {{ ($detail['1.6']['bspKdn'] / $totalSumTotal) * 100 }}
+                {{ str_replace('.', ',', number_format((($detail['1.6']['bspKdn'] / $totalSumTotal) * 100), 2)) . "%" }}
             </td>
         </tr>
         <tr>
@@ -191,14 +190,14 @@
             <td style="{{ $borderStyle }}">
                 {{ $detail['1.7']['bspKdn'] ?? '' }}
             </td>
-            <td style="{{ $borderStyle }}"> 
+            <td style="{{ $borderStyle }}">
                 {{ $detail['1.7']['bspKln'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
                 {{ $detail['1.7']['bspTotal'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                {{ ($detail['1.7']['bspKdn'] / $totalSumTotal) * 100 }}
+                {{ str_replace('.', ',', number_format((($detail['1.7']['bspKdn'] / $totalSumTotal) * 100), 2)) . "%" }}
             </td>
         </tr>
         <tr>
@@ -209,14 +208,14 @@
             <td style="{{ $borderStyle }}">
                 {{ $detail['1.8']['bspKdn'] ?? '' }}
             </td>
-            <td style="{{ $borderStyle }}"> 
+            <td style="{{ $borderStyle }}">
                 {{ $detail['1.8']['bspKln'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
                 {{ $detail['1.8']['bspTotal'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                {{ ($detail['1.8']['bspKdn'] / $totalSumTotal) * 100 }}
+                {{ str_replace('.', ',', number_format((($detail['1.8']['bspKdn'] / $totalSumTotal) * 100), 2)) . "%" }}
             </td>
         </tr>
         <tr>
@@ -232,8 +231,9 @@
                 {{ $totalSumTotal }}
             </td>
             <td style="{{ $borderStyle }}">
-                <b>{{ $totalSumKdn / $totalSumTotal }}%</b>
+                <b>{{ str_replace('.', ',', number_format(((($totalSumKdn / $totalSumTotal) * 100)), 2)) . "%" }}</b>
             </td>
         </tr>
     </tbody>
 </table>
+

@@ -31,7 +31,7 @@ class CalculationForm9 implements WithTitle, FromView, WithStyles, ShouldAutoSiz
     public function view(): View
     {
         return view('excel.calculation-form9', [
-            
+
             'parent' => $this->parent_row,
             'detail' => $this->rows
         ]);
@@ -39,10 +39,10 @@ class CalculationForm9 implements WithTitle, FromView, WithStyles, ShouldAutoSiz
 
     public function styles(Worksheet $sheet)
     {
-        // FORMULIR 1.9 : REKAPITULASI PENILAIAN 																
+        // FORMULIR 1.9 : REKAPITULASI PENILAIAN
         $sheet->mergeCells('A1:F1');
         $sheet->getStyle('A1:F1')->getAlignment()->setHorizontal('center')->setVertical('middle');
-        // TINGKAT KOMPONEN DALAM NEGERI RANGKA, DAN/ATAU BODI						
+        // TINGKAT KOMPONEN DALAM NEGERI RANGKA, DAN/ATAU BODI
         $sheet->mergeCells('A2:F2');
         $sheet->getStyle('A2:F2')->getAlignment()->setHorizontal('center')->setVertical('middle');
 
@@ -57,12 +57,12 @@ class CalculationForm9 implements WithTitle, FromView, WithStyles, ShouldAutoSiz
         $sheet->mergeCells('A10:B11');
         $sheet->mergeCells('C10:E10');
         $sheet->mergeCells('F10:F11');
-        
+
         // merge garis abu
         $sheet->mergeCells('A12:F12');
         $sheet->mergeCells('A15:F15');
         $sheet->mergeCells('A18:F18');
-        
+
         // merge total
         $sheet->mergeCells('A23:B23');
 
@@ -75,74 +75,19 @@ class CalculationForm9 implements WithTitle, FromView, WithStyles, ShouldAutoSiz
         $sheet->getStyle('F4:F23')->getBorders()->getRight()->setBorderStyle('thin');
 
         $sheet->getStyle('A10:F11')->getAlignment()->setHorizontal('center')->setVertical('middle');
+
+        $lastRow = $sheet->getHighestRow();
+
+        $sheet->getStyle('C13:E' . $lastRow)->getAlignment()->setHorizontal('left');
+        $sheet->getStyle('F13:F' . $lastRow)->getAlignment()->setHorizontal('right');
     }
 
     public function columnFormats(): array
     {
         return [
-            'F' => '#,##0.00',
+            'C' => 'Rp #,##0.00',
+            'D' => 'Rp #,##0.00',
+            'E' => 'Rp #,##0.00',
         ];
     }
-    // public function map($row): array
-    // {
-    //     dd($this->rows);
-    //     return [
-    //         $row["uraian"],
-    //         $row["pemasok"],
-    //         $row["jumlah"],
-    //         $row["tkdn"],
-    //         $row["biaya_perbulan"],
-    //         $row["alokasi"],
-    //         $row["id"],
-    //         $row["kdn"],
-    //         $row["kln"],
-    //         $row["total"],
-    //         $row["sumJumlah"],
-    //         $row["sumKdn"],
-    //         $row["sumKln"],
-    //         $row["sumTotal"],
-    //     ];
-    // }
-
-    // public function headings(): array
-    // {
-    //     return [
-    //         "uraian",
-    //         "pemasok",
-    //         "jumlah",
-    //         "tkdn",
-    //         "biaya_perbulan",
-    //         "alokasi",
-    //         "id",
-    //         "kdn",
-    //         "kln",
-    //         "total",
-    //         "sumJumlah",
-    //         "sumKdn",
-    //         "sumKln",
-    //         "sumTotal",
-    //     ];
-    // }
-
-    // public function array(): array
-    // {
-    //     return $this->rows;
-    // }
-
-    // public function columnFormats(): array
-    // {
-    //     return [
-    //         'B' => '#,##0',
-    //         'C' => '#,##0',
-    //         'D' => '#,##0',
-    //         'E' => '#,##0',
-    //         'F' => '#,##0',
-    //         'G' => '#,##0',
-    //         'H' => '#,##0',
-    //         'I' => '#,##0',
-    //         'J' => '#,##0',
-    //         'K' => '#,##0',
-    //         'L' => '#,##0',
-    //     ];
-    // }
 }
