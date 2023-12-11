@@ -13,7 +13,7 @@ use PhpOffice\PhpSpreadsheet\Worksheet\Worksheet;
 use Illuminate\Contracts\View\View;
 use Maatwebsite\Excel\Concerns\FromView;
 // class CalculationForm1 implements FromArray, WithHeadings, WithTitle, ShouldAutoSize, WithColumnFormatting, WithMapping, WithStartRow
-class CalculationForm1 implements WithTitle, FromView, WithStyles, ShouldAutoSize
+class CalculationForm1 implements WithTitle, FromView, WithStyles, ShouldAutoSize, WithColumnFormatting
 {
     protected $rows;
     protected $parent_row;
@@ -66,129 +66,40 @@ class CalculationForm1 implements WithTitle, FromView, WithStyles, ShouldAutoSiz
 
         $sheet->getStyle('A9:Q10')->getAlignment()->setHorizontal('center')->setVertical('middle');
         // $sheet->getStyle('J9')->getAlignment()->setHorizontal('center')->setVertical('middle');
-        
+
         // border header detail
         $sheet->getStyle('A9:Q9')->getBorders()->getAllBorders()->setBorderStyle('thin');
         $sheet->getStyle('A10:Q10')->getBorders()->getAllBorders()->setBorderStyle('thin');
-        // $sheet->cells('A1:I8', function($cells) {
 
-        //    // Set with font color
-        //     $cells->setFontColor('#ffffff');
-        //     $cells->setAlignment('center');
-        //     // Set font family
-        //     $cells->setFontFamily('Calibri');
+        $lastRow = $sheet->getHighestRow();
 
-        //     // Set font size
-        //     $cells->setFontSize(16);
-
-        //     // Set font weight to bold
-        //     $cells->setFontWeight('bold');
-        
-        // });
+        $sheet->getStyle('A11:A' . $lastRow)->getAlignment()->setHorizontal('center');
+        $sheet->getStyle('D11:D' . $lastRow)->getAlignment()->setHorizontal('center');
+        $sheet->getStyle('G11:G' . $lastRow)->getAlignment()->setHorizontal('right');
+        $sheet->getStyle('I11:Q' . $lastRow)->getAlignment()->setHorizontal('left');
     }
-    // public function startRow(): int
-    // {
-    //     return 10;
-    // }
 
-    // public function map($row): array
-    // {
-    //     return [
-    //         $row['bahan_baku'],
-    //         $row['spesifikasi'],
-    //         $row['satuan_bahan_baku'],
-    //         $row['negara_asal'],
-    //         $row['pemasok'],
-    //         $row['tkdn'],
-    //         $row['jumlah'],
-    //         $row['harga_satuan'],
-    //         $row['ppn'],
-    //         $row['bm'],
-    //         $row['pdri_ppn'],
-    //         $row['pph'],
-
-    //         $row["id"],
-    //         $row["kdn"],
-    //         $row["kln"],
-    //         $row["total"],
-    //         $row["ppnCalc"],
-    //         $row["bmCalc"],
-    //         $row["pdriPpnCalc"],
-    //         $row["pphCalc"],
-    //         $row["sumKdn"],
-    //         $row["sumKln"],
-    //         $row["sumTotal"],
-    //         $row["sumPpn"],
-    //         $row["sumBm"],
-    //         $row["sumPdriPpn"],
-    //         $row["sumPph"],
-    //         $row["sumPdriTotal"],
-    //     ];
-    // }
-
-    // public function headings(): array
-    // {
-    //     return [
-    //         'Bahan Baku',
-    //         'Spesifikasi',
-    //         'Satuan Bahan Baku',
-    //         'Negara Asal',
-    //         'Pemasok',
-    //         'TKDN',
-    //         'Jumlah',
-    //         'Harga Satuan',
-    //         'PPN',
-    //         'BM',
-    //         'PDRI PPN',
-    //         'PPH',
-            
-    //         'ID',
-    //         'KDN',
-    //         'KLN',
-    //         'Total',
-    //         'PPN (Calc)',
-    //         'BM (Calc)',
-    //         'PDRI PPN (Calc)',
-    //         'PPH (Calc)',
-    //         'Sum KDN',
-    //         'Sum KLN',
-    //         'Sum Total',
-    //         'Sum PPN',
-    //         'Sum BM',
-    //         'Sum PDRI PPN',
-    //         'Sum PPH',
-    //         'Sum PDRI Total',
-    //     ];
-    // }
-
-    // public function array(): array
-    // {
-    //     return $this->rows;
-    // }
-
-    // public function columnFormats(): array
-    // {
-    //     return [
-    //         'B' => '#,##0',
-    //         'C' => '#,##0',
-    //         'D' => '#,##0',
-    //         'E' => '#,##0',
-    //         'F' => '#,##0',
-    //         'G' => '#,##0',
-    //         'H' => '#,##0',
-    //         'I' => '#,##0',
-    //         'J' => '#,##0',
-    //         'K' => '#,##0',
-    //         'L' => '#,##0',
-    //     ];
-    // }
     public function view(): View
     {
         return view('excel.calculation-form1', [
-            
             'parent' => $this->parent_row,
             'detail' => $this->rows
         ]);
+    }
+
+    public function columnFormats(): array
+    {
+        return [
+            'I' => 'Rp #,##0.00',
+            'J' => 'Rp #,##0.00',
+            'K' => 'Rp #,##0.00',
+            'L' => 'Rp #,##0.00',
+            'M' => 'Rp #,##0.00',
+            'N' => 'Rp #,##0.00',
+            'O' => 'Rp #,##0.00',
+            'P' => 'Rp #,##0.00',
+            'Q' => 'Rp #,##0.00',
+        ];
     }
     // public function query()
     // {

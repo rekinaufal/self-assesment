@@ -84,14 +84,15 @@
                 <td style="{{ $borderStyle }}">{{ $item_detail['pemasok'] }}</td>
                 <td style="{{ $borderStyle }}">{{ $item_detail['tkdn'] }}%</td>
                 <td style="{{ $borderStyle }}">{{ $item_detail['jumlah'] }}</td>
-                <td style="{{ $borderStyle }}">Rp {{ $item_detail['harga_satuan'] }}</td>
-                <td style="{{ $borderStyle }}">Rp {{ $item_detail['kdn'] }}</td>
-                <td style="{{ $borderStyle }}">Rp {{ $item_detail['kln'] }}</td>
-                <td style="{{ $borderStyle }}">Rp {{ $item_detail['total'] }}</td>
-                <td style="{{ $borderStyle }}">Rp {{ $item_detail['ppnCalc'] }}</td>
-                <td style="{{ $borderStyle }}">Rp {{ $item_detail['bmCalc'] }}</td>
-                <td style="{{ $borderStyle }}">Rp {{ $item_detail['pdriPpnCalc'] }}</td>
-                <td style="{{ $borderStyle }}">Rp {{ $item_detail['pphCalc'] }}</td>
+                <td style="{{ $borderStyle }}">{{ $item_detail['harga_satuan'] }}</td>
+                <td style="{{ $borderStyle }}">{{ $item_detail['kdn'] }}</td>
+                <td style="{{ $borderStyle }}">{{ $item_detail['kln'] }}</td>
+                <td style="{{ $borderStyle }}">{{ $item_detail['total'] }}</td>
+                <td style="{{ $borderStyle }}">{{ $item_detail['ppnCalc'] }}</td>
+                <td style="{{ $borderStyle }}">{{ $item_detail['bmCalc'] }}</td>
+                <td style="{{ $borderStyle }}">{{ $item_detail['pdriPpnCalc'] }}</td>
+                <td style="{{ $borderStyle }}">{{ $item_detail['pphCalc'] }}</td>
+                <td style="{{ $borderStyle }}">{{ ($item_detail['bmCalc'] + $item_detail['pdriPpnCalc'] + $item_detail['pphCalc'])  }}</td>
             </tr>
         @endforeach
             <tr>
@@ -104,14 +105,14 @@
                 <td></td>
                 <td></td>
                 <td style="border:1px solid #000000;background-color: #dbdbdb;text-align: center;"><b>Total</b></td>
-                <td style="{{ $borderStyle }}"><b>Rp {{ $detail['sumKdn'] }}</b></td>
-                <td style="{{ $borderStyle }}"><b>Rp {{ $detail['sumKln'] }}</b></td>
-                <td style="{{ $borderStyle }}"><b>Rp {{ $detail['sumTotal'] }}</b></td>
-                <td style="{{ $borderStyle }}"><b>Rp {{ $detail['sumPpn'] }}</b></td>
-                <td style="{{ $borderStyle }}"><b>Rp {{ $detail['sumBm'] }}</b></td>
-                <td style="{{ $borderStyle }}"><b>Rp {{ $detail['sumPdriPpn'] }}</b></td>
-                <td style="{{ $borderStyle }}"><b>Rp {{ $detail['sumPph'] }}</b></td>
-                <td style="{{ $borderStyle }}">Rp {{ $detail['sumPdriTotal'] }}</td>
+                <td style="{{ $borderStyle }}"><b>{{ $detail['sumKdn'] }}</b></td>
+                <td style="{{ $borderStyle }}"><b>{{ $detail['sumKln'] }}</b></td>
+                <td style="{{ $borderStyle }}"><b>{{ $detail['sumTotal'] }}</b></td>
+                <td style="{{ $borderStyle }}"><b>{{ $detail['sumPpn'] }}</b></td>
+                <td style="{{ $borderStyle }}"><b>{{ $detail['sumBm'] }}</b></td>
+                <td style="{{ $borderStyle }}"><b>{{ $detail['sumPdriPpn'] }}</b></td>
+                <td style="{{ $borderStyle }}"><b>{{ $detail['sumPph'] }}</b></td>
+                <td style="{{ $borderStyle }}"><b>{{ $detail['sumPdriTotal'] }}</b></td>
             </tr>
     </tbody>
 </table>
