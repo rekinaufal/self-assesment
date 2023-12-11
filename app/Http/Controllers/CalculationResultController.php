@@ -95,4 +95,19 @@ class CalculationResultController extends Controller
     {
         //
     }
+
+    public function submit(Request $request) {
+        $credentials = $request->validate([
+            "results" => ["required", "json"],
+            "computation_id" => ["required"]
+        ]);
+
+        $calculationResult = CalculationResult::updateOrInsert(["computation_id" => $credentials["computation_id"]], $credentials);
+
+        $computation = Computation::find($credentials["computation_id"]);
+        $computation->status = "Finished";
+        $computation->save();
+
+        return response()->json(['calculationResult' => $calculationResult, "success" => "Success to save draft the calculation"], 200);
+    }
 }

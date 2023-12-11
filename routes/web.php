@@ -85,6 +85,7 @@ Route::group(['middleware' => ['auth']], function () {
 
     //calculation
     Route::resource("calculation-results", CalculationResultController::class);
+    Route::post("calculation-results/submit", [CalculationResultController::class, "submit"])->name("calculation-results.submit");
 
     // notification
     Route::get('/mark-as-read', 'NotificationController@markAsRead')->name('mark-as-read');
