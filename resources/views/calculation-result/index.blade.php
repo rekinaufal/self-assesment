@@ -17,6 +17,11 @@
             <div class="col-8">
                 <div class="card">
                     <div class="card-header bg-transparent">
+                        <div class="float-left">
+                            <a href="{{ route('computation.index') }}" class="bg-primary px-2 py-1 text-light rounded-lg d-flex align-items-center">
+                                <i class="fas fa-chevron-left mr-2"></i> Back To Computation
+                            </a>
+                        </div>
                         <div class="float-right">
                             <button
                                 class="badge badge-{{ $computation->permenperin_category->color }}">{{ $computation->permenperin_category->name }}</button>
@@ -139,8 +144,8 @@
                                                         data-placement="top" title="Tooltip on top">
                                                     </i></label>
                                                 <input type="text" name="jumlah"
-                                                    class="form-control form-control-sm trigger-enter currencyInputFormatter" id="jumlah"
-                                                    placeholder="" value="0,00">
+                                                    class="form-control form-control-sm trigger-enter currencyInputFormatter"
+                                                    id="jumlah" placeholder="" value="0,00">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -152,7 +157,8 @@
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="basic-addon1">Rp.</span>
                                                     </div>
-                                                    <input type="text" class="form-control trigger-enter currencyInputFormatter"
+                                                    <input type="text"
+                                                        class="form-control trigger-enter currencyInputFormatter"
                                                         placeholder="" id="harga_satuan" name="harga_satuan" required
                                                         autocomplete="off" value="0,00">
                                                 </div>
@@ -361,7 +367,8 @@
                                                         class="fas fa-info-circle">
                                                     </i></label>
                                                 <input type="text" name="uraian"
-                                                    class="form-control trigger-enter form-control-sm " id="" placeholder="">
+                                                    class="form-control trigger-enter form-control-sm " id=""
+                                                    placeholder="">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -370,7 +377,8 @@
                                                         data-placement="top" title="Tooltip on top">
                                                     </i></label>
                                                 <input type="text" name="produsen_tingkat_dua"
-                                                    class="form-control trigger-enter form-control-sm" id="" placeholder="">
+                                                    class="form-control trigger-enter form-control-sm" id=""
+                                                    placeholder="">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -378,8 +386,9 @@
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control trigger-enter form-control-sm currencyInputFormatter" id=""
-                                                    placeholder="" name="jumlah" value="0,00">
+                                                <input type="text"
+                                                    class="form-control trigger-enter form-control-sm currencyInputFormatter"
+                                                    id="" placeholder="" name="jumlah" value="0,00">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -387,7 +396,8 @@
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control trigger-enter form-control-sm replaceDot currencyInputFormatter"
+                                                <input type="text"
+                                                    class="form-control trigger-enter form-control-sm replaceDot currencyInputFormatter"
                                                     id="" placeholder="" name="tkdn" value="0,00">
                                             </div>
 
@@ -400,19 +410,21 @@
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="basic-addon1">Rp.</span>
                                                     </div>
-                                                    <input type="text" class="form-control trigger-enter currencyInputFormatter" placeholder=""
-                                                        id="1-2-biaya" name="biaya" required autocomplete="off"
-                                                        value="0,00">
+                                                    <input type="text"
+                                                        class="form-control trigger-enter currencyInputFormatter"
+                                                        placeholder="" id="1-2-biaya" name="biaya" required
+                                                        autocomplete="off" value="0,00">
                                                 </div>
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="">Alokasi Biaya % <i
-                                                        class="fas fa-info-circle" data-toggle="tooltip"
-                                                        data-placement="top" title="Tooltip on top">
+                                                <label for="">Alokasi Biaya % <i class="fas fa-info-circle"
+                                                        data-toggle="tooltip" data-placement="top"
+                                                        title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control trigger-enter form-control-sm replaceDot currencyInputFormatter" id=""
-                                                    placeholder="" name="alokasi" value="0,00">
+                                                <input type="text"
+                                                    class="form-control trigger-enter form-control-sm replaceDot currencyInputFormatter"
+                                                    id="" placeholder="" name="alokasi" value="0,00">
                                             </div>
 
                                             <div class="d-flex justify-content-end mt-2"
@@ -523,8 +535,8 @@
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <select class="form-control trigger-enter form-control-sm setTkdn" id=""
-                                                    name="kewarganegaraan">
+                                                <select class="form-control trigger-enter form-control-sm setTkdn"
+                                                    id="" name="kewarganegaraan">
                                                     <option></option>
                                                     @foreach ($countries as $country)
                                                         <option value="{{ $country }}">{{ $country }}</option>
@@ -538,8 +550,8 @@
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <input type="number" class="form-control trigger-enter form-control-sm" id=""
-                                                    placeholder="" name="jumlah_orang" value="">
+                                                <input type="number" class="form-control trigger-enter form-control-sm"
+                                                    id="" placeholder="" name="jumlah_orang" value="">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -551,7 +563,8 @@
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="basic-addon1">Rp.</span>
                                                     </div>
-                                                    <input type="text" class="form-control trigger-enter currencyInputFormatter"
+                                                    <input type="text"
+                                                        class="form-control trigger-enter currencyInputFormatter"
                                                         placeholder="" id="1-2-gaji_perbulan" name="gaji_perbulan"
                                                         required autocomplete="off" value="0,00">
                                                 </div>
@@ -562,7 +575,8 @@
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control trigger-enter form-control-sm replaceDot currencyInputFormatter"
+                                                <input type="text"
+                                                    class="form-control trigger-enter form-control-sm replaceDot currencyInputFormatter"
                                                     id="" placeholder="" name="alokasi_gaji" value="0,00">
                                             </div>
 
@@ -577,10 +591,17 @@
                                                         </div>
                                                         <div class="row">
                                                             <div class="form-group-sm ml-2" style="font-size: 7pt;">
-                                                                <label for="">BPJS %</label>
-                                                                <input type="text" style="width: 8rem"
-                                                                    class="form-control trigger-enter form-control-sm replaceDot currencyInputFormatter"
-                                                                    id="" value="0,00" name="bpjs_percent">
+                                                                <label for="">BPJS</label>
+                                                                <div class="input-group input-group-sm mb-3">
+                                                                    <div class="input-group-prepend">
+                                                                        <span class="input-group-text"
+                                                                            id="basic-addon1">Rp.</span>
+                                                                    </div>
+                                                                    <input type="text"
+                                                                        class="form-control trigger-enter form-control-sm currencyInputFormatter"
+                                                                        placeholder="" id="bpjs" name="bpjs"
+                                                                        required autocomplete="off" value="0,00">
+                                                                </div>
                                                             </div>
                                                             <div class="form-group-sm ml-2" style="font-size: 7pt;">
                                                                 <label for="">Tunjangan Lainnya</label>
@@ -741,7 +762,8 @@
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control trigger-enter form-control-sm replaceDot currencyInputFormatter"
+                                                <input type="text"
+                                                    class="form-control trigger-enter form-control-sm replaceDot currencyInputFormatter"
                                                     id="tkdn" name="tkdn" placeholder="" value="0,00">
                                             </div>
 
@@ -763,7 +785,8 @@
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="basic-addon1">Rp.</span>
                                                     </div>
-                                                    <input type="text" class="form-control trigger-enter currencyInputFormatter"
+                                                    <input type="text"
+                                                        class="form-control trigger-enter currencyInputFormatter"
                                                         placeholder="" id="biaya_pengurusan_per_bulan"
                                                         name="biaya_pengurusan_per_bulan" required autocomplete="off"
                                                         value="0,00">
@@ -775,7 +798,8 @@
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control trigger-enter form-control-sm replaceDot currencyInputFormatter"
+                                                <input type="text"
+                                                    class="form-control trigger-enter form-control-sm replaceDot currencyInputFormatter"
                                                     id="alokasi" name="alokasi" placeholder="" value="0,00">
                                             </div>
 
@@ -912,8 +936,8 @@
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <select class="form-control trigger-enter form-control-sm setTkdn" id=""
-                                                    name="kewarganegaraan">
+                                                <select class="form-control trigger-enter form-control-sm setTkdn"
+                                                    id="" name="kewarganegaraan">
                                                     <option></option>
                                                     @foreach ($countries as $country)
                                                         <option value="{{ $country }}">{{ $country }}</option>
@@ -942,7 +966,8 @@
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="basic-addon1">Rp.</span>
                                                     </div>
-                                                    <input type="text" class="form-control trigger-enter currencyInputFormatter"
+                                                    <input type="text"
+                                                        class="form-control trigger-enter currencyInputFormatter"
                                                         placeholder="" id="gaji_perbulan" name="gaji_perbulan" required
                                                         autocomplete="off" value="0,00">
                                                 </div>
@@ -954,7 +979,8 @@
                                                     <i class="fas fa-info-circle" data-toggle="tooltip"
                                                         data-placement="top" title="Tooltip on top"></i>
                                                 </label>
-                                                <input type="text" class="form-control trigger-enter form-control-sm replaceDot currencyInputFormatter"
+                                                <input type="text"
+                                                    class="form-control trigger-enter form-control-sm replaceDot currencyInputFormatter"
                                                     placeholder="" id="alokasi" name="alokasi" value="0,00">
                                             </div>
 
@@ -1076,8 +1102,9 @@
                                                         title="Nama bahan baku adalah nama yang ditunjukkan pada nama material bahan baku dalam pembuatan produk. Contoh : Biji besi, Bracket dll"
                                                         class="fas fa-info-circle">
                                                     </i></label>
-                                                <input type="text" class="form-control trigger-enter form-control-sm "
-                                                    id="" placeholder="" name="uraian">
+                                                <input type="text"
+                                                    class="form-control trigger-enter form-control-sm " id=""
+                                                    placeholder="" name="uraian">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 "
@@ -1112,7 +1139,8 @@
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="basic-addon1">Rp.</span>
                                                     </div>
-                                                    <input type="text" class="form-control trigger-enter currencyInputFormatter"
+                                                    <input type="text"
+                                                        class="form-control trigger-enter currencyInputFormatter"
                                                         placeholder="" id="biaya_depresiasi_perbulan"
                                                         name="biaya_depresiasi_perbulan" required autocomplete="off"
                                                         value="0,00">
@@ -1125,7 +1153,8 @@
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control trigger-enter form-control-sm replaceDot currencyInputFormatter"
+                                                <input type="text"
+                                                    class="form-control trigger-enter form-control-sm replaceDot currencyInputFormatter"
                                                     id="" placeholder="" name="alokasi" value="0,00">
                                             </div>
 
@@ -1155,7 +1184,19 @@
                                                                     style="width: 8rem">
                                                                     <option value="Dalam Negeri">Dalam Negeri</option>
                                                                     <option value="Luar Negeri">Luar Negeri</option>
+                                                                    <option value="DN + LN">DN + LN</option>
                                                                 </select>
+                                                            </div>
+                                                            <div class="form-group-sm ml-2 d-none"
+                                                                id="form-group-saham-1-6" style="font-size: 7pt;">
+                                                                <label for="">Komposisi Saham</label>
+                                                                <input type="text"
+                                                                    class="form-control trigger-enter form-control-sm currencyInputFormatter"
+                                                                    name="saham" id="saham-1-6">
+                                                                <p class="text-danger d-none" id="is-invalid-saham-1-6"
+                                                                    style="font-size: 10pt; width: 12rem">Nilai Komposisi
+                                                                    Saham Tidak Boleh Lebih Dari 75% Jika Dibuat Di Luar
+                                                                    Negeri</p>
                                                             </div>
                                                             <input type="hidden" name="tkdn" id="tkdn-1-6"
                                                                 value="100">
@@ -1284,8 +1325,9 @@
                                                         title="Nama bahan baku adalah nama yang ditunjukkan pada nama material bahan baku dalam pembuatan produk. Contoh : Biji besi, Bracket dll"
                                                         class="fas fa-info-circle">
                                                     </i></label>
-                                                <input type="text" class="form-control trigger-enter form-control-sm "
-                                                    id="" placeholder="" name="uraian">
+                                                <input type="text"
+                                                    class="form-control trigger-enter form-control-sm " id=""
+                                                    placeholder="" name="uraian">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 "
@@ -1330,7 +1372,8 @@
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="basic-addon1">Rp.</span>
                                                     </div>
-                                                    <input type="text" class="form-control trigger-enter currencyInputFormatter"
+                                                    <input type="text"
+                                                        class="form-control trigger-enter currencyInputFormatter"
                                                         placeholder="" id="biaya_sewa_perbulan"
                                                         name="biaya_sewa_perbulan" required autocomplete="off"
                                                         value="0,00">
@@ -1343,7 +1386,8 @@
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control trigger-enter form-control-sm replaceDot currencyInputFormatter"
+                                                <input type="text"
+                                                    class="form-control trigger-enter form-control-sm replaceDot currencyInputFormatter"
                                                     id="" placeholder="" name="alokasi" value="0,00">
                                             </div>
 
@@ -1373,7 +1417,18 @@
                                                                     style="width: 8rem">
                                                                     <option value="Dalam Negeri">Dalam Negeri</option>
                                                                     <option value="Luar Negeri">Luar Negeri</option>
+                                                                    <option value="DN + LN">DN + LN</option>
                                                                 </select>
+                                                            </div>
+                                                            <div class="form-group-sm ml-2 d-none"
+                                                                id="form-group-saham-1-7" style="font-size: 7pt;">
+                                                                <label for="">Komposisi Saham</label>
+                                                                <input type="text"
+                                                                    class="form-control trigger-enter form-control-sm currencyInputFormatter"
+                                                                    name="saham" id="saham-1-7">
+                                                                <p class="text-danger d-none" id="is-invalid-saham-1-7"
+                                                                    style="font-size: 10pt; width: 12rem">Nilai Komposisi
+                                                                    Saham Tidak Boleh Lebih Dari 75%</p>
                                                             </div>
                                                             <input type="hidden" name="tkdn" id="tkdn-1-7"
                                                                 value="100">
@@ -1500,8 +1555,9 @@
                                                         title="Nama bahan baku adalah nama yang ditunjukkan pada nama material bahan baku dalam pembuatan produk. Contoh : Biji besi, Bracket dll"
                                                         class="fas fa-info-circle">
                                                     </i></label>
-                                                <input type="text" class="form-control trigger-enter form-control-sm "
-                                                    id="" placeholder="" name="uraian">
+                                                <input type="text"
+                                                    class="form-control trigger-enter form-control-sm " id=""
+                                                    placeholder="" name="uraian">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 "
@@ -1530,7 +1586,8 @@
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control trigger-enter form-control-sm replaceDot currencyInputFormatter"
+                                                <input type="text"
+                                                    class="form-control trigger-enter form-control-sm replaceDot currencyInputFormatter"
                                                     id="tkdn" name="tkdn" placeholder="" value="0,00">
                                             </div>
 
@@ -1544,7 +1601,8 @@
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="basic-addon1">Rp.</span>
                                                     </div>
-                                                    <input type="text" class="form-control trigger-enter currencyInputFormatter"
+                                                    <input type="text"
+                                                        class="form-control trigger-enter currencyInputFormatter"
                                                         placeholder="" id="biaya_perbulan" name="biaya_perbulan"
                                                         required autocomplete="off" value="0,00">
                                                 </div>
@@ -1556,7 +1614,8 @@
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Tooltip on top">
                                                     </i></label>
-                                                <input type="text" class="form-control trigger-enter form-control-sm replaceDot currencyInputFormatter"
+                                                <input type="text"
+                                                    class="form-control trigger-enter form-control-sm replaceDot currencyInputFormatter"
                                                     id="" placeholder="" name="alokasi" value="0,00">
                                             </div>
 
@@ -1752,21 +1811,23 @@
             <div class="col-4">
                 {{-- button selanjutnya dan hapus --}}
                 <div class="card">
-                    <div class="save-draft">
+                    <div class="button-submit d-none">
                         <div class="p-2 pt-0 pb-2">
-                            <button class="btn btn-success btn-block"
-                                onclick="store('{{ route('calculation-results.store') }}', '{{ route('computation.index') }}', '{{ $computation->id }}')">Save
-                                Draft</button>
+                            <button class="btn btn-primary btn-block"
+                                onclick="submit('{{ route('calculation-results.submit') }}', '{{ route('computation.index') }}', '{{ $computation->id }}')">Submit</button>
                         </div>
                     </div>
                     {{-- <div class="p-2">
                         <a href="#" class="btn btn-danger flex-grow-1 btn-block">Hapus </a>
                     </div> --}}
                     <div class="p-2 pb-0">
-                        <a href="#" class="btn btn-success btn-block" id="buttonSelanjutnya">Selanjutnya <span class="pl-2">></span></a>
+                        <a href="#" class="btn btn-success btn-block" id="buttonSelanjutnya">Selanjutnya <span
+                                class="pl-2">></span></a>
                     </div>
                     <div class="p-2 pb-0">
-                        <a href="#" class="btn btn-danger btn-block d-none" id="buttonKembali">Kembali <span class="pl-2"><</span></a>
+                        <a href="#" class="btn btn-danger btn-block d-none" id="buttonKembali">
+                            Kembali <span class="pl-2"><</span>
+                        </a>
                     </div>
                 </div>
                 {{-- header tab panel --}}
@@ -1853,13 +1914,15 @@
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Form 1.1 : Tingkat Komponen Dalam Negeri Bahan Baku</h5>
+                    <h5 class="modal-title" id="staticBackdropLabel">Form 1.1 : Tingkat Komponen Dalam Negeri Bahan Baku
+                    </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body" id="modal-edit-calculation">
-                    <form>
+                <form id="editForm-1" method="post">
+                    <input type="hidden" name="id">
+                    <div class="modal-body" id="modal-edit-calculation">
                         <div class="row">
                             <div class="form-group col-6">
                                 <label for="bahan_baku">Nama Bahan Baku <i data-toggle="tooltip" data-placement="top"
@@ -1871,19 +1934,18 @@
                             </div>
                             <div class="form-group col-6">
                                 <label for="spesifikasi">Spesifikasi <i class="fas fa-info-circle"
-                                    data-toggle="tooltip" data-placement="top" title="Tooltip on top">
-                                </i></label>
+                                        data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                    </i></label>
                                 <input type="text" name="spesifikasi"
                                     class="form-control form-control-sm trigger-enter" id="spesifikasi"
                                     placeholder="">
                             </div>
                             <div class="form-group col-6">
-                                <label for="satuan_bahan_baku">Satuan bahan baku <i
-                                    class="fas fa-info-circle" data-toggle="tooltip"
-                                    data-placement="top" title="Tooltip on top">
-                                </i></label>
-                                <select class="form-control form-control-sm trigger-enter"
-                                    id="satuan_bahan_baku" name="satuan_bahan_baku">
+                                <label for="satuan_bahan_baku">Satuan bahan baku <i class="fas fa-info-circle"
+                                        data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                    </i></label>
+                                <select class="form-control form-control-sm trigger-enter" id="satuan_bahan_baku"
+                                    name="satuan_bahan_baku">
                                     <option></option>
                                     <option value="Pcs">Pcs</option>
                                     <option value="Pack">Pack</option>
@@ -1894,8 +1956,8 @@
                             </div>
                             <div class="form-group col-6">
                                 <label for="negara_asal">Negara asal <i class="fas fa-info-circle"
-                                    data-toggle="tooltip" data-placement="top" title="Tooltip on top">
-                                </i></label>
+                                        data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                    </i></label>
                                 <select class="form-control form-control-sm trigger-enter" id="negara_asal"
                                     name="negara_asal">
                                     <option></option>
@@ -1905,42 +1967,38 @@
                                 </select>
                             </div>
                             <div class="form-group col-6">
-                                <label for="pemasok">Pemasok / Produsen Tingkat 2 <i
-                                    class="fas fa-info-circle" data-toggle="tooltip"
-                                    data-placement="top" title="Tooltip on top">
-                                </i></label>
+                                <label for="pemasok">Pemasok / Produsen Tingkat 2 <i class="fas fa-info-circle"
+                                        data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                    </i></label>
                                 <input type="text" name="pemasok"
-                                    class="form-control form-control-sm trigger-enter" id="pemasok"
-                                    placeholder="">
+                                    class="form-control form-control-sm trigger-enter" id="pemasok" placeholder="">
                             </div>
                             <div class="form-group col-6">
-                                <label for="tkdn">TKDN % <i class="fas fa-info-circle"
-                                    data-toggle="tooltip" data-placement="top"
-                                    title="Tooltip on top">
-                                </i></label>
+                                <label for="tkdn">TKDN % <i class="fas fa-info-circle" data-toggle="tooltip"
+                                        data-placement="top" title="Tooltip on top">
+                                    </i></label>
                                 <input type="text"
-                                    class="form-control form-control-sm trigger-enter replaceDot"
+                                    class="form-control form-control-sm trigger-enter replaceDot currencyInputFormatter"
                                     id="tkdn" name="tkdn" placeholder="">
                             </div>
                             <div class="form-group col-6">
-                                <label for="jumlah">Jumlah / Satuan Bahan Baku <i
-                                    class="fas fa-info-circle" data-toggle="tooltip"
-                                    data-placement="top" title="Tooltip on top">
-                                </i></label>
-                                <input type="number" name="jumlah"
-                                    class="form-control form-control-sm trigger-enter" id="jumlah"
-                                    placeholder="">
+                                <label for="jumlah">Jumlah / Satuan Bahan Baku <i class="fas fa-info-circle"
+                                        data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                    </i></label>
+                                <input type="text" name="jumlah"
+                                    class="form-control form-control-sm trigger-enter currencyInputFormatter"
+                                    id="jumlah" placeholder="">
                             </div>
                             <div class="form-group col-6">
-                                <label for="harga_satuan">Harga Satuan Material <i
-                                    class="fas fa-info-circle" data-toggle="tooltip"
-                                    data-placement="top" title="Tooltip on top">
-                                </i></label>
+                                <label for="harga_satuan">Harga Satuan Material <i class="fas fa-info-circle"
+                                        data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                    </i></label>
                                 <div class="input-group input-group-sm mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="basic-addon1">Rp.</span>
                                     </div>
-                                    <input type="text" class="form-control rupiahInput trigger-enter"
+                                    <input type="text"
+                                        class="form-control rupiahInput trigger-enter currencyInputFormatter"
                                         placeholder="" id="harga_satuan" name="harga_satuan" required
                                         autocomplete="off" value="0,00">
                                 </div>
@@ -1959,7 +2017,7 @@
                                             <div class="form-group-sm" style="font-size: 7pt;">
                                                 <label for="ppn">PPN %</label>
                                                 <input type="text" name="ppn"
-                                                    class="w-100 form-control form-control-sm replaceDot trigger-enter"
+                                                    class="w-100 form-control form-control-sm replaceDot trigger-enter currencyInputFormatter"
                                                     id="ppn" placeholder="" value="0">
                                             </div>
                                         </div>
@@ -1970,28 +2028,27 @@
                                 <div class="card p-2">
                                     <div class="col">
                                         <div class="row">
-                                            <label for="" class="mx-auto">PDRI <i
-                                                    class="fas fa-info-circle" data-toggle="tooltip"
-                                                    data-placement="top" title="Tooltip on top">
+                                            <label for="" class="mx-auto">PDRI <i class="fas fa-info-circle"
+                                                    data-toggle="tooltip" data-placement="top" title="Tooltip on top">
                                                 </i></label>
                                         </div>
                                         <div class="d-flex">
                                             <div class="form-group-sm flex-fill ml-2" style="font-size: 7pt;">
                                                 <label for="bm">BM %</label>
                                                 <input type="text" name="bm" style="width: 5rem"
-                                                    class="form-control form-control-sm replaceDot trigger-enter"
+                                                    class="form-control form-control-sm replaceDot trigger-enter currencyInputFormatter"
                                                     id="bm" placeholder="" value="0">
                                             </div>
                                             <div class="form-group-sm flex-fill ml-2" style="font-size: 7pt;">
                                                 <label for="pdri_ppn">PPN %</label>
                                                 <input type="text" name="pdri_ppn" style="width: 5rem"
-                                                    class="form-control form-control-sm replaceDot trigger-enter"
+                                                    class="form-control form-control-sm replaceDot trigger-enter currencyInputFormatter"
                                                     id="pdri_ppn" placeholder="" value="0">
                                             </div>
                                             <div class="form-group-sm flex-fill ml-2" style="font-size: 7pt;">
                                                 <label for="pph">PPH %</label>
                                                 <input type="text" name="pph" style="width: 5rem"
-                                                    class="form-control form-control-sm replaceDot trigger-enter"
+                                                    class="form-control form-control-sm replaceDot trigger-enter currencyInputFormatter"
                                                     id="pph" placeholder="" value="0">
                                             </div>
                                         </div>
@@ -1999,12 +2056,686 @@
                                 </div>
                             </div>
                         </div>
-                    </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="editCalculation-2" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Form 1.2 : Tingkat Komponen Dalam Negeri Bahan Baku
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save</button>
+                <form id="editForm-2" method="post">
+                    <input type="hidden" name="id">
+                    <div class="modal-body" id="modal-edit-calculation">
+                        <div class="row">
+                            <div class="form-group col-6">
+                                <label for="uraian">Jasa Terkait <i data-toggle="tooltip" data-placement="top"
+                                        title="Nama bahan baku adalah nama yang ditunjukkan pada nama material bahan baku dalam pembuatan produk. Contoh : Biji besi, Bracket dll"
+                                        class="fas fa-info-circle">
+                                    </i></label>
+                                <input type="text" name="uraian"
+                                    class="form-control form-control-sm trigger-enter" id="uraian" placeholder="">
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="produsen_tingkat_dua">Pemasok / Produsen Tingkat 2 <i
+                                        class="fas fa-info-circle" data-toggle="tooltip" data-placement="top"
+                                        title="Tooltip on top">
+                                    </i></label>
+                                <input type="text" name="produsen_tingkat_dua"
+                                    class="form-control form-control-sm trigger-enter" id="produsen_tingkat_dua"
+                                    placeholder="">
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="jumlah">Jumlah <i class="fas fa-info-circle" data-toggle="tooltip"
+                                        data-placement="top" title="Tooltip on top">
+                                    </i></label>
+                                <input type="text"
+                                    class="form-control form-control-sm trigger-enter currencyInputFormatter"
+                                    id="jumlah" name="jumlah" placeholder="">
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="tkdn">TKDN % <i class="fas fa-info-circle" data-toggle="tooltip"
+                                        data-placement="top" title="Tooltip on top">
+                                    </i></label>
+                                <input type="text"
+                                    class="form-control form-control-sm trigger-enter replaceDot currencyInputFormatter"
+                                    id="tkdn" name="tkdn" placeholder="">
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="biaya">Biaya <i class="fas fa-info-circle" data-toggle="tooltip"
+                                        data-placement="top" title="Tooltip on top">
+                                    </i></label>
+                                <div class="input-group input-group-sm mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1">Rp.</span>
+                                    </div>
+                                    <input type="text"
+                                        class="form-control rupiahInput trigger-enter currencyInputFormatter"
+                                        placeholder="" id="biaya" name="biaya" required autocomplete="off"
+                                        value="0,00">
+                                </div>
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="alokasi">Alokasi Biaya % <i class="fas fa-info-circle"
+                                        data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                    </i></label>
+                                <input type="text"
+                                    class="form-control form-control-sm trigger-enter replaceDot currencyInputFormatter"
+                                    id="alokasi" name="alokasi" placeholder="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="editCalculation-3" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Form 1.3 : Tingkat Komponen Dalam Tenaga Kerja
+                        Langsung
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
+                <form id="editForm-3" method="post">
+                    <input type="hidden" name="id">
+                    <div class="modal-body" id="modal-edit-calculation">
+                        <div class="row">
+                            <div class="form-group col-6">
+                                <label for="uraian_posisi">Uraian Posisi <i data-toggle="tooltip" data-placement="top"
+                                        title="Nama bahan baku adalah nama yang ditunjukkan pada nama material bahan baku dalam pembuatan produk. Contoh : Biji besi, Bracket dll"
+                                        class="fas fa-info-circle">
+                                    </i></label>
+                                <input type="text" class="form-control trigger-enter form-control-sm"
+                                    id="uraian_posisi" placeholder="" name="uraian_posisi">
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="">Kewarganegaraan <i class="fas fa-info-circle"
+                                        data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                    </i></label>
+                                <select class="form-control trigger-enter form-control-sm setTkdn" id=""
+                                    name="kewarganegaraan">
+                                    <option></option>
+                                    @foreach ($countries as $country)
+                                        <option value="{{ $country }}">{{ $country }}</option>
+                                    @endforeach
+                                </select>
+                                <input type="hidden" id="editTkdn-1-3" value="" name="tkdn">
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="">Jumlah Orang <i class="fas fa-info-circle" data-toggle="tooltip"
+                                        data-placement="top" title="Tooltip on top">
+                                    </i></label>
+                                <input type="number" class="form-control trigger-enter form-control-sm"
+                                    id="" placeholder="" name="jumlah_orang" value="">
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="">Gaji Perbulan<i class="fas fa-info-circle" data-toggle="tooltip"
+                                        data-placement="top" title="Tooltip on top">
+                                    </i></label>
+                                <div class="input-group input-group-sm mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1">Rp.</span>
+                                    </div>
+                                    <input type="text" class="form-control trigger-enter currencyInputFormatter"
+                                        placeholder="" id="1-2-gaji_perbulan" name="gaji_perbulan" required
+                                        autocomplete="off" value="0,00">
+                                </div>
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="">Alokasi Gaji % <i class="fas fa-info-circle"
+                                        data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                    </i></label>
+                                <input type="text"
+                                    class="form-control trigger-enter form-control-sm replaceDot currencyInputFormatter"
+                                    id="" placeholder="" name="alokasi_gaji" value="0,00">
+                            </div>
+                            <div class="form-group col-6">
+                                <div class="card p-2">
+                                    <div class="col">
+                                        <div class="row">
+                                            <label for="" class="mx-auto">Biaya (Rp.) <i
+                                                    class="fas fa-info-circle" data-toggle="tooltip"
+                                                    data-placement="top" title="Tooltip on top">
+                                                </i></label>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group-sm ml-2" style="font-size: 7pt;">
+                                                <label for="">BPJS</label>
+                                                <div class="input-group input-group-sm mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon1">Rp.</span>
+                                                    </div>
+                                                    <input type="text"
+                                                        class="form-control trigger-enter form-control-sm currencyInputFormatter"
+                                                        placeholder="" id="bpjs" name="bpjs" required
+                                                        autocomplete="off" value="0,00">
+                                                </div>
+                                            </div>
+                                            <div class="form-group-sm ml-2" style="font-size: 7pt;">
+                                                <label for="">Tunjangan Lainnya</label>
+                                                <div class="input-group input-group-sm mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon1">Rp.</span>
+                                                    </div>
+                                                    <input type="text"
+                                                        class="form-control trigger-enter form-control-sm currencyInputFormatter"
+                                                        placeholder="" id="currency_tunjangan_lainnya"
+                                                        name="currency_tunjangan_lainnya" required autocomplete="off"
+                                                        value="0,00">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="editCalculation-4" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Form 1.4 : Tingkat Komponen Dalam Negeri Jasa
+                        Tenaga Kerja Langsung
+                        Langsung
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form id="editForm-4" method="post">
+                    <input type="hidden" name="id">
+                    <div class="modal-body" id="modal-edit-calculation">
+                        <div class="row">
+                            <div class="form-group col-6">
+                                <label for="uraian_posisi">Uraian Posisi <i data-toggle="tooltip" data-placement="top"
+                                        title="Nama bahan baku adalah nama yang ditunjukkan pada nama material bahan baku dalam pembuatan produk. Contoh : Biji besi, Bracket dll"
+                                        class="fas fa-info-circle">
+                                    </i></label>
+                                <input type="text" class="form-control trigger-enter form-control-sm "
+                                    id="uraian_posisi" name="uraian_posisi" placeholder="">
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="produsen_tingkat_dua">Pemasok / Produsen Tingkat 2 <i
+                                        class="fas fa-info-circle" data-toggle="tooltip" data-placement="top"
+                                        title="Tooltip on top">
+                                    </i></label>
+                                <input type="text" class="form-control trigger-enter form-control-sm"
+                                    id="produsen_tingkat_dua" name="produsen_tingkat_dua" placeholder="">
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="tkdn">TKDN % <i class="fas fa-info-circle" data-toggle="tooltip"
+                                        data-placement="top" title="Tooltip on top">
+                                    </i></label>
+                                <input type="text"
+                                    class="form-control trigger-enter form-control-sm replaceDot currencyInputFormatter"
+                                    id="tkdn" name="tkdn" placeholder="" value="0,00">
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="jumlah_orang">Jumlah Orang <i class="fas fa-info-circle"
+                                        data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                    </i></label>
+                                <input type="number" class="form-control trigger-enter form-control-sm"
+                                    id="jumlah_orang" name="jumlah_orang" placeholder="" value="">
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="biaya_pengurusan_per_bulan">Biaya Pengurusan Per Bulan <i
+                                        class="fas fa-info-circle" data-toggle="tooltip" data-placement="top"
+                                        title="Tooltip on top">
+                                    </i></label>
+                                <div class="input-group input-group-sm mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1">Rp.</span>
+                                    </div>
+                                    <input type="text" class="form-control trigger-enter currencyInputFormatter"
+                                        placeholder="" id="biaya_pengurusan_per_bulan"
+                                        name="biaya_pengurusan_per_bulan" required autocomplete="off" value="0,00">
+                                </div>
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="alokasi">Alokasi % <i class="fas fa-info-circle" data-toggle="tooltip"
+                                        data-placement="top" title="Tooltip on top">
+                                    </i></label>
+                                <input type="text"
+                                    class="form-control trigger-enter form-control-sm replaceDot currencyInputFormatter"
+                                    id="alokasi" name="alokasi" placeholder="" value="0,00">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="editCalculation-5" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Form 1.5 : Tingkat Komponen Dalam Negeri Biaya
+                        Tidak Langsung Pabrik
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form id="editForm-5" method="post">
+                    <input type="hidden" name="id">
+                    <div class="modal-body" id="modal-edit-calculation">
+                        <div class="row">
+                            <div class="form-group col-6">
+                                <label for="uraian_posisi">Uraian Posisi <i data-toggle="tooltip" data-placement="top"
+                                        title="Nama bahan baku adalah nama yang ditunjukkan pada nama material bahan baku dalam pembuatan produk. Contoh : Biji besi, Bracket dll"
+                                        class="fas fa-info-circle">
+                                    </i></label>
+                                <input type="text" class="form-control trigger-enter form-control-sm"
+                                    id="uraian_posisi" placeholder="" name="uraian_posisi">
+                            </div>
+                        </div>
+                        <div class="form-group col-6">
+                            <label for="">Kewarganegaraan <i class="fas fa-info-circle" data-toggle="tooltip"
+                                    data-placement="top" title="Tooltip on top">
+                                </i></label>
+                            <select class="form-control trigger-enter form-control-sm setTkdn" id=""
+                                name="kewarganegaraan">
+                                <option></option>
+                                @foreach ($countries as $country)
+                                    <option value="{{ $country }}">{{ $country }}</option>
+                                @endforeach
+                            </select>
+                            <input type="hidden" id="editTkdn-1-3" value="" name="tkdn">
+                        </div>
+                        <div class="form-group col-6">
+                            <label>
+                                Jumlah Orang
+                                <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top"
+                                    title="Tooltip on top"></i>
+                            </label>
+                            <input type="number" class="form-control trigger-enter form-control-sm" id="jumlah_orang"
+                                name="jumlah_orang" value="">
+                        </div>
+                        <div class="form-group col-6">
+                            <label>
+                                Gaji Per Bulan
+                                <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top"
+                                    title="Tooltip on top"></i>
+                            </label>
+                            <div class="input-group input-group-sm mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">Rp.</span>
+                                </div>
+                                <input type="text" class="form-control trigger-enter currencyInputFormatter"
+                                    placeholder="" id="gaji_perbulan" name="gaji_perbulan" required
+                                    autocomplete="off" value="0,00">
+                            </div>
+                        </div>
+                        <div class="form-group col-6">
+                            <label>
+                                Alokasi Gaji %
+                                <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top"
+                                    title="Tooltip on top"></i>
+                            </label>
+                            <input type="text"
+                                class="form-control trigger-enter form-control-sm replaceDot currencyInputFormatter"
+                                placeholder="" id="alokasi" name="alokasi" value="0,00">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="editCalculation-6" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Form 1.6 : Tingkat Komponen Dalam Biaya Tidak
+                        Langsung Pabrik
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form id="editForm-6" method="post">
+                    <input type="hidden" name="id">
+                    <div class="modal-body" id="modal-edit-calculation">
+                        <div class="row">
+                            <div class="form-group col-6">
+                                <label for="">Uraian <i data-toggle="tooltip" data-placement="top"
+                                        title="Nama bahan baku adalah nama yang ditunjukkan pada nama material bahan baku dalam pembuatan produk. Contoh : Biji besi, Bracket dll"
+                                        class="fas fa-info-circle">
+                                    </i></label>
+                                <input type="text" class="form-control trigger-enter form-control-sm "
+                                    id="" placeholder="" name="uraian">
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="">Spesifikasi <i class="fas fa-info-circle" data-toggle="tooltip"
+                                        data-placement="top" title="Tooltip on top">
+                                    </i></label>
+                                <input type="text" class="form-control trigger-enter form-control-sm"
+                                    id="" placeholder="" name="spesifikasi" name="spesifikasi">
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="">Jumlah Unit <i class="fas fa-info-circle" data-toggle="tooltip"
+                                        data-placement="top" title="Tooltip on top">
+                                    </i></label>
+                                <input type="number" class="form-control trigger-enter form-control-sm"
+                                    id="" placeholder="" name="jumlah_unit" value="">
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="">Biaya Depresiasi Per Bulan<i class="fas fa-info-circle"
+                                        data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                    </i></label>
+                                <div class="input-group input-group-sm mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1">Rp.</span>
+                                    </div>
+                                    <input type="text" class="form-control trigger-enter currencyInputFormatter"
+                                        placeholder="" id="biaya_depresiasi_perbulan" name="biaya_depresiasi_perbulan"
+                                        required autocomplete="off" value="0,00">
+                                </div>
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="">Alokasi Mesin % <i class="fas fa-info-circle"
+                                        data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                    </i></label>
+                                <input type="text"
+                                    class="form-control trigger-enter form-control-sm replaceDot currencyInputFormatter"
+                                    id="" placeholder="" name="alokasi" value="0,00">
+                            </div>
+                            <div class="form-group col-6">
+                                <div class="card p-2">
+                                    <div class="col">
+                                        <div class="row">
+                                            <label for="" class="mx-auto">Alat Kerja<i
+                                                    class="fas fa-info-circle" data-toggle="tooltip"
+                                                    data-placement="top" title="Tooltip on top">
+                                                </i></label>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group-sm ml-2" style="font-size: 7pt;">
+                                                <label for="">Dibuat</label>
+                                                <select name="dibuat" id="editDibuat-1-6"
+                                                    class="form-control trigger-enter form-control-sm"
+                                                    style="width: 8rem">
+                                                    <option value="Dalam Negeri">Dalam Negeri</option>
+                                                    <option value="Luar Negeri">Luar Negeri</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group-sm ml-2" style="font-size: 7pt;">
+                                                <label for="">Dimiliki</label>
+                                                <select name="dimiliki" id="editDimiliki-1-6"
+                                                    class="form-control trigger-enter form-control-sm"
+                                                    style="width: 8rem">
+                                                    <option value="Dalam Negeri">Dalam Negeri</option>
+                                                    <option value="Luar Negeri">Luar Negeri</option>
+                                                    <option value="DN + LN">DN + LN</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group-sm ml-2 d-none" id="edit-form-group-saham-1-6"
+                                                style="font-size: 7pt;">
+                                                <label for="">Komposisi Saham</label>
+                                                <input type="text"
+                                                    class="form-control trigger-enter form-control-sm currencyInputFormatter"
+                                                    name="saham" id="editSaham-1-6">
+                                                <p class="text-danger d-none" id="edit-is-invalid-saham-1-6"
+                                                    style="font-size: 10pt; width: 12rem">Nilai Komposisi
+                                                    Saham Tidak Boleh Lebih Dari 75% Jika Dibuat Di Luar
+                                                    Negeri</p>
+                                            </div>
+                                            <input type="hidden" name="tkdn" id="editTkdn-1-6" value="100">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="editCalculation-7" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Form 1.3 : Tingkat Komponen Dalam Tenaga Kerja
+                        Langsung
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form id="editForm-7" method="post">
+                    <input type="hidden" name="id">
+                    <div class="modal-body" id="modal-edit-calculation">
+                        <div class="row">
+                            <div class="form-group col-6">
+                                <label for="">Uraian <i data-toggle="tooltip" data-placement="top"
+                                        title="Nama bahan baku adalah nama yang ditunjukkan pada nama material bahan baku dalam pembuatan produk. Contoh : Biji besi, Bracket dll"
+                                        class="fas fa-info-circle">
+                                    </i></label>
+                                <input type="text" class="form-control trigger-enter form-control-sm "
+                                    id="" placeholder="" name="uraian">
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="">Spesifikasi <i class="fas fa-info-circle" data-toggle="tooltip"
+                                        data-placement="top" title="Tooltip on top">
+                                    </i></label>
+                                <input type="text" class="form-control trigger-enter form-control-sm"
+                                    id="" placeholder="" name="spesifikasi" name="spesifikasi">
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="">Produsen Tingkat 2 <i class="fas fa-info-circle"
+                                        data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                    </i></label>
+                                <input type="text" class="form-control trigger-enter form-control-sm"
+                                    id="" placeholder="" name="produsen_tingkat_dua">
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="">Jumlah Unit <i class="fas fa-info-circle" data-toggle="tooltip"
+                                        data-placement="top" title="Tooltip on top">
+                                    </i></label>
+                                <input type="number" class="form-control trigger-enter form-control-sm"
+                                    id="" placeholder="" name="jumlah_unit" value="">
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="">Biaya Sewa Per Bulan<i class="fas fa-info-circle"
+                                        data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                    </i></label>
+                                <div class="input-group input-group-sm mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1">Rp.</span>
+                                    </div>
+                                    <input type="text" class="form-control trigger-enter currencyInputFormatter"
+                                        placeholder="" id="biaya_sewa_perbulan" name="biaya_sewa_perbulan" required
+                                        autocomplete="off" value="0,00">
+                                </div>
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="">Alokasi Mesin % <i class="fas fa-info-circle"
+                                        data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                    </i></label>
+                                <input type="text"
+                                    class="form-control trigger-enter form-control-sm replaceDot currencyInputFormatter"
+                                    id="" placeholder="" name="alokasi" value="0,00">
+                            </div>
+                            <div class="form-group col-6">
+                                <div class="card p-2">
+                                    <div class="col">
+                                        <div class="row">
+                                            <label for="" class="mx-auto">Alat Kerja<i
+                                                    class="fas fa-info-circle" data-toggle="tooltip"
+                                                    data-placement="top" title="Tooltip on top">
+                                                </i></label>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group-sm ml-2" style="font-size: 7pt;">
+                                                <label for="">Dibuat</label>
+                                                <select name="dibuat" id="editDibuat-1-7"
+                                                    class="form-control trigger-enter form-control-sm"
+                                                    style="width: 8rem">
+                                                    <option value="Dalam Negeri">Dalam Negeri</option>
+                                                    <option value="Luar Negeri">Luar Negeri</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group-sm ml-2" style="font-size: 7pt;">
+                                                <label for="">Dimiliki</label>
+                                                <select name="dimiliki" id="editDimiliki-1-7"
+                                                    class="form-control trigger-enter form-control-sm"
+                                                    style="width: 8rem">
+                                                    <option value="Dalam Negeri">Dalam Negeri</option>
+                                                    <option value="Luar Negeri">Luar Negeri</option>
+                                                    <option value="DN + LN">DN + LN</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group-sm ml-2 d-none" id="edit-form-group-saham-1-7"
+                                                style="font-size: 7pt;">
+                                                <label for="">Komposisi Saham</label>
+                                                <input type="text"
+                                                    class="form-control trigger-enter form-control-sm currencyInputFormatter"
+                                                    name="saham" id="editSaham-1-7">
+                                                <p class="text-danger d-none" id="edit-is-invalid-saham-1-7"
+                                                    style="font-size: 10pt; width: 12rem">Nilai Komposisi
+                                                    Saham Tidak Boleh Lebih Dari 75% Jika Dibuat Di Luar
+                                                    Negeri</p>
+                                            </div>
+                                            <input type="hidden" name="tkdn" id="editTkdn-1-7" value="100">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="editCalculation-8" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Form 1.3 : Tingkat Komponen Dalam Tenaga Kerja
+                        Langsung
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form id="editForm-8" method="post">
+                    <input type="hidden" name="id">
+                    <div class="modal-body" id="modal-edit-calculation">
+                        <div class="row">
+                            <div class="form-group col-6">
+                                <label for="">Uraian <i data-toggle="tooltip" data-placement="top"
+                                        title="Nama bahan baku adalah nama yang ditunjukkan pada nama material bahan baku dalam pembuatan produk. Contoh : Biji besi, Bracket dll"
+                                        class="fas fa-info-circle">
+                                    </i></label>
+                                <input type="text" class="form-control trigger-enter form-control-sm "
+                                    id="" placeholder="" name="uraian">
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="">Pemasok <i class="fas fa-info-circle" data-toggle="tooltip"
+                                        data-placement="top" title="Tooltip on top">
+                                    </i></label>
+                                <input type="text" class="form-control trigger-enter form-control-sm"
+                                    id="" placeholder="" name="pemasok">
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="">Jumlah <i class="fas fa-info-circle" data-toggle="tooltip"
+                                        data-placement="top" title="Tooltip on top">
+                                    </i></label>
+                                <input type="number" class="form-control trigger-enter form-control-sm"
+                                    id="" placeholder="" name="jumlah" value="">
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="tkdn">TKDN % <i class="fas fa-info-circle" data-toggle="tooltip"
+                                        data-placement="top" title="Tooltip on top">
+                                    </i></label>
+                                <input type="text"
+                                    class="form-control trigger-enter form-control-sm replaceDot currencyInputFormatter"
+                                    id="tkdn" name="tkdn" placeholder="" value="0,00">
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="">Biaya Per Bulan<i class="fas fa-info-circle"
+                                        data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                    </i></label>
+                                <div class="input-group input-group-sm mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1">Rp.</span>
+                                    </div>
+                                    <input type="text" class="form-control trigger-enter currencyInputFormatter"
+                                        placeholder="" id="biaya_perbulan" name="biaya_perbulan" required
+                                        autocomplete="off" value="0,00">
+                                </div>
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="">Alokasi Pengguna % <i class="fas fa-info-circle"
+                                        data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                    </i></label>
+                                <input type="text"
+                                    class="form-control trigger-enter form-control-sm replaceDot currencyInputFormatter"
+                                    id="" placeholder="" name="alokasi" value="0,00">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -2020,7 +2751,8 @@
                 digitGroupSeparator: '.',
                 decimalCharacter: ',',
                 decimalPlaces: 2,
-                minimumValue: '0'
+                minimumValue: '0',
+                watchExternalChanges: true,
             })
         })
     </script>
@@ -2131,7 +2863,7 @@
                                         kdn: "{tkdn}% * {jumlah_orang} * {gaji_perbulan} * {alokasi_gaji}%",
                                         kln: "(100% - {tkdn}%) * {jumlah_orang} * {gaji_perbulan} * {alokasi_gaji}%",
                                         total: "{formulas.kdn} + {formulas.kln}",
-                                        bpjs: "{bpjs_percent}% * ({gaji_perbulan} >= 12000000 ? 12000000 : {gaji_perbulan}) * {jumlah_orang}",
+                                        bpjs: "{bpjs}",
                                         tunjangan_lainnya: "{currency_tunjangan_lainnya}",
                                         sumJumlahOrang: "sum:jumlah_orang",
                                         sumKdn: "sum:kdn",
@@ -2160,7 +2892,7 @@
                                             "uraian_posisi": "BPJS",
                                             "produsen_tingkat_dua": "-",
                                             "tkdn": "100",
-                                            "jumlah_orang": "-",
+                                            "jumlah_orang": 1,
                                             "biaya_pengurusan_per_bulan": "0,00",
                                             "alokasi": "100",
                                             "id": new Date().getTime(),
@@ -2172,7 +2904,7 @@
                                             "uraian_posisi": "Tunjangan Lainnya",
                                             "produsen_tingkat_dua": "-",
                                             "tkdn": "100",
-                                            "jumlah_orang": "-",
+                                            "jumlah_orang": 1,
                                             "biaya_pengurusan_per_bulan": "0,00",
                                             "alokasi": "100",
                                             "id": new Date().getTime(),
@@ -2268,9 +3000,9 @@
         reloadAllTable()
 
         $(() => {
-            // $(window).on('beforeunload', function() {
-            //     return "save terlebih dahulu data anda!";
-            // });
+            $(window).on('beforeunload', function() {
+                localStorage.removeItem("draftCalculations");
+            });
 
             $("#form-1").on("submit", (event) => {
                 event.preventDefault();
@@ -2415,6 +3147,7 @@
 
                 $("#form-6")[0].reset();
                 $("#tkdn-1-6").val("100");
+                $("#form-group-saham-1-6").addClass("d-none");
 
                 swal({
                     title: "Success",
@@ -2441,6 +3174,7 @@
 
                 $("#form-7")[0].reset();
                 $("#tkdn-1-7").val("100");
+                $("#form-group-saham-1-7").addClass("d-none");
 
                 swal({
                     title: "Success",
@@ -2475,7 +3209,7 @@
             })
         })
 
-        function calculateAndBind(formResult, id) {
+        function calculateAndBind(formResult, id, calculationId = null) {
             const sumRegex = /sum:(\w+)/g
             let calculation = calculations.find(f => f.id == id);
             let results = calculation.data;
@@ -2493,7 +3227,23 @@
                 }
             }
 
-            calculation.data.push(finalResult);
+            if (calculationId != null) {
+                // Temukan indeks objek yang memiliki ID sesuai
+                const index = calculation.data.findIndex(item => item.id == calculationId);
+
+                // Perbarui data jika indeks ditemukan
+                if (index !== -1) {
+                    calculation.data[index] = {
+                        ...calculation.data[index],
+                        ...finalResult
+                    };
+                    console.log('Data berhasil diupdate:', calculation.data[index]);
+                } else {
+                    console.log('ID tidak ditemukan:', id);
+                }
+            } else {
+                calculation.data.push(finalResult);
+            }
 
             calculateSumFormula();
             if (id == 1) {
@@ -2525,6 +3275,9 @@
 
             // Menyimpan data di Local Storage dengan kunci tertentu
             localStorage.setItem('draftCalculations', jsonDraftCalculations);
+
+            store("http://127.0.0.1:8000/calculation-results", `http://127.0.0.1:8000/computation/${computationId}`,
+                computationId, false)
         }
 
         function calculateSumFormula() {
@@ -2639,7 +3392,7 @@
         }
 
 
-        function store(url, redirectUrl, computationId) {
+        function store(url, redirectUrl, computationId, willRedirect = true) {
             draftCalculation = draftCalculations.find(f => f.computationId == computationId);
 
             formData = {
@@ -2658,28 +3411,17 @@
                 url: url,
                 data: formData,
                 success: function(response) {
-                    // Handle respons sukses di sini
-                    swal({
-                        title: "Success",
-                        text: response.success,
-                        icon: "success",
-                        button: "Okay!",
-                        dangerMode: false
-                    }).then(() => {
-                        computationIndex = draftCalculations.findIndex(f => f.computationId == computationId);
+                    // Mengonversi objek menjadi string JSON
+                    let jsonDraftCalculations = JSON.stringify(draftCalculations);
 
-                        if(computationIndex !== -1) {
-                            draftCalculations.splice(computationIndex, 1);
-                        }
+                    // Menyimpan data di Local Storage dengan kunci tertentu
+                    localStorage.setItem('draftCalculations', jsonDraftCalculations);
 
-                        // Mengonversi objek menjadi string JSON
-                        let jsonDraftCalculations = JSON.stringify(draftCalculations);
-
-                        // Menyimpan data di Local Storage dengan kunci tertentu
-                        localStorage.setItem('draftCalculations', jsonDraftCalculations);
-
+                    if (willRedirect) {
                         location.href = redirectUrl;
-                    });
+                    }
+
+                    return true;
                 },
                 error: function(error) {
                     // Handle kesalahan di sini
@@ -2688,9 +3430,84 @@
             });
         }
 
-        function edit(calculation_id) {
-            alert(`edit ${calculation_id}`)
+        function submit(url, redirectUrl, computationId) {
+            draftCalculation = draftCalculations.find(f => f.computationId == computationId);
+
+            formData = {
+                results: JSON.stringify(draftCalculation),
+                computation_id: computationId,
+            };
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                data: formData,
+                success: function(response) {
+                    // Mengonversi objek menjadi string JSON
+                    let jsonDraftCalculations = JSON.stringify(draftCalculations);
+
+                    // Menyimpan data di Local Storage dengan kunci tertentu
+                    localStorage.setItem('draftCalculations', jsonDraftCalculations);
+
+                    location.href = redirectUrl;
+
+                    return true;
+                },
+                error: function(error) {
+                    // Handle kesalahan di sini
+                    console.log(error);
+                }
+            });
         }
+
+        function edit(computation_id, calculation_id) {
+            let computation = calculations.find(f => f.id == computation_id)
+            let calculation = computation.data.find(f => f.id == calculation_id);
+
+            Object.keys(calculation).forEach(key => {
+                form = $(`#editCalculation-${computation_id} form`);
+
+                form.find(`[name="${key}"]`).val(calculation[key]);
+            });
+        }
+
+        calculations.forEach(item => {
+            $(`#editForm-${item.id}`).on("submit", (event) => {
+                event.preventDefault();
+
+                let serializedArray = $(`#editForm-${item.id}`).serializeArray();
+
+                calculation = {};
+
+                for (let i = 0; i < serializedArray.length; i++) {
+                    let input = serializedArray[i];
+                    if (input.value != "") {
+                        calculation[input.name] = input.value;
+                    }
+                }
+
+                // formResult["id"] = new Date().getTime()
+
+                let storeCalculation = calculateAndBind(calculation, item.id, calculation["id"]);
+
+                reloadAllTable()
+
+                swal({
+                    title: "Success",
+                    text: "Success to add new calculation",
+                    icon: "success",
+                })
+
+                $(`#editForm-${item.id}`)[0].reset();
+                $(`#editCalculation-${item.id}`).modal("hide")
+            })
+        })
 
         function destroy(computation_id, calculation_id) {
             let computation = calculations.find(f => f.id == computation_id);
@@ -2752,7 +3569,7 @@
                                 <div class="dropdown-menu"
                                     aria-labelledby="dropdownMenuButton">
                                     <a class="dropdown-item buttonEditNews" data-toggle="modal" data-target="#editCalculation-${calculationId}"
-                                        onclick="edit(${item.id})"><i class="fa fa-edit"></i> Edit
+                                        onclick="edit(${calculation.id}, ${item.id})"><i class="fa fa-edit"></i> Edit
                                     </a>
                                     <button class="dropdown-item" type="submit" onclick="destroy(${calculation.id}, ${item.id})"><i
                                             class="fa fa-trash"></i> Delete</button>
@@ -2817,8 +3634,8 @@
                                         </div>
                                         <div class="dropdown-menu"
                                             aria-labelledby="dropdownMenuButton">
-                                            <a class="dropdown-item buttonEditNews"
-                                                onclick="edit(${item.id})"><i class="fa fa-edit"></i> Edit
+                                            <a class="dropdown-item buttonEditNews" data-toggle="modal" data-target="#editCalculation-${calculationId}"
+                                                onclick="edit(${calculation.id}, ${item.id})"><i class="fa fa-edit"></i> Edit
                                             </a>
                                             <button class="dropdown-item" type="submit" onclick="destroy(${calculation.id}, ${item.id})"><i
                                                     class="fa fa-trash"></i> Delete</button>
@@ -2868,8 +3685,8 @@
                                 </div>
                                 <div class="dropdown-menu"
                                     aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item buttonEditNews"
-                                        onclick="edit(${item.id})"><i class="fa fa-edit"></i> Edit
+                                    <a class="dropdown-item buttonEditNews" data-toggle="modal" data-target="#editCalculation-${calculationId}"
+                                        onclick="edit(${calculation.id}, ${item.id})"><i class="fa fa-edit"></i> Edit
                                     </a>
                                     <button class="dropdown-item" type="submit" onclick="destroy(${calculation.id}, ${item.id})"><i
                                             class="fa fa-trash"></i> Delete</button>
@@ -2901,7 +3718,7 @@
                 let sumKdn = formatToCurrency(calculation.sumKdn)
                 let sumKln = formatToCurrency(calculation.sumKln)
                 let sumTotal = formatToCurrency(calculation.sumTotal)
-                $(`#1-4-sumJumlahOrang`).text(calculation.sumJumlahOrang != null ? calculation.sumJumlahOrang : 0)
+                $(`#1-4-sumJumlahOrang`).text((calculation.sumJumlahOrang != null) ? calculation.sumJumlahOrang : 0)
                 $(`#1-4-sumKdn`).text(formatToCurrency((calculation.sumKdn != null ? calculation.sumKdn : 0)))
                 $(`#1-4-sumKln`).text(sumKln)
                 $(`#1-4-sumTotal`).text(formatToCurrency((calculation.sumTotal != null ? calculation.sumTotal : 0)))
@@ -2921,7 +3738,7 @@
                             <td class="text-nowrap"> ${item.uraian_posisi} </td>
                             <td> ${item.produsen_tingkat_dua} </td>
                             <td> ${item.tkdn}% </td>
-                            <td> ${item.jumlah_orang != null ? item.jumlah_orang : "-"} </td>
+                            <td> ${(item.jumlah_orang != null) ? item.jumlah_orang : "-"} </td>
                             <td class="text-nowrap"> ${item.biaya_pengurusan_per_bulan} </td>
                             <td> ${item.alokasi}%</td>
                             <td class="text-nowrap"> ${formatToCurrency(item.kdn)} </td>
@@ -2938,8 +3755,8 @@
                                         </div>
                                         <div class="dropdown-menu"
                                             aria-labelledby="dropdownMenuButton">
-                                            <a class="dropdown-item buttonEditNews"
-                                                onclick="edit(${item.id})"><i class="fa fa-edit"></i> Edit
+                                            <a class="dropdown-item buttonEditNews" data-toggle="modal" data-target="#editCalculation-${calculationId}"
+                                                onclick="edit(${calculation.id}, ${item.id})"><i class="fa fa-edit"></i> Edit
                                             </a>
                                             <button class="dropdown-item" type="submit" onclick="destroy(${calculation.id}, ${item.id})"><i
                                                     class="fa fa-trash"></i> Delete</button>
@@ -2984,8 +3801,8 @@
                                 </div>
                                 <div class="dropdown-menu"
                                     aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item buttonEditNews"
-                                        onclick="edit(${item.id})"><i class="fa fa-edit"></i> Edit
+                                    <a class="dropdown-item buttonEditNews" data-toggle="modal" data-target="#editCalculation-${calculationId}"
+                                        onclick="edit(${calculation.id}, ${item.id})"><i class="fa fa-edit"></i> Edit
                                     </a>
                                     <button class="dropdown-item" type="submit" onclick="destroy(${calculation.id}, ${item.id})"><i
                                             class="fa fa-trash"></i> Delete</button>
@@ -3029,8 +3846,8 @@
                                 </div>
                                 <div class="dropdown-menu"
                                     aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item buttonEditNews"
-                                        onclick="edit(${item.id})"><i class="fa fa-edit"></i> Edit
+                                    <a class="dropdown-item buttonEditNews" data-toggle="modal" data-target="#editCalculation-${calculationId}"
+                                        onclick="edit(${calculation.id}, ${item.id})"><i class="fa fa-edit"></i> Edit
                                     </a>
                                     <button class="dropdown-item" type="submit" onclick="destroy(${calculation.id}, ${item.id})"><i
                                             class="fa fa-trash"></i> Delete</button>
@@ -3076,8 +3893,8 @@
                                 </div>
                                 <div class="dropdown-menu"
                                     aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item buttonEditNews"
-                                        onclick="edit(${item.id})"><i class="fa fa-edit"></i> Edit
+                                    <a class="dropdown-item buttonEditNews" data-toggle="modal" data-target="#editCalculation-${calculationId}"
+                                        onclick="edit(${calculation.id}, ${item.id})"><i class="fa fa-edit"></i> Edit
                                     </a>
                                     <button class="dropdown-item" type="submit" onclick="destroy(${calculation.id}, ${item.id})"><i
                                             class="fa fa-trash"></i> Delete</button>
@@ -3123,8 +3940,8 @@
                                 </div>
                                 <div class="dropdown-menu"
                                     aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item buttonEditNews"
-                                        onclick="edit(${item.id})"><i class="fa fa-edit"></i> Edit
+                                    <a class="dropdown-item buttonEditNews" data-toggle="modal" data-target="#editCalculation-${calculationId}"
+                                        onclick="edit(${calculation.id}, ${item.id})"><i class="fa fa-edit"></i> Edit
                                     </a>
                                     <button class="dropdown-item" type="submit" onclick="destroy(${calculation.id}, ${item.id})"><i
                                             class="fa fa-trash"></i> Delete</button>
@@ -3192,7 +4009,8 @@
                 $("#sumKln-1-9").text(formatToCurrency(sumKln19));
                 $("#sumTotal-1-9").text(formatToCurrency(sumTotal19));
                 $("#sumTkdn-1-9").text(
-                    `${(sumTotal19 != null) && (sumTotal19 != 0) ? (((sumKdn19 ?? 0) / (sumTotal19 ?? 0) * 100).toFixed(2)) : 0}%`);
+                    `${(sumTotal19 != null) && (sumTotal19 != 0) ? (((sumKdn19 ?? 0) / (sumTotal19 ?? 0) * 100).toFixed(2)) : 0}%`
+                );
             } else if (tbodyId == "tbody-10") {
                 const tbody = $(`#${tbodyId}`);
                 let sumKdn19 = 0;
@@ -3210,7 +4028,8 @@
                     }
                 })
 
-                $("#BiayaProduksiFinalTkdn").text(((sumKdn19 != null) && (sumKdn19 != 0) ? sumKdn19 / sumTotal19 * 100 : 0).toFixed(2) + "%");
+                $("#BiayaProduksiFinalTkdn").text(((sumKdn19 != null) && (sumKdn19 != 0) ? sumKdn19 / sumTotal19 * 100 : 0)
+                    .toFixed(2) + "%");
             }
         }
 
@@ -3270,10 +4089,51 @@
 
                 if (dimilikiValue == "Dalam Negeri" && dibuatValue == "Dalam Negeri") {
                     $("#tkdn-1-6").val("100");
+                    $("#form-group-saham-1-6").addClass("d-none");
                 } else if (dimilikiValue == "Luar Negeri" && dibuatValue == "Luar Negeri") {
                     $("#tkdn-1-6").val("0");
+                    $("#form-group-saham-1-6").addClass("d-none");
+                } else if (dimilikiValue == "DN + LN" && dibuatValue == "Dalam Negeri") {
+                    $("#form-group-saham-1-6").removeClass("d-none");
+
+                    $("#saham-1-6").on("change", (event) => {
+                        let saham = parseCurrencyOrDecimal($(event.currentTarget).val());
+                        saham = ((0.75 + (0.25 * (saham / 100))) * 100).toFixed(2).toString();
+                        if (/\./g.test(saham)) {
+                            saham = saham.replace(/\./g, ",");
+                        }
+
+                        $("#tkdn-1-6").val(saham);
+                    })
+                } else if (dimilikiValue == "DN + LN" && dibuatValue == "Luar Negeri") {
+                    $("#form-group-saham-1-6").removeClass("d-none");
+
+                    $("#saham-1-6").on("change", (event) => {
+                        let saham = $(event.currentTarget).val();
+                        let floatSaham = parseCurrencyOrDecimal($(event.currentTarget).val());
+
+                        saham = floatSaham.toFixed(2).toString();
+                        if (/\./g.test(saham)) {
+                            saham = saham.replace(/\./g, ",");
+                        }
+
+                        if (floatSaham > 75) {
+                            $("#saham-1-6").addClass("is-invalid");
+                            $("#is-invalid-saham-1-6").removeClass("d-none");
+                        } else {
+                            if ($("#saham-1-6").hasClass("is-invalid")) {
+                                $("#saham-1-6").removeClass("is-invalid");
+                                $("#is-invalid-saham-1-6").addClass("d-none");
+                            }
+                        }
+
+                        if (floatSaham <= 75) {
+                            $("#tkdn-1-6").val(saham);
+                        }
+                    })
                 } else {
                     $("#tkdn-1-6").val("75");
+                    $("#form-group-saham-1-6").addClass("d-none");
                 }
             });
 
@@ -3285,8 +4145,151 @@
                     $("#tkdn-1-6").val("100");
                 } else if (dimilikiValue == "Luar Negeri" && dibuatValue == "Luar Negeri") {
                     $("#tkdn-1-6").val("0");
+                } else if (dimilikiValue == "DN + LN" && dibuatValue == "Dalam Negeri") {
+                    $("#form-group-saham-1-6").removeClass("d-none");
+
+                    $("#saham-1-6").on("change", (event) => {
+                        let saham = parseCurrencyOrDecimal($(event.currentTarget).val());
+                        saham = ((0.75 + (0.25 * (saham / 100))) * 100).toFixed(2).toString();
+                        if (/\./g.test(saham)) {
+                            saham = saham.replace(/\./g, ",");
+                        }
+
+                        $("#tkdn-1-6").val(saham);
+                    })
+                } else if (dimilikiValue == "DN + LN" && dibuatValue == "Luar Negeri") {
+                    $("#form-group-saham-1-6").removeClass("d-none");
+
+                    $("#saham-1-6").on("change", (event) => {
+                        let saham = $(event.currentTarget).val();
+                        let floatSaham = parseCurrencyOrDecimal($(event.currentTarget).val());
+
+                        saham = floatSaham.toFixed(2).toString();
+                        if (/\./g.test(saham)) {
+                            saham = saham.replace(/\./g, ",");
+                        }
+
+                        if (floatSaham > 75) {
+                            $("#saham-1-6").addClass("is-invalid");
+                            $("#is-invalid-saham-1-6").removeClass("d-none");
+                        } else {
+                            if ($("#saham-1-6").hasClass("is-invalid")) {
+                                $("#saham-1-6").removeClass("is-invalid");
+                                $("#is-invalid-saham-1-6").addClass("d-none");
+                            }
+                        }
+
+                        if (floatSaham <= 75) {
+                            $("#tkdn-1-6").val(saham);
+                        }
+                    })
                 } else {
                     $("#tkdn-1-6").val("75");
+                }
+            });
+
+            $("#editDimiliki-1-6").on("change", () => {
+                let dimilikiValue = $("#editDimiliki-1-6").val();
+                let dibuatValue = $("#editDibuat-1-6").val();
+
+                if (dimilikiValue == "Dalam Negeri" && dibuatValue == "Dalam Negeri") {
+                    $("#editTkdn-1-6").val("100");
+                    $("#edit-form-group-saham-1-6").addClass("d-none");
+                } else if (dimilikiValue == "Luar Negeri" && dibuatValue == "Luar Negeri") {
+                    $("#editTkdn-1-6").val("0");
+                    $("#edit-form-group-saham-1-6").addClass("d-none");
+                } else if (dimilikiValue == "DN + LN" && dibuatValue == "Dalam Negeri") {
+                    $("#edit-form-group-saham-1-6").removeClass("d-none");
+
+                    $("#editSaham-1-6").on("change", (event) => {
+                        let saham = parseCurrencyOrDecimal($(event.currentTarget).val());
+                        saham = ((0.75 + (0.25 * (saham / 100))) * 100).toFixed(2).toString();
+                        if (/\./g.test(saham)) {
+                            saham = saham.replace(/\./g, ",");
+                        }
+
+                        $("#editTkdn-1-6").val(saham);
+                    })
+                } else if (dimilikiValue == "DN + LN" && dibuatValue == "Luar Negeri") {
+                    $("#edit-form-group-saham-1-6").removeClass("d-none");
+
+                    $("#editSaham-1-6").on("change", (event) => {
+                        let saham = $(event.currentTarget).val();
+                        let floatSaham = parseCurrencyOrDecimal($(event.currentTarget).val());
+
+                        saham = floatSaham.toFixed(2).toString();
+                        if (/\./g.test(saham)) {
+                            saham = saham.replace(/\./g, ",");
+                        }
+
+                        if (floatSaham > 75) {
+                            $("#editSaham-1-6").addClass("is-invalid");
+                            $("#edit-is-invalid-saham-1-6").removeClass("d-none");
+                        } else {
+                            if ($("#editSaham-1-6").hasClass("is-invalid")) {
+                                $("#editSaham-1-6").removeClass("is-invalid");
+                                $("#edit-is-invalid-saham-1-6").addClass("d-none");
+                            }
+                        }
+
+                        if (floatSaham <= 75) {
+                            $("#editTkdn-1-6").val(saham);
+                        }
+                    })
+                } else {
+                    $("#editTkdn-1-6").val("75");
+                    $("#edit-form-group-saham-1-6").addClass("d-none");
+                }
+            });
+
+            $("#editDibuat-1-6").on("change", () => {
+                let dimilikiValue = $("#editDimiliki-1-6").val();
+                let dibuatValue = $("#editDibuat-1-6").val();
+
+                if (dimilikiValue == "Dalam Negeri" && dibuatValue == "Dalam Negeri") {
+                    $("#editTkdn-1-6").val("100");
+                } else if (dimilikiValue == "Luar Negeri" && dibuatValue == "Luar Negeri") {
+                    $("#editTkdn-1-6").val("0");
+                } else if (dimilikiValue == "DN + LN" && dibuatValue == "Dalam Negeri") {
+                    $("#edit-form-group-saham-1-6").removeClass("d-none");
+
+                    $("#editSaham-1-6").on("change", (event) => {
+                        let saham = parseCurrencyOrDecimal($(event.currentTarget).val());
+                        saham = ((0.75 + (0.25 * (saham / 100))) * 100).toFixed(2).toString();
+                        if (/\./g.test(saham)) {
+                            saham = saham.replace(/\./g, ",");
+                        }
+
+                        $("#editTkdn-1-6").val(saham);
+                    })
+                } else if (dimilikiValue == "DN + LN" && dibuatValue == "Luar Negeri") {
+                    $("#edit-form-group-saham-1-6").removeClass("d-none");
+
+                    $("#editSaham-1-6").on("change", (event) => {
+                        let saham = $(event.currentTarget).val();
+                        let floatSaham = parseCurrencyOrDecimal($(event.currentTarget).val());
+
+                        saham = floatSaham.toFixed(2).toString();
+                        if (/\./g.test(saham)) {
+                            saham = saham.replace(/\./g, ",");
+                        }
+
+                        if (floatSaham > 75) {
+                            $("#editSaham-1-6").addClass("is-invalid");
+                            $("#edit-is-invalid-saham-1-6").removeClass("d-none");
+                        } else {
+                            if ($("#editSaham-1-6").hasClass("is-invalid")) {
+                                $("#editSaham-1-6").removeClass("is-invalid");
+                                $("#edit-is-invalid-saham-1-6").addClass("d-none");
+                            }
+                        }
+
+                        if (floatSaham <= 75) {
+                            $("#editTkdn-1-6").val(saham);
+                        }
+                    })
+                } else {
+                    $("#editTkdn-1-6").val("75");
                 }
             });
 
@@ -3298,6 +4301,44 @@
                     $("#tkdn-1-7").val("100");
                 } else if (dimilikiValue == "Luar Negeri" && dibuatValue == "Luar Negeri") {
                     $("#tkdn-1-7").val("0");
+                } else if (dimilikiValue == "DN + LN" && dibuatValue == "Dalam Negeri") {
+                    $("#form-group-saham-1-7").removeClass("d-none");
+
+                    $("#saham-1-7").on("change", (event) => {
+                        let saham = parseCurrencyOrDecimal($(event.currentTarget).val());
+                        saham = ((0.75 + (0.25 * (saham / 100))) * 100).toFixed(2).toString();
+                        if (/\./g.test(saham)) {
+                            saham = saham.replace(/\./g, ",");
+                        }
+
+                        $("#tkdn-1-7").val(saham);
+                    })
+                } else if (dimilikiValue == "DN + LN" && dibuatValue == "Luar Negeri") {
+                    $("#form-group-saham-1-7").removeClass("d-none");
+
+                    $("#saham-1-7").on("change", (event) => {
+                        let saham = $(event.currentTarget).val();
+                        let floatSaham = parseCurrencyOrDecimal($(event.currentTarget).val());
+
+                        saham = floatSaham.toFixed(2).toString();
+                        if (/\./g.test(saham)) {
+                            saham = saham.replace(/\./g, ",");
+                        }
+
+                        if (floatSaham > 75) {
+                            $("#saham-1-7").addClass("is-invalid");
+                            $("#is-invalid-saham-1-7").removeClass("d-none");
+                        } else {
+                            if ($("#saham-1-7").hasClass("is-invalid")) {
+                                $("#saham-1-7").removeClass("is-invalid");
+                                $("#is-invalid-saham-1-7").addClass("d-none");
+                            }
+                        }
+
+                        if (floatSaham <= 75) {
+                            $("#tkdn-1-7").val(saham);
+                        }
+                    })
                 } else {
                     $("#tkdn-1-7").val("75");
                 }
@@ -3311,28 +4352,170 @@
                     $("#tkdn-1-7").val("100");
                 } else if (dimilikiValue == "Luar Negeri" && dibuatValue == "Luar Negeri") {
                     $("#tkdn-1-7").val("0");
+                } else if (dimilikiValue == "DN + LN" && dibuatValue == "Dalam Negeri") {
+                    $("#form-group-saham-1-7").removeClass("d-none");
+
+                    $("#saham-1-7").on("change", (event) => {
+                        let saham = parseCurrencyOrDecimal($(event.currentTarget).val());
+                        saham = ((0.75 + (0.25 * (saham / 100))) * 100).toFixed(2).toString();
+                        if (/\./g.test(saham)) {
+                            saham = saham.replace(/\./g, ",");
+                        }
+
+                        $("#tkdn-1-7").val(saham);
+                    })
+                } else if (dimilikiValue == "DN + LN" && dibuatValue == "Luar Negeri") {
+                    $("#form-group-saham-1-7").removeClass("d-none");
+
+                    $("#saham-1-7").on("change", (event) => {
+                        let saham = $(event.currentTarget).val();
+                        let floatSaham = parseCurrencyOrDecimal($(event.currentTarget).val());
+
+                        saham = floatSaham.toFixed(2).toString();
+                        if (/\./g.test(saham)) {
+                            saham = saham.replace(/\./g, ",");
+                        }
+
+                        if (floatSaham > 75) {
+                            $("#saham-1-7").addClass("is-invalid");
+                            $("#is-invalid-saham-1-7").removeClass("d-none");
+                        } else {
+                            if ($("#saham-1-7").hasClass("is-invalid")) {
+                                $("#saham-1-7").removeClass("is-invalid");
+                                $("#is-invalid-saham-1-7").addClass("d-none");
+                            }
+                        }
+
+                        if (floatSaham <= 75) {
+                            $("#tkdn-1-7").val(saham);
+                        }
+                    })
                 } else {
                     $("#tkdn-1-7").val("75");
                 }
             });
 
-            $(".replaceDot").on("keyup", (event) => {
-                let number = $(event.currentTarget).val();
-                let output = number.replace(/\./g, ",");
+            $("#editDimiliki-1-7").on("change", () => {
+                let dimilikiValue = $("#editDimiliki-1-7").val();
+                let dibuatValue = $("#editDibuat-1-7").val();
 
-                $(event.currentTarget).val(output);
-            })
+                if (dimilikiValue == "Dalam Negeri" && dibuatValue == "Dalam Negeri") {
+                    $("#editTkdn-1-7").val("100");
+                } else if (dimilikiValue == "Luar Negeri" && dibuatValue == "Luar Negeri") {
+                    $("#editTkdn-1-7").val("0");
+                } else if (dimilikiValue == "DN + LN" && dibuatValue == "Dalam Negeri") {
+                    $("#edit-form-group-saham-1-7").removeClass("d-none");
+
+                    $("#editSaham-1-7").on("change", (event) => {
+                        let saham = parseCurrencyOrDecimal($(event.currentTarget).val());
+                        saham = ((0.75 + (0.25 * (saham / 100))) * 100).toFixed(2).toString();
+                        if (/\./g.test(saham)) {
+                            saham = saham.replace(/\./g, ",");
+                        }
+
+                        $("#editTkdn-1-7").val(saham);
+                    })
+                } else if (dimilikiValue == "DN + LN" && dibuatValue == "Luar Negeri") {
+                    $("#edit-form-group-saham-1-7").removeClass("d-none");
+
+                    $("#editSaham-1-7").on("change", (event) => {
+                        let saham = $(event.currentTarget).val();
+                        let floatSaham = parseCurrencyOrDecimal($(event.currentTarget).val());
+
+                        saham = floatSaham.toFixed(2).toString();
+                        if (/\./g.test(saham)) {
+                            saham = saham.replace(/\./g, ",");
+                        }
+
+                        if (floatSaham > 75) {
+                            $("#editSaham-1-7").addClass("is-invalid");
+                            $("#edit-is-invalid-saham-1-7").removeClass("d-none");
+                        } else {
+                            if ($("#editSaham-1-7").hasClass("is-invalid")) {
+                                $("#editSaham-1-7").removeClass("is-invalid");
+                                $("#edit-is-invalid-saham-1-7").addClass("d-none");
+                            }
+                        }
+
+                        if (floatSaham <= 75) {
+                            $("#editTkdn-1-7").val(saham);
+                        }
+                    })
+                } else {
+                    $("#editTkdn-1-7").val("75");
+                }
+            });
+
+            $("#editDibuat-1-7").on("change", () => {
+                let dimilikiValue = $("#editDimiliki-1-7").val();
+                let dibuatValue = $("#editDibuat-1-7").val();
+
+                if (dimilikiValue == "Dalam Negeri" && dibuatValue == "Dalam Negeri") {
+                    $("#editTkdn-1-7").val("100");
+                } else if (dimilikiValue == "Luar Negeri" && dibuatValue == "Luar Negeri") {
+                    $("#editTkdn-1-7").val("0");
+                } else if (dimilikiValue == "DN + LN" && dibuatValue == "Dalam Negeri") {
+                    $("#edit-form-group-saham-1-7").removeClass("d-none");
+
+                    $("#editSaham-1-7").on("change", (event) => {
+                        let saham = parseCurrencyOrDecimal($(event.currentTarget).val());
+                        saham = ((0.75 + (0.25 * (saham / 100))) * 100).toFixed(2).toString();
+                        if (/\./g.test(saham)) {
+                            saham = saham.replace(/\./g, ",");
+                        }
+
+                        $("#editTkdn-1-7").val(saham);
+                    })
+                } else if (dimilikiValue == "DN + LN" && dibuatValue == "Luar Negeri") {
+                    $("#edit-form-group-saham-1-7").removeClass("d-none");
+
+                    $("#editSaham-1-7").on("change", (event) => {
+                        let saham = $(event.currentTarget).val();
+                        let floatSaham = parseCurrencyOrDecimal($(event.currentTarget).val());
+
+                        saham = floatSaham.toFixed(2).toString();
+                        if (/\./g.test(saham)) {
+                            saham = saham.replace(/\./g, ",");
+                        }
+
+                        if (floatSaham > 75) {
+                            $("#editSaham-1-7").addClass("is-invalid");
+                            $("#edit-is-invalid-saham-1-7").removeClass("d-none");
+                        } else {
+                            if ($("#editSaham-1-7").hasClass("is-invalid")) {
+                                $("#editSaham-1-7").removeClass("is-invalid");
+                                $("#edit-is-invalid-saham-1-7").addClass("d-none");
+                            }
+                        }
+
+                        if (floatSaham <= 75) {
+                            $("#editTkdn-1-7").val(saham);
+                        }
+                    })
+                } else {
+                    $("#editTkdn-1-7").val("75");
+                }
+            });
+
+            // $(".replaceDot").on("keyup", (event) => {
+            //     let number = $(event.currentTarget).val();
+            //     let output = number.replace(/\./g, ",");
+
+            //     $(event.currentTarget).val(output);
+            // })
 
             $(".nav-link").on("click", (event) => {
                 if ($(event.currentTarget).attr("id") == "v-rekapitulasi-tab") {
                     $("#table-biaya-produksi-1-9").removeClass("d-none");
+                    $(".button-submit").removeClass("d-none");
                 } else {
                     $("#table-biaya-produksi-1-9").addClass("d-none");
+                    $(".button-submit").addClass("d-none");
                 }
             })
 
             var isButtonClickable = true;
-            $("#buttonSelanjutnya").click(function () {
+            $("#buttonSelanjutnya").click(function() {
                 if (isButtonClickable) {
                     isButtonClickable = false;
                     var activeTab = $(".nav-link.active");
@@ -3349,13 +4532,13 @@
                         nextTab.click();
                     }
 
-                    setTimeout(function () {
+                    setTimeout(function() {
                         isButtonClickable = true;
                     }, 150);
                 }
             });
 
-            $("#buttonKembali").click(function () {
+            $("#buttonKembali").click(function() {
                 if (isButtonClickable) {
                     isButtonClickable = false;
                     var activeTab = $(".nav-link.active");
@@ -3372,7 +4555,7 @@
                         prevTab.click();
 
                     }
-                    setTimeout(function () {
+                    setTimeout(function() {
                         isButtonClickable = true;
                     }, 150);
                 }
