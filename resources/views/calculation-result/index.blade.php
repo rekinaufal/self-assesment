@@ -3527,7 +3527,10 @@
                 // Menyimpan data di Local Storage dengan kunci tertentu
                 localStorage.setItem('draftCalculations', jsonDraftCalculations);
 
-                reloadAllTable()
+                store("http://127.0.0.1:8000/calculation-results", `http://127.0.0.1:8000/computation/${computationId}`,
+                computationId, false);
+
+                reloadAllTable();
 
                 swal({
                     title: "Success",
