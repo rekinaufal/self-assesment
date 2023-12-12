@@ -14,7 +14,7 @@ use Illuminate\Contracts\View\View;
 use Maatwebsite\Excel\Concerns\FromView;
 
 // class CalculationForm2 implements FromArray, WithHeadings, WithTitle, ShouldAutoSize, WithColumnFormatting, WithMapping
-class CalculationForm2 implements WithTitle, FromView, WithStyles, ShouldAutoSize
+class CalculationForm2 implements WithTitle, FromView, WithStyles, ShouldAutoSize, WithColumnFormatting
 {
     protected $rows;
     protected $parent_row;
@@ -34,12 +34,12 @@ class CalculationForm2 implements WithTitle, FromView, WithStyles, ShouldAutoSiz
     public function view(): View
     {
         return view('excel.calculation-form2', [
-            
+
             'parent' => $this->parent_row,
             'detail' => $this->rows
         ]);
     }
-    
+
     public function styles(Worksheet $sheet)
     {
         // FORMULIR 1.2. : TINGKAT KOMPONEN DALAM NEGERI UNTUK BAHAN BAKU (JASA-JASA TERKAIT)
@@ -51,7 +51,7 @@ class CalculationForm2 implements WithTitle, FromView, WithStyles, ShouldAutoSiz
         $sheet->mergeCells('A5:B5');
         $sheet->mergeCells('A6:B6');
         $sheet->mergeCells('A7:B7');
-        
+
         // merge header detail
         $sheet->mergeCells('A9:A10');
         $sheet->mergeCells('B9:B10');
@@ -63,7 +63,7 @@ class CalculationForm2 implements WithTitle, FromView, WithStyles, ShouldAutoSiz
 
         $sheet->mergeCells('H9:J9');
         $sheet->getStyle('A9:J10')->getAlignment()->setHorizontal('center')->setVertical('middle');
-        
+
         // font size header detail
         $sheet->getStyle('A9:Q9')->getFont()->setSize(8);
         $sheet->getStyle('A10:Q10')->getFont()->setSize(8);
@@ -72,64 +72,14 @@ class CalculationForm2 implements WithTitle, FromView, WithStyles, ShouldAutoSiz
         $sheet->getStyle('A9:J9')->getBorders()->getAllBorders()->setBorderStyle('thin');
         $sheet->getStyle('A10:J10')->getBorders()->getAllBorders()->setBorderStyle('thin');
     }
-    // public function map($row): array
-    // {
-    //     // dd($this->rows);
-    //     return [
-    //         $row["uraian"],
-    //         $row["produsen_tingkat_dua"],
-    //         $row["jumlah"],
-    //         $row["tkdn"],
-    //         $row["biaya"],
-    //         $row["alokasi"],
-    //         $row["id"],
-    //         $row["kdn"],
-    //         $row["kln"],
-    //         $row["total"],
-    //         $row["sumKdn"],
-    //         $row["sumKln"],
-    //         $row["sumTotal"],
-    //     ];
-    // }
 
-    // public function headings(): array
-    // {
-    //     return [
-    //         "uraian",
-    //         "produsen_tingkat_dua",
-    //         "jumlah",
-    //         "tkdn",
-    //         "biaya",
-    //         "alokasi",
-    //         "id",
-    //         "kdn",
-    //         "kln",
-    //         "total",
-    //         "sumKdn",
-    //         "sumKln",
-    //         "sumTotal",
-    //     ];
-    // }
-
-    // public function array(): array
-    // {
-    //     return $this->rows;
-    // }
-
-    // public function columnFormats(): array
-    // {
-    //     return [
-    //         'B' => '#,##0',
-    //         'C' => '#,##0',
-    //         'D' => '#,##0',
-    //         'E' => '#,##0',
-    //         'F' => '#,##0',
-    //         'G' => '#,##0',
-    //         'H' => '#,##0',
-    //         'I' => '#,##0',
-    //         'J' => '#,##0',
-    //         'K' => '#,##0',
-    //         'L' => '#,##0',
-    //     ];
-    // }
+    public function columnFormats(): array
+    {
+        return [
+            'F' => 'Rp #,##0.00',
+            'H' => 'Rp #,##0.00',
+            'I' => 'Rp #,##0.00',
+            'J' => 'Rp #,##0.00',
+        ];
+    }
 }

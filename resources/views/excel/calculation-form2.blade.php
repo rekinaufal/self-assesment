@@ -82,9 +82,9 @@
                 <td></td>
                 <td></td>
                 <td style="border:1px solid #000000;background-color: #dbdbdb;text-align: center;"><b>Total</b></td>
-                <td style="{{ $borderStyle }}"><b>Rp {{ $detail['sumKdn'] }}</b></td>
-                <td style="{{ $borderStyle }}"><b>Rp {{ $detail['sumKln'] }}</b></td>
-                <td style="{{ $borderStyle }}"><b>Rp {{ $detail['sumTotal'] }}</b></td>
+                <td style="{{ $borderStyle }}"><b>{{ $detail['sumKdn'] }}</b></td>
+                <td style="{{ $borderStyle }}"><b>{{ $detail['sumKln'] }}</b></td>
+                <td style="{{ $borderStyle }}"><b>{{ $detail['sumTotal'] }}</b></td>
             </tr>
     </tbody>
 </table>

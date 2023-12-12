@@ -77,7 +77,7 @@
                                                     </i></label>
                                                 <input type="text" name="bahan_baku"
                                                     class="form-control form-control-sm trigger-enter" id="bahan_baku"
-                                                    placeholder="">
+                                                    placeholder="" required>
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -86,7 +86,7 @@
                                                     </i></label>
                                                 <input type="text" name="spesifikasi"
                                                     class="form-control form-control-sm trigger-enter" id="spesifikasi"
-                                                    placeholder="">
+                                                    placeholder="" required>
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -95,7 +95,7 @@
                                                         data-placement="top" title="Tooltip on top">
                                                     </i></label>
                                                 <select class="form-control form-control-sm trigger-enter"
-                                                    id="satuan_bahan_baku" name="satuan_bahan_baku">
+                                                    id="satuan_bahan_baku" name="satuan_bahan_baku" required>
                                                     <option></option>
                                                     <option value="Pcs">Pcs</option>
                                                     <option value="Pack">Pack</option>
@@ -110,7 +110,7 @@
                                                         data-toggle="tooltip" data-placement="top" title="Tooltip on top">
                                                     </i></label>
                                                 <select class="form-control form-control-sm trigger-enter" id="negara_asal"
-                                                    name="negara_asal">
+                                                    name="negara_asal" required>
                                                     <option></option>
                                                     @foreach ($countries as $country)
                                                         <option value="{{ $country }}">{{ $country }}</option>
@@ -125,7 +125,7 @@
                                                     </i></label>
                                                 <input type="text" name="pemasok"
                                                     class="form-control form-control-sm trigger-enter" id="pemasok"
-                                                    placeholder="">
+                                                    placeholder="" required>
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -368,7 +368,7 @@
                                                     </i></label>
                                                 <input type="text" name="uraian"
                                                     class="form-control trigger-enter form-control-sm " id=""
-                                                    placeholder="">
+                                                    placeholder="" required>
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -378,7 +378,7 @@
                                                     </i></label>
                                                 <input type="text" name="produsen_tingkat_dua"
                                                     class="form-control trigger-enter form-control-sm" id=""
-                                                    placeholder="">
+                                                    placeholder="" required>
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -527,7 +527,7 @@
                                                         class="fas fa-info-circle">
                                                     </i></label>
                                                 <input type="text" class="form-control trigger-enter form-control-sm"
-                                                    id="" placeholder="" name="uraian_posisi">
+                                                    id="" placeholder="" name="uraian_posisi" required>
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -536,7 +536,7 @@
                                                         title="Tooltip on top">
                                                     </i></label>
                                                 <select class="form-control trigger-enter form-control-sm setTkdn"
-                                                    id="" name="kewarganegaraan">
+                                                    id="" name="kewarganegaraan" required>
                                                     <option></option>
                                                     @foreach ($countries as $country)
                                                         <option value="{{ $country }}">{{ $country }}</option>
@@ -551,7 +551,7 @@
                                                         title="Tooltip on top">
                                                     </i></label>
                                                 <input type="number" class="form-control trigger-enter form-control-sm"
-                                                    id="" placeholder="" name="jumlah_orang" value="">
+                                                    id="" placeholder="" name="jumlah_orang" value="" required>
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -744,7 +744,7 @@
                                                         class="fas fa-info-circle">
                                                     </i></label>
                                                 <input type="text" class="form-control trigger-enter form-control-sm "
-                                                    id="uraian_posisi" name="uraian_posisi" placeholder="">
+                                                    id="uraian_posisi" name="uraian_posisi" placeholder="" required>
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -753,7 +753,7 @@
                                                         data-placement="top" title="Tooltip on top">
                                                     </i></label>
                                                 <input type="text" class="form-control trigger-enter form-control-sm"
-                                                    id="produsen_tingkat_dua" name="produsen_tingkat_dua" placeholder="">
+                                                    id="produsen_tingkat_dua" name="produsen_tingkat_dua" placeholder="" required>
                                             </div>
 
 
@@ -773,7 +773,7 @@
                                                         title="Tooltip on top">
                                                     </i></label>
                                                 <input type="number" class="form-control trigger-enter form-control-sm"
-                                                    id="jumlah_orang" name="jumlah_orang" placeholder="" value="">
+                                                    id="jumlah_orang" name="jumlah_orang" placeholder="" value="" required>
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -924,11 +924,11 @@
                                                     Uraian Posisi
                                                     <i data-toggle="tooltip" data-placement="top"
                                                         title="Nama bahan baku adalah nama yang ditunjukkan pada nama material bahan baku dalam pembuatan produk. Contoh : Biji besi, Bracket dll"
-                                                        class="fas fa-info-circle">
+                                                        class="fas fa-info-circle" >
                                                     </i>
                                                 </label>
                                                 <input type="text" class="form-control trigger-enter form-control-sm"
-                                                    id="uraian_posisi" name="uraian_posisi">
+                                                    id="uraian_posisi" name="uraian_posisi" required>
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -937,7 +937,7 @@
                                                         title="Tooltip on top">
                                                     </i></label>
                                                 <select class="form-control trigger-enter form-control-sm setTkdn"
-                                                    id="" name="kewarganegaraan">
+                                                    id="" name="kewarganegaraan" required>
                                                     <option></option>
                                                     @foreach ($countries as $country)
                                                         <option value="{{ $country }}">{{ $country }}</option>
@@ -953,7 +953,7 @@
                                                         data-placement="top" title="Tooltip on top"></i>
                                                 </label>
                                                 <input type="number" class="form-control trigger-enter form-control-sm"
-                                                    id="jumlah_orang" name="jumlah_orang" value="">
+                                                    id="jumlah_orang" name="jumlah_orang" value="" required>
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -1100,11 +1100,11 @@
                                                 <label for="">Uraian <i data-toggle="tooltip"
                                                         data-placement="top"
                                                         title="Nama bahan baku adalah nama yang ditunjukkan pada nama material bahan baku dalam pembuatan produk. Contoh : Biji besi, Bracket dll"
-                                                        class="fas fa-info-circle">
+                                                        class="fas fa-info-circle" >
                                                     </i></label>
                                                 <input type="text"
                                                     class="form-control trigger-enter form-control-sm " id=""
-                                                    placeholder="" name="uraian">
+                                                    placeholder="" name="uraian" required>
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 "
@@ -1115,7 +1115,7 @@
                                                     </i></label>
                                                 <input type="text" class="form-control trigger-enter form-control-sm"
                                                     id="" placeholder="" name="spesifikasi"
-                                                    name="spesifikasi">
+                                                    name="spesifikasi" required>
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 "
@@ -1125,7 +1125,7 @@
                                                         title="Tooltip on top">
                                                     </i></label>
                                                 <input type="number" class="form-control trigger-enter form-control-sm"
-                                                    id="" placeholder="" name="jumlah_unit" value="">
+                                                    id="" placeholder="" name="jumlah_unit" value="" required>
                                             </div>
 
 
@@ -1192,7 +1192,7 @@
                                                                 <label for="">Komposisi Saham</label>
                                                                 <input type="text"
                                                                     class="form-control trigger-enter form-control-sm currencyInputFormatter"
-                                                                    name="saham" id="saham-1-6">
+                                                                    name="saham" id="saham-1-6" value="0,00">
                                                                 <p class="text-danger d-none" id="is-invalid-saham-1-6"
                                                                     style="font-size: 10pt; width: 12rem">Nilai Komposisi
                                                                     Saham Tidak Boleh Lebih Dari 75% Jika Dibuat Di Luar
@@ -1327,7 +1327,7 @@
                                                     </i></label>
                                                 <input type="text"
                                                     class="form-control trigger-enter form-control-sm " id=""
-                                                    placeholder="" name="uraian">
+                                                    placeholder="" name="uraian" required>
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 "
@@ -1338,7 +1338,7 @@
                                                     </i></label>
                                                 <input type="text" class="form-control trigger-enter form-control-sm"
                                                     id="" placeholder="" name="spesifikasi"
-                                                    name="spesifikasi">
+                                                    name="spesifikasi" required>
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 "
@@ -1348,7 +1348,7 @@
                                                         title="Tooltip on top">
                                                     </i></label>
                                                 <input type="text" class="form-control trigger-enter form-control-sm"
-                                                    id="" placeholder="" name="produsen_tingkat_dua">
+                                                    id="" placeholder="" name="produsen_tingkat_dua" required>
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 "
@@ -1358,7 +1358,7 @@
                                                         title="Tooltip on top">
                                                     </i></label>
                                                 <input type="number" class="form-control trigger-enter form-control-sm"
-                                                    id="" placeholder="" name="jumlah_unit" value="">
+                                                    id="" placeholder="" name="jumlah_unit" value="" required>
                                             </div>
 
 
@@ -1425,7 +1425,7 @@
                                                                 <label for="">Komposisi Saham</label>
                                                                 <input type="text"
                                                                     class="form-control trigger-enter form-control-sm currencyInputFormatter"
-                                                                    name="saham" id="saham-1-7">
+                                                                    name="saham" id="saham-1-7" value="0,00">
                                                                 <p class="text-danger d-none" id="is-invalid-saham-1-7"
                                                                     style="font-size: 10pt; width: 12rem">Nilai Komposisi
                                                                     Saham Tidak Boleh Lebih Dari 75%</p>
@@ -1557,7 +1557,7 @@
                                                     </i></label>
                                                 <input type="text"
                                                     class="form-control trigger-enter form-control-sm " id=""
-                                                    placeholder="" name="uraian">
+                                                    placeholder="" name="uraian" required>
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 "
@@ -1567,7 +1567,7 @@
                                                         title="Tooltip on top">
                                                     </i></label>
                                                 <input type="text" class="form-control trigger-enter form-control-sm"
-                                                    id="" placeholder="" name="pemasok">
+                                                    id="" placeholder="" name="pemasok" required>
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 "
@@ -1577,7 +1577,7 @@
                                                         title="Tooltip on top">
                                                     </i></label>
                                                 <input type="number" class="form-control trigger-enter form-control-sm"
-                                                    id="" placeholder="" name="jumlah" value="">
+                                                    id="" placeholder="" name="jumlah" value="" required>
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 "
@@ -2831,10 +2831,10 @@
                                     "data": [{
                                             "uraian": "Local PPN",
                                             "produsen_tingkat_dua": "Dirjen Pajak",
-                                            "jumlah": "1",
-                                            "tkdn": "100",
+                                            "jumlah": "1,00",
+                                            "tkdn": "100,00",
                                             "biaya": "0,00",
-                                            "alokasi": "100",
+                                            "alokasi": "100,00",
                                             "id": new Date().getTime(),
                                             "kdn": 0,
                                             "kln": 0,
@@ -2843,10 +2843,10 @@
                                         {
                                             "uraian": "PDRI",
                                             "produsen_tingkat_dua": "Bea Cukai",
-                                            "jumlah": "1",
-                                            "tkdn": "100",
+                                            "jumlah": "1,00",
+                                            "tkdn": "100,00",
                                             "biaya": "0,00",
-                                            "alokasi": "100",
+                                            "alokasi": "100,00",
                                             "id": new Date().getTime(),
                                             "kdn": 0,
                                             "kln": 0,
@@ -2891,10 +2891,10 @@
                                     "data": [{
                                             "uraian_posisi": "BPJS",
                                             "produsen_tingkat_dua": "-",
-                                            "tkdn": "100",
+                                            "tkdn": "100,00",
                                             "jumlah_orang": 1,
                                             "biaya_pengurusan_per_bulan": "0,00",
-                                            "alokasi": "100",
+                                            "alokasi": "100,00",
                                             "id": new Date().getTime(),
                                             "kdn": 0,
                                             "kln": 0,
@@ -2903,10 +2903,10 @@
                                         {
                                             "uraian_posisi": "Tunjangan Lainnya",
                                             "produsen_tingkat_dua": "-",
-                                            "tkdn": "100",
+                                            "tkdn": "100,00",
                                             "jumlah_orang": 1,
                                             "biaya_pengurusan_per_bulan": "0,00",
-                                            "alokasi": "100",
+                                            "alokasi": "100,00",
                                             "id": new Date().getTime(),
                                             "kdn": 0,
                                             "kln": 0,
@@ -3251,8 +3251,10 @@
 
                 calculation2.data[0].kdn = calculation.sumPpn;
                 calculation2.data[0].total = calculation.sumPpn;
+                calculation2.data[0].biaya = formatToCurrency(calculation.sumPpn);
                 calculation2.data[1].kdn = calculation.sumPdriTotal;
                 calculation2.data[1].total = calculation.sumPdriTotal;
+                calculation2.data[1].biaya = formatToCurrency(calculation.sumPdriTotal);
 
                 calculateSumFormula();
             }
@@ -3617,7 +3619,7 @@
                                 <td>${item.produsen_tingkat_dua}</td>
                                 <td>${item.jumlah}</td>
                                 <td>${item.tkdn}%</td>
-                                <td class='text-nowrap'>Rp ${item.biaya}</td>
+                                <td class='text-nowrap'>${item.biaya}</td>
                                 <td>${item.alokasi}%</td>
                                 <td class='text-nowrap'>${formatToCurrency(item.kdn)}</td>
                                 <td class='text-nowrap'>${formatToCurrency(item.kln)}</td>
