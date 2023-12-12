@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\News;
 use App\Models\PermenperinCategory;
+use App\Models\Computation;
 use App\Models\UserProfile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -137,19 +138,26 @@ class LoginController extends Controller
 
     public function dashboard()
     {
-        $userCount = User::count();
-        $roleCount = Role::count();
-        $allUserPremiumCount = User::with('user_category')->where("user_category_id", "1")->count();
-        $user = auth()->user();
-        $userRole = $user->roles->pluck('name')->first();
-        $pageTitle = 'Dashboard';
-        $type_menu = 'dashboard';
-        $newsData = News::all();
-        $permenperinCount = PermenperinCategory::all()->count();
-        if ($userRole == "Admin") {
-            return view('pages.dashboard_admin', compact('permenperinCount', 'allUserPremiumCount', 'user', 'userRole', 'userCount', 'roleCount', 'pageTitle', 'type_menu'));
+        $data = [
+            "userCount" => User::count(),
+            "roleCount" => Role::count(),
+            "userPremiumCount" => User::with("user_category")->whereUserCategoryId("1")->count(),
+            "user" => Auth::user(),
+            "userRole" => Auth::user()->roles->pluck("name")->first(),
+            "news" => News::all(),
+            "permenperinCount" => PermenperinCategory::all()->count(),
+            "pageTitle" => "Dashboard",
+            "type_menu" => "dashboard",
+        ];
+
+
+        if($data["userRole"] == "Admin") {
+            $data["computations"] = Computation::whereStatus("Finished")->get();
+            return view("pages.dashboard_admin", $data);
         }
-        return view('pages.dashboard', compact('newsData', 'permenperinCount', 'allUserPremiumCount', 'user', 'userRole', 'userCount', 'roleCount', 'pageTitle', 'type_menu'));
+
+        $data["computations"] = Computation::whereUserId(Auth::user()->id)->whereStatus("Finished")->get();
+        return view("pages.dashboard", $data);
     }
 
     public function filteredNewsDashboardUser(Request $request)
@@ -199,7 +207,7 @@ class LoginController extends Controller
             $details = [
                 'title' => 'Forget Password',
                 'opener' => 'Hai, You have requested a password reset. ',
-                'opener_desc' => 'Your password will be changed to '.'<b>'. $randomString.'</b>', 
+                'opener_desc' => 'Your password will be changed to '.'<b>'. $randomString.'</b>',
                 'closing' => 'Please log in and change your password in the profile form.',
             ];
 
@@ -255,13 +263,13 @@ class LoginController extends Controller
         $subject = "Registration Comfirmation";
         $details = [
             'title' => 'Registration E-learning',
-            'body1' => 'Dear ' . $name . ' , Thank you for creating an account through our website 
-                        E-learning. For your security, please kindly 
-                        verify your account for a better experience by clicking the 
+            'body1' => 'Dear ' . $name . ' , Thank you for creating an account through our website
+                        E-learning. For your security, please kindly
+                        verify your account for a better experience by clicking the
                         button below',
             'button' => $id,
-            'body2' => 'If in any case, you need our assistance, please do not 
-                        hesitate to contact us through email at 
+            'body2' => 'If in any case, you need our assistance, please do not
+                        hesitate to contact us through email at
                         artexsinergi@smtp14.mailtarget.co.',
         ];
 

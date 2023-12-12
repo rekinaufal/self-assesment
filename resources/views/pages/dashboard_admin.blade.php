@@ -4,12 +4,13 @@
 
 @push('style')
     <link href="{{ asset('assets/libs/chartist/dist/chartist.min.css') }}" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
     <style>
-        #overflow_canvas{
-            overflow: auto; 
+        #overflow_canvas {
+            overflow: auto;
             white-space: nowrap;
         }
+
         /* width */
         #overflow_canvas::-webkit-scrollbar {
             width: 5px;
@@ -18,19 +19,19 @@
 
         /* Track */
         #overflow_canvas::-webkit-scrollbar-track {
-        box-shadow: inset 0 0 5px grey; 
-        border-radius: 10px;
+            box-shadow: inset 0 0 5px grey;
+            border-radius: 10px;
         }
-        
+
         /* Handle */
         #overflow_canvas::-webkit-scrollbar-thumb {
-        background: red; 
-        border-radius: 10px;
+            background: red;
+            border-radius: 10px;
         }
 
         /* Handle on hover */
         #overflow_canvas::-webkit-scrollbar-thumb:hover {
-        background: #b30000; 
+            background: #b30000;
         }
 
         /* css charts bar user diagram */
@@ -39,10 +40,12 @@
             -webkit-user-select: none;
             -ms-user-select: none;
         }
+
         .container-canvas {
-            width:150%;
-            background-color:#ffffff;
+            width: 150%;
+            background-color: #ffffff;
         }
+
         /* charts bar user diagram */
 
         /* charts dounat  */
@@ -56,15 +59,17 @@
             -ms-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
         }
+
         .radia-bar-container {
             display: flex;
             justify-content: center;
             position: relative;
         }
+
         /* charts dounat  */
 
         .color-count {
-            width: 100px; 
+            width: 100px;
             height: 7em;
         }
 
@@ -130,7 +135,7 @@
                 <div class="card-body" style="background: linear-gradient(to bottom, #3366cc 0%, #006699 100%);">
                     <div class="d-flex d-lg-flex d-md-block align-items-center">
                         <div>
-                            <h2 class="text-white mb-1 w-100 text-truncate font-weight-medium">{{ $allUserPremiumCount }}
+                            <h2 class="text-white mb-1 w-100 text-truncate font-weight-medium">{{ $userPremiumCount }}
                             </h2>
                             <h6 class="text-white font-weight-normal mb-0 w-100 text-truncate">Pengguna Premium
                             </h6>
@@ -166,7 +171,7 @@
                 <div class="card-body" style="background: linear-gradient(to bottom, #cc6600 0%, #996600 100%);">
                     <div class="d-flex d-lg-flex d-md-block align-items-center">
                         <div>
-                            <h2 class="text-white mb-1 font-weight-medium">124</h2>
+                            <h2 class="text-white mb-1 font-weight-medium">{{ $computations->count() }}</h2>
                             <h6 class="text-white font-weight-normal mb-0 w-100 text-truncate">File Perhitungan</h6>
                         </div>
                         <div class="ml-auto mt-md-3 mt-lg-0">
@@ -189,13 +194,13 @@
                 <div class="card" style="height: 450px">
                     <div class="card-body">
                         <h4 class="card-title">Pemilihan Permenperin</h4>
-                    	<div class="radial">
-                            <p >Total 4231</p>
+                        <div class="radial">
+                            <p>Total 4231</p>
                         </div>
                         <div class="row">
                             <div class="col-8">
                                 <div>
-                                    <span class="donut" style="border: 5px solid #1991EB;"></span> 
+                                    <span class="donut" style="border: 5px solid #1991EB;"></span>
                                     <span>Permenperin 1</span>
                                 </div>
                                 <div>
@@ -244,10 +249,11 @@
                         </div>
                         <h4 class="card-title">Grafik Pengguna</h4>
                         <div class="float-left" style="display: flex; justify-content: space-between; align-items: center;">
-                            <span class="donut" style="border: 5px solid #FF0000;"></span> 
+                            <span class="donut" style="border: 5px solid #FF0000;"></span>
                             <span>Premium</span>
                         </div>
-                        <div class="float-right" style="display: flex; justify-content: space-between; align-items: center;"> 
+                        <div class="float-right"
+                            style="display: flex; justify-content: space-between; align-items: center;">
                             <span class="donut" style="border: 5px solid #1991EB;"></span>
                             <span>Regular</span>
                         </div>
@@ -290,19 +296,6 @@
                     <div class="card-body">
                         <div class="d-flex align-items-start">
                             <h4 class="card-title mb-0">File perhitungan pengguna</h4>
-                            <div class="ml-auto">
-                                {{-- <div class="dropdown sub-dropdown">
-                                    <button class="btn btn-link text-muted dropdown-toggle" type="button" id="dd1"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <i data-feather="more-vertical"></i>
-                                    </button>
-                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dd1">
-                                        <a class="dropdown-item" href="#">Insert</a>
-                                        <a class="dropdown-item" href="#">Update</a>
-                                        <a class="dropdown-item" href="#">Delete</a>
-                                    </div>
-                                </div> --}}
-                            </div>
                         </div>
                         <div class="pl-4 mb-5">
                             <div class="position-relative">
@@ -311,15 +304,11 @@
                                     <div class="col-12">
                                         <div class="card">
                                             <div class="card-body">
-                                                <div
-                                                    class="table-responsive"style="overflow-y:scroll;
-                                                                                                                                            height:400px;">
+                                                <div class="table-responsive"style="overflow-y:scroll; height:400px;">
                                                     <table id="zero_config"
                                                         class="table table-striped table-bordered no-wrap">
                                                         <thead>
-                                                            <tr align="center"
-                                                                style=" position:sticky;
-                                                            top: 0 ;">
+                                                            <tr align="center" style=" position:sticky; top: 0;">
                                                                 <th>No</th>
                                                                 <th>Pengguna</th>
                                                                 <th>File</th>
@@ -328,157 +317,57 @@
                                                             </tr>
                                                         </thead>
                                                         <tbody>
-                                                            <tr>
-                                                                <td align="center">1</td>
-                                                                <td>Bambang</td>
-                                                                <td align="center"> <i data-feather="file"></i> <i
-                                                                        data-feather="file-text"></i></td>
-                                                                <td>
-                                                                    <div class="dropdown sub-dropdown">
-                                                                        <button
-                                                                            class="d-flex btn btn-link text-muted dropdown-toggle"
-                                                                            type="button" id="dd1"
-                                                                            data-toggle="dropdown" aria-haspopup="true"
-                                                                            aria-expanded="false">
-                                                                            <i data-feather="download"> </i>
-                                                                            <p>&nbsp;&nbsp;&nbsp;Unduh</p>
-                                                                        </button>
-                                                                        <div class="dropdown-menu dropdown-menu-right"
-                                                                            aria-labelledby="dd1">
-                                                                            <a class="dropdown-item" href="#">
-                                                                                <i data-feather="file"></i>&nbsp;&nbsp;
-                                                                                Pdf</a>
-                                                                            <a class="dropdown-item" href="#">
-                                                                                <i
-                                                                                    data-feather="file-text"></i>&nbsp;&nbsp;
-                                                                                Xlsx</a>
+                                                            @php
+                                                                $i = 1;
+                                                            @endphp
+                                                            @forelse ($computations as $computation)
+                                                                <tr>
+                                                                    <td align="center">{{ $i++ }}</td>
+                                                                    <td>{{ $computation->user->user_profile->fullname }}
+                                                                    </td>
+                                                                    <td align="center"> <i data-feather="file"></i> <i
+                                                                            data-feather="file-text"></i></td>
+                                                                    <td>
+                                                                        <div class="dropdown sub-dropdown">
+                                                                            <button
+                                                                                class="d-flex btn btn-link text-muted dropdown-toggle"
+                                                                                type="button" id="dd1"
+                                                                                data-toggle="dropdown"
+                                                                                aria-haspopup="true"
+                                                                                aria-expanded="false">
+                                                                                <i data-feather="download"> </i>
+                                                                                <p>&nbsp;&nbsp;&nbsp;Unduh</p>
+                                                                            </button>
+                                                                            <div class="dropdown-menu dropdown-menu-right"
+                                                                                aria-labelledby="dd1">
+                                                                                <a class="dropdown-item" href="#">
+                                                                                    <i data-feather="file"></i> Pdf
+                                                                                </a>
+                                                                                <a class="dropdown-item" href="{{ url('/exportExcelComputation', $computation) }}">
+                                                                                    <i data-feather="file-text"></i> Xlsx
+                                                                                </a>
+                                                                            </div>
                                                                         </div>
-                                                                    </div>
-                                                                </td>
-                                                                <td align="center"><button
-                                                                        class="btn btn-sm btn-warning">Tinjau</button>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td align="center">2</td>
-                                                                <td>Pamungkas</td>
-                                                                <td align="center"> <i data-feather="file"></i> <i
-                                                                        data-feather="file-text"></i></td>
-                                                                <td>
-                                                                    <div class="dropdown sub-dropdown">
-                                                                        <button
-                                                                            class="d-flex btn btn-link text-muted dropdown-toggle"
-                                                                            type="button" id="dd1"
-                                                                            data-toggle="dropdown" aria-haspopup="true"
-                                                                            aria-expanded="true">
-                                                                            <i data-feather="download"></i>
-                                                                            <p>&nbsp;&nbsp;&nbsp;Unduh</p>
-                                                                        </button>
-                                                                        <div class="dropdown-menu dropdown-menu-right"
-                                                                            aria-labelledby="dd1">
-                                                                            <a class="dropdown-item" href="#">
-                                                                                <i
-                                                                                    data-feather="file"></i>&nbsp;&nbsp;Pdf</a>
-                                                                            <a class="dropdown-item" href="#">
-                                                                                <i
-                                                                                    data-feather="file-text"></i>&nbsp;&nbsp;Xlsx</a>
-                                                                        </div>
-                                                                    </div>
-                                                                </td>
-                                                                <td align="center"><button
-                                                                        class="btn btn-sm btn-warning">Tinjau</button>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td align="center">3</td>
-                                                                <td>Jamal</td>
-                                                                <td align="center"> <i data-feather="file"></i> <i
-                                                                        data-feather="file-text"></i></td>
-                                                                <td>
-                                                                    <div class="dropdown sub-dropdown">
-                                                                        <button
-                                                                            class="d-flex btn btn-link text-muted dropdown-toggle"
-                                                                            type="button" id="dd1"
-                                                                            data-toggle="dropdown" aria-haspopup="true"
-                                                                            aria-expanded="true">
-                                                                            <i data-feather="download"></i>
-                                                                            <p>&nbsp;&nbsp;&nbsp;Unduh</p>
-                                                                        </button>
-                                                                        <div class="dropdown-menu dropdown-menu-right"
-                                                                            aria-labelledby="dd1">
-                                                                            <a class="dropdown-item" href="#">
-                                                                                <i
-                                                                                    data-feather="file"></i>&nbsp;&nbsp;Pdf</a>
-                                                                            <a class="dropdown-item" href="#">
-                                                                                <i
-                                                                                    data-feather="file-text"></i>&nbsp;&nbsp;Xlsx</a>
-                                                                        </div>
-                                                                    </div>
-                                                                </td>
-                                                                <td align="center"><button
-                                                                        class="btn btn-sm btn-warning">Tinjau</button>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td align="center">4</td>
-                                                                <td>Effendi</td>
-                                                                <td align="center"> <i data-feather="file"></i> <i
-                                                                        data-feather="file-text"></i></td>
-                                                                <td>
-                                                                    <div class="dropdown sub-dropdown">
-                                                                        <button
-                                                                            class="d-flex btn btn-link text-muted dropdown-toggle"
-                                                                            type="button" id="dd1"
-                                                                            data-toggle="dropdown" aria-haspopup="true"
-                                                                            aria-expanded="true">
-                                                                            <i data-feather="download"></i>
-                                                                            <p>&nbsp;&nbsp;&nbsp;Unduh</p>
-                                                                        </button>
-                                                                        <div class="dropdown-menu dropdown-menu-right"
-                                                                            aria-labelledby="dd1">
-                                                                            <a class="dropdown-item" href="#">
-                                                                                <i
-                                                                                    data-feather="file"></i>&nbsp;&nbsp;Pdf</a>
-                                                                            <a class="dropdown-item" href="#">
-                                                                                <i
-                                                                                    data-feather="file-text"></i>&nbsp;&nbsp;Xlsx</a>
-                                                                        </div>
-                                                                    </div>
-                                                                </td>
-                                                                <td align="center"><button
-                                                                        class="btn btn-sm btn-warning">Tinjau</button>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td align="center">5</td>
-                                                                <td>Gunawan</td>
-                                                                <td align="center"> <i data-feather="file"></i> <i
-                                                                        data-feather="file-text"></i></td>
-                                                                <td>
-                                                                    <div class="dropdown sub-dropdown">
-                                                                        <button
-                                                                            class="d-flex btn btn-link text-muted dropdown-toggle"
-                                                                            type="button" id="dd1"
-                                                                            data-toggle="dropdown" aria-haspopup="true"
-                                                                            aria-expanded="true">
-                                                                            <i data-feather="download"></i>
-                                                                            <p>&nbsp;&nbsp;&nbsp;Unduh</p>
-                                                                        </button>
-                                                                        <div class="dropdown-menu dropdown-menu-right"
-                                                                            aria-labelledby="dd1">
-                                                                            <a class="dropdown-item" href="#">
-                                                                                <i
-                                                                                    data-feather="file"></i>&nbsp;&nbsp;Pdf</a>
-                                                                            <a class="dropdown-item" href="#">
-                                                                                <i
-                                                                                    data-feather="file-text"></i>&nbsp;&nbsp;Xlsx</a>
-                                                                        </div>
-                                                                    </div>
-                                                                </td>
-                                                                <td align="center"><button
-                                                                        class="btn btn-sm btn-warning">Tinjau</button>
-                                                                </td>
-                                                            </tr>
+                                                                    </td>
+                                                                    <td align="center">
+                                                                        @if ($computation->status == 'Finished')
+                                                                            <span class="badge badge-pill badge-success">
+                                                                                Finished
+                                                                            </span>
+                                                                        @else
+                                                                            <button class="btn btn-sm btn-warning">
+                                                                                Tinjau
+                                                                            </button>
+                                                                        @endif
+                                                                    </td>
+                                                                </tr>
+                                                            @empty
+                                                                <tr>
+                                                                    <td colspan="5">
+                                                                        Belum Ada File Perhitungan!
+                                                                    </td>
+                                                                </tr>
+                                                            @endforelse
                                                         </tbody>
                                                         <tfoot>
                                                             {{-- <tr>
@@ -509,94 +398,107 @@
         <script src="{{ asset('dist/js/pages/dashboards/dashboard1.min.js') }}"></script>
 
         <script src="{{ asset('path/jquery.radialBar.min.js') }}"></script>
-        
+
         {{-- charts bar user diagram --}}
         <script type="text/javascript">
-    
-            var data = [
-                {primaryColor: "#1991EB", secondaryColor: "#EAF3FB", progress: "60", labelText: "Permenperin 1"},
-                {primaryColor: "#FF5733", secondaryColor: "#ECEDFF", progress: "30", labelText: "Permenperin 2"},
-                {primaryColor: "#FF0000", secondaryColor: "#FBECFF", progress: "20", labelText: "Permenperin 3"},
+            var data = [{
+                    primaryColor: "#1991EB",
+                    secondaryColor: "#EAF3FB",
+                    progress: "60",
+                    labelText: "Permenperin 1"
+                },
+                {
+                    primaryColor: "#FF5733",
+                    secondaryColor: "#ECEDFF",
+                    progress: "30",
+                    labelText: "Permenperin 2"
+                },
+                {
+                    primaryColor: "#FF0000",
+                    secondaryColor: "#FBECFF",
+                    progress: "20",
+                    labelText: "Permenperin 3"
+                },
             ];
-    
+
             $(".radial").radialBar({
                 data: data,
                 width: "300",
                 height: "300",
                 strokeWidth: 12,
             });
-    
         </script>
         {{-- charts bar user diagram --}}
 
         {{-- charts dounat  --}}
         <script>
             var barChartData = {
-                labels: ['01', '02', '03', '04', '05', '06', '07','08', '09', '10', '11', '12'],
+                labels: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'],
                 datasets: [
-                // {
-                //     label: '% FOIR',
-                //     type: 'line',
-                //     backgroundColor: '#444444',
-                //     fill: false,
-                //     yAxisID: 'y-axis-2',
-                //     lineTension: 0,
-                //     data: [
-                //         50,
-                //         50,
-                //         50,
-                //         50,
-                //         56,
-                //         56,
-                //         56,
-                //         56,
-                //         62,
-                //         62,
-                //         62,
-                //         62
-                //     ]
-                // },
-                {
-                    label: 'Premium',
-                    type: 'bar',
-                    backgroundColor: '#1991EB',
-                    yAxisID: 'y-axis-1',
-                    data: [
-                        20,
-                        33,
-                        25,
-                        15,
-                        30,
-                        31,
-                        22,
-                        23,
-                        16,
-                        17,
-                        25,
-                        13
-                    ]
-                }, {
-                    label: 'Regular',
-                    backgroundColor: '#ba1f00',
-                    type: 'bar',
-                    yAxisID: 'y-axis-1',
-                    data: [
-                        25,
-                        23,
-                        15,
-                        15,
-                        15,
-                        30,
-                        35,
-                        13,
-                        14,
-                        25,
-                        23,
-                        11
-                    ]
-                }]
+                    // {
+                    //     label: '% FOIR',
+                    //     type: 'line',
+                    //     backgroundColor: '#444444',
+                    //     fill: false,
+                    //     yAxisID: 'y-axis-2',
+                    //     lineTension: 0,
+                    //     data: [
+                    //         50,
+                    //         50,
+                    //         50,
+                    //         50,
+                    //         56,
+                    //         56,
+                    //         56,
+                    //         56,
+                    //         62,
+                    //         62,
+                    //         62,
+                    //         62
+                    //     ]
+                    // },
+                    {
+                        label: 'Premium',
+                        type: 'bar',
+                        backgroundColor: '#1991EB',
+                        yAxisID: 'y-axis-1',
+                        data: [
+                            20,
+                            33,
+                            25,
+                            15,
+                            30,
+                            31,
+                            22,
+                            23,
+                            16,
+                            17,
+                            25,
+                            13
+                        ]
+                    }, {
+                        label: 'Regular',
+                        backgroundColor: '#ba1f00',
+                        type: 'bar',
+                        yAxisID: 'y-axis-1',
+                        data: [
+                            25,
+                            23,
+                            15,
+                            15,
+                            15,
+                            30,
+                            35,
+                            13,
+                            14,
+                            25,
+                            23,
+                            11
+                        ]
+                    }
+                ]
             };
-		
+
             window.onload = function() {
                 var ctx = document.getElementById('canvas').getContext('2d');
                 var myBar = new Chart(ctx, {
@@ -613,13 +515,12 @@
                             intersect: true
                         },
                         scales: {
-                            yAxes: [
-                                {
+                            yAxes: [{
                                     type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
                                     display: true,
                                     position: 'left',
                                     id: 'y-axis-1',
-                                }, 
+                                },
                                 // {
                                 //     type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
                                 //     display: true,
@@ -630,7 +531,7 @@
                                 //     }
                                 // }
                             ],
-					    }
+                        }
                     }
                 });
             };
@@ -642,21 +543,21 @@
             var marksCanvas = document.getElementById("marksChart");
 
             var marksData = {
-            labels: ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun"],
-            datasets: [{
-                label: "Premium",
-                backgroundColor: "rgba(200,0,0,0.2)",
-                data: [65, 75, 70, 80, 60, 80]
-            }, {
-                label: "Regular",
-                backgroundColor: "rgba(0,0,200,0.2)",
-                data: [54, 65, 60, 70, 70, 75]
-            }]
+                labels: ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun"],
+                datasets: [{
+                    label: "Premium",
+                    backgroundColor: "rgba(200,0,0,0.2)",
+                    data: [65, 75, 70, 80, 60, 80]
+                }, {
+                    label: "Regular",
+                    backgroundColor: "rgba(0,0,200,0.2)",
+                    data: [54, 65, 60, 70, 70, 75]
+                }]
             };
 
             var radarChart = new Chart(marksCanvas, {
-            type: 'radar',
-            data: marksData
+                type: 'radar',
+                data: marksData
             });
         </script>
     @endpush
