@@ -90,7 +90,6 @@ class CalculationForm1 implements WithTitle, FromView, WithStyles, ShouldAutoSiz
     public function columnFormats(): array
     {
         return [
-            'I' => 'Rp #,##0.00',
             'J' => 'Rp #,##0.00',
             'K' => 'Rp #,##0.00',
             'L' => 'Rp #,##0.00',

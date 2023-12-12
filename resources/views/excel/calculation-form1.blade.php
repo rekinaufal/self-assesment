@@ -84,7 +84,7 @@
                 <td style="{{ $borderStyle }}">{{ $item_detail['pemasok'] }}</td>
                 <td style="{{ $borderStyle }}">{{ $item_detail['tkdn'] }}%</td>
                 <td style="{{ $borderStyle }}">{{ $item_detail['jumlah'] }}</td>
-                <td style="{{ $borderStyle }}">{{ $item_detail['harga_satuan'] }}</td>
+                <td style="{{ $borderStyle }}">Rp {{ $item_detail['harga_satuan'] }}</td>
                 <td style="{{ $borderStyle }}">{{ $item_detail['kdn'] }}</td>
                 <td style="{{ $borderStyle }}">{{ $item_detail['kln'] }}</td>
                 <td style="{{ $borderStyle }}">{{ $item_detail['total'] }}</td>
