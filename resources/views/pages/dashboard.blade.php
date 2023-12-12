@@ -51,7 +51,7 @@
             <div class="col-7 align-self-center">
                 {{-- <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">Good Morning Jason!</h3> --}}
                 <div class="align-items-center">
-                    <h4>Selamat Datang {{ $user->fullname }}</h4>
+                    <h4>Selamat Datang {{ $user->user_profile->fullname }}</h4>
                     <p>Beranda</p>
                 </div>
             </div>
@@ -73,7 +73,7 @@
         <!-- *************************************************************** -->
         <div class="news-content">
             <div class="card-group">
-                @foreach ($newsData as $item)
+                @foreach ($news as $item)
                     <div class="card border-right" style="margin-right: 20px; min-width: 300px; max-width: 350px;">
                         <div class="card-body content">
                             <div style="min-height : 50px;">
@@ -126,96 +126,57 @@
                                                             </tr>
                                                         </thead>
                                                         <tbody>
-                                                            <tr>
-                                                                <td align="center">1</td>
-                                                                <td>Bambang</td>
-                                                                <td align="center"> <i data-feather="file"></i> <i
-                                                                        data-feather="file-text"></i></td>
-                                                                <td>
-                                                                    <div class="dropdown sub-dropdown">
-                                                                        <button
-                                                                            class="d-flex btn btn-link text-muted dropdown-toggle"
-                                                                            type="button" id="dd1"
-                                                                            data-toggle="dropdown" aria-haspopup="true"
-                                                                            aria-expanded="false">
-                                                                            <i data-feather="download"> </i>
-                                                                            <p>&nbsp;&nbsp;&nbsp;Unduh</p>
-                                                                        </button>
-                                                                        <div class="dropdown-menu dropdown-menu-right"
-                                                                            aria-labelledby="dd1">
-                                                                            <a class="dropdown-item" href="#">
-                                                                                <i data-feather="file"></i>&nbsp;&nbsp;
-                                                                                Pdf</a>
-                                                                            <a class="dropdown-item" href="#">
-                                                                                <i data-feather="file-text"></i>&nbsp;&nbsp;
-                                                                                Xlsx</a>
+                                                            @php
+                                                                $i = 1;
+                                                            @endphp
+                                                            @forelse ($computations as $computation)
+                                                                <tr>
+                                                                    <td align="center">{{ $i++ }}</td>
+                                                                    <td>{{ $computation->user->user_profile->fullname }}
+                                                                    </td>
+                                                                    <td align="center"> <i data-feather="file"></i> <i
+                                                                            data-feather="file-text"></i></td>
+                                                                    <td>
+                                                                        <div class="dropdown sub-dropdown">
+                                                                            <button
+                                                                                class="d-flex btn btn-link text-muted dropdown-toggle"
+                                                                                type="button" id="dd1"
+                                                                                data-toggle="dropdown"
+                                                                                aria-haspopup="true"
+                                                                                aria-expanded="false">
+                                                                                <i data-feather="download"> </i>
+                                                                                <p>&nbsp;&nbsp;&nbsp;Unduh</p>
+                                                                            </button>
+                                                                            <div class="dropdown-menu dropdown-menu-right"
+                                                                                aria-labelledby="dd1">
+                                                                                <a class="dropdown-item" href="#">
+                                                                                    <i data-feather="file"></i> Pdf
+                                                                                </a>
+                                                                                <a class="dropdown-item" href="{{ url('/exportExcelComputation', $computation) }}">
+                                                                                    <i data-feather="file-text"></i> Xlsx
+                                                                                </a>
+                                                                            </div>
                                                                         </div>
-                                                                    </div>
-                                                                </td>
-                                                                <td align="center"><button
-                                                                        class="btn btn-sm btn-warning">Tinjau</button>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td align="center">2</td>
-                                                                <td>Pamungkas</td>
-                                                                <td align="center"> <i data-feather="file"></i> <i
-                                                                        data-feather="file-text"></i></td>
-                                                                <td>
-                                                                    <div class="dropdown sub-dropdown">
-                                                                        <button
-                                                                            class="d-flex btn btn-link text-muted dropdown-toggle"
-                                                                            type="button" id="dd1"
-                                                                            data-toggle="dropdown" aria-haspopup="true"
-                                                                            aria-expanded="true">
-                                                                            <i data-feather="download"></i>
-                                                                            <p>&nbsp;&nbsp;&nbsp;Unduh</p>
-                                                                        </button>
-                                                                        <div class="dropdown-menu dropdown-menu-right"
-                                                                            aria-labelledby="dd1">
-                                                                            <a class="dropdown-item" href="#">
-                                                                                <i
-                                                                                    data-feather="file"></i>&nbsp;&nbsp;Pdf</a>
-                                                                            <a class="dropdown-item" href="#">
-                                                                                <i
-                                                                                    data-feather="file-text"></i>&nbsp;&nbsp;Xlsx</a>
-                                                                        </div>
-                                                                    </div>
-                                                                </td>
-                                                                <td align="center"><button
-                                                                        class="btn btn-sm btn-warning">Tinjau</button>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td align="center">3</td>
-                                                                <td>Jamal</td>
-                                                                <td align="center"> <i data-feather="file"></i> <i
-                                                                        data-feather="file-text"></i></td>
-                                                                <td>
-                                                                    <div class="dropdown sub-dropdown">
-                                                                        <button
-                                                                            class="d-flex btn btn-link text-muted dropdown-toggle"
-                                                                            type="button" id="dd1"
-                                                                            data-toggle="dropdown" aria-haspopup="true"
-                                                                            aria-expanded="true">
-                                                                            <i data-feather="download"></i>
-                                                                            <p>&nbsp;&nbsp;&nbsp;Unduh</p>
-                                                                        </button>
-                                                                        <div class="dropdown-menu dropdown-menu-right"
-                                                                            aria-labelledby="dd1">
-                                                                            <a class="dropdown-item" href="#">
-                                                                                <i
-                                                                                    data-feather="file"></i>&nbsp;&nbsp;Pdf</a>
-                                                                            <a class="dropdown-item" href="#">
-                                                                                <i
-                                                                                    data-feather="file-text"></i>&nbsp;&nbsp;Xlsx</a>
-                                                                        </div>
-                                                                    </div>
-                                                                </td>
-                                                                <td align="center"><button
-                                                                        class="btn btn-sm btn-warning">Tinjau</button>
-                                                                </td>
-                                                            </tr>
+                                                                    </td>
+                                                                    <td align="center">
+                                                                        @if ($computation->status == 'Finished')
+                                                                            <span class="badge badge-pill badge-success">
+                                                                                Finished
+                                                                            </span>
+                                                                        @else
+                                                                            <button class="btn btn-sm btn-warning">
+                                                                                Tinjau
+                                                                            </button>
+                                                                        @endif
+                                                                    </td>
+                                                                </tr>
+                                                            @empty
+                                                                <tr>
+                                                                    <td colspan="5">
+                                                                        Belum Ada File Perhitungan!
+                                                                    </td>
+                                                                </tr>
+                                                            @endforelse
                                                         </tbody>
                                                         <tfoot>
                                                             {{-- <tr>
@@ -255,8 +216,8 @@
         var news_data = [];
         var loadedData = [];
         var itemsPerPage = 6;
-        var data = JSON.parse(`{!! $newsData !!}`);
-        var dataImage = JSON.parse(`{!! $newsData !!}`);
+        var data = JSON.parse(`{!! $news !!}`);
+        var dataImage = JSON.parse(`{!! $news !!}`);
         var buttonLoad = document.getElementById('loadMore');
 
         $('#news-filter').change(function() {
@@ -357,7 +318,7 @@
         function generateCallback() {
             console.log("news", news_data);
             for (var i = 0; i < data.length; i++) {
-                var imageUrl = '{{ $newsData[0]->getThumbnailPath() }}'.replace('[0]', `[${i}]`);
+                var imageUrl = '{{ $news[0]->getThumbnailPath() }}'.replace('[0]', `[${i}]`);
                 var items = {
                     "id": data[i].id,
                     "title": data[i].title,
