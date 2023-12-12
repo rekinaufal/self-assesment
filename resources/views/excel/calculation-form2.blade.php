@@ -60,19 +60,25 @@
         </tr>
     </thead>
     <tbody>
+        @php
+            $i = 0;
+        @endphp
         @foreach($detail['data'] as $item_detail)
             <tr>
                 <td style="{{ $borderStyle }}">{{ $loop->iteration }}</td>
                 <td style="{{ $borderStyle }}">{{ $item_detail['uraian'] }}</td>
                 <td style="{{ $borderStyle }}">{{ $item_detail['produsen_tingkat_dua'] }}</td>
                 <td style="{{ $borderStyle }}">{{ $item_detail['jumlah'] }}</td>
-                <td style="{{ $borderStyle }}">{{ $item_detail['tkdn'] }}</td>
-                <td style="{{ $borderStyle }}">{{ $item_detail['biaya'] }}</td>
-                <td style="{{ $borderStyle }}">{{ $item_detail['alokasi'] }}</td>
+                <td style="{{ $borderStyle }}">{{ $item_detail['tkdn'] }}%</td>
+                <td style="{{ $borderStyle }}">{{ $i >= 2 ? "Rp " : "" }}{{ $item_detail['biaya'] }}</td>
+                <td style="{{ $borderStyle }}">{{ $item_detail['alokasi'] }}%</td>
                 <td style="{{ $borderStyle }}">{{ $item_detail['kdn'] }}</td>
                 <td style="{{ $borderStyle }}">{{ $item_detail['kln'] }}</td>
                 <td style="{{ $borderStyle }}">{{ $item_detail['total'] }}</td>
             </tr>
+            @php
+                $i++
+            @endphp
         @endforeach
             <tr>
                 <td></td>

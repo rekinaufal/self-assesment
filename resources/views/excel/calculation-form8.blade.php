@@ -4,7 +4,7 @@
 {{-- @dd($detail) --}}
 <p>
     <b>
-        FORMULIR 1.8 : TINGKAT KOMPONEN DALAM NEGERI UNTUK BIAYA TIDAK LANGSUNG PABRIK (UNTUK JASA-JASA TERKAIT)										
+        FORMULIR 1.8 : TINGKAT KOMPONEN DALAM NEGERI UNTUK BIAYA TIDAK LANGSUNG PABRIK (UNTUK JASA-JASA TERKAIT)
     </b>
 </p>
 <p>&nbsp;</p>
@@ -69,11 +69,11 @@
                 <td style="{{ $borderStyle }}">{{ $item_detail['pemasok'] }}</td>
                 <td style="{{ $borderStyle }}">{{ $item_detail['jumlah'] }}</td>
                 <td style="{{ $borderStyle }}">{{ $item_detail['tkdn'] }}%</td>
-                <td style="{{ $borderStyle }}">{{ $item_detail['biaya_perbulan'] }}</td>
-                <td style="{{ $borderStyle }}">{{ $item_detail['alokasi'] }}</td>
-                <td style="{{ $borderStyle }}">Rp {{ $item_detail['kdn'] }}</td>
-                <td style="{{ $borderStyle }}">Rp {{ $item_detail['kln'] }}</td>
-                <td style="{{ $borderStyle }}">Rp {{ $item_detail['total'] }}</td>
+                <td style="{{ $borderStyle }}">Rp {{ $item_detail['biaya_perbulan'] }}</td>
+                <td style="{{ $borderStyle }}">{{ $item_detail['alokasi'] }}%</td>
+                <td style="{{ $borderStyle }}">{{ $item_detail['kdn'] }}</td>
+                <td style="{{ $borderStyle }}">{{ $item_detail['kln'] }}</td>
+                <td style="{{ $borderStyle }}">{{ $item_detail['total'] }}</td>
             </tr>
         @endforeach
             <tr>
@@ -84,9 +84,9 @@
                 <td></td>
                 <td></td>
                 <td style="border:1px solid #000000;background-color: #dbdbdb;text-align: center;"><b>Total</b></td>
-                <td style="{{ $borderStyle }}"><b>Rp {{ $detail['bspKdn'] }}</b></td>
-                <td style="{{ $borderStyle }}"><b>Rp {{ $detail['bspKln'] }}</b></td>
-                <td style="{{ $borderStyle }}"><b>Rp {{ $detail['bspTotal'] }}</b></td>
+                <td style="{{ $borderStyle }}"><b>{{ $detail['bspKdn'] }}</b></td>
+                <td style="{{ $borderStyle }}"><b>{{ $detail['bspKln'] }}</b></td>
+                <td style="{{ $borderStyle }}"><b>{{ $detail['bspTotal'] }}</b></td>
             </tr>
     </tbody>
 </table>

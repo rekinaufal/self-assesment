@@ -4,7 +4,7 @@
 {{-- @dd($detail) --}}
 <p>
     <b>
-        FORMULIR 1.3. : TINGKAT KOMPONEN DALAM NEGERI UNTUK TENAGA KERJA LANGSUNG										
+        FORMULIR 1.3. : TINGKAT KOMPONEN DALAM NEGERI UNTUK TENAGA KERJA LANGSUNG
     </b>
 </p>
 <p>&nbsp;</p>
@@ -67,10 +67,10 @@
                 <td style="{{ $borderStyle }}">{{ $loop->iteration }}</td>
                 <td style="{{ $borderStyle }}">{{ $item_detail['uraian_posisi'] }}</td>
                 <td style="{{ $borderStyle }}">{{ $item_detail['kewarganegaraan'] }}</td>
-                <td style="{{ $borderStyle }}">{{ $item_detail['tkdn'] ?? '0'  }}</td>
+                <td style="{{ $borderStyle }}">{{ $item_detail['tkdn'] ?? '0,00'  }}%</td>
                 <td style="{{ $borderStyle }}">{{ $item_detail['jumlah_orang'] }}</td>
-                <td style="{{ $borderStyle }}">{{ $item_detail['gaji_perbulan'] }}</td>
-                <td style="{{ $borderStyle }}">{{ $item_detail['alokasi_gaji'] }}</td>
+                <td style="{{ $borderStyle }}">Rp {{ $item_detail['gaji_perbulan'] }}</td>
+                <td style="{{ $borderStyle }}">{{ $item_detail['alokasi_gaji'] }}%</td>
                 <td style="{{ $borderStyle }}">{{ $item_detail['kdn'] }}</td>
                 <td style="{{ $borderStyle }}">{{ $item_detail['kln'] }}</td>
                 <td style="{{ $borderStyle }}">{{ $item_detail['total'] }}</td>
@@ -84,9 +84,9 @@
                 <td></td>
                 <td></td>
                 <td style="border:1px solid #000000;background-color: #dbdbdb;text-align: center;"><b>Total</b></td>
-                <td style="{{ $borderStyle }}"><b>Rp {{ $detail['bspKdn'] }}</b></td>
-                <td style="{{ $borderStyle }}"><b>Rp {{ $detail['bspKln'] }}</b></td>
-                <td style="{{ $borderStyle }}"><b>Rp {{ $detail['bspTotal'] }}</b></td>
+                <td style="{{ $borderStyle }}"><b>{{ $detail['bspKdn'] }}</b></td>
+                <td style="{{ $borderStyle }}"><b>{{ $detail['bspKln'] }}</b></td>
+                <td style="{{ $borderStyle }}"><b>{{ $detail['bspTotal'] }}</b></td>
             </tr>
     </tbody>
 </table>

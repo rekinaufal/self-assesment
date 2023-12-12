@@ -71,6 +71,12 @@ class CalculationForm2 implements WithTitle, FromView, WithStyles, ShouldAutoSiz
         // border header detail
         $sheet->getStyle('A9:J9')->getBorders()->getAllBorders()->setBorderStyle('thin');
         $sheet->getStyle('A10:J10')->getBorders()->getAllBorders()->setBorderStyle('thin');
+
+        $lastRow = $sheet->getHighestRow();
+
+        $sheet->getStyle('A11:A' . $lastRow)->getAlignment()->setHorizontal('center');
+        $sheet->getStyle('E11:E' . $lastRow)->getAlignment()->setHorizontal('right');
+        $sheet->getStyle('H11:J' . $lastRow)->getAlignment()->setHorizontal('left');
     }
 
     public function columnFormats(): array
