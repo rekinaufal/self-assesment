@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CalculationResultController;
+use App\Http\Controllers\ComputationController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\UserCategoryController;
@@ -82,6 +83,7 @@ Route::group(['middleware' => ['auth']], function () {
     //computation
     Route::resource("computation", ComputationController::class);
     Route::get('/exportExcelComputation/{id}', 'ComputationController@exportExcel')->name('exportExcelComputation');
+    Route::get('/exportPdfComputation/{computation}', [ComputationController::class, "exportPdf"])->name('exportPdfComputation');
 
     //calculation
     Route::resource("calculation-results", CalculationResultController::class);
