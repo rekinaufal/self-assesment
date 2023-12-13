@@ -311,7 +311,9 @@
                                                             <tr align="center" style=" position:sticky; top: 0;">
                                                                 <th>No</th>
                                                                 <th>Pengguna</th>
-                                                                <th>File</th>
+                                                                <th>Jenis Produksi</th>
+                                                                <th>Merk & Tipe</th>
+                                                                {{-- <th>File</th> --}}
                                                                 <th>Aksi</th>
                                                                 <th>Status</th>
                                                             </tr>
@@ -324,10 +326,16 @@
                                                                 <tr>
                                                                     <td align="center">{{ $i++ }}</td>
                                                                     <td>
+                                                                        {{ $computation->user->user_profile->fullname }}
+                                                                    </td>
+                                                                    <td>
                                                                         {{ $computation->production_result }}
                                                                     </td>
-                                                                    <td align="center"> <i data-feather="file"></i> <i
-                                                                            data-feather="file-text"></i></td>
+                                                                    <td>
+                                                                        {{ $computation->brand }}
+                                                                    </td>
+                                                                    {{-- <td align="center"> <i data-feather="file"></i> <i
+                                                                            data-feather="file-text"></i></td> --}}
                                                                     <td>
                                                                         <div class="dropdown sub-dropdown">
                                                                             <button
