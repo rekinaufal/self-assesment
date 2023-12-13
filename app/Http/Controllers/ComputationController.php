@@ -163,6 +163,7 @@ class ComputationController extends Controller
                 $data["total"]["sumKln"] += $calculation["sumKln"];
                 $data["total"]["sumTotal"] += $calculation["sumTotal"];
             }
+            $i++;
         }
 
         $pdf = FacadePdf::loadView('pdf.calculation', $data);
