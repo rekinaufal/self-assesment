@@ -57,12 +57,15 @@
             </div>
             <div class="col-5 align-self-center">
                 <div class="customize-input float-right">
-                    <select id="news-filter"
+                    <div class="form-input">
+                        <input type="month" id="news-filter" class="h-auto" style="width: 23px; transform: scale(1.3)">
+                    </div>
+                    {{-- <select id="news-filter"
                         class="custom-select custom-select-set form-control bg-white border-0 custom-shadow custom-radius">
                         <option selected>No Filter</option>
                         <option value="1">July 19</option>
                         <option value="2">Jun 19</option>
-                    </select>
+                    </select> --}}
                 </div>
             </div>
         </div>
@@ -74,20 +77,25 @@
         <div class="news-content">
             <div class="card-group">
                 @foreach ($news as $item)
-                    <div class="card border-right" style="margin-right: 20px; min-width: 300px; max-width: 350px;">
-                        <div class="card-body content">
-                            <div style="min-height : 50px;">
-                                <p>{{ $item->title }}</p>
+                    <a class="" href="{{ $item->link }}" style="text-decoration: none; color :#7c8798">
+                        <div class="card border-right" style="margin-right: 20px; min-width: 300px; max-width: 350px;">
+                            <div class="card-body content">
+                                <div style="min-height : 50px;">
+                                    <p>{{ $item->title }}</p>
+                                </div>
+                                <img class="card-img-top" style="border-radius:8px; object-fit: cover;" height="150"
+                                    width="100" src="{{ asset($item->getThumbnailPath()) }}" alt="Card image cap">
+                                <br><br>
+                                <p class="card-text" style="word-wrap:break-all;">
+                                    {{ $item->description }}
+                                </p>
+                                <span style="font-size: 0.7rem" class="button-goto w-100 d-flex justify-content-end"
+                                    href="{{ $item->link }}">Sumber
+                                    :
+                                    <i>&nbsp;{{ $item->link }}</i></span>
                             </div>
-                            <img class="card-img-top" style="border-radius:8px; object-fit: cover;" height="150"
-                                width="100" src="{{ asset($item->getThumbnailPath()) }}" alt="Card image cap">
-                            <br><br>
-                            <p class="card-text" style="word-wrap:break-all;">
-                                {{ $item->description }}
-                            </p>
-                            <a class="button-goto w-100 d-flex justify-content-end" href="{{ $item->link }}">Link</a>
                         </div>
-                    </div>
+                    </a>
                 @endforeach
             </div>
         </div>
@@ -146,8 +154,7 @@
                                                                             <button
                                                                                 class="d-flex btn btn-link text-muted dropdown-toggle"
                                                                                 type="button" id="dd1"
-                                                                                data-toggle="dropdown"
-                                                                                aria-haspopup="true"
+                                                                                data-toggle="dropdown" aria-haspopup="true"
                                                                                 aria-expanded="false">
                                                                                 <i data-feather="download"> </i>
                                                                                 <p>&nbsp;&nbsp;&nbsp;Unduh</p>
@@ -157,7 +164,8 @@
                                                                                 <a class="dropdown-item" href="{{ route('exportPdfComputation', $computation) }}">
                                                                                     <i data-feather="file"></i> Pdf
                                                                                 </a>
-                                                                                <a class="dropdown-item" href="{{ url('/exportExcelComputation', $computation) }}">
+                                                                                <a class="dropdown-item"
+                                                                                    href="{{ url('/exportExcelComputation', $computation) }}">
                                                                                     <i data-feather="file-text"></i> Xlsx
                                                                                 </a>
                                                                             </div>
@@ -227,6 +235,7 @@
 
         $('#news-filter').change(function() {
             var selected_item = this.value;
+            alert(selected_item);
             doAjax(selected_item);
         });
 

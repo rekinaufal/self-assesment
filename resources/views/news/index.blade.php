@@ -87,6 +87,7 @@
                     <div id="news" class="row px-4 pt-3">
                         @foreach ($news as $newsItem)
                             <div class="col-12 col-md-6 col-xl-4">
+
                                 <div class="card" style="box-shadow: 0 0 20px -10px black">
                                     <div class="card-header bg-transparent d-flex h-auto w-100 justify-content-between">
                                         <div class="form-check">
@@ -109,26 +110,33 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="card-body">
-                                        <img class="card-img-top w-100 h-auto"
-                                            src="{{ asset($newsItem->getThumbnailPath()) }}" alt="Card image cap"
-                                            style="width: 100%; aspect-ratio: 16/9; object-fit: cover;">
-                                        <div class="card-content d-flex flex-column justify-content-between">
-                                            <div class="text" style="max-height: 170px; height:170px">
-                                                <h4 class="card-text pt-2 font-weight-bold text-dark">
-                                                    {{ $newsItem->title }}
-                                                </h4>
-                                                <p>
-                                                    <small class="card-text pt-2">
-                                                        {{ Str::limit($newsItem->description, 100, '...') }}
-                                                    </small>
-                                                </p>
-                                            </div>
-                                            <div class="button-goto w-100 d-flex justify-content-end">
+                                    <a href="{{ $newsItem->link }}" style="text-decoration: none; color :#7c8798">
+                                        <div class="card-body">
+                                            <img class="card-img-top w-100 h-auto"
+                                                src="{{ asset($newsItem->getThumbnailPath()) }}" alt="Card image cap"
+                                                style="width: 100%; aspect-ratio: 16/9; object-fit: cover;">
+                                            <div class="card-content d-flex flex-column justify-content-between">
+                                                <div class="text" style="max-height: 170px; height:170px">
+                                                    <h4 class="card-text pt-2 font-weight-bold text-dark">
+                                                        {{ $newsItem->title }}
+                                                    </h4>
+                                                    <p>
+                                                        <small class="card-text pt-2">
+                                                            {{ Str::limit($newsItem->description, 100, '...') }}
+                                                        </small>
+                                                    </p>
+                                                </div>
+                                                {{-- <div class="button-goto w-100 d-flex justify-content-end">
                                                 <a href="#" class="btn btn-primary">Go To News</a>
+                                            </div> --}}
+                                                <span style="font-size: 0.7rem"
+                                                    class="button-goto w-100 d-flex justify-content-end"
+                                                    href="{{ $newsItem->link }}">Sumber
+                                                    :
+                                                    <i>&nbsp;{{ $newsItem->link }}</i></span>
                                             </div>
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
                             </div>
                         @endforeach
@@ -150,14 +158,12 @@
                             @if ($news->onFirstPage())
                                 <li class="page-item disabled">
                                     <span class="page-link">
-                                        <
-                                    </span>
+                                        < </span>
                                 </li>
                             @else
                                 <li class="page-item">
                                     <a class="page-link" href="{{ $news->previousPageUrl() }}">
-                                        <
-                                    </a>
+                                        < </a>
                                 </li>
                             @endif
 
@@ -265,7 +271,7 @@
                 buttons: true,
                 dangerMode: true
             }).then((willChange) => {
-                if(willChange) {
+                if (willChange) {
                     sessionStorage.removeItem("selectedNews");
                     $("#form-perpage").submit();
                 } else {
