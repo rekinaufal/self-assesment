@@ -57,14 +57,13 @@
             </div>
             <div class="col-5 align-self-center">
                 <div class="customize-input float-right">
-                    <div class="form-input">
+                    <div class="form-group">
+                        <label id="news-filter-selected" class="mr-3">No filter</label>
                         <input type="month" id="news-filter" class="h-auto" style="width: 23px; transform: scale(1.3)">
                     </div>
-                    {{-- <select id="news-filter"
+                    {{-- <select disabled id="news-filter-selected"
                         class="custom-select custom-select-set form-control bg-white border-0 custom-shadow custom-radius">
                         <option selected>No Filter</option>
-                        <option value="1">July 19</option>
-                        <option value="2">Jun 19</option>
                     </select> --}}
                 </div>
             </div>
@@ -89,10 +88,15 @@
                                 <p class="card-text" style="word-wrap:break-all;">
                                     {{ $item->description }}
                                 </p>
-                                <span style="font-size: 0.7rem" class="button-goto w-100 d-flex justify-content-end"
-                                    href="{{ $item->link }}">Sumber
-                                    :
-                                    <i>&nbsp;{{ $item->link }}</i></span>
+                                <div class="row d-flex align-items-center">
+                                    <div class="col-3">
+                                        <span style="font-size: 0.7rem" class="">Sumber
+                                            :&nbsp;</span>
+                                    </div>
+                                    <div class="col-9 text-right" style="word-break: break-all"><i class="mt-2"
+                                            style="font-size: 0.7rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: inline-block; max-width: 100%;">{{ $item->link }}</i>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </a>
@@ -161,7 +165,8 @@
                                                                             </button>
                                                                             <div class="dropdown-menu dropdown-menu-right"
                                                                                 aria-labelledby="dd1">
-                                                                                <a class="dropdown-item" href="{{ route('exportPdfComputation', $computation) }}">
+                                                                                <a class="dropdown-item"
+                                                                                    href="{{ route('exportPdfComputation', $computation) }}">
                                                                                     <i data-feather="file"></i> Pdf
                                                                                 </a>
                                                                                 <a class="dropdown-item"
@@ -233,9 +238,33 @@
         var dataImage = JSON.parse(`{!! $news !!}`);
         var buttonLoad = document.getElementById('loadMore');
 
+        function convertDateString(dateString) {
+            if (!dateString || dateString.trim() === '') {
+                return 'No filter';
+            }
+            const dateArray = dateString.split('-');
+            const year = parseInt(dateArray[0], 10);
+            const month = parseInt(dateArray[1], 10);
+            const dateObject = new Date(year, month - 1);
+            const formattedDate = dateObject.toLocaleString('en-us', {
+                month: 'long',
+                year: 'numeric'
+            });
+
+            return formattedDate;
+        }
+
         $('#news-filter').change(function() {
             var selected_item = this.value;
-            //alert(selected_item);
+
+            //set informasi filter yang di set
+            var selectElement = $('#news-filter-selected');
+            selectElement.empty();
+            selectElement.append($('<option>', {
+                text: `${convertDateString(selected_item)}`,
+                value: ''
+            }));
+
             doAjax(selected_item);
         });
 
@@ -284,6 +313,7 @@
                 console.log(newsList[j]);
                 var content = document.createElement('div');
                 content.innerHTML = `
+                        <a class="" href="${newsList[j].link}" style="text-decoration: none; color :#7c8798">
                         <div class="card border-right" style="margin-right: 20px; min-width: 300px; max-width: 350px;">
                             <div class="card-body content">
                                 <div style="min-height : 50px;">
@@ -295,9 +325,17 @@
                                 <p class="card-text" style="word-wrap:break-all;">
                                     ${newsList[j].description}
                                 </p>
-                                <a class="button-goto w-100 d-flex justify-content-end" href="${newsList[j].link}">Link</a>
+                                <div class="row d-flex align-items-center">
+                                    <div class="col-3">
+                                        <span style="font-size: 0.7rem" class="" >Sumber
+                                            :&nbsp;</span>
+                                    </div>
+                                    <div class="col-9 text-right" style="max-height: 20px; word-break: break-all"><i class="mt-2"
+                                            style="font-size: 0.7rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: inline-block; max-width: 100%;">${newsList[j].link} </i></div>
+                                </div>
                             </div>
                         </div>
+                    </a>
                     `;
                 parentNewsEl.appendChild(content);
             }
