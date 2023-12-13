@@ -127,8 +127,9 @@
                                                         <thead>
                                                             <tr align="center">
                                                                 <th>No</th>
-                                                                <th>Pengguna</th>
-                                                                <th>File</th>
+                                                                <th>Jenis Produksi</th>
+                                                                <th>Merk & Tipe</th>
+                                                                {{-- <th>File</th> --}}
                                                                 <th>Aksi</th>
                                                                 <th>Status</th>
                                                             </tr>
@@ -140,10 +141,14 @@
                                                             @forelse ($computations as $computation)
                                                                 <tr>
                                                                     <td align="center">{{ $i++ }}</td>
-                                                                    <td>{{ $computation->user->user_profile->fullname }}
+                                                                    <td>
+                                                                        {{ $computation->product_type }}
                                                                     </td>
-                                                                    <td align="center"> <i data-feather="file"></i> <i
-                                                                            data-feather="file-text"></i></td>
+                                                                    <td>
+                                                                        {{ $computation->brand }}
+                                                                    </td>
+                                                                    {{-- <td align="center"> <i data-feather="file"></i> <i
+                                                                            data-feather="file-text"></i></td> --}}
                                                                     <td>
                                                                         <div class="dropdown sub-dropdown">
                                                                             <button
@@ -156,7 +161,7 @@
                                                                             </button>
                                                                             <div class="dropdown-menu dropdown-menu-right"
                                                                                 aria-labelledby="dd1">
-                                                                                <a class="dropdown-item" href="#">
+                                                                                <a class="dropdown-item" href="{{ route('exportPdfComputation', $computation) }}">
                                                                                     <i data-feather="file"></i> Pdf
                                                                                 </a>
                                                                                 <a class="dropdown-item"
