@@ -6,6 +6,8 @@ use App\Exports\UserExport;
 use App\Models\Computation;
 use App\Models\CalculationResult;
 use App\Models\PermenperinCategory;
+use Barryvdh\DomPDF\Facade\Pdf as FacadePdf;
+use Barryvdh\DomPDF\PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Maatwebsite\Excel\Facades\Excel;
@@ -137,5 +139,36 @@ class ComputationController extends Controller
         }
         $export = new UserExport($form, $data['computations'][0]);
         return Excel::download($export, 'report.xlsx');
+    }
+
+    public function exportPdf(Computation $computation) {
+        $data = [
+            "computation" => $computation
+        ];
+
+        $data["total"] = [
+            "sumKdn" => 0,
+            "sumKln" => 0,
+            "sumTotal" => 0
+        ];
+
+        $i = 0;
+        foreach ($data["computation"]->calculation_result->results["calculations"] as $calculation) {
+            if($i >= 2) {
+                $data["total"]["sumKdn"] += $calculation["bspKdn"];
+                $data["total"]["sumKln"] += $calculation["bspKln"];
+                $data["total"]["sumTotal"] += $calculation["bspTotal"];
+            } else {
+                $data["total"]["sumKdn"] += $calculation["sumKdn"];
+                $data["total"]["sumKln"] += $calculation["sumKln"];
+                $data["total"]["sumTotal"] += $calculation["sumTotal"];
+            }
+        }
+
+        $pdf = FacadePdf::loadView('pdf.calculation', $data);
+
+        $pdf->setPaper('a4');
+
+        return $pdf->stream($computation->production_result . '_calculation_' . date("YmdHis") . '.pdf');
     }
 }
