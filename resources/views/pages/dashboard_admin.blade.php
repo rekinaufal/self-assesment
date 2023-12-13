@@ -323,7 +323,8 @@
                                                             @forelse ($computations as $computation)
                                                                 <tr>
                                                                     <td align="center">{{ $i++ }}</td>
-                                                                    <td>{{ $computation->user->user_profile->fullname }}
+                                                                    <td>
+                                                                        {{ $computation->production_result }}
                                                                     </td>
                                                                     <td align="center"> <i data-feather="file"></i> <i
                                                                             data-feather="file-text"></i></td>
