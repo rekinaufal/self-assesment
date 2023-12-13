@@ -235,7 +235,7 @@
 
         $('#news-filter').change(function() {
             var selected_item = this.value;
-            alert(selected_item);
+            //alert(selected_item);
             doAjax(selected_item);
         });
 
