@@ -149,7 +149,7 @@
                                                                             </button>
                                                                             <div class="dropdown-menu dropdown-menu-right"
                                                                                 aria-labelledby="dd1">
-                                                                                <a class="dropdown-item" href="#">
+                                                                                <a class="dropdown-item" href="{{ route('exportPdfComputation', $computation) }}">
                                                                                     <i data-feather="file"></i> Pdf
                                                                                 </a>
                                                                                 <a class="dropdown-item" href="{{ url('/exportExcelComputation', $computation) }}">
