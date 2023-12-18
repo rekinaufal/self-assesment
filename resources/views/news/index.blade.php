@@ -15,59 +15,72 @@
                             <div class="title">
                                 <h4 class="card-title">{{ $pageTitle }} Data</h4>
                             </div>
-                            <div class="content d-flex flex-column flex-md-row pt-3">
-                                <div class="form-group d-flex w-100 align-items-center">
-                                    <div class="form-input mr-3">
-                                        <input type="date" class="h-auto" style="width: 25px; transform: scale(1.3)">
-                                    </div>
-                                    <div class="input-group w-100 w-md-50 w-xl-25">
-                                        <input type="text" class="form-control" placeholder="Search News"
-                                            aria-label="Search News" aria-describedby="button-search">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-outline-secondary" type="button" id="button-search">
-                                                <i data-feather="search" class="feather-icon" style="cursor: pointer;"></i>
-                                            </button>
+                            {{-- <div class="content d-flex flex-column flex-md-row pt-3">
+                                <div class="input-group mb-3">
+                                    <form action="{{ route('search-user-pengguna') }}" method="POST" class="form-inline">
+                                        @csrf
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" name="search" id="search_news" placeholder="Search By Judul Name" aria-label="Search" aria-describedby="basic-addon1">
                                         </div>
-                                    </div>
+                                    </form>
                                 </div>
-                                <div class="button-group d-flex h-auto align-items-center">
-                                    <div class="dropdown mr-2">
-                                        <button class="btn btn-light dropdown-toggle d-none" type="button"
-                                            id="dropdownSelectedAction" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">
-                                            Selected Action
-                                        </button>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownSelectedAction">
-                                            <button class="btn-sm px-lg-3 py-lg-2 text-nowrap dropdown-item" id="checkAll">
-                                                <i class="fa fa-check mr-3"></i>select all news
+                            </div> --}}
+                            {{-- ======================================================= --}}
+                            <div class="row">
+                                <div class="col-6">
+                                    <form method="POST" action="{{ route('search-news') }}">
+                                        @csrf
+                                        <div class="input-group">
+                                            <input type="date" class="form-control" name="from_date">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text">To</span>
+                                            </div>
+                                            <input type="date" class="form-control" id="until_date" name="until_date">
+                                            <button type="submit" class="btn btn-primary ml-2">
+                                                <i class="fas fa-search"></i>
+                                                &nbsp;
+                                                Search
                                             </button>
-                                            <button class="btn-sm px-lg-3 py-lg-2 text-nowrap dropdown-item"
-                                                id="uncheckAll">
-                                                <i class="fa fa-times-circle mr-3"></i>unselect news
-                                            </button>
-                                            <form action="{{ route('news.deletedBatch') }}" method="post"
-                                                id="formDeleteBatch">
-                                                @csrf
-                                                <input type="hidden" name="delete_ids" id="newsWantDelete" />
-                                                <button type="button"
-                                                    class="btn-sm px-lg-3 py-lg-2 text-nowrap dropdown-item"
-                                                    style="height: min-content" id="deleteSelectedNews">
-                                                    <i class="fa fa-trash mr-3"></i>delete selected news
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-6">
+                                    <div class="float-right">
+                                        <div class="button-group d-flex h-auto align-items-center">
+                                            <div class="dropdown mr-2">
+                                                <button class="btn btn-light dropdown-toggle d-none" type="button"
+                                                    id="dropdownSelectedAction" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false">
+                                                    Selected Action
                                                 </button>
-                                            </form>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownSelectedAction">
+                                                    <button class="btn-sm px-lg-3 py-lg-2 text-nowrap dropdown-item" id="checkAll">
+                                                        <i class="fa fa-check mr-3"></i>select all news
+                                                    </button>
+                                                    <button class="btn-sm px-lg-3 py-lg-2 text-nowrap dropdown-item"
+                                                        id="uncheckAll">
+                                                        <i class="fa fa-times-circle mr-3"></i>unselect news
+                                                    </button>
+                                                    <form action="{{ route('news.deletedBatch') }}" method="post"
+                                                        id="formDeleteBatch">
+                                                        @csrf
+                                                        <input type="hidden" name="delete_ids" id="newsWantDelete" />
+                                                        <button type="button"
+                                                            class="btn-sm px-lg-3 py-lg-2 text-nowrap dropdown-item"
+                                                            style="height: min-content" id="deleteSelectedNews">
+                                                            <i class="fa fa-trash mr-3"></i>delete selected news
+                                                        </button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <a href="#"
+                                                class="btn btn-primary btn-sm px-lg-3 py-lg-2 mb-1 text-nowrap rounded-circle d-flex justify-content-center align-items-center"
+                                                style="height: min-content; aspect-ratio:1" data-toggle="modal"
+                                                data-target="#createNewsModal">
+                                                <i class="fas fa-plus"></i>
+                                            </a>
                                         </div>
                                     </div>
-                                    {{-- <a href="{{ route('roles.create') }}"
-                                        class="btn btn-danger btn-sm px-lg-3 py-lg-2 mb-1 mr-2 text-nowrap"
-                                        style="height: min-content">
-                                        Delete<i class="fa fa-trash ml-3"></i>
-                                    </a> --}}
-                                    <a href="#"
-                                        class="btn btn-primary btn-sm px-lg-3 py-lg-2 mb-1 text-nowrap rounded-circle d-flex justify-content-center align-items-center"
-                                        style="height: min-content; aspect-ratio:1" data-toggle="modal"
-                                        data-target="#createNewsModal">
-                                        <i class="fas fa-plus"></i>
-                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -88,7 +101,8 @@
                         @foreach ($news as $newsItem)
                             <div class="col-12 col-md-6 col-xl-4">
 
-                                <div class="card" style="box-shadow: 0 0 20px -10px black">
+                                {{-- <div class="card" style="box-shadow: 0 0 20px -10px black"> --}}
+                                <div class="card">
                                     <div class="card-header bg-transparent d-flex h-auto w-100 justify-content-between">
                                         <div class="form-check">
                                             <input type="checkbox" class="form-check-input checkbox-news"

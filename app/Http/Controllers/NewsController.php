@@ -143,7 +143,6 @@ class NewsController extends Controller
 
     public function deletedBatch(Request $request)
     {
-        dd($request->delete_ids);
         $deleteIds = json_decode($request->delete_ids);
 
         $deletedNews = News::whereIn('id', $deleteIds)->delete();
@@ -153,5 +152,34 @@ class NewsController extends Controller
         }
 
         return redirect()->route("news.index")->with("success", "Successfully to delete the selected news!");
+    }
+
+    public function search(Request $request)
+    {
+        $perpage = $request->input('perpage', 6);
+        $fromDate = $request->input('from_date');
+        $untilDate = $request->input('until_date');
+    
+        $query = News::latest();
+    
+        // Apply date filter if provided
+        if ($fromDate) {
+            $query->where('created_at', '>=', $fromDate);
+        }
+    
+        if ($untilDate) {
+            $query->where('created_at', '<=', $untilDate);
+        }
+    
+        // Retrieve paginated news data
+        $news = $query->paginate($perpage)->appends(["perpage" => $perpage]);
+    
+        $data = [
+            "pageTitle" => self::$pageTitle,
+            "news" => $news,
+            "perpage" => $perpage,
+        ];
+    
+        return view('news.index', $data);
     }
 }

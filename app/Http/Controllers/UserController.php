@@ -47,7 +47,6 @@ class UserController extends Controller
 
         $pageTitle = self::$pageTitle;
 
-        // return view('user.index', compact('users', 'pageTitle'));
         return view('user.index', compact('pageTitle', 'users', 'perpage'));
     }
 
@@ -209,9 +208,12 @@ class UserController extends Controller
 
     public function changePassword(Request $req, User $user)
     {
-        request()->validate(User::$rules);
+        // request()->validate(User::$rules);
         $id = auth()->user()->id;
         $user = User::find($id);
+        if ($user) {
+            return redirect()->back()->with('failed', 'User is empty');
+        }
 
         if (Hash::check($req->current_password, $user->password)) {
             if (!empty($req->new_password)) {
@@ -250,5 +252,28 @@ class UserController extends Controller
         }
 
         return redirect()->route("users.index")->with("success", "Successfully to delete the selected users!");
+    }
+
+    public function search(Request $req)
+    {
+        $perpage = $req->input("perpage", 6);
+        $users = User::where('email','LIKE','%'.$req->search.'%')->paginate($perpage);
+        $users->appends(["perpage" => $perpage]);
+        $pageTitle = self::$pageTitle;
+
+        return view('user.index', compact('pageTitle', 'users', 'perpage'));
+
+        // if($req->ajax())
+        // {
+        //     $perpage = $req->input("perpage", 6);
+        //     $users = User::where('email','LIKE','%'.$req->search.'%') ->paginate($perpage);
+        //     $users->appends(["perpage" => $perpage]);
+        //     $pageTitle = self::$pageTitle;
+        // }   
+        // return [
+        //     'pageTitle' => $pageTitle,
+        //     'users' => $users,
+        //     'perpage' => $perpage,
+        // ];
     }
 }
