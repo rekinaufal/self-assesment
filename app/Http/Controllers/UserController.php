@@ -211,7 +211,8 @@ class UserController extends Controller
         // request()->validate(User::$rules);
         $id = auth()->user()->id;
         $user = User::find($id);
-        if ($user) {
+        // dd($user);
+        if (!$user) {
             return redirect()->back()->with('failed', 'User is empty');
         }
 
