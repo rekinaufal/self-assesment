@@ -131,7 +131,7 @@
                                     <img src="{{ asset($profile->getAvatarPath()) }}" class="rounded-circle" height="100" width="100" />
                                 </button> 
                                 {{-- name --}}
-                                <span class="name mt-3">Eleanor Pena</span> 
+                                <span class="name mt-3">{{ $user->user_profile->fullname }}</span> 
                                 {{-- kategori user --}}
                                 <button type="button" class="btn btn-outline-{{ $user->user_category->color ?? 'dark' }}" style="border-radius: 15px">{{ $user->user_category->name ?? '' }}</button>
                             </div>
@@ -471,7 +471,8 @@
 
                                             <div class="mb-3 col-md-6">
                                                 <label class="form-label" for="confirmPassword">Confirm New Password</label>
-                                                <div class="input-group" id="show_hide_confirm_password">
+                                                {{-- <div class="input-group" id="show_hide_confirm_password"> --}}
+                                                <div class="input-group" id="show_hide_new_password">
                                                     <input class="form-control" type="password" name="confirm_password" placeholder="Confirm Password">
                                                     <span class="input-group-text cursor-pointer">
                                                         <a href="">

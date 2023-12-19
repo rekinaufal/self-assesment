@@ -24,9 +24,9 @@
         </div>
     </div>
 </div>
-<div id="{{ $dropzonePreviewId }}" class="d-none justify-content-between align-items-center border mt-2 px-3">
+<div id="{{ $dropzonePreviewId }}" class="d-none justify-content-between align-items-center border mt-2 px-3" style="height: 150px">
     <div class="left-content d-flex align-items-center">
-        <div>
+        <div class="mt-4">
             <img src="{{ asset($defaultImage) }}" alt="Uploaded Image"
                 style="width: 4rem; height: 4rem; object-fit: contain" id="{{ $filePreviewId }}">
         </div>

@@ -633,18 +633,15 @@
                                         @csrf
                                         <div class="form-group">
                                             <input type="email" value="{{$login_email}}"
-                                                {{-- class="form-control @if (session('errors') && session('errors')->first('section') == 'login') is-invalid @endif" --}}
-                                                class="form-control"
-                                                {{-- style="border: none; @if (session('errors') && session('errors')->first('section') == 'login') border-bottom: 1px solid rgba(255, 0, 0, 0.2); @else border-bottom: 1px solid rgba(0, 0, 0, 0.2); @endif" --}}
-                                                style="border: none;"
+                                                class="form-control @if (session('errors') && session('errors')->first('section') == 'login') is-invalid @endif"
+                                                style="border: none; @if (session('errors') && session('errors')->first('section') == 'login') border-bottom: 1px solid rgba(255, 0, 0, 0.2); @else border-bottom: 1px solid rgba(0, 0, 0, 0.2); @endif"
                                                 id="exampleInputEmail1" aria-describedby="emailHelp"
                                                 placeholder="Enter email" name="email">
                                         </div>
                                         <div class="form-group py-3">
                                             <div class="input-group mb-3">
                                                 <input type="password" class="form-control form-password" value="{{$login_pass}}"
-                                                    {{-- style="border: none; @if (session('errors') && session('errors')->first('section') == 'login') border-bottom: 1px solid rgba(255, 0, 0, 0.2); @else border-bottom: 1px solid rgba(0, 0, 0, 0.2); @endif" --}}
-                                                    style="border: none;"
+                                                    style="border: none; @if (session('errors') && session('errors')->first('section') == 'login') border-bottom: 1px solid rgba(255, 0, 0, 0.2); @else border-bottom: 1px solid rgba(0, 0, 0, 0.2); @endif"
                                                     id="exampleInputPassword1" placeholder="Password"
                                                     name="password">
                                                 <div class="input-group-append icon-eyes"
