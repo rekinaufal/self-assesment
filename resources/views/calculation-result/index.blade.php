@@ -2757,6 +2757,7 @@
         })
     </script>
     <script>
+        var baseUrl = "http:127.0.0.1:8000";
         var url = new URL(window.location.href);
         var path = url.pathname;
         var match = path.match(/\/(\d+)$/);
@@ -3278,7 +3279,7 @@
             // Menyimpan data di Local Storage dengan kunci tertentu
             localStorage.setItem('draftCalculations', jsonDraftCalculations);
 
-            store("http://127.0.0.1:8000/calculation-results", `http://127.0.0.1:8000/computation/${computationId}`,
+            store(`${baseUrl}/calculation-results`, `${baseUrl}/computation/${computationId}`,
                 computationId, false)
         }
 
@@ -3527,7 +3528,7 @@
                 // Menyimpan data di Local Storage dengan kunci tertentu
                 localStorage.setItem('draftCalculations', jsonDraftCalculations);
 
-                store("http://127.0.0.1:8000/calculation-results", `http://127.0.0.1:8000/computation/${computationId}`,
+                store(`${baseUrl}/calculation-results`, `${baseUrl}/computation/${computationId}`,
                 computationId, false);
 
                 reloadAllTable();
