@@ -31,11 +31,11 @@
                                     <form method="POST" action="{{ route('search-news') }}">
                                         @csrf
                                         <div class="input-group">
-                                            <input type="date" class="form-control" name="from_date">
+                                            <input type="date" class="form-control" name="from_date" value="{{ $fromDate ?? '' }}">
                                             <div class="input-group-append">
                                                 <span class="input-group-text">To</span>
                                             </div>
-                                            <input type="date" class="form-control" id="until_date" name="until_date">
+                                            <input type="date" class="form-control" id="until_date" name="until_date" value="{{ $untilDate ?? '' }}">
                                             <button type="submit" class="btn btn-primary ml-2">
                                                 <i class="fas fa-search"></i>
                                                 &nbsp;

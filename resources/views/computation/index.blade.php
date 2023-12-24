@@ -64,8 +64,7 @@
                                             <div class="card-padding col-12 col-lg-6">
                                                 <div class="card px-0 mt-3 mx-0 mx-lg-1 position-relative"
                                                     style="box-shadow: 0 0 15px -5px gray !important;">
-                                                    <div
-                                                        class="badge badge-{{ $computation->status == "Draft" ? "success" : "warning" }} text-wrap position-absolute px-4 py-2" style="bottom: 0; right: 0;">
+                                                    <div class="badge badge-{{ $computation->status == "Draft" ? "success" : "warning" }} text-wrap position-absolute px-4 py-2" style="bottom: 0; right: 0;">
                                                         {{ $computation->status }}
                                                     </div>
                                                     <div

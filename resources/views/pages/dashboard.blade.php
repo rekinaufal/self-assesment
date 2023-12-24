@@ -190,8 +190,10 @@
                                                                 </tr>
                                                             @empty
                                                                 <tr>
-                                                                    <td colspan="5">
-                                                                        Belum Ada File Perhitungan!
+                                                                    <td colspan="6">
+                                                                        <div class="text-center">
+                                                                            Belum Ada File Perhitungan!
+                                                                        </div>
                                                                     </td>
                                                                 </tr>
                                                             @endforelse

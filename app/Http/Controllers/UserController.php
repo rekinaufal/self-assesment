@@ -258,11 +258,15 @@ class UserController extends Controller
     public function search(Request $req)
     {
         $perpage = $req->input("perpage", 6);
-        $users = User::where('email','LIKE','%'.$req->search.'%')->paginate($perpage);
+        // $users = User::where('email','LIKE','%'.$req->search.'%')->paginate($perpage);
+        $search_value = $req->search;
+        $users = User::join('user_profiles', 'users.id', '=', 'user_profiles.user_id')
+                        ->where('user_profiles.fullname','LIKE','%'.$search_value.'%')
+                        ->paginate($perpage);
         $users->appends(["perpage" => $perpage]);
         $pageTitle = self::$pageTitle;
 
-        return view('user.index', compact('pageTitle', 'users', 'perpage'));
+        return view('user.index', compact('pageTitle', 'users', 'perpage', 'search_value'));
 
         // if($req->ajax())
         // {
