@@ -51,14 +51,19 @@ class ComputationController extends Controller
         $credentials = $request->validate(Computation::$rules);
         $credentials["user_id"] = Auth::user()->id;
 
-        $computation = Computation::updateOrInsert(["id" => $request->id], $credentials);
-
-        if (!$computation) return redirect()->route("computation.index")->with("failed", "Failed to create new computation!");
-
-        if ($request->id != null) {
-            return redirect()->route("computation.index")->with("success", "Success to edit the computation!");
+        if ($request->id == null) {
+            # code...
+            $computationId = Computation::insertGetId($credentials);
+            return redirect()->route('computation.show', $computationId)->with("success", "Success to create new computation!");
+        } else {
+            $computation = Computation::updateOrInsert(["id" => $request->id], $credentials);
+            if (!$computation) return redirect()->route("computation.index")->with("failed", "Failed to create new computation!");
+            return redirect()->route("computation.index")->with("success", "Success to create new computation!");
         }
-        return redirect()->route("computation.index")->with("success", "Success to create new computation!");
+
+        // if ($request->id != null) {
+        //     return redirect()->route("computation.index")->with("success", "Success to edit the computation!");
+        // }
     }
 
     /**

@@ -159,7 +159,12 @@ class NewsController extends Controller
         $perpage = $request->input('perpage', 6);
         $fromDate = $request->input('from_date');
         $untilDate = $request->input('until_date');
-    
+        
+        // validation
+        if ($fromDate && $untilDate && strtotime($fromDate) > strtotime($untilDate)) {
+            return redirect()->route("news.index")->with("failed", "The until date must be equal to or after the from date.");
+        }
+
         $query = News::latest();
     
         // Apply date filter if provided
@@ -178,6 +183,8 @@ class NewsController extends Controller
             "pageTitle" => self::$pageTitle,
             "news" => $news,
             "perpage" => $perpage,
+            "fromDate" => $fromDate,
+            "untilDate" => $untilDate,
         ];
     
         return view('news.index', $data);

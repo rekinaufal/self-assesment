@@ -315,7 +315,7 @@
                                         <i class="fas fa-search"></i>
                                     </span>
                                 </div>
-                                <input type="text" class="form-control" name="search" placeholder="Cari pengguna" aria-label="Search" aria-describedby="basic-addon1">
+                                <input type="text" class="form-control" name="search" value="{{ $search_value ?? '' }}" placeholder="Cari Nama Pengguna" aria-label="Search" aria-describedby="basic-addon1">
                             </div>
                             <button type="submit" class="btn btn-primary ml-2">Search</button>
                         </form>
@@ -426,8 +426,8 @@
                             <div class="col-sm-6 col-md-5">
                                 <div class="item">
                                     <div class="item__photo d-flex justify-content-center align-items-center">
-                                        <img src="{{ asset($item->user_profile != null ? $item->user_profile->getAvatarPath() : 'assets/images/users/d1.jpg') }}"
-                                            alt="user" class="rounded-circle" width="100">
+                                        <img src="{{ asset($item->user_profile->avatar != null ? $item->user_profile->getAvatarPath() : 'assets/images/users/not_found.jpg') }}"
+                                            style="object-fit:cover;" alt="user" class="rounded-circle" height="100" width="100">
                                     </div>
                                 </div>
                             </div>

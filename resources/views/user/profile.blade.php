@@ -128,7 +128,7 @@
                             <div class="d-flex flex-column justify-content-center align-items-center mb-4">
                                 {{-- image --}}
                                 <button class="image-profil btn-secondary"> 
-                                    <img src="{{ asset($profile->getAvatarPath()) }}" class="rounded-circle" height="100" width="100" />
+                                    <img src="{{ asset($profile->avatar != null ? $profile->getAvatarPath() : 'assets/images/users/not_found.jpg') }}" style="object-fit:cover;" class="rounded-circle" height="100" width="100" />
                                 </button> 
                                 {{-- name --}}
                                 <span class="name mt-3">{{ $user->user_profile->fullname }}</span> 

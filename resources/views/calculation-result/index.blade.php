@@ -113,7 +113,7 @@
                                                     name="negara_asal" required>
                                                     <option></option>
                                                     @foreach ($countries as $country)
-                                                        <option value="{{ $country }}">{{ $country }}</option>
+                                                        <option value="{{ $country }}" {{ $country == "Indonesia" ? "selected" : "" }}>{{ $country }}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
@@ -168,30 +168,7 @@
                                                 <div class="card p-2">
                                                     <div class="col">
                                                         <div class="row">
-                                                            <label for="" class="mx-auto">
-                                                                Lokal
-                                                                <i class="fas fa-info-circle" data-toggle="tooltip"
-                                                                    data-placement="top" title="Tooltip on top"></i>
-                                                            </label>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="form-group-sm" style="font-size: 7pt;">
-                                                                <label for="ppn">PPN %</label>
-                                                                <input type="text" name="ppn"
-                                                                    style=" width : 15rem"
-                                                                    class="form-control form-control-sm replaceDot trigger-enter currencyInputFormatter"
-                                                                    id="ppn" placeholder="" value="0,00">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt;">
-                                                <div class="card p-2">
-                                                    <div class="col">
-                                                        <div class="row">
-                                                            <label for="" class="mx-auto">PDRI <i
+                                                            <label for="" class="mx-auto">Pajak <i
                                                                     class="fas fa-info-circle" data-toggle="tooltip"
                                                                     data-placement="top" title="Tooltip on top">
                                                                 </i></label>
@@ -204,10 +181,10 @@
                                                                     id="bm" placeholder="" value="0,00">
                                                             </div>
                                                             <div class="form-group-sm ml-2" style="font-size: 7pt;">
-                                                                <label for="pdri_ppn">PPN %</label>
-                                                                <input type="text" name="pdri_ppn" style="width: 5rem"
+                                                                <label for="ppn">PPN %</label>
+                                                                <input type="text" name="ppn" style="width: 5rem"
                                                                     class="form-control form-control-sm replaceDot trigger-enter currencyInputFormatter"
-                                                                    id="pdri_ppn" placeholder="" value="0,00">
+                                                                    id="ppn" placeholder="" value="0,00">
                                                             </div>
                                                             <div class="form-group-sm ml-2" style="font-size: 7pt;">
                                                                 <label for="pph">PPH %</label>
@@ -265,10 +242,9 @@
                                                         <th scope="col" class="text-nowrap pr-4">KDN</th>
                                                         <th scope="col" class="text-nowrap pr-4">KLN</th>
                                                         <th scope="col" class="text-nowrap pr-4">Total</th>
-                                                        <th scope="col" class="text-nowrap pr-4">Lokal PPN</th>
-                                                        <th scope="col" class="text-nowrap pr-4">PDRI BM</th>
-                                                        <th scope="col" class="text-nowrap pr-4">PDRI PPN</th>
-                                                        <th scope="col" class="text-nowrap pr-4">PDRI PPH</th>
+                                                        <th scope="col" class="text-nowrap pr-4">PPN</th>
+                                                        <th scope="col" class="text-nowrap pr-4">BM</th>
+                                                        <th scope="col" class="text-nowrap pr-4">PPH</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody id="tbody-1">
@@ -316,11 +292,9 @@
                                                 <table class="table table-bordered table-hover" style="font-size: 8pt">
                                                     <thead style="text-align: center"class="thead-dark">
                                                         <tr>
-                                                            <th scope="col" class="text-nowrap pr-4" rowspan="2"
-                                                                class="align-middle">Lokal
-                                                                PPN</th>
                                                             <th scope="col" class="text-nowrap pr-4" colspan="4">
-                                                                PDRI</th>
+                                                                Pajak
+                                                            </th>
                                                         </tr>
                                                         <tr>
                                                             <th scope="col" class="text-nowrap pr-4">BM</th>
@@ -331,11 +305,10 @@
                                                     </thead>
                                                     <tbody>
                                                         <tr>
-                                                            <td id="sum-ppn">Rp.0</td>
                                                             <td id="sum-bm">Rp.0</td>
-                                                            <td id="sum-pdri-ppn">Rp.0</td>
+                                                            <td id="sum-ppn">Rp.0</td>
                                                             <td id="sum-pph">Rp.0</td>
-                                                            <td id="sum-pdri-total">Rp.0</td>
+                                                            <td id="sum-pajak-total">Rp.0</td>
                                                         </tr>
                                                     </tbody>
 
@@ -539,7 +512,7 @@
                                                     id="" name="kewarganegaraan" required>
                                                     <option></option>
                                                     @foreach ($countries as $country)
-                                                        <option value="{{ $country }}">{{ $country }}</option>
+                                                        <option value="{{ $country }}" {{ $country == "Indonesia" ? "selected" : "" }}>{{ $country }}</option>
                                                     @endforeach
                                                 </select>
                                                 <input type="hidden" id="tkdn-1-3" value="" name="tkdn">
@@ -940,7 +913,7 @@
                                                     id="" name="kewarganegaraan" required>
                                                     <option></option>
                                                     @foreach ($countries as $country)
-                                                        <option value="{{ $country }}">{{ $country }}</option>
+                                                        <option value="{{ $country }}" {{ $country == "Indonesia" ? "selected" : "" }}>{{ $country }}</option>
                                                     @endforeach
                                                 </select>
                                                 <input type="hidden" id="tkdn-1-5" value="" name="tkdn">
@@ -1962,7 +1935,7 @@
                                     name="negara_asal">
                                     <option></option>
                                     @foreach ($countries as $country)
-                                        <option value="{{ $country }}">{{ $country }}</option>
+                                        <option value="{{ $country }}" {{ $country == "Indonesia" ? "selected" : "" }}>{{ $country }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -2179,7 +2152,7 @@
                                     name="kewarganegaraan">
                                     <option></option>
                                     @foreach ($countries as $country)
-                                        <option value="{{ $country }}">{{ $country }}</option>
+                                        <option value="{{ $country }}" {{ $country == "Indonesia" ? "selected" : "" }}>{{ $country }}</option>
                                     @endforeach
                                 </select>
                                 <input type="hidden" id="editTkdn-1-3" value="" name="tkdn">
@@ -2376,7 +2349,7 @@
                                 name="kewarganegaraan">
                                 <option></option>
                                 @foreach ($countries as $country)
-                                    <option value="{{ $country }}">{{ $country }}</option>
+                                    <option value="{{ $country }}" {{ $country == "Indonesia" ? "selected" : "" }}>{{ $country }}</option>
                                 @endforeach
                             </select>
                             <input type="hidden" id="editTkdn-1-3" value="" name="tkdn">
@@ -2757,7 +2730,7 @@
         })
     </script>
     <script>
-        var baseUrl = "http:127.0.0.1:8000";
+        var baseUrl = "http://127.0.0.1:8000";
         var url = new URL(window.location.href);
         var path = url.pathname;
         var match = path.match(/\/(\d+)$/);
@@ -2809,10 +2782,8 @@
                                         sumTotal: "sum:total",
                                         sumPpn: "sum:ppnCalc",
                                         sumBm: "sum:bmCalc",
-                                        sumPdriPpn: "sum:pdriPpnCalc",
                                         sumPph: "sum:pphCalc",
-                                        // sumPdriTotal: "{formulas.sumBm} + {formulas.sumPdriPpn} + {formulas.sumPph}"
-                                        sumPdriTotal: "sum:bmCalc + sum:pdriPpnCalc + sum:pphCalc",
+                                        sumPajakTotal: "sum:bmCalc + sum:ppnCalc + sum:pphCalc",
                                     },
                                     "data": []
                                 },
@@ -2830,8 +2801,8 @@
                                         sumTotal: "sum:total",
                                     },
                                     "data": [{
-                                            "uraian": "Local PPN",
-                                            "produsen_tingkat_dua": "Dirjen Pajak",
+                                            "uraian": "BM",
+                                            "produsen_tingkat_dua": "Pajak",
                                             "jumlah": "1,00",
                                             "tkdn": "100,00",
                                             "biaya": "0,00",
@@ -2842,8 +2813,20 @@
                                             "total": 0,
                                         },
                                         {
-                                            "uraian": "PDRI",
-                                            "produsen_tingkat_dua": "Bea Cukai",
+                                            "uraian": "PPN",
+                                            "produsen_tingkat_dua": "Pajak",
+                                            "jumlah": "1,00",
+                                            "tkdn": "100,00",
+                                            "biaya": "0,00",
+                                            "alokasi": "100,00",
+                                            "id": new Date().getTime(),
+                                            "kdn": 0,
+                                            "kln": 0,
+                                            "total": 0,
+                                        },
+                                        {
+                                            "uraian": "PPH",
+                                            "produsen_tingkat_dua": "Pajak",
                                             "jumlah": "1,00",
                                             "tkdn": "100,00",
                                             "biaya": "0,00",
@@ -3250,12 +3233,15 @@
             if (id == 1) {
                 let calculation2 = calculations.find(f => f.id == 2);
 
-                calculation2.data[0].kdn = calculation.sumPpn;
-                calculation2.data[0].total = calculation.sumPpn;
-                calculation2.data[0].biaya = formatToCurrency(calculation.sumPpn);
-                calculation2.data[1].kdn = calculation.sumPdriTotal;
-                calculation2.data[1].total = calculation.sumPdriTotal;
-                calculation2.data[1].biaya = formatToCurrency(calculation.sumPdriTotal);
+                calculation2.data[0].kdn = calculation.sumBm;
+                calculation2.data[0].total = calculation.sumBm;
+                calculation2.data[0].biaya = formatToCurrency(calculation.sumBm);
+                calculation2.data[1].kdn = calculation.sumPpn;
+                calculation2.data[1].total = calculation.sumPpn;
+                calculation2.data[1].biaya = formatToCurrency(calculation.sumPpn);
+                calculation2.data[2].kdn = calculation.sumPph;
+                calculation2.data[2].total = calculation.sumPph;
+                calculation2.data[2].biaya = formatToCurrency(calculation.sumPph);
 
                 calculateSumFormula();
             }
@@ -3554,17 +3540,15 @@
                 let sumTotal = formatToCurrency(calculation.sumTotal);
                 let sumPpn = formatToCurrency(calculation.sumPpn);
                 let sumBm = formatToCurrency(calculation.sumBm);
-                let sumPdriPpn = formatToCurrency(calculation.sumPdriPpn);
                 let sumPph = formatToCurrency(calculation.sumPph);
-                let sumPdriTotal = formatToCurrency(calculation.sumPdriTotal);
+                let sumPajakTotal = formatToCurrency(calculation.sumPajakTotal);
                 $('#sum-kdn').text(`${sumKdn}`)
                 $('#sum-kln').text(`${sumKln}`)
                 $('#sum-total').text(`${sumTotal}`)
-                $('#sum-ppn').text(`${sumPpn}`)
                 $('#sum-bm').text(`${sumBm}`)
-                $('#sum-pdri-ppn').text(`${sumPdriPpn}`)
+                $('#sum-ppn').text(`${sumPpn}`)
                 $('#sum-pph').text(`${sumPph}`)
-                $('#sum-pdri-total').text(`${sumPdriTotal}`)
+                $('#sum-pajak-total').text(`${sumPajakTotal}`)
                 calculation.data.forEach(function(item, index) {
                     let row = "<tr>" +
                         `<td>
@@ -3596,7 +3580,6 @@
                         "<td class='text-nowrap'>" + formatToCurrency(item.total) + "</td>" +
                         "<td class='text-nowrap'>" + formatToCurrency(item.ppnCalc) + "</td>" +
                         "<td class='text-nowrap'>" + formatToCurrency(item.bmCalc) + "</td>" +
-                        "<td class='text-nowrap'>" + formatToCurrency(item.pdriPpnCalc) + "</td>" +
                         "<td class='text-nowrap'>" + formatToCurrency(item.pphCalc) + "</td>" +
                         "</tr>";
 
@@ -3614,7 +3597,7 @@
                 $(`#sumTotal-1-2`).text(formatToCurrency((calculation.sumTotal ?? 0)));
                 calculation.data.forEach(function(item, index) {
                     let row = "";
-                    if (index <= 1) {
+                    if (index <= 2) {
                         row = `
                             <tr>
                                 <td></td>
