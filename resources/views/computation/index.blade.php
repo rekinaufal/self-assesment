@@ -64,9 +64,23 @@
                                             <div class="card-padding col-12 col-lg-6">
                                                 <div class="card px-0 mt-3 mx-0 mx-lg-1 position-relative"
                                                     style="box-shadow: 0 0 15px -5px gray !important;">
-                                                    <div class="badge badge-{{ $computation->status == "Draft" ? "success" : "warning" }} text-wrap position-absolute px-4 py-2" style="bottom: 0; right: 0;">
-                                                        {{ $computation->status }}
-                                                    </div>
+                                                    {{-- <div class="badge bg-dark text-wrap position-absolute px-3 py-3"
+                                                        style="bottom: 0; right: 0;">
+                                                        @if ($computation->status == 'Finished')
+                                                            <a class="btn btn-sm btn-success" style=" border-radius: 5px;"
+                                                                href="{{ url('/exportExcelComputation', $computation) }}">
+                                                                <i class="fa fa-file-excel">&nbsp;</i>Unduh Perhitungan</a>
+                                                            <a class="btn btn-sm btn-danger" style=" border-radius: 5px;"
+                                                                href="{{ route('exportPdfComputation', $computation) }}"
+                                                                target="_blank"> <i class="fa fa-file-pdf">&nbsp;</i>Unduh
+                                                                Perhitungan</a>
+                                                        @else
+                                                            <a class="btn btn-sm btn-warning"
+                                                                href="{{ route('computation.show', $computation) }}"
+                                                                style=" border-radius: 5px;"> <i
+                                                                    class="fa fa-edit">&nbsp;</i>Lanjutkan Perhitungan</a>
+                                                        @endif
+                                                    </div> --}}
                                                     <div
                                                         class="card-header d-flex justify-content-between align-items-start">
                                                         <div class="form-check">
@@ -137,6 +151,43 @@
                                                                     <div class="col-12 col-lg-8"><span
                                                                             class="d-none d-lg-inline">:</span>
                                                                         {{ $computation->brand }}</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12 pt-2">
+                                                                <div class="row">
+                                                                    <div class="col-12 col-lg-4" style="font-weight: 500">
+                                                                        Status</div>
+                                                                    <div class="col-12 col-lg-8"><span
+                                                                            class="d-none d-lg-inline">:</span>
+                                                                        <span
+                                                                            class="badge-{{ $computation->status == 'Draft' ? 'warning' : 'success' }}">&nbsp;&nbsp;
+                                                                            {{ $computation->status }} &nbsp;&nbsp;</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12 pt-2">
+                                                                <div class="row">
+                                                                    <div class="col-12 text-right pt-5">
+                                                                        @if ($computation->status == 'Finished')
+                                                                            <a class="btn btn-sm btn-success"
+                                                                                style=" border-radius: 5px;"
+                                                                                href="{{ url('/exportExcelComputation', $computation) }}">
+                                                                                <i class="fa fa-file-excel">&nbsp;</i>Unduh
+                                                                                Perhitungan</a>
+                                                                            <a class="btn btn-sm btn-danger"
+                                                                                style=" border-radius: 5px;"
+                                                                                href="{{ route('exportPdfComputation', $computation) }}"
+                                                                                target="_blank"> <i
+                                                                                    class="fa fa-file-pdf">&nbsp;</i>Unduh
+                                                                                Perhitungan</a>
+                                                                        @else
+                                                                            <a class="btn btn-sm btn-warning"
+                                                                                href="{{ route('computation.show', $computation) }}"
+                                                                                style=" border-radius: 5px;"> <i
+                                                                                    class="fa fa-edit">&nbsp;</i>Lanjutkan
+                                                                                Perhitungan</a>
+                                                                        @endif
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
