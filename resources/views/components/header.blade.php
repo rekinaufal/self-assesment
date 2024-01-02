@@ -186,7 +186,7 @@
                             <img src="{{ asset(auth()->user()->user_profile->getAvatarPath()) }}" alt="user" class="rounded-circle" width="40" height="40">
                         @endif
                         <span class="ml-2 d-none d-lg-inline-block">
-                            <span>Hello,</span>
+                            <span>Halo,</span>
                             <span class="text-dark">{{ auth()->user()->user_profile->fullname ?? '' }}</span>
                             <i data-feather="chevron-down" class="svg-icon"></i>
                         </span>
@@ -194,7 +194,7 @@
                     <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
                         <a class="dropdown-item" href="/profile-pengguna">
                             <i data-feather="user" class="svg-icon mr-2 ml-1"></i>
-                            My Profile
+                            Profil
                         </a>
                         {{-- <a class="dropdown-item" href="javascript:void(0)">
                             <i data-feather="credit-card" class="svg-icon mr-2 ml-1"></i>
@@ -202,7 +202,7 @@
                         </a> --}}
                         <a class="dropdown-item" href="javascript:void(0)">
                             <i data-feather="mail" class="svg-icon mr-2 ml-1"></i>
-                            Inbox
+                            Pesan
                         </a>
                         {{-- <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="javascript:void(0)">

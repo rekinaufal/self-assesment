@@ -10,15 +10,20 @@ class NeedsController extends Controller
 {
     public static $pageTitle = 'List Kebutuhan';
 
-    public function index()
+    public function index(Request $request)
     {
         $pageTitle = self::$pageTitle;
-        $needs = Needs::whereNotNull('computation_id')->get();
+
+        $perpage = $request->input("perpage", 6);
+        $needs = Needs::paginate($perpage);
+        $needs->appends(["perpage" => $perpage]);
+
+        // $needs = Needs::whereNotNull('computation_id')->get();
         // dd($needs[1]->computation->product_type);
         // if (!$needs) {
         //     return redirect()->route('dashboard')->with("failed", "Error, silahkan klik tambah data kembali");
         // }
-        return view('needs.index', compact('pageTitle', 'needs'));
+        return view('needs.index', compact('pageTitle', 'needs', 'perpage'));
     }
 
     public function create()
@@ -42,12 +47,11 @@ class NeedsController extends Controller
             // "computation_id" => ["required"],
             "id" => '',
         ]);
-
         // $needs = Needs::create($credentials);
         $needs = Needs::updateOrInsert(["id" => $credentials["id"]] ,$credentials);
 
 
-        return response()->json(["success" => "Success Insert List Of Need"], 200);
+        return response()->json(["success" => "Berhasil simpan list kebutuhan"], 200);
     }
 
     public function edit($id)
@@ -79,6 +83,21 @@ class NeedsController extends Controller
 
     public function show(Needs $need)
     {
-        return response()->json(["jsonNeeds" => $need, "message" => "Success to get Json Need"]);
+        return response()->json(["jsonNeeds" => $need, "message" => "Sukses mendapatkan JSON list kebutuhan"]);
+    }
+
+    public function search(Request $req)
+    {
+        $pageTitle = self::$pageTitle;
+        $search_value = $req->input('search');
+        $perpage = $req->input("perpage", 6);
+
+        $needs = Needs::join('computations', 'needs.computation_id', '=', 'computations.id')
+                        // ->whereNotNull('computation_id')
+                        ->where('computations.product_type','LIKE','%'.$search_value.'%')
+                        // ->get();
+                        ->paginate($perpage);
+
+        return view('needs.index', compact('pageTitle', 'needs', 'search_value', 'perpage'));
     }
 }

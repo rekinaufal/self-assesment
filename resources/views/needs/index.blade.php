@@ -13,10 +13,18 @@
             <div class="col-12">
                 <div class="float-left">
                     <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></span>
-                        </div>
-                        <input type="text" class="form-control" placeholder="Cari pengguna" aria-label="Search" aria-describedby="basic-addon1">
+                        <form action="{{ route('search-need') }}" method="POST" class="form-inline">
+                            @csrf
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1" style="cursor: pointer;">
+                                        <i class="fas fa-search"></i>
+                                    </span>
+                                </div>
+                                <input type="text" class="form-control" name="search" value="{{ $search_value ?? '' }}" placeholder="Cari jenis produk" aria-label="Search" aria-describedby="basic-addon1">
+                            </div>
+                            <button type="submit" class="btn btn-primary ml-2">Search</button>
+                        </form>
                     </div>
                 </div>
                 <div class="float-right">
@@ -127,8 +135,8 @@
                                 </div>
                             </div>
                             <div class="float-right pr-3">
-                                <span class="badge badge-{{ $item->computation->permenperin_category->color }}">
-                                    {{ $item->computation->permenperin_category->name }}
+                                <span class="badge badge-{{ $item->computation->permenperin_category->color ?? '' }}">
+                                    {{ $item->computation->permenperin_category->name ?? '' }}
                                 </span>
                                 {{-- <button class="btn btn-secondary" type="button">
                                     {{ $item->computation->permenperin_category->name }}
@@ -143,12 +151,12 @@
                                         <tr>
                                             <td>Jenis Produk</td>
                                             <td style="width: 10%" class="text-center">:</td>
-                                            <td>{{ $item->computation->product_type }}</td>
+                                            <td>{{ $item->computation->product_type ?? ''}}</td>
                                         </tr>
                                         <tr>
                                             <td>Tipe Produk</td>
                                             <td style="width: 10%" class="text-center">:</td>
-                                            <td>{{ $item->computation->brand }}</td>
+                                            <td>{{ $item->computation->brand ?? '' }}</td>
                                         </tr>
                                     </table>
                                 </div>
@@ -181,14 +189,52 @@
                 </div>
             @endforeach
         </div>
-        <div class="float-left">
-            <input class="text-secondary mt-3 mb-3" type="checkbox" id="selectAllCheckbox" style="transform: scale(1.5);">&nbsp;&nbsp;&nbsp;Jumlah : 1 dari 1 Pengguna
+        <div class="d-flex justify-content-between">
+            <form action="{{ route('needs.index') }}" id="form-perpage" class="pb-3">
+                <div class="form-group d-flex align-items-center">
+                    <select name="perpage" id="perpage" class="form-control" style="width: 7rem">
+                        <option value="6" {{ $perpage == 6 ? 'selected' : '' }}>Default</option>
+                        <option value="15" {{ $perpage == 15 ? 'selected' : '' }}>15</option>
+                        <option value="30" {{ $perpage == 30 ? 'selected' : '' }}>30</option>
+                        <option value="45" {{ $perpage == 45 ? 'selected' : '' }}>45</option>
+                        <option value="60" {{ $perpage == 60 ? 'selected' : '' }}>60</option>
+                    </select>
+                    <label for="perpage" class="pt-2 pl-2">List kebutuhan per page</label>
+                </div>
+            </form>
+            <div>
+                {{ $needs->links() }}
+            </div>
+        </div>
+        {{-- <div class="float-left">
+            <input class="text-secondary mt-3 mb-3" type="checkbox" id="selectAllCheckbox" style="transform: scale(1.5);">&nbsp;&nbsp;&nbsp;Jumlah : 1 dari 1 List kebutuhan
         </div>
         <div class="float-right">
             for pagination
-        </div>
+        </div> --}}
     </div>
 @endsection
 
 @push('scripts')
+    <script>
+        let originalPerpage;
+        originalPerpage = $("#perpage").val();
+        $("#perpage").change(() => {
+            swal({
+                title: "Warning",
+                text: "You have checked some users. If you want to change the 'perpage', you will lose any users that you have checked.",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true
+            }).then((willChange) => {
+                if (willChange) {
+                    sessionStorage.removeItem("selectedUsers");
+                    $("#form-perpage").submit();
+                } else {
+                    $("#perpage option[value='" + originalPerpage + "']").prop('selected', true);
+                }
+            });
+        })
+
+    </script>
 @endpush

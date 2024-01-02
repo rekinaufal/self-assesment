@@ -19,7 +19,7 @@
                     <div class="card-header bg-transparent">
                         <div class="float-left">
                             <a href="{{ route('computation.index') }}" class="bg-primary px-2 py-1 text-light rounded-lg d-flex align-items-center">
-                                <i class="fas fa-chevron-left mr-2"></i> Back To Computation
+                                <i class="fas fa-chevron-left mr-2"></i> Kembali
                             </a>
                         </div>
                         <div class="float-right">
@@ -110,7 +110,7 @@
                                                         data-toggle="tooltip" data-placement="top" title="Tooltip on top">
                                                     </i></label>
                                                 <select class="form-control form-control-sm trigger-enter" id="negara_asal"
-                                                    name="negara_asal" required>
+                                                    name="negara_asal" required onchange="onSelectCountry()">
                                                     <option></option>
                                                     @foreach ($countries as $country)
                                                         <option value="{{ $country }}" {{ $country == "Indonesia" ? "selected" : "" }}>{{ $country }}</option>
@@ -916,7 +916,7 @@
                                                         <option value="{{ $country }}" {{ $country == "Indonesia" ? "selected" : "" }}>{{ $country }}</option>
                                                     @endforeach
                                                 </select>
-                                                <input type="hidden" id="tkdn-1-5" value="" name="tkdn">
+                                                <input type="hidden" id="tkdn-1-5" value="100" name="tkdn">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -1976,7 +1976,7 @@
                                         autocomplete="off" value="0,00">
                                 </div>
                             </div>
-                            <div class="form-group col-6">
+                            {{-- <div class="form-group col-6">
                                 <div class="card p-2">
                                     <div class="col">
                                         <div class="row">
@@ -1996,12 +1996,12 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="form-group col-6">
                                 <div class="card p-2">
                                     <div class="col">
                                         <div class="row">
-                                            <label for="" class="mx-auto">PDRI <i class="fas fa-info-circle"
+                                            <label for="" class="mx-auto">Pajak <i class="fas fa-info-circle"
                                                     data-toggle="tooltip" data-placement="top" title="Tooltip on top">
                                                 </i></label>
                                         </div>
@@ -2352,7 +2352,7 @@
                                     <option value="{{ $country }}" {{ $country == "Indonesia" ? "selected" : "" }}>{{ $country }}</option>
                                 @endforeach
                             </select>
-                            <input type="hidden" id="editTkdn-1-3" value="" name="tkdn">
+                            <input type="hidden" id="editTkdn-1-3" value="100" name="tkdn">
                         </div>
                         <div class="form-group col-6">
                             <label>
@@ -3024,7 +3024,6 @@
                 }
 
                 formResult["id"] = new Date().getTime()
-
                 let storeCalculation = calculateAndBind(formResult, 2);
 
                 reloadAllTable()
@@ -4571,6 +4570,24 @@
                 inputElements.eq(nextIndex).focus();
             }
         });
+
+        // 1.1 if country select indonesia
+        function onSelectCountry() {
+            var selectedCountry = document.getElementById("negara_asal").value;
+            if (selectedCountry.toLowerCase() == "indonesia") {
+                $("#bm").prop("disabled", true);
+                $("#pph").prop("disabled", true);
+            } else {
+                $("#bm").prop("disabled", false);
+                $("#pph").prop("disabled", false);
+            }
+            // alert("Selected country: " + selectedCountry.toLowerCase());
+        }
+
+        // on ready
+        $(document).ready(function () {
+            onSelectCountry();
+        });
     </script>
-    // {{-- <script src="{{ asset('dist/js/users/script.js') }}"></script> --}}
+    {{-- <script src="{{ asset('dist/js/users/script.js') }}"></script> --}}
 @endpush

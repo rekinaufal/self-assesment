@@ -133,16 +133,16 @@
                                 {{-- name --}}
                                 <span class="name mt-3">{{ $user->user_profile->fullname }}</span> 
                                 {{-- kategori user --}}
-                                <button type="button" class="btn btn-outline-{{ $user->user_category->color ?? 'dark' }}" style="border-radius: 15px">{{ $user->user_category->name ?? '' }}</button>
+                                <button type="button" class="btn btn-outline-{{ $user->user_category->color ?? 'dark' }}" style="border-radius: 15px; cursor: default;">{{ $user->user_category->name ?? '' }}</button>
                             </div>
 
                             <div class="float-left">
                                 <div class="row" style="display: flex; justify-content: space-between; align-items: center;">
                                     <div class="col-4">                            
-                                        <button type="button" class="btn btn-outline-danger" style="border-radius: 15px"><i class="fas fa-check"></i></button>
+                                        <button type="button" class="btn btn-outline-danger hide-button" style="border-radius: 15px; cursor: default;"><i class="fas fa-check"></i></button>
                                     </div>
                                     <div class="col-8" style="font-size:10px ">
-                                        12 File
+                                        {{ $countPerhitungan ?? '' }} File
                                         <br>
                                         File Perhitungan
                                     </div>
@@ -151,7 +151,7 @@
                             <div class="float-right">
                                 <div class="row" style="display: flex; justify-content: space-between; align-items: center;">
                                     <div class="col-4">                            
-                                        <button type="button" class="btn btn-outline-danger" style="border-radius: 15px"><i class="icon-star"></i></button>
+                                        <button type="button" class="btn btn-outline-danger" style="border-radius: 15px; cursor: default;"><i class="icon-star"></i></button>
                                     </div>
                                     <div class="col-8" style="font-size:10px ">
                                         2 Kategori
@@ -162,7 +162,7 @@
                             </div>
                             <br>
                             <div class="rounded mt-4 text-dark"> 
-                                <span>Details</span> 
+                                {{-- <span>Details</span>  --}}
                             </div>
                             <hr>
                             <table class="text-dark h6">

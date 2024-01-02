@@ -176,7 +176,7 @@ class PaymentController extends Controller
             return redirect()->back()->with('success', 'Pembayaran berhasil dibuat');
         } catch (\Exception $e) {
             DB::rollBack();
-            return redirect()->back()->with('failed', 'An error occurred during upload payment. Please try again.');
+            return redirect()->back()->with('failed', 'Terjadi kesalahan saat mengunggah pembayaran. Silakan coba lagi.');
         }
     }
 
@@ -233,7 +233,7 @@ class PaymentController extends Controller
             DB::commit();
         } catch (\Exception $e) {
             DB::rollBack();
-            return redirect()->back()->with('failed', 'An error occurred during approve payment. Please try again.');
+            return redirect()->back()->with('failed', 'Terjadi kesalahan saat menyetujui pembayaran. Silakan coba lagi.');
         }
     }
 }

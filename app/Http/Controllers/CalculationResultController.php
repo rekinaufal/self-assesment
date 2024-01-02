@@ -48,7 +48,7 @@ class CalculationResultController extends Controller
         $computation->status = "Draft";
         $computation->save();
 
-        return response()->json(['calculationResult' => $calculationResult, "success" => "Success to save draft the calculation"], 200);
+        return response()->json(['calculationResult' => $calculationResult, "success" => "Berhasil simpan draft perhitungan"], 200);
     }
 
     /**
@@ -59,7 +59,7 @@ class CalculationResultController extends Controller
      */
     public function show(CalculationResult $calculationResult)
     {
-        return response()->json(["calculationResult" => $calculationResult, "message" => "Success to get calculationResult"]);
+        return response()->json(["calculationResult" => $calculationResult, "message" => "Sukses mendapatkan hasil perhitungan"]);
     }
 
     /**
@@ -108,6 +108,6 @@ class CalculationResultController extends Controller
         $computation->status = "Finished";
         $computation->save();
 
-        return response()->json(['calculationResult' => $calculationResult, "success" => "Success to save draft the calculation"], 200);
+        return response()->json(['calculationResult' => $calculationResult, "success" => "Berhasil simpan draft perhitungan"], 200);
     }
 }

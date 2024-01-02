@@ -82,6 +82,7 @@ Route::group(['middleware' => ['auth']], function () {
 
     // list kebutuhan
     Route::resource("needs", NeedsController::class);
+    Route::post('/search-need', 'NeedsController@search')->name('search-need');
 
     //computation
     Route::resource("computation", ComputationController::class);

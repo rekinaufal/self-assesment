@@ -66,15 +66,15 @@ class NewsController extends Controller
             $createdNews = News::create($credentials);
         } else {
             $news = News::find($request->id);
-            if (!$news) return redirect()->route("news.index")->with("failed", "User with id = " . $request->id . "not found");
+            if (!$news) return redirect()->route("news.index")->with("failed", "User dengan id = " . $request->id . "tidak ada");
 
             $updatedNews = $news->update($credentials);
         }
 
 
-        if ((isset($createdNews) && !$createdNews) || (isset($updatedNews) && !$updatedNews)) return redirect()->route("news.index")->with("failed", "Failed saved news data.");
+        if ((isset($createdNews) && !$createdNews) || (isset($updatedNews) && !$updatedNews)) return redirect()->route("news.index")->with("failed", "Gagal simpan berita.");
 
-        return redirect()->route("news.index")->with("success", "Successfully saved news data.");
+        return redirect()->route("news.index")->with("success", "Berhasil simpan berita.");
     }
 
     /**
@@ -90,7 +90,7 @@ class NewsController extends Controller
             $user = UserProfile::where('user_id', $userLogged->id)->first();
             return view("news.detail", compact('news', 'user'));
         } else {
-            return redirect()->back()->with('failed', 'Cannot found the news');
+            return redirect()->back()->with('failed', 'Tidak dapat menemukan berita tersebut');
         }
     }
 
@@ -129,7 +129,7 @@ class NewsController extends Controller
 
         if (!$deletedNews) abort(500, "Internal Server Error");
 
-        return redirect()->route("news.index")->with("success", "Successfully deleted news data");
+        return redirect()->route("news.index")->with("success", "Data berita berhasil dihapus");
     }
 
     public function getNewsJson()
@@ -148,10 +148,10 @@ class NewsController extends Controller
         $deletedNews = News::whereIn('id', $deleteIds)->delete();
         // dd($deleteIds);
         if (!$deletedNews) {
-            return redirect()->route("news.index")->with("failed", "Failed to delete batch!");
+            return redirect()->route("news.index")->with("failed", "Gagal menghapus yang telah dipilih!");
         }
 
-        return redirect()->route("news.index")->with("success", "Successfully to delete the selected news!");
+        return redirect()->route("news.index")->with("success", "Berhasil menghapus berita yang dipilih!");
     }
 
     public function search(Request $request)
@@ -162,7 +162,7 @@ class NewsController extends Controller
         
         // validation
         if ($fromDate && $untilDate && strtotime($fromDate) > strtotime($untilDate)) {
-            return redirect()->route("news.index")->with("failed", "The until date must be equal to or after the from date.");
+            return redirect()->route("news.index")->with("failed", "Tanggal sampai harus sama dengan atau setelah tanggal dari.");
         }
 
         $query = News::latest();

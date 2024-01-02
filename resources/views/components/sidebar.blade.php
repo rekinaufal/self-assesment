@@ -56,7 +56,7 @@
                     <li class="sidebar-item {{ parse_url(request()->url())['path'] == '/news' ? 'active selected' : '' }}">
                         <a class="sidebar-link sidebar-link" href="{{ url('news') }}" aria-expanded="false">
                             <i data-feather="file-text" class="feather-icon"></i>
-                            <span class="hide-menu">News</span>
+                            <span class="hide-menu">Berita</span>
                         </a>
                     </li>
                 @endcan
@@ -95,7 +95,7 @@
                     <li class="sidebar-item {{ Request::is('roles') ? 'active' : '' }}">
                         <a class="sidebar-link" href="{{ url('roles') }}" aria-expanded="false">
                             <i data-feather="tag" class="feather-icon"></i>
-                            <span class="hide-menu">Roles</span>
+                            <span class="hide-menu">Akses</span>
                         </a>
                     </li>
                 @endcan
@@ -109,7 +109,7 @@
                     <li class="sidebar-item {{ Request::is('users') ? 'active' : '' }}">
                         <a class="sidebar-link sidebar-link" href="{{ url('users') }}" aria-expanded="false">
                             <i data-feather="message-square" class="feather-icon"></i>
-                            <span class="hide-menu">User Profile</span>
+                            <span class="hide-menu">Profil Pengguna</span>
                         </a>
                     </li>
                 @endcan
@@ -131,7 +131,7 @@
                     <li class="sidebar-item {{ parse_url(request()->url())['path'] == '/needs' ? 'active selected' : '' }}">
                         <a class="sidebar-link sidebar-link" href="{{ url('needs') }}" aria-expanded="false">
                             <i data-feather="file-text" class="feather-icon"></i>
-                            <span class="hide-menu">List Of Needs</span>
+                            <span class="hide-menu">List Kebutuhan</span>
                         </a>
                     </li>
                 @endcan
@@ -149,7 +149,7 @@
                     <li class="sidebar-item {{ Request::is('payment') ? 'active' : '' }}">
                         <a class="sidebar-link sidebar-link" href="{{ url('payment') }}" aria-expanded="false">
                             <i data-feather="file-text" class="feather-icon"></i>
-                            <span class="hide-menu">Membership Plan</span>
+                            <span class="hide-menu">Persetujuan Keanggotaan</span>
                         </a>
                     </li>
                 @endcan

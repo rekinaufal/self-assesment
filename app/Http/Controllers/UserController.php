@@ -82,7 +82,7 @@ class UserController extends Controller
         $user->assignRole($req['roles']);
 
         return redirect()->route('users.index')
-            ->with('success', 'User created successfully.');
+            ->with('success', 'Berhasil simpan user.');
     }
 
     public function show($id)
@@ -136,7 +136,7 @@ class UserController extends Controller
         $user->assignRole($req['roles']);
 
         return redirect()->route('users.index')
-            ->with('success', 'User updated successfully');
+            ->with('success', 'Berhasil edit user');
     }
 
     public function destroy($id)
@@ -144,10 +144,10 @@ class UserController extends Controller
         if ($id) {
             User::find($id)->delete();
             return redirect()->route('users.index')
-                ->with('success', 'User deleted successfully');
+                ->with('success', 'Berhasil hapus user');
         } else {
             return redirect()->route('users.index')
-                ->with('failed', 'User deleted failed because id is empty or null');
+                ->with('failed', 'Gagal menghapus pengguna karena id kosong atau nol');
         }
     }
 
@@ -159,10 +159,10 @@ class UserController extends Controller
                 User::find($value)->delete();
             }
             return redirect()->route('users.index')
-                ->with('success', 'User deleted successfully');
+                ->with('success', 'Berhasil hapus user');
         } else {
             return redirect()->route('users.index')
-                ->with('failed', 'User deleted failed because id is empty or null');
+                ->with('failed', 'Gagal menghapus pengguna karena id kosong atau nol');
         }
     }
 
@@ -213,7 +213,7 @@ class UserController extends Controller
         $user = User::find($id);
         // dd($user);
         if (!$user) {
-            return redirect()->back()->with('failed', 'User is empty');
+            return redirect()->back()->with('failed', 'User tidak ditemukan');
         }
 
         if (Hash::check($req->current_password, $user->password)) {
@@ -227,7 +227,7 @@ class UserController extends Controller
                 }
             }
         } else {
-            return redirect()->back()->with('failed', 'Current password is wrong !');
+            return redirect()->back()->with('failed', 'Kata sandi saat ini salah !');
         }
         return redirect()->back()->with('failed', 'Password gagal diedit');
     }
@@ -249,10 +249,10 @@ class UserController extends Controller
         $deletedNews = User::whereIn('id', $deleteIds)->delete();
         // dd($deleteIds);
         if (!$deletedNews) {
-            return redirect()->route("users.index")->with("failed", "Failed to delete batch!");
+            return redirect()->route("users.index")->with("failed", "Gagal menghapus pengguna yang dipilih!");
         }
 
-        return redirect()->route("users.index")->with("success", "Successfully to delete the selected users!");
+        return redirect()->route("users.index")->with("success", "Berhasil menghapus pengguna yang dipilih!");
     }
 
     public function search(Request $req)

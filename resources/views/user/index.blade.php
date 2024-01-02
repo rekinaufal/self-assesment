@@ -301,184 +301,181 @@
         </a>
     </div>
     </div> --}}
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12">
-                <div class="float-left">
-                    <h4 class="card-title">{{ $pageTitle }} Data</h4>
-                    <div class="input-group mb-3">
-                        <form action="{{ route('search-user-pengguna') }}" method="POST" class="form-inline">
-                            @csrf
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1" style="cursor: pointer;">
-                                        <i class="fas fa-search"></i>
-                                    </span>
-                                </div>
-                                <input type="text" class="form-control" name="search" value="{{ $search_value ?? '' }}" placeholder="Cari Nama Pengguna" aria-label="Search" aria-describedby="basic-addon1">
-                            </div>
-                            <button type="submit" class="btn btn-primary ml-2">Search</button>
-                        </form>
-                        {{-- <input type="text" class="form-controller" id="search" name="search"></input> --}}
-                    </div>
-                </div>
-                <div class="float-right pt-4">
-                    <a href="{{ route('users.create') }}" class="btn btn-primary"><i class="fas fa-plus"></i></a>
-                </div>
-                <div class="float-right pt-4 pr-3">
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Aksi&nbsp;&nbsp;&nbsp;<i class="fas fa-angle-down"></i>
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item"><i class="fas fa-download"></i>&nbsp;&nbsp;&nbsp;Download</a>
-                            <form action="{{ route('users.deletedBatch') }}" method="post" id="formDeleteBatch">
-                                @csrf
-                                <input type="hidden" name="delete_ids" id="usersWantDelete" />
-                                <button type="button" class="btn-sm px-lg-3 py-lg-2 text-nowrap dropdown-item"
-                                    style="height: min-content" id="deleteSelectedUsers">
-                                    <i class="fa fa-trash mr-3"></i>delete selected users
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <tbody>
-
-        </tbody>
-        <hr>
-        <div class="row">
-            @foreach ($users as $item)
-            <div class="col-12 col-md-4 col-lg-4">
-                <div class="card">
-                    <div class="card-header bg-transparent">
-                        <div class="float-left">
-
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input checkbox-users"
-                                    style="transform: scale(1.4); cursor: pointer;" data-id="{{ $item->id }}">
-                            </div>
-                        </div>
-                        <div class="float-right">
-                            <div class="dropdown">
-                                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                        class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
-                                        <path
-                                            d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
-                                    </svg>
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    @can('user-edit')
-                                    <a class="dropdown-item" href="{{ route('users.edit', $item->id) }}">
-                                        <i class="fa fa-pencil-alt p-0"></i>&nbsp;&nbsp;&nbsp;Edit
-                                    </a>
-                                    @endcan
-                                    <a class="dropdown-item">
-                                        <i class="fas fa-download"></i>&nbsp;&nbsp;&nbsp;Download
-                                    </a>
-                                    @can('user-delete')
-                                    <form id="myForm-{{ $item->id }}" action="{{ route('users.destroy', $item->id) }}"
-                                        method="POST" class="d-flex">
-                                        @csrf
-                                        @method('DELETE')
-                                        @can('user-delete')
-                                        <button type="submit" class="dropdown-item"
-                                            onclick="return confirm('Are you sure?')"
-                                            data-confirm-yes="confirmDelete({{ $item->id }})">
-                                            <i class="fas fa-trash-alt"></i>&nbsp;&nbsp;&nbsp;Hapus
-                                            Data
-                                        </button>
-                                        @endcan
-                                    </form>
-                                    @endcan
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-sm-6 col-md-7">
-                                <h5 class="text-center font-weight-bold">
-                                    {{ $item->user_profile->company_name ?? '' }}</h5>
-                                <table>
-                                    <tr>
-                                        <td>@</td>
-                                        <td style="width: 10%" class="text-center">:</td>
-                                        <td>{{ $item->user_profile->fullname ?? '' }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td><i class=" fas fa-hospital"></i></td>
-                                        <td style="width: 10%" class="text-center">:</td>
-                                        <td>{{ $item->user_profile->company_address ?? '' }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td><i class="fas fa-phone"></i></td>
-                                        <td style="width: 10%" class="text-center">:</td>
-                                        <td>{{ $item->user_profile->phone_number ?? '' }}</td>
-                                    </tr>
-                                </table>
-                            </div>
-                            <div class="col-sm-6 col-md-5">
-                                <div class="item">
-                                    <div class="item__photo d-flex justify-content-center align-items-center">
-                                        <img src="{{ asset($item->user_profile->avatar != null ? $item->user_profile->getAvatarPath() : 'assets/images/users/not_found.jpg') }}"
-                                            style="object-fit:cover;" alt="user" class="rounded-circle" height="100" width="100">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="float-left">
+                                        <h4 class="card-title">{{ $pageTitle }} Data</h4>
+                                        <div class="input-group mb-3">
+                                            <form action="{{ route('search-user-pengguna') }}" method="POST" class="form-inline">
+                                                @csrf
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon1" style="cursor: pointer;">
+                                                            <i class="fas fa-search"></i>
+                                                        </span>
+                                                    </div>
+                                                    <input type="text" class="form-control" name="search" value="{{ $search_value ?? '' }}" placeholder="Cari Nama Pengguna" aria-label="Search" aria-describedby="basic-addon1">
+                                                </div>
+                                                <button type="submit" class="btn btn-primary ml-2">Search</button>
+                                            </form>
+                                            {{-- <input type="text" class="form-controller" id="search" name="search"></input> --}}
+                                        </div>
+                                    </div>
+                                    <div class="float-right pt-4">
+                                        <a href="{{ route('users.create') }}" class="btn btn-primary"><i class="fas fa-plus"></i></a>
+                                    </div>
+                                    <div class="float-right pt-4 pr-3">
+                                        <div class="dropdown">
+                                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Aksi&nbsp;&nbsp;&nbsp;<i class="fas fa-angle-down"></i>
+                                            </button>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                <a class="dropdown-item"><i class="fas fa-download"></i>&nbsp;&nbsp;&nbsp;Download</a>
+                                                <form action="{{ route('users.deletedBatch') }}" method="post" id="formDeleteBatch">
+                                                    @csrf
+                                                    <input type="hidden" name="delete_ids" id="usersWantDelete" />
+                                                    <button type="button" class="btn-sm px-lg-3 py-lg-2 text-nowrap dropdown-item"
+                                                        style="height: min-content" id="deleteSelectedUsers">
+                                                        <i class="fa fa-trash mr-3"></i>delete selected users
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <hr>
-                        <div class="float-left">
-                            @if(!empty($item->user_category->name))
-                            @if ($item->user_category->name == 'Regular')
-                            <img src="{{ asset('assets/images/users/quality.png') }}" alt="reguler" width="20"
-                                style="vertical-align: top;">
-                            @else
-                            <img src="{{ asset('assets/images/users/crown.png') }}" alt="premium" width="20"
-                                style="vertical-align: top;">
-                            @endif
-                            @endif
-                            {{ $item->user_category->name ?? '' }}
-                        </div>
-                        <div class="float-right">
-                            @can('user-show')
-                            <a class="btn btn-sm btn-primary mr-1" href="{{ route('users.show', $item->id) }}" title="Show">
-                                Lihat Profil
-                            </a>
-                            @endcan
+                            <hr>
+                            <div class="row">
+                                @foreach ($users as $item)
+                                <div class="col-12 col-md-4 col-lg-4">
+                                    <div class="card">
+                                        <div class="card-header bg-transparent">
+                                            <div class="float-left">
+
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input checkbox-users"
+                                                        style="transform: scale(1.4); cursor: pointer;" data-id="{{ $item->id }}">
+                                                </div>
+                                            </div>
+                                            <div class="float-right">
+                                                <div class="dropdown">
+                                                    <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton"
+                                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                                            class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                                                        </svg>
+                                                    </button>
+                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                        @can('user-edit')
+                                                        <a class="dropdown-item" href="{{ route('users.edit', $item->id) }}">
+                                                            <i class="fa fa-pencil-alt p-0"></i>&nbsp;&nbsp;&nbsp;Edit
+                                                        </a>
+                                                        @endcan
+                                                        <a class="dropdown-item">
+                                                            <i class="fas fa-download"></i>&nbsp;&nbsp;&nbsp;Download
+                                                        </a>
+                                                        @can('user-delete')
+                                                        <form id="myForm-{{ $item->id }}" action="{{ route('users.destroy', $item->id) }}"
+                                                            method="POST" class="d-flex">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            @can('user-delete')
+                                                            <button type="submit" class="dropdown-item"
+                                                                onclick="return confirm('Are you sure?')"
+                                                                data-confirm-yes="confirmDelete({{ $item->id }})">
+                                                                <i class="fas fa-trash-alt"></i>&nbsp;&nbsp;&nbsp;Hapus
+                                                                Data
+                                                            </button>
+                                                            @endcan
+                                                        </form>
+                                                        @endcan
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-sm-6 col-md-7">
+                                                    <h5 class="text-center font-weight-bold">
+                                                        {{ $item->user_profile->company_name ?? '' }}</h5>
+                                                    <table>
+                                                        <tr>
+                                                            <td>@</td>
+                                                            <td style="width: 10%" class="text-center">:</td>
+                                                            <td>{{ $item->user_profile->fullname ?? '' }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><i class=" fas fa-hospital"></i></td>
+                                                            <td style="width: 10%" class="text-center">:</td>
+                                                            <td>{{ $item->user_profile->company_address ?? '' }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><i class="fas fa-phone"></i></td>
+                                                            <td style="width: 10%" class="text-center">:</td>
+                                                            <td>{{ $item->user_profile->phone_number ?? '' }}</td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                                <div class="col-sm-6 col-md-5">
+                                                    <div class="item">
+                                                        <div class="item__photo d-flex justify-content-center align-items-center">
+                                                            <img src="{{ asset($item->user_profile->avatar != null ? $item->user_profile->getAvatarPath() : 'assets/images/users/not_found.jpg') }}"
+                                                                style="object-fit:cover;" alt="user" class="rounded-circle" height="100" width="100">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="float-left">
+                                                @if(!empty($item->user_category->name))
+                                                @if ($item->user_category->name == 'Regular')
+                                                <img src="{{ asset('assets/images/users/quality.png') }}" alt="reguler" width="20"
+                                                    style="vertical-align: top;">
+                                                @else
+                                                <img src="{{ asset('assets/images/users/crown.png') }}" alt="premium" width="20"
+                                                    style="vertical-align: top;">
+                                                @endif
+                                                @endif
+                                                {{ $item->user_category->name ?? '' }}
+                                            </div>
+                                            <div class="float-right">
+                                                @can('user-show')
+                                                <a class="btn btn-sm btn-primary mr-1" href="{{ route('users.show', $item->id) }}" title="Show">
+                                                    Lihat Profil
+                                                </a>
+                                                @endcan
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                @endforeach
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <form action="{{ route('users.index') }}" id="form-perpage" class="pb-3">
+                                    <div class="form-group d-flex align-items-center">
+                                        <select name="perpage" id="perpage" class="form-control" style="width: 7rem">
+                                            <option value="6" {{ $perpage == 6 ? 'selected' : '' }}>Default</option>
+                                            <option value="15" {{ $perpage == 15 ? 'selected' : '' }}>15</option>
+                                            <option value="30" {{ $perpage == 30 ? 'selected' : '' }}>30</option>
+                                            <option value="45" {{ $perpage == 45 ? 'selected' : '' }}>45</option>
+                                            <option value="60" {{ $perpage == 60 ? 'selected' : '' }}>60</option>
+                                        </select>
+                                        <label for="perpage" class="pt-2 pl-2">Users per page</label>
+                                    </div>
+                                </form>
+                                <div>
+                                    {{ $users->links() }}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            @endforeach
         </div>
-        <div class="d-flex justify-content-between">
-            <form action="{{ route('users.index') }}" id="form-perpage" class="pb-3">
-                <div class="form-group d-flex align-items-center">
-                    <select name="perpage" id="perpage" class="form-control" style="width: 7rem">
-                        <option value="6" {{ $perpage == 6 ? 'selected' : '' }}>Default</option>
-                        <option value="15" {{ $perpage == 15 ? 'selected' : '' }}>15</option>
-                        <option value="30" {{ $perpage == 30 ? 'selected' : '' }}>30</option>
-                        <option value="45" {{ $perpage == 45 ? 'selected' : '' }}>45</option>
-                        <option value="60" {{ $perpage == 60 ? 'selected' : '' }}>60</option>
-                    </select>
-                    <label for="perpage" class="pt-2 pl-2">Users per page</label>
-                </div>
-            </form>
-            <div>
-                {{ $users->links() }}
-            </div>
-        </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
     </div>
 @endsection
 @push('scripts')

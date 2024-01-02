@@ -274,7 +274,7 @@
                     <div class="card-body">
                         <h4 class="card-title">Pengguna Aktif</h4>
                         <h6>Last 6 Months</h6>
-                        <canvas id="marksChart" width="600" height="600"></canvas>
+                        <canvas id="marksChart" width="600" height="450"></canvas>
                         {{-- <div class="net-income2 mt-4 position-relative" style="height:294px;"></div>
                         <ul class="list-inline text-center mt-5 mb-2">
                             <li class="list-inline-item text-muted font-italic"></li>

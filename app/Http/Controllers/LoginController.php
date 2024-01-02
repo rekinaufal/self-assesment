@@ -87,9 +87,16 @@ class LoginController extends Controller
         // $email = '';
         // $email = (string)$request->email;
         $user = DB::table('users')->where('email', $request->email)->first();
-        if (!$user || !$user->email_verified_at) {
+        if (!$user) {
             return back()->withErrors([
-                'email' => 'The provided credentials do not match our records or the email is not verified.',
+                'email' => 'Data yang diisi tidak cocok dengan catatan kami',
+                'section' => 'login',
+            ]);
+        }
+
+        if (!$user->email_verified_at) {
+            return back()->withErrors([
+                'email' => 'Email belum diverifikasi, silahkan cek email Anda.',
                 'section' => 'login',
             ]);
         }
@@ -119,7 +126,7 @@ class LoginController extends Controller
             return redirect()->route('dashboard');
         } else {
             return back()->withErrors([
-                'email' => 'The provided credentials do not match our records.',
+                'email' => 'Data yang diisi tidak cocok dengan catatan kami.',
                 'section' => 'login',
             ]);
         }
@@ -217,10 +224,10 @@ class LoginController extends Controller
             // return back()->with('failed', 'Invalid Email');
             // }
             DB::commit();
-            return redirect()->route('login')->with('success', 'Password reset successful, please check your email');
+            return redirect()->route('login')->with('success', 'Reset password berhasil, silahkan cek email Anda');
         } catch (\Exception $e) {
             DB::rollBack();
-            return redirect()->back()->with('failed', 'An error occurred during forget password. Please try again.');
+            return redirect()->back()->with('failed', 'Terjadi kesalahan saat lupa kata sandi. Silakan coba lagi.');
         }
     }
 
@@ -250,10 +257,10 @@ class LoginController extends Controller
             $this->sendEmailRegister($user->id, $request->fullname, $request->email);
 
             DB::commit();
-            return redirect()->route('login')->with('success', 'Please check your email for verification. If its not in your inbox, check your spam folder. ');
+            return redirect()->route('login')->with('success', 'Silakan periksa email Anda untuk verifikasi. Jika tidak ada di kotak masuk Anda, periksa folder spam Anda.');
         } catch (\Exception $e) {
             DB::rollBack();
-            return redirect()->back()->with('failed', 'An error occurred during registration. Please try again.');
+            return redirect()->back()->with('failed', 'Terjadi kesalahan saat pendaftaran. Silakan coba lagi.');
         }
     }
 
@@ -283,14 +290,14 @@ class LoginController extends Controller
             return redirect('/')->with('failed', 'Error');
         }
         if ($Get->email_verified_at != null) {
-            return redirect('/')->with('failed', 'Your email has been verified on ' . $Get->email_verified_at);
+            return redirect('/')->with('failed', 'Email Anda telah diverifikasi ' . $Get->email_verified_at);
         } else {
             $mytime = Carbon::now();
             $fieldUpdate = [
                 'email_verified_at' =>  $mytime->toDatetimeString()
             ];
             $update = DB::table('users')->where('id', $id)->update($fieldUpdate);
-            return redirect('/')->with('success', 'Verify email successfully, Please login');
+            return redirect('/')->with('success', 'Verifikasi email berhasil, Silakan login');
         }
     }
 }

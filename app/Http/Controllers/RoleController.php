@@ -167,7 +167,7 @@ class RoleController extends Controller
         $role->syncPermissions($req['permission']);
 
         return redirect()->route('roles.index')
-            ->with('success', 'Role updated successfully');
+            ->with('success', 'Role berhasil diedit');
     }
 
     /**
@@ -183,7 +183,7 @@ class RoleController extends Controller
                 ->with('success', 'Role deleted successfully');
         } else {
             return redirect()->route('roles.index')
-                ->with('failed', 'Role deleted failed because id is empty or null');
+                ->with('failed', 'Gagal menghapus role data karena id kosong atau nol');
         }
     }
 }

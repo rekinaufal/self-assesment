@@ -54,10 +54,10 @@ class ComputationController extends Controller
         if ($request->id == null) {
             # code...
             $computationId = Computation::insertGetId($credentials);
-            return redirect()->route('computation.show', $computationId)->with("success", "Success to create new computation!");
+            return redirect()->route('computation.show', $computationId)->with("success", "Berhasil membuat perhitungan baru!");
         } else {
             $computation = Computation::updateOrInsert(["id" => $request->id], $credentials);
-            if (!$computation) return redirect()->route("computation.index")->with("failed", "Failed to create new computation!");
+            if (!$computation) return redirect()->route("computation.index")->with("failed", "Gagal membuat perhitungan baru!");
             return redirect()->route("computation.index")->with("success", "Success to create new computation!");
         }
 
@@ -122,10 +122,10 @@ class ComputationController extends Controller
         $computation = $computation->delete();
 
         if (!$computation) {
-            return redirect()->route("computation.index")->with("failed", "Failed to delete the computation");
+            return redirect()->route("computation.index")->with("failed", "Gagal hapus perhitungan");
         }
 
-        return redirect()->route("computation.index")->with("success", "Success to delete the computation!");
+        return redirect()->route("computation.index")->with("success", "Berhasil hapus perhitungan!");
     }
 
     public function exportExcel($id)

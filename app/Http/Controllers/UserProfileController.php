@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\UserCategory;
 use App\Models\UserProfile;
+use App\Models\Computation;
 use Illuminate\Http\Request;
 use App\Models\User;
 use DB;
+use Auth;
 class UserProfileController extends Controller
 {
     private static $uploadsFolder = "profile";
@@ -28,8 +30,9 @@ class UserProfileController extends Controller
         //     ->where('user_profiles.user_id', '=', $id) 
         //     ->select('users.*', 'user_profiles.*') 
         //     ->first();
-        // dd($profile);
-        return view('user.profile', compact('pageTitle', 'profile', 'userRole', 'user', 'userCategory'));
+        $countPerhitungan = Computation::orderBy("id", "desc")->whereUserId(Auth::user()->id)->count();
+        // dd($countPerhitungan);
+        return view('user.profile', compact('pageTitle', 'profile', 'userRole', 'user', 'userCategory', 'countPerhitungan'));
 
     }
 
@@ -109,7 +112,7 @@ class UserProfileController extends Controller
         ]);
         if ($isEdited) {
             return redirect()->back()
-                ->with('success', 'Data updated successfully');
+                ->with('success', 'Data berhasil diedit');
         }
         return redirect()->back()->with('failed', 'Profile gagal diedit');
     }
