@@ -3507,6 +3507,24 @@
                 computation.data.splice(calculationIndex, 1);
 
                 calculateSumFormula();
+            
+                if (computation_id == 1) {
+                    console.log(calculations);
+                let calculation2 = calculations.find(f => f.id == 2);
+                let calculation = calculations.find(f => f.id == 1);
+
+                calculation2.data[0].kdn = calculation.sumBm;
+                calculation2.data[0].total = calculation.sumBm;
+                calculation2.data[0].biaya = formatToCurrency(calculation.sumBm);
+                calculation2.data[1].kdn = calculation.sumPpn;
+                calculation2.data[1].total = calculation.sumPpn;
+                calculation2.data[1].biaya = formatToCurrency(calculation.sumPpn);
+                calculation2.data[2].kdn = calculation.sumPph;
+                calculation2.data[2].total = calculation.sumPph;
+                calculation2.data[2].biaya = formatToCurrency(calculation.sumPph);
+
+                calculateSumFormula();
+            }
                 // Mengonversi objek menjadi string JSON
                 let jsonDraftCalculations = JSON.stringify(draftCalculations);
 
