@@ -394,8 +394,10 @@
                                     class="w-50 h-auto">
                             </div>
                             <div class="brand-slogan text-light text-center">
-                                <h3>TKDN Self Assessment Calculation Apps</h3>
-                                <small>Proud of Local Product, Local Pride and For Better Indonesia Future</small>
+                                <h3>Aplikasi Perhitungan Self Assessment TKDN</h3>
+                                {{-- <h3>TKDN Self Assessment Calculation Apps</h3> --}}
+                                <small>Bangga dengan Produk Lokal, Kebanggaan Lokal, dan Untuk Masa Depan Indonesia yang Lebih Baik</small>
+                                {{-- <small>Proud of Local Product, Local Pride and For Better Indonesia Future</small> --}}
                             </div>
                             <div class="wave-group position-absolute w-100" style="bottom: 0; left: 0;">
                                 <div class="position-relative w-100">
@@ -479,8 +481,11 @@
                                     </div>
                                 @endif
                                 <div class="welcome-text d-flex justify-content-center">
-                                    <small class="text-center">
+                                    {{-- <small class="text-center">
                                         We will send a link to reset your password
+                                    </small> --}}
+                                    <small class="text-center">
+                                        Kami akan mengirimkan tautan untuk mereset kata sandi Anda.
                                     </small>
                                 </div>
                                 <div class="form" style="padding-top: 4rem">
@@ -491,17 +496,26 @@
                                                 class="form-control @if (session('errors') && session('errors')->first('section') == 'login') is-invalid @endif"
                                                 style="border: none; @if (session('errors') && session('errors')->first('section') == 'login') border-bottom: 1px solid rgba(255, 0, 0, 0.2); @else border-bottom: 1px solid rgba(0, 0, 0, 0.2); @endif"
                                                 id="exampleInputEmail1" aria-describedby="emailHelp"
-                                                placeholder="Enter email" name="email">
+                                                placeholder="Email" name="email">
                                         </div>
                                         <div class="button-submit w-100 d-flex justify-content-center pt-3">
-                                            <button type="submit" class="btn btn-danger px-5">{{ $pageTitle }}</button>
+                                            <button type="submit" class="btn btn-danger px-5">Lupa Password</button>
+                                            {{-- <button type="submit" class="btn btn-danger px-5">{{ $pageTitle }}</button> --}}
                                         </div>
                                         <div class="sign-up d-flex justify-content-center pt-4">
-                                            <small>
+                                            {{-- <small>
                                                 Do you want to log in?, 
                                                 <a href="/">
                                                     <span class="text-danger" style="border-bottom: 1px solid #ff4f70; cursor: pointer;">
                                                         Sign In
+                                                    </span>
+                                                </a>
+                                            </small> --}}
+                                            <small>
+                                                Apakah Anda ingin masuk?, 
+                                                <a href="/">
+                                                    <span class="text-danger" style="border-bottom: 1px solid #ff4f70; cursor: pointer;">
+                                                        Masuk
                                                     </span>
                                                 </a>
                                             </small>

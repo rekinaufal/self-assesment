@@ -393,8 +393,10 @@
                                     class="w-50 h-auto">
                             </div>
                             <div class="brand-slogan text-light text-center">
-                                <h3>TKDN Self Assessment Calculation Apps</h3>
-                                <small>Proud of Local Product, Local Pride and For Better Indonesia Future</small>
+                                {{-- <h3>TKDN Self Assessment Calculation Apps</h3> --}}
+                                <h3>Aplikasi Perhitungan Self Assessment TKDN</h3>
+                                {{-- <small>Proud of Local Product, Local Pride and For Better Indonesia Future</small> --}}
+                                <small>Bangga dengan Produk Lokal, Kebanggaan Lokal, dan Untuk Masa Depan Indonesia yang Lebih Baik</small>
                             </div>
                             <div class="wave-group position-absolute w-100" style="bottom: 0; left: 0;">
                                 <div class="position-relative w-100">
@@ -456,8 +458,11 @@
                                 <div class="welcome-text d-flex justify-content-center flex-col">
                                     <p>
                                         <small class="text-center">
-                                            Create Your Account
+                                            Buat Akun Anda
                                         </small>
+                                        {{-- <small class="text-center">
+                                            Create Your Account
+                                        </small> --}}
                                     </p>
                                     {{-- @if (session('errors') && !session('errors')->has('section'))
                                         <div class="alert alert-danger alert-dismissible show fade">
@@ -478,7 +483,7 @@
                                                 <input type="text" name="fullname"
                                                     class="form-control @error('fullname') is-invalid @enderror"
                                                     style="border: none; @error('fullname') border-bottom: 1px solid rgba(255, 0, 0, 0.2); @else border-bottom: 1px solid rgba(0, 0, 0, 0.2); @enderror"
-                                                    id="fullname" placeholder="Full Name" value="@if (session('errors') && !session('errors')->has('section')){{ old('fullname') }} @endif">
+                                                    id="fullname" placeholder="Nama Lengkap" value="@if (session('errors') && !session('errors')->has('section')){{ old('fullname') }} @endif">
                                                 @error('fullname')
                                                     <div class="invalid-feedback">{{ $message }}</div>
                                                 @enderror
@@ -533,7 +538,7 @@
                                                 <input type="password" name="password_confirmation"
                                                     class="form-control form-password @error('password_confirmation') is-invalid @enderror"
                                                     style="border: none; @error('password_confirmation') border-bottom: 1px solid rgba(255, 0, 0, 0.2); @else border-bottom: 1px solid rgba(0, 0, 0, 0.2); @enderror"
-                                                    id="password_confirmation" placeholder="Confirm Password">
+                                                    id="password_confirmation" placeholder="Konfirmasi Password">
                                                 <div class="input-group-append icon-eyes"
                                                     style="background-color: transparent">
                                                     <span class="input-group-text" id="basic-addon2"
@@ -564,11 +569,13 @@
                                         </div>
                                         <div
                                             class="button-submit w-100 d-flex justify-content-between align-items-center pt-4">
-                                            <button type="submit" class="btn btn-danger px-5">Sign Up Now</button>
+                                            <button type="submit" class="btn btn-danger px-5">Daftar Sekarang</button>
+                                            {{-- <button type="submit" class="btn btn-danger px-5">Sign Up Now</button> --}}
                                             <div id="signinButton">
                                                 <small class="text-danger"
                                                     style="border-bottom: 1px solid #ff4f70; cursor: pointer">
-                                                    I have account?
+                                                    {{-- I have account? --}}
+                                                    Saya mempunyai akun?
                                                 </small>
                                             </div>
                                         </div>
@@ -613,7 +620,7 @@
                                 @endif
                                 <div class="welcome-text d-flex justify-content-center">
                                     <small class="text-center">
-                                        Welcome back!, Please login to your account.
+                                        Selamat datang! Silakan masuk ke akun Anda.
                                     </small>
                                 </div>
                                 @php if(isset($_COOKIE['login_email']) && isset($_COOKIE['login_pass']))
@@ -682,25 +689,27 @@
                                         <div class="form-footer d-flex justify-content-between">
                                             <div class="form-check">
                                                 <input type="checkbox" class="form-check-input" id="exampleCheck1" name="remember" {{$is_remember}}>
-                                                <label class="form-check-label" for="exampleCheck1"><small>Remember
-                                                        me</small></label>
+                                                {{-- <label class="form-check-label" for="exampleCheck1"><small>Remember me</small></label> --}}
+                                                <label class="form-check-label" for="exampleCheck1"><small>Ingatkan saya</small></label>
                                             </div>
                                             <div class="forgot-password">
                                                 <a href="/auth-forgot-password" class="text-danger">
                                                     <small style="border-bottom: 1px solid #ff4f70;">
-                                                        Forgot Password
+                                                        Lupa Password
                                                     </small>
+                                                    {{-- <small style="border-bottom: 1px solid #ff4f70;">
+                                                        Forget Password
+                                                    </small> --}}
                                                 </a>
                                             </div>
                                         </div>
                                         <div class="button-submit w-100 d-flex justify-content-center pt-3">
-                                            <button type="submit" class="btn btn-danger px-5">Login</button>
+                                            <button type="submit" class="btn btn-danger px-5">Masuk</button>
+                                            {{-- <button type="submit" class="btn btn-danger px-5">Sign In</button> --}}
                                         </div>
                                         <div class="sign-up d-flex justify-content-center pt-4">
                                             <small>
-                                                Don't have an account?, <span class="text-danger"
-                                                    style="border-bottom: 1px solid #ff4f70; cursor: pointer;"
-                                                    id="signupButton">Sign Up</span>
+                                                Sudah mempunyai akun?, <span class="text-danger" style="border-bottom: 1px solid #ff4f70; cursor: pointer;" id="signupButton">Daftar</span>
                                             </small>
                                         </div>
                                         <div class="company-name pt-5 d-flex justify-content-center">

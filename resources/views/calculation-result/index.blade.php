@@ -109,8 +109,8 @@
                                                 <label for="negara_asal">Negara asal <i class="fas fa-info-circle"
                                                         data-toggle="tooltip" data-placement="top" title="Tooltip on top">
                                                     </i></label>
-                                                <select class="form-control form-control-sm trigger-enter" id="negara_asal"
-                                                    name="negara_asal" required onchange="onSelectCountry()">
+                                                <select class="negara_asal_create form-control form-control-sm trigger-enter" id="negara_asal"
+                                                    name="negara_asal" required onchange="onSelectCountryCreate()">
                                                     <option></option>
                                                     @foreach ($countries as $country)
                                                         <option value="{{ $country }}" {{ $country == "Indonesia" ? "selected" : "" }}>{{ $country }}</option>
@@ -177,19 +177,19 @@
                                                             <div class="form-group-sm ml-2" style="font-size: 7pt;">
                                                                 <label for="bm">BM %</label>
                                                                 <input type="text" name="bm" style="width: 5rem"
-                                                                    class="form-control form-control-sm replaceDot trigger-enter currencyInputFormatter"
+                                                                    class="bm_create form-control form-control-sm replaceDot trigger-enter currencyInputFormatter"
                                                                     id="bm" placeholder="" value="0,00">
                                                             </div>
                                                             <div class="form-group-sm ml-2" style="font-size: 7pt;">
                                                                 <label for="ppn">PPN %</label>
                                                                 <input type="text" name="ppn" style="width: 5rem"
-                                                                    class="form-control form-control-sm replaceDot trigger-enter currencyInputFormatter"
+                                                                    class="ppn_create form-control form-control-sm replaceDot trigger-enter currencyInputFormatter"
                                                                     id="ppn" placeholder="" value="0,00">
                                                             </div>
                                                             <div class="form-group-sm ml-2" style="font-size: 7pt;">
                                                                 <label for="pph">PPH %</label>
                                                                 <input type="text" name="pph" style="width: 5rem"
-                                                                    class="form-control form-control-sm replaceDot trigger-enter currencyInputFormatter"
+                                                                    class="pph_create form-control form-control-sm replaceDot trigger-enter currencyInputFormatter"
                                                                     id="pph" placeholder="" value="0">
                                                             </div>
                                                         </div>
@@ -1931,8 +1931,8 @@
                                 <label for="negara_asal">Negara asal <i class="fas fa-info-circle"
                                         data-toggle="tooltip" data-placement="top" title="Tooltip on top">
                                     </i></label>
-                                <select class="form-control form-control-sm trigger-enter" id="negara_asal"
-                                    name="negara_asal">
+                                <select class="negara_asal_edit form-control form-control-sm trigger-enter" id="negara_asal"
+                                    name="negara_asal" onchange="onSelectCountryEdit()">
                                     <option></option>
                                     @foreach ($countries as $country)
                                         <option value="{{ $country }}" {{ $country == "Indonesia" ? "selected" : "" }}>{{ $country }}</option>
@@ -2009,19 +2009,19 @@
                                             <div class="form-group-sm flex-fill ml-2" style="font-size: 7pt;">
                                                 <label for="bm">BM %</label>
                                                 <input type="text" name="bm" style="width: 5rem"
-                                                    class="form-control form-control-sm replaceDot trigger-enter currencyInputFormatter"
+                                                    class="bm_edit form-control form-control-sm replaceDot trigger-enter currencyInputFormatter"
                                                     id="bm" placeholder="" value="0">
                                             </div>
                                             <div class="form-group-sm flex-fill ml-2" style="font-size: 7pt;">
                                                 <label for="pdri_ppn">PPN %</label>
-                                                <input type="text" name="pdri_ppn" style="width: 5rem"
-                                                    class="form-control form-control-sm replaceDot trigger-enter currencyInputFormatter"
-                                                    id="pdri_ppn" placeholder="" value="0">
+                                                <input type="text" name="ppn" style="width: 5rem"
+                                                    class="ppn_edit form-control form-control-sm replaceDot trigger-enter currencyInputFormatter"
+                                                    id="ppn" placeholder="" value="0">
                                             </div>
                                             <div class="form-group-sm flex-fill ml-2" style="font-size: 7pt;">
                                                 <label for="pph">PPH %</label>
                                                 <input type="text" name="pph" style="width: 5rem"
-                                                    class="form-control form-control-sm replaceDot trigger-enter currencyInputFormatter"
+                                                    class="pph_edit form-control form-control-sm replaceDot trigger-enter currencyInputFormatter"
                                                     id="pph" placeholder="" value="0">
                                             </div>
                                         </div>
@@ -4590,21 +4590,33 @@
         });
 
         // 1.1 if country select indonesia
-        function onSelectCountry() {
-            var selectedCountry = document.getElementById("negara_asal").value;
+        function onSelectCountryCreate() {
+            // var selectedCountry = document.getElementById("negara_asal").value;
+            var selectedCountry = document.getElementsByClassName("negara_asal_create")[0].value;
             if (selectedCountry.toLowerCase() == "indonesia") {
-                $("#bm").prop("disabled", true);
-                $("#pph").prop("disabled", true);
+                $(".bm_create ").prop("disabled", true);
+                $(".pph_create").prop("disabled", true);
             } else {
-                $("#bm").prop("disabled", false);
-                $("#pph").prop("disabled", false);
+                $(".bm_create ").prop("disabled", false);
+                $(".pph_create ").prop("disabled", false);
             }
-            // alert("Selected country: " + selectedCountry.toLowerCase());
+        }
+        function onSelectCountryEdit() {
+            // var selectedCountry = document.getElementById("negara_asal").value;
+            var selectedCountry = document.getElementsByClassName("negara_asal_edit")[0].value;
+            if (selectedCountry.toLowerCase() == "indonesia") {
+                $(".bm_edit ").prop("disabled", true);
+                $(".pph_edit").prop("disabled", true);
+            } else {
+                $(".bm_edit ").prop("disabled", false);
+                $(".pph_edit ").prop("disabled", false);
+            }
         }
 
         // on ready
         $(document).ready(function () {
-            onSelectCountry();
+            onSelectCountryCreate();
+            onSelectCountryEdit();
         });
     </script>
     {{-- <script src="{{ asset('dist/js/users/script.js') }}"></script> --}}

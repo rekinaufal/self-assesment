@@ -417,12 +417,13 @@
                                     </li>
                                     <li class="nav-item">
                                         <a data-toggle="pill" href="#security" class="nav-link">
-                                            <i class="icon-lock mr-2"></i> Security
+                                            <i class="icon-lock mr-2"></i> Keamanan
+                                            {{-- <i class="icon-lock mr-2"></i> Security --}}
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a data-toggle="pill" href="#payment" class="nav-link">
-                                            <i class="icon-tag mr-2"></i> Billing & Plan
+                                            <i class="icon-tag mr-2"></i> Billing&Plan
                                         </a>
                                     </li>
                                     <li class="nav-item">
@@ -445,9 +446,11 @@
                                         @csrf
                                         <div class="row">
                                             <div class="mb-3 col-md-6">
-                                                <label class="form-label" for="currentPassword">Current Password</label>
+                                                <label class="form-label" for="currentPassword">Password Sekarang</label>
+                                                {{-- <label class="form-label" for="currentPassword">Current Password</label> --}}
                                                 <div class="input-group" id="show_hide_current_password">
-                                                    <input class="form-control" type="password" name="current_password" placeholder="Current Password">
+                                                    <input class="form-control" type="password" name="current_password" placeholder="Password Sekarang">
+                                                    {{-- <input class="form-control" type="password" name="current_password" placeholder="Current Password"> --}}
                                                     <span class="input-group-text cursor-pointer">
                                                         <a href="#">
                                                             <i class="fa fa-eye-slash"></i>
@@ -458,9 +461,10 @@
                                         </div>
                                         <div class="row">
                                             <div class="mb-3 col-md-6">
-                                                <label class="form-label" for="newPassword">New Password</label>
+                                                {{-- <label class="form-label" for="newPassword">New Password</label> --}}
+                                                <label class="form-label" for="newPassword">Password Baru</label>
                                                 <div class="input-group" id="show_hide_new_password">
-                                                    <input class="form-control" type="password" name="new_password" placeholder="New Password">
+                                                    <input class="form-control" type="password" name="new_password" placeholder="Password Baru">
                                                     <span class="input-group-text cursor-pointer">
                                                         <a href="">
                                                             <i class="fa fa-eye-slash"></i>
@@ -470,10 +474,11 @@
                                             </div>
 
                                             <div class="mb-3 col-md-6">
-                                                <label class="form-label" for="confirmPassword">Confirm New Password</label>
+                                                <label class="form-label" for="confirmPassword">Konfirmasi Password Baru</label>
+                                                {{-- <label class="form-label" for="confirmPassword">Confirm New Password</label> --}}
                                                 {{-- <div class="input-group" id="show_hide_confirm_password"> --}}
                                                 <div class="input-group" id="show_hide_new_password">
-                                                    <input class="form-control" type="password" name="confirm_password" placeholder="Confirm Password">
+                                                    <input class="form-control" type="password" name="confirm_password" placeholder="Konfirmasi Password Baru">
                                                     <span class="input-group-text cursor-pointer">
                                                         <a href="">
                                                             <i class="fa fa-eye-slash"></i>
@@ -482,17 +487,20 @@
                                                 </div>
                                             </div>
                                             <div class="col-12 mb-4">
-                                                <p class="fw-medium mt-2">Password Requirements:</p>
+                                                <p class="fw-medium mt-2">Persyaratan Kata Sandi:</p>
+                                                {{-- <p class="fw-medium mt-2">Password Requirements:</p> --}}
                                                 <ul class="ps-3 mb-0">
                                                     <li class="mb-1">
-                                                        Minimum 8 characters long - the more, the better
+                                                        Minimal 8 karakter - semakin panjang, semakin baik
+                                                        {{-- Minimum 8 characters long - the more, the better --}}
                                                     </li>
                                                     {{-- <li class="mb-1">At least one lowercase character</li>
                                                     <li>At least one number, symbol, or whitespace character</li> --}}
                                                 </ul>
                                             </div>
                                             <div class="col-12 mt-1">
-                                                <button type="submit" class="btn btn-primary me-2">Save changes</button>
+                                                <button type="submit" class="btn btn-primary me-2">Simpan</button>
+                                                {{-- <button type="submit" class="btn btn-primary me-2">Save changes</button> --}}
                                             </div>
                                         </div>
                                         <input type="hidden">
