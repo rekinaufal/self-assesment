@@ -70,7 +70,7 @@
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="">Spesifikasi <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                <label for="">Spesifikasi <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Spesifikasi adalah nama model dari barang tersebut (data ini boleh dikosongkan jika tidak ada)">
                                                     </i></label>
                                                 <input type="text" class="form-control form-control-sm" id=""
                                                     placeholder="">
@@ -104,14 +104,14 @@
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
                                                 <label for="">Pemasok / Produsen Tingkat 2 <i
-                                                        class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                        class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Pemasok / produsen Tingkat 2 adalah produsen awal dari barang tersebut bukan reseller">
                                                     </i></label>
                                                 <input type="text" class="form-control form-control-sm" id=""
                                                     placeholder="">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="">TKDN % <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                <label for="">TKDN % <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="TKDN% adalah besaran kandungan dalam negeri pada Barang.">
                                                     </i></label>
                                                 <input type="text" class="form-control form-control-sm" id=""
                                                     placeholder="">
@@ -297,14 +297,14 @@
                                     <div class="col ">
                                         <form class="d-flex flex-wrap" style="width: 100%">
                                             <div class="form-group-sm mx-2 mt-2" style="font-size: 10pt; width : 13rem">
-                                                <label for="">Jasa Terkait <i data-toggle="tooltip" data-placement="top" title="Nama bahan baku adalah nama yang ditunjukkan pada nama material bahan baku dalam pembuatan produk. Contoh : Biji besi, Bracket dll" class="fas fa-info-circle">
+                                                <label for="">Jasa Terkait <i data-toggle="tooltip" data-placement="top" title="Jasa terkait adalah Biaya jasa terkait bahan (material) langsung dinilai berdasarkan biaya material yang digunakan untuk menghasilkan 1 (satu) satuan produk, misalnya PPN dan PDRI (Pajak Dalam Rangka Impor) dalam pembuatan sebuah Sepatu" class="fas fa-info-circle">
                                                     </i></label>
                                                 <input type="text" class="form-control form-control-sm " id=""
                                                     placeholder="">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="">Pemasok / Produsen Tingkat 2 <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                <label for="">Pemasok / Produsen Tingkat 2 <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Pemasok / produsen Tingkat 2 adalah produsen awal dari barang tersebut bukan reseller">
                                                     </i></label>
                                                 <input type="text" class="form-control form-control-sm" id=""
                                                     placeholder="">
@@ -319,7 +319,7 @@
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="">TKDN % <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                <label for="">TKDN % <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="TKDN% adalah besaran kandungan dalam negeri pada Barang.">
                                                     </i></label>
                                                 <input type="text" class="form-control form-control-sm" id=""
                                                     placeholder="">
@@ -334,7 +334,7 @@
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="">Alokasi Biaya <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                <label for="">Alokasi Biaya <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Alokasi biaya% adalah alokasi biaya yang dibebankan pada suatu produk tersebut.">
                                                     </i></label>
                                                 <input type="text" class="form-control form-control-sm" id=""
                                                     placeholder="">
@@ -451,7 +451,7 @@
                                     <div class="col ">
                                         <form class="d-flex flex-wrap" style="width: 100%">
                                             <div class="form-group-sm mx-2 mt-2" style="font-size: 10pt; width : 13rem">
-                                                <label for="">Uraian Posisi <i data-toggle="tooltip" data-placement="top" title="Nama bahan baku adalah nama yang ditunjukkan pada nama material bahan baku dalam pembuatan produk. Contoh : Biji besi, Bracket dll" class="fas fa-info-circle">
+                                                <label for="">Uraian Posisi <i data-toggle="tooltip" data-placement="top" title="Tenaga kerja langsung dinilai berdasarkan biaya tenaga kerja yang digunakan untuk melakukan proses produksi 1 (satu) satuan produk. Contoh: Operator produksi, QA" class="fas fa-info-circle">
                                                     </i></label>
                                                 <input type="text" class="form-control form-control-sm " id=""
                                                     placeholder="">
@@ -494,7 +494,7 @@
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
                                                 <label for="">Alokasi Gaji % <i
-                                                        class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                        class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Alokasi gaji% adalah alokasi biaya yang dibebankan untuk menggaji karyawan tersebut">
                                                     </i></label>
                                                 <input type="text" class="form-control form-control-sm" id=""
                                                     placeholder="">
@@ -505,7 +505,7 @@
                                                         <div class="col">
                                                             <div class="row">
                                                                 <label for="" class="mx-auto">Biaya (Rp.) <i
-                                                                        class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                                        class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Biaya adalah total biaya tambahan di luar gaji seperti BPJS dan tunjangan lainnya">
                                                                     </i></label>
                                                             </div>
                                                             <div class="row">
@@ -642,14 +642,14 @@
                                     <div class="col ">
                                         <form class="d-flex flex-wrap" style="width: 100%">
                                             <div class="form-group-sm mx-2 mt-2" style="font-size: 10pt; width : 13rem">
-                                                <label for="">Uraian Posisi <i data-toggle="tooltip" data-placement="top" title="Nama bahan baku adalah nama yang ditunjukkan pada nama material bahan baku dalam pembuatan produk. Contoh : Biji besi, Bracket dll" class="fas fa-info-circle">
+                                                <label for="">Uraian Posisi <i data-toggle="tooltip" data-placement="top" title="Jasa terkait tenaga kerja langsung dinilai berdasarkan biaya jasa terkait tenaga kerja yang digunakan untuk melakukan proses produksi 1 (satu) satuan produk, contoh Tunjangan, Asuransi, Makan, Safety Equipment, dsb." class="fas fa-info-circle">
                                                     </i></label>
                                                 <input type="text" class="form-control form-control-sm " id=""
                                                     placeholder="">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="">Pemasok / Produsen Tingkat 2 <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                <label for="">Pemasok / Produsen Tingkat 2 <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Pemasok / produsen Tingkat 2 adalah produsen awal dari barang tersebut bukan reseller atau dapat di kosongkan">
                                                     </i></label>
                                                 <input type="text" class="form-control form-control-sm" id=""
                                                     placeholder="">
@@ -658,7 +658,7 @@
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
                                                 <label for="">TKDN % <i
-                                                        class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                        class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="TKDN% adalah besaran kandungan dalam negeri pada Barang.">
                                                     </i></label>
                                                 <input type="text" class="form-control form-control-sm" id=""
                                                     placeholder="">
@@ -680,7 +680,7 @@
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="">Alokasi % <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                <label for="">Alokasi % <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Alokasi % adalah alokasi biaya yang dibebankan untuk membayar biaya terkait lainnya">
                                                     </i></label>
                                                 <input type="text" class="form-control form-control-sm" id=""
                                                     placeholder="">
@@ -801,7 +801,7 @@
                                             <div class="form-group-sm mx-2 mt-2" style="font-size: 10pt; width : 13rem">
                                                 <label for="">
                                                     Uraian Posisi
-                                                    <i data-toggle="tooltip" data-placement="top" title="Nama bahan baku adalah nama yang ditunjukkan pada nama material bahan baku dalam pembuatan produk. Contoh : Biji besi, Bracket dll" class="fas fa-info-circle">
+                                                    <i data-toggle="tooltip" data-placement="top" title="Tenaga kerja tidak langsung dinilai berdasarkan biaya tenaga kerja tidak langsung yang digunakan untuk melakukan proses produksi 1 (satu) satuan produk. Contoh: Supervisor produksi, supervisor QC" class="fas fa-info-circle">
                                                     </i>
                                                 </label>
                                                 <input type="text" class="form-control form-control-sm">
@@ -839,7 +839,7 @@
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
                                                 <label>
                                                     Alokasi Gaji %
-                                                    <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top"></i>
+                                                    <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Alokasi gaji% adalah alokasi biaya yang dibebankan untuk menggaji karyawan tersebut"></i>
                                                 </label>
                                                 <input type="text" class="form-control form-control-sm" placeholder="">
                                             </div>
@@ -955,7 +955,7 @@
                                     <div class="col ">
                                         <form class="d-flex flex-wrap" style="width: 100%">
                                             <div class="form-group-sm mx-2 mt-2" style="font-size: 10pt; width : 13rem">
-                                                <label for="">Uraian <i data-toggle="tooltip" data-placement="top" title="Nama bahan baku adalah nama yang ditunjukkan pada nama material bahan baku dalam pembuatan produk. Contoh : Biji besi, Bracket dll" class="fas fa-info-circle">
+                                                <label for="">Uraian <i data-toggle="tooltip" data-placement="top" title="Alat kerja milik sendiri dinilai berdasarkan biaya depresiasi untuk alat kerja yang digunakan untuk melakukan proses produksi 1 (satu) satuan produk. Contoh: mesin produksi, dll" class="fas fa-info-circle">
                                                     </i></label>
                                                 <input type="text" class="form-control form-control-sm " id=""
                                                     placeholder="">
@@ -978,7 +978,7 @@
 
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="">Biaya Depresiasi Per Bulan<i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                <label for="">Biaya Depresiasi Per Bulan<i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Biaya depresiasi per bulan adalah penyusutan harga pembelian sampai habis masa pakai">
                                                     </i></label>
                                                 <input type="text" class="form-control form-control-sm" id=""
                                                     placeholder="Rp.">
@@ -986,7 +986,7 @@
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
                                                 <label for="">Alokasi Mesin % <i
-                                                        class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                                        class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Alokasi mesin% adalah alokasi biaya yang dibebankan terhadap penggunaan mesin tersebut">
                                                     </i></label>
                                                 <input type="text" class="form-control form-control-sm" id=""
                                                     placeholder="">
