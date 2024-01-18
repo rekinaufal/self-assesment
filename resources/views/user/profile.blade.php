@@ -409,39 +409,41 @@
                         <div class="card-header">
                             <div class="pt-4 pl-2 pr-2 pb-2">
                                 <!-- Header form tabs -->
-                                <ul role="tablist" class="nav bg-light nav-pills rounded nav-fill mb-3">
-                                    <li class="nav-item">
+                                <ul role="tablist" class="nav bg-gray nav-pills rounded nav-fill mb-3">
+                                    {{-- <li class="nav-item" style="display: block">
                                         <a data-toggle="pill" href="#overview" class="nav-link active">
                                             <i class="icon-user mr-2"></i> Overview
                                         </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a data-toggle="pill" href="#security" class="nav-link">
+                                    </li> --}}
+                                    <li class="nav-item-1">
+                                        <a data-toggle="pill" href="#security" class="nav-link active">
                                             <i class="icon-lock mr-2"></i> Keamanan
                                             {{-- <i class="icon-lock mr-2"></i> Security --}}
                                         </a>
                                     </li>
-                                    <li class="nav-item">
+                                    
+                                    {{--
+                                    <li class="nav-item" style="display: block">
                                         <a data-toggle="pill" href="#payment" class="nav-link">
                                             <i class="icon-tag mr-2"></i> Billing&Plan
                                         </a>
                                     </li>
-                                    <li class="nav-item">
+                                    <li class="nav-item" style="display: block">
                                         <a data-toggle="pill" href="#notification" class="nav-link">
                                             <i class="icon-bell mr-2"></i> Notification
                                         </a>
-                                    </li>
+                                    </li> --}}
                                 </ul>
                             </div> <!-- End -->
                         </div>
                         <div class="card-body">
                             <div class="tab-content">
                                 <!-- overview -->
-                                <div id="overview" class="tab-pane fade show active pt-3">
+                                <div id="overview" class="tab-pane fade pt-3">
 
                                 </div> 
                                 <!-- security -->
-                                <div id="security" class="tab-pane fade pt-3">
+                                <div id="security" class="tab-pane fade show active pt-3">
                                     <form method="POST" action="{{ route('changePassword', $profile->id) }}" role="form" enctype="multipart/form-data">
                                         @csrf
                                         <div class="row">
@@ -544,7 +546,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card">
+                    {{-- <div class="card">
                         <div class="card-body">
                             <p> 
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit beatae 
@@ -561,7 +563,7 @@
                                 quibusdam!
                             </p>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>

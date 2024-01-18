@@ -90,10 +90,7 @@
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="satuan_bahan_baku">Satuan bahan baku <i
-                                                        class="fas fa-info-circle" data-toggle="tooltip"
-                                                        data-placement="top" title="Tooltip on top">
-                                                    </i></label>
+                                                <label for="satuan_bahan_baku">Satuan bahan baku  </label>
                                                 <select class="form-control form-control-sm trigger-enter"
                                                     id="satuan_bahan_baku" name="satuan_bahan_baku" required>
                                                     <option></option>
@@ -106,9 +103,7 @@
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="negara_asal">Negara asal <i class="fas fa-info-circle"
-                                                        data-toggle="tooltip" data-placement="top" title="Tooltip on top">
-                                                    </i></label>
+                                                <label for="negara_asal">Negara asal  </label>
                                                 <select class="negara_asal_create form-control form-control-sm trigger-enter" id="negara_asal"
                                                     name="negara_asal" required onchange="onSelectCountryCreate()">
                                                     <option></option>
@@ -139,20 +134,14 @@
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="jumlah">Jumlah / Satuan Bahan Baku <i
-                                                        class="fas fa-info-circle" data-toggle="tooltip"
-                                                        data-placement="top" title="Tooltip on top">
-                                                    </i></label>
+                                                <label for="jumlah">Jumlah / Satuan Bahan Baku  </label>
                                                 <input type="text" name="jumlah"
                                                     class="form-control form-control-sm trigger-enter currencyInputFormatter"
                                                     id="jumlah" placeholder="" value="0,00">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="harga_satuan">Harga Satuan Material <i
-                                                        class="fas fa-info-circle" data-toggle="tooltip"
-                                                        data-placement="top" title="Tooltip on top">
-                                                    </i></label>
+                                                <label for="harga_satuan">Harga Satuan Material  </label>
                                                 <div class="input-group input-group-sm mb-3">
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="basic-addon1">Rp.</span>
@@ -355,10 +344,7 @@
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="">Jumlah <i class="fas fa-info-circle"
-                                                        data-toggle="tooltip" data-placement="top"
-                                                        title="Tooltip on top">
-                                                    </i></label>
+                                                <label for="">Jumlah  </label>
                                                 <input type="text"
                                                     class="form-control trigger-enter form-control-sm currencyInputFormatter"
                                                     id="" placeholder="" name="jumlah" value="0,00">
@@ -375,10 +361,7 @@
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="">Biaya <i class="fas fa-info-circle"
-                                                        data-toggle="tooltip" data-placement="top"
-                                                        title="Tooltip on top">
-                                                    </i></label>
+                                                <label for="">Biaya  </label>
                                                 <div class="input-group input-group-sm mb-3">
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="basic-addon1">Rp.</span>
@@ -504,10 +487,7 @@
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="">Kewarganegaraan <i class="fas fa-info-circle"
-                                                        data-toggle="tooltip" data-placement="top"
-                                                        title="Tooltip on top">
-                                                    </i></label>
+                                                <label for="">Kewarganegaraan  </label>
                                                 <select class="form-control trigger-enter form-control-sm setTkdn"
                                                     id="" name="kewarganegaraan" required>
                                                     <option></option>
@@ -519,19 +499,13 @@
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="">Jumlah Orang <i class="fas fa-info-circle"
-                                                        data-toggle="tooltip" data-placement="top"
-                                                        title="Tooltip on top">
-                                                    </i></label>
+                                                <label for="">Jumlah Orang  </label>
                                                 <input type="number" class="form-control trigger-enter form-control-sm"
                                                     id="" placeholder="" name="jumlah_orang" value="" required>
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="">Gaji Perbulan<i class="fas fa-info-circle"
-                                                        data-toggle="tooltip" data-placement="top"
-                                                        title="Tooltip on top">
-                                                    </i></label>
+                                                <label for="">Gaji Perbulan </label>
                                                 <div class="input-group input-group-sm mb-3">
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="basic-addon1">Rp.</span>
@@ -741,19 +715,13 @@
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="jumlah_orang">Jumlah Orang <i class="fas fa-info-circle"
-                                                        data-toggle="tooltip" data-placement="top"
-                                                        title="Tooltip on top">
-                                                    </i></label>
+                                                <label for="jumlah_orang">Jumlah Orang  </label>
                                                 <input type="number" class="form-control trigger-enter form-control-sm"
                                                     id="jumlah_orang" name="jumlah_orang" placeholder="" value="" required>
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="biaya_pengurusan_per_bulan">Biaya Pengurusan Per Bulan <i
-                                                        class="fas fa-info-circle" data-toggle="tooltip"
-                                                        data-placement="top" title="Tooltip on top">
-                                                    </i></label>
+                                                <label for="biaya_pengurusan_per_bulan">Biaya Pengurusan Per Bulan  </label>
                                                 <div class="input-group input-group-sm mb-3">
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="basic-addon1">Rp.</span>
@@ -905,10 +873,7 @@
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
-                                                <label for="kewarganegaraan">Kewarganegaraan <i class="fas fa-info-circle"
-                                                        data-toggle="tooltip" data-placement="top"
-                                                        title="Tooltip on top">
-                                                    </i></label>
+                                                <label for="kewarganegaraan">Kewarganegaraan  </label>
                                                 <select class="form-control trigger-enter form-control-sm setTkdn"
                                                     id="" name="kewarganegaraan" required>
                                                     <option></option>
@@ -922,8 +887,7 @@
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
                                                 <label>
                                                     Jumlah Orang
-                                                    <i class="fas fa-info-circle" data-toggle="tooltip"
-                                                        data-placement="top" title="Tooltip on top"></i>
+                                                     
                                                 </label>
                                                 <input type="number" class="form-control trigger-enter form-control-sm"
                                                     id="jumlah_orang" name="jumlah_orang" value="" required>
@@ -932,8 +896,7 @@
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
                                                 <label>
                                                     Gaji Per Bulan
-                                                    <i class="fas fa-info-circle" data-toggle="tooltip"
-                                                        data-placement="top" title="Tooltip on top"></i>
+                                                     
                                                 </label>
                                                 <div class="input-group input-group-sm mb-3">
                                                     <div class="input-group-prepend">
@@ -1082,10 +1045,7 @@
 
                                             <div class="form-group-sm mx-2 mt-2 "
                                                 style="font-size: 10pt; width : 13rem">
-                                                <label for="">Spesifikasi <i class="fas fa-info-circle"
-                                                        data-toggle="tooltip" data-placement="top"
-                                                        title="Tooltip on top">
-                                                    </i></label>
+                                                <label for="">Spesifikasi  </label>
                                                 <input type="text" class="form-control trigger-enter form-control-sm"
                                                     id="" placeholder="" name="spesifikasi"
                                                     name="spesifikasi" required>
@@ -1093,10 +1053,7 @@
 
                                             <div class="form-group-sm mx-2 mt-2 "
                                                 style="font-size: 10pt; width : 13rem">
-                                                <label for="">Jumlah Unit <i class="fas fa-info-circle"
-                                                        data-toggle="tooltip" data-placement="top"
-                                                        title="Tooltip on top">
-                                                    </i></label>
+                                                <label for="">Jumlah Unit  </label>
                                                 <input type="number" class="form-control trigger-enter form-control-sm"
                                                     id="" placeholder="" name="jumlah_unit" value="" required>
                                             </div>
@@ -1135,10 +1092,7 @@
                                                 <div class="card p-2">
                                                     <div class="col">
                                                         <div class="row">
-                                                            <label for="" class="mx-auto">Alat Kerja<i
-                                                                    class="fas fa-info-circle" data-toggle="tooltip"
-                                                                    data-placement="top" title="Tooltip on top">
-                                                                </i></label>
+                                                            <label for="" class="mx-auto">Alat Kerja </label>
                                                         </div>
                                                         <div class="row">
                                                             <div class="form-group-sm ml-2" style="font-size: 7pt;">
@@ -1305,10 +1259,7 @@
 
                                             <div class="form-group-sm mx-2 mt-2 "
                                                 style="font-size: 10pt; width : 13rem">
-                                                <label for="">Spesifikasi <i class="fas fa-info-circle"
-                                                        data-toggle="tooltip" data-placement="top"
-                                                        title="Tooltip on top">
-                                                    </i></label>
+                                                <label for="">Spesifikasi  </label>
                                                 <input type="text" class="form-control trigger-enter form-control-sm"
                                                     id="" placeholder="" name="spesifikasi"
                                                     name="spesifikasi" required>
@@ -1326,10 +1277,7 @@
 
                                             <div class="form-group-sm mx-2 mt-2 "
                                                 style="font-size: 10pt; width : 13rem">
-                                                <label for="">Jumlah Unit <i class="fas fa-info-circle"
-                                                        data-toggle="tooltip" data-placement="top"
-                                                        title="Tooltip on top">
-                                                    </i></label>
+                                                <label for="">Jumlah Unit  </label>
                                                 <input type="number" class="form-control trigger-enter form-control-sm"
                                                     id="" placeholder="" name="jumlah_unit" value="" required>
                                             </div>
@@ -1337,10 +1285,7 @@
 
                                             <div class="form-group-sm mx-2 mt-2 "
                                                 style="font-size: 10pt; width : 13rem">
-                                                <label for="">Biaya Sewa Per Bulan<i class="fas fa-info-circle"
-                                                        data-toggle="tooltip" data-placement="top"
-                                                        title="Tooltip on top">
-                                                    </i></label>
+                                                <label for="">Biaya Sewa Per Bulan </label>
                                                 <div class="input-group input-group-sm mb-3">
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="basic-addon1">Rp.</span>
@@ -1368,10 +1313,7 @@
                                                 <div class="card p-2">
                                                     <div class="col">
                                                         <div class="row">
-                                                            <label for="" class="mx-auto">Alat Kerja<i
-                                                                    class="fas fa-info-circle" data-toggle="tooltip"
-                                                                    data-placement="top" title="Tooltip on top">
-                                                                </i></label>
+                                                            <label for="" class="mx-auto">Alat Kerja </label>
                                                         </div>
                                                         <div class="row">
                                                             <div class="form-group-sm ml-2" style="font-size: 7pt;">
@@ -1545,10 +1487,7 @@
 
                                             <div class="form-group-sm mx-2 mt-2 "
                                                 style="font-size: 10pt; width : 13rem">
-                                                <label for="">Jumlah <i class="fas fa-info-circle"
-                                                        data-toggle="tooltip" data-placement="top"
-                                                        title="Tooltip on top">
-                                                    </i></label>
+                                                <label for="">Jumlah  </label>
                                                 <input type="number" class="form-control trigger-enter form-control-sm"
                                                     id="" placeholder="" name="jumlah" value="" required>
                                             </div>
@@ -1566,10 +1505,7 @@
 
                                             <div class="form-group-sm mx-2 mt-2 "
                                                 style="font-size: 10pt; width : 13rem">
-                                                <label for="">Biaya Per Bulan<i class="fas fa-info-circle"
-                                                        data-toggle="tooltip" data-placement="top"
-                                                        title="Tooltip on top">
-                                                    </i></label>
+                                                <label for="">Biaya Per Bulan </label>
                                                 <div class="input-group input-group-sm mb-3">
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="basic-addon1">Rp.</span>
@@ -1906,17 +1842,13 @@
                                     class="form-control form-control-sm trigger-enter" id="bahan_baku" placeholder="">
                             </div>
                             <div class="form-group col-6">
-                                <label for="spesifikasi">Spesifikasi <i class="fas fa-info-circle"
-                                        data-toggle="tooltip" data-placement="top" title="Tooltip on top">
-                                    </i></label>
+                                <label for="spesifikasi">Spesifikasi </label>
                                 <input type="text" name="spesifikasi"
                                     class="form-control form-control-sm trigger-enter" id="spesifikasi"
                                     placeholder="">
                             </div>
                             <div class="form-group col-6">
-                                <label for="satuan_bahan_baku">Satuan bahan baku <i class="fas fa-info-circle"
-                                        data-toggle="tooltip" data-placement="top" title="Tooltip on top">
-                                    </i></label>
+                                <label for="satuan_bahan_baku">Satuan bahan baku </label>
                                 <select class="form-control form-control-sm trigger-enter" id="satuan_bahan_baku"
                                     name="satuan_bahan_baku">
                                     <option></option>
@@ -1928,9 +1860,7 @@
                                 </select>
                             </div>
                             <div class="form-group col-6">
-                                <label for="negara_asal">Negara asal <i class="fas fa-info-circle"
-                                        data-toggle="tooltip" data-placement="top" title="Tooltip on top">
-                                    </i></label>
+                                <label for="negara_asal">Negara asal </label>
                                 <select class="negara_asal_edit form-control form-control-sm trigger-enter" id="negara_asal"
                                     name="negara_asal" onchange="onSelectCountryEdit()">
                                     <option></option>
@@ -1940,32 +1870,24 @@
                                 </select>
                             </div>
                             <div class="form-group col-6">
-                                <label for="pemasok">Pemasok / Produsen Tingkat 2 <i class="fas fa-info-circle"
-                                        data-toggle="tooltip" data-placement="top" title="Tooltip on top">
-                                    </i></label>
+                                <label for="pemasok">Pemasok / Produsen Tingkat 2 </label>
                                 <input type="text" name="pemasok"
                                     class="form-control form-control-sm trigger-enter" id="pemasok" placeholder="">
                             </div>
                             <div class="form-group col-6">
-                                <label for="tkdn">TKDN % <i class="fas fa-info-circle" data-toggle="tooltip"
-                                        data-placement="top" title="Tooltip on top">
-                                    </i></label>
+                                <label for="tkdn">TKDN %  </label>
                                 <input type="text"
                                     class="form-control form-control-sm trigger-enter replaceDot currencyInputFormatter"
                                     id="tkdn" name="tkdn" placeholder="">
                             </div>
                             <div class="form-group col-6">
-                                <label for="jumlah">Jumlah / Satuan Bahan Baku <i class="fas fa-info-circle"
-                                        data-toggle="tooltip" data-placement="top" title="Tooltip on top">
-                                    </i></label>
+                                <label for="jumlah">Jumlah / Satuan Bahan Baku </label>
                                 <input type="text" name="jumlah"
                                     class="form-control form-control-sm trigger-enter currencyInputFormatter"
                                     id="jumlah" placeholder="">
                             </div>
                             <div class="form-group col-6">
-                                <label for="harga_satuan">Harga Satuan Material <i class="fas fa-info-circle"
-                                        data-toggle="tooltip" data-placement="top" title="Tooltip on top">
-                                    </i></label>
+                                <label for="harga_satuan">Harga Satuan Material </label>
                                 <div class="input-group input-group-sm mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="basic-addon1">Rp.</span>
@@ -2072,25 +1994,19 @@
                                     placeholder="">
                             </div>
                             <div class="form-group col-6">
-                                <label for="jumlah">Jumlah <i class="fas fa-info-circle" data-toggle="tooltip"
-                                        data-placement="top" title="Tooltip on top">
-                                    </i></label>
+                                <label for="jumlah">Jumlah  </label>
                                 <input type="text"
                                     class="form-control form-control-sm trigger-enter currencyInputFormatter"
                                     id="jumlah" name="jumlah" placeholder="">
                             </div>
                             <div class="form-group col-6">
-                                <label for="tkdn">TKDN % <i class="fas fa-info-circle" data-toggle="tooltip"
-                                        data-placement="top" title="Tooltip on top">
-                                    </i></label>
+                                <label for="tkdn">TKDN %  </label>
                                 <input type="text"
                                     class="form-control form-control-sm trigger-enter replaceDot currencyInputFormatter"
                                     id="tkdn" name="tkdn" placeholder="">
                             </div>
                             <div class="form-group col-6">
-                                <label for="biaya">Biaya <i class="fas fa-info-circle" data-toggle="tooltip"
-                                        data-placement="top" title="Tooltip on top">
-                                    </i></label>
+                                <label for="biaya">Biaya  </label>
                                 <div class="input-group input-group-sm mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="basic-addon1">Rp.</span>
@@ -2102,9 +2018,7 @@
                                 </div>
                             </div>
                             <div class="form-group col-6">
-                                <label for="alokasi">Alokasi Biaya % <i class="fas fa-info-circle"
-                                        data-toggle="tooltip" data-placement="top" title="Tooltip on top">
-                                    </i></label>
+                                <label for="alokasi">Alokasi Biaya % </label>
                                 <input type="text"
                                     class="form-control form-control-sm trigger-enter replaceDot currencyInputFormatter"
                                     id="alokasi" name="alokasi" placeholder="">
@@ -2145,9 +2059,7 @@
                                     id="uraian_posisi" placeholder="" name="uraian_posisi">
                             </div>
                             <div class="form-group col-6">
-                                <label for="">Kewarganegaraan <i class="fas fa-info-circle"
-                                        data-toggle="tooltip" data-placement="top" title="Tooltip on top">
-                                    </i></label>
+                                <label for="">Kewarganegaraan </label>
                                 <select class="form-control trigger-enter form-control-sm setTkdn" id=""
                                     name="kewarganegaraan">
                                     <option></option>
@@ -2158,16 +2070,12 @@
                                 <input type="hidden" id="editTkdn-1-3" value="" name="tkdn">
                             </div>
                             <div class="form-group col-6">
-                                <label for="">Jumlah Orang <i class="fas fa-info-circle" data-toggle="tooltip"
-                                        data-placement="top" title="Tooltip on top">
-                                    </i></label>
+                                <label for="">Jumlah Orang  </label>
                                 <input type="number" class="form-control trigger-enter form-control-sm"
                                     id="" placeholder="" name="jumlah_orang" value="">
                             </div>
                             <div class="form-group col-6">
-                                <label for="">Gaji Perbulan<i class="fas fa-info-circle" data-toggle="tooltip"
-                                        data-placement="top" title="Tooltip on top">
-                                    </i></label>
+                                <label for="">Gaji Perbulan </label>
                                 <div class="input-group input-group-sm mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="basic-addon1">Rp.</span>
@@ -2178,9 +2086,7 @@
                                 </div>
                             </div>
                             <div class="form-group col-6">
-                                <label for="">Alokasi Gaji % <i class="fas fa-info-circle"
-                                        data-toggle="tooltip" data-placement="top" title="Tooltip on top">
-                                    </i></label>
+                                <label for="">Alokasi Gaji % </label>
                                 <input type="text"
                                     class="form-control trigger-enter form-control-sm replaceDot currencyInputFormatter"
                                     id="" placeholder="" name="alokasi_gaji" value="0,00">
@@ -2269,17 +2175,13 @@
                                     id="produsen_tingkat_dua" name="produsen_tingkat_dua" placeholder="">
                             </div>
                             <div class="form-group col-6">
-                                <label for="tkdn">TKDN % <i class="fas fa-info-circle" data-toggle="tooltip"
-                                        data-placement="top" title="Tooltip on top">
-                                    </i></label>
+                                <label for="tkdn">TKDN %  </label>
                                 <input type="text"
                                     class="form-control trigger-enter form-control-sm replaceDot currencyInputFormatter"
                                     id="tkdn" name="tkdn" placeholder="" value="0,00">
                             </div>
                             <div class="form-group col-6">
-                                <label for="jumlah_orang">Jumlah Orang <i class="fas fa-info-circle"
-                                        data-toggle="tooltip" data-placement="top" title="Tooltip on top">
-                                    </i></label>
+                                <label for="jumlah_orang">Jumlah Orang </label>
                                 <input type="number" class="form-control trigger-enter form-control-sm"
                                     id="jumlah_orang" name="jumlah_orang" placeholder="" value="">
                             </div>
@@ -2298,9 +2200,7 @@
                                 </div>
                             </div>
                             <div class="form-group col-6">
-                                <label for="alokasi">Alokasi % <i class="fas fa-info-circle" data-toggle="tooltip"
-                                        data-placement="top" title="Tooltip on top">
-                                    </i></label>
+                                <label for="alokasi">Alokasi %  </label>
                                 <input type="text"
                                     class="form-control trigger-enter form-control-sm replaceDot currencyInputFormatter"
                                     id="alokasi" name="alokasi" placeholder="" value="0,00">
@@ -2423,23 +2323,17 @@
                                     id="" placeholder="" name="uraian">
                             </div>
                             <div class="form-group col-6">
-                                <label for="">Spesifikasi <i class="fas fa-info-circle" data-toggle="tooltip"
-                                        data-placement="top" title="Tooltip on top">
-                                    </i></label>
+                                <label for="">Spesifikasi  </label>
                                 <input type="text" class="form-control trigger-enter form-control-sm"
                                     id="" placeholder="" name="spesifikasi" name="spesifikasi">
                             </div>
                             <div class="form-group col-6">
-                                <label for="">Jumlah Unit <i class="fas fa-info-circle" data-toggle="tooltip"
-                                        data-placement="top" title="Tooltip on top">
-                                    </i></label>
+                                <label for="">Jumlah Unit  </label>
                                 <input type="number" class="form-control trigger-enter form-control-sm"
                                     id="" placeholder="" name="jumlah_unit" value="">
                             </div>
                             <div class="form-group col-6">
-                                <label for="">Biaya Depresiasi Per Bulan<i class="fas fa-info-circle"
-                                        data-toggle="tooltip" data-placement="top" title="Tooltip on top">
-                                    </i></label>
+                                <label for="">Biaya Depresiasi Per Bulan</label>
                                 <div class="input-group input-group-sm mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="basic-addon1">Rp.</span>
@@ -2450,9 +2344,7 @@
                                 </div>
                             </div>
                             <div class="form-group col-6">
-                                <label for="">Alokasi Mesin % <i class="fas fa-info-circle"
-                                        data-toggle="tooltip" data-placement="top" title="Tooltip on top">
-                                    </i></label>
+                                <label for="">Alokasi Mesin % </label>
                                 <input type="text"
                                     class="form-control trigger-enter form-control-sm replaceDot currencyInputFormatter"
                                     id="" placeholder="" name="alokasi" value="0,00">
@@ -2538,30 +2430,22 @@
                                     id="" placeholder="" name="uraian">
                             </div>
                             <div class="form-group col-6">
-                                <label for="">Spesifikasi <i class="fas fa-info-circle" data-toggle="tooltip"
-                                        data-placement="top" title="Tooltip on top">
-                                    </i></label>
+                                <label for="">Spesifikasi  </label>
                                 <input type="text" class="form-control trigger-enter form-control-sm"
                                     id="" placeholder="" name="spesifikasi" name="spesifikasi">
                             </div>
                             <div class="form-group col-6">
-                                <label for="">Produsen Tingkat 2 <i class="fas fa-info-circle"
-                                        data-toggle="tooltip" data-placement="top" title="Tooltip on top">
-                                    </i></label>
+                                <label for="">Produsen Tingkat 2 </label>
                                 <input type="text" class="form-control trigger-enter form-control-sm"
                                     id="" placeholder="" name="produsen_tingkat_dua">
                             </div>
                             <div class="form-group col-6">
-                                <label for="">Jumlah Unit <i class="fas fa-info-circle" data-toggle="tooltip"
-                                        data-placement="top" title="Tooltip on top">
-                                    </i></label>
+                                <label for="">Jumlah Unit  </label>
                                 <input type="number" class="form-control trigger-enter form-control-sm"
                                     id="" placeholder="" name="jumlah_unit" value="">
                             </div>
                             <div class="form-group col-6">
-                                <label for="">Biaya Sewa Per Bulan<i class="fas fa-info-circle"
-                                        data-toggle="tooltip" data-placement="top" title="Tooltip on top">
-                                    </i></label>
+                                <label for="">Biaya Sewa Per Bulan</label>
                                 <div class="input-group input-group-sm mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="basic-addon1">Rp.</span>
@@ -2572,9 +2456,7 @@
                                 </div>
                             </div>
                             <div class="form-group col-6">
-                                <label for="">Alokasi Mesin % <i class="fas fa-info-circle"
-                                        data-toggle="tooltip" data-placement="top" title="Tooltip on top">
-                                    </i></label>
+                                <label for="">Alokasi Mesin % </label>
                                 <input type="text"
                                     class="form-control trigger-enter form-control-sm replaceDot currencyInputFormatter"
                                     id="" placeholder="" name="alokasi" value="0,00">
@@ -2660,31 +2542,23 @@
                                     id="" placeholder="" name="uraian">
                             </div>
                             <div class="form-group col-6">
-                                <label for="">Pemasok <i class="fas fa-info-circle" data-toggle="tooltip"
-                                        data-placement="top" title="Tooltip on top">
-                                    </i></label>
+                                <label for="">Pemasok  </label>
                                 <input type="text" class="form-control trigger-enter form-control-sm"
                                     id="" placeholder="" name="pemasok">
                             </div>
                             <div class="form-group col-6">
-                                <label for="">Jumlah <i class="fas fa-info-circle" data-toggle="tooltip"
-                                        data-placement="top" title="Tooltip on top">
-                                    </i></label>
+                                <label for="">Jumlah  </label>
                                 <input type="number" class="form-control trigger-enter form-control-sm"
                                     id="" placeholder="" name="jumlah" value="">
                             </div>
                             <div class="form-group col-6">
-                                <label for="tkdn">TKDN % <i class="fas fa-info-circle" data-toggle="tooltip"
-                                        data-placement="top" title="Tooltip on top">
-                                    </i></label>
+                                <label for="tkdn">TKDN %  </label>
                                 <input type="text"
                                     class="form-control trigger-enter form-control-sm replaceDot currencyInputFormatter"
                                     id="tkdn" name="tkdn" placeholder="" value="0,00">
                             </div>
                             <div class="form-group col-6">
-                                <label for="">Biaya Per Bulan<i class="fas fa-info-circle"
-                                        data-toggle="tooltip" data-placement="top" title="Tooltip on top">
-                                    </i></label>
+                                <label for="">Biaya Per Bulan</label>
                                 <div class="input-group input-group-sm mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="basic-addon1">Rp.</span>
@@ -2695,9 +2569,7 @@
                                 </div>
                             </div>
                             <div class="form-group col-6">
-                                <label for="">Alokasi Pengguna % <i class="fas fa-info-circle"
-                                        data-toggle="tooltip" data-placement="top" title="Tooltip on top">
-                                    </i></label>
+                                <label for="">Alokasi Pengguna % </label>
                                 <input type="text"
                                     class="form-control trigger-enter form-control-sm replaceDot currencyInputFormatter"
                                     id="" placeholder="" name="alokasi" value="0,00">
