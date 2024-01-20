@@ -184,6 +184,9 @@
                     <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         @if (!auth()->user()->user_profile)
                             <img src="{{ asset(auth()->user()->user_profile->getAvatarPath()) }}" alt="user" class="rounded-circle" width="40" height="40">
+                        @else
+                            <img src="assets/images/users/profile-pic.jpg" alt="user" class="rounded-circle"
+                            width="40">
                         @endif
                         <span class="ml-2 d-none d-lg-inline-block">
                             <span>Halo,</span>

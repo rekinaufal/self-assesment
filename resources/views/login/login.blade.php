@@ -161,6 +161,21 @@
                 aspect-ratio: @if (session('errors') && !session('errors')->has('section')) auto @else 16/9 @endif;
             }
         }
+
+        .logo-mobile-elearning img {
+                width:0px;
+                height: auto;
+                /* background-size: 50% auto; */
+                /* background-image: url({{ asset('assets/images/Elearning.png') }}); */
+            }
+        @media only screen and (max-width: 990px) {
+            .logo-mobile-elearning img {
+                width:50%;
+                height: auto;
+                /* background-size: 50% auto; */
+                /* background-image: url({{ asset('assets/images/Elearning.png') }}); */
+            }
+        }
     </style>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -618,6 +633,11 @@
                                         </div>
                                     </div>
                                 @endif
+                                    <div class="logo-mobile-elearning w-100 h-auto d-flex justify-content-center"
+                                        style="padding-top: 10%; padding-bottom: 5%">
+                                        <img src="{{ asset('assets/images/Elearning.png') }}" alt="Brand Logo"
+                                            class="">
+                                    </div>
                                 <div class="welcome-text d-flex justify-content-center">
                                     <small class="text-center">
                                         Selamat datang! Silakan masuk ke akun Anda.
@@ -825,6 +845,8 @@
     <!-- ============================================================== -->
     <script>
         $(document).ready(function() {
+            var monitorWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+            console.log(monitorWidth);
             var showPass = false;
             $(".hiddenPassIcon").css("display", "block");
             $(".PassIcon").css("display", "none");
