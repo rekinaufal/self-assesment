@@ -50,7 +50,8 @@
             <th>&nbsp;</th>
             <th>&nbsp;</th>
             <th>LOKAL</th>
-            <th>PDRI</th>
+            {{-- <th>PDRI</th> --}}
+            <th>PAJAK</th>
         </tr>
         <tr>
             <th></th>
@@ -70,7 +71,8 @@
             <th>BM</th>
             <th>PPN</th>
             <th>PPH</th>
-            <th>Total PDRI</th>
+            {{-- <th>Total PDRI</th> --}}
+            <th>Total PAJAK</th>
         </tr>
     </thead>
     <tbody>
@@ -110,9 +112,11 @@
                 <td style="{{ $borderStyle }}"><b>{{ $detail['sumTotal'] }}</b></td>
                 <td style="{{ $borderStyle }}"><b>{{ $detail['sumPpn'] }}</b></td>
                 <td style="{{ $borderStyle }}"><b>{{ $detail['sumBm'] }}</b></td>
-                <td style="{{ $borderStyle }}"><b>{{ $detail['sumPdriPpn'] }}</b></td>
+                {{-- <td style="{{ $borderStyle }}"><b>{{ $detail['sumPdriPpn'] }}</b></td> --}}
+                <td style="{{ $borderStyle }}"><b>{{ $detail['sumPpn'] }}</b></td>
                 <td style="{{ $borderStyle }}"><b>{{ $detail['sumPph'] }}</b></td>
-                <td style="{{ $borderStyle }}"><b>{{ $detail['sumPdriTotal'] }}</b></td>
+                {{-- <td style="{{ $borderStyle }}"><b>{{ $detail['sumPdriTotal'] }}</b></td> --}}
+                <td style="{{ $borderStyle }}"><b>{{ $detail['sumPajakTotal'] }}</b></td>
             </tr>
     </tbody>
 </table>

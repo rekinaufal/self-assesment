@@ -5,7 +5,7 @@
     $totalSumKln = ($detail['1.1']['sumKln'] + $detail['1.2']['sumKln'] + $detail['1.3']['bspKln'] + $detail['1.4']['bspKln'] + $detail['1.5']['bspKln'] + $detail['1.6']['bspKln'] + $detail['1.7']['bspKln'] + $detail['1.8']['bspKln']);
     $totalSumTotal = ($detail['1.1']['sumTotal'] + $detail['1.2']['sumTotal'] + $detail['1.3']['bspTotal'] + $detail['1.4']['bspTotal'] + $detail['1.5']['bspTotal'] + $detail['1.6']['bspTotal'] + $detail['1.7']['bspTotal'] + $detail['1.8']['bspTotal']);
 @endphp
-{{-- @dd($detail) --}}
+{{-- @dd(str_replace('.', ',', number_format(((0 / 1) * 100), 2)) . "%") --}}
 <p>
     <b>
         FORMULIR 1.9 : REKAPITULASI PENILAIAN
@@ -83,7 +83,12 @@
                 {{ $detail['1.1']['sumTotal'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                {{ str_replace('.', ',', number_format((($detail['1.1']['sumKdn'] / $totalSumTotal) * 100), 2)) . "%" }}
+                {{-- {{ str_replace('.', ',', number_format((($detail['1.1']['sumKdn'] / $totalSumTotal) * 100), 2)) . "%" }} --}}
+                @if($totalSumTotal != 0)
+                    {{ str_replace('.', ',', number_format((($detail['1.1']['sumKdn'] / $totalSumTotal) * 100), 2)) . "%" }}
+                @else
+                    <b>0%</b>
+                @endif
             </td>
         </tr>
         <tr>
@@ -101,7 +106,12 @@
                 {{ $detail['1.2']['sumTotal'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                {{ str_replace('.', ',', number_format((($detail['1.2']['sumKdn'] / $totalSumTotal) * 100), 2)) . "%" }}
+                {{-- {{ str_replace('.', ',', number_format((($detail['1.2']['sumKdn'] / $totalSumTotal) * 100), 2)) . "%" }} --}}
+                @if($totalSumTotal != 0)
+                    {{ str_replace('.', ',', number_format((($detail['1.2']['sumKdn'] / $totalSumTotal) * 100), 2)) . "%" }}
+                @else
+                    <b>0%</b>
+                @endif
             </td>
         </tr>
         <tr>
@@ -122,7 +132,12 @@
                 {{ $detail['1.3']['bspTotal'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                {{ str_replace('.', ',', number_format((($detail['1.3']['bspKdn'] / $totalSumTotal) * 100), 2)) . "%" }}
+                {{-- {{ str_replace('.', ',', number_format((($detail['1.3']['bspKdn'] / $totalSumTotal) * 100), 2)) . "%" }} --}}
+                @if($totalSumTotal != 0)
+                    {{ str_replace('.', ',', number_format((($detail['1.3']['bspKdn'] / $totalSumTotal) * 100), 2)) . "%" }}
+                @else
+                    <b>0%</b>
+                @endif
             </td>
         </tr>
         <tr>
@@ -140,7 +155,12 @@
                 {{ $detail['1.4']['bspTotal'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                {{ str_replace('.', ',', number_format((($detail['1.4']['bspKdn'] / $totalSumTotal) * 100), 2)) . "%" }}
+                {{-- {{ str_replace('.', ',', number_format((($detail['1.4']['bspKdn'] / $totalSumTotal) * 100), 2)) . "%" }} --}}
+                @if($totalSumTotal != 0)
+                    {{ str_replace('.', ',', number_format((($detail['1.4']['bspKdn'] / $totalSumTotal) * 100), 2)) . "%" }}
+                @else
+                    <b>0%</b>
+                @endif
             </td>
         </tr>
         <tr>
@@ -161,7 +181,12 @@
                 {{ $detail['1.5']['bspTotal'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                {{ str_replace('.', ',', number_format((($detail['1.5']['bspKdn'] / $totalSumTotal) * 100), 2)) . "%" }}
+                {{-- {{ str_replace('.', ',', number_format((($detail['1.5']['bspKdn'] / $totalSumTotal) * 100), 2)) . "%" }} --}}
+                @if($totalSumTotal != 0)
+                    {{ str_replace('.', ',', number_format((($detail['1.5']['bspKdn'] / $totalSumTotal) * 100), 2)) . "%" }}
+                @else
+                    <b>0%</b>
+                @endif
             </td>
         </tr>
         <tr>
@@ -179,7 +204,12 @@
                 {{ $detail['1.6']['bspTotal'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                {{ str_replace('.', ',', number_format((($detail['1.6']['bspKdn'] / $totalSumTotal) * 100), 2)) . "%" }}
+                {{-- {{ str_replace('.', ',', number_format((($detail['1.6']['bspKdn'] / $totalSumTotal) * 100), 2)) . "%" }} --}}
+                @if($totalSumTotal != 0)
+                    {{ str_replace('.', ',', number_format((($detail['1.6']['bspKdn'] / $totalSumTotal) * 100), 2)) . "%" }}
+                @else
+                    <b>0%</b>
+                @endif
             </td>
         </tr>
         <tr>
@@ -197,7 +227,12 @@
                 {{ $detail['1.7']['bspTotal'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                {{ str_replace('.', ',', number_format((($detail['1.7']['bspKdn'] / $totalSumTotal) * 100), 2)) . "%" }}
+                {{-- {{ str_replace('.', ',', number_format((($detail['1.7']['bspKdn'] / $totalSumTotal) * 100), 2)) . "%" }} --}}
+                @if($totalSumTotal != 0)
+                    {{ str_replace('.', ',', number_format((($detail['1.8']['bspKdn'] / $totalSumTotal) * 100), 2)) . "%" }}
+                @else
+                    <b>0%</b>
+                @endif
             </td>
         </tr>
         <tr>
@@ -215,7 +250,12 @@
                 {{ $detail['1.8']['bspTotal'] ?? '' }}
             </td>
             <td style="{{ $borderStyle }}">
-                {{ str_replace('.', ',', number_format((($detail['1.8']['bspKdn'] / $totalSumTotal) * 100), 2)) . "%" }}
+                {{-- {{ str_replace('.', ',', number_format((($detail['1.8']['bspKdn'] / $totalSumTotal) * 100), 2)) . "%" }} --}}
+                @if($totalSumTotal != 0)
+                    {{ str_replace('.', ',', number_format((($detail['1.8']['bspKdn'] / $totalSumTotal) * 100), 2)) . "%" }}
+                @else
+                    <b>0%</b>
+                @endif
             </td>
         </tr>
         <tr>
@@ -231,7 +271,12 @@
                 {{ $totalSumTotal }}
             </td>
             <td style="{{ $borderStyle }}">
-                <b>{{ str_replace('.', ',', number_format(((($totalSumKdn / $totalSumTotal) * 100)), 2)) . "%" }}</b>
+                {{-- <b>{{ str_replace('.', ',', number_format(((($totalSumKdn / $totalSumTotal) * 100)), 2)) . "%" }}</b> --}}
+                @if($totalSumTotal != 0)
+                    <b>{{ str_replace('.', ',', number_format((($totalSumKdn / $totalSumTotal) * 100), 2)) . "%" }}</b>
+                @else
+                    <b>0%</b>
+                @endif
             </td>
         </tr>
     </tbody>
