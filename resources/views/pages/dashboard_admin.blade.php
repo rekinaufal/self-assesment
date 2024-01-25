@@ -243,8 +243,8 @@
                 <div class="card" style="height: 450px">
                     <div class="card-header bg-transparent">
                         <div class="form-group pb-4">
-                            <select class="form-control" style="width:130px; float:right">
-                                <option value="">Oct 2023</option>
+                            <select class="form-control" style="width:130px; float:right" disabled>
+                                <option value="">{{ $yearNow }}</option>
                             </select>
                         </div>
                         <h4 class="card-title">Grafik Pengguna</h4>
@@ -311,6 +311,7 @@
                                                             <tr align="center" style=" position:sticky; top: 0;">
                                                                 <th>No</th>
                                                                 <th>Pengguna</th>
+                                                                <th>Perusahaan</th>
                                                                 <th>Jenis Produksi</th>
                                                                 <th>Merk & Tipe</th>
                                                                 {{-- <th>File</th> --}}
@@ -326,13 +327,16 @@
                                                                 <tr>
                                                                     <td align="center">{{ $i++ }}</td>
                                                                     <td>
-                                                                        {{ $computation->user->user_profile->fullname }}
+                                                                        {{ $computation->user->user_profile->fullname ?? '' }}
                                                                     </td>
                                                                     <td>
-                                                                        {{ $computation->production_result }}
+                                                                        {{ $computation->user->user_profile->company_name ?? '' }}
                                                                     </td>
                                                                     <td>
-                                                                        {{ $computation->brand }}
+                                                                        {{ $computation->production_result ?? '' }}
+                                                                    </td>
+                                                                    <td>
+                                                                        {{ $computation->brand ?? '' }}
                                                                     </td>
                                                                     {{-- <td align="center"> <i data-feather="file"></i> <i
                                                                             data-feather="file-text"></i></td> --}}
@@ -443,6 +447,9 @@
 
         {{-- charts dounat  --}}
         <script>
+            var countUserRegularMonthData = @json($countUserRegularMonth);
+            var countUserPremiumMonthData = @json($countUserPremiumMonth);
+            // console.log(countUserRegularMonthData['Jan']);
             var barChartData = {
                 labels: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'],
                 datasets: [
@@ -474,18 +481,18 @@
                         backgroundColor: '#1991EB',
                         yAxisID: 'y-axis-1',
                         data: [
-                            20,
-                            33,
-                            25,
-                            15,
-                            30,
-                            31,
-                            22,
-                            23,
-                            16,
-                            17,
-                            25,
-                            13
+                            countUserPremiumMonthData['Jan'],
+                            countUserPremiumMonthData['Feb'],
+                            countUserPremiumMonthData['Mar'],
+                            countUserPremiumMonthData['Apr'],
+                            countUserPremiumMonthData['May'],
+                            countUserPremiumMonthData['Jun'],
+                            countUserPremiumMonthData['Jul'],
+                            countUserPremiumMonthData['Aug'],
+                            countUserPremiumMonthData['Sep'],
+                            countUserPremiumMonthData['Oct'],
+                            countUserPremiumMonthData['Nov'],
+                            countUserPremiumMonthData['Dec']
                         ]
                     }, {
                         label: 'Regular',
@@ -493,18 +500,18 @@
                         type: 'bar',
                         yAxisID: 'y-axis-1',
                         data: [
-                            25,
-                            23,
-                            15,
-                            15,
-                            15,
-                            30,
-                            35,
-                            13,
-                            14,
-                            25,
-                            23,
-                            11
+                            countUserRegularMonthData['Jan'],
+                            countUserRegularMonthData['Feb'],
+                            countUserRegularMonthData['Mar'],
+                            countUserRegularMonthData['Apr'],
+                            countUserRegularMonthData['May'],
+                            countUserRegularMonthData['Jun'],
+                            countUserRegularMonthData['Jul'],
+                            countUserRegularMonthData['Aug'],
+                            countUserRegularMonthData['Sep'],
+                            countUserRegularMonthData['Oct'],
+                            countUserRegularMonthData['Nov'],
+                            countUserRegularMonthData['Dec']
                         ]
                     }
                 ]

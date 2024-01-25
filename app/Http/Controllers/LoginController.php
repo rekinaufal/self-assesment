@@ -145,6 +145,7 @@ class LoginController extends Controller
 
     public function dashboard()
     {
+        $year = now()->year;
         $data = [
             "userCount" => User::count(),
             "roleCount" => Role::count(),
@@ -155,16 +156,44 @@ class LoginController extends Controller
             "permenperinCount" => PermenperinCategory::all()->count(),
             "pageTitle" => "Dashboard",
             "type_menu" => "dashboard",
+            "countUserRegularMonth" => $this->initializeMonthlyCountArray(),
+            "countUserPremiumMonth" => $this->initializeMonthlyCountArray(),
+            "yearNow" => $year,
         ];
-
-
         if($data["userRole"] == "Admin") {
             $data["computations"] = Computation::whereStatus("Finished")->get();
+            //regular
+            $userDataRegular = User::with("user_category")->whereUserCategoryId("1")->whereYear('created_at', $year)->get();
+            foreach ($userDataRegular as $value) {
+                $month = $value->created_at->format('M');
+                if (array_key_exists($month, $data["countUserRegularMonth"])) {
+                    $data["countUserRegularMonth"][$month] += 1;
+                }
+            }
+            // premium
+            $userDataPremium = User::with("user_category")->whereUserCategoryId("2")->whereYear('created_at', $year)->get();
+            foreach ($userDataPremium as $value) {
+                $month = $value->created_at->format('M');
+                if (array_key_exists($month, $data["countUserPremiumMonth"])) {
+                    $data["countUserPremiumMonth"][$month] += 1;
+                }
+            }
             return view("pages.dashboard_admin", $data);
         }
 
         $data["computations"] = Computation::whereUserId(Auth::user()->id)->whereStatus("Finished")->get();
         return view("pages.dashboard", $data);
+    }
+    private function initializeMonthlyCountArray()
+    {
+        $monthKeys = [];
+        $currentMonth = now()->format('M');
+    
+        for ($i = 11; $i >= 0; $i--) {
+            $monthKeys[] = now()->month($currentMonth)->subMonths($i)->format('M');
+        }
+    
+        return array_fill_keys($monthKeys, 0);
     }
 
     public function filteredNewsDashboardUser(Request $request)

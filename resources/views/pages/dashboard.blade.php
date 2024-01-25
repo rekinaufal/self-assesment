@@ -86,7 +86,7 @@
                                     width="100" src="{{ asset($item->getThumbnailPath()) }}" alt="Card image cap">
                                 <br><br>
                                 <p class="card-text" style="word-wrap:break-all;">
-                                    {{ $item->description }}
+                                    {{ Str::limit($item->description, 100, ' ...') }}
                                 </p>
                                 <div class="row d-flex align-items-center">
                                     <div class="col-3">
