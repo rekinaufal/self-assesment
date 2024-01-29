@@ -169,6 +169,10 @@
                 /* background-image: url({{ asset('assets/images/Elearning.png') }}); */
             }
         @media only screen and (max-width: 990px) {
+            .logo-mobile-elearning{
+                padding-top: 10%; 
+                padding-bottom: 5%
+            }
             .logo-mobile-elearning img {
                 width:50%;
                 height: auto;
@@ -633,11 +637,11 @@
                                         </div>
                                     </div>
                                 @endif
-                                    <div class="logo-mobile-elearning w-100 h-auto d-flex justify-content-center"
-                                        style="padding-top: 10%; padding-bottom: 5%">
-                                        <img src="{{ asset('assets/images/Elearning.png') }}" alt="Brand Logo"
-                                            class="">
-                                    </div>
+                                <div class="logo-mobile-elearning w-100 h-auto d-flex justify-content-center">
+                                    {{-- style="padding-top: 10%; padding-bottom: 5%"> --}}
+                                    <img src="{{ asset('assets/images/Elearning.png') }}" alt="Brand Logo"
+                                        class="">
+                                </div>
                                 <div class="welcome-text d-flex justify-content-center">
                                     <small class="text-center">
                                         Selamat datang! Silakan masuk ke akun Anda.

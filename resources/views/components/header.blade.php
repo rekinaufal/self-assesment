@@ -185,7 +185,7 @@
                         @if (!auth()->user()->user_profile)
                             <img src="{{ asset(auth()->user()->user_profile->getAvatarPath()) }}" alt="user" class="rounded-circle" width="40" height="40">
                         @else
-                            <img src="assets/images/users/profile-pic.jpg" alt="user" class="rounded-circle"
+                            <img src="assets/images/users/profile-pic.png" alt="user" class="rounded-circle"
                             width="40">
                         @endif
                         <span class="ml-2 d-none d-lg-inline-block">
@@ -203,10 +203,10 @@
                             <i data-feather="credit-card" class="svg-icon mr-2 ml-1"></i>
                             My Balance
                         </a> --}}
-                        <a class="dropdown-item" href="javascript:void(0)">
+                        {{-- <a class="dropdown-item" href="javascript:void(0)">
                             <i data-feather="mail" class="svg-icon mr-2 ml-1"></i>
                             Pesan
-                        </a>
+                        </a> --}}
                         {{-- <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="javascript:void(0)">
                             <i data-feather="settings" class="svg-icon mr-2 ml-1"></i>
