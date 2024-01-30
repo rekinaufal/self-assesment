@@ -120,48 +120,50 @@
 
 @section('main')
     <div class="container-fluid">
-        <div class="container mt-4 mb-4 p-3">
+        <div class="container mt-4 mb-4 p-1 p-md-4 p-lg-3">
             <div class="row">
-                <div class="col-5">
+                <div class="col-12 col-lg-5">
                     <div class="card p-4">
-                        <div class="image"> 
+                        <div class="image">
                             <div class="d-flex flex-column justify-content-center align-items-center mb-4">
                                 {{-- image --}}
-                                <button class="image-profil btn-secondary"> 
+                                <button class="image-profil btn-secondary">
                                     <img src="{{ asset($profile->avatar != null ? $profile->getAvatarPath() : 'assets/images/users/not_found.jpg') }}" style="object-fit:cover;" class="rounded-circle" height="100" width="100" />
-                                </button> 
+                                </button>
                                 {{-- name --}}
-                                <span class="name mt-3">{{ $user->user_profile->fullname }}</span> 
+                                <span class="name mt-3">{{ $user->user_profile->fullname }}</span>
                                 {{-- kategori user --}}
                                 <button type="button" class="btn btn-outline-{{ $user->user_category->color ?? 'dark' }}" style="border-radius: 15px; cursor: default;">{{ $user->user_category->name ?? '' }}</button>
                             </div>
 
-                            <div class="float-left">
-                                <div class="row" style="display: flex; justify-content: space-between; align-items: center;">
-                                    <div class="col-4">                            
-                                        <button type="button" class="btn btn-outline-danger hide-button" style="border-radius: 15px; cursor: default;"><i class="fas fa-check"></i></button>
-                                    </div>
-                                    <div class="col-8" style="font-size:10px ">
-                                        {{ $countPerhitungan ?? '' }} File
-                                        <br>
-                                        File Perhitungan
+                            <div class="w-100 d-flex justify-content-between">
+                                <div>
+                                    <div class="row" style="display: flex; justify-content: space-between; align-items: center;">
+                                        <div class="col-4">
+                                            <button type="button" class="btn btn-outline-danger hide-button" style="border-radius: 15px; cursor: default;"><i class="fas fa-check"></i></button>
+                                        </div>
+                                        <div class="col-8" style="font-size:10px ">
+                                            {{ $countPerhitungan ?? '' }} File
+                                            <br>
+                                            File Perhitungan
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="float-right">
-                                <div class="row" style="display: flex; justify-content: space-between; align-items: center;">
-                                    <div class="col-4">                            
-                                        <button type="button" class="btn btn-outline-danger" style="border-radius: 15px; cursor: default;"><i class="icon-star"></i></button>
-                                    </div>
-                                    <div class="col-8" style="font-size:10px ">
-                                        2 Kategori
-                                        <br>
-                                        Kategori Regulasi
+                                <div>
+                                    <div class="row" style="display: flex; justify-content: space-between; align-items: center;">
+                                        <div class="col-4">
+                                            <button type="button" class="btn btn-outline-danger" style="border-radius: 15px; cursor: default;"><i class="icon-star"></i></button>
+                                        </div>
+                                        <div class="col-8" style="font-size:10px ">
+                                            2 Kategori
+                                            <br>
+                                            Kategori Regulasi
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <br>
-                            <div class="rounded mt-4 text-dark"> 
+                            <div class="rounded mt-4 text-dark">
                                 {{-- <span>Details</span>  --}}
                             </div>
                             <hr>
@@ -185,7 +187,7 @@
                             <div class="row">
                                 <div class="col-sm-12 text-center">
                                     <button class="btn btn-primary btn-md center-block" Style="width: 100px;" data-toggle="modal" data-target="#edit-profile">Edit</button>
-                                    
+
                                     <button class="btn btn-danger btn-md center-block" Style="width: 100px;">Blokir</button>
                                 </div>
                             </div>
@@ -200,41 +202,41 @@
                                         <div class="modal-body">
                                             {{-- <h2 class="text-center mb-4 mt-0 mt-md-4 px-2">Upgrade akun anda dan dapatkan kelebihannya</h2> --}}
                                             <form method="POST" action="{{ route('profile.update', $profile->id) }}" role="form" enctype="multipart/form-data">
-                                                @method('PUT') 
+                                                @method('PUT')
                                                 @csrf
                                                 <div class="row">
                                                     <div class="col-6">
-                                                        <div class="form-group"> 
+                                                        <div class="form-group">
                                                             <label for="fullname">
                                                                 <h6>Fullname</h6>
-                                                            </label> 
-                                                            <input type="text" name="fullname" value="{{ $profile->fullname ?? '' }}" placeholder="Fullname" required class="form-control "> 
+                                                            </label>
+                                                            <input type="text" name="fullname" value="{{ $profile->fullname ?? '' }}" placeholder="Fullname" required class="form-control ">
                                                         </div>
-                                                        <div class="form-group"> 
+                                                        <div class="form-group">
                                                             <label for="fullname">
                                                                 <h6>Company Name</h6>
-                                                            </label> 
-                                                            <input type="text" name="company_name" value="{{ $profile->company_name ?? '' }}" placeholder="Company Name" required class="form-control "> 
+                                                            </label>
+                                                            <input type="text" name="company_name" value="{{ $profile->company_name ?? '' }}" placeholder="Company Name" required class="form-control ">
                                                         </div>
-                                                        <div class="form-group"> 
+                                                        <div class="form-group">
                                                             <label for="fullname">
                                                                 <h6>Company Address</h6>
-                                                            </label> 
-                                                            <input type="text" name="company_address" value="{{ $profile->company_address ?? '' }}" placeholder="Company Address" required class="form-control "> 
+                                                            </label>
+                                                            <input type="text" name="company_address" value="{{ $profile->company_address ?? '' }}" placeholder="Company Address" required class="form-control ">
                                                         </div>
                                                     </div>
                                                     <div class="col-6">
-                                                        <div class="form-group"> 
+                                                        <div class="form-group">
                                                             <label for="fullname">
                                                                 <h6>Phone Number</h6>
-                                                            </label> 
-                                                            <input type="text" name="phone_number" value="{{ $profile->phone_number ?? '' }}" placeholder="Phone Number" required class="form-control "> 
+                                                            </label>
+                                                            <input type="text" name="phone_number" value="{{ $profile->phone_number ?? '' }}" placeholder="Phone Number" required class="form-control ">
                                                         </div>
-                                                        <div class="form-group"> 
+                                                        <div class="form-group">
                                                             <label for="fullname">
                                                                 <h6>Job Title</h6>
-                                                            </label> 
-                                                            <input type="text" name="job_title"value="{{ $profile->job_title ?? '' }}" placeholder="Job Title" required class="form-control "> 
+                                                            </label>
+                                                            <input type="text" name="job_title"value="{{ $profile->job_title ?? '' }}" placeholder="Job Title" required class="form-control ">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -253,45 +255,45 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                {{-- <div class="form-group"> 
+                                                {{-- <div class="form-group">
                                                     <label for="cardNumber">
                                                         <h6>Card number</h6>
                                                     </label>
-                                                    <div class="input-group"> 
+                                                    <div class="input-group">
                                                         <input type="text" name="cardNumber" placeholder="Valid card number" class="form-control " required="">
-                                                        <div class="input-group-append"> 
-                                                            <span class="input-group-text text-muted"> 
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text text-muted">
                                                                 <i class="fab fa-cc-visa mx-1"></i>
-                                                                <i class="fab fa-cc-mastercard mx-1"></i> 
-                                                                <i class="fab fa-cc-amex mx-1"></i> 
-                                                            </span> 
+                                                                <i class="fab fa-cc-mastercard mx-1"></i>
+                                                                <i class="fab fa-cc-amex mx-1"></i>
+                                                            </span>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-sm-8">
-                                                        <div class="form-group"> 
+                                                        <div class="form-group">
                                                             <label>
                                                                 <span class="hidden-xs">
                                                                     <h6>Expiration Date</h6>
                                                                 </span>
                                                             </label>
-                                                            <div class="input-group"> 
-                                                                <input type="number" placeholder="MM" name="" class="form-control" required=""> 
-                                                                <input type="number" placeholder="YY" name="" class="form-control" required=""> 
+                                                            <div class="input-group">
+                                                                <input type="number" placeholder="MM" name="" class="form-control" required="">
+                                                                <input type="number" placeholder="YY" name="" class="form-control" required="">
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-4">
-                                                        <div class="form-group mb-4"> 
+                                                        <div class="form-group mb-4">
                                                             <label data-toggle="tooltip" title="" data-original-title="Three digit CV code on the back of your card">
                                                                 <h6>CVV <i class="fa fa-question-circle d-inline"></i></h6>
-                                                            </label> 
-                                                            <input type="text" required="" class="form-control"> 
+                                                            </label>
+                                                            <input type="text" required="" class="form-control">
                                                         </div>
                                                     </div>
                                                 </div> --}}
-                                                <div class="card-footer bg-transparent"> 
+                                                <div class="card-footer bg-transparent">
                                                     <button type="submit" class="subscribe btn btn-primary btn-block shadow-sm">Save changes</button>
                                                  </div>
                                             </form>
@@ -371,7 +373,7 @@
                                                                             <sub class="h6 text-muted pricing-duration mt-auto mb-2 fw-normal">/{{ $item->limit_file ?? '' }} files</sub>
                                                                         </div>
                                                                     </div>
-                                                
+
                                                                     <ul class="list-group my-4 list-unstyled">
                                                                         <li class="mb-2 d-flex align-items-center">
                                                                             <span class="badge badge-center w-px-20 h-px-20 rounded-pill bg-label-primary me-2">
@@ -404,7 +406,7 @@
                         </div>
                     @endcan --}}
                 </div>
-                <div class="col-7">
+                <div class="col-12 col-lg-7">
                     <div class="card">
                         <div class="card-header">
                             <div class="pt-4 pl-2 pr-2 pb-2">
@@ -421,7 +423,7 @@
                                             {{-- <i class="icon-lock mr-2"></i> Security --}}
                                         </a>
                                     </li>
-                                    
+
                                     {{--
                                     <li class="nav-item" style="display: block">
                                         <a data-toggle="pill" href="#payment" class="nav-link">
@@ -441,7 +443,7 @@
                                 <!-- overview -->
                                 <div id="overview" class="tab-pane fade pt-3">
 
-                                </div> 
+                                </div>
                                 <!-- security -->
                                 <div id="security" class="tab-pane fade show active pt-3">
                                     <form method="POST" action="{{ route('changePassword', $profile->id) }}" role="form" enctype="multipart/form-data">
@@ -532,7 +534,7 @@
                                     </div>
                                     1 x 24 jam admin akan memproses dan mengirim anda notif.
                                     <form method="POST" action="" role="form" enctype="multipart/form-data">
-                                        <div class="form-group"> 
+                                        <div class="form-group">
                                             <input type="file" name="image" class="">
                                         </div>
                                         <button type="submit" class="btn btn-primary">Upload</button>
@@ -540,26 +542,26 @@
                                 </div>
                                 <!-- notification -->
                                 <div id="notification" class="tab-pane fade pt-3">
-                                    
-                                </div> 
+
+                                </div>
                                 <!-- End -->
                             </div>
                         </div>
                     </div>
                     {{-- <div class="card">
                         <div class="card-body">
-                            <p> 
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit beatae 
-                                voluptates cumque ea quaerat aperiam laboriosam labore tempore architecto molestias 
-                                voluptate assumenda voluptatem ducimus consectetur ullam sapiente, totam blanditiis 
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit beatae
+                                voluptates cumque ea quaerat aperiam laboriosam labore tempore architecto molestias
+                                voluptate assumenda voluptatem ducimus consectetur ullam sapiente, totam blanditiis
                                 quibusdam!
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit beatae 
-                                voluptates cumque ea quaerat aperiam laboriosam labore tempore architecto molestias 
-                                voluptate assumenda voluptatem ducimus consectetur ullam sapiente, totam blanditiis 
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit beatae
+                                voluptates cumque ea quaerat aperiam laboriosam labore tempore architecto molestias
+                                voluptate assumenda voluptatem ducimus consectetur ullam sapiente, totam blanditiis
                                 quibusdam!
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit beatae 
-                                voluptates cumque ea quaerat aperiam laboriosam labore tempore architecto molestias 
-                                voluptate assumenda voluptatem ducimus consectetur ullam sapiente, totam blanditiis 
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit beatae
+                                voluptates cumque ea quaerat aperiam laboriosam labore tempore architecto molestias
+                                voluptate assumenda voluptatem ducimus consectetur ullam sapiente, totam blanditiis
                                 quibusdam!
                             </p>
                         </div>

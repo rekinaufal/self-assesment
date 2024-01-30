@@ -62,6 +62,9 @@ class NewsController extends Controller
             $credentials["thumbnail"] = $thumbnailPath;
         }
 
+        // Melakukan penggantian kutipan ganda dengan kutipan tunggal
+        $credentials["description"] = str_replace('"', "'", $credentials["description"]);
+
         if ($request->id == null) {
             $createdNews = News::create($credentials);
         } else {
@@ -159,26 +162,26 @@ class NewsController extends Controller
         $perpage = $request->input('perpage', 6);
         $fromDate = $request->input('from_date');
         $untilDate = $request->input('until_date');
-        
+
         // validation
         if ($fromDate && $untilDate && strtotime($fromDate) > strtotime($untilDate)) {
             return redirect()->route("news.index")->with("failed", "Tanggal sampai harus sama dengan atau setelah tanggal dari.");
         }
 
         $query = News::latest();
-    
+
         // Apply date filter if provided
         if ($fromDate) {
             $query->where('created_at', '>=', $fromDate);
         }
-    
+
         if ($untilDate) {
             $query->where('created_at', '<=', $untilDate);
         }
-    
+
         // Retrieve paginated news data
         $news = $query->paginate($perpage)->appends(["perpage" => $perpage]);
-    
+
         $data = [
             "pageTitle" => self::$pageTitle,
             "news" => $news,
@@ -186,7 +189,7 @@ class NewsController extends Controller
             "fromDate" => $fromDate,
             "untilDate" => $untilDate,
         ];
-    
+
         return view('news.index', $data);
     }
 }
