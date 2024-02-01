@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\News;
 use App\Models\UserProfile;
 use Illuminate\Http\Request;
+use File;
 
 class NewsController extends Controller
 {
@@ -128,8 +129,15 @@ class NewsController extends Controller
      */
     public function destroy(News $news)
     {
+        $image_path = public_path("\uploads\\").$news->thumbnail;
+        if(File::exists($image_path)) {
+            File::delete($image_path);
+        } 
+        // else {
+        //     abort(500, "Not Found Is Image");
+        // }
         $deletedNews = $news->delete();
-
+        
         if (!$deletedNews) abort(500, "Internal Server Error");
 
         return redirect()->route("news.index")->with("success", "Data berita berhasil dihapus");

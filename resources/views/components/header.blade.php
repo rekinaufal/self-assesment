@@ -185,7 +185,7 @@
                         @if (!auth()->user()->user_profile)
                             <img src="{{ asset(auth()->user()->user_profile->getAvatarPath()) }}" alt="user" class="rounded-circle" width="40" height="40">
                         @else
-                            <img src="assets/images/users/profile-pic.png" alt="user" class="rounded-circle"
+                            <img src="{{ asset('assets/images/users/profile-pic.png') }}" alt="user" class="rounded-circle"
                             width="40">
                         @endif
                         <span class="ml-2 d-none d-lg-inline-block">
