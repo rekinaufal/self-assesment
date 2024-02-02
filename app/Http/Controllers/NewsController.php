@@ -48,7 +48,8 @@ class NewsController extends Controller
     {
         $credentials = $request->validate([
             "title" => "required",
-            "description" => "required|max:255",
+            // "description" => "required|max:255",
+            "description" => "required",
             "link" => "required|url:http,https",
             "thumbnail" => $request->id == null ? "required|image" : "image"
         ]);
@@ -64,7 +65,7 @@ class NewsController extends Controller
         }
 
         // Melakukan penggantian kutipan ganda dengan kutipan tunggal
-        $credentials["description"] = str_replace('"', "'", $credentials["description"]);
+        // $credentials["description"] = str_replace('"', "'", $credentials["description"]);
 
         if ($request->id == null) {
             $createdNews = News::create($credentials);
@@ -153,11 +154,19 @@ class NewsController extends Controller
     }
 
     public function deletedBatch(Request $request)
-    {
+    {   
         $deleteIds = json_decode($request->delete_ids);
+        if ($deleteIds != null) {
+            foreach ($deleteIds as $value) {
+                $getNews = News::find($value);
+                $image_path = public_path("\uploads\\").$getNews->thumbnail;
+                if(File::exists($image_path)) {
+                    File::delete($image_path);
+                } 
+            }
+        }
 
         $deletedNews = News::whereIn('id', $deleteIds)->delete();
-        // dd($deleteIds);
         if (!$deletedNews) {
             return redirect()->route("news.index")->with("failed", "Gagal menghapus yang telah dipilih!");
         }

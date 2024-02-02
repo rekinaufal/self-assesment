@@ -115,7 +115,9 @@ function editNews(id) {
         let news = allNews.find(news => news.id == id);
         $("#id").val(news.id);
         $("#title").val(news.title);
-        $("#description").val(news.description);
+        // $("#description").val(news.description);
+        CKEDITOR.replace('description');
+        CKEDITOR.instances.description.setData(news.description);
         $("#link").val(news.link);
         $(".dropzone-hint, .dropzone-has-uploaded").toggleClass("d-flex d-none");
         $("#createNewsModal").modal("show");

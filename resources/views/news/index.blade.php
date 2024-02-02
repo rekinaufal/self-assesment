@@ -136,7 +136,7 @@
                                                     </h4>
                                                     <p>
                                                         <small class="card-text pt-2">
-                                                            {{ Str::limit($newsItem->description, 100, '...') }}
+                                                            {!! Str::limit($newsItem->description, 100, '...') !!}
                                                         </small>
                                                     </p>
                                                 </div>
@@ -212,7 +212,7 @@
     <!-- Modal -->
     <div class="modal fade" id="createNewsModal" tabindex="-1" role="dialog" aria-labelledby="createNewsModalLabel"
         aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="createNewsModalLabel">News</h5>
@@ -235,8 +235,8 @@
                         </div>
                         <div class="form-group">
                             <label for="description">Description <span class="text-danger">*</span></label>
-                            <textarea type="text" name="description" class="form-control @error('description') is-invalid @enderror"
-                                id="description" placeholder="Enter Description" style="height: 4rem; min-height: 4rem; max-height: 8rem">{{ old('description') }}</textarea>
+                            <textarea type="text" name="description" class="ckeditor form-control @error('description') is-invalid @enderror"
+                                id="description" placeholder="Enter Description" style="height: 4rem; min-height: 4rem; max-height: 8rem">{!! old('description') !!}</textarea>
                             @error('description')
                                 <small class="text-danger">{{ $message }}</small>
                             @enderror

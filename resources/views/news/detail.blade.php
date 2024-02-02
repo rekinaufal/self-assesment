@@ -216,13 +216,10 @@
                         <span>Published on : {{ date('F j, Y', strtotime($news['created_at'] ?? '')) }}</span>
                     </div>
                     <h1 class="mb-5">{{ $news['title'] ?? '' }}</h1>
-                    <p><span class="firstcharacter">{{ $news['description'][0] ?? '' }}</span>
-                        {{ substr($news['description'] ?? '', 1) }} Lorem ipsum dolor sit, amet consectetur adipisicing
-                        elit. Mollitia aliquam quas accusamus, blanditiis porro laboriosam asperiores accusantium commodi
-                        placeat sequi corporis reiciendis pariatur nihil! Facilis blanditiis aspernatur eaque perferendis
-                        voluptatem accusamus sunt, hic nam iure accusantium, enim, sapiente eligendi saepe fuga possimus?
-                        Error quibusdam voluptas expedita excepturi cupiditate reprehenderit quaerat?</p>
-
+                    {!! $news['description'] ?? '' !!}
+                    {{-- <span class="firstcharacter"> --}}
+                    {{-- </span> --}}
+                        {{-- {!! substr($news['description'] ?? '', 1) !!} --}}
                     <figure class="my-4">
                         <img src="{{ asset($news->getThumbnailPath()) }}" alt="" class="img-fluid" width="100%"
                             style="border-radius: 8px; max-height: 700px;">

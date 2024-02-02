@@ -191,7 +191,8 @@
     <script src="{{ asset("dist/js/session-storage-config.js") }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.7/dist/autoComplete.min.js"></script>
     <script src="{{ asset('library/sweetalert/dist/sweetalert.min.js') }}"></script>
-
+    {{-- ckeditor --}}
+    <script src="https://cdn.ckeditor.com/4.19.1/full/ckeditor.js"></script>
     <script>
         $("#live-chat").click(() => {
             // swal({
