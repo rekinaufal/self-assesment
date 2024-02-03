@@ -115,12 +115,20 @@ function editNews(id) {
         let news = allNews.find(news => news.id == id);
         $("#id").val(news.id);
         $("#title").val(news.title);
-        // $("#description").val(news.description);
-        CKEDITOR.replace('description');
+        
+        // CKEDITOR.replace('description');
+        $("#description_val").val(news.description);
         CKEDITOR.instances.description.setData(news.description);
+
         $("#link").val(news.link);
+        
+        let imageUrl = baseUrl + "uploads/" + news.thumbnail;
+        $("#current_image").attr("src", imageUrl);
+        $("#thumbnail_val").val(imageUrl);
+        
         $(".dropzone-hint, .dropzone-has-uploaded").toggleClass("d-flex d-none");
         $("#createNewsModal").modal("show");
+        isShow();
     } else {
         showErrorMessage("Data has not fully loaded. Please try again after the alert is closed.");
     }

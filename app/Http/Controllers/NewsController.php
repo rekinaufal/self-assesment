@@ -68,10 +68,21 @@ class NewsController extends Controller
         // $credentials["description"] = str_replace('"', "'", $credentials["description"]);
 
         if ($request->id == null) {
+            // jika insert
             $createdNews = News::create($credentials);
         } else {
+            // jika edit
             $news = News::find($request->id);
+
             if (!$news) return redirect()->route("news.index")->with("failed", "User dengan id = " . $request->id . "tidak ada");
+
+            // hapus image jika update image
+            if ($request->thumbnail != null) {
+                $image_path = public_path("\uploads\\").$news->thumbnail;
+                if(File::exists($image_path)) {
+                    File::delete($image_path);
+                } 
+            }
 
             $updatedNews = $news->update($credentials);
         }

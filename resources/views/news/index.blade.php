@@ -76,7 +76,7 @@
                                             <a href="#"
                                                 class="btn btn-primary btn-sm px-lg-3 py-lg-2 mb-1 text-nowrap rounded-circle d-flex justify-content-center align-items-center"
                                                 style="height: min-content; aspect-ratio:1" data-toggle="modal"
-                                                data-target="#createNewsModal">
+                                                data-target="#createNewsModal" id="createNewsModalForVal">
                                                 <i class="fas fa-plus"></i>
                                             </a>
                                         </div>
@@ -235,8 +235,11 @@
                         </div>
                         <div class="form-group">
                             <label for="description">Description <span class="text-danger">*</span></label>
+                            <input type="text" id="description_val" value="{{ old('description_val') }}">
                             <textarea type="text" name="description" class="ckeditor form-control @error('description') is-invalid @enderror"
-                                id="description" placeholder="Enter Description" style="height: 4rem; min-height: 4rem; max-height: 8rem">{!! old('description') !!}</textarea>
+                                id="description" placeholder="Enter Description" style="height: 4rem; min-height: 4rem; max-height: 8rem">
+                                {!! old('description') !!}
+                            </textarea>
                             @error('description')
                                 <small class="text-danger">{{ $message }}</small>
                             @enderror
@@ -250,6 +253,10 @@
                             @enderror
                         </div>
                         <div class="form-group dropzoneArea" style="height: max-content">
+                            <input type="text" id="thumbnail_val" value="{{ old('thumbnail_val') }}">
+                            <label for="current_image" id="label_current_image">Current Image</label>
+                            <img src="" class="img-thumbnail" id="current_image">
+
                             <label for="thumbnail">Thumbnail</label>
                             <x-input.dropzone name="thumbnail" id="input-thumbnail" customDropzoneId="custom-dropzone"
                                 dropzonePreviewId="dropzone-preview" namePreviewId="name-preview"
@@ -273,6 +280,38 @@
 @push('scripts')
     <script src="{{ asset('assets/extra-libs/sparkline/sparkline.js') }}"></script>
     <script src="{{ asset('library/sweetalert/dist/sweetalert.min.js') }}"></script>
+    <script>
+        var baseUrl = "{{ asset('') }}";
+    </script>
+    <script>
+        function isShow (){
+            var valThumbnail = $("#thumbnail_val").val();
+            $("#thumbnail_val").css("display", "none");
+            if (valThumbnail == "") {
+                // $("#current_image").hide();
+                $("#current_image").css("display", "none");
+                $("#label_current_image").css("display", "none");
+                // console.log(valThumbnail);
+            } else {
+                $("#current_image").css("display", "block");
+                $("#label_current_image").css("display", "block");
+                // console.log(valThumbnail);
+            }
+            
+            var valDescription = $("#description_val").val();
+            $("#description_val").css("display", "none");
+            if (valDescription == "") {
+                // $("#description").val();
+                CKEDITOR.instances.description.setData();
+            } 
+        }
+        $("#createNewsModalForVal").click(function(){
+            isShow();
+        });
+        $( document ).ready(function() {
+            isShow();
+        });
+    </script>
     <script src="{{ asset('dist/js/news/script.js') }}"></script>
     <script>
         let originalPerpage;
