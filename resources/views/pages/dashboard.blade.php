@@ -85,9 +85,9 @@
                                 <img class="card-img-top" style="border-radius:8px; object-fit: cover;" height="150"
                                     width="100" src="{{ asset($item->getThumbnailPath()) }}" alt="Card image cap">
                                 <br><br>
-                                <p class="card-text" style="word-wrap:break-all;">
-                                    {{ Str::limit($item->description, 100, ' ...') }}
-                                </p>
+                                {{-- <p class="card-text" style="word-wrap:break-all;"> --}}
+                                    {!! Str::limit($item->description, 100, ' ...') !!}
+                                {{-- </p> --}}
                                 <div class="row d-flex align-items-center">
                                     <div class="col-3">
                                         <span style="font-size: 0.7rem" class="">Sumber
@@ -236,8 +236,11 @@
         var news_data = [];
         var loadedData = [];
         var itemsPerPage = 6;
-        var data = JSON.parse(`{!! $news !!}`);
-        var dataImage = JSON.parse(`{!! $news !!}`);
+        // var data = JSON.parse(`{!! $news !!}`);
+        var data = {!! json_encode($news) !!};
+        console.log('data', data);
+        // var dataImage = JSON.parse(`{!! $news !!}`);
+        var dataImage = {!! json_encode($news) !!};
         var buttonLoad = document.getElementById('loadMore');
 
         function convertDateString(dateString) {
@@ -324,9 +327,9 @@
                                 <img class="card-img-top" style="border-radius:8px; object-fit: cover;" height="150"
                                     width="100" src="uploads/${newsList[j].thumbnail}" alt="Card image cap">
                                 <br><br>
-                                <p class="card-text" style="word-wrap:break-all;">
-                                    ${newsList[j].description}
-                                </p>
+                                ${newsList[j].description.length > 100 ?
+                                    `<p class="card-text" style="word-wrap: break-word;">${newsList[j].description.substring(0, 100)}...</p>` :
+                                    `<p class="card-text" style="word-wrap: break-word;">${newsList[j].description}</p>`}
                                 <div class="row d-flex align-items-center">
                                     <div class="col-3">
                                         <span style="font-size: 0.7rem" class="" >Sumber
