@@ -2252,7 +2252,7 @@
                                     <option value="{{ $country }}" {{ $country == "Indonesia" ? "selected" : "" }}>{{ $country }}</option>
                                 @endforeach
                             </select>
-                            <input type="hidden" id="editTkdn-1-3" value="100" name="tkdn">
+                            <input type="hidden" id="editTkdn-1-5" value="100" name="tkdn">
                         </div>
                         <div class="form-group col-6">
                             <label>
@@ -2927,6 +2927,8 @@
 
                 $("#form-3")[0].reset();
 
+                $("#tkdn-1-3").val(100);
+
                 swal({
                     title: "Success",
                     text: "Success to add new calculation",
@@ -2976,6 +2978,8 @@
                 reloadAllTable()
 
                 $("#form-5")[0].reset();
+
+                $("#tkdn-1-5").val(100);
 
                 swal({
                     title: "Success",
