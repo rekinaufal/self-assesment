@@ -495,7 +495,7 @@
                                                         <option value="{{ $country }}" {{ $country == "Indonesia" ? "selected" : "" }}>{{ $country }}</option>
                                                     @endforeach
                                                 </select>
-                                                <input type="hidden" id="tkdn-1-3" value="" name="tkdn">
+                                                <input type="hidden" id="tkdn-1-3" value="100" name="tkdn">
                                             </div>
 
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
@@ -887,7 +887,7 @@
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
                                                 <label>
                                                     Jumlah Orang
-                                                     
+
                                                 </label>
                                                 <input type="number" class="form-control trigger-enter form-control-sm"
                                                     id="jumlah_orang" name="jumlah_orang" value="" required>
@@ -896,7 +896,7 @@
                                             <div class="form-group-sm mx-2 mt-2 " style="font-size: 10pt; width : 13rem">
                                                 <label>
                                                     Gaji Per Bulan
-                                                     
+
                                                 </label>
                                                 <div class="input-group input-group-sm mb-3">
                                                     <div class="input-group-prepend">
@@ -3379,7 +3379,7 @@
                 computation.data.splice(calculationIndex, 1);
 
                 calculateSumFormula();
-            
+
                 if (computation_id == 1) {
                     console.log(calculations);
                 let calculation2 = calculations.find(f => f.id == 2);
@@ -3945,7 +3945,7 @@
                     kapasitasNormalPerbulan = 1;
                     //$(event.currentTarget).val(kapasitasNormalPerbulan);
                 }
-    
+
                 let draftCalculation = draftCalculations.find(f => f.computationId == computationId);
                 draftCalculation.kapasitasNormalPerbulan = kapasitasNormalPerbulan;
 
