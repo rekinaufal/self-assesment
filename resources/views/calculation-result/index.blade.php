@@ -3965,6 +3965,9 @@
                 // Menyimpan data di Local Storage dengan kunci tertentu
                 localStorage.setItem('draftCalculations', jsonDraftCalculations);
 
+                store(`${baseUrl}/calculation-results`, `${baseUrl}/computation/${computationId}`,
+                computationId, false);
+
                 reloadAllTable();
             });
 
