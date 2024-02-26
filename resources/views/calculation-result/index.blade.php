@@ -3936,9 +3936,16 @@
                 }
             })
 
-            $(".kapasitasNormalPerbulan").on("change", () => {
+            $(".kapasitasNormalPerbulan").on("keyup", (event) => {
                 let kapasitasNormalPerbulan = $(event.currentTarget).val();
                 $(".kapasitasNormalPerbulan").val(kapasitasNormalPerbulan);
+
+                // Validasi untuk memastikan kapasitasNormalPerbulan tidak kurang dari 1
+                if (kapasitasNormalPerbulan < 1) {
+                    kapasitasNormalPerbulan = 1;
+                    //$(event.currentTarget).val(kapasitasNormalPerbulan);
+                }
+    
                 let draftCalculation = draftCalculations.find(f => f.computationId == computationId);
                 draftCalculation.kapasitasNormalPerbulan = kapasitasNormalPerbulan;
 
