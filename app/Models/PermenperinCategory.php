@@ -12,7 +12,7 @@ class PermenperinCategory extends Model
 
     protected $table = "permenperin_categories";
 
-    protected $fillable = ['name', "color"];
+    protected $fillable = ['code' ,'name', "color"];
 
     protected $guarded = ["id"];
 

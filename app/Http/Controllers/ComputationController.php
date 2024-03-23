@@ -85,7 +85,19 @@ class ComputationController extends Controller
             "countries" => $countries
         ];
 
-        return view('calculation-result.index', $data);
+        $permenperinCategoryCode = $computation->permenperin_category->code;
+
+        switch ($permenperinCategoryCode) {
+            case 'P-0001':
+                return view('calculation-result.index', $data);
+                break;
+            case 'P-0002':
+                return view('calculation-result.calculation-22', $data);
+                break;
+            default:
+                return redirect()->route("computation.index")->with("failed", "View for the permenperin not found");
+                break;
+        }
     }
 
     /**
